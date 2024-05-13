@@ -1,0 +1,403 @@
+.header {
+    max-width: 1920px;
+    min-width: 600px;
+}
+
+.header .header-container {
+    position: sticky;
+    max-width: 1250px;
+    margin: 0 auto;
+    top: 0;
+    background: white;
+}
+
+.header .header-container-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    height: 5rem;
+}
+
+@media (min-width: 640px) {
+    .header .header-container-wrapper {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+}
+
+@media (min-width: 768px) {
+    .header .header-container-wrapper {
+        height: 5rem;
+    }
+}
+
+.header .header-logo {
+    height: 4rem;
+    width: 4rem;
+    margin-left: 1rem;
+    margin-right: 2rem;
+    border: 1px solid black;
+}
+
+.header .header-searchbar {
+    border: 1px solid #718096;
+    width: 100%;
+    border-radius: 0.7em;
+    margin: 1rem;
+    padding: 1rem;
+    padding-right: 3rem;
+    font-size: 0.875rem;
+    font-weight: 300;
+    background: #F7FAFC;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    border: 2px solid #e8e8e8;
+    background-color: #f2f2f2;
+}
+
+.header .header-searchbar-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .header-searchbar:hover {
+    border: 1px solid #ee0909;
+}
+
+.header .header-searchbar-input {
+    border: none;
+    width: 100%;
+    height: 2rem;
+    padding-left: 1px;
+    font-size: medium;
+    font-weight: normal;
+    background-color: transparent;
+    color: #808080;
+    caret-color: #FF69B4;
+    outline: none;
+}
+
+.header .searchbar-button {
+    border: 1px solid black;
+    width: 2rem;
+    height: 2rem;
+    color: #718096;
+}
+
+.header .header-searchbar-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    height: 5rem;
+    width: 35rem;
+}
+
+.header .header-loginbar {
+    display: flex;
+    color: black;
+    display: none;
+}
+
+.header .header-loginbar-main {
+    font-size: 0.875rem;
+}
+
+.header .header-loginbar-link {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.header .loginbar-button {
+    border: 1px solid black;
+    margin-left: 0.8rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #4A5568;
+}
+
+.header .header-menubar {
+    position: fixed;
+    width: 100%;
+    z-index: 40;
+}
+
+@media (max-width: 601px) {
+    .header .header-menubar {
+        display: none;
+    }
+}
+
+.header .header-menubar-container {
+    position: sticky;
+    max-width: 1250px;
+    margin: 0 auto;
+    margin-top: 0.25rem;
+}
+
+.header .header-menubar-wrapper {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    width: 78rem;
+    height: 8rem;
+    align-items: center;
+}
+
+.header .menubox {
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: 500;
+    flex-wrap: wrap;
+} 
+
+.header .menubox-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+    outline: none;
+    margin-left: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.header .menubar-button {
+    border: 1px solid black;
+    margin-right: 0.8rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+.header .menubox-link {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 0.625rem;
+}
+
+.header .menubox-link:hover {
+ border-bottom: 2px solid #ee0909;
+}
+
+.header .menubox-sub {
+    display: flex;
+    align-items: center;
+}
+
+.header .sub-container-01 {
+    position: relative;
+    display: flex;
+    width: 8rem;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #4A5568;
+}
+
+.header .menubox-border {
+    border-right: 1px solid #CBD5E0;
+    height: 1.8rem;
+    margin-right: 1.5rem;
+}
+
+.header .menubox-sub-box02 {
+    display: flex;
+    align-items: center;
+    width: 10rem;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #CBD5E0;
+    border-radius: 0.6rem;
+    padding: 0.75rem;
+    background: white;
+}
+
+.header .menubox-sub-box02:hover{
+    background-color: #eeeeee;
+}
+
+
+.header .menubox-sub-title-02 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.header .menubox-sub-img {
+    border: 1px solid black;
+    margin-left: 0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.header .categories{
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    height: 44px;
+    align-items: center;
+    width: 100%;
+}
+
+
+.header .header-categories-container {
+    display: flex; 
+    padding-top: 10rem;
+    margin: 0 auto;
+    max-width: 100rem; 
+    font-size: 1rem;
+    line-height: 1.25rem; 
+}
+
+@media (min-width: 640px) { 
+    .header .header-categories-container {
+        padding-left: 1rem;
+        padding-right: 1rem; 
+        grid-template-columns: repeat(6, minmax(0, 1fr)); 
+    }
+}
+
+@media (min-width: 1024px) { 
+    .header .header-categories-container {
+        grid-template-columns: repeat(10, minmax(0, 1fr)); 
+    }
+}
+
+.header .catewrap{
+    margin-right: 6rem;
+}
+
+.header .categories-h3 {
+    font-weight: 400;
+    line-height: 1.5;
+    color: #4A5568;
+}
+
+.header .cate-link {
+    display: flex;
+    font-weight: 600;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    padding-top: 1rem;
+    color: black;
+}
+
+@media (max-width: 601px) {
+    .header .categories {
+        display: none;
+    }
+}
+
+.header .categories-boxwrapper {
+    display: none;
+    height: 20rem;
+    width: 100%;
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+}
+
+/*로그인 회원 정보*/
+.header .loginasset {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    color: black;
+}
+
+.header .profile{
+    border: 1px solid black;
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+}
+
+@media (max-width: 761px) {
+    .header .profile {
+        display: none;
+    }
+}
+
+.header .alarm-img{
+    position: fixed;
+    display: flex;
+    margin-left: 30px;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3559f;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 100%;
+    width: 2rem;
+    height: 2rem;
+}
+
+.header .loginasset-button{
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/*로그인 토글*/
+.toggle .LoginToggle {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    top: 60px;
+    right: 10rem;
+    background-origin: border-box;
+    background-color: white;
+    border-color: gray;
+    border-width: 1px;
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    width: 13rem;
+    outline: none;
+    transform: scale(1);
+    opacity: 1;
+}
+
+.toggle .loginToggle-button {
+    border: 1px solid black;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.75rem;
+    color: rgb(226, 212, 200);
+}
+
+.toggle .loginToggle-button:hover {
+    color: rgb(219, 219, 219);
+}
+
+.toggle .toggleButton-li {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-weight: 400;
+    color: black;
+}
+
+.toggle .toggleBorder {
+    padding: 0.25rem;
+    background-color: rgb(235, 234, 234);
+}
+
+.toggle .togglelink-items {
+    color: gray;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    font-size: 0.875rem;
+}
+
+.toggle .togglelink-items:hover {
+    background-color: rgb(236, 236, 236);
+}

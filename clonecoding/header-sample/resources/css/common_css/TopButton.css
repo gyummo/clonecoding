@@ -1,0 +1,55 @@
+
+/*예시*/
+
+.topbtn{
+  height: 90vh;
+}
+
+.topbtn .one {
+  height: 1000px;
+  background-color: #118ab2;
+}
+
+.topbtn .two {
+  background-color: #06d6a0;
+}
+
+.topbtn .three {
+  background-color: #ffd166;
+}
+
+.topbtn .quickbtn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    display: inline-block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+    background: url() no-repeat;
+    background-size: 300px 300px;
+    vertical-align: top;
+  
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.topbtn .btn_pageup {
+  display: block;
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  background-position: -115px 0
+}
+
+.topbtn .ico_pctop {
+  width: 50px;
+  height: 50px;
+}
+
+:root[data-darktheme=true] .ico_pctop {
+    background-image: url()
+}

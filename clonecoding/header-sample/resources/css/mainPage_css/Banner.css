@@ -1,0 +1,221 @@
+.banner{
+  width: 100%;
+  height: auto;
+  border: 1px solid black;
+}
+
+@media (min-width: 1250px) {
+  .banner .slide-wrap {
+    width: 1250px;  
+    height: 370px;
+  }
+}
+
+@media (max-width: 751px) {
+  .banner .slide-wrap {
+    width: 751px;  
+    height: 501px;
+  }
+}
+
+.banner .slide-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .banner .slide_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 0px;
+    width: 100%;
+    height: 300px;
+    flex-shrink: 0;
+    transition: left 0.15s;
+  }
+
+  .banner .slide_prev_button {
+    left: 10px;
+  }
+
+  .banner .slide_next_button {
+    right: 10px;
+  }
+  
+ /* 배너 이미지 삽입*/
+
+ /* 1 */
+ .banner .item1{
+  background-image: url('../../../resources/upfile/mainPage_img/banner01.png');
+  width: 1250px;
+  height: 370px;
+}
+
+@media (min-width: 1250px) {
+  .banner .item1 {
+    background-image: url('../../../resources/upfile/mainPage_img/banner01.png');
+  }
+}
+
+@media (max-width: 751px) {
+  .banner .item1 {
+    background-image: url('../../../resources/upfile/mainPage_img/mobile-banner01.png');
+  }
+}
+
+ /* 2 */
+ .banner .item2{
+  background-image: url('../../../resources/upfile/mainPage_img/banner01.png');
+  width: 1250px;
+  height: 370px;
+}
+
+@media (min-width: 1250px) {
+  .banner .item2 {
+    background-image: url('../../../resources/upfile/mainPage_img/banner01.png');
+  }
+}
+
+@media (max-width: 751px) {
+  .banner .item2 {
+    background-image: url('../../../resources/upfile/mainPage_img/mobile-banner01.png');
+  }
+}
+
+ /* 3 */
+ .banner .item3 {
+  background-image: url('../../../resources/upfile/mainPage_img/banner01.png');
+  width: 1250px;
+  height: 370px;
+}
+
+@media (min-width: 1250px) {
+  .banner .item3 {
+    background-image: url('../../../resources/upfile/mainPage_img/banner01.png');
+  }
+}
+
+@media (max-width: 751px) {
+  .banner .item3 {
+    background-image: url('../../../resources/upfile/mainPage_img/mobile-banner01.png');
+  }
+}
+
+ /* 4 */
+ .banner .item4{
+  background-image: url('../../../resources/upfile/mainPage_img/banner01.png');
+  width: 1250px;
+  height: 370px;
+}
+
+@media (min-width: 1250px) {
+  .banner .item4 {
+    background-image: url('../../../resources/upfile/mainPage_img/banner01.png');
+  }
+}
+
+@media (max-width: 751px) {
+  .banner .item4 {
+    background-image: url('../../../resources/upfile/mainPage_img/mobile-banner01.png');
+  }
+}
+
+ /* 5 */
+ .banner .item5{
+  background-image: url('../../../resources/upfile/mainPage_img/banner01.png');
+  width: 1250px;
+  height: 370px;
+}
+
+@media (min-width: 1250px) {
+  .banner .item5 {
+    background-image: url('../../../resources/upfile/mainPage_img/banner01.png');
+  }
+}
+
+@media (max-width: 751px) {
+  .banner .item5 {
+    background-image: url('../../../resources/upfile/mainPage_img/mobile-banner01.png');
+  }
+}
+
+ /* 6 */
+ .banner .item6{
+  background-image: url('../../../resources/upfile/mainPage_img/banner01.png');
+  width: 1250px;
+  height: 370px;
+}
+
+@media (min-width: 1250px) {
+  .banner .item6 {
+    background-image: url('../../../resources/upfile/mainPage_img/banner01.png');
+  }
+}
+
+@media (max-width: 751px) {
+  .banner .item6 {
+    background-image: url('../../../resources/upfile/mainPage_img/mobile-banner01.png');
+  }
+}
+
+ /* 7 */
+ .banner .item7 {
+  background-image: url('../../../resources/upfile/mainPage_img/banner01.png');
+  width: 1250px;
+  height: 370px;
+}
+
+@media (min-width: 1250px) {
+  .banner .item7 {
+    background-image: url('../../../resources/upfile/mainPage_img/banner01.png');
+  }
+}
+
+@media (max-width: 751px) {
+  .banner .item7 {
+    background-image: url('../../../resources/upfile/mainPage_img/mobile-banner01.png');
+  }
+}
+
+ /* 8 */
+ .banner .item8{
+  background-image: url('../../../resources/upfile/mainPage_img/banner01.png');
+  width: 1250px;
+  height: 370px;
+}
+
+@media (min-width: 1250px) {
+  .banner .item8 {
+    background-image: url('../../../resources/upfile/mainPage_img/banner01.png');
+  }
+}
+
+@media (max-width: 751px) {
+  .banner .item8 {
+    background-image: url('../../../resources/upfile/mainPage_img/mobile-banner01.png');
+  }
+}
+
+.banner .slide-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 2px;
+  margin-right: 6px;
+  font-size: 0.75rem;
+  color: white;
+  background-color: #2d3748;
+  border-radius: 9999px;
+  padding: 1px;
+  padding-right: 3px;
+  padding-left: 3px;
+}
+
+@media screen and (min-width: 640px) {
+  .banner .slide-button {
+    display: hidden;
+  }
+}

@@ -1,0 +1,654 @@
+/* color */
+:root {
+  /* noimg */
+  --img-noimg: url(https://t1.daumcdn.net/daumtop_deco/images/pctop/2023/ico_noimg.svg) no-repeat 50% 50%;
+
+  --text-primary: #000;
+  --text-secondary: rgba(0, 0, 0, .72);
+  --text-tertiary: rgba(0, 0, 0, .48);
+
+  --bg-slot: #fff;
+  --bg-on-slot: #f2f4f7;
+  --bg-divider-8: rgba(0, 0, 0, .08);
+  --bg-hovered: rgba(0, 0, 0, .04)
+}
+
+/* 2024-01-23 수정 */
+/* 2024-01-16 추가 및 수정 */
+/* 2024-01-08 추가 및 수정 */
+/* 2024-01-03 추가*/
+
+/* reset */
+/* 2024-01-16 추가 및 수정 시작 */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+textarea,
+p,
+blockquote,
+th,
+td,
+input,
+select,
+button {
+  margin: 0;
+  padding: 0
+}
+
+fieldset,
+img {
+  border: 0 none
+}
+
+dl,
+ul,
+ol,
+menu,
+li {
+  list-style: none
+}
+
+blockquote,
+q {
+  quotes: none
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none
+}
+
+input,
+select,
+textarea,
+button {
+  vertical-align: middle
+}
+
+input::-ms-clear {
+  display: none
+}
+
+button {
+  border: 0 none;
+  background-color: transparent;
+  cursor: pointer
+}
+
+body,
+th,
+td,
+input,
+select,
+textarea,
+button {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  color: #333;
+  font-family: -apple-system, system-ui, 'Helvetica', 'Apple SD Gothic Neo', Arial, 'Malgun Gothic', '맑은 고딕', sans-serif
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  cursor: pointer
+}
+
+/* a:active, a:hover{text-decoration:underline} */
+/* 2024-01-23 삭제*/
+a:active {
+  background-color: transparent
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+var {
+  font-style: normal;
+  font-weight: normal
+}
+
+strong {
+  font-weight: normal
+}
+
+html {
+  font-size: 10px
+}
+
+body {
+  letter-spacing: -0.05em
+}
+
+.os_mac body {
+  letter-spacing: 0
+}
+
+/* // 2024-01-16 추가 및 수정 끝 */
+.hide {
+  display: none
+}
+
+/* 2024-03-13 추가 */
+
+/* global */
+.ir_wa {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.screen_out {
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  text-indent: -9999px
+}
+
+/* 공통 */
+.ico_comm {
+  display: inline-block;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -9999px;
+  background: url(//t1.daumcdn.net/daumtop_deco/images/pctop/2023/moment/ico_shopbox.svg) no-repeat 0 0/100px;
+  background-color: transparent;
+  vertical-align: top
+}
+
+/* 2024-01-16 수정 */
+/* 2023-01-04 수정 */
+.img_thumb {
+  vertical-align: top;
+  border-radius: 8px
+}
+
+.frame_g {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 101px;
+  height: 123px;
+  border: 1px solid var(--text-primary);
+  border-radius: 8px;
+  box-sizing: border-box;
+  opacity: .08
+}
+
+/* 2024-01-04 수정 */
+
+/*** 배너 영역 ***/
+.section_shopping {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  width: 384px;
+  border-radius: 16px;
+  background-color: var(--bg-slot)
+}
+
+/* 2024-01-16 수정 */
+/* .cont_shopping{padding:12px 24px 16px} */
+/* 2024-01-16 삭제 */
+
+/*** 컨텐츠 영역 ***/
+/* 2024-01-16 수정 시작 */
+.info_tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  overflow: hidden;
+  height: 58px;
+  padding: 12px 24px 12px 14px;
+  box-sizing: border-box
+}
+
+.info_tab .link_shopping {
+  overflow: hidden;
+  margin: -1px 0;
+  padding: 0 10px
+}
+
+/* // 2024-01-16 수정 끝 */
+.info_tab .link_shopping:hover {
+  border-radius: 20px;
+  background: var(--bg-hovered);
+  text-decoration: none
+}
+
+/* 2024-01-16 추가 */
+/* .info_tab .link_shopping .ico_title{float:left;width:32px;height:21px;background-position:0 0} */
+/* 2024-01-04 삭제 */
+/* 2024-01-04 추가 시작 */
+.info_tab .tit_subject {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  height: 36px
+}
+
+/* 2024-01-16 수정 */
+.info_tab .txt_subject {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  color: var(--text-primary)
+}
+
+/* 2024-01-16 수정 */
+.info_tab .thumb_logo {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  width: 22px;
+  border-radius: 11px
+}
+
+/* 2024-02-08 수정 */
+.info_tab .thumb_logo::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid var(--text-primary);
+  border-radius: 22px;
+  opacity: .08;
+  content: ''
+}
+
+/* // 2024-01-04 추가 끝 */
+.info_tab .link_shopping .ico_arrow {
+  width: 8px;
+  height: 14px;
+  margin-left: 6px;
+  background-position: 0 0
+}
+
+/* 2024-01-16 수정 */
+/* 2024-01-04 수정 */
+
+.info_cont {
+  padding: 0 24px
+}
+
+/* 2024-01-16 추가 */
+
+.list_tab {
+  overflow: hidden;
+  float: right
+}
+
+.list_tab li {
+  float: left
+}
+
+.list_tab .link_tab {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  height: 34px;
+  line-height: 0;
+  padding: 6px 12px 6px 6px;
+  border-radius: 17px;
+  font-size: 0;
+  text-decoration: none;
+  background-color: var(--bg-on-slot);
+  box-sizing: border-box;
+  vertical-align: top
+}
+
+/* 2024-01-16 수정 */
+.list_tab li+li {
+  margin-left: 8px
+}
+
+.list_tab .link_tab .txt_tab {
+  display: inline-block;
+  margin: 2px 0 0 8px;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  color: var(--text-secondary);
+  vertical-align: top
+}
+
+/* 2024-01-16 수정 */
+.list_tab .link_tab:hover::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--bg-hovered);
+  content: ''
+}
+
+/* .list_tab .link_tab:hover .txt_tab, .cont_shopping .list_tab .on .link_tab .txt_tab{color:#118eff;text-decoration:underline} */
+/* 2024-01-16 삭제 */
+
+/* 2024-01-16 수정 시작 */
+.wrap_paging {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0
+}
+
+.wrap_paging .btn_paging {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--bg-divider-8);
+  border-radius: 20px
+}
+
+/* // 2024-01-16 수정 끝 */
+.wrap_paging .btn_paging:hover {
+  background: var(--bg-hovered)
+}
+
+/* 2024-01-16 추가 */
+.wrap_paging .btn_paging .ico_comm {
+  width: 8px;
+  height: 14px;
+  margin: 12px auto;
+  background-position: -20px 0
+}
+
+/* 2024-01-16 수정 */
+/* 2024-01-04 수정 */
+.wrap_paging .btn_paging.btn_prev .ico_comm {
+  transform: rotate(-180deg)
+}
+
+.wrap_paging .info_paging {
+  width: 62px;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: var(--text-primary);
+  text-align: center
+}
+
+/* 2024-01-16 수정 */
+/* 2024-01-04 수정 */
+.wrap_paging .info_paging .txt_slash,
+.wrap_paging .info_paging .num_total {
+  color: var(--text-tertiary)
+}
+
+/* 2024-01-08 수정 */
+/* 2024-01-04 추가 */
+
+.area_ad {
+  overflow: hidden;
+  position: absolute;
+  bottom: 18px;
+  right: 19px;
+  padding: 10px 5px;
+  font-size: 0;
+  line-height: 0
+}
+
+/* 2024-02-14 수정 */
+/* 2024-01-16 수정 */
+.area_ad .ico_ad {
+  width: 24px;
+  height: 16px;
+  background-position: -30px 0
+}
+
+/* 2024-02-14 추가 */
+
+.list_mall .list_inner {
+  height: 20px;
+  -ms-text-align-last: justify;
+  text-align: justify
+}
+
+.os_windows .list_mall .list_inner {
+  letter-spacing: -0.08em
+}
+
+/* 2024-01-23 추가 */
+.list_mall .list_inner::after {
+  display: inline-block;
+  width: 100%;
+  content: ''
+}
+
+.list_mall .list_inner li {
+  display: inline-block;
+  vertical-align: top
+}
+
+.list_mall>li+li {
+  margin-top: 8px
+}
+
+/* 2024-01-03 수정 시작 */
+.list_mall .link_mall {
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: var(--text-secondary)
+}
+
+/* 2024-01-16 수정 */
+.list_mall .link_mall:hover {
+  color: var(--text-primary);
+  opacity: .64
+}
+
+/* 2024-01-23 추가 */
+.list_mall li.mall_ico {
+  width: 2px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--text-primary);
+  vertical-align: middle;
+  opacity: .16
+}
+
+/* // 2024-01-03 수정 끝 */
+
+/* 2024-01-16 수정 시작 */
+.list_item {
+  overflow: hidden;
+  margin: 0 -8px
+}
+
+.list_item li {
+  float: left;
+  width: 101px;
+  padding: 16px 8px 0
+}
+
+.list_item .link_item {
+  display: block;
+  position: relative;
+  text-align: left
+}
+
+.list_item .tit_item {
+  display: block;
+  display: -webkit-box;
+  overflow: hidden;
+  height: 40px;
+  padding-top: 8px;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: var(--text-primary);
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical
+}
+
+/* // 2024-01-16 수정 끝 */
+.os_windows .list_item .tit_item {
+  letter-spacing: -0.1em
+}
+
+/* 2024-03-06 추가 */
+/* 2024-01-23 추가 시작 */
+.list_item .link_item:hover .tit_item {
+  opacity: .64
+}
+
+.list_item .link_item .wrap_thumb {
+  overflow: hidden;
+  position: relative;
+  width: 101px;
+  height: 123px;
+  border-radius: 8px;
+  background: var(--bg-on-slot)
+}
+
+/* 2024-02-19 수정 */
+.list_item .link_item .wrap_thumb .inner_thumb {
+  overflow: hidden;
+  padding-top: 121.782%
+}
+
+.list_item .link_item .wrap_thumb .thumb_g {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: translate(50%, 50%);
+  -ms-transform: translate(50%, 50%);
+  transform: translate(50%, 50%)
+}
+
+.list_item .wrap_thumb .img_thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  object-fit: cover
+}
+
+/* hover 대상 */
+.list_item .wrap_thumb .img_thumb {
+  transition: width .4s cubic-bezier(0.4, 0, 0.25, 1)
+}
+
+/* hover*/
+.list_item .link_item:hover .wrap_thumb .img_thumb {
+  width: 105%
+}
+
+/* 2024-02-08 수정 */
+/* // 2024-01-23 추가 끝 */
+
+/* 레티나 */
+/* @media
+only screen and (-webkit-min-device-pixel-ratio:1.5),
+only screen and (min-device-pixel-ratio:1.5),
+only screen and (min-resolution:1.5dppx) {
+.ico_comm{background:url(rtn/img_shopbox_240103.png) no-repeat;-webkit-background-size:100px 100px;background-size:100px 100px} // 2024-01-03 수정 
+} */
+/* 2024-01-16 삭제 */
+
+/* 2024-01-04 추가 시작 */
+/* 다크모드 */
+:root.dark {
+  /* noimg */
+  --img-noimg: url(https://t1.daumcdn.net/daumtop_deco/images/pctop/2023/ico_noimg_darkmode.svg) no-repeat 50% 50%;
+
+  --text-primary: #fff;
+  --text-secondary: rgba(255, 255, 255, .72);
+  --text-tertiary: rgba(255, 255, 255, .48);
+
+  --bg-slot: #1C1E21;
+  --bg-on-slot: #2c2e33;
+  --bg-divider-8: rgba(255, 255, 255, .08);
+  --bg-hovered: rgba(255, 255, 255, .04)
+}
+
+/* 2024-01-23 수정 */
+/* 2024-01-16 추가 및 수정 */
+/* 2024-01-08 추가 및 수정 */
+/* :root.dark body{background-color:#141517}
+.dark .section_shopping{background-color:#1C1E21} */
+/* 2024-01-16 Tkrwp*/
+.dark .ico_comm {
+  background-image: url(//t1.daumcdn.net/daumtop_deco/images/pctop/2023/moment/ico_shopbox_dark.svg)
+}
+
+/* .dark .list_tab .link_tab{background-color:#2C2E33}
+.dark .wrap_paging .btn_paging{background-color:#2C2E33} */
+/* 2024-01-16 삭제 */
+/* .dark .wrap_paging .info_paging */
+/* 2024-01-08 삭제 */
+/* // 2024-01-04 추가 끝 */
+
+/* system 테마 적용 */
+@media (prefers-color-scheme:dark) {
+  :root.themed {
+    /* noimg */
+    --img-noimg: url(https://t1.daumcdn.net/daumtop_deco/images/pctop/2023/ico_noimg_darkmode.svg) no-repeat 50% 50%;
+  
+    --text-primary: #fff;
+    --text-secondary: rgba(255, 255, 255, .72);
+    --text-tertiary: rgba(255, 255, 255, .48);
+  
+    --bg-slot: #1C1E21;
+    --bg-on-slot: #2c2e33;
+    --bg-divider-8: rgba(255, 255, 255, .08);
+    --bg-hovered: rgba(255, 255, 255, .04)
+  }
+  
+  /* 2024-01-23 수정 */
+  /* 2024-01-16 추가 및 수정 */
+  /* 2024-01-08 추가 및 수정 */
+  /* :root.dark body{background-color:#141517}
+  .dark .section_shopping{background-color:#1C1E21} */
+  /* 2024-01-16 Tkrwp*/
+  .themed .ico_comm {
+    background-image: url(//t1.daumcdn.net/daumtop_deco/images/pctop/2023/moment/ico_shopbox_dark.svg)
+  }
+}

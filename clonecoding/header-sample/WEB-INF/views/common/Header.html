@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 공통 css -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/91f9609a45.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- -->
+
+  <link rel="stylesheet" href="../../../resources/css/common_css/Style.css">
+  <link rel="stylesheet" href="../../../resources/css/common_css/Header.css">
+  <script type="text/javascript" async="" src="../../../resources/js/common_js/Header.js"></script>
+</head>
+
+<body class="header">
+  <!-- 로그인 토글 -->
+  <div class="toggle" id="toggle">
+    <div class="LoginToggle" id="LoginToggle">
+      <a class="togglelink-items" id="togglelink-items" href="https://www.taling.me/auth/signin">
+        <svg xmlns="http://www.w3.org/2000/svg" class="loginToggle-button"></svg>
+        <div class="toggleButton-li">
+          모임 작성하기
+        </div>
+      </a>
+
+      <div class=toggleBorder></div>
+
+      <a class="togglelink-items" id="togglelink-items" href="https://www.taling.me/my-account/preference">
+        <svg xmlns="http://www.w3.org/2000/svg" class="loginToggle-button"></svg>
+        <div class="toggleButton-li">마이페이지</div>
+      </a>
+
+      <a class="togglelink-items" id="togglelink-items" href="https://www.taling.me/my-account/preference">
+        <svg xmlns="http://www.w3.org/2000/svg" class="loginToggle-button"></svg>
+        <div class="toggleButton-li">로그아웃</div>
+      </a>
+
+      <a class="togglelink-items" id="togglelink-items" href="https://www.taling.me/my-account/preference">
+        <svg xmlns="http://www.w3.org/2000/svg" class="loginToggle-button"></svg>
+        <div class="toggleButton-li">찜 목록</div>
+      </a>
+
+      <div class=toggleBorder></div>
+
+      <a class="togglelink-items" id="togglelink-items" href="https://www.taling.me/my-account/preference">
+        <svg xmlns="http://www.w3.org/2000/svg" class="loginToggle-button"></svg>
+        <div class="toggleButton-li">
+          공지사항
+        </div>
+      </a>
+
+      <a class="togglelink-items" id="togglelink-items" href="https://www.taling.me/my-account/preference">
+        <svg xmlns="http://www.w3.org/2000/svg" class="loginToggle-button"></svg>
+        <div class="toggleButton-li">관리자 1:1 채팅</div>
+      </a>
+      </a>
+    </div>
+  </div>
+  </div>
+
+  <div class="header-container">
+    <div class="header-container-wrapper">
+      <div class="header-searchbar-box">
+        <a href="../../views/mainPage/MainPage.html">
+          <img class="header-logo" src="../../../resources/upfile/common_img/bx-error.png" />
+        </a>
+
+        <!-- 검색바 -->
+        <div class="header-searchbar">
+
+          <form action="searchbar.u" class="header-searchbar-form" post="POST">
+            <input class="header-searchbar-input" type="text" name="search" placeholder="원하는 모임을 검색해보세요." value="">
+            <button type="submit"></button>
+            <svg class="searchbar-button"></svg>
+          </form>
+        </div>
+      </div>
+
+      <!-- 회원정보 -->
+      <div class="loginasset">
+        <div class="profile" href="">
+          <p class="alarm-img">+99</p>
+          <img class="profile-img" src="img/.png" />
+        </div>
+        <button class="loginasset-button" id="loginasset-button" type="button">
+          떡꼬치대마왕 님
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 로그인 -->
+  <div class="header-loginbar">
+    <div>
+      <div class="header-loginbar-main">
+        <a class="header-loginbar-link" href="../../views/mainPage/MainPage.html">로그인</a>
+      </div>
+    </div>
+    <svg class="loginbar-button"></svg>
+  </div>
+
+  <!-- 메뉴바 -->
+  <div class="header-menubar">
+    <div class="header-menubar-container">
+      <div class="header-menubar-wrapper">
+
+        <div class="menubox">
+          <button class="menubox-button" type="button" id="menubox-button">
+            <svg class="menubar-button"></svg>
+            카테고리
+          </button>
+
+          <a class="menubox-link" href="../../views/mainPage/MainPage.html">소셜링
+          </a>
+          <a class="menubox-link" href="../../views/mainPage/MainPage.html">챌린지
+          </a>
+        </div>
+
+        <div class="menubox-sub">
+          <div class="sub-container-01">
+            <a href="../../views/mainPage/MainPage.html">실시간 HOT 🔥</a>
+            <span class="menubox-span1">
+              <span class="menubox-span2"></span>
+              <span class="menubox-span3"></span>
+            </span>
+            <div>
+            </div>
+          </div>
+
+          <div class="menubox-border"></div>
+
+          <div class="menubox-sub-box02">
+            <a class="menubox-sub-title-02" href="../../views/mainPage/MainPage.html">주간베스트
+              <svg class="menubox-sub-img"></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 카테고리 -->
+    <div class="categories-boxwrapper" id="categories-boxwrapper">
+      <div class="categories">
+        <div class="header-categories-container">
+
+          <div class="catewrap">
+            <h3 class="categories-h3">전체</h3>
+            <div class="categories-container">
+              <div class="categories-wrapper">
+
+              </div>
+            </div>
+          </div>
+
+          <div class="catewrap">
+            <h3 class="categories-h3">인기</h3>
+            <div class="categories-container">
+              <div class="categories-wrapper">
+                <a href="../../views/mainPage/MainPage.html" class="cate-link">주간 베스트 20</a>
+                <a href="../../views/mainPage/MainPage.html" class="cate-link">HOT 클래스</a>
+                <a href="../../views/mainPage/MainPage.html" class="cate-link">실시간 랭킹</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="catewrap">
+            <h3 class="categories-h3">문화생활</h3>
+            <div class="categories-container">
+              <div class="categories-wrapper">
+                <a href="../../views/mainPage/MainPage.html" class="cate-link">문화 · 예술</a>
+                <a href="../../views/mainPage/MainPage.html" class="cate-link">푸드 · 드링크</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="catewrap">
+            <h3 class="categories-h3">미래발전</h3>
+            <div class="categories-container">
+              <div class="categories-wrapper">
+                <a href="../../views/mainPage/MainPage.html" class="cate-link">자기계발</a>
+                <a href="../../views/mainPage/MainPage.html" class="cate-link">재테크</a>
+                <a href="../../views/mainPage/MainPage.html" class="cate-link">외국어</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="catewrap">
+            <h3 class="categories-h3">스포츠</h3>
+            <div class="categories-container">
+              <div class="categories-wrapper">
+                <a href="../../views/mainPage/MainPage.html" class="cate-link">액비티비</a>
+                <a href="../../views/mainPage/MainPage.html" class="cate-link">여행 · 동행</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="catewrap">
+            <h3 class="categories-h3">취미</h3>
+            <div class="categories-container">
+              <div class="categories-wrapper">
+                <a href="../../views/mainPage/MainPage.html" class="cate-link">취미</a>
+                <a href="../../views/mainPage/MainPage.html" class="cate-link">파티 · 게임</a>
+                <a href="../../views/mainPage/MainPage.html" class="cate-link">연애 · 사랑</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+</body>
+
+</html>

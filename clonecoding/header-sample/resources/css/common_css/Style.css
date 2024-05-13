@@ -1,0 +1,39 @@
+/*마진, 패딩 박스 사이즈 초기화*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*폰트 및 이미지 사이즈 설정*/
+body {
+    width: 100vw;
+    height: 100vh;
+    max-width: 1250px;
+    min-width: 600px;
+    margin: 0 auto;
+    line-height: inherit;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 100%;
+    color: #000;
+}
+
+/*기타 스타일 삭제*/
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}

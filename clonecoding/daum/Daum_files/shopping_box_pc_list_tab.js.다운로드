@@ -1,0 +1,2 @@
+/* shopping_box_pc_list_tab@20240411155252 */
+generateListTabMarkup && generateListTabMarkup([{"site_logo":"https://t1.daumcdn.net/b2/shopping/images/b5f2e2802e69778edc2dc5454a7992bc40f6dacf","site_link":"http://banner.auction.co.kr/bn_redirect.asp?ID=BN00039381","site_name":"옥션","link_target":"_blank"},{"site_logo":"https://t1.daumcdn.net/b2/shopping/images/0007dd004fef6853e6ff76cc0859fd593210cecf","site_link":"http://www.gmarket.co.kr/?jaehuid=200002827","site_name":"G마켓","link_target":"_blank"}])

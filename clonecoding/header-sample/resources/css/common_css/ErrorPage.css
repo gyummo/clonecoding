@@ -1,0 +1,102 @@
+.errorpage {
+    min-height: 100vh;
+}
+
+.errorpage .errorpage-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.errorpage .errorpage-wrapper {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.errorpage .errorpage-image-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.errorpage .errorpage-wrapper .bx-error {
+    width: 200px;
+    height: 200px;
+}
+
+.errorpage .errorpage-wrapper .errorsign {
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: center;
+}
+
+.errorpage .errorMessage {
+    font-weight: 400;
+    color: gray;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: center;
+}
+
+.errorpage .errorpage-text-wrapper {
+    display: block;
+}
+
+.errorpage .errorcheck {
+    clear: both;
+    font-weight: 800;
+    color: #000000;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.errorpage .we-have-encountered {
+    font-weight: 400;
+    color: #848484;
+    letter-spacing: 0;
+    line-height: normal;
+    text-align: center;
+    padding: 10px;
+}
+
+.errorpage .break-on-small {
+    display: none;
+}
+
+@media (max-width: 640px) {
+    .errorpage .break-on-small {
+        display: inline;
+    }
+}
+
+@media (max-width: 640px) {
+    .errorpage .errorcheck {
+        font-size: 14px;
+        word-break: break-all;
+    }
+
+    .errorpage .we-have-encountered {
+        font-size: 12px;
+    }
+}
+
+.errorpage .mainpage{
+    border: 1.2px solid rgb(202, 202, 202);
+    border-radius: 20px;
+    padding: 1.2rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+}
+
+.errorpage .mainpage:hover{
+    background-color: rgb(231, 231, 231);
+}
