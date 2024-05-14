@@ -6,11 +6,12 @@
 }
 
 .catebutton .screen {
+    border: 1px solid black;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     padding-top: 2rem;
-        padding-bottom: 2rem;
+    padding-bottom: 2rem;
 }
 
 .catebutton .grid {
@@ -45,8 +46,8 @@
     border: 1px solid #e5e7eb;
     background-color: #e0e0e0;
     border-radius: 10px;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 4rem;
+    height: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,8 +55,8 @@
 
 @media (min-width: 768px) {
     .catebutton .img {
-        width: 3rem;
-        height: 3rem;
+        width: 4rem;
+        height: 4rem;
     }
 }
 
@@ -67,7 +68,7 @@
 
 .catebutton .name {
     margin-top: 0.8rem;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     font-weight: 500;
     color: #6B7280;
     word-break: keep-all;
@@ -75,6 +76,6 @@
 
 @media (min-width: 768px) {
     .catebutton .name {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 }

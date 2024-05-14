@@ -21,8 +21,9 @@
 
   /* 화면이 706px 이하일 때 */
   .Subbanner .slide {
-    min-width: 705px;
-    min-height: 500px;
+    min-width: 450px;
+    min-height: 120px;
+    border-radius: 10px;
   }
 }
 

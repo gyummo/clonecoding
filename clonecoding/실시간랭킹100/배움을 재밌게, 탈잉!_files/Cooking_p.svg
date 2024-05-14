@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_6" data-name="Layer 6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 104">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #f6f6f6;
+      }
+
+      .cls-3 {
+        fill: #ff7da5;
+      }
+    </style>
+  </defs>
+  <rect class="cls-2" width="104" height="104" rx="26" ry="26"/>
+  <g>
+    <rect class="cls-3" x="37.95" y="46.79" width="13.35" height="13.35" transform="translate(-3.73 3.35) rotate(-4.12)"/>
+    <rect class="cls-3" x="53.74" y="38" width="11.85" height="11.85" transform="translate(76.84 -28.15) rotate(67.04)"/>
+    <g>
+      <path class="cls-1" d="m70.76,28.58v32.06l-37.87,6v-32.06l37.87-6m3.6-4.22l-45.07,7.14v6.38l-10.5,1.66v4.58l10.5-1.66v28.39l45.07-7.14v-28.39l10.5-1.66v-4.58l-10.5,1.66v-6.38h0Z"/>
+      <polygon class="cls-1" points="38.22 83.11 33.25 78.8 38.22 72.92 43.19 77.23 38.22 83.11"/>
+      <polygon class="cls-1" points="65.58 78.78 60.61 74.47 65.58 68.58 70.55 72.89 65.58 78.78"/>
+      <polygon class="cls-1" points="51.9 80.94 46.93 76.63 51.9 70.75 56.87 75.06 51.9 80.94"/>
+    </g>
+  </g>
+</svg>

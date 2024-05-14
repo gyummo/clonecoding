@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_6" data-name="Layer 6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 104">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #f6f6f6;
+      }
+
+      .cls-3 {
+        fill: #ff7da5;
+      }
+    </style>
+  </defs>
+  <rect class="cls-2" width="104" height="104" rx="26" ry="26"/>
+  <g>
+    <polygon class="cls-3" points="57.97 55.02 57.97 72.31 75.36 69.43 74.72 52.46 57.97 55.02"/>
+    <path class="cls-1" d="m73.16,53.99v14.54l-14.09,2.23v-14.54l14.09-2.23m-28.59,4.53v14.54l-14.09,2.23v-14.54l14.09-2.23m32.19-34.05l-32.14,5.09v25.3l-17.74,2.81v21.83l21.29-3.37v-43.49l25.03-3.96v21.66l-17.74,2.81v21.83l21.29-3.37V24.47h0Z"/>
+  </g>
+</svg>
