@@ -1,0 +1,4219 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="./qjfhdnaos51106.imweb.me_files/style.css">
+	<link rel="stylesheet" type="text/css" href="./qjfhdnaos51106.imweb.me_files/style(1).css">
+	<link rel="stylesheet" type="text/css" href="./qjfhdnaos51106.imweb.me_files/preloader.css">
+	<link rel="stylesheet" type="text/css" href="./qjfhdnaos51106.imweb.me_files/owl.carousel2.css">
+	<link rel="stylesheet" type="text/css" href="./qjfhdnaos51106.imweb.me_files/admin.css">
+	<link rel="stylesheet" type="text/css" href="./qjfhdnaos51106.imweb.me_files/toastr.css">
+	<link rel="stylesheet" type="text/css" href="./qjfhdnaos51106.imweb.me_files/alarm_menu.css">
+	<link rel="stylesheet" type="text/css" href="./qjfhdnaos51106.imweb.me_files/bootstrap-theme-dashboard.css">
+	<link rel="stylesheet" type="text/css" href="./qjfhdnaos51106.imweb.me_files/dashboard.css">
+	<link rel="stylesheet" type="text/css" href="./qjfhdnaos51106.imweb.me_files/select2.css">
+	<link rel="stylesheet" type="text/css" href="./qjfhdnaos51106.imweb.me_files/accordion.css">
+	<link rel="stylesheet" type="text/css" href="./qjfhdnaos51106.imweb.me_files/regularly.css">
+	<link rel="stylesheet" type="text/css" href="./qjfhdnaos51106.imweb.me_files/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="./qjfhdnaos51106.imweb.me_files/imweb-datepicker.css">
+	<link rel="stylesheet" type="text/css" href="./qjfhdnaos51106.imweb.me_files/imweb-datepicker-modal.css">
+
+	<script>
+		(function () {
+			var customTooltipAllowList = $.fn.tooltip.Constructor.DEFAULTS.whiteList;
+			customTooltipAllowList.table = [];
+			customTooltipAllowList.thead = [];
+			customTooltipAllowList.tbody = [];
+			customTooltipAllowList.tr = [];
+			customTooltipAllowList.td = ["rowspan", "colspan"];
+			customTooltipAllowList.th = [];
+			customTooltipAllowList.caption = [];
+			customTooltipAllowList["*"].push("style");
+		})();
+
+		/*드롭다운 메뉴 설정*/
+		function determineDropDirection() {
+			var $window = $(window);
+			var window_height = $window.innerHeight();
+			var window_scrolltop = $window.scrollTop();
+			$(".dropdown-menu").each(function () {
+				var $that = $(this);
+				var prv_style = $that.attr("style");
+				$that.css({
+					visibility: "hidden",
+					display: "block"
+				});
+				$that.parent().removeClass("dropup");
+				/* 드롭다운 하단에 공간이 없을 경우 상단에 공간이 있다면 방향 전환 */
+				if ($that.offset().top + $that.outerHeight() + 60 > window_height + window_scrolltop && $that.offset().top > $that.outerHeight() + 60) {
+
+					$that.parent().addClass("dropup");
+					$that.removeAttr("style");
+				} else {
+					$that.removeAttr("style");
+					$that.attr("style", prv_style);
+				}
+			});
+		}
+
+		determineDropDirection();
+
+		$(window).scroll(determineDropDirection);
+		; const message_script_allow_domains = ['https://kginicis.imtest.me', 'http://app-v2.mp.imlocal.me', 'https://app-v2.mp.imlocal.me', 'https://app-v2.mp.imtest.me', 'https://app-v2.mp.imweb.me'];
+		window.addEventListener('message', function (event) {
+			if (message_script_allow_domains.includes(event.origin)) { //허용 도메인 확인
+				if (typeof event.data === 'object' && event.data !== null) { // 배열인지 확인
+					if (typeof event.data.type === 'undefined') {
+						return;
+					}
+					switch (event.data.type) {
+						case 'call-channel-IO-api':
+							const { type, method, options } = event.data;
+
+							ChannelIO(method, ...Object.values(options || {}));
+							break;
+						default:
+							return;
+					}
+				}
+			}
+		});</script>
+		
+	<!-- Clarity Setting Code -->
+	<script type="text/javascript" >
+		(function () {
+			const clarity = new ClarityScript();
+			let project_id = null;
+			let IS_DESIGNMODE = false;
+
+			const { CLARITY_PROJECT_ID } = clarity;
+
+			if (TEST_SERVER) {
+				if (IS_DESIGNMODE) {
+					project_id = CLARITY_PROJECT_ID.TEST_SERVER.DESIGNMODE;
+				} else {
+					project_id = CLARITY_PROJECT_ID.TEST_SERVER.ADMIN;
+				}
+			} else {
+				if (IS_DESIGNMODE) {
+					project_id = CLARITY_PROJECT_ID.LIVE_SERVER.DESIGNMODE;
+				} else {
+					project_id = CLARITY_PROJECT_ID.LIVE_SERVER.ADMIN;
+				}
+			}
+
+			clarity.setClarityScript(project_id);
+		})();
+	</script>
+</head>
+
+
+<body class="menubar-hoverable header-fixed menubar-pin" >
+	<input type="hidden" id="USE_OMS" value="on" >
+	<!-- BEGIN BASE-->
+	<div id="dashboard_loader" class="se-pre-con">
+		<div class="page-loader-spinner" >
+			<div class="double-bounce1" ></div>
+			<div class="double-bounce2" ></div>
+		</div>
+		<div class="progress" >
+			<div class="progress-bar" role="progressbar" style="width: 70%; ">
+				<label >70%</label>
+			</div>
+		</div>
+	</div>
+	<div id="base" >
+
+		<script >
+			document.addEventListener('DOMContentLoaded', function () {
+				const alertBox = document.querySelector('#alertBox');
+				const contentArea = document.querySelector('#content');
+				alertBox?.classList.remove('alert__wrap-fixed');
+				alertBox?.classList.add('alert__wrap');
+				if (contentArea && alertBox) contentArea.prepend(alertBox);
+			});
+		</script> <!-- END OFFCANVAS LEFT -->
+		<script type="text/javascript" >
+			$(function () {
+				SADMIN_MENU_ALERT.openAlert();
+			});
+		</script>
+		<style >
+			#expertPopoverContainer .popover {
+				background: #1A6DFF;
+				color: #fff;
+				width: 360px;
+				max-width: none;
+				border-radius: 4px;
+				border-bottom-right-radius: 0px;
+				box-shadow: none;
+				border: 0;
+				left: -45px;
+			}
+
+			#expertPopoverContainer .close_btn {
+				padding: 5px;
+				position: absolute;
+				right: 0;
+				top: -3px;
+				font-size: 11px;
+				cursor: pointer;
+			}
+
+			#expertPopoverContainer .popover .btn {
+				font-size: 12px;
+				padding: 4px 16px;
+			}
+
+			#expertPopoverContainer .popover-content {
+				padding: 24px;
+			}
+
+			#expertPopoverContainer .popover.bottom>.arrow {
+				left: auto;
+				right: 10%;
+			}
+
+			#expertPopoverContainer .popover.bottom>.arrow,
+			#expertPopoverContainer .popover.bottom>.arrow:after {
+				border-top-width: 0;
+				border-top-color: transparent;
+				border-bottom-color: #1A6DFF;
+			}
+
+			#expertPopoverContainer .popover.bottom>.arrow {
+				top: -10px;
+			}
+
+
+
+			.flex-box {
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+			}
+
+			.flex-box .ma-item {
+				-ms-flex: 1;
+				-webkit-flex: 1;
+				flex: 1;
+				margin-bottom: 10px;
+			}
+
+			.card {
+				margin-bottom: 10px;
+			}
+
+			.flex-box .ma-item .card {
+				height: 100%;
+				margin-bottom: 0;
+			}
+
+			.dashboard_main .area_wrap {
+				margin: 24px 0 0;
+			}
+
+			.dashboard_main .section-body {
+				width: calc(100% - 324px);
+				margin-top: 0;
+			}
+
+			.right-menu-fixed {
+				position: static;
+				margin-top: 0;
+			}
+
+			.section-body .col-xs-1,
+			.section-body .col-sm-1,
+			.section-body .col-md-1,
+			.section-body .col-lg-1,
+			.section-body .col-xs-2,
+			.section-body .col-sm-2,
+			.section-body .col-md-2,
+			.section-body .col-lg-2,
+			.section-body .col-xs-3,
+			.section-body .col-sm-3,
+			.section-body .col-md-3,
+			.section-body .col-lg-3,
+			.section-body .col-xs-4,
+			.section-body .col-sm-4,
+			.section-body .col-md-4,
+			.section-body .col-lg-4,
+			.section-body .col-xs-5,
+			.section-body .col-sm-5,
+			.section-body .col-md-5,
+			.section-body .col-lg-5,
+			.section-body .col-xs-6,
+			.section-body .col-sm-6,
+			.section-body .col-md-6,
+			.section-body .col-lg-6,
+			.section-body .col-xs-7,
+			.section-body .col-sm-7,
+			.section-body .col-md-7,
+			.section-body .col-lg-7,
+			.section-body .col-xs-8,
+			.section-body .col-sm-8,
+			.section-body .col-md-8,
+			.section-body .col-lg-8,
+			.section-body .col-xs-9,
+			.section-body .col-sm-9,
+			.section-body .col-md-9,
+			.section-body .col-lg-9,
+			.section-body .col-xs-10,
+			.section-body .col-sm-10,
+			.section-body .col-md-10,
+			.section-body .col-lg-10,
+			.section-body .col-xs-11,
+			.section-body .col-sm-11,
+			.section-body .col-md-11,
+			.section-body .col-lg-11,
+			.section-body .col-xs-12,
+			.section-body .col-sm-12,
+			.section-body .col-md-12,
+			.section-body .col-lg-12 {
+				padding-left: 5px;
+				padding-right: 5px;
+			}
+
+			.section-body .row:last-child .ma-item {
+				margin-bottom: 0;
+			}
+
+			.item .dashboard_banner_wrap .card-body {
+				padding: 20px 24px 34px;
+			}
+
+			.item .dashboard_banner_wrap.shinhan a {
+				display: block;
+				height: 90px;
+				width: 100%;
+			}
+
+			.item .dashboard_banner_wrap.shinhan .card-wrap {
+				max-width: calc(100% - 40px);
+				display: flex;
+				flex-direction: column;
+				height: 90px;
+				justify-content: space-between;
+				padding-bottom: 10px;
+				padding-top: 10px;
+				background: linear-gradient(90deg, #B8D8F9 57.33%, rgba(184, 216, 249, 0) 100%);
+			}
+
+			.item .dashboard_banner_wrap.shinhan .card-header {
+				padding: 0 10px;
+			}
+
+			.item .dashboard_banner_wrap.shinhan .card-body {
+				padding: 0 10px;
+				max-width: calc(100% - 40px);
+				font-size: 12px;
+				line-height: 14.4px;
+			}
+
+			.item .dashboard_banner_wrap.shinhan .card-body .shinhan-title {
+				font-size: 14px;
+				margin-bottom: 5px;
+			}
+
+			.item .dashboard_banner_wrap.shinhan .card-footer {
+				padding: 0 10px;
+				max-width: calc(100% - 40px);
+			}
+
+			.item .dashboard_banner_wrap.shinhan .card-footer .shinhan-footer {
+				display: inline-block;
+				font-size: 10px;
+				transform: scale(0.7);
+				white-space: nowrap;
+				transform-origin: left bottom;
+			}
+
+			.dashboard_banner_wrap .sellmate-body {
+				position: relative;
+				top: -8px;
+			}
+
+			@media (max-width: 1280px) {
+				.booking-order ul.inline-blocked {
+					position: static;
+					line-height: 30px;
+				}
+
+				.right-menu-fixed {
+					position: static;
+					width: 100%;
+					margin-top: 0;
+					display: flex;
+					flex-direction: column;
+				}
+			}
+
+			@media (max-width: 992px) {
+				section {
+					padding: 24px 15px;
+				}
+
+				.flex-box {
+					flex-wrap: wrap;
+				}
+
+				.flex-box .ma-item {
+					-ms-flex: none;
+					-webkit-flex: none;
+					flex: none;
+					width: 100%;
+				}
+
+				.right-menu-fixed {
+					padding: 0 10px;
+				}
+
+				.dashboard_banner_wrap {
+					background-size: 300px ;
+					background-position: top right ;
+				}
+
+				.dashboard_banner_wrap.adbot {
+					background-size: cover ;
+					background-position: 50% 50% ;
+					background-color: #20202D ;
+				}
+
+				.dashboard_banner_wrap.kakaosync {
+					background-color: #FFDA00 ;
+				}
+
+				.dashboard_banner_wrap.sellmate-promotion {
+					background-size: 100% ;
+				}
+
+				#dashboard_banner_wrap_naver {
+					background-color: #03cf5d ;
+				}
+
+				.dashboard_banner_wrap .sellmate-body {
+					position: relative;
+					top: -10px;
+				}
+			}
+		</style>
+		<style >
+			.dashboard_section_header {
+				display: flex;
+				margin-bottom: 16px;
+				justify-content: space-between;
+			}
+
+			.dashboard_section_header>div {
+				display: flex;
+				align-items: center;
+			}
+
+			.dashboard_section_header>div>svg {
+				margin-right: 6px;
+			}
+
+			.dashboard_section_header>div>span {
+				font-size: 16px;
+				font-weight: 700;
+				color: #15181E;
+			}
+
+			.dashboard_section_header button {
+				color: #0090D4;
+				font-size: 12px;
+				line-height: 16px;
+				padding: 4px 0;
+				display: flex;
+				align-items: center;
+				background-color: transparent;
+			}
+
+			.dashboard_section_header button:hover {
+				color: #0072AB;
+			}
+
+			.dashboard_section_header button:hover>svg path {
+				stroke: #0072AB;
+			}
+
+			.dashboard_section_header button>svg {
+				margin-left: 2px;
+			}
+
+			.dashboard_section_header button.fold>svg {
+				transform: rotate(180deg);
+			}
+
+			.dashboard_card_anchor {
+				color: #4B515B;
+				font-size: 12px;
+				line-height: 16px;
+				display: inline-block;
+			}
+
+			.dashboard_card_anchor:hover {
+				color: #24282F;
+			}
+
+			.clay-button {
+				padding: 8px 12px;
+				border-radius: 8px;
+				color: #fff;
+				background-color: #15181E;
+				font-size: 14px;
+				line-height: 24px;
+				white-space: nowrap;
+			}
+
+			.clay-button:hover {
+				background-color: #24282f;
+				color: #fff;
+			}
+
+			.clay-button:active {
+				background-color: #4b515b;
+			}
+
+			.clay-button:focus {
+				border: none;
+				color: #fff;
+			}
+
+			.clay-button.white {
+				background-color: #fff;
+				color: #4b515b;
+				outline: 1px solid #dbdee3;
+			}
+
+			.clay-button.white:hover {
+				background-color: #F8F9FB;
+			}
+
+			.clay-button.white:active {
+				background-color: #E2E5E9;
+			}
+
+			.clay-button.white:focus {
+				color: #4b515b;
+				outline-offset: 0;
+			}
+
+			.clay-button.naver {
+				background-color: #03C75A;
+			}
+
+			.clay-button.naver:hover {
+				background-color: #35D27B;
+			}
+
+			.clay-button.google {
+				background-color: #131314;
+			}
+
+			.clay-button.google:hover {
+				background-color: #424243;
+			}
+
+			.exit-btn {
+				background-color: #fff;
+				border: 1px solid #DDE5ED;
+				color: #212121;
+				font-size: 13px;
+				font-weight: 500;
+			}
+
+			.subscribe-btn {
+				background-color: #1A6DFF;
+				color: #fff;
+				font-size: 13px;
+				font-weight: 500;
+			}
+
+			.subscribe-btn:hover {
+				color: #fff;
+			}
+
+			.dashboard_section_row {
+				display: flex;
+				gap: 16px;
+			}
+
+			.dashboard_section_row>div.ma-item {
+				margin-bottom: 40px;
+				padding: 0;
+			}
+
+			.dashboard_section_row>div.ma-item .card {
+				box-shadow: none;
+				border-radius: 12px;
+			}
+
+			.card_head {
+				padding: 15px 24px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+			.card_head header {
+				font-size: 14px;
+				font-weight: 400;
+				line-height: 20px;
+				color: #000;
+			}
+
+			.card_head header .header-badge {
+				margin-top: 1px;
+			}
+
+			.header-nav>li:first-child {
+				margin-left: 4px;
+			}
+
+			.headerbar-left {
+				display: flex;
+				align-items: center;
+				height: 100%;
+				flex: 1;
+				width: 0;
+			}
+
+			.headerbar-left>div {
+				flex: 1;
+				width: 0;
+				display: flex;
+			}
+
+			.headerbar-left .site_name {
+				margin-left: 24px;
+				color: #15181E;
+				font-size: 18px;
+				font-weight: 700;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				max-width: 100%;
+			}
+
+			.btn-icon-toggle {
+				width: 26px;
+				height: 26px;
+				margin-left: 10px;
+				display: none;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.dashboard_contents_row>div.ma-item {
+				margin-bottom: 0;
+			}
+
+			.dashboard_site_contents {
+				margin-top: 16px;
+			}
+
+			.dashboard_right {
+				width: 300px;
+				margin-left: 24px;
+			}
+
+			.dashboard_right .card {
+				margin-bottom: 12px;
+				border-radius: 12px;
+				box-shadow: none;
+				overflow: hidden;
+			}
+
+			.dashboard_right .update_memo_list .card {
+				overflow: unset;
+			}
+
+			.dashboard_right .update_memo_list .card .card-body {
+				border-radius: 12px;
+			}
+
+			.headerbar-right>.header-nav>li {
+				margin-left: 8px;
+			}
+
+			.header-badge.clay-badge {
+				padding: 2px 6px;
+				width: auto;
+				min-width: 20px;
+				height: 20px;
+				line-height: 16px;
+				background-color: #15181E;
+				font-weight: 400;
+				font-size: 12px;
+				margin-top: 0px ;
+			}
+
+			@media (max-width: 992px) {
+
+				.top_header {
+					left: 0 ;
+				}
+
+				.headerbar-left .site_name {
+					margin-left: 10px;
+				}
+
+				.headerbar-right>.header-nav:last-child {
+					margin-right: 15px;
+				}
+
+				.dashboard_main .area_wrap {
+					margin-left: 0;
+					margin-right: 0;
+				}
+
+				.btn-icon-toggle {
+					display: flex;
+				}
+
+				#base {
+					padding-left: 0 ;
+				}
+
+				.dashboard_section_row {
+					gap: 12px;
+				}
+
+				.dashboard_section_row>div.ma-item {
+					margin-bottom: 0;
+				}
+
+				.dashboard_section_row>div.ma-item:last-child {
+					margin-bottom: 40px;
+				}
+
+				.dashboard_contents_row>.ma-item:last-child {
+					margin-bottom: 0 ;
+				}
+
+				.dashboard_site_contents {
+					margin-top: 12px;
+				}
+			}
+
+			@media (max-width: 1280px) {
+				.dashboard_main>section>div>.section-body {
+					width: 100%;
+				}
+
+				.dashboard_right {
+					width: 100%;
+					padding: 0;
+					margin-top: 0;
+					margin-left: 0;
+				}
+			}
+		</style>
+		<style >
+			.no-data-card-body {
+				flex: 1;
+				padding: 16px 24px;
+			}
+
+			.no-data-card-body ul,
+			.no-data-card-body li {
+				height: 100%;
+			}
+
+			.no-data-container {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 8px;
+				height: 100%;
+			}
+
+			.no-data-container>img {
+				width: 48px;
+				height: 48px;
+			}
+
+			.no-data-container>p {
+				font-size: 12px;
+				font-weight: 400;
+				line-height: 18px;
+				color: #717680;
+				margin: 0;
+			}
+
+			.flex-card {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.headerbar {
+				height: 50px;
+			}
+
+			.dashboard_right>.dashboard-user-card {
+				overflow: visible;
+			}
+
+			.clay-tooltip {
+				display: inline-block;
+				position: relative;
+				margin-left: 4px;
+			}
+
+			.clay-tooltip>img {
+				width: 16px;
+				height: 16px;
+				cursor: pointer;
+			}
+
+			.clay-tooltip>div {
+				pointer-events: none;
+				display: none;
+				position: absolute;
+				top: 50%;
+				transform: translate(100%, -50%);
+				right: calc(-0px - 6px);
+				padding: 6px 8px;
+				box-shadow: 0px 14px 32px 0px rgba(75, 81, 91, 0.12), 0px 10px 14px 0px rgba(75, 81, 91, 0.06), 0px 0px 0px 1px rgba(75, 81, 91, 0.03), 0px 0px 1px 0px rgba(75, 81, 91, 0.2);
+				border-radius: 8px;
+				background-color: #fff;
+				cursor: default;
+				z-index: 1;
+
+				font-size: 12px;
+				line-height: 16px;
+				color: #15181E;
+				white-space: nowrap;
+			}
+
+			.clay-tooltip>div::before {
+				display: block;
+				content: "";
+				position: absolute;
+				left: -12.2px;
+				top: 50%;
+				transform: translateY(-50%);
+				border-bottom: solid 6.1px transparent;
+				border-top: solid 6.1px transparent;
+				border-left: solid 6.1px transparent;
+				border-right: solid 6.1px rgba(75, 81, 91, 0.03);
+			}
+
+			.clay-tooltip>div::after {
+				display: block;
+				content: "";
+				position: absolute;
+				left: -10.8px;
+				top: 50%;
+				transform: translateY(-50%);
+				border-bottom: solid 6px transparent;
+				border-top: solid 6px transparent;
+				border-left: solid 6px transparent;
+				border-right: solid 6px #fff;
+			}
+
+			.clay-tooltip>img:hover+div {
+				display: block;
+			}
+
+			.resize-vertical {
+				resize: vertical ;
+			}
+
+			@media (max-width: 992px) {
+				.headerbar {
+					height: 56px;
+				}
+			}
+		</style>
+
+		<style>
+			.video-review {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+			.video-review svg {
+				margin-right: 8px;
+			}
+
+			.video-review>div {
+				display: flex;
+				align-items: center;
+			}
+
+			.video-review>div>div {
+				cursor: pointer;
+			}
+
+			.video-review div p {
+				font-size: 14px;
+				font-weight: 700;
+				color: #15181E;
+				line-height: 20px;
+				margin: 0;
+			}
+
+			.video-review div span {
+				font-size: 12px;
+				line-height: 16px;
+				color: #0090D4;
+				display: inline-block;
+				transition: .1s;
+			}
+
+			.video-review div span:hover {
+				color: #0072AB;
+			}
+
+			.video-review button {
+				width: 32px;
+				height: 32px;
+				padding: 8px;
+				border-radius: 6px;
+				transition: background-color .1s;
+				background-color: transparent;
+			}
+
+			.video-review button:hover {
+				background-color: #F8F9FB;
+			}
+
+			.video-review button:active {
+				background-color: #E2E5E9;
+			}
+		</style>
+		<header class="top_header" >
+			<div class="headerbar" >
+				<div class="headerbar-left" >
+					<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+						<svg width="16" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						</svg>
+					</a>
+					<div >
+						<a href="_blank" class="site_name"
+							data-toggle="tooltip" data-placement="bottom" title="" data-original-title="새 탭에서 내 사이트 열기">
+							왓이님의 웹사이트 </a>
+					</div>
+				</div>
+				<div class="headerbar-right" >
+					<ul class="header-nav header-nav-options" >
+						<li >
+							<a class="clay-button white __exit-btn" href="_blank"
+								>나가기</a>
+						</li>
+						<li >
+							<a class="clay-button __upgrade-btn"
+								href="_blank">연장 · 업그레이드</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div id="content" class="dashboard_main" >
+			<div id="alertBox" class="alert__wrap" >
+				<div class="alert__banner-case2 first:tw-mt-[24px] tw-pr-[31px] md:tw-pr-[62px] tw-flex-wrap"
+					id="banner_alert_join" >
+					<div class="md:tw-pr-[62px]" ></div>
+					<div class="tw-flex tw-items-center" >
+						<img class="alert__banner-img" src="./qjfhdnaos51106.imweb.me_files/bell.png">
+						<span class="tw-text-left" >
+							회원이 가입했어요! 가입 축하, 비밀번호 찾기 등 메일을 보내려면 <a
+								href="_blank" class="text-underline"
+								>메일 발송 설정</a>을 해보세요.
+						</span>
+					</div>
+					<div class="btn-close btn-close tw-absolute tw-right-0 md:tw-right-[16px] tw-pr-[5px]"
+						>
+						<button type="button" onclick="SADMIN_MENU_ALERT.closeBannerAlert(&#39;join&#39;)"
+							class="btw-order-none bg-transparent border-none" ><i
+								class="btl bt-times" ></i></button>
+					</div>
+				</div>
+			</div>
+			<section >
+				<div class="clearfix area_wrap" >
+					<div class="section-body float_l" >
+						<script >
+							$(function () {
+								var tutorial_info = {};
+								var tutorial_modal = '';
+								var tutorial_resize = false;
+
+
+								setTutorialModal();
+								refreshCheckBarAll();
+								$('._dashboard_tutorial ._skip').click(function () {
+									var target = $(this).attr('data-target');
+									var name = $('._dashboard_tutorial .dashboard_tutorial_card[data-type="' + target + '"] header').text();
+									if (confirm(getLocalizeString('설명_n1의모든작업을완료처리하시겠습니까', name, '%1의 모든 작업을 완료처리 하시겠습니까?'))) {
+										skipTutorialType(target);
+									}
+								});
+
+								function carousel() {
+									if ($(window).width() <= 992) {
+										$('.dashboard_tutorial_container').owlCarousel({
+											responsive: {
+												0: {
+													items: 1
+												}
+											}
+										});
+									} else {
+										var $dashboard_tutorial = $('.dashboard_tutorial_container');
+										if ($dashboard_tutorial.data('owlCarousel')) {
+											$dashboard_tutorial.trigger('destroy.owl.carousel').removeClass('owl-carousel').removeClass('owl-loaded');
+											var dashboard_tutorial_inner = $dashboard_tutorial.find('.owl-stage-outer');
+											$dashboard_tutorial.html(dashboard_tutorial_inner.html());
+											setTutorialModal();
+										}
+									}
+								}
+
+								if ($('.dashboard_tutorial').css('display') !== 'none') {
+									carousel()
+								}
+
+								$(window).resize(function () {
+									if ($('.dashboard_tutorial').hasClass('fold')) return
+									if (!tutorial_resize) {
+										tutorial_resize = true;
+										setTimeout(function () {
+											tutorial_resize = false;
+											var $dashboard_tutorial = $('.dashboard_tutorial_container');
+											if ($(window).width() <= 992) {
+												if (!$dashboard_tutorial.data('owlCarousel')) {
+													$dashboard_tutorial.owlCarousel({
+														responsive: {
+															0: {
+																items: 1
+															}
+														}
+													});
+												}
+											} else {
+												if ($dashboard_tutorial.data('owlCarousel')) {
+													$dashboard_tutorial.trigger('destroy.owl.carousel').removeClass('owl-carousel').removeClass('owl-loaded');
+													var dashboard_tutorial_inner = $dashboard_tutorial.find('.owl-stage-outer');
+													$dashboard_tutorial.html(dashboard_tutorial_inner.html());
+													setTutorialModal();
+												}
+											}
+										}, 1000);
+									}
+								});
+
+								function setTutorialModal() {
+									$('._dashboard_tutorial ._check_list').click(function () {
+										var target = $(this).attr('data-target');
+										if (tutorial_modal === '') {
+											$.ajax({
+												'type': 'POST',
+												'data': { 'shopping': 'Y', 'booking': 'N' },
+												'url': ('/admin/ajax/tutorial_guide.cm'),
+												'dataType': 'json',
+												'async': false,
+												'cache': false,
+												'success': function (res) {
+													if (res.msg === 'SUCCESS') {
+														tutorial_modal = $(res.modal_html);
+														var _tutorial_info = JSON.parse(res.tutorial_info);
+
+														_tutorial_info.ck_menu_seo.link = '/admin/config/seo'
+														_tutorial_info.ck_info.button = '설정 페이지로';
+														_tutorial_info.ck_info.description = '내 사이트 이름, 설명이 올바르게 입력되었는지<br/>확인하고 수정해 보세요.'
+														_tutorial_info.ck_design.button = '디자인 모드로';
+														_tutorial_info.ck_design.description = '메뉴 구성을 변경하고 필요한 요소를 추가하여<br/>디자인 작업을 시작하세요.';
+														_tutorial_info.ck_policy.button = '설정 페이지로';
+														_tutorial_info.ck_policy.description = '사이트 운영과 이용에 필요한 사항을 규정하고<br/>이용자 보호지침 안내를 설정하세요.';
+														_tutorial_info.ck_domain.button = '설정 페이지로';
+														_tutorial_info.ck_domain.description = '나만의 도메인은 내 사이트의 개성을 더하고<br/>차별화된 느낌을 방문자에게 선사할 수 있습니다.';
+														_tutorial_info.ck_product.button = '상품 페이지로';
+														_tutorial_info.ck_deliv.button = '설정 페이지로';
+														_tutorial_info.ck_pg.button = '신청 페이지로';
+														_tutorial_info.ck_pg.description = '신용카드, 가상계좌, 휴대폰 결제를 설정하여<br/>구매전환율을 높여보세요.';
+														_tutorial_info.ck_naver_pay.button = '신청 페이지로';
+														_tutorial_info.ck_naver_pay.description = '내 사이트에서도 복잡한 결제과정 없이<br/>네이버페이로 상품을 판매할 수 있어요!';
+														_tutorial_info.ck_booking.button = '상품 페이지로';
+														_tutorial_info.ck_holiday.button = '설정 페이지로';
+														_tutorial_info.ck_refund.button = '설정 페이지로';
+														_tutorial_info.ck_search_engine.description = '네이버, Google 등 검색엔진에 사이트를<br/>등록하여 방문자를 늘려보세요.';
+														_tutorial_info.ck_menu_seo.button = '설정 페이지로';
+														_tutorial_info.ck_menu_seo.description = '내 웹사이트의 검색 엔진을 최적화하여<br/>더 효과적으로 노출해보세요.';
+														_tutorial_info.ck_social_login.button = '설정 페이지로';
+														_tutorial_info.ck_social_login.description = '네이버, 카카오, Google, Facebook 소셜계정으로<br/>방문자가 편리하게 가입, 로그인을 설정해 보세요.';
+														_tutorial_info.ck_mail.button = '설정 페이지로';
+														_tutorial_info.ck_mail.description = '가입, 주문 등 자동화된 메일을 설정하여 방문자나<br/>운영자에게 알림을 보내보세요.'
+														_tutorial_info.ck_sms.button = '설정 페이지로';
+														_tutorial_info.ck_sms.description = '편리하게 주문상태 등을 알림받을 수 있도록<br/>SMS/알림톡을 설정해 보세요.'
+														_tutorial_info.ck_stat.button = '방문자 페이지로';
+														_tutorial_info.ck_stat.description = '내 사이트에서 활동한 방문자를 살펴보고<br/>인사이트를 얻으세요.';
+														_tutorial_info.ck_permission.button = '설정 페이지로';
+														_tutorial_info.ck_deposit_confirmation.button = '설정 페이지로';
+														_tutorial_info.ck_deposit_confirmation.description = '무통장입금 내역 확인 처리가 힘드시다면<br/>자동입금확인을 설정해 보세요.';
+														_tutorial_info.ck_chat.button = '설정 페이지로';
+														_tutorial_info.ck_chat.description = "온라인 고객과 대화하고 구매를 유도하여<br/>구매전환율을 높혀보세요.";
+														_tutorial_info.ck_app.button = '설정 페이지로';
+														_tutorial_info.ck_app.description = '내 사이트를 안드로이드 및 iOS로 만들어<br/>나만의 브랜딩을 구축해 보세요.';
+
+														tutorial_info = _tutorial_info;
+														openTutorialModal(target);
+													}
+												}
+											});
+										} else {
+											openTutorialModal(target);
+										}
+									});
+								}
+
+								function openTutorialModal(target) {
+									$('#cocoaSubModal').modal("hide");
+									$.cocoaDialog.open({
+										type: 'admin ', custom_popup: tutorial_modal, pc_width: 720, opened: function () {
+											$('#tutorial_trackpad').TrackpadScrollEmulator();
+											changeTutorial(target);
+											refreshCheckBarAll();
+											$('#cocoaModal').addClass('tutorial_guide_modal')
+											$('.modal-backdrop').addClass('tutorial_guide_modal_backdrop')
+											$('._tutorial_guide ._check_list').click(function () {
+												changeTutorial($(this).attr('data-target'));
+											});
+											$('.modal_close').html(`<svg class="btl bt-times" 
+											xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"></svg>`);
+										}
+									});
+								}
+
+								function changeTutorial(target) {
+									var $tutorial_guide = $('._tutorial_guide');
+									if (!$tutorial_guide.find('._check_list[data-target="' + target + '"]').hasClass('active')) {
+										$tutorial_guide.find('._check_list').removeClass('active');
+										$tutorial_guide.find('._check_list[data-target="' + target + '"]').addClass('active');
+										$tutorial_guide.find('._img').attr('src', tutorial_info[target].img);
+										$tutorial_guide.find('._name').text(tutorial_info[target].name);
+
+										/**
+										 * 이미 건너뛰기 처리한 항목은 건너뛰기 버튼을 숨김
+										 */
+										if (
+											$tutorial_guide.find('._check_list[data-target="' + target + '"]').hasClass('checked')
+										) {
+											$tutorial_guide.find('._skip').hide();
+										} else {
+											$tutorial_guide.find('._skip').show();
+										}
+
+										// 특수 항목 예외처리
+										if (target === 'ck_social_login' && 'Y' === 'N') {
+											$tutorial_guide.find('._img').attr('src', '/admin/img/tutorial/tutorial_growth_3_tw.png');
+										}
+
+										if (target === 'ck_product' && 'Y' === 'Y' && 'Y' === 'N') {
+											$tutorial_guide.find('._description')[0].innerHTML = getLocalizeString("설명_상품추가하기n1버전n2개상품제한", ["Free", "5"], "%1는 %2개로 상품수가 제한됩니다.<br>한도 이하로 삭제하시면 상품 수정/등록이 가능합니다.<br>버전 <a href='/admin/payment?mode=detail&type=upgrade' target='_blank'>업그레이드</a>시 무제한 상품 등록 가능.");
+										} else if (target === 'ck_booking' && 'Y' === 'Y' && 'Y' === 'N') {
+											$tutorial_guide.find('._description')[0].innerHTML = getLocalizeString("설명_예약상품추가하기n1버전n2개객실제한", ["Free", "1"], "%1는 %2개로 객실수가 제한됩니다.<br>한도 이하로 삭제하시면 객실 수정/등록이 가능합니다.<br>버전 <a href='/admin/payment?mode=detail&type=upgrade' target='_blank'>업그레이드</a>시 무제한 객실 등록 가능.");
+										} else {
+											$tutorial_guide.find('._description')[0].innerHTML = tutorial_info[target].description;
+										}
+
+										$tutorial_guide.find('._link').attr('href', tutorial_info[target].link);
+										$tutorial_guide.find('._link').text(tutorial_info[target].button);
+
+										if (target === 'ck_search_engine' && 'Y' === 'Y') {
+											$tutorial_guide.find('._link').addClass('google')
+										} else {
+											$tutorial_guide.find('._link').removeClass('google')
+										}
+
+										if (target === 'ck_search_engine' && 'Y' === 'Y') {
+											$('<a class="link _link_temp clay-button naver" href="_blank">' + getLocalizeString("버튼_네이버등록방법", "", "네이버 등록 방법") + '</a>').insertBefore($tutorial_guide.find('._link'));
+										} else if (target === 'ck_search_engine' && 'Y' === 'N') {
+											$tutorial_guide.find('._link').attr('href', '_blank');		// 검색엔진 등록하기 대만 가이드
+											$('<a class="btn btn-primary link _link_temp" href="_blank">' + getLocalizeString("버튼_Yahoo등록방법", "", "Yahoo 등록 방법") + '</a>').insertAfter($tutorial_guide.find('._link'));
+										} else {
+											$tutorial_guide.find('._link_temp').remove();
+										}
+										$tutorial_guide.find('._skip').unbind().click(function () {
+											skipTutorial(target);
+										});
+										var position_top = ($tutorial_guide.find('._check_list[data-target="' + target + '"]').position().top - $tutorial_guide.find('.tse-content').position().top) - 204;
+										if (position_top < 0) position_top = 0;
+										$('#tutorial_trackpad .tse-scroll-content').scrollTop(position_top);
+
+										var noneHidedAnchors = Array.from(
+											document.querySelectorAll('.button_wrap a')
+										)
+											.filter(element => $(element).css('display') !== 'none')
+
+										if (noneHidedAnchors.length >= 3) {
+											$('.button_wrap').addClass('__col')
+										} else {
+											$('.button_wrap').removeClass('__col')
+										}
+									}
+								}
+
+								function skipTutorial(target) {
+									function success() {
+										// 모달 외에 대시보드 자체의 체크리스트도 변경되어야 함, 진행 그래프도 새로 그려줘야 함
+										$('._dashboard_tutorial ._check_list[data-target="' + target + '"]').addClass('checked')
+										$('._tutorial_guide ._check_list[data-target="' + target + '"]').addClass('checked')
+										refreshCheckBarAll();
+										if ($(window).width() < 768) {
+											// 모바일에서는 건너뛸 때 모달을 닫음
+											$('#cocoaModal').modal("hide");
+										} else {
+											// 그래프 새로 그리고 다음 항목으로 넘겨줘야 함, 기존 항목 클릭 이벤트 제거해줘야 함
+											const checkList = document.querySelectorAll('.tutorial_guide .check-list');
+
+											let isCurrentFind = false;
+
+											for (const checkItem of checkList) {
+												const currentTarget = checkItem.getAttribute('data-target');
+
+												if (currentTarget === target) {
+													isCurrentFind = true;
+													continue;
+												}
+
+												if (isCurrentFind && !checkItem.classList.contains('checked')) {
+													checkItem.click();
+
+													return
+												}
+											}
+
+											const checkedList = document.querySelectorAll('.tutorial_guide .check-list.checked');
+
+											if (checkedList.length === checkList.length) {
+												$('#cocoaModal').modal("hide");
+											} else {
+												const notCheckedItem = document.querySelector('.tutorial_guide .check-list:not(.checked)');
+
+												notCheckedItem.click();
+											}
+										}
+									}
+
+									$.ajax({
+										'type': 'POST',
+										'data': { target: target },
+										'url': ('/admin/ajax/change_tutorial.cm'),
+										'dataType': 'json',
+										'async': false,
+										'cache': false,
+										'success': function (res) {
+											if (res.msg === 'SUCCESS') {
+												success();
+											} else {
+												alert(res.msg);
+											}
+										}
+									});
+								}
+
+								function skipTutorialType(target) {
+									$.ajax({
+										'type': 'POST',
+										'data': { target: target },
+										'url': ('/admin/ajax/change_tutorial.cm'),
+										'dataType': 'json',
+										'async': false,
+										'cache': false,
+										'success': function (res) {
+											if (res.msg === 'SUCCESS') {
+												// 모달 외에 대시보드 자체의 체크리스트도 변경되어야 함, 진행 그래프도 새로 그려줘야 함
+												$('._dashboard_tutorial .dashboard_tutorial_card[data-type="' + target + '"] ._check_list').addClass('checked');
+												refreshCheckBar(target);
+											} else {
+												alert(res.msg);
+											}
+										}
+									});
+								}
+
+								function refreshCheckBar(target) {
+									var $tutorial_type = $('._dashboard_tutorial .dashboard_tutorial_card[data-type="' + target + '"]');
+									if ($tutorial_type.length > 0) {
+										var $tutorial_guide_type = $('._tutorial_guide ._guide_type_wrap[data-type="' + target + '"]');
+										var count = $tutorial_type.find('._check_list.checked').length;
+										var max_count = $tutorial_type.find('._check_list').length;
+										var percent = max_count > 0 ? count / max_count * 100 : 0;
+										$tutorial_type.find('._check_bar').css('width', percent + '%');
+										$tutorial_type.find('._check_bar_text').text(getLocalizeString('설명_n1개중n2개완료', [count, max_count], '%1/%2개 완료'));
+										if ($tutorial_guide_type.length > 0) {
+											$tutorial_guide_type.find('._check_bar').css('width', percent + '%');
+											$tutorial_guide_type.find('._check_bar_text').text(getLocalizeString('설명_n1개중n2개완료', [count, max_count], '%1/%2개 완료'));
+										}
+										if (count === max_count) {
+											$tutorial_type.find('._skip').hide();
+										}
+									}
+								}
+
+								function refreshCheckBarAll() {
+									refreshCheckBar('tutorial_default');
+									refreshCheckBar('tutorial_selling');
+									refreshCheckBar('tutorial_growth');
+									refreshCheckBar('tutorial_recommend');
+								}
+
+								var fold_button_loading = false;
+								$('#fold').click(function () {
+									if (fold_button_loading) return;
+
+									fold_button_loading = true;
+
+									var $this = $(this);
+									var $text = $this.find('span');
+									var $dashboard_tutorial = $('.dashboard_tutorial');
+
+									var isFolded = $this.hasClass('fold');
+
+									$('.fold_tooltip').remove()
+
+									setTimeout(() => {
+										if (isFolded) {
+											carousel()
+											$this.removeClass('fold');
+											$text.text('접어두기');
+											$dashboard_tutorial.removeClass('fold');
+											$dashboard_tutorial.slideDown(200)
+										} else {
+											$this.addClass('fold');
+											$text.text('펼치기');
+											$dashboard_tutorial.slideUp(200)
+											$dashboard_tutorial.addClass('fold');
+										}
+									}, 0);
+
+									$.ajax({
+										type: "POST",
+										url: "/admin/ajax/dashboard/tutorial_fold.cm",
+										dataType: "json",
+										async: true,
+										cache: false,
+										data: { mode: isFolded ? 'unfold' : 'fold' },
+										complete: function () {
+											fold_button_loading = false;
+										}
+									})
+								})
+							})
+						</script>
+
+						<style >
+							.dashboard_tutorial {
+								transition: opacity 0.2s;
+								margin-bottom: 16px;
+							}
+
+							.dashboard_tutorial.fold {
+								opacity: 0;
+							}
+
+							.dashboard_tutorial_container {
+								display: flex;
+								gap: 16px;
+								list-style: none;
+								padding: 0;
+								margin-bottom: 0;
+							}
+
+							.dashboard_tutorial_card {
+								flex: 1;
+								background-color: #fff;
+								padding: 20px 8px;
+								border-radius: 12px;
+							}
+
+							.dashboard_tutorial_card header,
+							.dashboard_tutorial_card .check_bar_wrap {
+								padding: 0 12px;
+							}
+
+							.dashboard_tutorial_card .tt-list .check-list {
+								padding: 10px 12px;
+								border-radius: 8px;
+								transition: .2s;
+							}
+
+							.dashboard_tutorial_card .tt-list .check-list:hover {
+								background-color: rgba(113, 118, 128, 0.10);
+							}
+
+							.dashboard_tutorial_card .tt-list .check-list:active {
+								background-color: rgba(113, 118, 128, 0.20);
+							}
+
+							.fold_tooltip {
+								position: absolute;
+								left: 50%;
+								transform: translateX(-50%);
+								top: calc(100% + 11px);
+								z-index: 99;
+							}
+
+							.fold_tooltip>svg {
+								position: absolute;
+								left: 50%;
+								transform: translateX(-50%);
+								top: -6px;
+							}
+
+							.fold_tooltip>div {
+								background-color: #15181E;
+								border-radius: 8px;
+								padding: 6px 8px;
+								white-space: nowrap;
+								color: #fff;
+								font-size: 12px;
+								line-height: 16px;
+								text-align: center;
+								box-shadow: 0px 14px 32px 0px rgba(75, 81, 91, 0.12),
+									0px 10px 14px 0px rgba(75, 81, 91, 0.06),
+									0px 0px 0px 1px rgba(75, 81, 91, 0.03),
+									0px 0px 1px 0px rgba(75, 81, 91, 0.2);
+							}
+
+
+							.check-list {
+								display: flex;
+								align-items: center;
+							}
+
+							.check-list .check_icon {
+								display: inline-block;
+								margin-right: 8px;
+								min-width: 20px;
+								width: 20px;
+								height: 20px;
+								background-size: 20px;
+								background-image: url('/admin/img/minus-circle.svg');
+							}
+
+							.check-list>span:nth-of-type(2) {
+								font-size: 14px;
+								line-height: 20px;
+							}
+
+							.check-list.checked .check_icon {
+								background-image: url('/admin/img/check-circle-filled.svg');
+
+							}
+
+							@media (max-width: 992px) {
+								.owl-stage {
+									display: flex;
+								}
+
+								.dashboard_tutorial .owl-dots {
+									position: absolute;
+									z-index: 20;
+									bottom: 16px;
+									margin-left: auto;
+									margin-right: auto;
+									left: 0;
+									right: 0;
+									text-align: center;
+								}
+
+								.dashboard_tutorial .owl-dots .owl-dot {
+									display: inline-block;
+									zoom: 1;
+								}
+
+								.dashboard_tutorial .owl-dots .owl-dot span {
+									display: block;
+									width: 10px;
+									height: 10px;
+									margin: 5px 5px;
+									border-color: #888888;
+									border-radius: 30px;
+									border-width: 1px;
+									border-style: solid;
+								}
+
+								.dashboard_tutorial .owl-dots .owl-dot.active span {
+									background: #888888;
+								}
+
+								.dashboard_tutorial {
+									max-height: 404px;
+								}
+
+								.dashboard_tutorial_card {
+									padding-bottom: 70px;
+									height: 100%;
+								}
+
+								.fold_tooltip {
+									right: 0;
+									transform: unset;
+									left: unset;
+								}
+							}
+						</style>
+
+						<style>
+							#cocoaModal.tutorial_guide_modal>div {
+								margin: auto;
+								position: absolute;
+								left: 50%;
+								top: 50%;
+								transform: translate(-50%, -50%);
+							}
+
+							#cocoaModal.tutorial_guide_modal>div>div.modal-content {
+								border: none;
+								border-radius: 16px;
+								box-shadow: 0px 0px 1px 0px rgba(75, 81, 91, 0.20), 0px 25px 80px 0px rgba(75, 81, 91, 0.20);
+								overflow: hidden;
+							}
+
+							#cocoaModal.tutorial_guide_modal .modal_close {
+								top: 16px;
+								right: 16px;
+								font-size: 16px;
+								line-height: 16px;
+								width: 32px;
+								height: 32px;
+								padding: 8px;
+								border-radius: 6px;
+								transition: background-color .1s;
+							}
+
+							#cocoaModal.tutorial_guide_modal .modal_close:hover {
+								background-color: #F8F9FB;
+							}
+
+							#cocoaModal.tutorial_guide_modal .modal_close:active {
+								background-color: #E2E5E9;
+							}
+
+							@media (max-width: 768px) {
+								#cocoaModal.tutorial_guide_modal {
+									margin: 12px;
+								}
+
+								#cocoaModal.tutorial_guide_modal>div {
+									padding: 0;
+									height: 100%;
+								}
+
+								#cocoaModal.tutorial_guide_modal>div>div.modal-content {
+									height: 100%;
+								}
+							}
+						</style>
+
+						<div class="dashboard_section_header" >
+							<div >
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+									xmlns="http://www.w3.org/2000/svg" >
+								</svg>
+								<span >
+									요약
+								</span>
+							</div>
+
+
+							<div class="tw-relative" >
+								<button id="fold" >
+									<span>접어두기</span>
+									<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" >
+									</svg>
+								</button>
+								<div class="fold_tooltip" >
+									<svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg" >
+									</svg>
+									<div >
+										온보딩을 접어서<br >사용할 수 있어요
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="dashboard_tutorial _dashboard_tutorial" >
+							<div class="dashboard_tutorial_container" >
+								<div class="dashboard_tutorial_card">
+									<header >기본설정</header>
+									<div class="check_bar_wrap" >
+										<div class="check_bar_background" >
+											<div class="check_bar _check_bar"
+												style="width: 0%; border-radius: 3px; ">
+											</div>
+										</div>
+										<div class="check_bar_text _check_bar_text"
+											>0/4개 완료</div>
+									</div>
+									<div class="tt-list" >
+										<div class="check-list _check_list">
+											<span class="check_icon" ></span>
+											<span >사이트 정보 설정하기</span>
+										</div>
+									</div>
+									<div class="tt-list" >
+										<div class="check-list _check_list">
+											<span class="check_icon" ></span>
+											<span >디자인 편집하기</span>
+										</div>
+									</div>
+									<div class="tt-list" >
+										<div class="check-list _check_list">
+											<span class="check_icon" ></span>
+											<span >약관 설정하기</span>
+										</div>
+									</div>
+									<div class="tt-list" >
+										<div class="check-list _check_list">
+											<span class="check_icon" ></span>
+											<span >도메인 연결하기</span>
+										</div>
+									</div>
+								</div>
+								<div class="dashboard_tutorial_card">
+									<header >판매하기</header>
+									<div class="check_bar_wrap" >
+										<div class="check_bar_background" >
+											<div class="check_bar _check_bar"
+												style="width: 0%; border-radius: 3px; ">
+											</div>
+										</div>
+										<div class="check_bar_text _check_bar_text"
+											>0/4개 완료</div>
+									</div>
+									<div class="tt-list" >
+										<div class="check-list _check_list">
+											<span class="check_icon" ></span>
+											<span >상품 추가하기</span>
+										</div>
+									</div>
+									<div class="tt-list" >
+										<div class="check-list _check_list">
+											<span class="check_icon" ></span>
+											<span >배송 설정하기</span>
+										</div>
+									</div>
+									<div class="tt-list" >
+										<div class="check-list _check_list"
+											>
+											<span class="check_icon" ></span>
+											<span >전자결제 신청하기</span>
+										</div>
+									</div>
+									<div class="tt-list" >
+										<div class="check-list _check_list">
+											<span class="check_icon"></span>
+											<span >네이버페이 신청하기</span>
+										</div>
+									</div>
+								</div>
+								<div class="dashboard_tutorial_card _tutorial_growth">
+									<header >성장하기</header>
+									<div class="check_bar_wrap" >
+										<div class="check_bar_background" >
+											<div class="check_bar _check_bar"
+												style="width: 0%; border-radius: 3px; ">
+											</div>
+										</div>
+										<div class="check_bar_text _check_bar_text"
+											>0/6개 완료</div>
+									</div>
+									<div class="tt-list" >
+										<div class="check-list _check_list">
+											<span class="check_icon" ></span>
+											<span >검색엔진 등록하기</span>
+										</div>
+									</div>
+									<div class="tt-list" >
+										<div class="check-list _check_list">
+											<span class="check_icon"></span>
+											<span >검색엔진 최적화</span>
+										</div>
+									</div>
+									<div class="tt-list" >
+										<div class="check-list _check_list">
+											<span class="check_icon" ></span>
+											<span >소셜 로그인 설정하기</span>
+										</div>
+									</div>
+									<div class="tt-list" >
+										<div class="check-list _check_list">
+											<span class="check_icon"></span>
+											<span >메일발송 설정하기</span>
+										</div>
+									</div>
+									<div class="tt-list" >
+										<div class="check-list _check_list">
+											<span class="check_icon"></span>
+											<span >SMS/알림톡 설정하기</span>
+										</div>
+									</div>
+									<div class="tt-list" >
+										<div class="check-list _check_list">
+											<span class="check_icon"></span>
+											<span >방문자 분석하기</span>
+										</div>
+									</div>
+								</div>
+								<div class="dashboard_tutorial_card">
+									<header >추천작업</header>
+									<div class="check_bar_wrap" >
+										<div class="check_bar_background" >
+											<div class="check_bar _check_bar"
+												style="width: 0%; border-radius: 3px; ">
+											</div>
+										</div>
+										<div class="check_bar_text _check_bar_text"
+											>0/4개 완료</div>
+									</div>
+									<div class="tt-list" >
+										<div class="check-list _check_list">
+											<span class="check_icon" ></span>
+											<span >운영진 설정하기</span>
+										</div>
+									</div>
+									<div class="tt-list" >
+										<div class="check-list _check_list">
+											<span class="check_icon"></span>
+											<span >자동입금확인 설정하기</span>
+										</div>
+									</div>
+									<div class="tt-list" >
+										<div class="check-list _check_list">
+											<span class="check_icon" ></span>
+											<span >채팅상담 설정하기</span>
+										</div>
+									</div>
+									<div class="tt-list" >
+										<div class="check-list _check_list">
+											<span class="check_icon" ></span>
+											<span >모바일 앱 설정하기</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<style >
+							.today {
+								margin-left: 0;
+								margin-right: 0;
+							}
+
+							.today .card {
+								box-shadow: none;
+								border-radius: 12px;
+								margin-bottom: 0px;
+							}
+
+							@media (max-width: 992px) {
+								.today .card {
+									margin-top: 12px;
+								}
+							}
+						</style>
+
+						<div class="row todo-list today" >
+							<div class="ma-item" >
+								<div class="card" >
+									<div class="card_head line-bottom" >
+										<header >오늘의 할일 <span
+												class="text-default-bright header-badge badge-danger clay-badge"
+												>0</span></header>
+									</div>
+									<div class="card-body border-top today-table" >
+										<!-- 쇼핑 -->
+										<div class="tt-list" >
+											<div class="inline-blocked" >
+												<a href="_blank">신규주문
+													<span class="text-danger">0</span>
+												</a>
+											</div>
+											<div class="inline-blocked" >
+												<a href="_blank">취소관리
+													<span class="text-danger">0</span>
+												</a>
+											</div>
+											<div class="inline-blocked" >
+												<a href="_blank">반품관리
+													<span class="text-danger">0</span>
+												</a>
+											</div>
+											<div class="inline-blocked" >
+												<a href="_blank">교환관리
+													<span class="text-danger">0</span>
+												</a>
+											</div>
+											<div class="inline-blocked" >
+												<a href="_blank">답변대기 문의
+													<span class="text-danger">0</span>
+												</a>
+											</div>
+										</div>
+										<!-- 예약 -->
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<style >
+							.dashboard_stats {
+								display: flex;
+								gap: 16px;
+							}
+
+							.dashboard_stats>div.ma-item {
+								margin-bottom: 40px;
+								width: calc(50% - 8px);
+								padding: 0;
+							}
+
+							.dashboard_stats>div.ma-item .card {
+								box-shadow: none;
+								border-radius: 12px;
+							}
+
+							.dashboard_stats_banner_container {
+								margin: 0 0 16px;
+							}
+
+							.dashboard_stats_banner {
+								width: 100%;
+								padding: 0 28px;
+								border-radius: 12px;
+								background-color: #ffffff;
+								cursor: pointer;
+
+								display: flex;
+								justify-content: space-between;
+								transition: .1s linear;
+							}
+
+							.dashboard_stats_banner:hover {
+								transform: translateY(-2px);
+								box-shadow: 10px 20px 30px 0px rgba(75, 81, 91, 0.12);
+							}
+
+							.dashboard_stats_banner>div.dashboard_stats_banner_left {
+								display: flex;
+								flex-direction: column;
+								justify-content: center;
+							}
+
+							.dashboard_stats_banner>div.dashboard_stats_banner_left>p {
+								font-size: 16px;
+								font-weight: 700;
+								color: #15181E;
+								line-height: 24px;
+								margin: 0;
+							}
+
+							.dashboard_stats_banner>div.dashboard_stats_banner_left>a {
+								padding: 6px 8px;
+								border: 1px solid #DBDEE3;
+								border-radius: 6px;
+								background-color: #ffffff;
+								font-size: 12px;
+								font-weight: 400;
+								color: #717680;
+								line-height: 16px;
+								cursor: pointer;
+								width: max-content;
+								transition: 0.1s ease-out;
+							}
+
+							.dashboard_stats_banner>div.dashboard_stats_banner_left>a:hover {
+								background-color: #f8f9fb;
+								color: #717680;
+							}
+
+							.dashboard_stats_banner>div.dashboard_stats_banner_right {
+								display: flex;
+								align-items: center;
+							}
+
+							.dashboard_stats_banner>div.dashboard_stats_banner_right>img {
+								height: 120px;
+							}
+
+							.dashboard_stats_banner>div.dashboard_stats_banner_right>button {
+								width: 14px;
+								height: 14px;
+								margin-left: 4px;
+								background-color: transparent;
+								padding: 0;
+							}
+
+							.dashboard_stats .summary-table>tbody>tr.today>td {
+								background: #E9F7FF;
+							}
+
+							.pc_hide {
+								display: none;
+							}
+
+							.mo_hide {
+								display: block;
+							}
+
+							.dashboard_stats_header {
+								margin-top: 40px;
+							}
+
+							@media (max-width: 992px) {
+								.pc_hide {
+									display: block;
+								}
+
+								.mo_hide {
+									display: none;
+								}
+
+								.dashboard_stats>div.ma-item {
+									width: 100%;
+								}
+
+								.dashboard_stats_banner_container {
+									margin: 0 0 12px;
+								}
+
+								.dashboard_stats_banner {
+									padding: 0;
+									flex-direction: column;
+									justify-content: flex-start;
+									position: relative;
+								}
+
+								.dashboard_stats_banner>div.dashboard_stats_banner_left {
+									padding: 20px 20px 0;
+									margin-bottom: 12px;
+								}
+
+								.dashboard_stats_banner>div.dashboard_stats_banner_left>p {
+									font-size: 16px;
+									line-height: 24px;
+								}
+
+								.dashboard_stats_banner>div.dashboard_stats_banner_right {
+									justify-content: center;
+								}
+
+								.dashboard_stats_banner>div.dashboard_stats_banner_right>img {
+									height: 104px;
+								}
+
+								.dashboard_stats_banner>.stats_banner_hide {
+									position: absolute;
+									top: 20px;
+									right: 20px;
+									background-color: transparent;
+									width: 10px;
+									height: 10px;
+								}
+
+								.dashboard_stats {
+									gap: 12px;
+								}
+
+								.dashboard_stats>div.ma-item.stat-visitor-list {
+									margin-bottom: 0;
+								}
+							}
+						</style>
+
+						<div class="dashboard_section_header dashboard_stats_header">
+							<div>
+								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>
+								<span> 통계 </span>
+							</div>
+						</div>
+
+						<div class="dashboard_stats_banner_container" >
+							<div class="dashboard_stats_banner" >
+								<div class="dashboard_stats_banner_left" >
+									<p>빈틈없는 매출 기회의 발견, <br> 통계 분석 서비스로 확인해 보세요</p>
+								</div>
+
+								<div class="dashboard_stats_banner_right" >
+									<img src="_blank" height="100%" alt="서드파티 통계 배너" >
+									<button type="button" class="stats_banner_hide mo_hide">
+										<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="_blank"></svg>
+									</button>
+								</div>
+
+								<button type="button" class="stats_banner_hide pc_hide">
+									<svg width="10" height="10" viewBox="0 0 14 14" fill="none" xmlns="_blank"></svg>
+								</button>
+							</div>
+						</div>
+
+						<div class="flex-box dashboard_stats" >
+							<div class="ma-item col-md-6 col-sm-12 col-xs-12 stat-visitor-list">
+								<div class="card">
+									<div class="card_head">
+										<header >방문자</header>
+										<a href="_blank" class="dashboard_card_anchor">더보기</a>
+									</div>
+									<div class="card-body border-top">
+										<div class="float_r text-12 text-right force-padding no-padding">
+											<span style="margin-right: 15px;">
+												<i class="fa fa-circle" style="color: rgb(179, 227, 255);"></i>
+												페이지뷰
+											</span>
+											<i class="fa fa-circle" style="color: rgb(25, 109, 255); "></i> 방문자
+										</div>
+
+										<div class="holder">
+											<canvas id="stats_chart" width="328" height="164"
+												style="width: 328px; height: 164px;"></canvas>
+											<div class="chartjs_tooltip _chartjs_tooltip"
+												style="opacity: 0; left: 123px; top: 180.417px; font-family: &quot;Helvetica Neue&quot; Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; position: absolute; background: rgb(255, 255, 255); ">
+												<div class="chartjs-tooltip-section">
+													<span class="chartjs-tooltip-key" style="background-color: rgb(25, 109, 255);"></span>
+													<span class="chartjs-tooltip-value">8</span>
+												</div>
+												<div class="chartjs-tooltip-section">
+													<span class="chartjs-tooltip-key" style="background-color: rgb(179, 227, 255);"></span>
+													<span class="chartjs-tooltip-value">31</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<script >
+									$(function () {
+										Chart.defaults.global.pointHitDetectionRadius = 1;
+										Chart.defaults.global.customTooltips = function (tooltip) {
+										};
+										Chart.defaults.global.scaleFontFamily = 'Lato';
+										var chartData = {
+											'id': 'stats_chart',
+											'data': {
+												'labels': ["05-16"],
+												'datasets': []
+											}
+										};
+
+										chartData.data.datasets.push(
+											{
+												'label': "페이지뷰",
+												'fillColor': "#B0E4FF",
+												'strokeColor': "#5DCEFF",
+												'pointColor': "#B3E3FF",
+												'pointStrokeColor': "#eee",
+												'pointHighlightFill': "#fff",
+												'pointHighlightStroke': "rgba(151,187,205,1)",
+												'data': ["0"]
+											}
+										);
+										chartData.data.datasets.push(
+											{
+												'label': "방문자",
+												'fillColor': "#B0E4FF",
+												'strokeColor': "#5DCEFF",
+												'pointColor': "#196DFF",
+												'pointStrokeColor': "#eee",
+												'pointHighlightFill': "#fff",
+												'pointHighlightStroke': "rgba(151,187,205,1)",
+												'data': ["0"]
+											}
+										);
+
+										var ctx2 = $('#stats_chart').get(0).getContext("2d");
+										var myLine = new Chart(ctx2).Line(chartData.data, {
+											'responsive': true,
+											'onResize': function () {
+												$('#stats_chart').css('width', '100%');
+											},
+											'customTooltips': function (tooltip) {
+												var tooltipEl = $("._chartjs_tooltip");
+
+												if (!tooltip) {
+													tooltipEl.css({
+														opacity: 0
+													});
+													return;
+												}
+												tooltipEl.removeClass('above below');
+												tooltipEl.addClass(tooltip.yAlign);
+
+												var innerHtml = '';
+												if (typeof tooltip.labels != 'undefined') {
+													for (var i = tooltip.labels.length - 1; i >= 0; i--) {
+														innerHtml += [
+															'<div class="chartjs-tooltip-section">',
+															'<span class="chartjs-tooltip-key" style="background-color:' + tooltip.legendColors[i].fill + '"></span>',
+															'<span class="chartjs-tooltip-value">' + tooltip.labels[i] + '</span>',
+															'</div>'
+														].join('');
+													}
+												} else {
+													innerHtml += [
+														'<div class="chartjs-tooltip-section">',
+														'<span class="chartjs-tooltip-value">' + tooltip.text + '</span>',
+														'</div>'
+													].join('');
+												}
+
+												tooltipEl.html(innerHtml);
+												tooltipEl.css({
+													'opacity': 1,
+													'left': tooltip.x + 'px',
+													'top': tooltip.y + 'px',
+													'fontFamily': 'Lato',
+													'fontSize': tooltip.fontSize,
+													'fontStyle': tooltip.fontStyle,
+													'position': 'absolute',
+													'background': '#fff'
+												});
+											}
+										});
+									})
+								</script>
+							</div>
+							<div class="ma-item col-md-6 col-sm-12 col-xs-12 stat-analytics-list"
+								>
+								<div class="card" >
+									<div class="card_head" >
+										<header >기간별 분석</header>
+										<a href="_blank"
+											class="dashboard_card_anchor" >더보기</a>
+									</div>
+									<div class="card-body no-padding border-top" >
+										<table class="table no-margin summary-table"
+											><!-- 예약 또는 쇼핑 사용 -->
+											<thead>
+												<tr>
+													<th class="text-13 text-center opacity-50">일자</th>
+													<th class="text-13 text-center opacity-50">주문수</th>
+													<th class="text-13 text-center opacity-50">매출액 
+														<a href="javascript:;"
+															class="text-gray" role="button" data-toggle="popover"
+															data-placement="auto" title="" data-html="true"
+															data-content="&lt;table style=&#39;width:100%; line-height:1.4; vertical-align:top&#39; class=&#39;table table-normal table-sm-padding no-margin&#39;&gt;&lt;tr&gt;&lt;th style=&#39;width:25%&#39; class=&#39;no-border-top&#39;&gt;집계시점&lt;/th&gt;&lt;td class=&#39;no-border-top&#39;&gt;주문일 기준 결제완료된 주문&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;차감기준&lt;/th&gt;&lt;td&gt;취소,반품완료시 결제금액에서 환불금액만큼 차감&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;환불적용&lt;/th&gt;&lt;td&gt;취소,반품/환불시 주문일자 기준으로 처리&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;할인금액&lt;/th&gt;&lt;td&gt;적립금, 쿠폰 등은 매출금액에서 제외. 실결제금액에만 반영.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;부분취소&lt;/th&gt;&lt;td&gt;부분취소 주문은 정확히 집계되지 않음(개선예정).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"
+															data-original-title="매출액 계산 기준">
+															<i class="btm bt-question-circle"></i>
+														</a>
+													</th>
+													<th class="text-13 text-center opacity-50">방문자</th>
+													<th class="text-13 text-center opacity-50">가입</th>
+													<th class="text-13 text-center opacity-50">문의</th>
+													<th class="text-13 text-center opacity-50">후기</th>
+												</tr>
+											</thead>
+											<tbody >
+												<tr class="today"><!-- 주단위 반복 -->
+													<td class="text-left" >2024-05-16</td>
+													<td class="text-right">0</td>
+													<td class="text-right">0원</td>
+
+													<td class="text-right">0</td>
+													<td class="text-right">0</td>
+
+													<td class="text-right">0</td>
+													<td class="text-right">0</td>
+												</tr><!-- // 주단위 반복 -->
+											</tbody>
+											<tfoot>
+												<tr>
+													<td class="text-left no-border">최근 7일 합계</td>
+													<td class="text-right no-border">0건</td>
+													<td class="text-right no-border">0원</td>
+													<td class="text-right no-border">0명</td>
+													<td class="text-right no-border">0명</td>
+													<td class="text-right no-border">0</td>
+													<td class="text-right no-border">0</td>
+												</tr>
+												<tr >
+													<td class="text-left">이번달 합계</td>
+													<td class="text-right">0건</td>
+													<td class="text-right">0원</td>
+													<td class="text-right">0명</td>
+													<td class="text-right">0명</td>
+													<td class="text-right">0</td>
+													<td class="text-right">0</td>
+												</tr>
+											</tfoot>
+										</table><!-- // 예약 또는 쇼핑 사용 -->
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<script >
+							$('.stats_banner_hide').click(function (e) {
+								e.stopPropagation()
+								$('.dashboard_stats_banner_container').remove();
+
+								$.ajax({
+									url: '/admin/ajax/dashboard/stats_banner_hide.cm',
+									type: 'POST',
+								})
+							});
+
+							$('.dashboard_stats_banner').click(function () {
+								location.href = '/admin/stat/additional_service';
+							});
+						</script>
+						<div class="dashboard_section_header" >
+							<div >
+								<svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+									xmlns="_blank" >
+								</svg>
+
+								<span >컨텐츠</span>
+							</div>
+						</div>
+						<div class="flex-box dashboard_section_row dashboard_contents_row">
+							<div class="ma-item col-md-6 col-sm-6 col-xs-12 answers-list shopping-review">
+								<div class="card flex-card">
+									<!-- // 예약 또는 쇼핑 사용 -->
+									<div class="card_head" >
+										<header >상품 구매평
+										</header>
+										<a href="_blank" class="dashboard_card_anchor">더보기</a>
+									</div>
+									<div class="card-body border-top no-data-card-body">
+										<ul class="list list-preview">
+											<li class="tile" >
+												<div class="no-data-container" >
+													<img src="_blank" alt="no data" >
+													<p>상품 구매평이 없어요</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="ma-item col-md-6 col-sm-6 col-xs-12 answers-list shopping-qna">
+								<div class="card flex-card">
+									<!-- // 예약 또는 쇼핑 사용 -->
+									<div class="card_head" >
+										<header>상품 문의</header>
+										<a href="_blank" class="dashboard_card_anchor" >더보기</a>
+									</div>
+									<div class="card-body border-top no-data-card-body">
+										<ul class="list list-preview">
+											<li class="tile">
+												<div class="no-data-container">
+													<img src="_blank" alt="no data" >
+													<p >상품 문의가 없어요</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="ma-item col-md-6 col-sm-6 col-xs-12 contents-list !tw-mb-0">
+								<div class="card flex-card" >
+									<!-- // 예약 또는 쇼핑 사용 -->
+									<div class="card_head" >
+										<header> 컨텐츠 반응</header>
+										<a href="_blank" class="dashboard_card_anchor">더보기</a>
+									</div>
+									<div class="card-body border-top no-data-card-body">
+										<ul class="list list-preview" >
+											<li class="tile" >
+												<div class="no-data-container" >
+													<img src="_blank" alt="no data">
+													<p >컨텐츠 반응이 없어요</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div style="height: 40px;"></div>
+						<style>
+							.dashboard_imweb_contents_top>div.ma-item {
+								margin-bottom: 16px;
+							}
+
+							@media (max-width: 992px) {
+								.dashboard_imweb_contents_top>div.ma-item {
+									margin-bottom: 0;
+								}
+
+								.dashboard_imweb_contents_top>div.ma-item:last-child {
+									margin-bottom: 12px;
+								}
+							}
+						</style>
+
+						<div class="dashboard_section_header" >
+							<div>
+								<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="_blank"></svg>
+								<span >아임웹 소식</span>
+							</div>
+						</div>
+
+						<div class="flex-box dashboard_imweb_contents_top dashboard_section_row">
+							<div class="ma-item col-md-6 col-sm-6 col-xs-12 contents-myqna">
+								<div class="card flex-card">
+									<div class="card_head">
+										<header>문의 내역</header>
+										<a href="_blank" target="_blank"
+											class="dashboard_card_anchor">더보기</a>
+									</div>
+									<div class="card-body border-top no-data-card-body qna-no-data-card-body">
+										<ul class="list list-preview">
+											<li class="tile">
+
+												<div class="no-data-container" >
+													<img src="_blank" alt="no data" >
+													<p >문의 내역이 없어요</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="ma-item col-md-6 col-sm-6 col-xs-12 notice-list">
+								<div class="card" >
+									<div class="card_head" >
+										<header >아임웹 소식</header>
+										<a href="_blank" class="dashboard_card_anchor">더보기</a>
+									</div>
+									<div class="card-body border-top">
+										<ul class="list list-preview">
+											<li class="tile" style="min-height: auto;">
+												<a class="tile-content notice-item"
+													href="_blank" target="_blank">
+													<div class="tile-text no-padding">
+														전문가 찾기 Beta 오픈 소식 🎉
+													</div>
+													<div class="tile-icon no-padding text-12 text-gray-bright"
+														style="min-width: 80px;"> 2024-04-30
+													</div>
+												</a>
+											</li>
+											<li class="tile" style="min-height: auto;">
+												<a class="tile-content notice-item"
+													href="_blank" target="_blank">
+													<div class="tile-text no-padding">[아임웹] 근로자의 날 휴무 안내 </div>
+													<div class="tile-icon no-padding text-12 text-gray-bright"
+														style="min-width: 80px; ">
+														2024-04-29
+													</div>
+												</a>
+											</li>
+											<li class="tile" style="min-height: auto; ">
+												<a class="tile-content notice-item"
+													href="_blank" target="_blank">
+													<div class="tile-text no-padding">
+														[안내] 04/25 (목) 홈페이지 접속 문제 관련 정상조치 완료 안내 
+													</div>
+													<div class="tile-icon no-padding text-12 text-gray-bright" style="min-width: 80px;">
+														2024-04-25
+													</div>
+												</a>
+											</li>
+											<li class="tile" style="min-height: auto;">
+												<a class="tile-content notice-item"
+													href="_blank" target="_blank">
+													<div class="tile-text no-padding">
+														[안내] 04/25 (목) 홈페이지 접속 문제 발생 안내 (조치중) 
+													</div>
+													<div class="tile-icon no-padding text-12 text-gray-bright"
+														style="min-width: 80px;">
+														2024-04-25
+													</div>
+												</a>
+											</li>
+											<li class="tile" style="min-height: auto;">
+												<a class="tile-content notice-item"
+													href="_blank" target="_blank">
+													<div class="tile-text no-padding">4월 업데이트 소식 </div>
+													<div class="tile-icon no-padding text-12 text-gray-bright"
+														style="min-width: 80px; ">2024-04-24</div>
+												</a>
+											</li>
+											<li class="tile" style="min-height: auto;">
+												<a class="tile-content notice-item"
+													href="_blank">
+													<div class="tile-text no-padding">
+														[안내] 4/18(목) SSL 인증서 신청관련 지연 사전 안내 </div>
+													<div class="tile-icon no-padding text-12 text-gray-bright"
+														style="min-width: 80px;">
+														2024-04-11
+													</div>
+												</a>
+											</li>
+											<li class="tile" style="min-height: auto; ">
+												<a class="tile-content notice-item"
+													href="_blank" target="_blank">
+													<div class="tile-text no-padding">
+														[안내] 아임웹 주문관리시스템 오픈에 따른 Open API 변경 사전 안내 
+													</div>
+													<div class="tile-icon no-padding text-12 text-gray-bright"
+														style="min-width: 80px; ">
+														2024-04-09
+													</div>
+												</a>
+											</li>
+											<li class="tile" style="min-height: auto;">
+												<a class="tile-content notice-item" href="_blank">
+													<div class="tile-text no-padding">
+														[안내] 현금성 결제수단(무통장 결제수단) 변경 정책 사전 안내 
+													</div>
+													<div class="tile-icon no-padding text-12 text-gray-bright"
+														style="min-width: 80px;">
+														2024-04-05
+													</div>
+												</a>
+											</li>
+											<li class="tile" style="min-height: auto;">
+												<a class="tile-content notice-item"
+													href="_blank">
+													<div class="tile-text no-padding">
+														[아임웹] 4/10(수) 22대 국회의원 선거 휴무 안내 
+													</div>
+													<div class="tile-icon no-padding text-12 text-gray-bright"
+														style="min-width: 80px; ">
+														2024-04-04
+													</div>
+												</a>
+											</li>
+											<li class="tile" style="min-height: auto; ">
+												<a class="tile-content notice-item" href="_blank">
+													<div class="tile-text no-padding">
+														[안내] 04/11(목) 개인정보처리방침 변경 사전 안내 
+													</div>
+													<div class="tile-icon no-padding text-12 text-gray-bright"
+														style="min-width: 80px;">
+														2024-04-03
+													</div>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="flex-box dashboard_section_row" >
+
+							<div class="ma-item col-md-6 col-sm-6 col-xs-12 guide-list"
+								>
+								<div class="card" >
+									<div class="card_head" >
+										<header> 아임웹 가이드 </header>
+										<a href="_blank" class="dashboard_card_anchor">더보기</a>
+									</div>
+									<div class="card-body border-top">
+										<ul class="list list-preview">
+											<li class="tile" style="min-height: auto; ">
+												<a class="tile-content guide-item" href="_blank">
+													<div class="tile-text no-padding">빠른 디자인 시작 가이드 </div>
+													<div class="tile-icon no-padding text-12 text-gray-bright"
+														style="min-width: 80px; ">
+														2020-06-02
+													</div>
+												</a>
+											</li>
+											<li class="tile" style="min-height: auto;">
+												<a class="tile-content guide-item" href="_blank">
+													<div class="tile-text no-padding">디자인 모드란? </div>
+													<div class="tile-icon no-padding text-12 text-gray-bright"
+														style="min-width: 80px;">
+														2019-11-12
+													</div>
+												</a>
+											</li>
+											<li class="tile" style="min-height: auto;">
+												<a class="tile-content guide-item" href="_blank">
+													<div class="tile-text no-padding">아임웹 웹 페이지의 구조 </div>
+													<div class="tile-icon no-padding text-12 text-gray-bright"
+														style="min-width: 80px;">
+														2020-03-16</div>
+												</a>
+											</li>
+											<li class="tile" style="min-height: auto;">
+												<a class="tile-content guide-item"
+													href="_blank">
+													<div class="tile-text no-padding">공통 디자인 설정하기 </div>
+													<div class="tile-icon no-padding text-12 text-gray-bright"
+														style="min-width: 80px;">
+														2019-11-12</div>
+												</a>
+											</li>
+											<li class="tile" style="min-height: auto;">
+												<a class="tile-content guide-item" href="_blank">
+													<div class="tile-text no-padding">
+														메뉴 추가, 이동, 복제, 설정, 삭제하기
+													</div>
+													<div class="tile-icon no-padding text-12 text-gray-bright"
+														style="min-width: 80px; ">
+														2019-12-26
+													</div>
+												</a>
+											</li>
+											<li class="tile" style="min-height: auto;">
+												<a class="tile-content guide-item"
+													href="_blank">
+													<div class="tile-text no-padding">
+														위젯 추가, 이동, 복제, 설정, 삭제하기
+													</div>
+													<div class="tile-icon no-padding text-12 text-gray-bright"
+														style="min-width: 80px;">
+														2019-11-12
+													</div>
+												</a>
+											</li>
+											<li class="tile" style="min-height: auto;">
+												<a class="tile-content guide-item"
+													href="_blank">
+													<div class="tile-text no-padding">위젯별 기능 설명 (디자인 요소) </div>
+													<div class="tile-icon no-padding text-12 text-gray-bright"
+														style="min-width: 80px; ">
+														2019-11-12
+													</div>
+												</a>
+											</li>
+											<li class="tile" style="min-height: auto;">
+												<a class="tile-content guide-item"
+													href="_blank">
+													<div class="tile-text no-padding">위젯별 기능 설명 (DB 요소) </div>
+													<div class="tile-icon no-padding text-12 text-gray-bright"
+														style="min-width: 80px; ">
+														2019-11-12
+													</div>
+												</a>
+											</li>
+											<li class="tile" style="min-height: auto;">
+												<a class="tile-content guide-item"
+													href="_blank">
+													<div class="tile-text no-padding"
+														>그리드 시스템이란? </div>
+													<div class="tile-icon no-padding text-12 text-gray-bright"
+														style="min-width: 80px;">
+														2019-11-12
+													</div>
+												</a>
+											</li>
+											<li class="tile" style="min-height: auto;">
+												<a class="tile-content guide-item" href="_blank">
+													<div class="tile-text no-padding">위젯 배치 및 그리드 실습 </div>
+													<div class="tile-icon no-padding text-12 text-gray-bright"
+														style="min-width: 80px; ">
+														2020-06-01
+													</div>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="dashboard_right right-menu-fixed float_l" >
+						<div class="card card-black dashboard-user-card" >
+							<div class="card-body text-center">
+								<a href="javascript:" class="dropdown-toggle block " data-toggle="dropdown"
+									tabindex="-1" aria-expanded="false" >
+									<div class="margin-bottom-xl" id="mixpanel_dashboard_profile">
+										<img class="border-round" src="_blank" width="64" height="64" >
+									</div>
+									<div class="text-bold">
+										<span class="use_name holder">관리자</span>
+									</div>
+									<div class="text-13 opacity-50">
+										qjfhdnaos@gmail.com
+									</div>
+								</a>
+								<ul class="dropdown-menu animation-dock dashboard-profile" role="menu">
+
+									<li>
+										<a class="text-ellipsis" >
+											<img class="border-round"
+												src="_blank" width="45"
+												height="45" >
+											<span>관리자</span>
+										</a>
+									</li>
+									<li class="divider" ></li>
+
+									<li>
+										<a href="_blank"
+											>회원 정보수정</a>
+									</li>
+
+									<li>
+										<a href="javascript:" onclick="ADMIN.openProfile();"
+											>내사이트 목록 보기
+										</a>
+									</li>
+
+									<li class="divider" ></li>
+
+									<li>
+										<a class="text-danger upgrade-btn" href="_blank">
+											연장/업그레이드 
+										</a>
+									</li>
+
+									<li class="divider"></li>
+
+									<li>
+										<a href="_blank" class="exit-btn">나가기</a>
+									</li>
+									<li>
+										<a href="_blank">로그아웃</a>
+									</li>
+
+								</ul>
+							</div>
+
+							<div class="card-body card-summary no-padding-top" >
+								<div class="tabled full-width text-12 margin-bottom-xl">
+									<div class="table-cell vertical-middle opacity-50 sub_tit">사용버전</div>
+									<div class="table-cell vertical-middle">
+										<span class="btn btn-sm btn-dark-bright btn-rounded btn-xs-padding"
+											style="text-transform: capitalize;">free</span>
+									</div>
+									<div class="table-cell vertical-middle text-right sub_option">
+										<a class="text-danger" id="mixpanel_dashboard_upgrade_right"
+											href="_blank">업그레이드</a>
+									</div>
+								</div>
+								<div class="tabled full-width text-12 margin-bottom-xl"
+									>
+									<div class="table-cell vertical-middle opacity-50 sub_tit">PG</div>
+									<div class="table-cell vertical-middle">미가입</div>
+									<div class="table-cell vertical-middle text-right sub_option">
+										<a class="opacity-50" id="mixpanel_dashboard_pg"
+											href="_blank">설정</a>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="card-body card-summary" >
+								<div class="tabled full-width text-12 margin-bottom-xl">
+									<div class="table-cell vertical-middle opacity-50 sub_tit">APP</div>
+									<div class="table-cell vertical-middle" >
+										<a class="hover-underline" href="_blank"
+											alt="iOS 신청">iOS 미사용</a> / 
+										<a class="hover-underline"
+											href="_blank" alt="Android 신청">Android 미사용</a>
+									</div>
+
+									<div class="table-cell vertical-middle text-right sub_option">
+										<a class="text-danger"
+											href="javascript:chkFreeVersion(&#39;/admin/app/android&#39;)">설정</a>
+									</div>
+								</div>
+
+								<div class="tabled full-width text-12 margin-bottom-xl">
+									<div class="table-cell vertical-middle opacity-50 sub_tit">도메인</div>
+									<div class="table-cell vertical-middle"
+										style="word-break: break-all; ">기본 도메인 사용 중</div>
+									<div class="table-cell vertical-middle text-right sub_option">
+										<a class="text-danger"
+											href="_blank">설정</a>
+									</div>
+								</div>
+
+								<div class="tabled full-width text-12 margin-bottom-xl">
+									<div class="table-cell vertical-middle opacity-50 sub_tit">SSL</div>
+									<div class="table-cell vertical-middle">사용 (기본 도메인 자동 적용)</div>
+									<div class="table-cell vertical-middle text-right sub_option">
+										<a class="text-danger" href="_blank">연장</a>
+									</div>
+								</div>
+								<div class="tabled full-width text-12 margin-bottom-xl">
+									<div class="table-cell vertical-middle opacity-50 sub_tit">SMS</div>
+									<div class="table-cell vertical-middle">0건</div>
+									<div class="table-cell vertical-middle text-right sub_option">
+										<a class="text-danger" href="_blank">충전</a>
+									</div>
+								</div>
+								<div class="tabled full-width text-12 margin-bottom-xl">
+									<div class="table-cell vertical-middle opacity-50 sub_tit">입금확인
+										<a href="javascript:" role="button"
+											data-trigger="focus" tabindex="0" data-toggle="popover" data-placement="top"
+											data-html="true" title=""
+											data-content="무통장입금 주문을 자동으로 확인하여 입금완료 처리해주는 자동 입금 확인 서비스 뱅크다의 사용여부 및 남은 기간을 표시합니다."
+											data-original-title="자동입금확인(뱅크다)" >
+											<i class="btm bt-question-circle"></i>
+										</a>
+									</div>
+									<div class="table-cell vertical-top">자동입금확인
+										미사용</div>
+									<div class="table-cell vertical-top text-right sub_option">
+										<a class="text-danger" href="_blank">설정</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="consulting_banner_wrap card bg-transparent" >
+							<div class="consulting_banner owl-theme owl-carousel owl-loaded">
+
+								<div class="owl-stage-outer">
+									<div class="owl-stage"
+										style="transform: translate3d(-1500px, 0px, 0px); transition: all 0.25s ease 0s; width: 3600px; ">
+										<div class="owl-item cloned"
+											style="width: 300px; margin-right: 0px;">
+											<div class="item" data-index="6" id="mixpanel_banner_kakaosync">
+												<div id="dashboard_banner_wrap_kakaosync"
+													class="dashboard_banner_wrap mb-0 kakaosync card"
+													style="background: url(&quot;../common/img/dashboard_banner_kakaosync.png?v2&quot;) 0% 0% / 100% no-repeat rgb(255, 218, 1); color: rgb(255, 255, 255); ">
+													<a href="_blank" class="text-14 text-default">
+														<div class="card-body" >
+															<div>회원가입과 채널추가를 한번에!</div>
+															<div><strong>카카오싱크</strong>시작하기</div>
+														</div>
+													</a>
+												</div>
+											</div>
+										</div>
+
+										<div class="owl-item cloned"
+											style="width: 300px; margin-right: 0px;">
+											<div class="item" data-index="7" id="mixpanel_banner_tosspayments">
+												<div class="dashboard_banner_wrap mb-0 card"
+													style="background-image: url(&quot;_blank); 
+															background-position: initial; background-repeat: no-repeat; background-attachment: initial; 
+															background-origin: initial; background-clip: initial; 
+															background-color: rgb(41, 98, 255); color: rgb(255, 255, 255); background-size: 100%">
+													<a href="_blank" target="_self" class="text-14">
+														<div class="card-body"
+															style="display: flex; flex-direction: column; justify-content: center; align-items: center; ">
+															<img src="_blank"
+																style="width: 98px; margin-bottom: 5px; margin-top: 4px; ">
+															<div style="font-size: 16px; font-weight: 700; line-height: 135%;">
+																토스페이먼츠 출시!</div>
+														</div>
+													</a>
+												</div>
+											</div>
+										</div>
+										<div class="owl-item" style="width: 300px; margin-right: 0px;">
+											<div class="item tw-relative" id="mixpanel_banner_crema"
+												>
+												<div class="dashboard_banner_wrap mb-0 card"
+													style="background-image: url(&quot;https://vendor-cdn.imweb.me/images/CREMA_BO_BANNER.png&quot;); background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(0, 0, 0); background-position: right 0px bottom 12px; color: rgba(255, 255, 255, 0.82); background-size: auto 86px ; ">
+													<a href="_blank" 
+													class="text-14">
+														<div class="card-body"
+															style="display: flex; flex-direction: column; justify-content: start; align-items: flex-start; 
+																	gap: 2px; padding: 22px 16px; height: 102px; ">
+															<div style="font-size: 16px; font-weight: 700; line-height: 140%; letter-spacing: -0.8px; margin-bottom: 0px;">
+																<span>크리마 리뷰 연동 출시</span>
+															</div>
+															<div style="font-size: 12px; line-height: 150%;">
+																30일 무료 체험 및 연동 수수료 무료</div>
+														</div>
+													</a>
+												</div>
+											</div>
+										</div>
+
+										<div class="owl-item"
+											style="width: 300px; margin-right: 0px; ">
+											<div class="item tw-relative" data-index="1" id="mixpanel_banner_vreview">
+												<div class="dashboard_banner_wrap mb-0 card"
+													style="background: rgb(10, 55, 189); ">
+													<a href="_blank"
+														class="text-14">
+														<div class="card-body"
+															style="display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; ">
+															<div style="font-size: 15px; font-weight: 700; line-height: 200%; margin-bottom: 0px;">
+																<span style="color: rgb(255, 255, 255);">브이리뷰
+																	연동 수수료 100% 할인</span>
+															</div>
+															<div style="font-size: 13px; color: white; letter-spacing: -0.7px;">
+																AI 리뷰 수집부터 노출, 관리까지</div>
+														</div>
+													</a>
+													<img src="_blank"
+														width="80"
+														class="tw-absolute tw-right-[16px] tw-top-[20px] !tw-w-[80px]">
+												</div>
+											</div>
+										</div>
+
+										<div class="owl-item"
+											style="width: 300px; margin-right: 0px; ">
+											<div class="item" data-index="2" id="mixpanel_banner_kakaofriend">
+												<div class="dashboard_banner_wrap mb-0 card"
+													style="background: url(&quot;_blank) 0% 0% / cover no-repeat rgb(0, 0, 0); color: rgb(0, 0, 0); ">
+													<a href="_blank"
+														class="text-14">
+														<div class="card-body"
+															style="display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start;">
+															<div style="font-size: 15px; font-weight: 700; line-height: 200%; margin-bottom: 0px;">
+																<span style="color: rgb(254, 229, 0);">카카오 친구톡</span>
+																<span style="color: white;">으로 시작하는 CRM마케팅</span>
+															</div>
+															<div style="font-size: 13px; color: white; letter-spacing: -0.7px;">
+																친구톡 보내기로 재구매를 유도해보세요!
+															</div>
+														</div>
+													</a>
+												</div>
+											</div>
+										</div>
+										<div class="owl-item active"
+											style="width: 300px; margin-right: 0px; ">
+											<div class="item" id="mixpanel_banner_npay">
+												<div class="dashboard_banner_wrap mb-0 card"
+													style="background: url(&quot;_blank) 0% 0% / 100% no-repeat rgb(235, 254, 243); color: rgb(0, 0, 0); ">
+													<a href="_blank" class="text-14">
+														<div class="card-body text-13 text-bold"
+															style="letter-spacing: -1px; padding-top: 16px;">
+															<div style="margin-bottom: 6px; ">
+																<img src="_blank" style="width: 36px; ">
+															</div>
+															<div style="font-size: 16px; font-weight: 700; line-height: 135%; margin-bottom: 0px; ">
+																집화처리 다음날 100% 지급!
+															</div>
+															<div style="color: rgb(3, 199, 90); letter-spacing: -0.7px; ">
+																수수료없는 빠른정산 신청하기
+															</div>
+														</div>
+													</a>
+												</div>
+											</div>
+										</div>
+										<div class="owl-item"
+											style="width: 300px; margin-right: 0px; ">
+											<div class="item" data-index="4" id="mixpanel_banner_danal">
+												<div class="dashboard_banner_wrap mb-0 card"
+													style="background-image: url(&quot;_blank); 
+													background-position: initial; background-repeat: no-repeat; background-attachment: initial; 
+													background-origin: initial; background-clip: initial; background-color: rgb(41, 98, 255); 
+													color: rgb(255, 255, 255); background-size: 100%;">
+													<a href="_blank" target="_self" class="text-14">
+														<div class="card-body"
+															style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+														<div>
+																<p style="font-size: 16px; font-weight: 700; line-height: 135%; margin-bottom: 0px;">
+																	1900만의 결제수단
+																</p>
+																<p>삼성페이 + 다날 PG
+																	연동하기
+																</p>
+															</div>
+															<img src="_blank"
+																style="width: 80px; object-fit: contain; object-position: right center;">
+														</div>
+													</a>
+												</div>
+											</div>
+										</div>
+
+										<div class="owl-item"
+											style="width: 300px; margin-right: 0px;">
+											<div class="item" data-index="5" id="mixpanel_banner_fassto">
+												<div class="dashboard_banner_wrap mb-0 card"
+													style="background: url(&quot;_blank) 0% 0% / 100% no-repeat rgb(0, 156, 103); color: rgb(255, 255, 255); ">
+													<a href="_blank" class="text-14">
+														<div class="card-body text-13 text-bold"
+															style="letter-spacing: -1px; padding-top: 14px;">
+															<div>
+																<span class="opacity-75">파스토 이용시</span>
+															</div>
+															<div style="font-size: 14px;">
+																아임웹 주문연동 0원
+															</div>
+															<div style="font-size: 14px;">
+																최대 10만원 입고비 혜택까지!
+															</div>
+														</div>
+													</a>
+												</div>
+											</div>
+										</div>
+
+										<div class="owl-item"
+											style="width: 300px; margin-right: 0px;">
+											<div class="item" data-index="6" id="mixpanel_banner_kakaosync"
+												>
+												<div id="dashboard_banner_wrap_kakaosync"
+													class="dashboard_banner_wrap mb-0 kakaosync card"
+													style="background: url(&quot;../common/img/dashboard_banner_kakaosync.png?v2&quot;) 0% 0% / 100% no-repeat rgb(255, 218, 1); 
+													color: rgb(255, 255, 255); ">
+													<a href="_blank"
+														class="text-14 text-default">
+														<div class="card-body" >
+															<div>회원가입과 채널추가를 한번에!
+															</div>
+															<div>
+																<strong>카카오싱크</strong>
+																시작하기
+															</div>
+														</div>
+													</a>
+													
+												</div>
+											</div>
+										</div>
+
+										<div class="owl-item"
+											style="width: 300px; margin-right: 0px;">
+											<div class="item" data-index="7" id="mixpanel_banner_tosspayments"
+												>
+												<div class="dashboard_banner_wrap mb-0 card"
+													style="background-image: url(&quot;_blank); background-position: initial; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(41, 98, 255); color: rgb(255, 255, 255); background-size: 100% ; ">
+													<a href="_blank" class="text-14">
+														<div class="card-body"
+															style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+															<img src="_blank"
+																style="width: 98px; margin-bottom: 5px; margin-top: 4px; ">
+															<div style="font-size: 16px; font-weight: 700; line-height: 135%; ">
+																토스페이먼츠 출시!
+															</div>
+														</div>
+													</a>
+												</div>
+											</div>
+										</div>
+
+										<div class="owl-item cloned"
+											style="width: 300px; margin-right: 0px; ">
+											<div class="item tw-relative" data-index="0" id="mixpanel_banner_crema">
+												<div class="dashboard_banner_wrap mb-0 card"
+													style="background-image: url(&quot;_blank); background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(0, 0, 0); background-position: right 0px bottom 12px; color: rgba(255, 255, 255, 0.82); background-size: auto 86px ; ">
+													<a href="_blank"
+														class="text-14">
+														<div class="card-body"
+															style="display: flex; flex-direction: column; justify-content: start; align-items: flex-start; gap: 2px; 
+																	padding: 22px 16px; height: 102px; ">
+															<div style="font-size: 16px; font-weight: 700; line-height: 140%; 
+																		letter-spacing: -0.8px; margin-bottom: 0px; ">
+																<span >크리마 리뷰 연동 출시</span>
+															</div>
+															<div style="font-size: 12px; line-height: 150%;">
+																30일 무료 체험 및 연동 수수료 무료</div>
+														</div>
+													</a>
+												</div>
+											</div>
+										</div>
+
+										<div class="owl-item cloned"
+											style="width: 300px; margin-right: 0px;">
+											<div class="item tw-relative" data-index="1" id="mixpanel_banner_vreview">
+												<div class="dashboard_banner_wrap mb-0 card"
+													style="background: rgb(10, 55, 189);">
+													<a href="_blank"
+														class="text-14">
+														<div class="card-body"
+															style="display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start;">
+															<div style="font-size: 15px; font-weight: 700; line-height: 200%; margin-bottom: 0px;">
+																<span style="color: rgb(255, 255, 255); ">
+																	브이리뷰 연동 수수료 100% 할인
+																</span>
+															</div>
+															<div
+																style="font-size: 13px; color: white; letter-spacing: -0.7px;">
+																AI 리뷰 수집부터 노출, 관리까지</div>
+														</div>
+													</a>
+													<img src="_blank"
+														width="80"
+														class="tw-absolute tw-right-[16px] tw-top-[20px] !tw-w-[80px]">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="owl-controls" >
+									<div class="owl-nav" >
+										<div class="owl-prev">prev</div>
+										<div class="owl-next">next</div>
+									</div>
+									<div class="owl-dots"></div>
+								</div>
+							</div>
+							<div class="consulting_banner_nav" >
+								<div class="consulting_banner_navWrap" >
+									<span class="current">4</span>
+									<span > / </span>
+									<span class="total">8</span>
+								</div>
+							</div>
+						</div>
+						<div class="card card-sm-padding" >
+							<div class="card-head" >
+								<header>운영진</header>
+								<a class="float_r text-13 opacity-50 force-padding no-padding-y"
+									href="_blank">관리</a>
+							</div>
+							<div class="card-body no-padding-top" >
+								<div class="admin_img_wrap clearfix" >
+									<div class="float_l"> 
+										<a class="inline-blocked"
+											href="_blank"
+											data-toggle="tooltip" data-placement="top">
+											<img class="border-round"
+												src="_blank" width="35"
+												height="35" >
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="update_memo_list" >
+						</div>
+
+						<div class="card card-sm-padding" >
+							<form id="add_memo" >
+								<input type="hidden" name="write_token"
+									value="uFQiz1n2lUfUZi54r2wd6zh3JRliheWkiqynM5XyJZ0QkYfFQvmwazwBghvw9Zz5EYSMZGGLvbBC4AKq0fBhyK/hhO7LkcSqcEBWhd378aSwvv6mlwNuXdnIZXLLOwYP">
+								<input type="hidden" name="write_token_key" value="9634">
+								<div class="card-body card-memo" >
+									<div class="tabled holder full-width"
+										style="margin-bottom: 5px; ">
+										<div class="table-cell vertical-middle memo-thumb">
+											<img class="border-round"
+												src="_blank" width="35"
+												height="35">
+										</div>
+										<div class="table-cell vertical-middle" >
+											<div id="memo_writer" class="text-13 text-bold">관리자</div>
+										</div>
+									</div>
+
+									<div class="memo-body" >
+										<textarea name="memo" id="memo"
+											class="form-control margin-bottom-xl resize-vertical" rows="1"
+											placeholder="관리자들과 공유할 메모를 남겨주세요" data-autosize-on="true"
+											style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 38px;"></textarea>
+										<div>
+											<a href="javascript:"
+												class="btn btn-xs btn-rounded btn-xs-padding btn-default-bright"
+												onclick="DASHBOARD.addMemo($(&#39;#add_memo&#39))">저장</a>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<script >
+
+			function expertBlockModal() {
+				$.ajax({
+					type: 'GET',
+					url: ('/admin/ajax/dialog/expert_modal.cm'),
+					dataType: 'html',
+					async: false,
+					cache: false,
+					success: function (res) {
+						var $html = $(res);
+						if ($html) {
+							$.cocoaDialog.open({ type: 'expert_test', custom_popup: $html, close_block: 'static' });
+						}
+					}
+				});
+			}
+
+
+			function closeExpertPopover() {
+				setCookie('expert_dashboard_popover', 'Y', 369);
+				$('#expertPopover').popover('hide');
+			}
+
+			function closeBanner(target) {
+				setCookie('dashboard_banner_close_' + target, 'Y', 7);
+				$('#dashboard_banner_wrap_' + target).remove();
+			}
+
+			$(function () {
+				if (getCookie('expert_dashboard_popover') != 'Y') {
+					$('#expertPopover').popover('show');
+				}
+				$('._set_expert_cookie').on('click', function () {
+					closeExpertPopover();
+				});
+			});
+
+			$(function () {
+				DASHBOARD.dashboard_init();
+			});
+			function chkFreeVersion(url) {
+				var site_version = 'free';
+				if (site_version === 'free') {
+					if (confirm('현재 사용 중인 요금제 버전에서는 해당 기능이 제한되어 있습니다. 업그레이드 페이지로 이동할까요?')) {
+						window.location.href = '_blank';
+					}
+				} else {
+					window.location.href = url;
+				}
+			}
+
+			$('._close_btn').off('click').on('click', function () {
+				$('._custom_popover').popover('hide');
+			});
+			$('._custom_popover').on('shown.bs.popover', function () {
+				$('._close_btn').off('click').on('click', function () {
+					$('._custom_popover').popover('hide');
+				});
+			});
+
+
+			var cbOwlCarouselWrap = $('.consulting_banner_wrap');
+			var cbOwlCarousel = $('.consulting_banner');
+			var cbOwlCarouselItem = document.querySelectorAll('.consulting_banner .item');
+			cbOwlCarousel.owlCarousel({
+				loop: true,
+				items: 1,
+				margin: 0,
+				autoplay: true,
+				autoplayTimeout: 3000,
+				dots: false,
+				onInitialize: function (e) {
+					var items = cbOwlCarousel.children('.item');
+					var nav = cbOwlCarouselWrap.children('.consulting_banner_nav').children('.consulting_banner_navWrap');
+					var nav_total = nav.children('.total');
+					nav_total.html(items.length);
+				}
+			});
+			cbOwlCarousel.on('changed.owl.carousel', function (event) {
+				var nav = cbOwlCarouselWrap.children('.consulting_banner_nav').children('.consulting_banner_navWrap');
+				var nav_current = nav.children('.current');
+				var nav_total = nav.children('.total');
+				// loop 되면서 복제된 slide가 2개 생성될때 초기화하는 guard
+				if (cbOwlCarouselItem.length + 2 === event.property.value) {
+					nav_current.html(1);
+					return;
+				}
+				nav_current.html(event.property.value - 1);
+			})
+		</script>
+		<script >
+			$(window).on("keyup", function (e) {
+				if ($.cocoaDialog.isOpen()) {
+					$.cocoaDialog.modalControl(e);
+				}
+				return false;
+			});</script>
+		<!-- BEGIN MENUBAR-->
+		<button type="button" class="hidden-lg hidden-md toggle-btn" data-dismiss="menubar">
+			<span class="sr-only">Toggle navigation</span>
+			<img src="_blank" >
+		</button>
+
+		<div id="menubar" class="animate" >
+			<div class="nano has-scrollbar" style="height: 787px; ">
+				<div class="nano-content" tabindex="0" style="right: -17px;">
+					<div class="menubar-scroll-panel" style="padding-bottom: 1px;">
+						<div class="region-wrap full-width" >
+							<a href="javascript:" class="holder global_icon_menu dropdown-toggle" data-toggle="dropdown"
+								aria-expanded="true" >
+								<div class="icon-wrap" >
+									<img src="_blank" class="region-icon">
+								</div>
+								<div class="brand-holder" >
+									<span class="title_controls" >왓이님의 웹사이트</span>
+									<span class="icon" >
+										<svg xmlns="_blank" width="16" height="16" viewBox="0 0 16 16" fill="none"></svg>
+									</span>
+								</div>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-new global_setting animation-dock menu-card-styling">
+								<li class="holder">
+									<a href="_blank">
+										<div class="tabled" >
+											<div class="table-cell vertical-middle width-1">
+												<img width="30" height="30"
+													src="./qjfhdnaos51106.imweb.me_files/flag_kr_circle.png">
+											</div>
+											<div class="table-cell vertical-middle domain"
+												style="line-height: 1.3;">
+												<div class="inline-blocked">
+													<span class="domain_name">왓이님의 웹사이트</span>
+												</div>
+												<span data-original-title="일반 방문자의 접속이 제한됩니다. 글로벌 버전으로 업그레이드 해주세요"
+													data-toggle="tooltip" class="badge" data-placement="top"
+													style="margin-left: 5px; vertical-align: top;">미결제</span>
+												<div class="text-gray-bright text-12">qjfhdnaos51106.imweb.me</div>
+											</div>
+										</div>
+									</a>
+									<div class="tools" >
+									</div>
+								</li>
+								<li class="add-unit" >
+									<a href="javascript:;"
+										onclick="SITE_MANAGE.openAddUnit(&#39;S20240516cc656761618e8&#39;)"
+										class="text-secondary addunit"
+										style="display: flex; ">
+									<svg style="margin-right: 8px;"
+											mlns="_blank" width="16" height="16"
+											viewBox="0 0 16 16" fill="none">
+									</svg> 
+									새 언어 사이트 추가
+									</a>
+								</li>
+							</ul>
+						</div>
+						<ul id="main-menu" class="gui-controls" >
+							<li data-prevent-menu-click="true">
+								<a href="javascript:;" class="_gnb_notification_button gnb_notification_button">
+									<div class="gui-icon">
+										<i class="db-bell"></i>
+									</div>
+									<span class="title title_controls">알림</span>
+									<span class="_badge badge_new">New</span>
+								</a>
+							</li>
+							<li class="">
+								<a href="_blank">
+									<div class="gui-icon" >
+										<i class="db-wand"></i>
+									</div>
+									<span class="title title_controls">디자인 모드</span>
+								</a>
+							</li>
+							<li class="  ">
+								<a class="external-url" href="_blank">
+									<div class="gui-icon">
+										<i class="db-preview"></i>
+									</div>
+								<span class="title title_controls">사이트 바로가기</span>
+								</a>
+							</li>
+
+							<li class="spacer"></li>
+							<li class="top-menu">
+								<div>
+									<span>사이트 관리</span>
+									<a href="javascript:;"
+										class="shop-extend" onclick="DASHBOARD.openSiteManagementDialog(this);"
+										data-original-title="쇼핑·예약 기능설정" data-toggle="tooltip" data-placement="right"
+										data-trigger="hover"
+										data-template="&lt;div class=&quot;tooltip custom-tooltip&quot;&gt;&lt;div class=&quot;tooltip-inner&quot;&gt;&lt;/div&gt;&lt;/div&gt;">
+										<svg xmlns="_blank"
+											width="16" height="16" viewBox="0 0 16 16" fill="none">
+										</svg>
+									</a>
+								</div>
+							</li>
+							<li class="active expanded">
+								<a href="_blank" class=" active">
+									<div class="gui-icon">
+										<i class="db-dashboard"></i>
+									</div>
+									<span class="title title_controls">대시보드</span>
+								</a>
+							</li>
+							<li class="gui-folder" data-title="member">
+								<a href="_blank" class="sidebar-nav-menu"
+									onclick="return false;">
+									<div class="gui-icon">
+										<i class="db-user"></i>
+									</div>
+									<span class="title title_controls">사용자 관리</span>
+									<span class="badge_icon" >1</span>
+								</a>
+								<ul style="">
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">사용자 목록</span>
+											<span class="badge_icon" >1</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">메시지 보내기</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">운영진</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">자동 메일</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">친구톡 보내기</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">SMS·알림톡</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="  " >
+								<a href="_blank">
+									<div class="gui-icon">
+										<i class="db-crm"></i>
+									</div>
+									<span class="title title_controls">
+										고객 행동 관리</span>
+								</a>
+							</li>
+							<li class="gui-folder" data-title="shopping">
+								<a href="_blank" class="sidebar-nav-menu" onclick="return false;">
+									<div class="gui-icon">
+										<i class="db-shopping-bag" ></i>
+									</div>
+									<span class="title title_controls" >쇼핑</span>
+								</a>
+								<ul style="">
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">상품</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">연동 상품</span>
+											<span class="badge_beta" >Beta</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">주문관리 v2</span>
+											<span class="badge_new" >New</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">정기구독</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">선물하기</span>
+											<span class="badge_new">New</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">구매평</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">문의</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">적립금</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">쿠폰</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">배송설정</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">환경설정</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="gui-folder animated animated-hidden">
+								<a href="_blank" class="sidebar-nav-menu"
+									onclick="return false;">
+									<div class="gui-icon">
+										<i class="db-calendar"></i>
+									</div>
+									<span class="title title_controls">예약</span>
+								</a>
+								<ul style="">
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">객실·사이트</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">예약 현황</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">예약 신청</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">후기</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">문의</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">옵션설정</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">성수기·휴일</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">환경설정</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="gui-folder">
+								<a href="_blank" onclick="return false;" >
+									<div class="gui-icon">
+										<i class="db-pencil"></i>
+									</div>
+									<span class="title title_controls" >컨텐츠 관리</span>
+								</a>
+								<ul style="">
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">게시물</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">댓글</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">입력폼</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">지도</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">일정</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">갤러리</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">신고·차단</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="gui-folder">
+								<a href="_blank" class="sidebar-nav-menu"
+									onclick="return false;" >
+									<div class="gui-icon">
+										<i class="db-megaphone"></i>
+									</div>
+									<span class="title title_controls">광고 캠페인 관리</span>
+									<span class="badge_new">New</span>
+								</a>
+								<ul style="">
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">홈</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">대시보드</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">캠페인</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">크레딧 관리</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">데이터 연결</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="gui-folder">
+								<a href="_blank" class="sidebar-nav-menu" onclick="return false;">
+									<div class="gui-icon">
+										<i class="db-mobile"></i>
+									</div>
+									<span class="title title_controls" >모바일 앱</span>
+								</a>
+								<ul style="">
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">Android 앱</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">iOS 앱</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="gui-folder">
+								<a href="_blank" class="sidebar-nav-menu"
+									onclick="return false;">
+									<div class="gui-icon">
+										<i class="db-status-up"></i>
+									</div>
+									<span class="title title_controls">통계</span>
+								</a>
+								<ul style="">
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">홈</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">매출</span>
+											<span class="badge_beta">Beta</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">기간별 분석</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">유입 사이트</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">유입 검색어</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">방문자</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">많이 방문한 페이지</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">트래픽</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">적립금</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">컨텐츠 반응</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">부가 서비스</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="  ">
+								<a href="_blank">
+									<div class="gui-icon" >
+										<i class="db-rocket"></i>
+									</div>
+									<span class="title title_controls">결제·앱스토어</span>
+								</a>
+							</li>
+							<li class="gui-folder">
+								<a href="_blank" class="sidebar-nav-menu"
+									onclick="return false;" >
+									<div class="gui-icon">
+										<i class="db-settings"></i>
+									</div>
+									<span class="title title_controls">환경설정</span>
+								</a>
+								<ul style="display: none;">
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">일반</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">언어·지역·통화</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">전자결제(PG)</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">도메인</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">SSL(보안서버)</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">보안·개인정보 보호</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">회원가입·그룹·등급</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">SEO(검색엔진최적화)</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">약관</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">팝업·배너</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">본인·성인인증</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">소셜 로그인·지도·공유</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">상담 채널 연동</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">외부 서비스 연동 (API)</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="spacer"></li>
+							<li class="top-menu">
+								<div><span>리소스</span></div>
+							</li>
+							<li class="  ">
+								<a class="external-url" href="_blank">
+									<div class="gui-icon">
+										<i class="db-comments"></i>
+									</div>
+									<span class="title title_controls">고객지원</span>
+								</a>
+							</li>
+							<li class="gui-folder" data-title="campus">
+								<a class="external-url" href="_blank"
+									onclick="return false;" >
+									<div class="gui-icon">
+										<i class="db-graduation-cap"></i>
+									</div>
+									<span class="title title_controls">아임웹 교육</span>
+								</a>
+								<ul style="">
+									<li class="  ">
+										<a class="external-url" href="_blank">
+											<span class="title title_controls">교육 일정·신청</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a class="external-url" href="_blank">
+											<span class="title title_controls">동영상 강의</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="gui-folder">
+								<a href="_blank" class="sidebar-nav-menu"
+									onclick="return false;">
+									<div class="gui-icon">
+										<i class="db-telescope"></i>
+									</div>
+									<span class="title title_controls">전문가 찾기</span>
+									<span class="badge_new">New</span>
+								</a>
+								<ul style="">
+									<li class="  ">
+										<a class="external-url" href="_blank">
+											<span class="title title_controls">전문가 찾기</span>
+										</a>
+									</li>
+									<li class="  ">
+										<a href="_blank">
+											<span class="title title_controls">전문가 웹사이트 관리</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="nano-pane">
+					<div class="nano-slider"
+						style="height: 752px; top: 35px; display: block;"></div>
+				</div>
+			</div>
+		</div>
+		<div class="fold_area animate">
+			<div class="table-cell vertical-middle" >
+				<a href="_blank" class="logo_icon_menu">
+					<img src="_blank">
+				</a>
+			</div>
+			<a class="_tooltip_btn side_bar_btn" href="javascript:void(0)" role="button" id="toggle_button">
+				<span class="fold_button left" data-trigger="hover">
+					<svg xmlns="_blank" width="16" height="16" viewBox="0 0 16 16" fill="none"></svg>
+				</span>
+				<span class="fold_button right" data-toggle="tooltip" data-placement="right" data-trigger="hover">
+					<div class="default" >
+						<img src="_blank" alt="사이드바 펼치기">
+					</div>
+					<div class="hover" >
+						<svg xmlns="_blank" width="16" height="16" viewBox="0 0 16 16" fill="none"></svg>
+					</div>
+				</span>
+			</a>
+		</div>
+		<div class="_notify-modal-provider"></div>
+		<style>
+			.custom-tooltip.in {
+				opacity: 1;
+			}
+
+			.custom-tooltip.right {
+				margin-left: 4px;
+				padding: 0;
+			}
+
+			.custom-tooltip .tooltip-inner {
+				padding: 6px 8px;
+				border-radius: 8px;
+				background-color: #15181E;
+				color: #FFFFFF;
+				font-size: 12px;
+				font-weight: 400;
+				line-height: 16px;
+				box-shadow: 0 14px 32px 0 rgba(75, 81, 91, 0.12),
+					0 10px 14px 0 rgba(75, 81, 91, 0.06),
+					0 0 0 1px rgba(75, 81, 91, 0.03),
+					0 0 1px 0 rgba(75, 81, 91, 0.20);
+			}
+		</style>
+		<script >
+			(function () {
+				let body = document.body;
+				let btn = document.querySelector('#toggle_button');
+				let sidebar_mini_class = 'sidebar-mini';
+				let user_sm_status = getCookie('sm_status');
+				let window_width = window.innerWidth;
+				setPrimarySideMenu();
+
+				btn.addEventListener('click', handleToggleButton);
+				btn.addEventListener('touch', handleToggleButton);
+
+				//만약 사용자가 버튼을 누르지 않았을때만 이 이벤트 리스너를 사용할것임.
+				window.onresize = () => {
+					window_width = window.innerWidth;
+					if (user_sm_status !== 'h' && user_sm_status !== 's') {
+						resizeWindow(window_width)
+					}
+				}
+
+				function handleToggleButton() {
+					if (user_sm_status == 'h') {
+						setSideMenu('show');
+					} else {
+						setSideMenu('hide');
+					}
+				}
+
+				function resizeWindow(window_width) {
+					if (window_width > 1280 || window_width < 991) {
+						body.classList.remove(sidebar_mini_class);
+					}
+					//992~1279 일때
+					else {
+						body.classList.add(sidebar_mini_class)
+					}
+				}
+
+				function setPrimarySideMenu() {
+					if (window_width > 1280 && user_sm_status !== 'h' || window_width < 991) {
+						body.classList.remove(sidebar_mini_class);
+					}
+					//992~1279 일때
+					else if (window_width <= 1280 && window_width >= 991) {
+						if (user_sm_status == 's') body.classList.remove(sidebar_mini_class);
+						else body.classList.add(sidebar_mini_class)
+					}
+					else {
+						body.classList.add(sidebar_mini_class)
+					}
+				}
+
+				function setSideMenu(show) {
+					if (show == "show") {
+						setCookie('sm_status', 's', 1);
+						body.classList.remove(sidebar_mini_class);
+						user_sm_status = 's'
+					}
+					else {
+						setCookie('sm_status', 'h', 1);
+						body.classList.add(sidebar_mini_class);
+						user_sm_status = 'h';
+						// 사이드바 접기 버튼을 누른 순간에 바로 접힐 수 있도록 10ms동안 임시 클래스 추가로 hover 이벤트를 방지
+						let fold_area = document.querySelector('#menubar ~ .fold_area');
+						fold_area.classList.add('disable-hover');
+						setTimeout(() => { fold_area.classList.remove('disable-hover') }, 10);
+					}
+				}
+
+				$('._lang_button').off('click').on('click', function () {
+					let that = this;
+					if ($.cocoaStickerModal.isOpen()) {
+						$.cocoaStickerModal.close();
+					}
+					$.cocoaStickerModal.open({
+						target: that,
+						id: 'langListModal',
+						html: $('#langListOrigin').html(),
+						width: '152px',
+						bottom: 23,
+						left: 21
+					});
+				});
+
+				const $notificationButton = $('._gnb_notification_button');
+
+				const interval = getNotifyBadgeInterval($notificationButton);
+				const notifyHandler = getNotifyHandler();
+
+				notifyHandler.setInterval(interval);
+
+				interval.force();
+				interval.start();
+
+				$notificationButton.on('click', function () {
+					notifyHandler.toggleModal(interval);
+				});
+			})();
+
+		</script>
+		<style >
+			#analytics-tooltip button {
+				padding: 4px 12px;
+				line-height: 24px;
+				font-size: 14px;
+				border-radius: 6px;
+				transition: 0.1s ease-out;
+			}
+
+			.tooltip-close-button {
+				color: #717680;
+				background-color: transparent;
+			}
+
+			.tooltip-close-button:hover {
+				background-color: #f8f9fb;
+			}
+
+			.tooltip-close-button:active {
+				background-color: #e2e5e9;
+			}
+
+			.tooltip-go-button {
+				color: #FFFFFF;
+				background-color: #1A6DFF;
+			}
+
+			.tooltip-go-button:hover {
+				background-color: #70a2FF;
+			}
+
+			.tooltip-go-button:active {
+				background-color: #99bdFF;
+			}
+		</style>
+		<script >
+			window.addEventListener('load', () => {
+				var svShowAnalyticsTooltip = 'Y';
+
+				if (svShowAnalyticsTooltip === 'Y') {
+					var isClosed = false;
+
+					var isAppending = false;
+
+					function isSnbFolded() {
+						return document.body.classList.contains('sidebar-mini');
+					}
+
+					function isMobile() {
+						return window.innerWidth < 993;
+					}
+
+					function isTooltipExist() {
+						return document.querySelector('#analytics-tooltip') !== null;
+					}
+
+					function isStatMenuFolded() {
+						return $('li[data-title="stat"] > ul').css('display') === 'none';
+					}
+
+					function analyticsFocus() {
+						if (
+							isClosed ||
+							isSnbFolded() ||
+							isMobile() ||
+							isTooltipExist() ||
+							isStatMenuFolded() ||
+							isAppending
+						) {
+							return;
+						}
+
+						scrollToMenuLi()
+					}
+
+					function scrollToMenuLi() {
+						var menuLi = document.querySelector('li[data-title="stat_additional_service"]');
+
+						var menuLiTop = menuLi.getBoundingClientRect().top;
+						var toScroll = Math.max(0, menuLiTop - window.innerHeight) + 28 + 144;
+
+						document.querySelector('.nano-content').scrollTo({ top: toScroll, behavior: 'smooth' })
+
+						appendTooltip()
+						appendPulse()
+					}
+
+					function appendTooltip() {
+						isAppending = true;
+						setTimeout(() => {
+							var menuLi = document.querySelector('li[data-title="stat_additional_service"]');
+							var menuLiTop = menuLi.getBoundingClientRect().top + 14;
+
+							var focusElement = document.createElement('div');
+
+							focusElement.id = 'analytics-tooltip'
+
+							focusElement.style.position = 'fixed';
+							focusElement.style.left = '224px'
+							focusElement.style.top = menuLiTop + 'px';
+							focusElement.style.transform = 'translate(12px, -50%)';
+							focusElement.style.padding = '16px';
+							focusElement.style.borderRadius = '12px';
+							focusElement.style.backgroundColor = '#15181E';
+							focusElement.style.width = "240px";
+
+							var topText = document.createElement('p');
+
+							topText.style.color = '#FFFFFF';
+							topText.style.fontSize = '16px';
+							topText.style.fontWeight = '700';
+							topText.style.lineHeight = '24px';
+							topText.style.marginBottom = '12px';
+							topText.textContent = '부가 서비스 메뉴가 합쳐졌어요';
+
+							focusElement.appendChild(topText);
+
+							var middleText = document.createElement('p');
+
+							middleText.style.color = '#FFFFFF';
+							middleText.style.fontSize = '14px';
+							middleText.style.lineHeight = '20px';
+							middleText.style.marginBottom = '24px';
+							middleText.innerHTML = '더 다양한 데이터 분석 인사이트를 <br/>만나보세요'
+
+							focusElement.appendChild(middleText);
+
+							var bottomButtonArea = document.createElement('div');
+
+							bottomButtonArea.style.display = 'flex';
+							bottomButtonArea.style.justifyContent = 'flex-end';
+							bottomButtonArea.style.gap = '6px';
+
+							var closeButton = document.createElement('button');
+							closeButton.classList.add('tooltip-close-button');
+							closeButton.textContent = '닫기';
+							closeButton.id = 'analytics-tooltip-close';
+							bottomButtonArea.appendChild(closeButton);
+
+							var goButton = document.createElement('button');
+							goButton.id = 'analytics-tooltip-go';
+							goButton.classList.add('tooltip-go-button');
+							goButton.textContent = '이동';
+							bottomButtonArea.appendChild(goButton);
+
+							focusElement.appendChild(bottomButtonArea);
+
+							var arrowSvg = `<svg style="position: absolute;left: -6px;top: 50%;transform: translateY(-50%);" width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M0.707107 6.70711C0.316582 6.31658 0.316582 5.68342 0.707106 5.29289L6 -2.62268e-07L6 12L0.707107 6.70711Z" fill="#15181E"/>
+									</svg>`
+
+							focusElement.innerHTML += arrowSvg;
+
+							document.body.appendChild(focusElement);
+
+							document.querySelector('#analytics-tooltip-close').addEventListener('click', () => closeAnalyticsTooltip(() => {
+								isClosed = true;
+								remove();
+							}));
+							document.querySelector('#analytics-tooltip-go').addEventListener('click', () => closeAnalyticsTooltip(() => {
+								location.href = '/admin/stat/additional_service';
+							}));
+
+							isAppending = false;
+						}, 500);
+					}
+
+					function closeAnalyticsTooltip(callback) {
+						$.ajax({
+							url: '/admin/ajax/menu/close_analytics_tooltip.cm',
+							type: 'POST',
+							complete: callback
+						})
+					}
+
+					function appendPulse() {
+						var menuLi = document.querySelector('li[data-title="stat_additional_service"]');
+
+						var image = document.createElement('img');
+
+						image.id = 'analytics-pulse';
+
+						image.src = '/admin/img/menu_pulse.gif';
+
+						image.style.position = 'absolute';
+						image.style.left = '52px';
+						image.style.top = '50%';
+						image.style.transform = 'translateY(-50%)';
+						image.style.width = '56px';
+						image.style.height = '56px';
+						image.style.pointerEvents = 'none';
+
+						menuLi.appendChild(image);
+
+					}
+
+					function remove() {
+						document.querySelector('#analytics-tooltip')?.remove();
+						document.querySelector('#analytics-pulse')?.remove();
+					}
+
+					window.addEventListener('resize', () => {
+						if (window.innerWidth < 993) remove()
+						else {
+							analyticsFocus();
+						}
+					})
+
+					document.querySelector('#toggle_button').addEventListener('click', () => {
+						if (isSnbFolded()) remove()
+						else {
+							analyticsFocus();
+						}
+					})
+
+					$('.gui-folder').click(() => {
+						if (isTooltipExist()) remove()
+						else {
+							setTimeout(() => {
+								analyticsFocus();
+							}, 500);
+						}
+					})
+
+					document.querySelector('.nano-content').addEventListener('scroll', () => {
+						var tooltip = document.querySelector('#analytics-tooltip')
+
+						if (tooltip !== null) {
+							var top = document.querySelector('li[data-title="stat_additional_service"]').getBoundingClientRect().top
+
+							if (top === 0) {
+								remove()
+								return
+							}
+
+							tooltip.style.top = top + 14 + 'px';
+						}
+					})
+
+					analyticsFocus();
+				}
+			})
+		</script>
+	</div>
+	
+	<!-- END BASE -->
+	<div class="modal" id="cocoaModal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content"></div>
+		</div>
+	</div>
+
+	<div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
+		<div class="modal-dialog" >
+			<div class="modal-content" ></div>
+		</div>
+	</div>
+
+	<iframe name="hidden_frame" id="hidden_frame"
+		style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;"
+		src="_blank"></iframe>
+
+	<!-- Channel Script -->
+	<script type="text/javascript" >
+		window.channelPluginSettings = { "pluginKey": "6a8aaaf7-8e2f-400b-9946-491b9354592f", "language": "ko", "zIndex": 1000, "memberId": "M2022120722883bb351d7e", "profile": { "name": "\uc653\uc774", "mobileNumber": "34234", "email": "qjfhdnaos@gmail.com", "joinTime": "2022-12-07 17:37:39", "avatarUrl": "https:\/\/cdn.imweb.me\/thumbnail\/20221207\/b4b43fafd99e7.png", "memberType": "Free", "educationApplication": "N", "visitsCount": 5, "usingConsulting": "", "siteVersion": "Free", "isSiteExpired": "N", "makeDate_dcv1": "2022-12-07 17:42:44", "makeDate": "2024-05-16 09:49:33", "expireDate": null, "latestPaidPlanTransitionTime": null, "expireDate_dcv1": null, "highestRevenueSiteLastMonth": 0, "siteMemberCount_dcv1": 1, "siteMemberCount": 1, "mainDomain": "qjfhdnaos51106.imweb.me", "imwebDomain": "qjfhdnaos51106.imweb.me", "useSSL": "", "usingTrace": "N", "pgName": "\ubbf8\uac00\uc785", "usingNpay": false, "npayVersion": 2, "totalSalePrice": 0, "lastMonthSalePrice": 0 } };
+		(function () {
+			var w = window;
+			if (w.ChannelIO) {
+				return (window.console.error || window.console.log || function () { })('ChannelIO script included twice.');
+			}
+			var d = window.document;
+			var ch = function () {
+				ch.c(arguments);
+			};
+			ch.q = [];
+			ch.c = function (args) {
+				ch.q.push(args);
+			};
+			w.ChannelIO = ch;
+			function l() {
+				if (w.ChannelIOInitialized) {
+					return;
+				}
+				w.ChannelIOInitialized = true;
+				var s = document.createElement('script');
+				s.style.zIndex = 1100;
+				s.type = 'text/javascript';
+				s.defer = true;
+				s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+				s.charset = 'UTF-8';
+				var x = document.getElementsByTagName('script')[0];
+				x.parentNode.insertBefore(s, x);
+			}
+			if (document.readyState === 'complete') {
+				l();
+			} else {
+				window.addEventListener('load', l, false);
+			}
+		})();
+	</script>
+
+
+	<script >
+	</script>
+
+	<script type="text/javascript" >
+		mixpanel.init('a4939111ea54962dbf95fe89a992eab3', { debug: false });
+		mixpanel.identify('M2022120722883bb351d7e');
+		MIXPANEL.init();
+	</script>
+
+	<div id="device-breakpoints" >
+		<div class="device-xs visible-xs" data-breakpoint="xs"></div>
+		<div class="device-sm visible-sm" data-breakpoint="sm"></div>
+		<div class="device-md visible-md" data-breakpoint="md"></div>
+		<div class="device-lg visible-lg" data-breakpoint="lg"></div>
+	</div>
+	<div id="ch-plugin" class="notranslate" style="z-index: 1000">
+		<div id="ch-plugin-entry">
+			<div style="display: block;">
+					<div id="ch-shadow-root-wrapper">
+						<div class="Launcherstyled__LauncherButtonWrapper-ch-front__sc-1kx6op4-0 chEByq">
+							<button type="button">
+								<div class="ChatButtonContainer__Container-ch-front__sc-qgvnh9-0 cgHhTF">
+									<span class="a11y-hidden">imweb 상담 버튼</span>
+									<div class="SenderButtonView__Wrapper-ch-front__sc-1aik3pi-0 eFJnEc">
+										<div src="_blank"
+											class="SenderButtonView__SenderAvatarBg-ch-front__sc-1aik3pi-1 mVAFX"></div>
+									</div>
+									<div data-testid="img-custom-btn"
+										class="ImageCustomButtonView__Wrapper-ch-front__sc-1s91m5o-0 jVTAai">
+										<div src="_blank"
+											class="ImageCustomButtonView__CustomImageBg-ch-front__sc-1s91m5o-1 dRQruU">
+										</div>
+									</div>
+									<div class="IconButtonView__Background-ch-front__sc-vtu014-0 inQZZV">
+										<svg width="36" height="36" color="#ffffff"></svg>
+									</div>
+									<div class="MinimizeButtonView__Wrapper-ch-front__sc-1idijj-0 giSWOn">
+										<svg xmlns="_blank" width="36" height="36" fill="none"
+											viewBox="0 0 24 24" foundation="[object Object]"
+											class="Iconstyled__Icon-sc-1iqwu2g-0 pJGcx" data-testid="bezier-react-icon"
+											color="txt-black-darker" margintop="0" marginright="0" marginbottom="0"
+											marginleft="0" aria-hidden="true">
+										</svg>
+									</div>
+									<div role="status" aria-label=", there are unread messages"
+										class="Badge__BaseUnreadBadge-ch-front__sc-1k3c5b2-2 fOtwdy Badge__PcUnreadBadge-ch-front__sc-1k3c5b2-3 jrJXOx">
+									</div>
+								</div>
+							</button>
+						</div>
+					</div>
+		</div>
+		<div id="ch-plugin-script" style="display:none;" class="ch-messenger-hidden"> 
+			<iframe
+				id="ch-plugin-script-iframe" title="Channel chat"
+				style="position:relative;height:100%;width:100%;border:none!;"
+				src="_blank"></iframe> 
+			</div>
+	</div>
+</body>
+
+</html>
