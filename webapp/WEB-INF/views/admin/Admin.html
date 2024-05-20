@@ -33,10 +33,10 @@
 <body class="admin">
     <input type="hidden" id="USE_OMS">
     <!-- BEGIN BASE-->
-    <div id="dashboard_loader" class="se-pre-con">
-        <div class="page-loader-spinner">
-            <div class="double-bounce1"></div>
-            <div class="double-bounce2"></div>
+    <div class="dashboard" id="dashboard_loader">
+        <div class="pageloader">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
         </div>
         <div class="progress">
             <div class="progressbar">
@@ -45,12 +45,12 @@
         </div>
     </div>
 
-    <div id="base">
+    <div class="base" id="base">
         <header class="topheader">
             <div class="headerbar">
                 <div class="leftbar">
                     <a class="menutoggle" href="javascript:void(0);">
-                        <img class="btnicon" src="_blank"/>
+                        <img class="btnicon" src="_blank" />
                     </a>
                     <div>
                         <a class="sitename" href="_blank">
@@ -64,28 +64,29 @@
                             <a class="claybutton" href="_blank">나가기</a>
                         </li>
                         <li>
-                            <a class="clay-button2" href="_blank">연장 · 업그레이드</a>
+                            <a class="claybutton2" href="_blank">연장 · 업그레이드</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </header>
 
-        <div class="maindashboard" id="content">
+        <div class="main-dashboard" id="content">
             <div class="alertBox" id="alertBox">
                 <div class="arlertjoin" id="alertjoin">
                     <div class="middleitems"></div>
                     <div class="centeritems">
                         <img class="bannerimg" src="_blank">
                         <span class="lefttext">
-                            회원이 가입했어요! 가입 축하, 비밀번호 찾기 등 메일을 보내려면 
+                            회원이 가입했어요! 가입 축하, 비밀번호 찾기 등 메일을 보내려면
                             <a href="_blank">메일 발송 설정</a>을
                             해보세요.
                         </span>
                     </div>
                     <div class="btnclose">
-                        <button type="button" onclick="SADMIN_MENU_ALERT.closeBannerAlert(&#39;join&#39;)"
-                            class="btwnone">
+                        <button class="btwnone" type="button"
+                            onclick="SADMIN_MENU_ALERT.closeBannerAlert(&#39;join&#39;)">
+                            <!-- 아이콘 태그 -->
                             <i class="btl"></i>
                         </button>
                     </div>
@@ -97,17 +98,17 @@
                     <div class="section-body">
                         <div class="dashboard-section">
                             <div>
-                                <img class="clearimg" src="_blank"/>
+                                <img class="clearimg" src="_blank" />
                                 <span>요약</span>
                             </div>
 
                             <div class="dashboard-card">
                                 <button class="fold">
                                     <span>접어두기</span>
-                                    <img class="foldimage" src="_blank"/>
+                                    <img class="foldimage" src="_blank" />
                                 </button>
                                 <div class="tooltip">
-                                    <img class="toolimage" src="_blank"/>
+                                    <img class="toolimage" src="_blank" />
                                     <div>
                                         온보딩을 접어서<br>사용할 수 있어요
                                     </div>
@@ -126,7 +127,7 @@
                                         </div>
                                         <div class="checkbar-text">0/4개 완료</div>
                                     </div>
-                                    
+
                                     <div class="tlist">
                                         <div class="clist">
                                             <span class="check-icon"></span>
@@ -273,8 +274,8 @@
                             <div class="titem">
                                 <div class="card">
                                     <div class="card-head">
-                                        <header>오늘의 할일 
-                                            <span class="headerbadge">0</span>
+                                        <header>오늘의 할일
+                                            <span class="header-badge">0</span>
                                         </header>
                                     </div>
                                     <div class="card-body">
@@ -314,7 +315,7 @@
 
                         <div class="dashboard-section">
                             <div>
-                                <img class="dimg" src="_blank"/>
+                                <img class="dimg" src="_blank" />
                                 <span> 통계 </span>
                             </div>
                         </div>
@@ -328,82 +329,87 @@
                                 <div class="rightbanner">
                                     <img class="rbanner" src="_blank">
                                     <button class="bbutton" type="button">
-                                        <img src="rimg" src="_blank"/>
+                                        <img src="rimg" src="_blank" />
                                     </button>
                                 </div>
 
                                 <button class="bannerhide" type="button">
-                                    <img class="hideimg" src="blank"/>
+                                    <img class="hideimg" src="blank" />
                                 </button>
                             </div>
                         </div>
 
-                        <div class="flex-box dashboard_stats">
-                            <div class="ma-item col-md-6 col-sm-12 col-xs-12 stat-visitor-list">
+                        <div class="dashboard-stats">
+                            <div class="visitor-list">
                                 <div class="card">
-                                    <div class="card_head">
+                                    <div class="card-head">
                                         <header>방문자</header>
-                                        <a href="_blank" class="dashboard_card_anchor">더보기</a>
+                                        <a href="_blank" class="card-anchor">더보기</a>
                                     </div>
-                                    <div class="card-body border-top">
-                                        <div class="float_r text-12 text-right force-padding no-padding">
-                                            <span style="margin-right: 15px;">
-                                                <i class="fa fa-circle" style="color: rgb(179, 227, 255);"></i>
+                                    <div class="card-body">
+                                        <div class="float">
+                                            <span class="span">
+                                                <i class="fa"></i>
                                                 페이지뷰
                                             </span>
-                                            <i class="fa fa-circle" style="color: rgb(25, 109, 255); "></i> 방문자
+                                            <i class="fafa"></i> 방문자
                                         </div>
 
                                         <div class="holder">
-                                            <canvas id="stats_chart" width="328" height="164"
-                                                style="width: 328px; height: 164px;"></canvas>
-                                            <div class="chartjs_tooltip _chartjs_tooltip"
-                                                style="opacity: 0; left: 123px; top: 180.417px; font-family: &quot;Helvetica Neue&quot; Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; position: absolute; background: rgb(255, 255, 255); ">
-                                                <div class="chartjs-tooltip-section">
-                                                    <span class="chartjs-tooltip-key"
-                                                        style="background-color: rgb(25, 109, 255);"></span>
-                                                    <span class="chartjs-tooltip-value">8</span>
+                                            <canvas class="stats-chart" id="stats-chart"></canvas>
+                                            <div class="chart-tooltip">
+                                                <div class="chart-tooltip-section">
+                                                    <span class="tooltip-key"></span>
+                                                    <span class="tooltip-value">8</span>
                                                 </div>
-                                                <div class="chartjs-tooltip-section">
-                                                    <span class="chartjs-tooltip-key"
-                                                        style="background-color: rgb(179, 227, 255);"></span>
-                                                    <span class="chartjs-tooltip-value">31</span>
+                                                <div class="chart-tooltip">
+                                                    <span class="chart-tooltip-key"></span>
+                                                    <span class="tooltip-value">31</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                
                             </div>
-                            <div class="ma-item col-md-6 col-sm-12 col-xs-12 stat-analytics-list">
+
+                            <div class="analytics-list">
                                 <div class="card">
-                                    <div class="card_head">
+                                    <div class="card-head">
                                         <header>기간별 분석</header>
-                                        <a href="_blank" class="dashboard_card_anchor">더보기</a>
+                                        <a class="card-anchor" href="_blank">더보기</a>
                                     </div>
-                                    <div class="card-body no-padding border-top">
-                                        <table class="table no-margin summary-table"><!-- 예약 또는 쇼핑 사용 -->
+                                    <div class="card-body">
+                                        <table class="summary-table"><!-- 예약 또는 쇼핑 사용 -->
                                             <thead>
                                                 <tr>
-                                                    <th class="text-13 text-center opacity-50">일자</th>
-                                                    <th class="text-13 text-center opacity-50">주문수</th>
-                                                    <th class="text-13 text-center opacity-50">매출액
-                                                        <a href="javascript:;" class="text-gray" role="button"
-                                                            data-toggle="popover" data-placement="auto" title=""
-                                                            data-html="true"
-                                                            data-content="&lt;table style=&#39;width:100%; line-height:1.4; vertical-align:top&#39; class=&#39;table table-normal table-sm-padding no-margin&#39;&gt;&lt;tr&gt;&lt;th style=&#39;width:25%&#39; class=&#39;no-border-top&#39;&gt;집계시점&lt;/th&gt;&lt;td class=&#39;no-border-top&#39;&gt;주문일 기준 결제완료된 주문&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;차감기준&lt;/th&gt;&lt;td&gt;취소,반품완료시 결제금액에서 환불금액만큼 차감&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;환불적용&lt;/th&gt;&lt;td&gt;취소,반품/환불시 주문일자 기준으로 처리&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;할인금액&lt;/th&gt;&lt;td&gt;적립금, 쿠폰 등은 매출금액에서 제외. 실결제금액에만 반영.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;부분취소&lt;/th&gt;&lt;td&gt;부분취소 주문은 정확히 집계되지 않음(개선예정).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"
-                                                            data-original-title="매출액 계산 기준">
-                                                            <i class="btm bt-question-circle"></i>
+                                                    <th class="th">일자</th>
+                                                    <th class="th">주문수</th>
+                                                    <th class="th">매출액
+                                                        <!-- 버튼처럼 작동 -->
+                                                        <a class="button" href="javascript:;" role="button"
+                                                            data-toggle="popover" data-placement="auto" data-html="true"
+                                                            data-content="&lt;table style=&#39;width:100%; 
+                                                                            line-height:1.4; vertical-align:top&#39; 
+                                                                            class=&#39;table table-normal table-sm-padding 
+                                                                            no-margin&#39;&gt;&lt;tr&gt;&lt;th style=&#39;width:25%&#39; 
+                                                                            class=&#39;no-border-top&#39;&gt;집계시점&lt;/th&gt;&lt;
+                                                                            td class=&#39;no-border-top&#39;&gt;주문일 기준 결제완료된 주문&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;
+                                                                            차감기준&lt;/th&gt;&lt;td&gt;취소,반품완료시 결제금액에서 환불금액만큼 차감&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;환불적용&lt;/th&gt;&lt;td&gt;
+                                                                            취소,반품/환불시 주문일자 기준으로 처리&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;할인금액&lt;/th&gt;&lt;td&gt;
+                                                                            적립금, 쿠폰 등은 매출금액에서 제외. 실결제금액에만 반영.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;부분취소&lt;/th&gt;&lt;td&gt;
+                                                                            부분취소 주문은 정확히 집계되지 않음(개선예정).&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;">
+                                                            <i class="question"></i>
                                                         </a>
                                                     </th>
-                                                    <th class="text-13 text-center opacity-50">방문자</th>
-                                                    <th class="text-13 text-center opacity-50">가입</th>
-                                                    <th class="text-13 text-center opacity-50">문의</th>
-                                                    <th class="text-13 text-center opacity-50">후기</th>
+                                                    <th class="th">방문자</th>
+                                                    <th class="th">가입</th>
+                                                    <th class="th">문의</th>
+                                                    <th class="th">후기</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr class="today"><!-- 주단위 반복 -->
+                                                <tr class="today">
+                                                    <!-- 주단위 반복 -->
                                                     <td class="text-left">2024-05-16</td>
                                                     <td class="text-right">0</td>
                                                     <td class="text-right">0원</td>
@@ -417,13 +423,13 @@
                                             </tbody>
                                             <tfoot>
                                                 <tr>
-                                                    <td class="text-left no-border">최근 7일 합계</td>
-                                                    <td class="text-right no-border">0건</td>
-                                                    <td class="text-right no-border">0원</td>
-                                                    <td class="text-right no-border">0명</td>
-                                                    <td class="text-right no-border">0명</td>
-                                                    <td class="text-right no-border">0</td>
-                                                    <td class="text-right no-border">0</td>
+                                                    <td class="text-left-border">최근 7일 합계</td>
+                                                    <td class="text-right-border">0건</td>
+                                                    <td class="text-right-border">0원</td>
+                                                    <td class="text-right-border">0명</td>
+                                                    <td class="text-right-border">0명</td>
+                                                    <td class="text-right-border">0</td>
+                                                    <td class="text-right-border">0</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-left">이번달 합계</td>
@@ -441,28 +447,26 @@
                             </div>
                         </div>
 
-                        <div class="dashboard_section_header">
+                        <div class="section-header">
                             <div>
-                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="_blank">
-                                </svg>
-
+                                <img class="secimg" src="_blank" />
                                 <span>컨텐츠</span>
                             </div>
                         </div>
-                        <div class="flex-box dashboard_section_row dashboard_contents_row">
-                            <div class="ma-item col-md-6 col-sm-6 col-xs-12 answers-list shopping-review">
-                                <div class="card flex-card">
+
+                        <div class="row-section">
+                            <div class="shopping-review">
+                                <div class="flex-card">
                                     <!-- // 예약 또는 쇼핑 사용 -->
-                                    <div class="card_head">
-                                        <header>상품 구매평
-                                        </header>
-                                        <a href="_blank" class="dashboard_card_anchor">더보기</a>
+                                    <div class="card-head">
+                                        <header>상품 구매평</header>
+                                        <a class="card-anchor" href="_blank">더보기</a>
                                     </div>
-                                    <div class="card-body border-top no-data-card-body">
-                                        <ul class="list list-preview">
+                                    <div class="card-body">
+                                        <ul class="list-preview">
                                             <li class="tile">
-                                                <div class="no-data-container">
-                                                    <img src="_blank" alt="no data">
+                                                <div class="no-data">
+                                                    <img src="_blank" alt="no-data">
                                                     <p>상품 구매평이 없어요</p>
                                                 </div>
                                             </li>
@@ -470,17 +474,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="ma-item col-md-6 col-sm-6 col-xs-12 answers-list shopping-qna">
-                                <div class="card flex-card">
+
+                            <div class="shopping-qna">
+                                <div class="flex-card">
                                     <!-- // 예약 또는 쇼핑 사용 -->
-                                    <div class="card_head">
+                                    <div class="card-head">
                                         <header>상품 문의</header>
-                                        <a href="_blank" class="dashboard_card_anchor">더보기</a>
+                                        <a class="card-anchor" href="_blank">더보기</a>
                                     </div>
-                                    <div class="card-body border-top no-data-card-body">
-                                        <ul class="list list-preview">
+                                    <div class="card-body">
+                                        <ul class="list-preview">
                                             <li class="tile">
-                                                <div class="no-data-container">
+                                                <div class="no-data">
                                                     <img src="_blank" alt="no data">
                                                     <p>상품 문의가 없어요</p>
                                                 </div>
@@ -489,17 +494,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="ma-item col-md-6 col-sm-6 col-xs-12 contents-list !tw-mb-0">
-                                <div class="card flex-card">
+
+                            <div class="contents-list">
+                                <div class="flex-card">
                                     <!-- // 예약 또는 쇼핑 사용 -->
-                                    <div class="card_head">
+                                    <div class="card-head">
                                         <header> 컨텐츠 반응</header>
-                                        <a href="_blank" class="dashboard_card_anchor">더보기</a>
+                                        <a class="card-anchor" href="_blank">더보기</a>
                                     </div>
-                                    <div class="card-body border-top no-data-card-body">
-                                        <ul class="list list-preview">
+                                    <div class="card-body">
+                                        <ul class="list-preview">
                                             <li class="tile">
-                                                <div class="no-data-container">
+                                                <div class="no-data">
                                                     <img src="_blank" alt="no data">
                                                     <p>컨텐츠 반응이 없어요</p>
                                                 </div>
@@ -508,29 +514,29 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
 
-                        <div style="height: 40px;"></div>
+                        <div class="contentbox"></div>
 
-                        <div class="dashboard_section_header">
+                        <div class="sec-header">
                             <div>
-                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="_blank"></svg>
+                                <img src="_blank" class="dasimg" />
                                 <span>아임웹 소식</span>
                             </div>
                         </div>
 
-                        <div class="flex-box dashboard_imweb_contents_top dashboard_section_row">
-                            <div class="ma-item col-md-6 col-sm-6 col-xs-12 contents-myqna">
-                                <div class="card flex-card">
-                                    <div class="card_head">
+                        <div class="sec-row">
+                            <div class="myqna">
+                                <div class="flex-card">
+                                    <div class="card-head">
                                         <header>문의 내역</header>
-                                        <a href="_blank" target="_blank" class="dashboard_card_anchor">더보기</a>
+                                        <a class="card-anchor" href="_blank">더보기</a>
                                     </div>
-                                    <div class="card-body border-top no-data-card-body qna-no-data-card-body">
-                                        <ul class="list list-preview">
+                                    <div class="card-body">
+                                        <ul class="list-preview">
                                             <li class="tile">
-
-                                                <div class="no-data-container">
+                                                <div class="no-data">
                                                     <img src="_blank" alt="no data">
                                                     <p>문의 내역이 없어요</p>
                                                 </div>
@@ -539,114 +545,89 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="ma-item col-md-6 col-sm-6 col-xs-12 notice-list">
+
+                            <div class="notice-list">
                                 <div class="card">
-                                    <div class="card_head">
+                                    <div class="card-head">
                                         <header>아임웹 소식</header>
-                                        <a href="_blank" class="dashboard_card_anchor">더보기</a>
+                                        <a class="card-anchor" href="_blank">더보기</a>
                                     </div>
-                                    <div class="card-body border-top">
-                                        <ul class="list list-preview">
-                                            <li class="tile" style="min-height: auto;">
-                                                <a class="tile-content notice-item" href="_blank" target="_blank">
-                                                    <div class="tile-text no-padding">
+                                    <div class="card-body">
+                                        <ul class="list-preview">
+                                            <li class="tile">
+                                                <a class="notice-item" href="_blank">
+                                                    <div class="tile-text">
                                                         전문가 찾기 Beta 오픈 소식 🎉
                                                     </div>
-                                                    <div class="tile-icon no-padding text-12 text-gray-bright"
-                                                        style="min-width: 80px;"> 2024-04-30
+                                                    <div class="tile-icon"> 2024-04-30
                                                     </div>
                                                 </a>
                                             </li>
-                                            <li class="tile" style="min-height: auto;">
-                                                <a class="tile-content notice-item" href="_blank" target="_blank">
-                                                    <div class="tile-text no-padding">[아임웹] 근로자의 날 휴무 안내 </div>
-                                                    <div class="tile-icon no-padding text-12 text-gray-bright"
-                                                        style="min-width: 80px; ">
-                                                        2024-04-29
-                                                    </div>
+                                            <li class="tile">
+                                                <a class="notice-item" href="_blank">
+                                                    <div class="tile-text">[아임웹] 근로자의 날 휴무 안내 </div>
+                                                    <div class="tile-icon">2024-04-29</div>
                                                 </a>
                                             </li>
-                                            <li class="tile" style="min-height: auto; ">
-                                                <a class="tile-content notice-item" href="_blank" target="_blank">
-                                                    <div class="tile-text no-padding">
+                                            <li class="tile">
+                                                <a class="notice-item" href="_blank">
+                                                    <div class="tile-text">
                                                         [안내] 04/25 (목) 홈페이지 접속 문제 관련 정상조치 완료 안내
                                                     </div>
-                                                    <div class="tile-icon no-padding text-12 text-gray-bright"
-                                                        style="min-width: 80px;">
-                                                        2024-04-25
-                                                    </div>
+                                                    <div class="tile-icon">2024-04-25</div>
                                                 </a>
                                             </li>
-                                            <li class="tile" style="min-height: auto;">
-                                                <a class="tile-content notice-item" href="_blank" target="_blank">
-                                                    <div class="tile-text no-padding">
+                                            <li class="tile">
+                                                <a class="notice-item" href="_blank">
+                                                    <div class="tile-text">
                                                         [안내] 04/25 (목) 홈페이지 접속 문제 발생 안내 (조치중)
                                                     </div>
-                                                    <div class="tile-icon no-padding text-12 text-gray-bright"
-                                                        style="min-width: 80px;">
-                                                        2024-04-25
-                                                    </div>
+                                                    <div class="tile-icon">2024-04-25</div>
                                                 </a>
                                             </li>
-                                            <li class="tile" style="min-height: auto;">
-                                                <a class="tile-content notice-item" href="_blank" target="_blank">
-                                                    <div class="tile-text no-padding">4월 업데이트 소식 </div>
-                                                    <div class="tile-icon no-padding text-12 text-gray-bright"
-                                                        style="min-width: 80px; ">2024-04-24</div>
+                                            <li class="tile">
+                                                <a class="notice-item" href="_blank">
+                                                    <div class="tile-text">4월 업데이트 소식 </div>
+                                                    <div class="tile-icon">2024-04-24</div>
                                                 </a>
                                             </li>
-                                            <li class="tile" style="min-height: auto;">
-                                                <a class="tile-content notice-item" href="_blank">
-                                                    <div class="tile-text no-padding">
+                                            <li class="tile">
+                                                <a class="notice-item" href="_blank">
+                                                    <div class="tile-text">
                                                         [안내] 4/18(목) SSL 인증서 신청관련 지연 사전 안내 </div>
-                                                    <div class="tile-icon no-padding text-12 text-gray-bright"
-                                                        style="min-width: 80px;">
-                                                        2024-04-11
-                                                    </div>
+                                                    <div class="tile-icon">2024-04-11</div>
                                                 </a>
                                             </li>
-                                            <li class="tile" style="min-height: auto; ">
-                                                <a class="tile-content notice-item" href="_blank" target="_blank">
-                                                    <div class="tile-text no-padding">
+                                            <li class="tile">
+                                                <a class="notice-item" href="_blank" target="_blank">
+                                                    <div class="tile-text">
                                                         [안내] 아임웹 주문관리시스템 오픈에 따른 Open API 변경 사전 안내
                                                     </div>
-                                                    <div class="tile-icon no-padding text-12 text-gray-bright"
-                                                        style="min-width: 80px; ">
-                                                        2024-04-09
-                                                    </div>
+                                                    <div class="tile-icon">2024-04-09</div>
                                                 </a>
                                             </li>
-                                            <li class="tile" style="min-height: auto;">
-                                                <a class="tile-content notice-item" href="_blank">
-                                                    <div class="tile-text no-padding">
+                                            <li class="tile">
+                                                <a class="notice-item" href="_blank">
+                                                    <div class="tile-text">
                                                         [안내] 현금성 결제수단(무통장 결제수단) 변경 정책 사전 안내
                                                     </div>
-                                                    <div class="tile-icon no-padding text-12 text-gray-bright"
-                                                        style="min-width: 80px;">
-                                                        2024-04-05
-                                                    </div>
+                                                    <div class="tile-icon">2024-04-05</div>
                                                 </a>
                                             </li>
-                                            <li class="tile" style="min-height: auto;">
-                                                <a class="tile-content notice-item" href="_blank">
-                                                    <div class="tile-text no-padding">
+                                            <li class="tile">
+                                                <a class="notice-item" href="_blank">
+                                                    <div class="tile-text">
                                                         [아임웹] 4/10(수) 22대 국회의원 선거 휴무 안내
                                                     </div>
-                                                    <div class="tile-icon no-padding text-12 text-gray-bright"
-                                                        style="min-width: 80px; ">
-                                                        2024-04-04
-                                                    </div>
+                                                    <div class="tile-icon">2024-04-04</div>
                                                 </a>
                                             </li>
-                                            <li class="tile" style="min-height: auto; ">
-                                                <a class="tile-content notice-item" href="_blank">
-                                                    <div class="tile-text no-padding">
+                                            <li class="tile">
+                                                <a class="notice-item" href="_blank">
+                                                    <div class="tile-text">
                                                         [안내] 04/11(목) 개인정보처리방침 변경 사전 안내
                                                     </div>
-                                                    <div class="tile-icon no-padding text-12 text-gray-bright"
-                                                        style="min-width: 80px;">
-                                                        2024-04-03
-                                                    </div>
+                                                    <div class="tile-icon">2024-04-03</div>
                                                 </a>
                                             </li>
                                         </ul>
@@ -655,106 +636,74 @@
                             </div>
                         </div>
 
-                        <div class="flex-box dashboard_section_row">
+                        <div class="section-row">
 
-                            <div class="ma-item col-md-6 col-sm-6 col-xs-12 guide-list">
+                            <div class="guide-list">
                                 <div class="card">
-                                    <div class="card_head">
+                                    <div class="card-head">
                                         <header> 아임웹 가이드 </header>
-                                        <a href="_blank" class="dashboard_card_anchor">더보기</a>
+                                        <a class="card-anchor" href="_blank">더보기</a>
                                     </div>
-                                    <div class="card-body border-top">
-                                        <ul class="list list-preview">
-                                            <li class="tile" style="min-height: auto; ">
-                                                <a class="tile-content guide-item" href="_blank">
-                                                    <div class="tile-text no-padding">빠른 디자인 시작 가이드 </div>
-                                                    <div class="tile-icon no-padding text-12 text-gray-bright"
-                                                        style="min-width: 80px; ">
-                                                        2020-06-02
-                                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-preview">
+                                            <li class="tile">
+                                                <a class="guide-item" href="_blank">
+                                                    <div class="tile-text">빠른 디자인 시작 가이드 </div>
+                                                    <div class="tile-icon">2020-06-02</div>
                                                 </a>
                                             </li>
-                                            <li class="tile" style="min-height: auto;">
-                                                <a class="tile-content guide-item" href="_blank">
-                                                    <div class="tile-text no-padding">디자인 모드란? </div>
-                                                    <div class="tile-icon no-padding text-12 text-gray-bright"
-                                                        style="min-width: 80px;">
-                                                        2019-11-12
-                                                    </div>
+                                            <li class="tile">
+                                                <a class="guide-item" href="_blank">
+                                                    <div class="tile-text">디자인 모드란? </div>
+                                                    <div class="tile-icon">2019-11-12</div>
                                                 </a>
                                             </li>
-                                            <li class="tile" style="min-height: auto;">
-                                                <a class="tile-content guide-item" href="_blank">
-                                                    <div class="tile-text no-padding">아임웹 웹 페이지의 구조 </div>
-                                                    <div class="tile-icon no-padding text-12 text-gray-bright"
-                                                        style="min-width: 80px;">
-                                                        2020-03-16</div>
+                                            <li class="tile">
+                                                <a class="guide-item" href="_blank">
+                                                    <div class="tile-text">아임웹 웹 페이지의 구조 </div>
+                                                    <div class="tile-icon">2020-03-16</div>
                                                 </a>
                                             </li>
-                                            <li class="tile" style="min-height: auto;">
-                                                <a class="tile-content guide-item" href="_blank">
-                                                    <div class="tile-text no-padding">공통 디자인 설정하기 </div>
-                                                    <div class="tile-icon no-padding text-12 text-gray-bright"
-                                                        style="min-width: 80px;">
-                                                        2019-11-12</div>
+                                            <li class="tile">
+                                                <a class="guide-item" href="_blank">
+                                                    <div class="tile-text">공통 디자인 설정하기 </div>
+                                                    <div class="tile-icon">2019-11-12</div>
                                                 </a>
                                             </li>
-                                            <li class="tile" style="min-height: auto;">
-                                                <a class="tile-content guide-item" href="_blank">
-                                                    <div class="tile-text no-padding">
-                                                        메뉴 추가, 이동, 복제, 설정, 삭제하기
-                                                    </div>
-                                                    <div class="tile-icon no-padding text-12 text-gray-bright"
-                                                        style="min-width: 80px; ">
-                                                        2019-12-26
-                                                    </div>
+                                            <li class="tile">
+                                                <a class="guide-item" href="_blank">
+                                                    <div class="tile-text">메뉴 추가, 이동, 복제, 설정, 삭제하기</div>
+                                                    <div class="tile-icon">2019-12-26</div>
                                                 </a>
                                             </li>
-                                            <li class="tile" style="min-height: auto;">
-                                                <a class="tile-content guide-item" href="_blank">
-                                                    <div class="tile-text no-padding">
-                                                        위젯 추가, 이동, 복제, 설정, 삭제하기
-                                                    </div>
-                                                    <div class="tile-icon no-padding text-12 text-gray-bright"
-                                                        style="min-width: 80px;">
-                                                        2019-11-12
-                                                    </div>
+                                            <li class="tile">
+                                                <a class="guide-item" href="_blank">
+                                                    <div class="tile-text">위젯 추가, 이동, 복제, 설정, 삭제하기</div>
+                                                    <div class="tile-icon">2019-11-12</div>
                                                 </a>
                                             </li>
-                                            <li class="tile" style="min-height: auto;">
-                                                <a class="tile-content guide-item" href="_blank">
-                                                    <div class="tile-text no-padding">위젯별 기능 설명 (디자인 요소) </div>
-                                                    <div class="tile-icon no-padding text-12 text-gray-bright"
-                                                        style="min-width: 80px; ">
-                                                        2019-11-12
-                                                    </div>
+                                            <li class="tile">
+                                                <a class="guide-item" href="_blank">
+                                                    <div class="tile-text">위젯별 기능 설명 (디자인 요소) </div>
+                                                    <div class="tile-icon">2019-11-12</div>
                                                 </a>
                                             </li>
-                                            <li class="tile" style="min-height: auto;">
-                                                <a class="tile-content guide-item" href="_blank">
-                                                    <div class="tile-text no-padding">위젯별 기능 설명 (DB 요소) </div>
-                                                    <div class="tile-icon no-padding text-12 text-gray-bright"
-                                                        style="min-width: 80px; ">
-                                                        2019-11-12
-                                                    </div>
+                                            <li class="tile">
+                                                <a class="guide-item" href="_blank">
+                                                    <div class="tile-text">위젯별 기능 설명 (DB 요소) </div>
+                                                    <div class="tile-icon">2019-11-12</div>
                                                 </a>
                                             </li>
-                                            <li class="tile" style="min-height: auto;">
-                                                <a class="tile-content guide-item" href="_blank">
-                                                    <div class="tile-text no-padding">그리드 시스템이란? </div>
-                                                    <div class="tile-icon no-padding text-12 text-gray-bright"
-                                                        style="min-width: 80px;">
-                                                        2019-11-12
-                                                    </div>
+                                            <li class="tile">
+                                                <a class="guide-item" href="_blank">
+                                                    <div class="tile-text">그리드 시스템이란? </div>
+                                                    <div class="tile-icon">2019-11-12</div>
                                                 </a>
                                             </li>
-                                            <li class="tile" style="min-height: auto;">
-                                                <a class="tile-content guide-item" href="_blank">
-                                                    <div class="tile-text no-padding">위젯 배치 및 그리드 실습 </div>
-                                                    <div class="tile-icon no-padding text-12 text-gray-bright"
-                                                        style="min-width: 80px; ">
-                                                        2020-06-01
-                                                    </div>
+                                            <li class="tile">
+                                                <a class="guide-item" href="_blank">
+                                                    <div class="tile-text">위젯 배치 및 그리드 실습 </div>
+                                                    <div class="tile-icon">2020-06-01</div>
                                                 </a>
                                             </li>
                                         </ul>
@@ -763,30 +712,34 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="dashboard-right">
+                        <div class="user-card">
+                            <div class="card-body">
+                                <!-- dropdown -->
+                                <a class="dropdown-toggle" href="javascript:" 
+                                    data-toggle="dropdown" tabindex="-1" aria-expanded="false">
 
-                    <div class="dashboard_right right-menu-fixed float_l">
-                        <div class="card card-black dashboard-user-card">
-                            <div class="card-body text-center">
-                                <a href="javascript:" class="dropdown-toggle block " data-toggle="dropdown"
-                                    tabindex="-1" aria-expanded="false">
-                                    <div class="margin-bottom-xl" id="mixpanel_dashboard_profile">
-                                        <img class="border-round" src="_blank" width="64" height="64">
+                                    <div class="mixpanel-profile" id="mixpanel-profile">
+                                        <img class="border-round" src="_blank">
                                     </div>
-                                    <div class="text-bold">
-                                        <span class="use_name holder">관리자</span>
+
+                                    <div class="text">
+                                        <span class="nameholder">관리자</span>
                                     </div>
-                                    <div class="text-13 opacity-50">
+                                    <div class="emailholder">
                                         qjfhdnaos@gmail.com
                                     </div>
                                 </a>
-                                <ul class="dropdown-menu animation-dock dashboard-profile" role="menu">
 
+                                <ul class="dropdown-menu">
                                     <li>
-                                        <a class="text-ellipsis">
-                                            <img class="border-round" src="_blank" width="45" height="45">
+                                        <a class="ellipsis">
+                                            <img class="border-round" src="_blank">
                                             <span>관리자</span>
                                         </a>
                                     </li>
+
                                     <li class="divider"></li>
 
                                     <li>
@@ -794,14 +747,13 @@
                                     </li>
 
                                     <li>
-                                        <a href="javascript:" onclick="ADMIN.openProfile();">내사이트 목록 보기
-                                        </a>
+                                        <a href="javascript:" onclick="ADMIN.openProfile();">내사이트 목록 보기</a>
                                     </li>
 
                                     <li class="divider"></li>
 
                                     <li>
-                                        <a class="text-danger upgrade-btn" href="_blank">
+                                        <a class="upgrade-btn" href="_blank">
                                             연장/업그레이드
                                         </a>
                                     </li>
@@ -809,8 +761,9 @@
                                     <li class="divider"></li>
 
                                     <li>
-                                        <a href="_blank" class="exit-btn">나가기</a>
+                                        <a class="exit-btn" href="_blank">나가기</a>
                                     </li>
+
                                     <li>
                                         <a href="_blank">로그아웃</a>
                                     </li>
@@ -818,94 +771,92 @@
                                 </ul>
                             </div>
 
-                            <div class="card-body card-summary no-padding-top">
-                                <div class="tabled full-width text-12 margin-bottom-xl">
-                                    <div class="table-cell vertical-middle opacity-50 sub_tit">사용버전</div>
-                                    <div class="table-cell vertical-middle">
-                                        <span class="btn btn-sm btn-dark-bright btn-rounded btn-xs-padding"
-                                            style="text-transform: capitalize;">free</span>
+                            <div class="card-summary">
+                                <div class="fulltable">
+                                    <div class="sub-tit">사용버전</div>
+                                    <div class="table-cell">
+                                        <span class="roundedbtn">free</span>
                                     </div>
-                                    <div class="table-cell vertical-middle text-right sub_option">
-                                        <a class="text-danger" id="mixpanel_dashboard_upgrade_right"
+                                    <div class="sub-option">
+                                        <a class="mixpanel-upgrade" id="mixpanel-upgrade" 
                                             href="_blank">업그레이드</a>
                                     </div>
                                 </div>
-                                <div class="tabled full-width text-12 margin-bottom-xl">
-                                    <div class="table-cell vertical-middle opacity-50 sub_tit">PG</div>
-                                    <div class="table-cell vertical-middle">미가입</div>
-                                    <div class="table-cell vertical-middle text-right sub_option">
-                                        <a class="opacity-50" id="mixpanel_dashboard_pg" href="_blank">설정</a>
+                                <div class="fulltable">
+                                    <div class="sub-tit">PG</div>
+                                    <div class="table-cell">미가입</div>
+                                    <div class="sub-option">
+                                        <a class="pg-upgrade" id="pg-upgrade" href="_blank">설정</a>
                                     </div>
                                 </div>
 
                             </div>
 
-                            <div class="card-body card-summary">
-                                <div class="tabled full-width text-12 margin-bottom-xl">
-                                    <div class="table-cell vertical-middle opacity-50 sub_tit">APP</div>
-                                    <div class="table-cell vertical-middle">
+                            <div class="card-summary">
+                                <div class="fulltable">
+                                    <div class="sub-tit">APP</div>
+                                    <div class="table-cell">
                                         <a class="hover-underline" href="_blank" alt="iOS 신청">iOS 미사용</a> /
                                         <a class="hover-underline" href="_blank" alt="Android 신청">Android 미사용</a>
                                     </div>
 
-                                    <div class="table-cell vertical-middle text-right sub_option">
-                                        <a class="text-danger"
-                                            href="javascript:chkFreeVersion(&#39;/admin/app/android&#39;)">설정</a>
+                                    <div class="sub-option">
+                                        <a class="mixpanel-upgrade" href="_blank">설정</a>
                                     </div>
                                 </div>
 
-                                <div class="tabled full-width text-12 margin-bottom-xl">
-                                    <div class="table-cell vertical-middle opacity-50 sub_tit">도메인</div>
-                                    <div class="table-cell vertical-middle" style="word-break: break-all; ">기본 도메인 사용 중
-                                    </div>
-                                    <div class="table-cell vertical-middle text-right sub_option">
-                                        <a class="text-danger" href="_blank">설정</a>
+                                <div class="fulltable">
+                                    <div class="sub-tit">도메인</div>
+                                    <div class="table-word">기본 도메인 사용 중</div>
+                                    <div class="sub-option">
+                                        <a class="mixpanel-upgrade" href="_blank">설정</a>
                                     </div>
                                 </div>
 
-                                <div class="tabled full-width text-12 margin-bottom-xl">
-                                    <div class="table-cell vertical-middle opacity-50 sub_tit">SSL</div>
-                                    <div class="table-cell vertical-middle">사용 (기본 도메인 자동 적용)</div>
-                                    <div class="table-cell vertical-middle text-right sub_option">
-                                        <a class="text-danger" href="_blank">연장</a>
+                                <div class="fulltable">
+                                    <div class="sub-tit">SSL</div>
+                                    <div class="table-cell">사용 (기본 도메인 자동 적용)</div>
+                                    <div class="sub-option">
+                                        <a class="mixpanel-upgrade" href="_blank">연장</a>
                                     </div>
                                 </div>
-                                <div class="tabled full-width text-12 margin-bottom-xl">
-                                    <div class="table-cell vertical-middle opacity-50 sub_tit">SMS</div>
-                                    <div class="table-cell vertical-middle">0건</div>
-                                    <div class="table-cell vertical-middle text-right sub_option">
-                                        <a class="text-danger" href="_blank">충전</a>
+
+                                <div class="fulltable">
+                                    <div class="sub-tit">SMS</div>
+                                    <div class="table-cell">0건</div>
+                                    <div class="sub-option">
+                                        <a class="mixpanel-upgrade" href="_blank">충전</a>
                                     </div>
                                 </div>
-                                <div class="tabled full-width text-12 margin-bottom-xl">
-                                    <div class="table-cell vertical-middle opacity-50 sub_tit">입금확인
-                                        <a href="javascript:" role="button" data-trigger="focus" tabindex="0"
-                                            data-toggle="popover" data-placement="top" data-html="true" title=""
-                                            data-content="무통장입금 주문을 자동으로 확인하여 입금완료 처리해주는 자동 입금 확인 서비스 뱅크다의 사용여부 및 남은 기간을 표시합니다."
-                                            data-original-title="자동입금확인(뱅크다)">
-                                            <i class="btm bt-question-circle"></i>
+
+                                <div class="fulltable">
+                                    <div class="sub-tit">입금확인
+                                        <!-- 버튼 -->
+                                        <a href="javascript:void(0)" role="button" data-trigger="focus" tabindex="0"
+                                            data-toggle="popover" data-placement="top" data-html="true"
+                                            data-content="무통장입금 주문을 자동으로 확인하여 입금완료 처리해주는 자동 입금 확인 서비스 뱅크다의 사용여부 및 남은 기간을 표시합니다.">
+                                            <i class="questcircle"></i>
                                         </a>
                                     </div>
-                                    <div class="table-cell vertical-top">자동입금확인
-                                        미사용</div>
-                                    <div class="table-cell vertical-top text-right sub_option">
-                                        <a class="text-danger" href="_blank">설정</a>
+
+                                    <div class="vertical-top">자동입금확인 미사용</div>
+                                    <div class="sub-option">
+                                        <a class="mixpanel-upgrade" href="_blank">설정</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="consulting_banner_wrap card bg-transparent">
-                            <div class="consulting_banner owl-theme owl-carousel owl-loaded">
 
+                        <div class="consulting-banner">
+                            <div class="owl-theme">
                                 <div class="owl-stage-outer">
-                                    <div class="owl-stage"
-                                        style="transform: translate3d(-1500px, 0px, 0px); transition: all 0.25s ease 0s; width: 3600px; ">
-                                        <div class="owl-item cloned" style="width: 300px; margin-right: 0px;">
-                                            <div class="item" data-index="6" id="mixpanel_banner_kakaosync">
-                                                <div id="dashboard_banner_wrap_kakaosync"
-                                                    class="dashboard_banner_wrap mb-0 kakaosync card"
-                                                    style="background: url(&quot;../common/img/dashboard_banner_kakaosync.png?v2&quot;) 0% 0% / 100% no-repeat rgb(255, 218, 1); color: rgb(255, 255, 255); ">
-                                                    <a href="_blank" class="text-14 text-default">
+                                    < class="owl-stage">
+
+                                        <!-- 카카오싱크 -->
+                                        <div class="owl-item">
+                                            <div class="item" id="kakaosync-item">
+                                                <div class="kakaosync-banner" id="kakaosync-banner">
+                                                    <a class="default" href="_blank">
                                                         <div class="card-body">
                                                             <div>회원가입과 채널추가를 한번에!</div>
                                                             <div><strong>카카오싱크</strong>시작하기</div>
@@ -915,37 +866,30 @@
                                             </div>
                                         </div>
 
-                                        <div class="owl-item cloned" style="width: 300px; margin-right: 0px;">
-                                            <div class="item" data-index="7" id="mixpanel_banner_tosspayments">
-                                                <div class="dashboard_banner_wrap mb-0 card" style="background-image: url(&quot;_blank); 
-															background-position: initial; background-repeat: no-repeat; background-attachment: initial; 
-															background-origin: initial; background-clip: initial; 
-															background-color: rgb(41, 98, 255); color: rgb(255, 255, 255); background-size: 100%">
-                                                    <a href="_blank" target="_self" class="text-14">
-                                                        <div class="card-body"
-                                                            style="display: flex; flex-direction: column; justify-content: center; align-items: center; ">
-                                                            <img src="_blank"
-                                                                style="width: 98px; margin-bottom: 5px; margin-top: 4px; ">
-                                                            <div
-                                                                style="font-size: 16px; font-weight: 700; line-height: 135%;">
-                                                                토스페이먼츠 출시!</div>
+                                        <!-- 토스 -->
+                                        <div class="owl-item">
+                                            <div class="item" id="tossitem">
+                                                <div class="tosspay-banner">
+                                                    <a class="default" href="_blank">
+                                                        <div class="card-body-toss">
+                                                            <img class="tossimg" src="_blank">
+                                                            <div class="tosstext">토스페이먼츠 출시!</div>
                                                         </div>
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="owl-item" style="width: 300px; margin-right: 0px;">
-                                            <div class="item tw-relative" id="mixpanel_banner_crema">
-                                                <div class="dashboard_banner_wrap mb-0 card"
-                                                    style="background-image: url(&quot;https://vendor-cdn.imweb.me/images/CREMA_BO_BANNER.png&quot;); background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(0, 0, 0); background-position: right 0px bottom 12px; color: rgba(255, 255, 255, 0.82); background-size: auto 86px ; ">
-                                                    <a href="_blank" class="text-14">
-                                                        <div class="card-body" style="display: flex; flex-direction: column; justify-content: start; align-items: flex-start; 
-																	gap: 2px; padding: 22px 16px; height: 102px; ">
-                                                            <div
-                                                                style="font-size: 16px; font-weight: 700; line-height: 140%; letter-spacing: -0.8px; margin-bottom: 0px;">
+
+                                        <!-- 크리마 -->
+                                        <div class="owl-item">
+                                            <div class="relative-item" id="relative-item">
+                                                <div class="crema-banner">
+                                                    <a class="default" href="_blank">
+                                                        <div class="card-body-crema">
+                                                            <div class="crematext">
                                                                 <span>크리마 리뷰 연동 출시</span>
                                                             </div>
-                                                            <div style="font-size: 12px; line-height: 150%;">
+                                                            <div style="cremafont">
                                                                 30일 무료 체험 및 연동 수수료 무료</div>
                                                         </div>
                                                     </a>
@@ -953,43 +897,34 @@
                                             </div>
                                         </div>
 
-                                        <div class="owl-item" style="width: 300px; margin-right: 0px; ">
-                                            <div class="item tw-relative" data-index="1" id="mixpanel_banner_vreview">
-                                                <div class="dashboard_banner_wrap mb-0 card"
-                                                    style="background: rgb(10, 55, 189); ">
-                                                    <a href="_blank" class="text-14">
-                                                        <div class="card-body"
-                                                            style="display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; ">
-                                                            <div
-                                                                style="font-size: 15px; font-weight: 700; line-height: 200%; margin-bottom: 0px;">
-                                                                <span style="color: rgb(255, 255, 255);">브이리뷰
-                                                                    연동 수수료 100% 할인</span>
+                                        <!-- 브이리뷰 -->
+                                        <div class="owl-item">
+                                            <div class="relative-item" id="relative-item">
+                                                <div class="card-banner">
+                                                    <a class="default" href="_blank">
+                                                        <div class="card-body-vrev">
+                                                            <div class="reviewcontent">
+                                                                <span class="review">브이리뷰 연동 수수료 100% 할인</span>
                                                             </div>
-                                                            <div
-                                                                style="font-size: 13px; color: white; letter-spacing: -0.7px;">
-                                                                AI 리뷰 수집부터 노출, 관리까지</div>
+                                                            <div class="reviewtext">AI 리뷰 수집부터 노출, 관리까지</div>
                                                         </div>
                                                     </a>
-                                                    <img src="_blank" width="80"
-                                                        class="tw-absolute tw-right-[16px] tw-top-[20px] !tw-w-[80px]">
+                                                    <img class="reviewimg" src="_blank">
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="owl-item" style="width: 300px; margin-right: 0px; ">
-                                            <div class="item" data-index="2" id="mixpanel_banner_kakaofriend">
-                                                <div class="dashboard_banner_wrap mb-0 card"
-                                                    style="background: url(&quot;_blank) 0% 0% / cover no-repeat rgb(0, 0, 0); color: rgb(0, 0, 0); ">
-                                                    <a href="_blank" class="text-14">
-                                                        <div class="card-body"
-                                                            style="display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start;">
-                                                            <div
-                                                                style="font-size: 15px; font-weight: 700; line-height: 200%; margin-bottom: 0px;">
-                                                                <span style="color: rgb(254, 229, 0);">카카오 친구톡</span>
-                                                                <span style="color: white;">으로 시작하는 CRM마케팅</span>
+                                        <!-- 카카오프렌드 -->
+                                        <div class="owl-item">
+                                            <div class="item" id="kakaofriend-item">
+                                                <div class="kakaofriend-banner">
+                                                    <a class="default" href="_blank">
+                                                        <div class="card-body-friend">
+                                                            <div class="kakaofriend-content">
+                                                                <span class="kakaofriend-talk">카카오 친구톡</span>
+                                                                <span style="marketing">으로 시작하는 CRM마케팅</span>
                                                             </div>
-                                                            <div
-                                                                style="font-size: 13px; color: white; letter-spacing: -0.7px;">
+                                                            <div class="kakaofriend-font">
                                                                 친구톡 보내기로 재구매를 유도해보세요!
                                                             </div>
                                                         </div>
@@ -997,22 +932,20 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="owl-item active" style="width: 300px; margin-right: 0px; ">
-                                            <div class="item" id="mixpanel_banner_npay">
-                                                <div class="dashboard_banner_wrap mb-0 card"
-                                                    style="background: url(&quot;_blank) 0% 0% / 100% no-repeat rgb(235, 254, 243); color: rgb(0, 0, 0); ">
-                                                    <a href="_blank" class="text-14">
-                                                        <div class="card-body text-13 text-bold"
-                                                            style="letter-spacing: -1px; padding-top: 16px;">
-                                                            <div style="margin-bottom: 6px; ">
-                                                                <img src="_blank" style="width: 36px; ">
+
+                                        <!-- 네이버페이 -->
+                                        <div class="owl-item">
+                                            <div class="item" id="npay-item">
+                                                <div class="npay-banner">
+                                                    <a class="default" href="_blank">
+                                                        <div class="card-body-npay">
+                                                            <div style="npay-content">
+                                                                <img class="npay-img" src="_blank">
                                                             </div>
-                                                            <div
-                                                                style="font-size: 16px; font-weight: 700; line-height: 135%; margin-bottom: 0px; ">
+                                                            <div class="npay-font">
                                                                 집화처리 다음날 100% 지급!
                                                             </div>
-                                                            <div
-                                                                style="color: rgb(3, 199, 90); letter-spacing: -0.7px; ">
+                                                            <div class="npay-text">
                                                                 수수료없는 빠른정산 신청하기
                                                             </div>
                                                         </div>
@@ -1020,46 +953,37 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="owl-item" style="width: 300px; margin-right: 0px; ">
-                                            <div class="item" data-index="4" id="mixpanel_banner_danal">
-                                                <div class="dashboard_banner_wrap mb-0 card" style="background-image: url(&quot;_blank); 
-													background-position: initial; background-repeat: no-repeat; background-attachment: initial; 
-													background-origin: initial; background-clip: initial; background-color: rgb(41, 98, 255); 
-													color: rgb(255, 255, 255); background-size: 100%;">
-                                                    <a href="_blank" target="_self" class="text-14">
-                                                        <div class="card-body"
-                                                            style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+
+                                        <!-- 삼성페이 -->
+                                        <div class="owl-item">
+                                            <div class="item" id="samsung-item">
+                                                <div class="spay-banner">
+                                                    <a class="default" href="_blank">
+                                                        <div class="card-body-spay">
                                                             <div>
-                                                                <p
-                                                                    style="font-size: 16px; font-weight: 700; line-height: 135%; margin-bottom: 0px;">
-                                                                    1900만의 결제수단
-                                                                </p>
-                                                                <p>삼성페이 + 다날 PG
-                                                                    연동하기
-                                                                </p>
+                                                                <p class="spay-font">1900만의 결제수단</p>
+                                                                <p>삼성페이 + 다날 PG 연동하기</p>
                                                             </div>
-                                                            <img src="_blank"
-                                                                style="width: 80px; object-fit: contain; object-position: right center;">
+                                                            <img class="spay-img" src="_blank"/>
                                                         </div>
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="owl-item" style="width: 300px; margin-right: 0px;">
-                                            <div class="item" data-index="5" id="mixpanel_banner_fassto">
-                                                <div class="dashboard_banner_wrap mb-0 card"
-                                                    style="background: url(&quot;_blank) 0% 0% / 100% no-repeat rgb(0, 156, 103); color: rgb(255, 255, 255); ">
-                                                    <a href="_blank" class="text-14">
-                                                        <div class="card-body text-13 text-bold"
-                                                            style="letter-spacing: -1px; padding-top: 14px;">
+                                        <!-- 파스토 -->
+                                        <div class="owl-item">
+                                            <div class="item" id="fassto-item">
+                                                <div class="pasto-banner">
+                                                    <a class="default" href="_blank">
+                                                        <div class="card-body-pasto">
                                                             <div>
-                                                                <span class="opacity-75">파스토 이용시</span>
+                                                                <span class="pasto-span">파스토 이용시</span>
                                                             </div>
-                                                            <div style="font-size: 14px;">
+                                                            <div class="pasto-font">
                                                                 아임웹 주문연동 0원
                                                             </div>
-                                                            <div style="font-size: 14px;">
+                                                            <div class="pasto-text">
                                                                 최대 10만원 입고비 혜택까지!
                                                             </div>
                                                         </div>
@@ -1067,20 +991,15 @@
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <div class="owl-item" style="width: 300px; margin-right: 0px;">
-                                            <div class="item" data-index="6" id="mixpanel_banner_kakaosync">
-                                                <div id="dashboard_banner_wrap_kakaosync"
-                                                    class="dashboard_banner_wrap mb-0 kakaosync card" style="background: url(&quot;../common/img/dashboard_banner_kakaosync.png?v2&quot;) 0% 0% / 100% no-repeat rgb(255, 218, 1); 
-													color: rgb(255, 255, 255); ">
-                                                    <a href="_blank" class="text-14 text-default">
+                                        
+                                        <!-- 카카오싱크 -->
+                                        <div class="owl-item">
+                                            <div class="item" id="kakaosync-item">
+                                                <div class="kakaosync-banner" id="kakaosync-banner">
+                                                    <a class="default" href="_blank">
                                                         <div class="card-body">
-                                                            <div>회원가입과 채널추가를 한번에!
-                                                            </div>
-                                                            <div>
-                                                                <strong>카카오싱크</strong>
-                                                                시작하기
-                                                            </div>
+                                                            <div>회원가입과 채널추가를 한번에!</div>
+                                                            <div><strong>카카오싱크</strong>시작하기</div>
                                                         </div>
                                                     </a>
 
@@ -1088,67 +1007,55 @@
                                             </div>
                                         </div>
 
-                                        <div class="owl-item" style="width: 300px; margin-right: 0px;">
-                                            <div class="item" data-index="7" id="mixpanel_banner_tosspayments">
-                                                <div class="dashboard_banner_wrap mb-0 card"
-                                                    style="background-image: url(&quot;_blank); background-position: initial; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(41, 98, 255); color: rgb(255, 255, 255); background-size: 100% ; ">
-                                                    <a href="_blank" class="text-14">
-                                                        <div class="card-body"
-                                                            style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                                                            <img src="_blank"
-                                                                style="width: 98px; margin-bottom: 5px; margin-top: 4px; ">
-                                                            <div
-                                                                style="font-size: 16px; font-weight: 700; line-height: 135%; ">
-                                                                토스페이먼츠 출시!
-                                                            </div>
+                                        <!-- 토스페이먼츠 -->
+                                        <div class="owl-item">
+                                            <div class="item" id="tossitem">
+                                                <div class="tosspay-banner">
+                                                    <a class="default" href="_blank">
+                                                        <div class="card-body-toss">
+                                                            <img class="tossimg" src="_blank">
+                                                            <div class="tosstext">토스페이먼츠 출시!</div>
                                                         </div>
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="owl-item cloned" style="width: 300px; margin-right: 0px; ">
-                                            <div class="item tw-relative" data-index="0" id="mixpanel_banner_crema">
-                                                <div class="dashboard_banner_wrap mb-0 card"
-                                                    style="background-image: url(&quot;_blank); background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgb(0, 0, 0); background-position: right 0px bottom 12px; color: rgba(255, 255, 255, 0.82); background-size: auto 86px ; ">
-                                                    <a href="_blank" class="text-14">
-                                                        <div class="card-body" style="display: flex; flex-direction: column; justify-content: start; align-items: flex-start; gap: 2px; 
-																	padding: 22px 16px; height: 102px; ">
-                                                            <div style="font-size: 16px; font-weight: 700; line-height: 140%; 
-																		letter-spacing: -0.8px; margin-bottom: 0px; ">
+                                        <!-- 크리마 -->
+                                        <div class="owl-item">
+                                            <div class="relative-item" id="relative-item">
+                                                <div class="crema-banner">
+                                                    <a class="default" href="_blank">
+                                                        <div class="card-body-crema">
+                                                            <div class="crematext">
                                                                 <span>크리마 리뷰 연동 출시</span>
                                                             </div>
-                                                            <div style="font-size: 12px; line-height: 150%;">
-                                                                30일 무료 체험 및 연동 수수료 무료</div>
+                                                            <div class="cremafont">
+                                                                30일 무료 체험 및 연동 수수료 무료
+                                                            </div>
                                                         </div>
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="owl-item cloned" style="width: 300px; margin-right: 0px;">
-                                            <div class="item tw-relative" data-index="1" id="mixpanel_banner_vreview">
-                                                <div class="dashboard_banner_wrap mb-0 card"
-                                                    style="background: rgb(10, 55, 189);">
-                                                    <a href="_blank" class="text-14">
-                                                        <div class="card-body"
-                                                            style="display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start;">
-                                                            <div
-                                                                style="font-size: 15px; font-weight: 700; line-height: 200%; margin-bottom: 0px;">
-                                                                <span style="color: rgb(255, 255, 255); ">
-                                                                    브이리뷰 연동 수수료 100% 할인
-                                                                </span>
+                                        <!-- 브이 리뷰 -->
+                                        <div class="owl-item">
+                                            <div class="relative-item" id="relative-item">
+                                                <div class="card-banner">
+                                                    <a class="default" href="_blank">
+                                                        <div class="card-body-vrev">
+                                                            <div class="reviewcontent">
+                                                                <span class="review">브이리뷰 연동 수수료 100% 할인</span>
                                                             </div>
-                                                            <div
-                                                                style="font-size: 13px; color: white; letter-spacing: -0.7px;">
-                                                                AI 리뷰 수집부터 노출, 관리까지</div>
+                                                            <div class="reviewtext">AI 리뷰 수집부터 노출, 관리까지</div>
                                                         </div>
                                                     </a>
-                                                    <img src="_blank" width="80"
-                                                        class="tw-absolute tw-right-[16px] tw-top-[20px] !tw-w-[80px]">
+                                                    <img class="reviewimg" src="_blank"/>
                                                 </div>
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
 
@@ -1160,6 +1067,7 @@
                                     <div class="owl-dots"></div>
                                 </div>
                             </div>
+
                             <div class="consulting_banner_nav">
                                 <div class="consulting_banner_navWrap">
                                     <span class="current">4</span>
@@ -1168,48 +1076,44 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card card-sm-padding">
+
+                        <div class="smcard">
                             <div class="card-head">
                                 <header>운영진</header>
-                                <a class="float_r text-13 opacity-50 force-padding no-padding-y" href="_blank">관리</a>
+                                <a class="force" href="_blank">관리</a>
                             </div>
-                            <div class="card-body no-padding-top">
-                                <div class="admin_img_wrap clearfix">
-                                    <div class="float_l">
-                                        <a class="inline-blocked" href="_blank" data-toggle="tooltip"
-                                            data-placement="top">
-                                            <img class="border-round" src="_blank" width="35" height="35">
+                            <div class="card-body">
+                                <div class="admin-img">
+                                    <div class="float">
+                                        <a class="inline-blocked" href="_blank" data-toggle="tooltip">
+                                            <img class="border-round" src="_blank">
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="update_memo_list">
-                        </div>
 
-                        <div class="card card-sm-padding">
-                            <form id="add_memo">
-                                <input type="hidden" name="write_token"
-                                    value="uFQiz1n2lUfUZi54r2wd6zh3JRliheWkiqynM5XyJZ0QkYfFQvmwazwBghvw9Zz5EYSMZGGLvbBC4AKq0fBhyK/hhO7LkcSqcEBWhd378aSwvv6mlwNuXdnIZXLLOwYP">
-                                <input type="hidden" name="write_token_key" value="9634">
-                                <div class="card-body card-memo">
-                                    <div class="tabled holder full-width" style="margin-bottom: 5px; ">
-                                        <div class="table-cell vertical-middle memo-thumb">
-                                            <img class="border-round" src="_blank" width="35" height="35">
+                        <div class="memolist"></div>
+
+                        <div class="smcard">
+                            <form class="addmemo" id="addmemo">
+                                <input type="hidden" name="write_token" value="_blank">
+                                <input type="hidden" name="write_token_key" value="_blank">
+                                <div class="card-memo">
+                                    <div class="tableholder">
+                                        <div class="table-cell">
+                                            <img class="border-round" src="_blank">
                                         </div>
-                                        <div class="table-cell vertical-middle">
-                                            <div id="memo_writer" class="text-13 text-bold">관리자</div>
+                                        <div class="middle-table-cell">
+                                            <div class="memo-writer" id="memo_writer">관리자</div>
                                         </div>
                                     </div>
 
                                     <div class="memo-body">
-                                        <textarea name="memo" id="memo"
-                                            class="form-control margin-bottom-xl resize-vertical" rows="1"
-                                            placeholder="관리자들과 공유할 메모를 남겨주세요" data-autosize-on="true"
-                                            style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 38px;"></textarea>
+                                        <textarea class="form-control" name="memo" id="memo"
+                                            placeholder="관리자들과 공유할 메모를 남겨주세요"></textarea>
                                         <div>
-                                            <a href="javascript:"
-                                                class="btn btn-xs btn-rounded btn-xs-padding btn-default-bright"
+                                            <a class="btn-default" href="javascript:"
                                                 onclick="DASHBOARD.addMemo($(&#39;#add_memo&#39))">저장</a>
                                         </div>
                                     </div>
@@ -1221,87 +1125,83 @@
             </section>
         </div>
         
-        <button type="button" class="hidden-lg hidden-md toggle-btn" data-dismiss="menubar">
+        <!-- 메뉴바 -->
+        <button class="toggle-btn" type="button" data-dismiss="menubar">
             <span class="sr-only">Toggle navigation</span>
             <img src="_blank">
         </button>
 
-        <div id="menubar" class="animate">
-            <div class="nano has-scrollbar" style="height: 787px; ">
-                <div class="nano-content" tabindex="0" style="right: -17px;">
-                    <div class="menubar-scroll-panel" style="padding-bottom: 1px;">
-                        <div class="region-wrap full-width">
-                            <a href="javascript:" class="holder global_icon_menu dropdown-toggle" data-toggle="dropdown"
-                                aria-expanded="true">
+        <div class="animate" id="menubar">
+            <div class="scrollbar">
+                <div class="nano-content">
+                    <div class="scroll-panel">
+                        <div class="region">
+                            <a class="dropdown-toggle" href="javascript:" data-toggle="dropdown">
                                 <div class="icon-wrap">
-                                    <img src="_blank" class="region-icon">
+                                    <img class="region-icon" src="_blank" />
                                 </div>
                                 <div class="brand-holder">
-                                    <span class="title_controls">왓이님의 웹사이트</span>
+                                    <span class="title-controls">왓이님의 웹사이트</span>
                                     <span class="icon">
-                                        <svg xmlns="_blank" width="16" height="16" viewBox="0 0 16 16"
-                                            fill="none"></svg>
+                                        <img class="holderimg" src="_blank"/>
                                     </span>
                                 </div>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-new global_setting animation-dock menu-card-styling">
+
+                            <ul class="dropdown-menu">
                                 <li class="holder">
                                     <a href="_blank">
                                         <div class="tabled">
-                                            <div class="table-cell vertical-middle width-1">
-                                                <img width="30" height="30"
-                                                    src="./qjfhdnaos51106.imweb.me_files/flag_kr_circle.png">
+                                            <div class="table-cell">
+                                                <img class="tableimg" src="_blank">
                                             </div>
-                                            <div class="table-cell vertical-middle domain" style="line-height: 1.3;">
+                                            <div class="domain">
                                                 <div class="inline-blocked">
                                                     <span class="domain_name">왓이님의 웹사이트</span>
                                                 </div>
-                                                <span data-original-title="일반 방문자의 접속이 제한됩니다. 글로벌 버전으로 업그레이드 해주세요"
-                                                    data-toggle="tooltip" class="badge" data-placement="top"
-                                                    style="margin-left: 5px; vertical-align: top;">미결제</span>
-                                                <div class="text-gray-bright text-12">qjfhdnaos51106.imweb.me</div>
+                                                <span class="badge" data-toggle="tooltip" data-placement="top">미결제</span>
+                                                <div class="domaintext">qjfhdnaos51106.imweb.me</div>
                                             </div>
                                         </div>
                                     </a>
                                     <div class="tools">
                                     </div>
                                 </li>
+
                                 <li class="add-unit">
-                                    <a href="javascript:;"
-                                        onclick="SITE_MANAGE.openAddUnit(&#39;S20240516cc656761618e8&#39;)"
-                                        class="text-secondary addunit" style="display: flex; ">
-                                        <svg style="margin-right: 8px;" mlns="_blank" width="16" height="16"
-                                            viewBox="0 0 16 16" fill="none">
-                                        </svg>
+                                    <a class="secon-addunit" href="javascript:;"
+                                        onclick="SITE_MANAGE.openAddUnit(&#39;S20240516cc656761618e8&#39;)">
+                                        <img class="seicon" src="_blank"/>
                                         새 언어 사이트 추가
                                     </a>
                                 </li>
                             </ul>
                         </div>
-                        <ul id="main-menu" class="gui-controls">
+
+                        <ul class="gui-control" id="main-menu">
                             <li data-prevent-menu-click="true">
-                                <a href="javascript:;" class="_gnb_notification_button gnb_notification_button">
+                                <a class="noti-button" href="javascript:;">
                                     <div class="gui-icon">
                                         <i class="db-bell"></i>
                                     </div>
-                                    <span class="title title_controls">알림</span>
-                                    <span class="_badge badge_new">New</span>
+                                    <span class="title-control">알림</span>
+                                    <span class="new-badge">New</span>
                                 </a>
                             </li>
-                            <li class="">
+                            <li>
                                 <a href="_blank">
                                     <div class="gui-icon">
                                         <i class="db-wand"></i>
                                     </div>
-                                    <span class="title title_controls">디자인 모드</span>
+                                    <span class="title-control">디자인 모드</span>
                                 </a>
                             </li>
-                            <li class="  ">
+                            <li>
                                 <a class="external-url" href="_blank">
                                     <div class="gui-icon">
                                         <i class="db-preview"></i>
                                     </div>
-                                    <span class="title title_controls">사이트 바로가기</span>
+                                    <span class="title-control">사이트 바로가기</span>
                                 </a>
                             </li>
 
@@ -1309,497 +1209,511 @@
                             <li class="top-menu">
                                 <div>
                                     <span>사이트 관리</span>
-                                    <a href="javascript:;" class="shop-extend"
+                                    <a class="shop-extend" href="javascript:;"
                                         onclick="DASHBOARD.openSiteManagementDialog(this);"
                                         data-original-title="쇼핑·예약 기능설정" data-toggle="tooltip" data-placement="right"
                                         data-trigger="hover"
                                         data-template="&lt;div class=&quot;tooltip custom-tooltip&quot;&gt;&lt;div class=&quot;tooltip-inner&quot;&gt;&lt;/div&gt;&lt;/div&gt;">
-                                        <svg xmlns="_blank" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        </svg>
+                                        
+                                        <img src="topmenu-icon" src="_blank"/>
                                     </a>
                                 </div>
                             </li>
-                            <li class="active expanded">
-                                <a href="_blank" class=" active">
+                            <li class="expanded">
+                                <a class="active" href="_blank">
                                     <div class="gui-icon">
                                         <i class="db-dashboard"></i>
                                     </div>
-                                    <span class="title title_controls">대시보드</span>
+                                    <span class="title-control">대시보드</span>
                                 </a>
                             </li>
-                            <li class="gui-folder" data-title="member">
-                                <a href="_blank" class="sidebar-nav-menu" onclick="return false;">
+
+                            <li class="gui-folder">
+                                <a class="sidebar-nav-menu" href="_blank" onclick="return false;">
                                     <div class="gui-icon">
                                         <i class="db-user"></i>
                                     </div>
-                                    <span class="title title_controls">사용자 관리</span>
-                                    <span class="badge_icon">1</span>
+                                    <span class="title-controls">사용자 관리</span>
+                                    <span class="badge-icon">1</span>
                                 </a>
-                                <ul style="">
-                                    <li class="  ">
+                                <ul>
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">사용자 목록</span>
-                                            <span class="badge_icon">1</span>
+                                            <span class="title-control">사용자 목록</span>
+                                            <span class="badge-icon">1</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">메시지 보내기</span>
+                                            <span class="title-control">메시지 보내기</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">운영진</span>
+                                            <span class="title-control">운영진</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">자동 메일</span>
+                                            <span class="title-control">자동 메일</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">친구톡 보내기</span>
+                                            <span class="title-control">친구톡 보내기</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">SMS·알림톡</span>
+                                            <span class="title-control">SMS·알림톡</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="  ">
+                            <li>
                                 <a href="_blank">
                                     <div class="gui-icon">
                                         <i class="db-crm"></i>
                                     </div>
-                                    <span class="title title_controls">
+                                    <span class="title_controls">
                                         고객 행동 관리</span>
                                 </a>
                             </li>
-                            <li class="gui-folder" data-title="shopping">
+
+                            <li class="gui-folder">
                                 <a href="_blank" class="sidebar-nav-menu" onclick="return false;">
                                     <div class="gui-icon">
                                         <i class="db-shopping-bag"></i>
                                     </div>
-                                    <span class="title title_controls">쇼핑</span>
+                                    <span class="title-control">쇼핑</span>
                                 </a>
-                                <ul style="">
-                                    <li class="  ">
+                                <ul>
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">상품</span>
+                                            <span class="title-control">상품</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">연동 상품</span>
-                                            <span class="badge_beta">Beta</span>
+                                            <span class="title-control">연동 상품</span>
+                                            <span class="badge-beta">Beta</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">주문관리 v2</span>
-                                            <span class="badge_new">New</span>
+                                            <span class="title-control">주문관리 v2</span>
+                                            <span class="badge-new">New</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">정기구독</span>
+                                            <span class="title-control">정기구독</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">선물하기</span>
-                                            <span class="badge_new">New</span>
+                                            <span class="title-control">선물하기</span>
+                                            <span class="badge-new">New</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">구매평</span>
+                                            <span class="title-control">구매평</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">문의</span>
+                                            <span class="title-control">문의</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">적립금</span>
+                                            <span class="title-control">적립금</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">쿠폰</span>
+                                            <span class="title-control">쿠폰</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">배송설정</span>
+                                            <span class="title-control">배송설정</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">환경설정</span>
+                                            <span class="title-control">환경설정</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="gui-folder animated animated-hidden">
+
+                            <li class="gui-animated">
                                 <a href="_blank" class="sidebar-nav-menu" onclick="return false;">
                                     <div class="gui-icon">
                                         <i class="db-calendar"></i>
                                     </div>
-                                    <span class="title title_controls">예약</span>
+                                    <span class="title-control">예약</span>
                                 </a>
-                                <ul style="">
-                                    <li class="  ">
+                                <ul>
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">객실·사이트</span>
+                                            <span class="title-control">객실·사이트</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">예약 현황</span>
+                                            <span class="title-control">예약 현황</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">예약 신청</span>
+                                            <span class="title-control">예약 신청</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">후기</span>
+                                            <span class="title-control">후기</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">문의</span>
+                                            <span class="title-control">문의</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">옵션설정</span>
+                                            <span class="title-control">옵션설정</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">성수기·휴일</span>
+                                            <span class="title-control">성수기·휴일</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">환경설정</span>
+                                            <span class="title-control">환경설정</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+
                             <li class="gui-folder">
                                 <a href="_blank" onclick="return false;">
                                     <div class="gui-icon">
                                         <i class="db-pencil"></i>
                                     </div>
-                                    <span class="title title_controls">컨텐츠 관리</span>
+                                    <span class="title-control">컨텐츠 관리</span>
                                 </a>
-                                <ul style="">
-                                    <li class="  ">
+                                <ul>
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">게시물</span>
+                                            <span class="title-control">게시물</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">댓글</span>
+                                            <span class="title-control">댓글</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">입력폼</span>
+                                            <span class="title-control">입력폼</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">지도</span>
+                                            <span class="title-control">지도</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">일정</span>
+                                            <span class="title-control">일정</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">갤러리</span>
+                                            <span class="title-control">갤러리</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">신고·차단</span>
+                                            <span class="title-control">신고·차단</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+
                             <li class="gui-folder">
                                 <a href="_blank" class="sidebar-nav-menu" onclick="return false;">
                                     <div class="gui-icon">
                                         <i class="db-megaphone"></i>
                                     </div>
-                                    <span class="title title_controls">광고 캠페인 관리</span>
-                                    <span class="badge_new">New</span>
+                                    <span class="title-control">광고 캠페인 관리</span>
+                                    <span class="badge-new">New</span>
                                 </a>
-                                <ul style="">
-                                    <li class="  ">
+                                <ul>
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">홈</span>
+                                            <span class="title-control">홈</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">대시보드</span>
+                                            <span class="title-control">대시보드</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">캠페인</span>
+                                            <span class="title-control">캠페인</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">크레딧 관리</span>
+                                            <span class="title-control">크레딧 관리</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">데이터 연결</span>
+                                            <span class="title-control">데이터 연결</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+
                             <li class="gui-folder">
                                 <a href="_blank" class="sidebar-nav-menu" onclick="return false;">
                                     <div class="gui-icon">
                                         <i class="db-mobile"></i>
                                     </div>
-                                    <span class="title title_controls">모바일 앱</span>
+                                    <span class="title-control">모바일 앱</span>
                                 </a>
-                                <ul style="">
-                                    <li class="  ">
+                                <ul>
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">Android 앱</span>
+                                            <span class="title-control">Android 앱</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">iOS 앱</span>
+                                            <span class="title-control">iOS 앱</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+
                             <li class="gui-folder">
                                 <a href="_blank" class="sidebar-nav-menu" onclick="return false;">
                                     <div class="gui-icon">
                                         <i class="db-status-up"></i>
                                     </div>
-                                    <span class="title title_controls">통계</span>
+                                    <span class="title-control">통계</span>
                                 </a>
-                                <ul style="">
-                                    <li class="  ">
+                                <ul>
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">홈</span>
+                                            <span class="title-control">홈</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">매출</span>
-                                            <span class="badge_beta">Beta</span>
+                                            <span class="title-control">매출</span>
+                                            <span class="badge-beta">Beta</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">기간별 분석</span>
+                                            <span class="title-control">기간별 분석</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">유입 사이트</span>
+                                            <span class="title-control">유입 사이트</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">유입 검색어</span>
+                                            <span class="title-control">유입 검색어</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">방문자</span>
+                                            <span class="title-control">방문자</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">많이 방문한 페이지</span>
+                                            <span class="title-control">많이 방문한 페이지</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">트래픽</span>
+                                            <span class="title-control">트래픽</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">적립금</span>
+                                            <span class="title-control">적립금</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">컨텐츠 반응</span>
+                                            <span class="title-control">컨텐츠 반응</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">부가 서비스</span>
+                                            <span class="title-control">부가 서비스</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="  ">
+
+                            <li>
                                 <a href="_blank">
                                     <div class="gui-icon">
                                         <i class="db-rocket"></i>
                                     </div>
-                                    <span class="title title_controls">결제·앱스토어</span>
+                                    <span class="title-control">결제·앱스토어</span>
                                 </a>
                             </li>
+
                             <li class="gui-folder">
                                 <a href="_blank" class="sidebar-nav-menu" onclick="return false;">
                                     <div class="gui-icon">
                                         <i class="db-settings"></i>
                                     </div>
-                                    <span class="title title_controls">환경설정</span>
+                                    <span class="title-control">환경설정</span>
                                 </a>
-                                <ul style="display: none;">
-                                    <li class="  ">
+
+                                <ul class="none">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">일반</span>
+                                            <span class="title-control">일반</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">언어·지역·통화</span>
+                                            <span class="title-control">언어·지역·통화</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">전자결제(PG)</span>
+                                            <span class="title-control">전자결제(PG)</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">도메인</span>
+                                            <span class="title-control">도메인</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">SSL(보안서버)</span>
+                                            <span class="title-control">SSL(보안서버)</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">보안·개인정보 보호</span>
+                                            <span class="title-control">보안·개인정보 보호</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">회원가입·그룹·등급</span>
+                                            <span class="title-control">회원가입·그룹·등급</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">SEO(검색엔진최적화)</span>
+                                            <span class="title-control">SEO(검색엔진최적화)</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">약관</span>
+                                            <span class="title-control">약관</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">팝업·배너</span>
+                                            <span class="title-control">팝업·배너</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">본인·성인인증</span>
+                                            <span class="title-control">본인·성인인증</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">소셜 로그인·지도·공유</span>
+                                            <span class="title-control">소셜 로그인·지도·공유</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">상담 채널 연동</span>
+                                            <span class="title-control">상담 채널 연동</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">외부 서비스 연동 (API)</span>
+                                            <span class="title-control">외부 서비스 연동 (API)</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+
                             <li class="spacer"></li>
+
                             <li class="top-menu">
                                 <div><span>리소스</span></div>
                             </li>
-                            <li class="  ">
+                            <li>
                                 <a class="external-url" href="_blank">
                                     <div class="gui-icon">
                                         <i class="db-comments"></i>
                                     </div>
-                                    <span class="title title_controls">고객지원</span>
+                                    <span class="title-control">고객지원</span>
                                 </a>
                             </li>
-                            <li class="gui-folder" data-title="campus">
+
+                            <li class="gui-folder">
                                 <a class="external-url" href="_blank" onclick="return false;">
                                     <div class="gui-icon">
                                         <i class="db-graduation-cap"></i>
                                     </div>
-                                    <span class="title title_controls">아임웹 교육</span>
+                                    <span class="title-control">아임웹 교육</span>
                                 </a>
-                                <ul style="">
-                                    <li class="  ">
+                                <ul>
+                                    <li>
                                         <a class="external-url" href="_blank">
-                                            <span class="title title_controls">교육 일정·신청</span>
+                                            <span class="title-control">교육 일정·신청</span>
                                         </a>
                                     </li>
                                     <li class="  ">
                                         <a class="external-url" href="_blank">
-                                            <span class="title title_controls">동영상 강의</span>
+                                            <span class="title-control">동영상 강의</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+
                             <li class="gui-folder">
                                 <a href="_blank" class="sidebar-nav-menu" onclick="return false;">
                                     <div class="gui-icon">
                                         <i class="db-telescope"></i>
                                     </div>
-                                    <span class="title title_controls">전문가 찾기</span>
-                                    <span class="badge_new">New</span>
+                                    <span class="title-control">전문가 찾기</span>
+                                    <span class="badge-new">New</span>
                                 </a>
-                                <ul style="">
-                                    <li class="  ">
+                                <ul>
+                                    <li>
                                         <a class="external-url" href="_blank">
-                                            <span class="title title_controls">전문가 찾기</span>
+                                            <span class="title-control">전문가 찾기</span>
                                         </a>
                                     </li>
-                                    <li class="  ">
+                                    <li>
                                         <a href="_blank">
-                                            <span class="title title_controls">전문가 웹사이트 관리</span>
+                                            <span class="title-control">전문가 웹사이트 관리</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -1809,31 +1723,33 @@
                 </div>
 
                 <div class="nano-pane">
-                    <div class="nano-slider" style="height: 752px; top: 35px; display: block;"></div>
+                    <div class="nano-slider"></div>
                 </div>
             </div>
         </div>
-        <div class="fold_area animate">
-            <div class="table-cell vertical-middle">
-                <a href="_blank" class="logo_icon_menu">
+
+        <div class="foldarea">
+            <div class="tablecell">
+                <a href="_blank" class="iconmenu">
                     <img src="_blank">
                 </a>
             </div>
-            <a class="_tooltip_btn side_bar_btn" href="javascript:void(0)" role="button" id="toggle_button">
-                <span class="fold_button left" data-trigger="hover">
-                    <svg xmlns="_blank" width="16" height="16" viewBox="0 0 16 16" fill="none"></svg>
+
+            <a class="toolbtn" href="javascript:void(0)" role="button" id="toggle_button">
+                <span class="foldbutton-left" data-trigger="hover">
+                    <img class="foldimg" src="_blank"/>
                 </span>
-                <span class="fold_button right" data-toggle="tooltip" data-placement="right" data-trigger="hover">
+                <span class="foldbutton-right" data-toggle="tooltip" data-placement="right" data-trigger="hover">
                     <div class="default">
                         <img src="_blank" alt="사이드바 펼치기">
                     </div>
                     <div class="hover">
-                        <svg xmlns="_blank" width="16" height="16" viewBox="0 0 16 16" fill="none"></svg>
+                       <img class="hoverimg" src="_blank"/>
                     </div>
                 </span>
             </a>
         </div>
-        <div class="_notify-modal-provider"></div>
+        <div class="modal-provider"></div>
 
     </div>
 
@@ -1844,62 +1760,55 @@
         </div>
     </div>
 
-    <div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
+    <div class="submodal" role="dialog" id="cocoaSubModal">
         <div class="modal-dialog">
             <div class="modal-content"></div>
         </div>
     </div>
 
-    <iframe name="hidden_frame" id="hidden_frame"
-        style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;" src="_blank"></iframe>
+    <iframe name="hidden-frame" id="hidden_frame"></iframe>
 
     <div id="device-breakpoints">
-        <div class="device-xs visible-xs" data-breakpoint="xs"></div>
-        <div class="device-sm visible-sm" data-breakpoint="sm"></div>
-        <div class="device-md visible-md" data-breakpoint="md"></div>
-        <div class="device-lg visible-lg" data-breakpoint="lg"></div>
+        <div class="device-xs" data-breakpoint="xs"></div>
+        <div class="device-sm" data-breakpoint="sm"></div>
+        <div class="device-md" data-breakpoint="md"></div>
+        <div class="device-lg" data-breakpoint="lg"></div>
     </div>
-    <div id="ch-plugin" class="notranslate" style="z-index: 1000">
+    <div id="ch-plugin" class="notranslate">
         <div id="ch-plugin-entry">
-            <div style="display: block;">
+            <div style="ch-plugin-block">
                 <div id="ch-shadow-root-wrapper">
-                    <div class="Launcherstyled__LauncherButtonWrapper-ch-front__sc-1kx6op4-0 chEByq">
+                    <div class="Launcherstyled">
                         <button type="button">
-                            <div class="ChatButtonContainer__Container-ch-front__sc-qgvnh9-0 cgHhTF">
-                                <span class="a11y-hidden">imweb 상담 버튼</span>
-                                <div class="SenderButtonView__Wrapper-ch-front__sc-1aik3pi-0 eFJnEc">
+                            <div class="ChatButton">
+                                <span class="ally-hidden">imweb 상담 버튼</span>
+                                <div class="SenderButton">
                                     <div src="_blank"
-                                        class="SenderButtonView__SenderAvatarBg-ch-front__sc-1aik3pi-1 mVAFX"></div>
+                                        class="SenderButtonView"></div>
                                 </div>
-                                <div data-testid="img-custom-btn"
-                                    class="ImageCustomButtonView__Wrapper-ch-front__sc-1s91m5o-0 jVTAai">
-                                    <div src="_blank"
-                                        class="ImageCustomButtonView__CustomImageBg-ch-front__sc-1s91m5o-1 dRQruU">
+                                <div class="ImageCustomButton" data-testid="img-custom-btn" >
+                                    <div class="ImageCustomButtonView" src="_blank">
                                     </div>
                                 </div>
-                                <div class="IconButtonView__Background-ch-front__sc-vtu014-0 inQZZV">
-                                    <svg width="36" height="36" color="#ffffff"></svg>
+                                <div class="IconButtonView">
+                                    <img class="btnimg" src="_blank"/>
                                 </div>
-                                <div class="MinimizeButtonView__Wrapper-ch-front__sc-1idijj-0 giSWOn">
-                                    <svg xmlns="_blank" width="36" height="36" fill="none" viewBox="0 0 24 24"
-                                        foundation="[object Object]" class="Iconstyled__Icon-sc-1iqwu2g-0 pJGcx"
-                                        data-testid="bezier-react-icon" color="txt-black-darker" margintop="0"
-                                        marginright="0" marginbottom="0" marginleft="0" aria-hidden="true">
-                                    </svg>
+                                <div class="MinimizeButton">
+                                    <img class="minimg" src="_blank" 
+                                        foundation="[object Object]" data-testid="bezier-react-icon"/>
                                 </div>
-                                <div role="status" aria-label=", there are unread messages"
-                                    class="Badge__BaseUnreadBadge-ch-front__sc-1k3c5b2-2 fOtwdy Badge__PcUnreadBadge-ch-front__sc-1k3c5b2-3 jrJXOx">
+                                <div class="Badge" role="status">
                                 </div>
                             </div>
                         </button>
                     </div>
                 </div>
             </div>
-            <div id="ch-plugin-script" style="display:none;" class="ch-messenger-hidden">
-                <iframe id="ch-plugin-script-iframe" title="Channel chat"
-                    style="position:relative;height:100%;width:100%;border:none!;" src="_blank"></iframe>
+
+            <div class="messenger-hidden" id="ch-plugin-script">
+                <iframe class="plugin-frame" id="ch-plugin-script-iframe" src="_blank"></iframe>
             </div>
         </div>
-</body>
 
+</body>
 </html>

@@ -1,1215 +1,1769 @@
 .admin{
-    menubar-hoverableheader-fixedmenubar-pin
+menubar-hoverable header-fixed menubar-pin
 }
 
-.admin .dashbord{
-    dashboard_loaderse-pre-con
+/*dashboard*/
+.admin .dashboard{
+dashboard_loader se-pre-con
 }
 
-.admin .pageloader{
-    page-loader-spinner
+.dashboard .pageloader{
+page-loader-spinner
 }
 
-.admin .bounce1{
-    double-bounce1
+.dashboard .bounce1{
+double-bounce1
 }
 
-.admin .bounce2{
-    double-bounce2
+.dashboard .bounce2{
+double-bounce2
 }
 
-.admin .progress{
-    progress
+.dashboard .progress{
+progress
 }
 
-.admin .progressbar{
-    progress-bar width:70%;
+.progress .progressbar{
+progress-bar width:70%;
 }
 
+/*base*/
+@media (max-width: 992px) {
 .admin .base{
+    padding-left: 0;
+}
+
+.base .topheader{
+    left: 0;
+}
+}
+
+.base .headerbar{
+header_bar
+}
+
+.base .leftbar{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex: 1;
+    width: 0;
+}
+
+.headerbar-left>div {
+    flex: 1;
+    width: 0;
+    display: flex;
+}
+
+.leftbar .menutoggle{
+btnbtn-icon-toggle menubar-toggle"data-toggle="menubar"
 
 }
 
-.admin .topheader{
-    top_header
+.leftbar .btnicon{
+width="16"height="16" viewBox="001816" fill="none" 
 }
 
-.admin .headerbar{
-
+.leftbar .sitename{
+data-toggle="tooltip" data-placement="bottom"
 }
 
-.admin .leftbar{
-    headerbar-left
+.rightbar>.headernav>li {
+    margin-left: 8px;
 }
 
-.admin .menutoggle{
-    btn btn-icon-toggle menubar-toggle" data-toggle="menubar"
+.header-nav>li:first-child {
+    margin-left: 4px;
 }
 
-.admin .btnicon{
-    width="16" height="16" viewBox="0 0 18 16" fill="none" xmlns="_blank"
+@media (max-width: 992px) {
+.headerbar-right>.header-nav:last-child {
+    margin-right: 15px;
+}
 }
 
-.admin .sitename{
-    data-toggle="tooltip" data-placement="bottom" 
+.rightbar .clay-button {
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #15181E;
+    font-size: 14px;
+    line-height: 24px;
+    white-space: nowrap;
+    white__exit-btn
 }
 
-.admin .rightbar{
-    headerbar-right
+.clay-button:hover {
+    background-color: #24282f;
+    color: #fff;
 }
 
-.admin .headernav{
-header-navheader-nav-options
+.clay-button:active {
+    background-color: #4b515b;
 }
 
-.admin .claybutton{
-aclay-buttonwhite__exit-btn
+.clay-button:focus {
+    border: none;
+    color: #fff;
 }
 
-.admin .claybutton2{
-aclay-button__upgrade-btn
+.rightbar .claybutton2{
+clay-button__upgrade-btn
 }
 
-.admin .maindashboard{
+.admin .main-dashboard{
 dashboard_main
 }
 
-.admin .alertBox{
+.main-dashboard .alertBox{
 alert__wrap
 }
 
-.admin .alertjoin{
+.main-dashboard .alertjoin{
 alert__banner-case2first:tw-mt-[24px]tw-pr-[31px]md:tw-pr-[62px]tw-flex-wrap
 }
 
-.admin .middleitems{
+.alertjoin .middleitems{
 md:tw-pr-[62px]
 }
 
-.admin .centeritems{
+.alertjoin .centeritems{
 tw-flextw-items-center
 }
 
-.admin .bannerimg{
+.centeritems .bannerimg{}
 
-}
-
-.admin .lefttext{
+.centeritems .lefttext{
 tw-text-left
 }
 
-.admin .btnclose{
-btn-closebtn-closetw-absolutetw-right-0md:tw-right-[16px]tw-pr-[5px]
+.alertjoin .btnclose{
+btn-closebtn-close tw-absolute tw-right-0md:tw-right-[16px]tw-pr-[5px]
 }
 
-.admin .btwnone{
-buttontypebuttononclickSADMIN_MENU_ALERT.closeBannerAlert(&#39;join&#39;)
+.btnclose .btwnone{
+button type button 
 }
 
-.admin .btl{
-btw-order-nonebg-transparentborder-none
+.btnclose .btl{
+btw-order-none bg-transparent border-none
 }
 
+/*clearfix*/
 .admin .clearfix{
-    area_wrap
+area_wrap
 }
 
-.admin .section-body{
+.clearfix .section-body{
 section-bodyfloat_l
 }
 
-.admin .dashboard-section{
+.clearfix .dashboard-section{
 dashboard_section_header
 }
 
-.admin .clear-img{
-width24height24viewBox002424fillnone
+.dashboard-section .clearimg{
+width 24 height 24 view Box 002424 fill none
 }
 
-.admin .dashboard-card{
+.clearfix .dashboard-card{
 tw-relative
 }
 
-.admin .fold{
+.dashboard-card .fold{
 fold
 }
 
-.admin .foldimage{
-svgwidth16height16viewBox001616fillnone
+.fold .foldimage{
+svg width 16 height 16 viewBox 001616 fill none
 }
 
-.admin .tooltip{
+.clearfix .tooltip{
 fold_tooltip
 }
 
-.admin .toolimage{
-svgwidth12height6viewBox00126fillnone
+.tooltip .toolimage{
+svg width 12 height 6 viewBox 00126 fillnone
 }
 
-.admin .dashboard-tutorial{
+.clearfix .dashboard-tutorial{
 dashboard_tutorial_dashboard_tutorial
 }
 
-.admin .container{
+.dashboard-tutorial .container{
 dashboard_tutorial_container
 }
 
-.admin .tutorial-card{
+.container .tutorial-card{
 dashboard_tutorial_card
 }
 
-.admin .checkbar{
-check_bar_wrap
-}
-
-.admin .check-background{
-check_bar_background
-}
-
-.admin .cbr{
-check_bar_check_barstylewidth:0%;border-radius:3px;
-}
-
-.admin .checkbar-text{
-check_bar_text_check_bar_text0/4개완료
-}
-
-.admin .tlist{
-tt-list
-}
-
-.admin .clist{
-check-list_check_list
-}
-
-.admin .check-icon{
-check_icon
-}
-
-.admin .dashboard-tutorial-card{
+.container .dashboard-tutorial-card{
 dashboard_tutorial_card
 }
 
-.admin .checkbar{
-check_bar_wrap
-}
-
-.admin .check-background{
-check_bar_background
-}
-
-.admin .cbr{
-check_bar_check_barstylewidth:0%;border-radius:3px;
-}
-
-.admin .checkbar-text{
-check_bar_text_check_bar_text0/4개완료
-}
-
-.admin .tlist{
-tt-list
-}
-    
-.admin .clist{
-check-list_check_list
-}
-    
-.admin .check-icon{
-check_icon
-}
-
-.admin .tutorial-growth{
+.container .tutorial-growth{
 dashboard_tutorial_card_tutorial_growth
 }
 
+/*중복됨*/
 .admin .checkbar{
 check_bar_wrap
 }
-    
+
 .admin .check-background{
 check_bar_background
 }
-    
+
 .admin .cbr{
-check_bar_check_barstylewidth:0%; border-radius:3px;
+check_bar_check_barstylewidth:0%;
+border-radius:3px;
 }
-    
+
 .admin .checkbar-text{
 check_bar_text_check_bar_text0/4개완료
 }
-    
+
 .admin .tlist{
 tt-list
 }
-        
+
 .admin .clist{
 check-list_check_list
 }
-        
+
 .admin .check-icon{
 check_icon
 }
 
-.admin .todolist{
+/**/
+
+.container .todolist{
 rowtodo-listtoday
 }
 
-.admin .titem{
+.todolist .titem{
 ma-item
 }
 
-.admin .card{
+.todolist .card{
 card
 }
 
-.admin .cardhead{
+.todolist .card-head{
 card_headline-bottom
 }
 
-.admin .headerbadge{
-text-defat-brightheader-badgebadge-dangerclay-badge0
+.card-head .header-badge{
+text-defat-bright header-badge badge-danger clay-badge0
 }
 
-.admin .cardbody{
+.todolist .cardbody{
 card-bodyborder-toptoday-table
 }
 
-.admin .tlist{
+.cardbody .tlist{
 tt-list
 }
 
-.admin .inline-blocked{
+.cardbody .inline-blocked{
 inline-blocked
 }
 
-.admin .text-danger{
+.cardbody .text-danger{
 text-danger0
 }
 
-.admin .dashboard-section{
-dashboard_section_headerdashboard_stats_header
+.dashboard-section{
+dashboard_section_headerdash board_stats_header
 }
 
-.admin .dimg{
-svgwidth24height24viewBox002424fillnone
+.dashboard-section .dimg{
+svg width24 height24 viewBox 002424 fillnone
 }
 
 .admin .dashboard-banner{
 dashboard_stats_banner_container
 }
 
-.admin .stats-banner{
+.dashboard-banner .stats-banner{
 dashboard_stats_banner
 }
 
-.admin .leftbanner{
+.dashboard-banner .leftbanner{
 dashboard_stats_banner_left
 }
 
-.admin .rightbanner{
+.dashboard-banner .rightbanner{
 dashboard_stats_banner_right
 }
 
-.admin .rbanner{
+.rightbanner .rbanner{
 imgsrc_blankheight100%alt서드파티통계배너
 }
 
-.admin .bbutton{
+.rightbanner .bbutton{
 buttontypebuttonstats_banner_hidemo_hide
 }
 
-.admin .rimg{
+.rightbanner .rimg{
 svgwidth14height14viewBox001414fillnone
 }
 
-.admin .hideimg{
-    buttontypebuttonstats_banner_hidepc_hide
+.bannerhide .hideimg{
+buttontypebuttonstats_banner_hidepc_hide
+}
+
+.bannerhide .hideimg{
+svgwidth10height10viewBox001414fillnonexmlns_blank
+}
+
+/*dashboard-stats*/
+.admin .dashboard-stats{
+flex-boxdashboard_stats
+}
+
+.dashboard-stats .visitor-list{
+ma-itemcol-md-6col-sm-12col-xs-12stat-visitor-list
+}
+
+.dashboard-stats .card{
+card
+}
+
+.card .card-head{
+card_head
+}
+
+.card-head .card-anchor{
+ahref_blankdashboard_card_anchor
+}
+
+.card .card-body{
+card-bodyborder-top
+}
+
+.card-body .float{
+float_rtext-12text-rightforce-paddingno-padding
+}
+
+.card-body .span{
+stylemargin-right:15px;
+}
+
+.card-body .fa{
+i fafa-circle style color:rgb(179,227,255);
+}
+
+.card-body .fafa{
+i fafa-circle style color:rgb(25,109,255);
+}
+
+.dashboard-stats .holder{
+    holder
+}
+
+/*HOLDER*/
+.holder .stats-chart{
+canvas id stats_chart width 328 height 164 style width:328px;
+height:164px;
+}
+
+.holder .chart-tooltip{
+chartjs_tooltip_chartjs_tooltipstyleopacity:0;
+left:123px;
+top:180.417px;
+font-family:&quot;
+HelveticaNeue&quot;
+Helvetica,
+Arial,
+sans-serif;
+font-size:14px;
+font-style:normal;
+position:absolute;
+background:rgb(255,255,255);
+}
+
+.holder .chart-tooltip-section{
+chartjs-tooltip-section
+}
+
+.holder .tooltip-key{
+chartjs-tooltip-keystylebackground-color:rgb(25,109,255);
+}
+
+.holder .tooltip-value{
+chartjs-tooltip-value8
+}
+
+.holder .chart-tooltip-key{
+chartjs-tooltip-keystylebackground-color:rgb(179,227,255);
+}
+
+/*ANALYTICS-LIST*/
+.admin .analytics-list{
+ma-itemcol-md-6col-sm-12col-xs-12stat-analytics-list
+}
+
+.analytics-list .card{
+card
+}
+
+.card .card-head{
+card_head
+}
+
+.card-head .card-anchor{
+ahref_blankdashboard_card_anchor
+}
+
+.analytics-list .card-body{
+card-bodyno-paddingborder-top
+}
+
+.analytics-list .summary-table{
+tabletableno-marginsummary-table
+}
+
+.analytics-list .th{
+thtext-13text-centeropacity-50일자/th>
+}
+
+.analytics-list .button{
+ahrefjavascript:;
+text-grayrolebuttondata-togglepopoverdata-placementautotitledata-htmltruedata-content&lt;
+tablestyle&#39;
+width:100%;
+line-height:1.4;
+vertical-align:top&#39;
+&#39;
+tabletable-normaltable-sm-paddingno-margin&#39;
+&gt;
+&lt;
+tr&gt;
+&lt;
+thstyle&#39;
+width:25%&#39;
+&#39;
+no-border-top&#39;
+&gt;
+집계시점&lt;/th&gt;
+&lt;
+td&#39;
+no-border-top&#39;
+&gt;
+주문일기준결제완료된주문&lt;/td&gt;
+&lt;/tr&gt;
+&lt;
+tr&gt;
+&lt;
+th&gt;
+차감기준&lt;/th&gt;
+&lt;
+td&gt;
+취소,
+반품완료시결제금액에서환불금액만큼차감&lt;
+/td&gt;
+&lt;/tr&gt;
+&lt;
+tr&gt;
+&lt;
+th&gt;
+환불적용&lt;/th&gt;
+&lt;
+td&gt;
+취소,
+반품/환불시주문일자기준으로처리&lt;/td&gt;
+&lt;/tr&gt;
+&lt;
+tr&gt;
+&lt;
+th&gt;
+할인금액&lt;/th&gt;
+&lt;
+td&gt;
+적립금,
+쿠폰등은매출금액에서제외.실결제금액에만반영.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;
+tr&gt;
+&lt;
+th&gt;
+부분취소&lt;/th&gt;
+&lt;
+td&gt;
+부분취소주문은정확히집계되지않음(개선예정).&lt;/td&gt;
+&lt;
+/tr&gt;
+&lt;/table&gt;
+data-original-title매출액계산기준
+}
+
+.analytics-list .question{
+ibtmbt-question-circle
+}
+
+.analytics-list .today{
+today
+}
+
+/*TODAY*/
+.today .text-left{
+tdtext-left2024-05-16/td>
+}
+
+.today .text-right{
+tdtext-right0/td>
+}
+
+.admin.today.text-right-border{
+tdtext-leftno-border최근7일합계/td>
+}
+
+.today .text-left-border{
+tdtext-leftno-border최근7일합계/td>
+}
+
+.admin .section-header{
+dashboard_section_header
+}
+
+.section-header .secimg{
+svgwidth24height25viewBox002425fillnonexmlns_blank
+}
+
+.admin .row-section{
+flex-boxdashboard_section_rowdashboard_contents_row
+}
+
+.row-section .shopping-review{
+ma-itemcol-md-6col-sm-6col-xs-12answers-listshopping-review
+}
+
+.row-section .flex-card{
+cardflex-card
+}
+
+.row-section .card-head{
+card_head
+}
+
+.row-section .card-anchor{
+ahref_blankdashboard_card_anchor
+}
+
+.row-section .card-body{
+card-bodyborder-topno-data-card-body
+}
+
+.card-body .list-preview{
+listlist-preview
+}
+
+.card-body .tile{
+litile
+}
+
+.card-body .no-data{
+no-data-container
+}
+
+/*SHOPPING-QNA*/
+.admin .shopping-qna{
+ma-itemcol-md-6col-sm-6col-xs-12answers-listshopping-qna
+}
+
+.shopping-qna .flex-card{
+cardflex-card
+}
+
+.shopping-qna .card-head{
+card_head
+}
+
+.card-head .card-anchor{
+ahref_blankdashboard_card_anchor
+}
+
+.shopping-qna .card-body{
+card-bodyborder-topno-data-card-body
+}
+
+.card-body .list-preview{
+listlist-preview
+}
+
+.card-body .tile{
+litile
+}
+
+.card-body .no-data{
+no-data-container
+}
+
+/*CONTENTS-LIST*/
+.admin .contents-list{
+ma-itemcol-md-6col-sm-6col-xs-12contents-list!tw-mb-0
+}
+
+.contents-list .flex-card{
+cardflex-card
+}
+
+.contents-list .card-head{
+card_head
+}
+
+.card-head .card-anchor{
+ahref_blankdashboard_card_anchor
+}
+
+.contents-list .card-body{
+card-bodyborder-topno-data-card-body
+}
+
+.card-body .list-preview{
+listlist-preview
+}
+
+.card-body .tile{
+litile
+}
+
+.card-body .no-data{
+no-data-container
 }
 
 
-svgwidth10height10viewBox001414fillnonexmlns_blank
-
-flex-boxdashboard_stats
-
-ma-itemcol-md-6col-sm-12col-xs-12stat-visitor-list
-
-card
-
-card_head
-
-ahref_blankdashboard_card_anchor
-
-card-bodyborder-top
-
-float_rtext-12text-rightforce-paddingno-padding
-
-stylemargin-right:15px;
-
-ifafa-circlestylecolor:rgb(179,227,255);/i>
-
-ifafa-circlestylecolor:rgb(25,109,255);/i>방문자
-
-canvasidstats_chartwidth328height164stylewidth:328px;height:164px;
-
-chartjs_tooltip_chartjs_tooltip
-styleopacity:0;left:123px;top:180.417px;font-family:&quot;
-HelveticaNeue&quot;Helvetica,Arial,sans-serif;
-font-size:14px;font-style:normal;position:absolute;background:rgb(255,255,255);
-
-chartjs-tooltip-section
-
-chartjs-tooltip-key
-stylebackground-color:rgb(25,109,255);
-
-chartjs-tooltip-value8
-
-chartjs-tooltip-section
-
-chartjs-tooltip-key
-stylebackground-color:rgb(179,227,255);
-
-chartjs-tooltip-value31
-
-ma-itemcol-md-6col-sm-12col-xs-12stat-analytics-list
-
-ahref_blankdashboard_card_anchor
-
-card-bodyno-paddingborder-top
-
-tabletableno-marginsummary-table
-
-thtext-13text-centeropacity-50일자/th>
-
-ahrefjavascript:;text-grayrolebutton
-data-togglepopoverdata-placementautotitle
-data-htmltrue
-data-content&lt;tablestyle&#39;width:100%;line-height:1.4;
-vertical-align:top&#39;&#39;tabletable-normaltable-sm-paddingno-margin&#39;&gt;&lt;tr&gt;&lt;thstyle&#39;width:25%&#39;&#39;
-no-border-top&#39;&gt;집계시점&lt;/th&gt;&lt;td&#39;
-no-border-top&#39;&gt;주문일기준결제완료된주문&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;차감기준&lt;/th&gt;&lt;td&gt;취소,반품완료시결제금액에서환불금액만큼차감&lt;
-/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;환불적용&lt;/th&gt;&lt;td&gt;취소,반품/환불시주문일자기준으로처리&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;할인금액&lt;/th&gt;&lt;td&gt;
-적립금,쿠폰등은매출금액에서제외.실결제금액에만반영.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th&gt;부분취소&lt;/th&gt;&lt;td&gt;부분취소주문은정확히집계되지않음(개선예정).&lt;/td&gt;&lt;
-/tr&gt;&lt;/table&gt;data-original-title매출액계산기준
-
-ibtmbt-question-circle/i>
-
-thtext-13text-centeropacity-50방문자/th>
-
-tdtext-left2024-05-16/td>
-
-tdtext-right0/td>
-
-tdtext-right0원/td>
-
-tdtext-leftno-border최근7일합계/td>
-
-tdtext-rightno-border0건/td>
-
-dashboard_section_header
-
-svgwidth24height25viewBox002425fillnonexmlns_blank
-
-
-flex-boxdashboard_section_rowdashboard_contents_row
-
-ma-itemcol-md-6col-sm-6col-xs-12answers-listshopping-review
-
-cardflex-card
-
-card_head
-
-ahref_blankdashboard_card_anchor
-
-card-bodyborder-topno-data-card-body
-
-listlist-preview
-
-litile
-
-no-data-container
-
-ma-itemcol-md-6col-sm-6col-xs-12answers-listshopping-qna
-
-cardflex-card
-
-card_head
-
-ahref_blankdashboard_card_anchor
-
-card-bodyborder-topno-data-card-body
-
-listlist-preview
-
-litile
-
-no-data-container
-
-ma-itemcol-md-6col-sm-6col-xs-12contents-list!tw-mb-0
-
-cardflex-card
-
-card_head
-
-ahref_blankdashboard_card_anchor
-
-card-bodyborder-topno-data-card-body
-
-listlist-preview
-
-litile
-
-no-data-container
-
+/*BORDER*/
+.admin .contentbox{
 styleheight:40px;
+}
 
+.admin .sec-header{
 dashboard_section_header
+}
 
+.sec-header .dasimg{
 svgwidth24height25viewBox002425fillnonexmlns_blank
+}
 
+/*SECTION-ROW*/
+.admin .sec-row{
 flex-boxdashboard_imweb_contents_topdashboard_section_row
+}
 
+.sec-row .myqna{
 ma-itemcol-md-6col-sm-6col-xs-12contents-myqna
+}
 
+.sec-row .flex-card{
 cardflex-card
+}
 
+.sec-row .card-head{
 card_head
+}
 
+.card-head .card-anchor{
 ahref_blanktarget_blankdashboard_card_anchor
+}
 
+.sec-row .card-body{
 card-bodyborder-topno-data-card-bodyqna-no-data-card-body
+}
 
+.card-body .list-preview{
 listlist-preview
+}
 
+.card-body .tile{
 litile
+}
 
+.card-body .no-data{
 no-data-container
+}
 
+/*notice-list*/
+.admin .notice-list{
 ma-itemcol-md-6col-sm-6col-xs-12notice-list
+}
 
+.notice-list .card{
 card
+}
 
+.notice-list .card-head{
 card_head
+}
 
+.card-head .card-anchor{
 ahref_blankdashboard_card_anchor
+}
 
+.notice-list .card-body{
 card-bodyborder-top
+}
 
+.card-body .list-preview{
 listlist-preview
+}
 
-litilestylemin-height:auto;
+.card-body .tile{
+litilemin-height:auto;
+}
 
-atile-contentnotice-itemhref_blanktarget_blank
+.card-body .notice-item{
+tile-contentnotice-item
+}
 
+.card-body .tile-text{
 tile-textno-padding
+}
 
-tile-iconno-paddingtext-12text-gray-brightstylemin-width:80px;2024-04-30
+.card-body .tile-icon{
+tile-iconno-paddingtext-12text-gray-bright
+style="min-width:80px;
+}
 
-litilestylemin-height:auto;
+/*SECTION-ROW*/
+.admin .section-row{
+flex-boxdashboard_imweb_contents_topdashboard_section_row
+}
 
-atile-contentnotice-itemhref_blanktarget_blank
+.section-row .guide-list{
+atile-contentnotice-itemhref_blanktile-textno-paddingtile-iconno-paddingtext-12text-gray-brightstylemin-width:80px;
+}
 
-tile-textno-padding
-
-tile-iconno-paddingtext-12text-gray-brightstylemin-width:80px;
-
-litilestylemin-height:auto;
-
-atile-contentnotice-itemhref_blanktarget_blank
-
-tile-textno-padding
-
-tile-iconno-paddingtext-12text-gray-brightstylemin-width:80px;
-
-litilestylemin-height:auto;
-
-atile-contentnotice-itemhref_blanktarget_blank
-
-tile-textno-padding
-
-tile-iconno-paddingtext-12text-gray-brightstylemin-width:80px;
-
-litilestylemin-height:auto;
-
-atile-contentnotice-itemhref_blanktarget_blank
-
-tile-textno-padding4월업데이트소식
-
-tile-iconno-paddingtext-12text-gray-brightstylemin-width:80px;2024-04-24
-
-litilestylemin-height:auto;
-
-atile-contentnotice-itemhref_blank
-
-tile-textno-padding
-
-tile-iconno-paddingtext-12text-gray-brightstylemin-width:80px;
-
-
-litilestylemin-height:auto;
-
-atile-contentnotice-itemhref_blanktarget_blank
-
-tile-textno-padding
-
-tile-iconno-paddingtext-12text-gray-brightstylemin-width:80px;
-
-litilestylemin-height:auto;
-
-atile-contentnotice-itemhref_blank
-
-tile-textno-padding
-
-tile-iconno-paddingtext-12text-gray-brightstylemin-width:80px;
-
-litilestylemin-height:auto;
-
-atile-contentnotice-itemhref_blank
-
-tile-textno-padding
-
-tile-iconno-paddingtext-12text-gray-brightstylemin-width:80px;
-
-litilestylemin-height:auto;
-
-atile-contentnotice-itemhref_blank
-
-tile-textno-padding
-
-tile-iconno-paddingtext-12text-gray-brightstylemin-width:80px;
-
-flex-boxdashboard_section_row
-
-ma-itemcol-md-6col-sm-6col-xs-12guide-list
-
+.guide-list .card{
 card
+}
 
+.guide-list .card-head{
 card_head
+}
 
-ahref_blankdashboard_card_anchor
+.guide-list .card-anchor{
+card_anchor
+}
 
-card-bodyborder-top
+.guide-list .card-body{
+card_body
+}
 
+.card-body .list-preview{
 listlist-preview
+}
 
-litilestylemin-height:auto;
+.card-body .tile{
+litilestyle="min-height:auto;
+}
 
-atile-contentguide-itemhref_blank
+.card-body .guide-item{
+tile-contentguide-item
+}
 
-tile-textno-padding빠른디자인시작가이드
+.card-body .tile-text{
+tile-textno-padding
+}
 
-tile-iconno-paddingtext-12text-gray-brightstylemin-width:80px;
+.card-body .tile-icon{
+tile-iconno-paddingtext-12text-gray-bright
+style="min-width:80px;
+}
 
-litilestylemin-height:auto;
-
-atile-contentguide-itemhref_blank
-
-tile-textno-padding디자인모드란?
-
-tile-iconno-paddingtext-12text-gray-brightstylemin-width:80px;
-
+/*dashboard-right*/
+.admin .dashboard-right{
 dashboard_rightright-menu-fixedfloat_l
+}
 
+.dashboard-right .user-card{
 cardcard-blackdashboard-user-card
+}
 
+.user-card .card-body{
 card-bodytext-center
+}
 
+.user-card .card-body .dropdown-toggle{
 ahrefjavascript:dropdown-toggleblockdata-toggledropdowntabindex-1aria-expandedfalse
+}
 
+.user-card .card-body .mixpanel-profile{
 margin-bottom-xlidmixpanel_dashboard_profile
+}
 
+.user-card .mixpanel-profile .border-round{
 imgborder-roundsrc_blankwidth64height64
+}
 
+.mixpanel-profile .text{
 text-bold
+}
 
+.mixpanel-profile .nameholder{
 use_nameholder관리자
+}
 
+.mixpanel-profile .emailholder{
 text-13opacity-50
+}
 
+.dashboard-right .dropdown-menu{
 dropdown-menuanimation-dockdashboard-profilerolemenu
+}
 
+.dropdown-menu .ellipsis{
 atext-ellipsis
+}
 
-imgborder-roundsrc_blankwidth45height45
+.dropdown-menu .border-round{
+imgborder-roundsrc_blankwidth64height64
+}
 
-liider
+.dropdown-menu .divider{
+divider
+}
 
-ahrefjavascript:onclickADMIN.openProfile();내사이트목록보기
+.dropdown-menu .upgrade-btn{
+text-dangerupgrade-btn
+}
 
-atext-dangerupgrade-btnhref_blank
-
-liider
-
+.dropdown-menu .exit-btn{
 ahref_blankexit-btn나가기
+}
 
+/*card-summary*/
+
+.dashboard-right .card-summary{
 card-bodycard-summaryno-padding-top
+}
 
+.card-summary .fulltable{
 tabledfl-widthtext-12margin-bottom-xl
+}
 
+.fulltable .sub-tit{
 table-cellvertical-middleopacity-50sub_tit사용버전
+}
 
+.fulltable .table-cell{
 table-cellvertical-middle
+}
 
-btnbtn-smbtn-dark-brightbtn-roundedbtn-xs-paddingstyletext-transform:capitalize;free
+.fulltable .roundedbtn{
+btnbtn-smbtn-dark-brightbtn-roundedbtn-xs-paddingstyletext-transform:capitalize;
+free
+}
 
+.fulltable .sub-option{
 table-cellvertical-middletext-rightsub_option
+}
 
+.fulltable .mixpanel-upgrade{
 atext-dangeridmixpanel_dashboard_upgrade_righthref_blank업그레이드
+}
 
-
-tabledfl-widthtext-12margin-bottom-xl
-
-table-cellvertical-middleopacity-50sub_titPG
-
-table-cellvertical-middle미가입
-
-table-cellvertical-middletext-rightsub_option
-
+.fulltable .pg-upgrade{
 aopacity-50idmixpanel_dashboard_pghref_blank설정
-
-card-bodycard-summary
-
-tabledfl-widthtext-12margin-bottom-xl
-
-table-cellvertical-middleopacity-50sub_titAPP
-
-table-cellvertical-middle
-
+}
+.fulltable .hover-underline{
 ahover-underlinehref_blankaltiOS신청iOS미사용/
+}
 
-ahover-underlinehref_blankaltAndroid신청Android미사용
+.fulltable .table-word{
+table-cellvertical-middleword-break:break-all;
+}
 
-table-cellvertical-middletext-rightsub_option
-
-atext-dangerhrefjavascript:chkFreeVersion(&#39;/admin/app/android&#39;)설정
-
-tabledfl-widthtext-12margin-bottom-xl
-
-table-cellvertical-middleopacity-50sub_tit도메인
-
-table-cellvertical-middlestyleword-break:break-all;기본도메인사용중
-
-table-cellvertical-middletext-rightsub_option
-
-atext-dangerhref_blank설정
-
-tabledfl-widthtext-12margin-bottom-xl
-
-table-cellvertical-middleopacity-50sub_titSSL
-
-table-cellvertical-middle사용(기본도메인자동적용)
-
-table-cellvertical-middletext-rightsub_option
-
-atext-dangerhref_blank연장
-
-tabledfl-widthtext-12margin-bottom-xl
-
-table-cellvertical-middleopacity-50sub_tit입금확인
-
-ahrefjavascript:rolebuttondata-triggerfocustabindex0
-data-togglepopoverdata-placementtopdata-htmltruetitle
-data-content무통장입금주문을자동으로확인하여입금완료처리해주는자동입금확인서비스뱅크다의사용여부및남은기간을표시합니다.
-data-original-title자동입금확인(뱅크다)
-
+.fulltable .questcircle{
 ibtmbt-question-circle
+}
 
-table-cellvertical-top자동입금확인
+.fulltable .vertical-top{
+table-cellvertical-top
+}
 
-table-cellvertical-toptext-rightsub_option
-
-atext-dangerhref_blank설정
-
+/*consulting-banner*/
+.admin .consulting-banner{
 consting_banner_wrapcardbg-transparent
+}
 
+.consulting-banner .owl-theme{
 consting_bannerowl-themeowl-carouselowl-loaded
+}
 
+.owl-theme .owl-stage-outer{
 owl-stage-outer
+}
 
-owl-stagestyletransform:translate3d(-1500px,0px,0px);transition:all0.25sease0s;width:3600px;
+.owl-theme .owl-stage{
+owl-stagestyletransform:translate3d(-1500px,0px,0px);
+transition:all0.25sease0s;
+width:3600px;
+}
 
+.owl-theme .owl-item{
 owl-itemclonedstylewidth:300px;margin-right:0px;
+margin-right:0px;
+}
 
+.owl-theme .item{
 itemdata-index6idmixpanel_banner_kakaosync
+}
 
-id dashboard_banner_wrap_kakaosyncdashboard_banner_wrapmb-0kakaosynccard
-stylebackground:url(&quot;../common/img/dashboard_banner_kakaosync.png?v2&quot;)0%0%/100%no-repeatrgb(255,218,1);color:rgb(255,255,255);
-
-ahref_blanktext-14text-defat
-
-card-body
-
-owl-itemclonedstylewidth:300px;margin-right:0px;
-
-itemdata-index7idmixpanel_banner_tosspayments
-
-dashboard_banner_wrapmb-0cardstylebackground-image:url(&quot;_blank);
-background-position:initial;background-repeat:no-repeat;background-attachment:initial;
-background-origin:initial;background-clip:initial;
-background-color:rgb(41,98,255);color:rgb(255,255,255);background-size:100%
-
-ahref_blanktarget_selftext-14
-
-card-bodystyledisplay:flex;flex-direction:column;justify-content:center;align-items:center;
-
-img src_blankstylewidth:98px;margin-bottom:5px;margin-top:4px;
-
-stylefont-size:16px;font-weight:700;line-height:135%;
-
-owl-itemstylewidth:300px;margin-right:0px;
-
-itemtw-relativeidmixpanel_banner_crema
-
-dashboard_banner_wrapmb-0cardstylebackground-image:url(&quot;https://vendor-cdn.imweb.me/images/CREMA_BO_BANNER.png&quot;);background-repeat:no-repeat;background-attachment:initial;background-origin:initial;background-clip:initial;background-color:rgb(0,0,0);background-position:right0pxbottom12px;color:rgba(255,255,255,0.82);background-size:auto86px;
-
-ahref_blanktext-14
-
-card-bodystyledisplay:flex;flex-direction:column;justify-content:start;align-items:flex-start;gap:2px;padding:22px16px;height:102px;
-
-stylefont-size:16px;font-weight:700;line-height:140%;letter-spacing:-0.8px;margin-bottom:0px;
-
-stylefont-size:12px;line-height:150%;
-
-imgsrc_blankwidth80tw-absolutetw-right-[16px]tw-top-[20px]!tw-w-[80px]
-
-itemdata-index4idmixpanel_banner_danal
-
-dashboard_banner_wrapmb-0cardstylebackground-image:url(&quot;_blank);
-													background-position:initial;background-repeat:no-repeat;background-attachment:initial;
-													background-origin:initial;background-clip:initial;background-color:rgb(41,98,255);
-													color:rgb(255,255,255);background-size:100%;
-
-ahref_blanktarget_selftext-14
-
-card-bodystyledisplay:flex;flex-direction:row;justify-content:space-between;align-items:center;
-
-pstylefont-size:16px;font-weight:700;line-height:135%;margin-bottom:0px;
-
-imgsrc_blankstylewidth:80px;object-fit:contain;object-position:rightcenter;
-
-owl-itemstylewidth:300px;margin-right:0px;
-
-itemdata-index5idmixpanel_banner_fassto
-
-dashboard_banner_wrapmb-0cardstylebackground:url(&quot;_blank)0%0%/100%no-repeatrgb(0,156,103);color:rgb(255,255,255);
-
-ahref_blanktext-14
-
-card-bodytext-13text-boldstyleletter-spacing:-1px;padding-top:14px;
-
-opacity-75파스토이용시
-
-stylefont-size:14px;
-
-owl-itemstylewidth:300px;margin-right:0px;
-
-itemdata-index6idmixpanel_banner_kakaosync
-
+/*카카오싱크*/
+.owl-theme .kakaosync-banner{
 iddashboard_banner_wrap_kakaosyncdashboard_banner_wrapmb-0kakaosynccardstylebackground:url(&quot;../common/img/dashboard_banner_kakaosync.png?v2&quot;)0%0%/100%no-repeatrgb(255,218,1);
 color:rgb(255,255,255);
+}
 
+.owl-theme .default{
 ahref_blanktext-14text-defat
+}
 
+.owl-theme .card-body{
 card-body
-
-owl-itemclonedstylewidth:300px;margin-right:0px;
-
-itemtw-relativedata-index0idmixpanel_banner_crema
-
-dashboard_banner_wrapmb-0cardstylebackground-image:url(&quot;_blank);background-repeat:no-repeat;background-attachment:initial;background-origin:initial;background-clip:initial;background-color:rgb(0,0,0);background-position:right0pxbottom12px;color:rgba(255,255,255,0.82);background-size:auto86px;
-
-ahref_blanktext-14
-
-card-bodystyledisplay:flex;flex-direction:column;justify-content:start;align-items:flex-start;gap:2px;padding:22px16px;height:102px;
-
-stylefont-size:16px;font-weight:700;line-height:140%;letter-spacing:-0.8px;margin-bottom:0px;
-
-stylefont-size:12px;line-height:150%;
-
-owl-itemclonedstylewidth:300px;margin-right:0px;
-
-itemtw-relativedata-index1idmixpanel_banner_vreview
-
-dashboard_banner_wrapmb-0cardstylebackground:rgb(10,55,189);
-
-ahref_blanktext-14
-
-card-bodystyledisplay:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;
-
-stylefont-size:15px;font-weight:700;line-height:200%;margin-bottom:0px;
-
-stylecolor:rgb(255,255,255);
-
-stylefont-size:13px;color:white;letter-spacing:-0.7px;
-
-imgsrc_blankwidth80tw-absolutetw-right-[16px]tw-top-[20px]!tw-w-[80px]
-
-owl-controls
-
-owl-nav
-
-owl-prevprev
-
-owl-nextnext
-
-owl-dots
-
-consting_banner_nav
-
-consting_banner_navWrap
-
-current4
-
-total8
-
-cardcard-sm-padding
-
-card-head
-
-afloat_rtext-13opacity-50force-paddingno-padding-yhref_blank관리
-
-card-bodyno-padding-top
-
-admin_img_wrapclearfix
-
-float_l
-
-ainline-blockedhref_blankdata-toggletooltipdata-placementtop
-
-imgborder-roundsrc_blankwidth35height35
-
-update_memo_list
-
-
-cardcard-sm-padding
-
-formidadd_memo
-
-inputtypehiddennamewrite_token
-valueuFQiz1n2lUfUZi54r2wd6zh3JRliheWkiqynM5XyJZ0QkYfFQvmwazwBghvw9Zz5EYSMZGGLvbBC4AKq0fBhyK/hhO7LkcSqcEBWhd378aSwvv6mlwNuXdnIZXLLOwYP
-
-inputtypehiddennamewrite_token_keyvalue9634
-
-card-bodycard-memo
-
-tabledholderfl-widthstylemargin-bottom:5px;
-
-table-cellvertical-middlememo-thumb
-
-imgborder-roundsrc_blankwidth35height35
-
-table-cellvertical-middle
-
-idmemo_writertext-13text-bold관리자
-
-memo-body
-
-textareanamememoidmemoform-controlmargin-bottom-xlresize-verticalrows1
-placeholder관리자들과공유할메모를남겨주세요data-autosize-ontrue
-styleoverflow:hidden;overflow-wrap:break-word;resize:none;height:38px;
-
-ahrefjavascript:
-btnbtn-xsbtn-roundedbtn-xs-paddingbtn-defat-bright
-onclickDASHBOARD.addMemo($(&#39;#add_memo&#39))저장
-
-buttontypebuttonhidden-lghidden-mdtoggle-btndata-dismissmenubar
-
-sr-onlyTogglenavigation
-
-imgsrc_blank
-
-idmenubaranimate
-
-nanohas-scrollbarstyleheight:787px;
-
-nano-contenttabindex0styleright:-17px;
-
-menubar-scroll-panelstylepadding-bottom:1px;
-
-region-wrapfl-width
-
-ahrefjavascript:holderglobal_icon_menudropdown-toggledata-toggledropdown
-aria-expandedtrue
-
-icon-wrap
-
-imgsrc_blankregion-icon
-
-brand-holder
-
-title_controls왓이님의웹사이트
-
-icon
-
-svgxmlns_blankwidth16height16viewBox001616fillnone
-
-dropdown-menudropdown-menu-newglobal_settinganimation-dockmenu-card-styling
-
-liholder
-
-tabled
-
-table-cellvertical-middlewidth-1
-
-imgwidth30height30
-src./qjfhdnaos51106.imweb.me_files/flag_kr_circle.png
-
-table-cellvertical-middledomainstyleline-height:1.3;
-
-inline-blocked
-
-domain_name왓이님의웹사이트
-
-data-original-title일반방문자의접속이제한됩니다.글로벌버전으로업그레이드해주세요
-data-toggletooltipbadgedata-placementtop
-stylemargin-left:5px;vertical-align:top;미결제
-
-text-gray-brighttext-12qjfhdnaos51106.imweb.me
-
-liadd-unit
-
-ahrefjavascript:;
-onclickSITE_MANAGE.openAddUnit(&#39;S20240516cc656761618e8&#39;)
-text-secondaryaddunitstyledisplay:flex;
-svgstylemargin-right:8px;mlns_blankwidth16height16
-viewBox001616fillnone
-
-idmain-menugui-controls
-
-lidata-prevent-menu-clicktrue
-
-ahrefjavascript:;_gnb_notification_buttongnb_notification_button
-
+}
+
+/*토스페이*/
+.owl-theme .tosspay-banner{
+dashboard_banner_wrapmb-0cardstylebackground-image:url(&quot;_blank);
+background-position:initial;
+background-repeat:no-repeat;
+background-attachment:initial;
+background-origin:initial;
+background-clip:initial;
+background-color:rgb(41,98,255);
+color:rgb(255,255,255);
+background-size:100%
+}
+
+.owl-theme .card-body-toss{
+style="display:flex;flex-direction:column;justify-content:center;align-items:center;
+}
+
+.owl-theme .tossimg{
+style="width:98px;margin-bottom:5px;margin-top:4px;
+}
+
+.owl-theme .tosstext{
+style="font-size:16px;font-weight:700;line-height:135%;"
+}
+
+.owl-theme .relative-item{
+itemtw-relativeidmixpanel_banner_crema
+}
+
+/*크리마*/
+.owl-theme .crema-banner{
+dashboard_banner_wrap
+mb-0cardstylebackground-image:url(&quot;https://vendor-cdn.imweb.me/images/CREMA_BO_BANNER.png&quot;);
+background-repeat:no-repeat;
+background-attachment:initial;
+background-origin:initial;
+background-clip:initial;
+background-color:rgb(0,0,0);
+background-position:right0pxbottom12px;
+color:rgba(255,255,255,0.82);
+background-size:auto86px;
+}
+
+.owl-theme .card-body-crema{
+card-bodystyledisplay:flex;
+flex-direction:column;
+justify-content:start;
+align-items:flex-start;
+gap:2px;
+padding:22px16px;
+height:102px;
+}
+
+.owl-theme .crematext{
+stylefont-size:16px;
+font-weight:700;
+line-height:140%;
+letter-spacing:-0.8px;
+margin-bottom:0px;
+}
+
+.owl-theme .cremafont{
+stylefont-size:12px;
+line-height:150%;
+}
+
+/*브이리뷰*/
+.owl-theme .card-banner{
+imgsrc_blankwidth80tw-absolutetw-right-[16px]tw-top-[20px]!tw-w-[80px]itemdata-index4idmixpanel_banner_danaldashboard_banner_wrapmb-0cardstylebackground-image:url(&quot;_blank);
+background-position:initial;
+background-repeat:no-repeat;
+background-attachment:initial;
+background-origin:initial;
+background-clip:initial;
+background-color:rgb(41,98,255);
+color:rgb(255,255,255);
+background-size:100%;
+}
+
+.owl-theme .card-body-vrev{
+card-bodystyledisplay:flex;
+flex-direction:row;
+justify-content:space-between;
+align-items:center;
+}
+
+.owl-theme .reviewcontent{
+pstylefont-size:16px;
+font-weight:700;
+line-height:135%;
+margin-bottom:0px;
+}
+
+.owl-theme .review{
+color:rgb(255,255,255);
+}
+
+.owl-theme .reviewtext{
+style="font-size:13px;color:white;letter-spacing:-0.7px;
+}
+
+
+.owl-theme .reviewimg{
+width="80"
+class="tw-absolutetw-right-[16px]tw-top-[20px]!tw-w-[80px]">
+}
+
+/*카카오프렌드*/
+.owl-theme .kakaofriend-banner{
+dashboard_banner_wrapmb-0card
+style="background:url(&quot;_blank)0%0%/coverno-repeatrgb(0,0,0);color:rgb(0,0,0);"
+}
+
+
+.owl-theme .card-body-friend{
+style="display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;"
+}
+
+
+.owl-theme .kakaofriend-content{
+style="font-size:15px;font-weight:700;line-height:200%;margin-bottom:0px;">
+}
+
+.owl-theme .kakaofriend-talk{
+color:rgb(254,229,0);
+}
+
+.owl-theme .marketing{
+color:white;
+}
+
+.owl-theme .kakaofriend-font{
+font-size:13px;color:white;letter-spacing:-0.7px;
+}
+
+/*네이버페이*/
+.owl-theme .npay-banner{
+<divclass="dashboard_banner_wrapmb-0card"
+style="background:url(&quot;_blank)0%0%/100%no-repeatrgb(235,254,243);color:rgb(0,0,0);">
+}
+
+.owl-theme .card-body-npay{
+<divclass="card-bodytext-13text-bold"
+style="letter-spacing:-1px;padding-top:16px;">
+}
+
+.owl-theme .npay-content{
+<divstyle="margin-bottom:6px;">
+}
+
+.owl-theme .npay-img{
+<imgsrc="_blank"style="width:36px;">
+}
+
+.owl-theme .npay-font{
+style="font-size:16px;font-weight:700;line-height:135%;margin-bottom:0px;">
+집화처리다음날100%지급!
+}
+
+.owl-theme .npay-text{
+style="color:rgb(3,199,90);letter-spacing:-0.7px;">
+수수료없는빠른정산신청하기
+}
+
+/* 삼성페이 */
+.owl-theme .spay-banner{
+<divclass="dashboard_banner_wrapmb-0card"style="background-image:url(&quot;_blank);
+background-position:initial;background-repeat:no-repeat;background-attachment:initial;
+background-origin:initial;background-clip:initial;background-color:rgb(41,98,255);
+color:rgb(255,255,255);background-size:100%;">
+}
+
+.owl-theme .card-body-spay{
+<divclass="card-body"
+style="display:flex;flex-direction:row;justify-content:space-between;align-items:center;">
+}
+
+.owl-theme .spay-font{
+style="font-size:16px;font-weight:700;line-height:135%;margin-bottom:0px;">
+}
+
+.owl-theme .spay-img{
+style="width:80px;object-fit:contain;object-position:rightcenter;">
+}
+
+/* 파스토 */
+.owl-theme .pasto-banner{
+<divclass="dashboard_banner_wrapmb-0card"
+style="background:url(&quot;_blank)0%0%/100%no-repeatrgb(0,156,103);color:rgb(255,255,255);">
+}
+
+.owl-theme .card-body-pasto{
+<divclass="card-bodytext-13text-bold"
+style="letter-spacing:-1px;padding-top:14px;"> 
+}
+
+.owl-theme .pasto-span{
+<spanclass="opacity-75">파스토이용시</span>
+}
+
+.owl-theme .pasto-font{
+<divstyle="font-size:14px;">
+}
+
+.owl-theme .pasto-text{
+<divstyle="font-size:14px;">
+}
+
+/* */
+.dashboard-right .owl-controls{
+<div class="owl-controls"> 
+}
+
+.owl-controls .owl-nav{
+<div class="owl-nav">
+}
+
+.owl-controls .owl-prev{
+<div class="owl-prev">prev</div>
+}
+
+.owl-controls .owl-next{
+<div class="owl-next">next</div>
+}
+
+.owl-controls .owl-dots{
+<div class="owl-dots"></div>
+}
+
+.dashboard-right .consulting_banner_nav{
+<div class="consulting_banner_nav">
+}
+
+.consulting_banner_nav .consulting_banner_navWrap{
+<div class="consulting_banner_navWrap">
+}
+
+.consulting_banner_nav .current{
+<span class="current">4</span>
+}
+
+.consulting_banner_nav .total{
+<span class="total">8</span>
+}
+
+.admin .smcard{
+<div class="card card-sm-padding">
+}
+
+.smcard .card-head{
+<div class="card-head"> 
+}
+
+.smcard .force{
+<a class="float_r text-13 opacity-50 force-padding no-padding-y" href="_blank">관리</a>
+</div>
+}
+
+.smcard .card-body{
+<div class="card-body no-padding-top">
+}
+
+.smcard .admin-img{
+<div class="admin_img_wrap clearfix">
+}
+
+.smcard .float{
+<div class="float_l">
+}
+
+.smcard .inline-blocked{
+<a class="inline-blocked" href="_blank" data-toggle="tooltip"
+data-placement="top">
+}
+
+.smcard .border-round{
+<img class="border-round" src="_blank" width="35" height="35">
+}
+
+.admin .memolist{
+<div class="update_memo_list">
+}
+
+.memolist .addmemo{
+<form id="add_memo">
+}
+
+.memolist .card-memo{
+<div class="card-body card-memo">
+}
+
+.memolist .tableholder{
+<div class="tabled holder full-width" style="margin-bottom: 5px; ">
+}
+
+.memolist .table-cell{
+<div class="table-cell vertical-middle memo-thumb">
+}
+
+.memolist .border-round{
+<img class="border-round" src="_blank" width="35" height="35">
+}
+
+.memolist .middle-table-cell{
+<div class="table-cell vertical-middle"> 
+}
+
+.memolist .memo-writer{
+<div id="memo_writer" class="text-13 text-bold">관리자</div>
+}
+
+.memolist .memo-body{
+<div class="memo-body"> 
+}
+
+.memolist .form-control{
+<textarea name="memo" id="memo"
+class="form-control margin-bottom-xl resize-vertical" rows="1"
+placeholder="관리자들과 공유할 메모를 남겨주세요" data-autosize-on="true"
+style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 38px;"></textarea>
+}
+
+.memolist .btn-default{
+<a href="javascript:"
+class="btn btn-xs btn-rounded btn-xs-padding btn-default-bright"
+onclick="DASHBOARD.addMemo($(&#39;#add_memo&#39))">저장</a>
+}
+
+.admin .toggle-btn{
+<button type="button" class="hidden-lg hidden-md toggle-btn" data-dismiss="menubar">
+}
+
+.toggle-btn .sr-only{
+<span class="sr-only">Toggle navigation</span>
+}
+
+.admin .animate{
+<div id="menubar" class="animate">
+}
+
+.animate .scrollbar{
+<div class="nano has-scrollbar" style="height: 787px; ">
+}
+
+.animate .nano-content{
+<div class="nano-content" tabindex="0" style="right: -17px;">
+}
+
+.animate .scroll-panel{
+<div class="menubar-scroll-panel" style="padding-bottom: 1px;">
+}
+
+.scroll-panel .region{
+<div class="region-wrap full-width">
+}
+
+.scroll-panel .dropdown-toggle{
+<a href="javascript:" class="holder global_icon_menu dropdown-toggle" data-toggle="dropdown"
+aria-expanded="true">
+}
+
+.scroll-panel .icon-wrap{
+<div class="icon-wrap">
+}
+
+.scroll-panel .region-icon{
+<img src="_blank" class="region-icon">
+}
+
+.scroll-panel .brand-holder{
+<div class="brand-holder">
+}
+
+.scroll-panel .title-controls{
+<span class="title_controls">왓이님의 웹사이트</span>
+}
+
+.scroll-panel .icon{
+<span class="icon">
+}
+
+.scroll-panel .holderimg{
+<svg xmlns="_blank" width="16" height="16" viewBox="0 0 16 16"
+fill="none"></svg>
+}
+
+.animate .dropdown-menu{
+<ul class="dropdown-menu dropdown-menu-new global_setting animation-dock menu-card-styling">
+}
+
+.dropdown-menu .holder{
+<li class="holder">
+}
+
+.holder .tabled{
+<div class="tabled">
+}
+
+.holder .table-cell{
+<div class="table-cell vertical-middle width-1">
+}
+
+.holder .tableimg{
+<img width="30" height="30"
+}
+
+.holder .domain{
+<div class="table-cell vertical-middle domain" style="line-height: 1.3;">
+}
+
+.holder .inline-blocked{
+<div class="inline-blocked">
+}
+
+.holder .domain-name{
+<span class="domain_name">왓이님의 웹사이트</span>
+}
+
+.holder .badge{
+<span data-original-title="일반 방문자의 접속이 제한됩니다. 글로벌 버전으로 업그레이드 해주세요"
+data-toggle="tooltip" class="badge" data-placement="top"
+style="margin-left: 5px; vertical-align: top;">미결제</span>
+}
+
+.holder .domaintext{
+<div class="text-gray-bright text-12">qjfhdnaos51106.imweb.me</div>
+}
+
+.holder .tools{
+<div class="tools">
+}
+
+.dropdown-menu .add-unit{
+<li class="add-unit"> 
+}
+
+.add-unit .secon-addunit{
+<a href="javascript:;"
+onclick="SITE_MANAGE.openAddUnit(&#39;S20240516cc656761618e8&#39;)"
+class="text-secondary addunit" style="display: flex; ">
+}
+
+.add-unit .seicon{
+<svg style="margin-right: 8px;" mlns="_blank" width="16" height="16"
+viewBox="0 0 16 16" fill="none">
+}
+
+.dropdown-menu .gui-control{
+<ul id="main-menu" class="gui-controls"> 
+}
+
+.gui-control .noti-button{
+<a href="javascript:;" class="_gnb_notification_button gnb_notification_button">
+}
+
+.gui-control .gui-icon{
+<div class="gui-icon"> 
+}
+
+.gui-control .db-bell{
+<i class="db-bell"></i>
+}
+
+.gui-control .title-control{
+<span class="title title_controls">알림</span>
+}
+
+.gui-control .new-badge{
+<span class="_badge badge_new">New</span>
+}
+
+.gui-control .db-wand{
+<i class="db-wand"></i>
+}
+
+.gui-control .db-preview{
+<i class="db-preview"></i>
+}
+
+.gui-control .spacer{
+<li class="spacer"></li>
+}
+
+.spacer .top-menu{
+<li class="top-menu">
+}
+
+.spacer .shop-extend{
+<a href="javascript:;" class="shop-extend"
+onclick="DASHBOARD.openSiteManagementDialog(this);"
+data-original-title="쇼핑·예약 기능설정" data-toggle="tooltip" data-placement="right"
+data-trigger="hover"
+data-template="&lt;div class=&quot;tooltip custom-tooltip&quot;&gt;&lt;div class=&quot;tooltip-inner&quot;&gt;&lt;/div&gt;&lt;/div&gt;">
+}
+
+.spacer .topmenu-icon{ 
+<svg xmlns="_blank" width="16" height="16" viewBox="0 0 16 16" fill="none">
+}
+
+.spacer .expanded{
+<li class="expanded">
+}
+
+.expanded .active{
+<a href="_blank" class=" active">
+}
+
+.expanded .gui-icon{
+<div class="gui-icon">
+}
+
+.expanded .db-dashboard{
+<i class="db-dashboard"></i>
+}
+
+.gui-folder .title-controls{
+<span class="title title_controls">대시보드</span>
+}
+
+.expanded .gui-folder{
+<li class="gui-folder" data-title="member">
+}
+
+.gui-folder .sidebar-nav-menu{
+<a href="_blank" class="sidebar-nav-menu" onclick="return false;">
+}
+
+.gui-folder .db-user{
+<i class="db-user"></i>
+}
+
+.gui-folder .db-pencil{
+<i class="db-pencil"></i>
+}
+
+.gui-folder .db-megaphone{
+<i class="db-megaphone"></i>
+}
+
+.gui-folder .db-mobile{
+<i class="db-mobile"></i>
+}
+
+.gui-folder .badge-icon{
+<span class="badge_icon">1</span>
+}
+
+.gui-folder .db-status-up{
+<i class="db-status-up"></i>
+}
+
+.gui-folder .db-crm{
+<i class="db-crm"></i>
+}
+
+.gui-folder .db-rocket{
+<i class="db-rocket"></i>
+}
+
+.gui-folder .db-settings{
+<i class="db-settings"></i>
+}
+
+.spacer .gui-folder{
+<li class="gui-folder" data-title="shopping">
+}
+
+.gui-folder .db-shopping-bag{
+<i class="db-shopping-bag"></i>
+}
+
+.gui-folder .badge-beta{
+<span class="badge-beta">Beta</span>
+}
+
+.gui-folder .badge-new{
+<span class="badge-new">New</span>
+}
+
+.gui-folder .gui-animated{
+<li class="gui-folder animated animated-hidden">
+}
+
+.gui-animated .sidebar-nav-menu{
+<a href="_blank" class="sidebar-nav-menu" onclick="return false;">
+}
+
+.gui-animated .gui-icon{
 gui-icon
-
-idb-bell/i>
-
-titletitle_controls알림
-
-_badgebadge_newNew
-
-gui-icon
-
-idb-wand/i>
-
-titletitle_controls디자인모드
-
-aexternal-urlhref_blank
-
-gui-icon
-
-idb-preview
-
-titletitle_controls사이트바로가기
-
-lispacer
-
-litop-menu
-
-ahrefjavascript:;shop-extend
-onclickDASHBOARD.openSiteManagementDialog(this);
-data-original-title쇼핑·예약기능설정data-toggletooltipdata-placementright
-data-triggerhover
-data-template&lt;&quot;tooltipcustom-tooltip&quot;&gt;&lt;&quot;tooltip-inner&quot;&gt;&lt;/&gt;&lt;/&gt;
-
-svgxmlns_blankwidth16height16viewBox001616fillnone
-
-liactiveexpanded
-
-ahref_blankactive
-
-gui-icon
-
-idb-dashboard
-
-titletitle_controls대시보드
-
-ligui-folderdata-titlemember
-
-ahref_blanksidebar-nav-menuonclickreturnfalse;
-
-gui-icon
-
-idb-user
-
-titletitle_controls사용자관리
-
-badge_icon1
-
-titletitle_controls사용자목록
-badge_icon1
-
-titletitle_controls메시지보내기
-
-titletitle_controls운영진
-
-titletitle_controls자동메일
-
-titletitle_controls친구톡보내기
-
-titletitle_controlsSMS·알림톡
-
-gui-icon
-
-idb-crm/i>
-
-titletitle_controls
-
-ligui-folderdata-titleshopping
-
-ahref_blanksidebar-nav-menuonclickreturnfalse;
-
-gui-icon
-
-idb-shopping-bag
-
-titletitle_controls쇼핑
-
-badge_betaBeta
-
-ligui-folderanimatedanimated-hidden
-
-ahref_blanksidebar-nav-menuonclickreturnfalse;
-
-gui-icon
-
-idb-calendar/i>
-
-titletitle_controls예약
-
-ligui-folder
-
-ahref_blankonclickreturnfalse;
-
-idb-pencil/i>
-
-ahref_blank
-
-titletitle_controls게시물
-
-ahref_blanksidebar-nav-menuonclickreturnfalse;
-
-gui-icon
-
-idb-megaphone/i>
-
-titletitle_controls광고캠페인관리
-
-badge_newNew
-
-ligui-folder
-
-idb-mobile
-
-idb-status-up
-
-idb-rocket
-
-ahref_blanksidebar-nav-menuonclickreturnfalse;
-
-idb-settings
-
-lispacer
-
-litop-menu
-
-aexternal-urlhref_blank
-
-idb-comments/i>
-
-aexternal-urlhref_blankonclickreturnfalse;
-
-idb-graduation-cap/i>
-
-aexternal-urlhref_blank
-
-idb-telescope/i>
-
-aexternal-urlhref_blank
-
-nano-pane
-
-nano-sliderstyleheight:752px;top:35px;display:block;
-
-fold_areaanimate
-
-table-cellvertical-middle
-
-ahref_blanklogo_icon_menu
-
-a_tooltip_btnside_bar_btnhrefjavascript:void(0)rolebuttonidtoggle_button
-
-fold_buttonleftdata-triggerhover
-
-svgxmlns_blankwidth16height16viewBox001616fillnone
-
-fold_buttonrightdata-toggletooltipdata-placementrightdata-triggerhover
-
-hover
-
-svgxmlns_blankwidth16height16viewBox001616fillnone
-
-_notify-modal-provider
-
-modalidcocoaModalroledialog
-
-modal-dialog
-
-modal-content
-
-modalsubmodalroledialogidcocoaSubModalstylez-index:17001;
-
-iframenamehidden_frameidhidden_frame
-styleposition:absolute;left:-9999px;width:1px;height:1px;top:-9999px;src_blank/iframe>
-
-iddevice-breakpoints
-
-device-xsvisible-xsdata-breakpointxs
-
-device-smvisible-smdata-breakpointsm
-
-device-mdvisible-mddata-breakpointmd
-
-device-lgvisible-lgdata-breakpointlg
-
-idch-pluginnotranslatestylez-index:1000
-
-idch-plugin-entry
-
-styledisplay:block;
-
-idch-shadow-root-wrapper
-
-Launcherstyled__LauncherButtonWrapper-ch-front__sc-1kx6op4-0chEByq
-
-buttontypebutton
-
-ChatButtonContainer__Container-ch-front__sc-qgvnh9-0cgHhTF
-
-a11y-hiddenimweb상담버튼
-
-SenderButtonView__Wrapper-ch-front__sc-1aik3pi-0eFJnEc
-
-src_blankSenderButtonView__SenderAvatarBg-ch-front__sc-1aik3pi-1mVAFX
-
-data-testidimg-custom-btnImageCustomButtonView__Wrapper-ch-front__sc-1s91m5o-0jVTAai
-
-src_blankImageCustomButtonView__CustomImageBg-ch-front__sc-1s91m5o-1dRQruU
-
-IconButtonView__Background-ch-front__sc-vtu014-0inQZZV
-
-svgwidth36height36color#ffffff
-
-MinimizeButtonView__Wrapper-ch-front__sc-1idijj-0giSWOn
-
-svgxmlns_blankwidth36height36fillnoneviewBox002424
-foundation[objectObject]Iconstyled__Icon-sc-1iqwu2g-0pJGcx
-data-testidbezier-react-iconcolortxt-black-darkermargintop0
-marginright0marginbottom0marginleft0aria-hiddentrue
-
-rolestatusaria-label,thereareunreadmessages
-Badge__BaseUnreadBadge-ch-front__sc-1k3c5b2-2fOtwdyBadge__PcUnreadBadge-ch-front__sc-1k3c5b2-3jrJXOx
-
-idch-plugin-scriptstyledisplay:none;ch-messenger-hidden
-
-iframeidch-plugin-script-iframetitleChannelchat
-styleposition:relative;height:100%;width:100%;border:none!;src_blank
+}
+
+.gui-animated .db-calendar{
+<i class="db-calendar"></i>
+}
+
+.gui-animated .title-control{
+<span class="title title_controls">예약</span>
+}
+
+.gui-folder .none{
+<ul style="display: none;">
+}
+
+.gui-folder .spacer{
+<li class="spacer"></li>
+}
+
+.spacer .top-menu{
+<li class="top-menu">
+}
+
+.spacer .external-url{
+<a class="external-url" href="_blank">
+}
+
+.spacer .gui-icon{
+<div class="gui-icon">
+}
+
+.spacer .db-comments{
+<i class="db-comments"></i>
+}
+
+.spacer .title-control{
+<span class="title title_controls">고객지원</span>
+}
+
+.spacer .gui-folder{
+<li class="gui-folder" data-title="campus">
+}
+
+.gui-folder .external-url{
+<a class="external-url" href="_blank" onclick="return false;"> 
+}
+
+.gui-folder .gui-icon{
+<div class="gui-icon">
+}
+
+.gui-folder .db-graduation-cap{
+<i class="db-graduation-cap"></i>
+}
+
+.gui-folder .title-controls{
+<span class="title title_controls">아임웹 교육</span>
+}
+
+.gui-folder .sidebar-nav-menu{
+<a href="_blank" class="sidebar-nav-menu" onclick="return false;">
+}
+
+.gui-folder .db-telescope{
+<i class="db-telescope"></i>
+}
+
+.gui-folder .badge-new{
+<span class="badge_new">New</span>
+}
+
+.gui-folder .nano-pane{
+<div class="nano-pane">
+}
+
+.nano-pane .nano-slider{
+<div class="nano-slider" style="height: 752px; top: 35px; display: block;"></div>
+}
+
+.admin .foldarea{
+<div class="fold_area animate">
+}
+
+.foldarea .tablecell{
+<div class="table-cell vertical-middle"> 
+}
+
+.foldarea .iconmenu{
+<a href="_blank" class="logo_icon_menu">
+}
+
+.foldarea .toolbtn{
+<a class="_tooltip_btn side_bar_btn" href="javascript:void(0)" role="button" id="toggle_button">
+}
+
+.foldarea .foldbutton-left{
+<span class="fold_button left" data-trigger="hover">
+}
+
+.foldarea .foldimg{
+<svg xmlns="_blank" width="16" height="16" viewBox="0 0 16 16" fill="none"></svg>
+}
+
+.foldarea .foldbutton-right{
+<span class="fold_button right" data-toggle="tooltip" data-placement="right" data-trigger="hover">
+}
+
+.foldarea .default{
+<div class="default">
+}
+
+.foldarea .hover{
+<div class="hover">
+}
+
+.foldarea .hoverimg{
+<svg xmlns="_blank" width="16" height="16" viewBox="0 0 16 16" fill="none"></svg>
+}
+
+.foldarea .modal-provider{
+<div class="_notify-modal-provider"></div>
+}
+
+.admin .modal{
+<div class="modal" id="cocoaModal" role="dialog">
+}
+
+.modal .modal-dialog{
+<div class="modal-dialog">
+}
+
+.modal .modal-content{
+<div class="modal-content"></div>
+}
+
+.admin .submodal{
+<div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
+}
+
+.submodal .modal-dialog{
+<div class="modal-dialog">
+}
+
+.submodal .modal-content{
+<div class="modal-content"></div>
+}
+
+.admin .hidden-frame{
+<iframe name="hidden_frame" id="hidden_frame"
+style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;" src="_blank"></iframe>
+}
+
+.admin .device-breakpoints{
+<div id="device-breakpoints">
+}
+
+.device-breakpoints .device-xs{
+<div class="device-xs visible-xs" data-breakpoint="xs"></div>
+}
+
+.device-breakpoints .device-sm{
+<div class="device-sm visible-sm" data-breakpoint="sm"></div>
+}
+
+.device-breakpoints .device-md{
+<div class="device-md visible-md" data-breakpoint="md"></div>
+}
+
+.device-breakpoints .device-lg{
+<div class="device-lg visible-lg" data-breakpoint="lg"></div>
+}
+
+.admin .ch-plugin{
+<div id="ch-plugin" class="notranslate" style="z-index: 1000">
+}
+
+.ch-plugin .ch-plugin-entry{
+<div id="ch-plugin-entry">
+}
+
+.ch-plugin .ch-plugin-block{
+<div style="display: block;">
+}
+
+.ch-plugin .ch-shadow-root-wrapper{
+<div id="ch-shadow-root-wrapper">
+}
+
+.ch-plugin .Launcherstyled{
+<div class="Launcherstyled__LauncherButtonWrapper-ch-front__sc-1kx6op4-0 chEByq">
+}
+
+.ch-plugin .ChatButton{
+<div class="ChatButtonContainer__Container-ch-front__sc-qgvnh9-0 cgHhTF">
+}
+
+.ch-plugin .ally-hidden{
+<span class="a11y-hidden">imweb 상담 버튼</span>
+}
+
+.ch-plugin .SenderButton{
+<div class="SenderButtonView__Wrapper-ch-front__sc-1aik3pi-0 eFJnEc">
+}
+
+.ch-plugin .SenderButtonView{
+<div src="_blank"
+class="SenderButtonView__SenderAvatarBg-ch-front__sc-1aik3pi-1 mVAFX"></div>
+}
+
+.ch-plugin .ImageCustomButton{
+<div data-testid="img-custom-btn"
+class="ImageCustomButtonView__Wrapper-ch-front__sc-1s91m5o-0 jVTAai">
+}
+
+.ch-plugin .ImageCustomButtonView{
+<div src="_blank"
+class="ImageCustomButtonView__CustomImageBg-ch-front__sc-1s91m5o-1 dRQruU">
+}
+
+.ch-plugin .IconButtonView{
+<div class="IconButtonView__Background-ch-front__sc-vtu014-0 inQZZV">
+}
+
+.ch-plugin .btnimg{
+<svg width="36" height="36" color="#ffffff"></svg>
+</div>
+}
+
+.ch-plugin .MinimizeButton{
+<div class="MinimizeButtonView__Wrapper-ch-front__sc-1idijj-0 giSWOn">
+}
+
+.ch-plugin .minimg{
+<svg xmlns="_blank" width="36" height="36" fill="none" viewBox="0 0 24 24"
+foundation="[object Object]" class="Iconstyled__Icon-sc-1iqwu2g-0 pJGcx"
+data-testid="bezier-react-icon" color="txt-black-darker" margintop="0"
+marginright="0" marginbottom="0" marginleft="0" aria-hidden="true">
+}
+
+.ch-plugin .Badge{
+<div role="status" aria-label=", there are unread messages"
+class="Badge__BaseUnreadBadge-ch-front__sc-1k3c5b2-2 fOtwdy Badge__PcUnreadBadge-ch-front__sc-1k3c5b2-3 jrJXOx">
+}
+
+.ch-plugin .messenger-hidden{
+<div id="ch-plugin-script" style="display:none;" class="ch-messenger-hidden">
+}
+
+.ch-plugin .plugin-frame{
+<iframe id="ch-plugin-script-iframe" title="Channel chat"
+style="position:relative;height:100%;width:100%;border:none!;" src="_blank"></iframe>
+}
