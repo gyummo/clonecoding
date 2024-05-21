@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="ko" >
+
+<head>
+	<!-- 추가 필요 -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="./adminMail_files/bootstrap.css" >
+	<link rel="stylesheet" type="text/css" href="./adminMail_files/dashboard.css" >
+	<link rel="stylesheet" type="text/css" href="./adminMail_files/tailwind.css" >
+	<link rel="stylesheet" type="text/css" href="./adminMail_files/admin.css" >
+</head>
+
+
+<body class="menubar-hoverable header-fixed menubar-pin sidebar-mini" >
+    <input type="hidden" id="USE_OMS" value="on" >
+                <!-- BEGIN BASE-->
+    <div id="dashboard_loader" class="se-pre-con" style="display: none; adminMail">
+        <div class="page-loader-spinner" >
+            <div class="double-bounce1" ></div>
+            <div class="double-bounce2" ></div>
+        </div>
+        <div class="progress" >
+            <div class="progress-bar" role="progressbar" style="width: 70%; adminMail">
+                <label >70%</label>
+            </div>
+        </div>
+    </div>
+    <div id="base" >
+            
+    <script >
+        document.addEventListener('DOMContentLoaded', function() {
+            const alertBox = document.querySelector('#alertBox');
+            const contentArea = document.querySelector('#content');
+            alertBox?.classList.remove('alert__wrap-fixed');
+            alertBox?.classList.add('alert__wrap');
+            if ( contentArea && alertBox ) contentArea.prepend(alertBox);
+        });
+    </script>        <!-- END OFFCANVAS LEFT --><script type="text/javascript" >
+	$(function(){
+		SADMIN_MENU_ALERT.openAlert();
+	});
+</script><style >
+	@media screen and (max-width: 768px) {
+		#mail_setting_form .chosen-drop {
+			min-width: 100px;
+		}
+
+		#mail_setting_form .search-choice {
+			white-space: normal;
+		}
+	}
+</style>
+<header class="top_header" id="header" >
+	<div class="headerbar" >
+		<div class="headerbar-left" >
+			<ul class="header-nav header-nav-options" >
+                <li class="hidden-lg hidden-md" >
+                    <a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);" >
+                        <img src="./adminMail_files/icon-bo-menu-01.svg" >
+                    </a>
+                </li>
+				<li class="header-nav-brand" >
+					<div class="brand-holder" >
+						<span class="location_text" >
+							<a href="https://qjfhdnaos51106.imweb.me/admin/member/mail" >자동 메일</a>						</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="headerbar-right" >
+			<ul class="header-nav header-nav-options _option_list" >
+			<li ><a class="btn btn-primary disabled" >저장</a></li></ul><!--end .header-nav-options -->
+		</div><!--끝 #header-navbar-collapse -->
+		<!--끝 #header-navbar-collapse -->
+	</div>
+</header>
+<div id="content" ><div id="alertBox" class="alert__wrap" >    </div>
+	<section class="section-max-width" >
+		<div class="section-body" >
+						<form id="mail_setting_form" method="post" class="mail_setting_form" action="https://qjfhdnaos51106.imweb.me/admin/member/mail" target="hidden_frame" >
+				<div class="row" >
+					<div class="col-md-5" >
+						<h3 class="no-margin-top" >메일 발송 설정 (SMTP)</h3>
+						<p class="text-gray" >발송되는 메일의 주소 및 발송 서비스 업체 등을 지정합니다.<br >발송 메일이 스팸함으로 가지 않기 위해서는 올바른 발송 주소와 서비스 업체를 선택해야 합니다.</p>
+						<p >
+							<a class="text-primary" href="javascript:" onclick="AUTO_MAIL_SETTING.openSmtpHelpForm()" >설정방법 알아보기</a>
+							<span class="text-gray-light" >/</span>
+							<a class="text-primary" href="javascript:" role="button" data-toggle="modal" data-target="#helpmail" >메일 수신이 안되나요?</a>
+						</p>
+					</div>
+					<div class="col-md-7" >
+						<div class="card" >
+							<div class="card-body form-horizontal" >
+
+								<div class="form-group" >
+									<label class="col-sm-3  text-left control-label" >서비스 제공업체</label>
+									<div class="col-sm-9" >
+										<select class="form-control width-6" id="smtp_type_select" name="smtp_data[type]" style="display: none; adminMail">
+											<option value="default" selected="selected" >사용안함(설정안함)</option><option value="gmail" >Gmail</option><option value="naver" >네이버</option><option value="daum" >다음</option><option value="nate" >네이트</option><option value="custom" >사용자 지정 SMTP 서버</option>										</select><div class="form-control-line" ></div><div class="chosen-container chosen-container-single chosen-container-single-nosearch" style="width: 240px; adminMail" title="" id="smtp_type_select_chosen"><a class="chosen-single" tabindex="-1" ><span >Gmail</span><div ><b ></b></div></a><div class="chosen-drop" ><div class="chosen-search" ><input type="text" autocomplete="off" readonly="" ></div><ul class="chosen-results" ><li class="active-result result-selected" data-option-array-index="0" style="">사용안함(설정안함)</li><li class="active-result result-selected" data-option-array-index="1" style="">Gmail</li><li class="active-result" data-option-array-index="2" style="">네이버</li><li class="active-result" data-option-array-index="3" style="">다음</li><li class="active-result" data-option-array-index="4" style="">네이트</li><li class="active-result" data-option-array-index="5" style="">사용자 지정 SMTP 서버</li></ul></div></div>
+										<!--기본(설정안함) 선택시에만 노출-->
+										<div class="_default_help" style="adminMail display: none;">
+											<span class="help-block" >
+												메일 발송이 가능하게 하려면 서비스 제공업체를 선택해 주시기 바랍니다.											</span>
+										</div>
+										<!-- // 기본(설정안함) 선택시에만 노출-->
+									</div>
+								</div>
+
+								<!-- gmail 인증 type 설정 -->
+								<div class="gmail_type_wrap _gmail_type_wrap" style="display: none; adminMail">
+									<div class="form-group" >
+										<div class="col-sm-9 col-sm-offset-3" >
+											<div class="radio radio-styled radio-inline" >
+												<label >
+													<input type="radio" name="smtp_data[gmail_oauth_auth]" id="oauth" class="_gmail_type" value="Y" checked="" >
+													<span >보안 연결</span>
+												</label>
+											</div>
+											<div class="radio radio-styled radio-inline margin-left-xxxl" >
+												<label >
+													<input type="radio" name="smtp_data[gmail_oauth_auth]" id="lowSecurity" class="_gmail_type" value="N"  disabled="disabled">
+													<span >보안 수준이 낮은 앱 연결</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="external_smtp_wrap _external_smtp_wrap " style="display: none; adminMail">
+									<div class="form-group" >
+										<label class="col-sm-3 control-label" >발신자 메일주소											<a tabindex="-1" href="javascript:" class="text-gray" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" title="" data-content="보내는 사람의 메일 주소를 입력합니다. 네이버를 선택하셨다면 @naver.com 형식을 입력하셔야 합니다." data-original-title="발신자 메일주소" ><i class="btm bt-question-circle" ></i></a></label>
+										<div class="col-sm-9" >
+											<input class="form-control width-6" type="text" name="smtp_data[sender_mail]" value="" placeholder="선택한 서비스에서 사용하는 메일주소" ><div class="form-control-line" ></div>
+										</div>
+									</div>
+									<div class="form-group" >
+										<label class="col-sm-3 control-label" >로그인 ID											<a tabindex="-1" href="javascript:" class="text-gray" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" title="" data-content="선택한 서비스의 로그인 계정을 입력합니다. 예를들어 네이버를 선택했으면 네이버의 ID를 입력합니다. Gmail의 경우 이메일 형식으로 된 ID를 입력하셔야 합니다." data-original-title="사용자 계정" ><i class="btm bt-question-circle" ></i></a></label>
+										<div class="col-sm-9" >
+											<input class="form-control width-6" type="text" name="smtp_data[user_id]" value="" placeholder="선택한 서비스의 로그인 계정" ><div class="form-control-line" ></div>
+										</div>
+									</div>
+									<div class="form-group" >
+										<label class="col-sm-3 control-label" >패스워드</label>
+										<div class="col-sm-9" >
+											<input class="form-control width-6" type="password" name="smtp_data[user_password]" value="" placeholder="선택한 서비스의 로그인 비밀번호" ><div class="form-control-line" ></div>
+																					</div>
+									</div>
+								</div>
+
+								<!-- 사용자 지정 SMTP 서버 -->
+								<div class="_custom_smtp_wrap" style="display: none; adminMail">
+									<div class="form-group" >
+										<label class="col-sm-3 control-label" >SMTP 서버</label>
+										<div class="col-sm-9" >
+											<input class="form-control width-6" type="text" name="smtp_data[custom_smtp_server]" placeholder="IP 또는 도메인" value="" ><div class="form-control-line" ></div>
+										</div>
+									</div>
+									<div class="form-group" >
+										<label class="col-sm-3 control-label" >SMTP 포트</label>
+										<div class="col-sm-9" >
+											<input class="form-control width-6" type="text" name="smtp_data[custom_smtp_port]" placeholder="숫자만 입력" value="" ><div class="form-control-line" ></div>
+										</div>
+									</div>
+									<div class="form-group" >
+										<label class="col-sm-3 control-label" >인증 및 보안연결(SSL)</label>
+										<div class="col-sm-9" >
+											<label class="checkbox-inline checkbox-styled" >
+												<input type="checkbox" id="custom_auth" name="smtp_data[custom_auth]" value="ok" checked="checked" >
+												<span >사용</span>
+											</label>
+										</div>
+									</div>
+									<div class="form-group" >
+										<label class="col-sm-3 control-label" >로그인 ID</label>
+										<div class="col-sm-9" >
+											<input class="form-control width-6" type="text" name="smtp_data[custom_user_id]" value="" ><div class="form-control-line" ></div>
+										</div>
+									</div>
+									<div class="form-group" >
+										<label class="col-sm-3 control-label" >비밀번호</label>
+										<div class="col-sm-9" >
+											<input class="form-control width-6" type="password" name="smtp_data[custom_user_password]" value="" ><div class="form-control-line" ></div>
+																					</div>
+									</div>
+									<div class="form-group" >
+										<label class="col-sm-3 control-label" >발신자 이름</label>
+										<div class="col-sm-9" >
+											<input class="form-control width-6" type="text" name="smtp_data[custom_sender_name]" value="" ><div class="form-control-line" ></div>
+										</div>
+									</div>
+									<div class="form-group" >
+										<label class="col-sm-3 control-label" >발신자 메일주소</label>
+										<div class="col-sm-9" >
+											<input class="form-control width-6" type="text" name="smtp_data[custom_sender_email]" value="" ><div class="form-control-line" ></div>
+										</div>
+									</div>
+								</div>
+
+								<div class="_smtp_auth_wrap" style="display: none; adminMail">
+									<div class="form-group sm-margin-bottom" >
+										<label class="col-sm-3 control-label" >인증 메일 주소</label>
+										<div class="col-sm-9" >
+											<input class="form-control width-6" type="text" id="auth_email" name="smtp_data[auth_email]" value="" ><div class="form-control-line" ></div>
+											<small class="help" >메일 주소 입력 후 아래 인증 메일 보내기 버튼을 눌러주세요.</small>										</div>
+									</div>
+
+									<div class="form-group _auth_mail_send_btn" >
+										<label class="col-sm-3 control-label" ></label>
+										<div class="col-sm-9" >
+											<a href="javascript:" class="btn btn-default-bright btn-xs" id="auth_mail_send_btn" onclick="AUTO_MAIL_SETTING.sendAuthMail()" >인증 메일 보내기</a>
+										</div>
+									</div>
+
+									<div class="form-group _auth_btn" style="display: none; adminMail">
+										<label class="col-sm-3 control-label" ></label>
+										<div class="col-sm-9" >
+											<input class="form-control width-3" type="text" id="auth_code" name="auth_code" value="" style="display: inline-block; adminMail" placeholder="인증번호 입력"><div class="form-control-line" ></div>
+											<a href="javascript:" class="btn btn-default-bright btn-xs" id="auth_mail_send_btn" onclick="AUTO_MAIL_SETTING.runAuth($(&#39;#auth_code&#39;).val())" >인증 하기</a>
+										</div>
+									</div>
+									<div class="form-group _auth_complete" style="display: none; adminMail">
+										<label class="col-sm-3 control-label" ></label>
+										<div class="col-sm-9" >
+                                            <p class="margin-bottom-xl" >
+											    <i class="text-success bts bt-check-circle" ></i>
+                                                <span >연동 완료</span>
+                                            </p>
+											<p class="text-12 text-gray" >
+												<span class="text-danger" >주의:</span>
+												인증 완료 후 해당 계정의 비밀번호 등 접속정보가 변경 된 경우 자동으로 연동이 해제 될 수 있으며, 변경 된 정보로 다시 메일 인증 과정을 거치셔야 합니다. 서비스 제공업체에서 제공하는 전송한도를 초과하거나 접속정보 변경으로 인해 메일 발송에 실패 할 수 있습니다.											</p>
+											<p class="text-12 text-gray" >
+																							</p>
+										</div>
+									</div>
+                                    <div class="form-group" style="display: none; adminMail">
+                                        <label class="col-sm-3 control-label" ></label>
+                                        <div class="col-sm-9" >
+                                            <p class="margin-bottom-xl" >
+                                                <i class="text-danger bts bt-exclamation-circle" ></i>
+                                                <span > 연동 실패</span>
+                                            </p>
+                                            <p class="text-12 text-gray" >
+                                                <span class="text-danger" >메일 계정의 비밀번호 변경 및 메일 인증 실패로 인해 서비스 연동이 해제되었습니다. <br >발신자 메일의 계정 정보를 확인 후 인증 메일을 발송하여 재인증해주시기 바랍니다.</span>
+                                            </p>
+                                        </div>
+                                    </div>
+								</div>
+
+								<div class="_gmail_oauth_wrap" > <!--gmail oauth 연결 인증 성공 했을 때 화면-->
+									<div class="form-group gmail_oauth_wrap _gmail_oauth_btn" >
+										<div class=" col-sm-9 col-sm-offset-3" >
+																						<a href="javascript:" class="btn btn_google" onclick="AUTO_MAIL_SETTING.openGoogleOauth(&#39;505298121730-2j5hfh5j7ttr1eeghk6e6gb325c3bj46.apps.googleusercontent.com&#39;, &#39;https://imweb.me/gmail_oauth&#39;)" ><span class="btn_google_logo" ></span><span class="btn_google_txt" >Google 연결</span></a>
+										</div>
+									</div>
+
+									<div class="_gmail_oauth_complete" style="adminMail display: none;">
+										<div class="form-group" >
+											<label class="col-sm-3 control-label" >발신 메일 주소</label>
+											<div class="col-sm-9 margin-top-5" >
+																							</div>
+										</div>
+										<div class="form-group" >
+											<label class="col-sm-3 control-label" ></label>
+											<div class="col-sm-9" >
+												<p class="text-12 text-gray" >
+													<span class="text-danger" >주의:</span> 서비스 제공업체에서 제공하는 전송한도를 초과하거나 접속정보 변경으로 인해 메일 발송에 실패 할 수 있습니다.												</p>
+												<p class="text-12 text-gray sm-margin-bottom" >Gmail 전송한도: 1회당 최대 100명, 하루 최대 500개</p>
+												<a href="javascript:" class="btn btn-primary" onclick="AUTO_MAIL_SETTING.revokeGmailOauth()" >연결 해제</a>
+											</div>
+										</div>
+									</div>
+
+                                    <div class="form-group" style="display: none; adminMail">
+                                        <label class="col-sm-3 control-label" ></label>
+                                        <div class="col-sm-9" >
+                                            <p class="margin-bottom-xl" >
+                                                <i class="text-danger bts bt-exclamation-circle" ></i>
+                                                <span > 연동 실패</span>
+                                            </p>
+                                            <p class="text-12 text-gray" >
+                                                <span class="text-danger" >구글 계정과의 연결이 끊어져 서비스 연동이 해제되었습니다. 설정방법을 재확인하여 재연동해주시기 바랍니다.</span>
+                                            </p>
+                                        </div>
+                                    </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row _mail_wrap" >
+					<div class="col-md-4" >
+						<h3 class="no-margin-top" >자동 메일 설정</h3>
+						<p class="text-gray" >자동 메일을 설정하시면 상황에 따라 고객이나 운영자에게 메일이 발송됩니다.</p>
+													<p class="text-gray" >네이버페이 주문은 구매자용 각종 알림 메일을 보내지 않습니다. 네이버에서 대신 발송해 줍니다.</p>
+											</div>
+
+					<!-- 회원 -->
+					<div class="col-md-7 col-md-offset-1" >
+													<div class="card" >
+								<div class="card-head" >
+									<header >회원</header>
+																	</div>
+								<div class="card-body no-padding" >
+									<div class="table-responsive" style="overflow: visible; adminMail">
+										<table class="table no-margin no-last-border" style="table-layout: fixed; adminMail">
+											<colgroup >
+												<col >
+												<col width="70" >
+												<col width="70" >
+												<col >
+                                                <col width="80" >
+											</colgroup>
+											<thead >
+											<tr >
+												<th >항목</th>
+												<th class="text-center" >회원</th>
+												<th class="text-center" >소유자</th>
+												<th >운영진 그룹</th>
+                                                <th >미리보기</th>
+												<!--li class="edit width-2">편집</li-->
+											</tr>
+											</thead>
+											<tbody >
+																							<tr class="" >
+													<td style="white-space: normal; adminMail">가입완료/대기</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="join_complete_user" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="join_complete_admin" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="group on-click" id="group_join_complete" >
+														<select multiple="" name="join_complete_groups" data-placeholder="그룹 선택" id="join_complete_groups" style="display: none; adminMail">
+																													</select><div class="chosen-container chosen-container-multi" style="width: 100%; adminMail" title="" id="join_complete_groups_chosen"><ul class="chosen-choices" ><li class="search-field" ><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px; adminMail"></li></ul><div class="chosen-drop" ><ul class="chosen-results" ></ul></div></div>
+																											</td>
+                                                    <td class="text-right" >
+	                                                    		                                                    <button type="button" class="_btn_mail_preview tw-text-[14px]" style="background-color: transparent; adminMail" data-type="join_complete" data-type-text="가입완료/대기" data-configurable-type-text="회원">
+			                                                    <i class="im-ico-search" ></i>
+		                                                    </button>
+														                                                    </td>
+												</tr>
+																								<tr class="" >
+													<td style="white-space: normal; adminMail">가입승인</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="join_confirm_user" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="join_confirm_admin" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="group on-click" id="group_join_confirm" >
+														<select multiple="" name="join_confirm_groups" data-placeholder="그룹 선택" id="join_confirm_groups" style="display: none; adminMail">
+																													</select><div class="chosen-container chosen-container-multi" style="width: 100%; adminMail" title="" id="join_confirm_groups_chosen"><ul class="chosen-choices" ><li class="search-field" ><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px; adminMail"></li></ul><div class="chosen-drop" ><ul class="chosen-results" ></ul></div></div>
+																											</td>
+                                                    <td class="text-right" >
+	                                                    		                                                    <button type="button" class="_btn_mail_preview tw-text-[14px]" style="background-color: transparent; adminMail" data-type="join_confirm" data-type-text="가입승인" data-configurable-type-text="회원">
+			                                                    <i class="im-ico-search" ></i>
+		                                                    </button>
+														                                                    </td>
+												</tr>
+																								<tr class="" >
+													<td style="white-space: normal; adminMail">회원탈퇴</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="leave_site_user" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="leave_site_admin" value="ok" type="checkbox" disabled="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="group on-click" id="group_leave_site" >
+														<select multiple="" name="leave_site_groups" data-placeholder="그룹 선택" id="leave_site_groups" disabled="" style="display: none; adminMail">
+																													</select><div class="chosen-container chosen-container-multi chosen-disabled" style="width: 100%; adminMail" title="" id="leave_site_groups_chosen"><ul class="chosen-choices" ><li class="search-field" ><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px; adminMail" disabled=""></li></ul><div class="chosen-drop" ><ul class="chosen-results" ></ul></div></div>
+																											</td>
+                                                    <td class="text-right" >
+	                                                    		                                                    <button type="button" class="_btn_mail_preview tw-text-[14px]" style="background-color: transparent; adminMail" data-type="leave_site" data-type-text="회원탈퇴" data-configurable-type-text="회원">
+			                                                    <i class="im-ico-search" ></i>
+		                                                    </button>
+														                                                    </td>
+												</tr>
+																							</tbody>
+										</table>
+																			</div>
+								</div>
+							</div>
+													<div class="card" >
+								<div class="card-head" >
+									<header >주문</header>
+																	</div>
+								<div class="card-body no-padding" >
+									<div class="table-responsive" style="overflow: visible; adminMail">
+										<table class="table no-margin no-last-border" style="table-layout: fixed; adminMail">
+											<colgroup >
+												<col >
+												<col width="70" >
+												<col width="70" >
+												<col >
+                                                <col width="80" >
+											</colgroup>
+											<thead >
+											<tr >
+												<th >항목</th>
+												<th class="text-center" >회원</th>
+												<th class="text-center" >소유자</th>
+												<th >운영진 그룹</th>
+                                                <th >미리보기</th>
+												<!--li class="edit width-2">편집</li-->
+											</tr>
+											</thead>
+											<tbody >
+																							<tr class="" >
+													<td style="white-space: normal; adminMail">입금 요청</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="payment_request_user" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="payment_request_admin" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="group on-click" id="group_payment_request" >
+														<select multiple="" name="payment_request_groups" data-placeholder="그룹 선택" id="payment_request_groups" style="display: none; adminMail">
+																													</select><div class="chosen-container chosen-container-multi" style="width: 100%; adminMail" title="" id="payment_request_groups_chosen"><ul class="chosen-choices" ><li class="search-field" ><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px; adminMail"></li></ul><div class="chosen-drop" ><ul class="chosen-results" ></ul></div></div>
+																											</td>
+                                                    <td class="text-right" >
+	                                                    		                                                    <button type="button" class="_btn_mail_preview tw-text-[14px]" style="background-color: transparent; adminMail" data-type="payment_request" data-type-text="입금 요청" data-configurable-type-text="주문">
+			                                                    <i class="im-ico-search" ></i>
+		                                                    </button>
+														                                                    </td>
+												</tr>
+																								<tr class="" >
+													<td style="white-space: normal; adminMail">결제 완료 안내</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="new_order_user" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="new_order_admin" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="group on-click" id="group_new_order" >
+														<select multiple="" name="new_order_groups" data-placeholder="그룹 선택" id="new_order_groups" style="display: none; adminMail">
+																													</select><div class="chosen-container chosen-container-multi" style="width: 100%; adminMail" title="" id="new_order_groups_chosen"><ul class="chosen-choices" ><li class="search-field" ><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px; adminMail"></li></ul><div class="chosen-drop" ><ul class="chosen-results" ></ul></div></div>
+																											</td>
+                                                    <td class="text-right" >
+	                                                    		                                                    <button type="button" class="_btn_mail_preview tw-text-[14px]" style="background-color: transparent; adminMail" data-type="new_order" data-type-text="결제 완료 안내" data-configurable-type-text="주문">
+			                                                    <i class="im-ico-search" ></i>
+		                                                    </button>
+														                                                    </td>
+												</tr>
+																								<tr class="" >
+													<td style="white-space: normal; adminMail">배송준비</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="shipping_standby_user" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="shipping_standby_admin" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="group on-click" id="group_shipping_standby" >
+														<select multiple="" name="shipping_standby_groups" data-placeholder="그룹 선택" id="shipping_standby_groups" style="display: none; adminMail">
+																													</select><div class="chosen-container chosen-container-multi" style="width: 100%; adminMail" title="" id="shipping_standby_groups_chosen"><ul class="chosen-choices" ><li class="search-field" ><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px; adminMail"></li></ul><div class="chosen-drop" ><ul class="chosen-results" ></ul></div></div>
+																											</td>
+                                                    <td class="text-right" >
+	                                                    		                                                    <button type="button" class="_btn_mail_preview tw-text-[14px]" style="background-color: transparent; adminMail" data-type="shipping_standby" data-type-text="배송준비" data-configurable-type-text="주문">
+			                                                    <i class="im-ico-search" ></i>
+		                                                    </button>
+														                                                    </td>
+												</tr>
+																								<tr class="" >
+													<td style="white-space: normal; adminMail">발송 안내</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="shipping_start_user" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="shipping_start_admin" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="group on-click" id="group_shipping_start" >
+														<select multiple="" name="shipping_start_groups" data-placeholder="그룹 선택" id="shipping_start_groups" style="display: none; adminMail">
+																													</select><div class="chosen-container chosen-container-multi" style="width: 100%; adminMail" title="" id="shipping_start_groups_chosen"><ul class="chosen-choices" ><li class="search-field" ><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px; adminMail"></li></ul><div class="chosen-drop" ><ul class="chosen-results" ></ul></div></div>
+																											</td>
+                                                    <td class="text-right" >
+	                                                    		                                                    <button type="button" class="_btn_mail_preview tw-text-[14px]" style="background-color: transparent; adminMail" data-type="shipping_start" data-type-text="발송 안내" data-configurable-type-text="주문">
+			                                                    <i class="im-ico-search" ></i>
+		                                                    </button>
+														                                                    </td>
+												</tr>
+																								<tr class="" >
+													<td style="white-space: normal; adminMail">취소요청 접수</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="order_cancel_request_user" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="order_cancel_request_admin" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="group on-click" id="group_order_cancel_request" >
+														<select multiple="" name="order_cancel_request_groups" data-placeholder="그룹 선택" id="order_cancel_request_groups" style="display: none; adminMail">
+																													</select><div class="chosen-container chosen-container-multi" style="width: 100%; adminMail" title="" id="order_cancel_request_groups_chosen"><ul class="chosen-choices" ><li class="search-field" ><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px; adminMail"></li></ul><div class="chosen-drop" ><ul class="chosen-results" ></ul></div></div>
+																											</td>
+                                                    <td class="text-right" >
+	                                                    		                                                    <button type="button" class="_btn_mail_preview tw-text-[14px]" style="background-color: transparent; adminMail" data-type="order_cancel_request" data-type-text="취소요청 접수" data-configurable-type-text="주문">
+			                                                    <i class="im-ico-search" ></i>
+		                                                    </button>
+														                                                    </td>
+												</tr>
+																								<tr class="" >
+													<td style="white-space: normal; adminMail">취소완료</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="order_cancel_user" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="order_cancel_admin" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="group on-click" id="group_order_cancel" >
+														<select multiple="" name="order_cancel_groups" data-placeholder="그룹 선택" id="order_cancel_groups" style="display: none; adminMail">
+																													</select><div class="chosen-container chosen-container-multi" style="width: 100%; adminMail" title="" id="order_cancel_groups_chosen"><ul class="chosen-choices" ><li class="search-field" ><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px; adminMail"></li></ul><div class="chosen-drop" ><ul class="chosen-results" ></ul></div></div>
+																											</td>
+                                                    <td class="text-right" >
+	                                                    		                                                    <button type="button" class="_btn_mail_preview tw-text-[14px]" style="background-color: transparent; adminMail" data-type="order_cancel" data-type-text="취소완료" data-configurable-type-text="주문">
+			                                                    <i class="im-ico-search" ></i>
+		                                                    </button>
+														                                                    </td>
+												</tr>
+																								<tr class="" >
+													<td style="white-space: normal; adminMail">자동 취소 안내</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="order_auto_cancel_user" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="order_auto_cancel_admin" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="group on-click" id="group_order_auto_cancel" >
+														<select multiple="" name="order_auto_cancel_groups" data-placeholder="그룹 선택" id="order_auto_cancel_groups" style="display: none; adminMail">
+																													</select><div class="chosen-container chosen-container-multi" style="width: 100%; adminMail" title="" id="order_auto_cancel_groups_chosen"><ul class="chosen-choices" ><li class="search-field" ><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px; adminMail"></li></ul><div class="chosen-drop" ><ul class="chosen-results" ></ul></div></div>
+																											</td>
+                                                    <td class="text-right" >
+	                                                    		                                                    <button type="button" class="_btn_mail_preview tw-text-[14px]" style="background-color: transparent; adminMail" data-type="order_auto_cancel" data-type-text="자동 취소 안내" data-configurable-type-text="주문">
+			                                                    <i class="im-ico-search" ></i>
+		                                                    </button>
+														                                                    </td>
+												</tr>
+																							</tbody>
+										</table>
+																			</div>
+								</div>
+							</div>
+													<div class="card" >
+								<div class="card-head" >
+									<header >예약</header>
+																	</div>
+								<div class="card-body no-padding" >
+									<div class="table-responsive" style="overflow: visible; adminMail">
+										<table class="table no-margin no-last-border" style="table-layout: fixed; adminMail">
+											<colgroup >
+												<col >
+												<col width="70" >
+												<col width="70" >
+												<col >
+                                                <col width="80" >
+											</colgroup>
+											<thead >
+											<tr >
+												<th >항목</th>
+												<th class="text-center" >회원</th>
+												<th class="text-center" >소유자</th>
+												<th >운영진 그룹</th>
+                                                <th >미리보기</th>
+												<!--li class="edit width-2">편집</li-->
+											</tr>
+											</thead>
+											<tbody >
+																							<tr class="" >
+													<td style="white-space: normal; adminMail">입금 요청</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="booking_payment_request_user" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="booking_payment_request_admin" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="group on-click" id="group_booking_payment_request" >
+														<select multiple="" name="booking_payment_request_groups" data-placeholder="그룹 선택" id="booking_payment_request_groups" style="display: none; adminMail">
+																													</select><div class="chosen-container chosen-container-multi" style="width: 100%; adminMail" title="" id="booking_payment_request_groups_chosen"><ul class="chosen-choices" ><li class="search-field" ><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px; adminMail"></li></ul><div class="chosen-drop" ><ul class="chosen-results" ></ul></div></div>
+																											</td>
+                                                    <td class="text-right" >
+	                                                    		                                                    <button type="button" class="_btn_mail_preview tw-text-[14px]" style="background-color: transparent; adminMail" data-type="booking_payment_request" data-type-text="입금 요청" data-configurable-type-text="예약">
+			                                                    <i class="im-ico-search" ></i>
+		                                                    </button>
+														                                                    </td>
+												</tr>
+																								<tr class="" >
+													<td style="white-space: normal; adminMail">결제 완료 안내</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="new_booking_user" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="new_booking_admin" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="group on-click" id="group_new_booking" >
+														<select multiple="" name="new_booking_groups" data-placeholder="그룹 선택" id="new_booking_groups" style="display: none; adminMail">
+																													</select><div class="chosen-container chosen-container-multi" style="width: 100%; adminMail" title="" id="new_booking_groups_chosen"><ul class="chosen-choices" ><li class="search-field" ><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px; adminMail"></li></ul><div class="chosen-drop" ><ul class="chosen-results" ></ul></div></div>
+																											</td>
+                                                    <td class="text-right" >
+	                                                    		                                                    <button type="button" class="_btn_mail_preview tw-text-[14px]" style="background-color: transparent; adminMail" data-type="new_booking" data-type-text="결제 완료 안내" data-configurable-type-text="예약">
+			                                                    <i class="im-ico-search" ></i>
+		                                                    </button>
+														                                                    </td>
+												</tr>
+																								<tr class="" >
+													<td style="white-space: normal; adminMail">취소요청 접수</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="booking_cancel_request_user" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="booking_cancel_request_admin" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="group on-click" id="group_booking_cancel_request" >
+														<select multiple="" name="booking_cancel_request_groups" data-placeholder="그룹 선택" id="booking_cancel_request_groups" style="display: none; adminMail">
+																													</select><div class="chosen-container chosen-container-multi" style="width: 100%; adminMail" title="" id="booking_cancel_request_groups_chosen"><ul class="chosen-choices" ><li class="search-field" ><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px; adminMail"></li></ul><div class="chosen-drop" ><ul class="chosen-results" ></ul></div></div>
+																											</td>
+                                                    <td class="text-right" >
+	                                                    		                                                    <button type="button" class="_btn_mail_preview tw-text-[14px]" style="background-color: transparent; adminMail" data-type="booking_cancel_request" data-type-text="취소요청 접수" data-configurable-type-text="예약">
+			                                                    <i class="im-ico-search" ></i>
+		                                                    </button>
+														                                                    </td>
+												</tr>
+																								<tr class="" >
+													<td style="white-space: normal; adminMail">취소완료</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="booking_cancel_user" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="booking_cancel_admin" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="group on-click" id="group_booking_cancel" >
+														<select multiple="" name="booking_cancel_groups" data-placeholder="그룹 선택" id="booking_cancel_groups" style="display: none; adminMail">
+																													</select><div class="chosen-container chosen-container-multi" style="width: 100%; adminMail" title="" id="booking_cancel_groups_chosen"><ul class="chosen-choices" ><li class="search-field" ><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px; adminMail"></li></ul><div class="chosen-drop" ><ul class="chosen-results" ></ul></div></div>
+																											</td>
+                                                    <td class="text-right" >
+	                                                    		                                                    <button type="button" class="_btn_mail_preview tw-text-[14px]" style="background-color: transparent; adminMail" data-type="booking_cancel" data-type-text="취소완료" data-configurable-type-text="예약">
+			                                                    <i class="im-ico-search" ></i>
+		                                                    </button>
+														                                                    </td>
+												</tr>
+																								<tr class="" >
+													<td style="white-space: normal; adminMail">자동 취소 안내</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="booking_auto_cancel_user" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="booking_auto_cancel_admin" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="group on-click" id="group_booking_auto_cancel" >
+														<select multiple="" name="booking_auto_cancel_groups" data-placeholder="그룹 선택" id="booking_auto_cancel_groups" style="display: none; adminMail">
+																													</select><div class="chosen-container chosen-container-multi" style="width: 100%; adminMail" title="" id="booking_auto_cancel_groups_chosen"><ul class="chosen-choices" ><li class="search-field" ><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px; adminMail"></li></ul><div class="chosen-drop" ><ul class="chosen-results" ></ul></div></div>
+																											</td>
+                                                    <td class="text-right" >
+	                                                    		                                                    <button type="button" class="_btn_mail_preview tw-text-[14px]" style="background-color: transparent; adminMail" data-type="booking_auto_cancel" data-type-text="자동 취소 안내" data-configurable-type-text="예약">
+			                                                    <i class="im-ico-search" ></i>
+		                                                    </button>
+														                                                    </td>
+												</tr>
+																							</tbody>
+										</table>
+																			</div>
+								</div>
+							</div>
+													<div class="card" >
+								<div class="card-head" >
+									<header >상품</header>
+																	</div>
+								<div class="card-body no-padding" >
+									<div class="table-responsive" style="overflow: visible; adminMail">
+										<table class="table no-margin no-last-border" style="table-layout: fixed; adminMail">
+											<colgroup >
+												<col >
+												<col width="70" >
+												<col width="70" >
+												<col >
+                                                <col width="80" >
+											</colgroup>
+											<thead >
+											<tr >
+												<th >항목</th>
+												<th class="text-center" >회원</th>
+												<th class="text-center" >소유자</th>
+												<th >운영진 그룹</th>
+                                                <th >미리보기</th>
+												<!--li class="edit width-2">편집</li-->
+											</tr>
+											</thead>
+											<tbody >
+																							<tr class="" >
+													<td style="white-space: normal; adminMail">상품 문의</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="prod_qa_q_user" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="prod_qa_q_admin" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="group on-click" id="group_prod_qa_q" >
+														<select multiple="" name="prod_qa_q_groups" data-placeholder="그룹 선택" id="prod_qa_q_groups" style="display: none; adminMail">
+																													</select><div class="chosen-container chosen-container-multi" style="width: 100%; adminMail" title="" id="prod_qa_q_groups_chosen"><ul class="chosen-choices" ><li class="search-field" ><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px; adminMail"></li></ul><div class="chosen-drop" ><ul class="chosen-results" ></ul></div></div>
+																											</td>
+                                                    <td class="text-right" >
+	                                                    		                                                    <button type="button" class="_btn_mail_preview tw-text-[14px]" style="background-color: transparent; adminMail" data-type="prod_qa_q" data-type-text="상품 문의" data-configurable-type-text="상품">
+			                                                    <i class="im-ico-search" ></i>
+		                                                    </button>
+														                                                    </td>
+												</tr>
+																								<tr class="" >
+													<td style="white-space: normal; adminMail">상품 답변</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="prod_qa_a_user" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="prod_qa_a_admin" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="group on-click" id="group_prod_qa_a" >
+														<select multiple="" name="prod_qa_a_groups" data-placeholder="그룹 선택" id="prod_qa_a_groups" style="display: none; adminMail">
+																													</select><div class="chosen-container chosen-container-multi" style="width: 100%; adminMail" title="" id="prod_qa_a_groups_chosen"><ul class="chosen-choices" ><li class="search-field" ><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px; adminMail"></li></ul><div class="chosen-drop" ><ul class="chosen-results" ></ul></div></div>
+																											</td>
+                                                    <td class="text-right" >
+	                                                    		                                                    <button type="button" class="_btn_mail_preview tw-text-[14px]" style="background-color: transparent; adminMail" data-type="prod_qa_a" data-type-text="상품 답변" data-configurable-type-text="상품">
+			                                                    <i class="im-ico-search" ></i>
+		                                                    </button>
+														                                                    </td>
+												</tr>
+																								<tr class="" >
+													<td style="white-space: normal; adminMail">후기작성</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="prod_review_user" value="ok" type="checkbox" disabled="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="prod_review_admin" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="group on-click" id="group_prod_review" >
+														<select multiple="" name="prod_review_groups" data-placeholder="그룹 선택" id="prod_review_groups" style="display: none; adminMail">
+																													</select><div class="chosen-container chosen-container-multi" style="width: 100%; adminMail" title="" id="prod_review_groups_chosen"><ul class="chosen-choices" ><li class="search-field" ><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px; adminMail"></li></ul><div class="chosen-drop" ><ul class="chosen-results" ></ul></div></div>
+																											</td>
+                                                    <td class="text-right" >
+	                                                    		                                                    <button type="button" class="_btn_mail_preview tw-text-[14px]" style="background-color: transparent; adminMail" data-type="prod_review" data-type-text="후기작성" data-configurable-type-text="상품">
+			                                                    <i class="im-ico-search" ></i>
+		                                                    </button>
+														                                                    </td>
+												</tr>
+																							</tbody>
+										</table>
+																			</div>
+								</div>
+							</div>
+													<div class="card" >
+								<div class="card-head" >
+									<header >게시물</header>
+																			<input type="hidden" name="post_new_detail_close" id="post_new_detail_close" value="false" >
+										<div style="position: absolute; right: 20px; adminMail">
+											<a href="javascript:" onclick="AUTO_MAIL_SETTING.openDetailSet(&#39;post&#39;)" >고급설정												<i class="fa fa-sort-up" style="vertical-align: -14%; adminMail"></i>
+												<i class="fa fa-sort-down" style="vertical-align: 14%; adminMail display: none;"></i></a>
+										</div>
+																		</div>
+								<div class="card-body no-padding" >
+									<div class="table-responsive" style="overflow: visible; adminMail">
+										<table class="table no-margin no-last-border" style="table-layout: fixed; adminMail">
+											<colgroup >
+												<col >
+												<col width="70" >
+												<col width="70" >
+												<col >
+                                                <col width="80" >
+											</colgroup>
+											<thead >
+											<tr >
+												<th >항목</th>
+												<th class="text-center" >회원</th>
+												<th class="text-center" >소유자</th>
+												<th >운영진 그룹</th>
+                                                <th >미리보기</th>
+												<!--li class="edit width-2">편집</li-->
+											</tr>
+											</thead>
+											<tbody >
+																							<tr class="" >
+													<td style="white-space: normal; adminMail">전체 신규 게시물</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="post_new_article_user" value="ok" type="checkbox" disabled="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="post_new_article_admin" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="group on-click" id="group_post_new_article" >
+														<select multiple="" name="post_new_article_groups" data-placeholder="그룹 선택" id="post_new_article_groups" style="display: none; adminMail">
+																													</select><div class="chosen-container chosen-container-multi" style="width: 100%; adminMail" title="" id="post_new_article_groups_chosen"><ul class="chosen-choices" ><li class="search-field" ><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px; adminMail"></li></ul><div class="chosen-drop" ><ul class="chosen-results" ></ul></div></div>
+																											</td>
+                                                    <td class="text-right" >
+	                                                    		                                                    <button type="button" class="_btn_mail_preview tw-text-[14px]" style="background-color: transparent; adminMail" data-type="post_new_article" data-type-text="전체 신규 게시물" data-configurable-type-text="게시물">
+			                                                    <i class="im-ico-search" ></i>
+		                                                    </button>
+														                                                    </td>
+												</tr>
+																								<tr class="" >
+													<td style="white-space: normal; adminMail">전체 신규 댓글</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="post_new_comment_user" value="ok" type="checkbox" disabled="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="post_new_comment_admin" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="group on-click" id="group_post_new_comment" >
+														<select multiple="" name="post_new_comment_groups" data-placeholder="그룹 선택" id="post_new_comment_groups" style="display: none; adminMail">
+																													</select><div class="chosen-container chosen-container-multi" style="width: 100%; adminMail" title="" id="post_new_comment_groups_chosen"><ul class="chosen-choices" ><li class="search-field" ><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px; adminMail"></li></ul><div class="chosen-drop" ><ul class="chosen-results" ></ul></div></div>
+																											</td>
+                                                    <td class="text-right" >
+	                                                    		                                                    <button type="button" class="_btn_mail_preview tw-text-[14px]" style="background-color: transparent; adminMail" data-type="post_new_comment" data-type-text="전체 신규 댓글" data-configurable-type-text="게시물">
+			                                                    <i class="im-ico-search" ></i>
+		                                                    </button>
+														                                                    </td>
+												</tr>
+																							</tbody>
+										</table>
+																					<table class="table no-margin no-last-border table-sm-padding" >
+												<tbody id="post_detail_set" class="" >
+				<tr>
+					<td>
+						<table style="width: 100%" class="table-mail">
+							<colgroup>
+								<col width="154">
+								<col width="70">
+								<col width="62">
+								<col width="">
+							</colgroup>
+							<tbody>
+					
+						
+
+										<tr>
+											<td class="text-12 td-flag">
+																								<img class="flag" src="./adminMail_files/flag_kr_circle.png">
+												아티클보드 새 글											</td>
+											<td style="padding:0 8px;">
+																								<div class="checkbox checkbox-styled no-margin">
+													<label>
+														<input type="checkbox" disabled="">
+														<span></span>
+													</label>
+												</div>
+											</td>
+											<td style="padding:0 8px;">
+																								<div class="checkbox checkbox-styled no-margin">
+													<label>
+														<input name="post_new_detail[b2024051627b50eaa64a9a][post_new_article][admin]" type="checkbox" value="Y" checked="">
+														<span></span>
+													</label>
+												</div>
+											</td>
+											<td class="group on-click">
+																								<select multiple="" name="post_new_detail[b2024051627b50eaa64a9a][post_new_article][groups][]" data-placeholder="그룹 선택" style="display: none;">
+																									</select><div class="chosen-container chosen-container-multi" style="width: 100%;" title=""><ul class="chosen-choices"><li class="search-field"><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px;"></li></ul><div class="chosen-drop"><ul class="chosen-results"></ul></div></div>
+											</td>
+										</tr>
+
+
+							
+
+										<tr>
+											<td class="text-12 td-flag">
+																								<img class="flag" src="./adminMail_files/flag_kr_circle.png">
+												아티클보드 새 댓글											</td>
+											<td style="padding:0 8px;">
+																								<div class="checkbox checkbox-styled no-margin">
+													<label>
+														<input type="checkbox" disabled="">
+														<span></span>
+													</label>
+												</div>
+											</td>
+											<td style="padding:0 8px;">
+																								<div class="checkbox checkbox-styled no-margin">
+													<label>
+														<input name="post_new_detail[b2024051627b50eaa64a9a][post_new_comment][admin]" type="checkbox" value="Y" checked="">
+														<span></span>
+													</label>
+												</div>
+											</td>
+											<td class="group on-click">
+																								<select multiple="" name="post_new_detail[b2024051627b50eaa64a9a][post_new_comment][groups][]" data-placeholder="그룹 선택" style="display: none;">
+																									</select><div class="chosen-container chosen-container-multi" style="width: 100%;" title=""><ul class="chosen-choices"><li class="search-field"><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px;"></li></ul><div class="chosen-drop"><ul class="chosen-results"></ul></div></div>
+											</td>
+										</tr>
+
+
+														</tbody>
+						</table>
+
+					</td>
+				</tr>
+
+
+				
+				<tr>
+					<td>
+						<table style="width: 100%" class="table-mail">
+							<colgroup>
+								<col width="154">
+								<col width="70">
+								<col width="62">
+								<col width="">
+							</colgroup>
+							<tbody>
+					
+						
+
+										<tr>
+											<td class="text-12 td-flag">
+																								<img class="flag" src="./adminMail_files/flag_kr_circle.png">
+												자주 묻는 질문 새 글											</td>
+											<td style="padding:0 8px;">
+																								<div class="checkbox checkbox-styled no-margin">
+													<label>
+														<input type="checkbox" disabled="">
+														<span></span>
+													</label>
+												</div>
+											</td>
+											<td style="padding:0 8px;">
+																								<div class="checkbox checkbox-styled no-margin">
+													<label>
+														<input name="post_new_detail[b202405169c294be1ca714][post_new_article][admin]" type="checkbox" value="Y" checked="">
+														<span></span>
+													</label>
+												</div>
+											</td>
+											<td class="group on-click">
+																								<select multiple="" name="post_new_detail[b202405169c294be1ca714][post_new_article][groups][]" data-placeholder="그룹 선택" style="display: none;">
+																									</select><div class="chosen-container chosen-container-multi" style="width: 100%;" title=""><ul class="chosen-choices"><li class="search-field"><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px;"></li></ul><div class="chosen-drop"><ul class="chosen-results"></ul></div></div>
+											</td>
+										</tr>
+
+
+							
+
+										<tr>
+											<td class="text-12 td-flag">
+																								<img class="flag" src="./adminMail_files/flag_kr_circle.png">
+												자주 묻는 질문 새 댓글											</td>
+											<td style="padding:0 8px;">
+																								<div class="checkbox checkbox-styled no-margin">
+													<label>
+														<input type="checkbox" disabled="">
+														<span></span>
+													</label>
+												</div>
+											</td>
+											<td style="padding:0 8px;">
+																								<div class="checkbox checkbox-styled no-margin">
+													<label>
+														<input name="post_new_detail[b202405169c294be1ca714][post_new_comment][admin]" type="checkbox" value="Y" checked="">
+														<span></span>
+													</label>
+												</div>
+											</td>
+											<td class="group on-click">
+																								<select multiple="" name="post_new_detail[b202405169c294be1ca714][post_new_comment][groups][]" data-placeholder="그룹 선택" style="display: none;">
+																									</select><div class="chosen-container chosen-container-multi" style="width: 100%;" title=""><ul class="chosen-choices"><li class="search-field"><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px;"></li></ul><div class="chosen-drop"><ul class="chosen-results"></ul></div></div>
+											</td>
+										</tr>
+
+
+														</tbody>
+						</table>
+
+					</td>
+				</tr>
+
+
+				</tbody>
+											</table>
+																				</div>
+								</div>
+							</div>
+													<div class="card" >
+								<div class="card-head" >
+									<header >입력폼</header>
+																			<input type="hidden" name="form_new_detail_close" id="form_new_detail_close" value="false" >
+										<div style="position: absolute; right: 20px; adminMail">
+											<a href="javascript:" onclick="AUTO_MAIL_SETTING.openDetailSet(&#39;form&#39;)" >고급설정												<i class="fa fa-sort-up" style="vertical-align: -14%; adminMail"></i>
+												<i class="fa fa-sort-down" style="vertical-align: 14%; adminMail display: none;"></i></a>
+										</div>
+																		</div>
+								<div class="card-body no-padding" >
+									<div class="table-responsive" style="overflow: visible; adminMail">
+										<table class="table no-margin no-last-border" style="table-layout: fixed; adminMail">
+											<colgroup >
+												<col >
+												<col width="70" >
+												<col width="70" >
+												<col >
+                                                <col width="80" >
+											</colgroup>
+											<thead >
+											<tr >
+												<th >항목</th>
+												<th class="text-center" >회원</th>
+												<th class="text-center" >소유자</th>
+												<th >운영진 그룹</th>
+                                                <th >미리보기</th>
+												<!--li class="edit width-2">편집</li-->
+											</tr>
+											</thead>
+											<tbody >
+																							<tr class="" >
+													<td style="white-space: normal; adminMail">전체 신규접수</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="form_new_reception_user" value="ok" type="checkbox" disabled="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="text-center" >
+														<div class="checkbox checkbox-styled no-margin" >
+															<label >
+																<input name="form_new_reception_admin" value="ok" type="checkbox" checked="" ><span ></span>
+															</label>
+														</div>
+													</td>
+													<td class="group on-click" id="group_form_new_reception" >
+														<select multiple="" name="form_new_reception_groups" data-placeholder="그룹 선택" id="form_new_reception_groups" style="display: none; adminMail">
+																													</select><div class="chosen-container chosen-container-multi" style="width: 100%; adminMail" title="" id="form_new_reception_groups_chosen"><ul class="chosen-choices" ><li class="search-field" ><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px; adminMail"></li></ul><div class="chosen-drop" ><ul class="chosen-results" ></ul></div></div>
+																											</td>
+                                                    <td class="text-right" >
+	                                                    		                                                    <button type="button" class="_btn_mail_preview tw-text-[14px]" style="background-color: transparent; adminMail" data-type="form_new_reception" data-type-text="전체 신규접수" data-configurable-type-text="입력폼">
+			                                                    <i class="im-ico-search" ></i>
+		                                                    </button>
+														                                                    </td>
+												</tr>
+																							</tbody>
+										</table>
+																					<table class="table no-margin no-last-border table-sm-padding" >
+												<tbody id="form_detail_set" class="" >
+				<tr>
+					<td>
+						<table style="width: 100%" class="table-mail">
+							<colgroup>
+								<col width="154">
+								<col width="70">
+								<col width="62">
+								<col width="">
+							</colgroup>
+							<tbody>
+					
+						
+
+										<tr>
+											<td class="text-12 td-flag">
+																								<img class="flag" src="./adminMail_files/flag_kr_circle.png">
+												A/S 신청서 											</td>
+											<td style="padding:0 8px;">
+																								<div class="checkbox checkbox-styled no-margin">
+													<label>
+														<input type="checkbox" disabled="">
+														<span></span>
+													</label>
+												</div>
+											</td>
+											<td style="padding:0 8px;">
+																								<div class="checkbox checkbox-styled no-margin">
+													<label>
+														<input name="form_new_detail[b20240516102806ab30705][form_new_reception][admin]" type="checkbox" value="Y" checked="">
+														<span></span>
+													</label>
+												</div>
+											</td>
+											<td class="group on-click">
+																								<select multiple="" name="form_new_detail[b20240516102806ab30705][form_new_reception][groups][]" data-placeholder="그룹 선택" style="display: none;">
+																									</select><div class="chosen-container chosen-container-multi" style="width: 100%;" title=""><ul class="chosen-choices"><li class="search-field"><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px;"></li></ul><div class="chosen-drop"><ul class="chosen-results"></ul></div></div>
+											</td>
+										</tr>
+
+
+														</tbody>
+						</table>
+
+					</td>
+				</tr>
+
+
+				
+				<tr>
+					<td>
+						<table style="width: 100%" class="table-mail">
+							<colgroup>
+								<col width="154">
+								<col width="70">
+								<col width="62">
+								<col width="">
+							</colgroup>
+							<tbody>
+					
+						
+
+										<tr>
+											<td class="text-12 td-flag">
+																								<img class="flag" src="./adminMail_files/flag_kr_circle.png">
+												보장 상태 확인 											</td>
+											<td style="padding:0 8px;">
+																								<div class="checkbox checkbox-styled no-margin">
+													<label>
+														<input type="checkbox" disabled="">
+														<span></span>
+													</label>
+												</div>
+											</td>
+											<td style="padding:0 8px;">
+																								<div class="checkbox checkbox-styled no-margin">
+													<label>
+														<input name="form_new_detail[b2024051680a6f5e85fbe7][form_new_reception][admin]" type="checkbox" value="Y" checked="">
+														<span></span>
+													</label>
+												</div>
+											</td>
+											<td class="group on-click">
+																								<select multiple="" name="form_new_detail[b2024051680a6f5e85fbe7][form_new_reception][groups][]" data-placeholder="그룹 선택" style="display: none;">
+																									</select><div class="chosen-container chosen-container-multi" style="width: 100%;" title=""><ul class="chosen-choices"><li class="search-field"><input type="text" value="그룹 선택" class="default" autocomplete="off" style="width: 82px;"></li></ul><div class="chosen-drop"><ul class="chosen-results"></ul></div></div>
+											</td>
+										</tr>
+
+
+														</tbody>
+						</table>
+
+					</td>
+				</tr>
+
+
+				</tbody>
+											</table>
+																				</div>
+								</div>
+							</div>
+											</div>
+				</div><!--end.row-->
+			</form>
+		</div><!--섹션 끝 -->
+	<div ><a class="btn btn-primary disabled" >저장</a></div></section>
+</div><!--end #content-->
+<!-- END CONTENT -->
+<div class="modal fade" id="helpmail" tabindex="-1" role="dialog" aria-labelledby="helpmail" >
+		<div class="modal-dialog" role="document" >
+		<div class="modal-content" >
+			<div class="modal-header" >
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" ><i class="btl bt-times" ></i></button>
+				<h3 class="modal-title" id="myModalLabel" >메일 수신 도움말</h3>
+			</div>
+			<div class="modal-body" >
+				<p >메일을 정상적으로 수신할 수 없는 경우 다음 사항을 점검해 보시기 바랍니다.</p>
+				<ul class="description-list" >
+					<li >서비스 제공업체가 <strong >기본(설정안함)</strong>으로 설정된 경우. <a class="text-primary" target="_blank" href="https://imweb.me/faq?mode=view&amp;category=30&amp;category2=44&amp;idx=29724" >해결방법 알아보기</a></li>
+					<li >서비스 제공업체를 설정했으나 발신자 메일 주소가 해당 서비스와 <strong >전혀 다른 도메인</strong>인 경우(예: 네이버로 설정했는데 발신메일 주소는 @daum.net 으로 지정) 올바른 발신 메일 주소로 수정하여 다시 메일 인증 절차를 수행하세요.</li>
+					<li >서비스 제공업체 설정 및 인증메일까지 거쳤으나 이후 <strong >해당 계정의 비밀번호를 변경</strong>하는 등 접속정보에 변경이 생긴 경우 변경된 정보로 수정하여 다시 메일 인증 절차를 수행하세요.</li>
+					<li >설정한 메일 서비스 제공업체에서 <strong >발송 가능한 한도에 도달</strong>한 경우 한도 제한이 풀릴 때 까지 기다리세요.</li>
+					<li >
+						<p >내 도메인에 TXT레코드가 올바르게 설정되지 않은 경우</p>
+						<ul >
+							<li >개인 도메인으로 발신 이메일 주소를 사용하는 경우만 해당됩니다.(예: 내 사이트 도메인이 abc.com 이고 발신 메일 주소도 my@abc.com 인 경우)</li>
+							<li >내 도메인 이름으로 메일을 발송한 경우 SPF레코드가 포함된 TXT레코드를 네임서버 설정에서 추가해야 합니다. (SPF 레코드는 다음 스마트워크, 라인웍스, 하이웍스 등 메일 서비스 업체에 따라 다르며 해당 업체에 문의하시기 바랍니다.)</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="modal-footer" >
+				<button type="button" class="btn btn-default btn-flat" data-dismiss="modal" >닫기</button>
+			</div>
+		</div>
+	</div></div>
+<script >
+	AUTO_MAIL_SETTING.init($('#content'));
+	AUTO_MAIL_SETTING.initSmtp({}, {});
+</script><script >	
+			$(window).on("keyup", function(e){
+				if ( $.cocoaDialog.isOpen() ) {
+					$.cocoaDialog.modalControl(e);
+				}
+				return false;
+			});</script>
+<!-- BEGIN MENUBAR-->
+<button type="button" class="hidden-lg hidden-md toggle-btn" data-dismiss="menubar" >
+	<span class="sr-only" >Toggle navigation</span>
+    <img src="./adminMail_files/icon-bo-close.svg" >
+</button>
+
+<div id="menubar" class="animate" >
+	<div class="nano has-scrollbar" style="height: 865px; adminMail"><div class="nano-content" tabindex="0" style="right: -17px; adminMail"><div class="menubar-scroll-panel" style="padding-bottom: 1px; adminMail">
+		<div class="region-wrap full-width" >
+			<a href="javascript:" class="holder global_icon_menu dropdown-toggle" data-toggle="dropdown" aria-expanded="true" >
+				<div class="icon-wrap" >
+					<img src="./adminMail_files/flag_kr_circle.png" class="region-icon" >
+				</div>
+				<div class="brand-holder" >
+					<span class="title_controls" >왓이님의 웹사이트</span>
+					<span class="icon" >
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" >
+                            <path d="M6 12L10 8.00003L6 4.00003" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" ></path>
+						</svg>
+					</span>
+				</div>
+			</a>
+			<ul class="dropdown-menu dropdown-menu-new global_setting animation-dock menu-card-styling" >					<li class="holder " >
+						<a href="https://qjfhdnaos51106.imweb.me/admin/member/mail" >
+							<div class="tabled" >
+								<div class="table-cell vertical-middle width-1" >
+									<img width="30" height="30" src="./adminMail_files/flag_kr_circle.png" >
+								</div>
+								<div class="table-cell vertical-middle domain" style="line-height: 1.3; adminMail">
+									<div class="inline-blocked" >
+										<span class="domain_name" >왓이님의 웹사이트</span>
+									</div>
+									<span data-original-title="일반 방문자의 접속이 제한됩니다. 글로벌 버전으로 업그레이드 해주세요" data-toggle="tooltip" class="badge" data-placement="top" style="margin-left: 5px; vertical-align: top; adminMail">미결제</span>
+																			<div class="text-gray-bright text-12" >qjfhdnaos51106.imweb.me</div>
+																	</div>
+							</div>
+						</a>
+						<div class="tools" >
+													</div>
+					</li>
+					<li class="add-unit" ><a href="javascript:;" onclick="SITE_MANAGE.openAddUnit(&#39;S20240516cc656761618e8&#39;)" class="text-secondary addunit" style="display: flex; adminMail"><svg style="margin-right: 8px; adminMail" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M7.99992 3.3335V12.6668M3.33325 8.00016H12.6666" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" ></path></svg> 새 언어 사이트 추가</a></li></ul>		</div>
+		<ul id="main-menu" class="gui-controls" ><li data-prevent-menu-click="true" ><a href="javascript:;" class="_gnb_notification_button gnb_notification_button" ><div class="gui-icon" ><i class="db-bell" ></i></div><span class="title title_controls" >알림</span><span class="_badge badge_icon badge_count" >1</span></a></li><li class="" data-title="design_mode" ><a href="https://qjfhdnaos51106.imweb.me/admin/design" ><div class="gui-icon" ><i class="db-wand" ></i></div><span class="title title_controls" >디자인 모드</span></a></li><li class="" data-title="preview" ><a class="external-url" href="https://qjfhdnaos51106.imweb.me/" target="_blank" ><div class="gui-icon" ><i class="db-preview" ></i></div><span class="title title_controls" >사이트 바로가기</span></a></li><li class="spacer" ></li><li class="top-menu" ><div ><span >사이트 관리</span><a href="javascript:;" class="shop-extend" onclick="DASHBOARD.openSiteManagementDialog(this);" data-original-title="쇼핑·예약 기능설정" data-toggle="tooltip" data-placement="right" data-trigger="hover" data-template="&lt;div class=&quot;tooltip custom-tooltip&quot;&gt;&lt;div class=&quot;tooltip-inner&quot;&gt;&lt;/div&gt;&lt;/div&gt;" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" ><path d="M7.99998 8.6665C8.36817 8.6665 8.66665 8.36803 8.66665 7.99984C8.66665 7.63165 8.36817 7.33317 7.99998 7.33317C7.63179 7.33317 7.33331 7.63165 7.33331 7.99984C7.33331 8.36803 7.63179 8.6665 7.99998 8.6665Z" fill="#4B515B" ></path><path d="M7.99998 3.99984C8.36817 3.99984 8.66665 3.70136 8.66665 3.33317C8.66665 2.96498 8.36817 2.6665 7.99998 2.6665C7.63179 2.6665 7.33331 2.96498 7.33331 3.33317C7.33331 3.70136 7.63179 3.99984 7.99998 3.99984Z" fill="#4B515B" ></path><path d="M7.99998 13.3332C8.36817 13.3332 8.66665 13.0347 8.66665 12.6665C8.66665 12.2983 8.36817 11.9998 7.99998 11.9998C7.63179 11.9998 7.33331 12.2983 7.33331 12.6665C7.33331 13.0347 7.63179 13.3332 7.99998 13.3332Z" fill="#4B515B" ></path><path d="M7.99998 8.6665C8.36817 8.6665 8.66665 8.36803 8.66665 7.99984C8.66665 7.63165 8.36817 7.33317 7.99998 7.33317C7.63179 7.33317 7.33331 7.63165 7.33331 7.99984C7.33331 8.36803 7.63179 8.6665 7.99998 8.6665Z" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" ></path><path d="M7.99998 3.99984C8.36817 3.99984 8.66665 3.70136 8.66665 3.33317C8.66665 2.96498 8.36817 2.6665 7.99998 2.6665C7.63179 2.6665 7.33331 2.96498 7.33331 3.33317C7.33331 3.70136 7.63179 3.99984 7.99998 3.99984Z" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" ></path><path d="M7.99998 13.3332C8.36817 13.3332 8.66665 13.0347 8.66665 12.6665C8.66665 12.2983 8.36817 11.9998 7.99998 11.9998C7.63179 11.9998 7.33331 12.2983 7.33331 12.6665C7.33331 13.0347 7.63179 13.3332 7.99998 13.3332Z" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" ></path></svg></a></div></li><li class="" data-title="dashboard" ><a href="https://qjfhdnaos51106.imweb.me/admin//" ><div class="gui-icon" ><i class="db-dashboard" ></i></div><span class="title title_controls" >대시보드</span></a></li><li class="active gui-folder" data-title="member" ><a href="https://qjfhdnaos51106.imweb.me/admin/member" class="sidebar-nav-menu active" onclick="return false;" ><div class="gui-icon" ><i class="db-user" ></i></div><span class="title title_controls" >사용자 관리</span></a><ul ><li class="  " data-title="member_list" ><a href="https://qjfhdnaos51106.imweb.me/admin/member/list" ><span class="title title_controls" >사용자 목록</span></a></li><li class="  " data-title="member_msg" ><a href="https://qjfhdnaos51106.imweb.me/admin/member/send" ><span class="title title_controls" >메시지 보내기</span></a></li><li class="  " data-title="member_permission" ><a href="https://qjfhdnaos51106.imweb.me/admin/member/permission" ><span class="title title_controls" >운영진</span></a></li><li class="active expanded" data-title="member_mail" ><a href="https://qjfhdnaos51106.imweb.me/admin/member/mail" class=" active" ><span class="title title_controls" >자동 메일</span></a></li><li class="  " data-title="member_talk" ><a href="https://qjfhdnaos51106.imweb.me/admin/member/kakao_friend" ><span class="title title_controls" >친구톡 보내기</span></a></li><li class="  " data-title="member_sms" ><a href="https://qjfhdnaos51106.imweb.me/admin/member/sms" ><span class="title title_controls" >SMS·알림톡</span></a></li></ul></li><li class="" data-title="crm_campaigns" ><a href="https://qjfhdnaos51106.imweb.me/admin/crm_campaigns" ><div class="gui-icon" ><i class="db-crm-campaigns" ></i></div><span class="title title_controls" >CRM 캠페인 자동화</span><span class="badge_new" >New</span></a></li><li class="" data-title="crm" ><a href="https://qjfhdnaos51106.imweb.me/admin/crm_marketing" ><div class="gui-icon" ><i class="db-crm" ></i></div><span class="title title_controls" >고객 행동 관리</span></a></li><li class="gui-folder" data-title="shopping" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-shopping-bag" ></i></div><span class="title title_controls" >쇼핑</span></a><ul ><li class="  " data-title="shopping_product" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/product" ><span class="title title_controls" >상품</span></a></li><li class="  " data-title="shopping_interlocking" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/interlocking" ><span class="title title_controls" >연동 상품</span><span class="badge_beta" >Beta</span></a></li><li class="  " data-title="shopping_order_v1" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/order-v1" ><span class="title title_controls" >주문관리 v2</span><span class="badge_new" >New</span></a></li><li class="  " data-title="shopping_regularly" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/regularly" ><span class="title title_controls" >정기구독</span></a></li><li class="  " data-title="shopping_gift" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/gift" ><span class="title title_controls" >선물하기</span><span class="badge_new" >New</span></a></li><li class="  " data-title="shopping_review" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/review" ><span class="title title_controls" >구매평</span></a></li><li class="  " data-title="shopping_answers" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/answers" ><span class="title title_controls" >문의</span></a></li><li class="  " data-title="member_mileage" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/mileage" ><span class="title title_controls" >적립금</span></a></li><li class="  " data-title="shopping_coupon" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/coupon" ><span class="title title_controls" >쿠폰</span></a></li><li class="  " data-title="shopping_shipping" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/shipping" ><span class="title title_controls" >배송설정</span></a></li><li class="  " data-title="shopping_config" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/config" ><span class="title title_controls" >환경설정</span></a></li></ul></li><li class="gui-folder animated animated-hidden" data-title="booking" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-calendar" ></i></div><span class="title title_controls" >예약</span></a><ul ><li class="  " data-title="booking_product" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/product" ><span class="title title_controls" >객실·사이트</span></a></li><li class="  " data-title="booking_order_cal" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/order_cal" ><span class="title title_controls" >예약 현황</span></a></li><li class="  " data-title="booking_order" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/order" ><span class="title title_controls" >예약 신청</span></a></li><li class="  " data-title="booking_review" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/review" ><span class="title title_controls" >후기</span></a></li><li class="  " data-title="booking_answers" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/answers" ><span class="title title_controls" >문의</span></a></li><li class="  " data-title="booking_option" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/option" ><span class="title title_controls" >옵션설정</span></a></li><li class="  " data-title="booking_season" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/season" ><span class="title title_controls" >성수기·휴일</span></a></li><li class="  " data-title="booking_config" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/config" ><span class="title title_controls" >환경설정</span></a></li></ul></li><li class="gui-folder" data-title="contents" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-pencil" ></i></div><span class="title title_controls" >컨텐츠 관리</span><span class="badge_icon" >1</span></a><ul ><li class="  " data-title="contents_post" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents/post" ><span class="title title_controls" >게시물</span><span class="badge_icon" >1</span></a></li><li class="  " data-title="contents_comment" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents/comment" ><span class="title title_controls" >댓글</span></a></li><li class="  " data-title="contents_form" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents/form" ><span class="title title_controls" >입력폼</span></a></li><li class="  " data-title="contents_map" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents/map" ><span class="title title_controls" >지도</span></a></li><li class="  " data-title="contents_calendar" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents/calendar" ><span class="title title_controls" >일정</span></a></li><li class="  " data-title="contents_gallery" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents/gallery" ><span class="title title_controls" >갤러리</span></a></li><li class="  " data-title="contents_report" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents/report" ><span class="title title_controls" >신고·차단</span></a></li></ul></li><li class="gui-folder" data-title="marketing" ><a href="https://qjfhdnaos51106.imweb.me/admin/marketing" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-megaphone" ></i></div><span class="title title_controls" >광고 캠페인 관리</span></a><ul ><li class="  " data-title="marketing_home" ><a href="https://qjfhdnaos51106.imweb.me/admin/marketing/marketing-home" ><span class="title title_controls" >홈</span></a></li><li class="  " data-title="marketing_dashboard" ><a href="https://qjfhdnaos51106.imweb.me/admin/marketing/dashboard" ><span class="title title_controls" >대시보드</span></a></li><li class="  " data-title="marketing_campaign" ><a href="https://qjfhdnaos51106.imweb.me/admin/marketing/campaign" ><span class="title title_controls" >캠페인</span></a></li><li class="  " data-title="marketing_credit" ><a href="https://qjfhdnaos51106.imweb.me/admin/marketing/credit" ><span class="title title_controls" >크레딧 관리</span></a></li><li class="  " data-title="marketing_dataconnect" ><a href="https://qjfhdnaos51106.imweb.me/admin/marketing/data-connect" ><span class="title title_controls" >데이터 연결</span></a></li></ul></li><li class="gui-folder" data-title="app" ><a href="https://qjfhdnaos51106.imweb.me/admin/app" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-mobile" ></i></div><span class="title title_controls" >모바일 앱</span></a><ul ><li class="  " data-title="app_android" ><a href="https://qjfhdnaos51106.imweb.me/admin/app/android" ><span class="title title_controls" >Android 앱</span></a></li><li class="  " data-title="app_ios" ><a href="https://qjfhdnaos51106.imweb.me/admin/app/ios" ><span class="title title_controls" >iOS 앱</span></a></li></ul></li><li class="gui-folder" data-title="stat" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-status-up" ></i></div><span class="title title_controls" >통계</span></a><ul ><li class="  " data-title="stat_summary" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/summary" ><span class="title title_controls" >홈</span></a></li><li class="  " data-title="stat_shopping" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/shopping" ><span class="title title_controls" >매출</span><span class="badge_beta" >Beta</span></a></li><li class="  " data-title="stat_analytics" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/analytics" ><span class="title title_controls" >기간별 분석</span></a></li><li class="  " data-title="stat_site" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/site" ><span class="title title_controls" >유입 사이트</span></a></li><li class="  " data-title="stat_keyword" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/keyword" ><span class="title title_controls" >유입 검색어</span></a></li><li class="  " data-title="stat_visitor" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/visitor" ><span class="title title_controls" >방문자</span></a></li><li class="  " data-title="stat_page" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/page" ><span class="title title_controls" >많이 방문한 페이지</span></a></li><li class="  " data-title="stat_traffic" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/traffic" ><span class="title title_controls" >트래픽</span></a></li><li class="  " data-title="admin_stat_mileage" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/mileage" ><span class="title title_controls" >적립금</span></a></li><li class="  " data-title="stat_feedback" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/feedback" ><span class="title title_controls" >컨텐츠 반응</span></a></li><li class="  " data-title="stat_additional_service" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/additional_service" ><span class="title title_controls" >부가 서비스</span></a></li></ul></li><li class="" data-title="payment" ><a href="https://qjfhdnaos51106.imweb.me/admin/payment" ><div class="gui-icon" ><i class="db-rocket" ></i></div><span class="title title_controls" >결제·앱스토어</span></a></li><li class="gui-folder" data-title="config" ><a href="https://qjfhdnaos51106.imweb.me/admin/config" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-settings" ></i></div><span class="title title_controls" >환경설정</span></a><ul ><li class="  " data-title="config_default" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/default" ><span class="title title_controls" >일반</span></a></li><li class="  " data-title="config_localize" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/localize" ><span class="title title_controls" >언어·지역·통화</span></a></li><li class="  " data-title="config_pg" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/pg" ><span class="title title_controls" >전자결제(PG)</span></a></li><li class="  " data-title="config_domain" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/domain" ><span class="title title_controls" >도메인</span></a></li><li class="  " data-title="config_ssl" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/ssl" ><span class="title title_controls" >SSL(보안서버)</span></a></li><li class="  " data-title="config_security" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/security" ><span class="title title_controls" >보안·개인정보 보호</span></a></li><li class="  " data-title="config_membership" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/membership" ><span class="title title_controls" >회원가입·그룹·등급</span></a></li><li class="  " data-title="config_seo" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/seo" ><span class="title title_controls" >SEO(검색엔진최적화)</span></a></li><li class="  " data-title="config_etc" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/etc" ><span class="title title_controls" >약관</span></a></li><li class="  " data-title="config_popup" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/popup" ><span class="title title_controls" >팝업·배너</span></a></li><li class="  " data-title="config_adult" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/adult" ><span class="title title_controls" >본인·성인인증</span></a></li><li class="  " data-title="config_oauth" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/oauth" ><span class="title title_controls" >소셜 로그인·지도·공유</span></a></li><li class="  " data-title="config_chat" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/chat" ><span class="title title_controls" >상담 채널 연동</span></a></li><li class="  " data-title="config_api_v2" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/rest_v2" ><span class="title title_controls" >외부 서비스 연동 (API)</span></a></li></ul></li><li class="spacer" ></li><li class="top-menu" ><div ><span >리소스</span></div></li><li class="" data-title="support" ><a class="external-url" href="https://imweb.me/customer" target="_blank" ><div class="gui-icon" ><i class="db-comments" ></i></div><span class="title title_controls" >고객지원</span></a></li><li class="gui-folder" data-title="campus" ><a class="external-url" href="https://qjfhdnaos51106.imweb.me/admin/member/edu" onclick="return false;" ><div class="gui-icon" ><i class="db-graduation-cap" ></i></div><span class="title title_controls" >아임웹 교육</span></a><ul ><li class="  " data-title="campus_edu" ><a class="external-url" href="https://imweb.me/edu" target="_blank" ><span class="title title_controls" >교육 일정·신청</span></a></li><li class="  " data-title="campus_video" ><a class="external-url" href="https://imweb.me/video_lecture" target="_blank" ><span class="title title_controls" >동영상 강의</span></a></li></ul></li><li class="gui-folder" data-title="expert" ><a href="https://qjfhdnaos51106.imweb.me/admin/expert" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-telescope" ></i></div><span class="title title_controls" >전문가 찾기</span><span class="badge_new" >New</span></a><ul ><li class="  " data-title="find_expert_main" ><a class="external-url" href="https://imweb.me/expert" target="_blank" ><span class="title title_controls" >전문가 찾기</span></a></li><li class="  " data-title="find_expert" ><a href="https://qjfhdnaos51106.imweb.me/admin/expert/find_expert" ><span class="title title_controls" >전문가 웹사이트 관리</span></a></li></ul></li></ul>	</div></div><div class="nano-pane" ><div class="nano-slider" style="height: 837px; top: 0px; display: block; adminMail"></div></div></div>
+</div>
+<div class="fold_area animate" >
+    <div class="table-cell vertical-middle" >
+        <a href="https://qjfhdnaos51106.imweb.me/admin/" class="logo_icon_menu" >
+            <img src="./adminMail_files/imweb_new_bi.svg" >        </a>
+    </div>
+    <a class="_tooltip_btn side_bar_btn" href="javascript:void(0)" role="button" id="toggle_button" >
+		<span class="fold_button left" data-original-title="사이드바 접기" data-toggle="tooltip" data-placement="right" data-trigger="hover" data-template="&lt;div class=&#39;tooltip custom-tooltip&#39;&gt;&lt;div class=&#39;tooltip-inner&#39;&gt;&lt;/div&gt;&lt;/div&gt;" >
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" >
+                <path d="M12 11.3334L8.66667 8.00002L12 4.66669M7.33333 11.3334L4 8.00002L7.33333 4.66669" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" ></path>
+            </svg>
+		</span>
+        <span class="fold_button right" data-original-title="사이드바 펼치기" data-toggle="tooltip" data-placement="right" data-trigger="hover" data-template="&lt;div class=&#39;tooltip custom-tooltip&#39;&gt;&lt;div class=&#39;tooltip-inner&#39;&gt;&lt;/div&gt;&lt;/div&gt;" >
+	        <div class="default" >
+		        			        <img src="./adminMail_files/grim-logo-imweb-symbol.svg" alt="사이드바 펼치기" >
+		        	        </div>
+	        <div class="hover" >
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" >
+	                <path d="M4 11.3334L7.33333 8.00002L4 4.66669M8.66667 11.3334L12 8.00002L8.66667 4.66669" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" ></path>
+	            </svg>
+	        </div>
+		</span>
+    </a>
+</div>
+<div class="_notify-modal-provider" ></div>
+<style >
+	.custom-tooltip.in {
+		opacity: 1;
+	}
+	.custom-tooltip.right {
+		margin-left: 4px;
+		padding: 0;
+	}
+	.custom-tooltip .tooltip-inner {
+		padding: 6px 8px;
+		border-radius: 8px;
+		background-color: #15181E;
+		color: #FFFFFF;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 16px;
+		box-shadow: 0 14px 32px 0 rgba(75, 81, 91, 0.12),
+			0 10px 14px 0 rgba(75, 81, 91, 0.06),
+			0 0 0 1px rgba(75, 81, 91, 0.03),
+			0 0 1px 0 rgba(75, 81, 91, 0.20);
+	}
+</style>
+<script >
+  (function(){
+    let body = document.body;
+    let btn = document.querySelector('#toggle_button');
+    let sidebar_mini_class = 'sidebar-mini';
+    let user_sm_status = getCookie('sm_status');
+    let window_width = window.innerWidth;
+    setPrimarySideMenu();
+
+    btn.addEventListener('click', handleToggleButton);
+    btn.addEventListener('touch', handleToggleButton);
+
+    //만약 사용자가 버튼을 누르지 않았을때만 이 이벤트 리스너를 사용할것임.
+      window.onresize = () => {
+        window_width = window.innerWidth;
+        if(user_sm_status !== 'h'&& user_sm_status !== 's') {
+          resizeWindow(window_width)
+        }
+      }
+
+    function handleToggleButton(){
+      if (user_sm_status == 'h') {
+        setSideMenu('show');
+      } else {
+        setSideMenu('hide');
+      }
+    }
+
+    function resizeWindow(window_width){
+      if (window_width > 1280 || window_width < 991) {
+        body.classList.remove(sidebar_mini_class);
+      }
+      //992~1279 일때
+     else {
+        body.classList.add(sidebar_mini_class)
+      }
+    }
+
+    function setPrimarySideMenu() {
+      if( window_width > 1280 && user_sm_status !== 'h'|| window_width < 991 ) {
+        body.classList.remove(sidebar_mini_class);
+      }
+      //992~1279 일때
+      else if( window_width <=1280 && window_width >= 991) {
+          if(user_sm_status == 's') body.classList.remove(sidebar_mini_class);
+          else body.classList.add(sidebar_mini_class)
+      }
+      else{
+        body.classList.add(sidebar_mini_class)
+      }
+    }
+
+    function setSideMenu(show){
+      if(show == "show") {
+        setCookie('sm_status', 's',1);
+        body.classList.remove(sidebar_mini_class);
+        user_sm_status = 's'
+      }
+      else{
+        setCookie('sm_status','h',1);
+        body.classList.add(sidebar_mini_class);
+        user_sm_status = 'h';
+		// 사이드바 접기 버튼을 누른 순간에 바로 접힐 수 있도록 10ms동안 임시 클래스 추가로 hover 이벤트를 방지
+        let fold_area = document.querySelector('#menubar ~ .fold_area');
+		fold_area.classList.add('disable-hover');
+		setTimeout(() => {fold_area.classList.remove('disable-hover')}, 10);
+      }
+    }
+
+	$('._lang_button').off('click').on('click', function(){
+		let that = this;
+		if($.cocoaStickerModal.isOpen()){
+			$.cocoaStickerModal.close();
+		}
+		$.cocoaStickerModal.open({
+			target: that,
+			id: 'langListModal',
+			html: $('#langListOrigin').html(),
+			width: '152px',
+			bottom: 23,
+			left: 21
+		});
+	});
+
+	  		  const $notificationButton = $('._gnb_notification_button');
+
+		  const interval = getNotifyBadgeInterval($notificationButton);
+		  const notifyHandler = getNotifyHandler();
+
+		  notifyHandler.setInterval(interval);
+
+		  interval.force();
+		  interval.start();
+
+		  $notificationButton.on('click', function() {
+			  notifyHandler.toggleModal(interval);
+		  });
+	    })();
+
+</script>
+<style >
+
+	#analytics-tooltip button {
+		 padding: 4px 12px;
+		 line-height: 24px;
+		 font-size: 14px;
+		 border-radius: 6px;
+		 transition: 0.1s ease-out;
+	}
+
+	.tooltip-close-button {
+		 color: #717680;
+		 background-color: transparent;
+	}
+
+	.tooltip-close-button:hover {
+		 background-color: #f8f9fb;
+	}
+
+	.tooltip-close-button:active {
+		background-color: #e2e5e9;
+	}
+
+	.tooltip-go-button {
+		 color: #FFFFFF;
+		 background-color: #1A6DFF;
+	}
+
+	.tooltip-go-button:hover {
+		 background-color: #70a2FF;
+	}
+
+	.tooltip-go-button:active {
+		background-color: #99bdFF;
+	}
+</style>
+<script >
+	window.addEventListener('load', () => {
+		var svShowAnalyticsTooltip = 'Y';
+
+		if (svShowAnalyticsTooltip === 'Y') {
+			var isClosed = false;
+
+			var isAppending = false;
+		
+			function isSnbFolded() {
+				return document.body.classList.contains('sidebar-mini');
+			}
+
+			function isMobile() {
+				return window.innerWidth < 993;
+			}
+
+			function isTooltipExist() {
+				return document.querySelector('#analytics-tooltip') !== null;
+			}
+
+			function isStatMenuFolded() {
+				return $('li[data-title="stat"] > ul').css('display') === 'none';
+			}
+
+			function analyticsFocus() {
+				if (
+					isClosed ||
+					isSnbFolded() ||
+					isMobile() ||
+					isTooltipExist() ||
+					isStatMenuFolded() ||
+					isAppending
+				) {
+					return;
+				}
+
+				scrollToMenuLi()
+			}
+
+			function scrollToMenuLi () {
+				var menuLi = document.querySelector('li[data-title="stat_additional_service"]');
+
+				var menuLiTop = menuLi.getBoundingClientRect().top;
+				var toScroll = Math.max(0, menuLiTop - window.innerHeight) + 28 + 144;
+
+				document.querySelector('.nano-content').scrollTo({ top : toScroll, behavior: 'smooth' })
+
+				appendTooltip()
+				appendPulse()
+			}
+
+			function appendTooltip() {
+				isAppending = true;
+				setTimeout(() => {
+					var menuLi = document.querySelector('li[data-title="stat_additional_service"]');
+					var menuLiTop = menuLi.getBoundingClientRect().top + 14;
+
+					var focusElement = document.createElement('div');
+
+					focusElement.id = 'analytics-tooltip'
+
+					focusElement.style.position = 'fixed';
+					focusElement.style.left = '224px'
+					focusElement.style.top = menuLiTop + 'px';
+					focusElement.style.transform = 'translate(12px, -50%)';
+					focusElement.style.padding = '16px';
+					focusElement.style.borderRadius = '12px';
+					focusElement.style.backgroundColor = '#15181E';
+					focusElement.style.width = "240px";
+
+					var topText = document.createElement('p');
+
+					topText.style.color = '#FFFFFF';
+					topText.style.fontSize = '16px';
+					topText.style.fontWeight = '700';
+					topText.style.lineHeight = '24px';
+					topText.style.marginBottom = '12px';
+					topText.textContent = '부가 서비스 메뉴가 합쳐졌어요';
+
+					focusElement.appendChild(topText);
+
+					var middleText = document.createElement('p');
+
+					middleText.style.color = '#FFFFFF';
+					middleText.style.fontSize = '14px';
+					middleText.style.lineHeight = '20px';
+					middleText.style.marginBottom = '24px';
+					middleText.innerHTML = '더 다양한 데이터 분석 인사이트를 <br/>만나보세요'
+
+					focusElement.appendChild(middleText);
+
+					var bottomButtonArea = document.createElement('div');
+
+					bottomButtonArea.style.display = 'flex';
+					bottomButtonArea.style.justifyContent = 'flex-end';
+					bottomButtonArea.style.gap = '6px';
+
+					var closeButton = document.createElement('button');
+					closeButton.classList.add('tooltip-close-button');
+					closeButton.textContent = '닫기';
+					closeButton.id = 'analytics-tooltip-close';
+					bottomButtonArea.appendChild(closeButton);
+
+					var goButton = document.createElement('button');
+					goButton.id = 'analytics-tooltip-go';
+					goButton.classList.add('tooltip-go-button');
+					goButton.textContent = '이동';
+					bottomButtonArea.appendChild(goButton);
+
+					focusElement.appendChild(bottomButtonArea);
+
+					var arrowSvg = `<svg style="position: absolute;left: -6px;top: 50%;transform: translateY(-50%);" width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M0.707107 6.70711C0.316582 6.31658 0.316582 5.68342 0.707106 5.29289L6 -2.62268e-07L6 12L0.707107 6.70711Z" fill="#15181E"/>
+									</svg>`
+
+					focusElement.innerHTML += arrowSvg;
+
+					document.body.appendChild(focusElement);
+
+					document.querySelector('#analytics-tooltip-close').addEventListener('click', () => closeAnalyticsTooltip(() => {
+						isClosed = true;
+						remove();
+					}));
+					document.querySelector('#analytics-tooltip-go').addEventListener('click', () => closeAnalyticsTooltip(() => {
+						location.href = '/admin/stat/additional_service';
+					}));
+
+					isAppending = false;
+				}, 500);
+			}
+
+			function closeAnalyticsTooltip(callback) {
+				$.ajax({
+					url: '/admin/ajax/menu/close_analytics_tooltip.cm',
+					type: 'POST',
+					complete: callback
+				})
+			}
+
+			function appendPulse() {
+				var menuLi = document.querySelector('li[data-title="stat_additional_service"]');
+
+				var image = document.createElement('img');
+
+				image.id = 'analytics-pulse';
+
+				image.src = '/admin/img/menu_pulse.gif';
+
+				image.style.position = 'absolute';
+				image.style.left = '52px';
+				image.style.top = '50%';
+				image.style.transform = 'translateY(-50%)';
+				image.style.width = '56px';
+				image.style.height = '56px';
+				image.style.pointerEvents = 'none';
+
+				menuLi.appendChild(image);
+				
+			}
+
+			function remove() {
+				document.querySelector('#analytics-tooltip')?.remove();
+				document.querySelector('#analytics-pulse')?.remove();
+			}
+
+			window.addEventListener('resize', () => {
+				if (window.innerWidth < 993) remove()
+				else {
+					analyticsFocus();
+				}
+			})
+
+			document.querySelector('#toggle_button').addEventListener('click', () => {
+				if (isSnbFolded()) remove()
+				else {
+					analyticsFocus();
+				}
+			})
+
+			$('.gui-folder').click(() => {
+				if (isTooltipExist()) remove()
+				else {
+					setTimeout(() => {
+						analyticsFocus();
+					}, 500);
+				}
+			})
+
+			document.querySelector('.nano-content').addEventListener('scroll', () => {
+				var tooltip = document.querySelector('#analytics-tooltip')
+
+				if (tooltip !== null) {
+					var top = document.querySelector('li[data-title="stat_additional_service"]').getBoundingClientRect().top
+
+					if (top === 0) {
+						remove()
+						return
+					}
+
+					tooltip.style.top = top + 14 + 'px';
+				}
+			})
+
+			analyticsFocus();
+		}
+	})
+
+  
+	
+</script></div> <!-- END BASE -->
+
+
+
+<script >
+</script><div class="modal" id="cocoaModal" role="dialog" >
+	<div class="modal-dialog" >
+		<div class="modal-content" ></div>
+	</div>
+</div>
+
+<div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001; adminMail">
+	<div class="modal-dialog" >
+		<div class="modal-content" ></div>
+	</div>
+</div>
+
+<iframe name="hidden_frame" id="hidden_frame" style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px; adminMail" src="./adminMail_files/saved_resource.html"></iframe>
+
+
+
+<script >
+	</script>
+
+<script type="text/javascript" >
+    mixpanel.init('a4939111ea54962dbf95fe89a992eab3', {debug: false});
+    mixpanel.identify('M2022120722883bb351d7e');
+       MIXPANEL.init();
+</script>
+
+<div id="device-breakpoints" ><div class="device-xs visible-xs" data-breakpoint="xs" ></div><div class="device-sm visible-sm" data-breakpoint="sm" ></div><div class="device-md visible-md" data-breakpoint="md" ></div><div class="device-lg visible-lg" data-breakpoint="lg" ></div></div></body></html>

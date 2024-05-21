@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="ko" >
+
+<head>
+	<!-- 수정 필요 -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="./adminPop-modal_files/bootstrap.css" >
+	<link rel="stylesheet" type="text/css" href="./adminPop-modal_files/dashboard.css" >
+	<link rel="stylesheet" type="text/css" href="./adminPop-modal_files/tailwind.css" >
+	<link rel="stylesheet" type="text/css" href="./adminPop-modal_files/admin.css" >
+</head>
+
+
+<body class="menubar-hoverable header-fixed menubar-pin sidebar-mini" >
+    <input type="hidden" id="USE_OMS" value="on" >
+                <!-- BEGIN BASE-->
+    <div id="dashboard_loader" class="se-pre-con" style="display: none; adminPop-modal">
+        <div class="page-loader-spinner" >
+            <div class="double-bounce1" ></div>
+            <div class="double-bounce2" ></div>
+        </div>
+        <div class="progress" >
+            <div class="progress-bar" role="progressbar" style="width: 70%; adminPop-modal">
+                <label >70%</label>
+            </div>
+        </div>
+    </div>
+    <div id="base" >
+            
+    <script >
+        document.addEventListener('DOMContentLoaded', function() {
+            const alertBox = document.querySelector('#alertBox');
+            const contentArea = document.querySelector('#content');
+            alertBox?.classList.remove('alert__wrap-fixed');
+            alertBox?.classList.add('alert__wrap');
+            if ( contentArea && alertBox ) contentArea.prepend(alertBox);
+        });
+    </script>        <!-- END OFFCANVAS LEFT --><script type="text/javascript" >
+	$(function(){
+		SADMIN_MENU_ALERT.openAlert();
+	});
+</script>
+<header class="top_header" id="header" >
+	<div class="headerbar" >
+		<div class="headerbar-left" >
+			<ul class="header-nav header-nav-options" >
+				<li class="hidden-lg hidden-md" >
+					<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);" >
+                        <img src="./adminPop-modal_files/icon-bo-menu-01.svg" >
+					</a>
+				</li>
+				<li class="header-nav-brand" >
+					<div class="brand-holder" >
+						<span class="location_text" >
+							<span >편집 및 추가</span>						</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="headerbar-right" >
+			<ul class="header-nav header-nav-options _option_list" >
+				<li ><a class="btn btn-default-bright" onclick="history.go(-1);" >취소</a></li>
+			<li ><a class="btn btn-primary disabled" >저장</a></li></ul><!--end .header-nav-options -->
+		</div><!--끝 #header-navbar-collapse -->
+
+		<!--끝 #header-navbar-collapse -->
+	</div>
+</header>
+<!-- BEGIN CONTENT-->
+<div id="content" ><div id="alertBox" class="alert__wrap" >    </div>
+	<section class="section-max-width" >
+		<div class="section-body" >
+
+			<!-- 입력화면 -->
+			<div class="row" >
+				<div class="col-md-12" >
+					<div class="card" >
+						<div class="card-body" >
+							<form id="dof" method="post" enctype="multipart/form-data" class="form-horizontal form-validate" action="https://qjfhdnaos51106.imweb.me/admin/config/popup/?mode=add" role="form" target="hidden_frame" novalidate="novalidate" >
+								<input type="hidden" name="popup_idx" id="popup_idx" value="0" >
+								<input type="hidden" name="img_name" id="img_name" value="" >
+								<div class="form-group" >
+									<label class="col-sm-2 control-label" for="" >제목</label>
+									<div class="col-sm-6" >
+										<input type="text" class="form-control" name="subject" id="title" placeholder="관리용 제목(사용자에겐 표시되지 않습니다)" value="" ><div class="form-control-line" ></div>
+									</div>
+								</div>
+								<div class="form-group" >
+									<label class="col-sm-2 control-label" for="" >기간</label>
+									<div class="col-sm-6 time_duration" >
+										<div class="input-group" >
+											<div class="input-group-content" >
+												<div style="position: relative; adminPop-modal">
+													<input type="text" class="form-control" name="start_time" id="start_time" placeholder="날짜와 시간을 입력해주세요" value="2024-05-21 19:21" ><div class="form-control-line" ></div>
+												</div>
+											</div>
+											<span class="input-group-addon" >~</span>
+											<div class="input-group-content" >
+												<div style="position: relative; adminPop-modal">
+													<input type="text" class="form-control" name="end_time" id="end_time" placeholder="날짜와 시간을 입력해주세요" value="2024-05-21 19:21" ><div class="form-control-line" ></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-group" >
+									<label class="col-sm-2 control-label" for="" >대상 기기</label>
+									<div class="col-sm-10" >
+										<label class="checkbox-inline checkbox-styled" >
+											<input type="checkbox" class="_show_device" name="show_device" value="desktop" checked="checked" ><span >데스크톱</span>
+										</label>
+										<label class="checkbox-inline checkbox-styled" >
+											<input type="checkbox" class="_show_device" name="show_device" value="mobile" ><span >모바일</span>
+										</label>
+									</div>
+								</div>
+								<div class="form-group" >
+									<label class="col-sm-2 control-label" for="" >노출 페이지</label>
+                                    									<div class="col-sm-10" >
+										<label class="radio-inline radio-styled" >
+											<input type="radio" class="_show_page" name="show_page" value="home" ><span >홈 화면</span>
+										</label>
+										<label class="radio-inline radio-styled" >
+											<input type="radio" class="_show_page" name="show_page" value="custom" ><span >사용자 정의</span>
+										</label>
+                                        <label class="radio-inline radio-styled" >
+                                            <input type="radio" class="_show_page" name="show_page" value="prod" ><span >상품 별</span>
+                                        </label>
+										<div class="row _show_page_list" >
+											<div class="col-sm-12" > 
+												<div class="menu_tree alert alert-info _show_page_list_wrap" >
+													<ul >
+		
+			<li >
+				<label class="checkbox-inline checkbox-styled" >
+					<input type="checkbox" class="" name="show_page_list" value="m2024051690c943e936c37" ><span >Home</span>
+
+
+				</label>
+			</li>
+		
+			<li >
+				<label class="checkbox-inline checkbox-styled" >
+					<input type="checkbox" class="" name="show_page_list" value="m20240516b3350bd7af03c" ><span >스피커</span>
+
+	<ul >
+		
+			<li >
+				<label class="checkbox-inline checkbox-styled" >
+					<input type="checkbox" class="" name="show_page_list" value="m20240516c56a1c24f34d4" ><span >Wise Swell</span>
+
+
+				</label>
+			</li>
+		
+			<li >
+				<label class="checkbox-inline checkbox-styled" >
+					<input type="checkbox" class="" name="show_page_list" value="m2024051699dc9da05debf" ><span >Wise Cantor</span>
+
+
+				</label>
+			</li>
+		
+	</ul>
+
+
+				</label>
+			</li>
+		
+			<li >
+				<label class="checkbox-inline checkbox-styled" >
+					<input type="checkbox" class="" name="show_page_list" value="m20240516451071c78e1b5" ><span >헤드폰</span>
+
+	<ul >
+		
+			<li >
+				<label class="checkbox-inline checkbox-styled" >
+					<input type="checkbox" class="" name="show_page_list" value="m202405163471a19108168" ><span >Wise Phirels</span>
+
+
+				</label>
+			</li>
+		
+	</ul>
+
+
+				</label>
+			</li>
+		
+			<li >
+				<label class="checkbox-inline checkbox-styled" >
+					<input type="checkbox" class="" name="show_page_list" value="m202405165d6afc3f5668e" ><span >이어폰</span>
+
+	<ul >
+		
+			<li >
+				<label class="checkbox-inline checkbox-styled" >
+					<input type="checkbox" class="" name="show_page_list" value="m20240516d048cff6a4e32" ><span >Wise Pixie</span>
+
+
+				</label>
+			</li>
+		
+	</ul>
+
+
+				</label>
+			</li>
+		
+			<li >
+				<label class="checkbox-inline checkbox-styled" >
+					<input type="checkbox" class="" name="show_page_list" value="m2024051624f8a1d513cc2" ><span >아티클보드</span>
+
+
+				</label>
+			</li>
+		
+			<li >
+				<label class="checkbox-inline checkbox-styled" >
+					<input type="checkbox" class="" name="show_page_list" value="m202405165d24d9287349d" ><span >고객지원</span>
+
+	<ul >
+		
+			<li >
+				<label class="checkbox-inline checkbox-styled" >
+					<input type="checkbox" class="" name="show_page_list" value="m202405161066135926ce7" ><span >A/S 신청</span>
+
+
+				</label>
+			</li>
+		
+			<li >
+				<label class="checkbox-inline checkbox-styled" >
+					<input type="checkbox" class="" name="show_page_list" value="m202405162f7f810055d7f" ><span >보장 상태 확인</span>
+
+
+				</label>
+			</li>
+		
+			<li >
+				<label class="checkbox-inline checkbox-styled" >
+					<input type="checkbox" class="" name="show_page_list" value="m202405168cdee375c4c54" ><span >자주 묻는 질문</span>
+
+
+				</label>
+			</li>
+		
+	</ul>
+
+
+				</label>
+			</li>
+		
+	</ul>
+
+	<ul >
+		
+	</ul>												</div>
+											</div>
+										</div>
+                                        <div class="row _show_page_list" >
+                                            <div class="col-sm-12" >
+                                                <div class="shop-table _show_prod_list_wrap show-prod-list-wrap" style="display: none; adminPop-modal">
+                                                <div class="table-btn-group no-border no-padding-x" >
+    <div >
+        <a href="javascript:;" onclick="CONFIG_POPUP.showAddProdPopupModal();" class="btn btn-primary btn-sm btn-sm-padding" >상품추가</a>
+        <a href="javascript:;" onclick="CONFIG_POPUP.deleteProdPopupData();" class="btn btn-white btn-sm btn-sm-padding" >선택 상품 삭제</a>
+    </div>
+</div>
+<div class="table-relative no-border-bottom" >
+    <table class="table no-margin hidden-xs" >
+        <thead class="subject" style="display: table-header-group; adminPop-modal" id="">
+        <tr >
+            <th class="check" >
+                <div class="checkbox checkbox-styled no-margin" >
+                    <label >
+                        <input type="checkbox" class="_prod_popup_check_all" value="ok" onclick="CONFIG_POPUP.checkProdPopupItemAll($(this).prop(&#39;checked&#39;))" ><span ></span>
+                    </label>
+                </div>
+            </th>
+            <th class="image" ></th>
+            <th class="title" >상품명</th>
+            <th class="state" >상태</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+<div class="table-responsive table-relative table-relative-height no-border-top" >
+    <div class="text-center xlarge-padding _prod_popup_list_empty_wrap" >
+        <p class="text-gray" >등록된 상품이 없습니다</p>
+        <a href="javascript:;" onclick="CONFIG_POPUP.showAddProdPopupModal();" class="text-primary" >노출상품 추가</a>
+    </div>
+    <table class="table no-margin" >
+        <tbody class="_prod_popup_list_item_wrap ui-sortable" >
+                </tbody>
+    </table>
+</div> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" >
+                                    <label class="col-sm-2 control-label" for="" >적용 조건</label>
+																		<div class="col-sm-10" >
+										<label class="radio-inline radio-styled" >
+											<input type="radio" class="_launch_type" name="launch_type" value="all" checked="checked" ><span >모든 방문자</span>
+										</label>
+										<label class="radio-inline radio-styled" >
+											<input type="radio" class="_launch_type" name="launch_type" value="login" ><span >로그인 방문자</span>
+										</label>
+									</div>
+								</div>
+								<div class="form-group" >
+									<label class="col-sm-2 control-label" for="" >위치/형태</label>
+									<div class="col-sm-10" >
+										<div class="btn-group" data-toggle="buttons" >
+																							<label class="btn btn-default-bright _position_type active" >
+													<input type="radio" class="" name="type" id="" value="PL" checked="checked" >팝업 레이어												</label>
+																							<label class="btn btn-default-bright _position_type " >
+													<input type="radio" class="" name="type" id="" value="TB" >상단 배너												</label>
+																					</div>
+									</div>
+								</div>
+
+																<div class="_popup_option_wrap form-group" >
+									<label class="col-sm-2 control-label" for="" >버튼 설정</label>
+									<div class="col-sm-10" >
+																					<label class="radio-inline radio-styled" >
+												<input type="radio" class="_menu_btn" name="menu_btn" value="Y" checked="checked" ><span >배너 하단 버튼 표시</span>
+											</label>
+																					<label class="radio-inline radio-styled" >
+												<input type="radio" class="_menu_btn" name="menu_btn" value="N" ><span >표시 안 함</span>
+											</label>
+																			</div>
+								</div>
+																<div class="_popup_option_wrap form-group" >
+									<label class="col-sm-2 control-label" for="" >우측 상단 닫기 설정</label>
+									<div class="col-sm-10" >
+																					<label class="radio-inline radio-styled" >
+												<input type="radio" class="_cls_btn" name="cls_btn" value="close" checked="checked" ><span >닫기</span>
+											</label>
+																					<label class="radio-inline radio-styled" >
+												<input type="radio" class="_cls_btn" name="cls_btn" value="close_today" ><span >오늘 하루 다시 보지 않기</span>
+											</label>
+																					<label class="radio-inline radio-styled" >
+												<input type="radio" class="_cls_btn" name="cls_btn" value="none" ><span >표시 안 함</span>
+											</label>
+																			</div>
+								</div>
+
+
+
+								<div class="form-group _positon_center_options" style="display: block; adminPop-modal">
+									<label class="col-sm-2 control-label" for="" >PC 팝업 위치</label>
+									<div class="col-sm-2" >
+										<select class="form-control position_horizontal_option" name="position_horizontal_option" id="position_horizontal_option" >
+											<option value="center" >가운데</option>42<option value="browser_left" >화면 왼쪽에서</option>58<option value="browser_right" >화면 오른쪽에서</option>62<option value="body_left" >본문 왼쪽에서</option>55<option value="body_right" >본문 오른쪽에서</option>59										</select><div class="form-control-line" ></div>
+									</div>
+									<div class="col-sm-1" style="display: none; adminPop-modal">
+										<input type="text" class="form-control" name="position_horizontal" id="position_horizontal" value="" ><div class="form-control-line" ></div>
+									</div>
+									<div class="col-sm-1" style="display: none; adminPop-modal">
+										<select class="form-control" name="horizontal_unit" id="horizontal_unit" >
+											<option value="px" >px</option>31<option value="%" >%</option>29										</select><div class="form-control-line" ></div>
+									</div>
+									<label class="col-sm-2 control-label" for="" style="display: none; adminPop-modal">화면 위쪽에서</label>
+									<div class="col-sm-1" style="display: none; adminPop-modal">
+										<input type="text" class="form-control" name="position_vertical" id="position_vertical" value="" ><div class="form-control-line" ></div>
+									</div>
+									<div class="col-sm-1" style="display: none; adminPop-modal">
+										<select class="form-control" name="vertical_unit" id="vertical_unit" >
+											<option value="px" >px</option>31<option value="%" >%</option>29										</select><div class="form-control-line" ></div>
+									</div>
+								</div>
+
+								<div class="form-group _positon_center_options on_mobile" style="display: none; adminPop-modal">
+									<label class="col-sm-2 control-label" for="" >모바일 팝업 위치</label>
+									<div class="col-sm-2" >
+										<select class="form-control position_horizontal_option" name="mobile_position_horizontal_option" id="mobile_position_horizontal_option" >
+											<option value="center" >가운데</option>42<option value="browser_left" >화면 왼쪽에서</option>58<option value="browser_right" >화면 오른쪽에서</option>62<option value="body_left" >본문 왼쪽에서</option>55<option value="body_right" >본문 오른쪽에서</option>59										</select><div class="form-control-line" ></div>
+									</div>
+									<div class="col-sm-1" style="display: none; adminPop-modal">
+										<input type="text" class="form-control" name="mobile_position_horizontal" id="mobile_position_horizontal" value="" ><div class="form-control-line" ></div>
+									</div>
+									<div class="col-sm-1" style="display: none; adminPop-modal">
+										<select class="form-control" name="mobile_horizontal_unit" id="mobile_horizontal_unit" >
+											<option value="px" >px</option>31<option value="%" >%</option>29										</select><div class="form-control-line" ></div>
+									</div>
+									<label class="col-sm-2 control-label" for="" style="display: none; adminPop-modal">화면 위쪽에서</label>
+									<div class="col-sm-1" style="display: none; adminPop-modal">
+																				<input type="text" class="form-control" name="mobile_position_vertical" id="mobile_position_vertical" value="100" ><div class="form-control-line" ></div>
+									</div>
+									<div class="col-sm-1" style="display: none; adminPop-modal">
+										<select class="form-control" name="mobile_vertical_unit" id="mobile_vertical_unit" >
+											<option value="px" >px</option>31<option value="%" >%</option>29										</select><div class="form-control-line" ></div>
+									</div>
+								</div>
+
+
+																<input type="hidden" name="content_type" value="image" >
+
+								<div class="_body_image_options" >
+									<div class="form-group" >
+										<label class="col-sm-2 control-label" >이미지</label>
+										<div class="col-sm-4" >
+											<div class="wrap-image-upload " > <!-- 파일 첨부 후 .image-include 추가 --> 
+												<div class="image-list" id="icon_img_wrap" style="display: none; adminPop-modal">
+													<div class="item" >
+																												<img src="https://qjfhdnaos51106.imweb.me/admin/config/popup/?mode=add" id="icon_src" >
+														<a href="javascript:;" class="close" onclick="removeImg(&#39;icon&#39;)" ><i class="zmdi zmdi-close" ></i></a>
+													</div>
+												</div>
+												<div class="wrap-upload-button btn-file" id="icon_img_upload_wrap" style="display: block; adminPop-modal">
+													<button class="btn-image-upload" role="button" >
+														<div class="btn-content" >
+															<p class="icon" ><i class="fa fa-picture-o" ></i> <!--파일 첨부 후 .fa-plus로 변환 --></p>
+															<div >
+																이미지를 여기로 드래그															</div>
+														</div>
+													</button>
+													<a href="javascript:;" ><input type="file" id="icon_img" accept="image/jpeg, image/jpg, image/png, image/gif, image/svg+xml" ></a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group" >
+										<label class="col-sm-2 control-label" for="img_url" >이미지 링크</label>
+										<div class="col-sm-5" >
+											<div class="input-group" >
+												<div class="input-group-content" >
+													<input type="text" class="form-control" name="link_url" id="img_url" value="http://" ><div class="form-control-line" ></div>
+												</div>
+												<div class="input-group-addon opacity-100 no-padding-y" >
+													<label class="checkbox-inline checkbox-styled" >
+														<input type="checkbox" name="link_target" value="Y" ><span >새 창에서 열기</span>
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="_popup_option_wrap" >
+										<div class="form-group" >
+											<label class="col-sm-2 control-label" >너비</label>
+											<div class="col-sm-2 width-3" >
+												<div class="input-group-content" >
+													<input type="text" class="form-control" name="img_width" id="img_width" value="320" ><div class="form-control-line" ></div>
+												</div>
+												<div class="input-group-addon opacity-100 no-padding-y" >
+													px
+												</div>
+											</div>
+										</div>
+
+										<div class="form-group on_mobile" style="display: none; adminPop-modal">
+											<label class="col-sm-2 control-label" >모바일 배너 너비</label>
+											<div class="col-sm-2 width-3" >
+												<div class="input-group-content" >
+													<input type="text" class="form-control" name="mobile_width" id="mobile_width" value="auto" ><div class="form-control-line" ></div>
+												</div>
+												<div class="input-group-addon opacity-100 no-padding-y" >
+													px
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="_banner_option_wrap" style="display: none; adminPop-modal">
+										<div class="form-group" >
+											<label class="col-sm-2 control-label" >PC 높이</label>
+											<div class="col-sm-2 width-3" >
+												<div class="input-group-content" >
+													<input type="text" class="form-control" name="banner_pc_height" id="banner_pc_height" value="120" ><div class="form-control-line" ></div>
+												</div>
+												<div class="input-group-addon opacity-100 no-padding-y" >
+													px
+												</div>
+											</div>
+										</div>
+										<div class="form-group _banner_mobile_height_wrap" >
+											<label class="col-sm-2 control-label" >MOBILE 높이</label>
+											<div class="col-sm-2 width-3" >
+												<div class="input-group-content" >
+													<input type="text" class="form-control" name="banner_mobile_height" id="banner_mobile_height" value="60" ><div class="form-control-line" ></div>
+												</div>
+												<div class="input-group-addon opacity-100 no-padding-y" >
+													px
+												</div>
+											</div>
+										</div>
+										<div class="form-group" >
+											<label class="col-sm-2 control-label" for="" >배경색</label>
+											<div class="col-sm-10" >
+												<div class="_background_color" style="width: 135px; position: relative; adminPop-modal"><div ><input class="dz-form-control" type="text" maxlength="25" ><div class="color_pick input-group-addon" style="left: auto; right: 0px; z-index: 99; adminPop-modal"><span class="color" ></span><i class="frame_box fr_20" style="background-color: rgb(0, 0, 0); adminPop-modal"></i></div></div></div>
+											</div>
+										</div>
+										<div class="form-group" >
+											<label class="col-sm-2 control-label" for="" >닫기 버튼색</label>
+											<div class="col-sm-10" >
+												<div class="_close_btn_color" style="width: 135px; position: relative; adminPop-modal"><div ><input class="dz-form-control" type="text" maxlength="25" ><div class="color_pick input-group-addon" style="left: auto; right: 0px; z-index: 99; adminPop-modal"><span class="color" ></span><i class="frame_box fr_20" style="background-color: rgb(0, 0, 0); adminPop-modal"></i></div></div></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="_body_html_options" style="display: none; adminPop-modal">
+									<div class="form-group" >
+										<label class="col-sm-2 control-label" ></label>
+										<div class="col-sm-10" >
+											<div class="_body_html_editor" ></div>
+										</div>
+									</div>
+								</div>
+								<!-- end 에디터 선택시 -->
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<div ><a class="btn btn-primary disabled" >저장</a></div></section><!--섹션 끝 -->
+</div>
+<script >
+	$(function () {
+		CONFIG_POPUP.init({"idx":0,"site_code":"","unit_code":"","type":"PL","subject":"","show_device":"","show_page":"","show_page_list":[],"launch_type":"","options":{"mobile_position":{"location":{"top":100}}},"content_type":"","img":"","content_html":"","link_url":"","link_target":"","start_time":"2024-05-21 19:21","end_time":"2024-05-21 19:21","write_time":""});
+		$('#start_time').datetimepicker({
+			dayViewHeaderFormat: 'YYYY MMMM',
+			locale: getMomentLangCode(ADMIN_LANG_CODE),
+			icons: {
+				time: 'zmdi zmdi-time',
+				date: 'zmdi zmdi-calendar',
+				up: 'zmdi zmdi-chevron-up',
+				down: 'zmdi zmdi-chevron-down',
+				previous: 'zmdi zmdi-chevron-left',
+				next: 'zmdi zmdi-chevron-right',
+				today: 'glyphicon glyphicon-screenshot',
+				clear: 'glyphicon glyphicon-trash'
+			},
+			format : 'YYYY-MM-DD HH:mm',
+		}).on('blur',function(data){
+			if($('#start_time').val() > $('#end_time').val()){
+				$('#end_time').val($('#start_time').val());
+			}
+		});
+		$('#end_time').datetimepicker({
+			dayViewHeaderFormat: 'YYYY MMMM',
+			locale: getMomentLangCode(ADMIN_LANG_CODE),
+			icons: {
+				time: 'zmdi zmdi-time',
+				date: 'zmdi zmdi-calendar',
+				up: 'zmdi zmdi-chevron-up',
+				down: 'zmdi zmdi-chevron-down',
+				previous: 'zmdi zmdi-chevron-left',
+				next: 'zmdi zmdi-chevron-right',
+				today: 'glyphicon glyphicon-screenshot',
+				clear: 'glyphicon glyphicon-trash'
+			},
+			format : 'YYYY-MM-DD HH:mm',
+		}).on('blur',function(data){
+			if($('#start_time').val() > $('#end_time').val()){
+				$('#end_time').val($('#start_time').val());
+			}
+		});
+	});
+
+	function removeImg(mode){
+		if(mode=='icon'){
+			$("#icon_img_url").val("");
+			$("#icon_img_wrap").hide();
+			$("#icon_img_upload_wrap").show();
+		}else{
+			$("#launch_img_url").val("");
+			$("#launch_img_wrap").hide();
+			$("#launch_img_upload_wrap").show();
+		}
+	}
+	var brand_color = function (){
+		if("#000"){
+			return "#000";
+		}else{
+			return "#000";
+		}
+	}
+
+    const popup_location = document.querySelectorAll("input[name=position_horizontal],input[name=position_vertical]");
+    const popup_width = document.querySelectorAll("input[name=img_width],input[name=mobile_width]");
+
+    const check_location_validation = (e)=>{
+      let target_value = e.target.value;
+      if(isNaN(Number(target_value))){
+        alert("숫자만 입력해주세요.")
+        e.target.value = ""
+      }
+
+    }
+    const check_width_validation = (e)=>{
+      let target_value = e.target.value;
+      if(isNaN(Number(target_value)) && target_value !="auto"){
+        alert("auto 혹은 숫자만 입력해주세요.")
+        e.target.value = ""
+      }
+
+    }
+    popup_location.forEach((p)=>{
+      p.addEventListener("focusout",check_location_validation);
+    })
+    popup_width.forEach((p)=>{
+      p.addEventListener("focusout",check_width_validation);
+    })
+
+
+</script>
+<script >	
+			$(window).on("keyup", function(e){
+				if ( $.cocoaDialog.isOpen() ) {
+					$.cocoaDialog.modalControl(e);
+				}
+				return false;
+			});</script>
+<!-- BEGIN MENUBAR-->
+<button type="button" class="hidden-lg hidden-md toggle-btn" data-dismiss="menubar" >
+	<span class="sr-only" >Toggle navigation</span>
+    <img src="./adminPop-modal_files/icon-bo-close.svg" >
+</button>
+
+<div id="menubar" class="animate" >
+	<div class="nano has-scrollbar" style="height: 865px; adminPop-modal"><div class="nano-content" tabindex="0" style="right: -17px; adminPop-modal"><div class="menubar-scroll-panel" style="padding-bottom: 1px; adminPop-modal">
+		<div class="region-wrap full-width" >
+			<a href="javascript:" class="holder global_icon_menu dropdown-toggle" data-toggle="dropdown" aria-expanded="true" >
+				<div class="icon-wrap" >
+					<img src="./adminPop-modal_files/flag_kr_circle.png" class="region-icon" >
+				</div>
+				<div class="brand-holder" >
+					<span class="title_controls" >왓이님의 웹사이트</span>
+					<span class="icon" >
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" >
+                            <path d="M6 12L10 8.00003L6 4.00003" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" ></path>
+						</svg>
+					</span>
+				</div>
+			</a>
+			<ul class="dropdown-menu dropdown-menu-new global_setting animation-dock menu-card-styling" >					<li class="holder " >
+						<a href="https://qjfhdnaos51106.imweb.me/admin/config/popup/?mode=add" >
+							<div class="tabled" >
+								<div class="table-cell vertical-middle width-1" >
+									<img width="30" height="30" src="./adminPop-modal_files/flag_kr_circle.png" >
+								</div>
+								<div class="table-cell vertical-middle domain" style="line-height: 1.3; adminPop-modal">
+									<div class="inline-blocked" >
+										<span class="domain_name" >왓이님의 웹사이트</span>
+									</div>
+									<span data-original-title="일반 방문자의 접속이 제한됩니다. 글로벌 버전으로 업그레이드 해주세요" data-toggle="tooltip" class="badge" data-placement="top" style="margin-left: 5px; vertical-align: top; adminPop-modal">미결제</span>
+																			<div class="text-gray-bright text-12" >qjfhdnaos51106.imweb.me</div>
+																	</div>
+							</div>
+						</a>
+						<div class="tools" >
+													</div>
+					</li>
+					<li class="add-unit" ><a href="javascript:;" onclick="SITE_MANAGE.openAddUnit(&#39;S20240516cc656761618e8&#39;)" class="text-secondary addunit" style="display: flex; adminPop-modal"><svg style="margin-right: 8px; adminPop-modal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M7.99992 3.3335V12.6668M3.33325 8.00016H12.6666" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" ></path></svg> 새 언어 사이트 추가</a></li></ul>		</div>
+		<ul id="main-menu" class="gui-controls" ><li data-prevent-menu-click="true" ><a href="javascript:;" class="_gnb_notification_button gnb_notification_button" ><div class="gui-icon" ><i class="db-bell" ></i></div><span class="title title_controls" >알림</span><span class="_badge badge_icon badge_count">1</span></a></li><li class="" data-title="design_mode" ><a href="https://qjfhdnaos51106.imweb.me/admin/design" ><div class="gui-icon" ><i class="db-wand" ></i></div><span class="title title_controls" >디자인 모드</span></a></li><li class="" data-title="preview" ><a class="external-url" href="https://qjfhdnaos51106.imweb.me/" target="_blank" ><div class="gui-icon" ><i class="db-preview" ></i></div><span class="title title_controls" >사이트 바로가기</span></a></li><li class="spacer" ></li><li class="top-menu" ><div ><span >사이트 관리</span><a href="javascript:;" class="shop-extend" onclick="DASHBOARD.openSiteManagementDialog(this);" data-original-title="쇼핑·예약 기능설정" data-toggle="tooltip" data-placement="right" data-trigger="hover" data-template="&lt;div class=&quot;tooltip custom-tooltip&quot;&gt;&lt;div class=&quot;tooltip-inner&quot;&gt;&lt;/div&gt;&lt;/div&gt;" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" ><path d="M7.99998 8.6665C8.36817 8.6665 8.66665 8.36803 8.66665 7.99984C8.66665 7.63165 8.36817 7.33317 7.99998 7.33317C7.63179 7.33317 7.33331 7.63165 7.33331 7.99984C7.33331 8.36803 7.63179 8.6665 7.99998 8.6665Z" fill="#4B515B" ></path><path d="M7.99998 3.99984C8.36817 3.99984 8.66665 3.70136 8.66665 3.33317C8.66665 2.96498 8.36817 2.6665 7.99998 2.6665C7.63179 2.6665 7.33331 2.96498 7.33331 3.33317C7.33331 3.70136 7.63179 3.99984 7.99998 3.99984Z" fill="#4B515B" ></path><path d="M7.99998 13.3332C8.36817 13.3332 8.66665 13.0347 8.66665 12.6665C8.66665 12.2983 8.36817 11.9998 7.99998 11.9998C7.63179 11.9998 7.33331 12.2983 7.33331 12.6665C7.33331 13.0347 7.63179 13.3332 7.99998 13.3332Z" fill="#4B515B" ></path><path d="M7.99998 8.6665C8.36817 8.6665 8.66665 8.36803 8.66665 7.99984C8.66665 7.63165 8.36817 7.33317 7.99998 7.33317C7.63179 7.33317 7.33331 7.63165 7.33331 7.99984C7.33331 8.36803 7.63179 8.6665 7.99998 8.6665Z" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" ></path><path d="M7.99998 3.99984C8.36817 3.99984 8.66665 3.70136 8.66665 3.33317C8.66665 2.96498 8.36817 2.6665 7.99998 2.6665C7.63179 2.6665 7.33331 2.96498 7.33331 3.33317C7.33331 3.70136 7.63179 3.99984 7.99998 3.99984Z" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" ></path><path d="M7.99998 13.3332C8.36817 13.3332 8.66665 13.0347 8.66665 12.6665C8.66665 12.2983 8.36817 11.9998 7.99998 11.9998C7.63179 11.9998 7.33331 12.2983 7.33331 12.6665C7.33331 13.0347 7.63179 13.3332 7.99998 13.3332Z" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" ></path></svg></a></div></li><li class="" data-title="dashboard" ><a href="https://qjfhdnaos51106.imweb.me/admin//" ><div class="gui-icon" ><i class="db-dashboard" ></i></div><span class="title title_controls" >대시보드</span></a></li><li class="gui-folder" data-title="member" ><a href="https://qjfhdnaos51106.imweb.me/admin/member" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-user" ></i></div><span class="title title_controls" >사용자 관리</span></a><ul ><li class="  " data-title="member_list" ><a href="https://qjfhdnaos51106.imweb.me/admin/member/list" ><span class="title title_controls" >사용자 목록</span></a></li><li class="  " data-title="member_msg" ><a href="https://qjfhdnaos51106.imweb.me/admin/member/send" ><span class="title title_controls" >메시지 보내기</span></a></li><li class="  " data-title="member_permission" ><a href="https://qjfhdnaos51106.imweb.me/admin/member/permission" ><span class="title title_controls" >운영진</span></a></li><li class="  " data-title="member_mail" ><a href="https://qjfhdnaos51106.imweb.me/admin/member/mail" ><span class="title title_controls" >자동 메일</span></a></li><li class="  " data-title="member_talk" ><a href="https://qjfhdnaos51106.imweb.me/admin/member/kakao_friend" ><span class="title title_controls" >친구톡 보내기</span></a></li><li class="  " data-title="member_sms" ><a href="https://qjfhdnaos51106.imweb.me/admin/member/sms" ><span class="title title_controls" >SMS·알림톡</span></a></li></ul></li><li class="" data-title="crm_campaigns" ><a href="https://qjfhdnaos51106.imweb.me/admin/crm_campaigns" ><div class="gui-icon" ><i class="db-crm-campaigns" ></i></div><span class="title title_controls" >CRM 캠페인 자동화</span><span class="badge_new" >New</span></a></li><li class="" data-title="crm" ><a href="https://qjfhdnaos51106.imweb.me/admin/crm_marketing" ><div class="gui-icon" ><i class="db-crm" ></i></div><span class="title title_controls" >고객 행동 관리</span></a></li><li class="gui-folder" data-title="shopping" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-shopping-bag" ></i></div><span class="title title_controls" >쇼핑</span></a><ul ><li class="  " data-title="shopping_product" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/product" ><span class="title title_controls" >상품</span></a></li><li class="  " data-title="shopping_interlocking" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/interlocking" ><span class="title title_controls" >연동 상품</span><span class="badge_beta" >Beta</span></a></li><li class="  " data-title="shopping_order_v1" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/order-v1" ><span class="title title_controls" >주문관리 v2</span><span class="badge_new" >New</span></a></li><li class="  " data-title="shopping_regularly" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/regularly" ><span class="title title_controls" >정기구독</span></a></li><li class="  " data-title="shopping_gift" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/gift" ><span class="title title_controls" >선물하기</span><span class="badge_new" >New</span></a></li><li class="  " data-title="shopping_review" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/review" ><span class="title title_controls" >구매평</span></a></li><li class="  " data-title="shopping_answers" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/answers" ><span class="title title_controls" >문의</span></a></li><li class="  " data-title="member_mileage" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/mileage" ><span class="title title_controls" >적립금</span></a></li><li class="  " data-title="shopping_coupon" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/coupon" ><span class="title title_controls" >쿠폰</span></a></li><li class="  " data-title="shopping_shipping" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/shipping" ><span class="title title_controls" >배송설정</span></a></li><li class="  " data-title="shopping_config" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/config" ><span class="title title_controls" >환경설정</span></a></li></ul></li><li class="gui-folder animated animated-hidden" data-title="booking" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-calendar" ></i></div><span class="title title_controls" >예약</span></a><ul ><li class="  " data-title="booking_product" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/product" ><span class="title title_controls" >객실·사이트</span></a></li><li class="  " data-title="booking_order_cal" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/order_cal" ><span class="title title_controls" >예약 현황</span></a></li><li class="  " data-title="booking_order" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/order" ><span class="title title_controls" >예약 신청</span></a></li><li class="  " data-title="booking_review" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/review" ><span class="title title_controls" >후기</span></a></li><li class="  " data-title="booking_answers" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/answers" ><span class="title title_controls" >문의</span></a></li><li class="  " data-title="booking_option" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/option" ><span class="title title_controls" >옵션설정</span></a></li><li class="  " data-title="booking_season" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/season" ><span class="title title_controls" >성수기·휴일</span></a></li><li class="  " data-title="booking_config" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/config" ><span class="title title_controls" >환경설정</span></a></li></ul></li><li class="gui-folder" data-title="contents" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-pencil" ></i></div><span class="title title_controls" >컨텐츠 관리</span><span class="badge_icon" >1</span></a><ul ><li class="  " data-title="contents_post" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents/post" ><span class="title title_controls" >게시물</span><span class="badge_icon" >1</span></a></li><li class="  " data-title="contents_comment" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents/comment" ><span class="title title_controls" >댓글</span></a></li><li class="  " data-title="contents_form" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents/form" ><span class="title title_controls" >입력폼</span></a></li><li class="  " data-title="contents_map" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents/map" ><span class="title title_controls" >지도</span></a></li><li class="  " data-title="contents_calendar" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents/calendar" ><span class="title title_controls" >일정</span></a></li><li class="  " data-title="contents_gallery" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents/gallery" ><span class="title title_controls" >갤러리</span></a></li><li class="  " data-title="contents_report" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents/report" ><span class="title title_controls" >신고·차단</span></a></li></ul></li><li class="gui-folder" data-title="marketing" ><a href="https://qjfhdnaos51106.imweb.me/admin/marketing" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-megaphone" ></i></div><span class="title title_controls" >광고 캠페인 관리</span></a><ul ><li class="  " data-title="marketing_home" ><a href="https://qjfhdnaos51106.imweb.me/admin/marketing/marketing-home" ><span class="title title_controls" >홈</span></a></li><li class="  " data-title="marketing_dashboard" ><a href="https://qjfhdnaos51106.imweb.me/admin/marketing/dashboard" ><span class="title title_controls" >대시보드</span></a></li><li class="  " data-title="marketing_campaign" ><a href="https://qjfhdnaos51106.imweb.me/admin/marketing/campaign" ><span class="title title_controls" >캠페인</span></a></li><li class="  " data-title="marketing_credit" ><a href="https://qjfhdnaos51106.imweb.me/admin/marketing/credit" ><span class="title title_controls" >크레딧 관리</span></a></li><li class="  " data-title="marketing_dataconnect" ><a href="https://qjfhdnaos51106.imweb.me/admin/marketing/data-connect" ><span class="title title_controls" >데이터 연결</span></a></li></ul></li><li class="gui-folder" data-title="app" ><a href="https://qjfhdnaos51106.imweb.me/admin/app" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-mobile" ></i></div><span class="title title_controls" >모바일 앱</span></a><ul ><li class="  " data-title="app_android" ><a href="https://qjfhdnaos51106.imweb.me/admin/app/android" ><span class="title title_controls" >Android 앱</span></a></li><li class="  " data-title="app_ios" ><a href="https://qjfhdnaos51106.imweb.me/admin/app/ios" ><span class="title title_controls" >iOS 앱</span></a></li></ul></li><li class="gui-folder" data-title="stat" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-status-up" ></i></div><span class="title title_controls" >통계</span></a><ul ><li class="  " data-title="stat_summary" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/summary" ><span class="title title_controls" >홈</span></a></li><li class="  " data-title="stat_shopping" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/shopping" ><span class="title title_controls" >매출</span><span class="badge_beta" >Beta</span></a></li><li class="  " data-title="stat_analytics" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/analytics" ><span class="title title_controls" >기간별 분석</span></a></li><li class="  " data-title="stat_site" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/site" ><span class="title title_controls" >유입 사이트</span></a></li><li class="  " data-title="stat_keyword" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/keyword" ><span class="title title_controls" >유입 검색어</span></a></li><li class="  " data-title="stat_visitor" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/visitor" ><span class="title title_controls" >방문자</span></a></li><li class="  " data-title="stat_page" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/page" ><span class="title title_controls" >많이 방문한 페이지</span></a></li><li class="  " data-title="stat_traffic" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/traffic" ><span class="title title_controls" >트래픽</span></a></li><li class="  " data-title="admin_stat_mileage" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/mileage" ><span class="title title_controls" >적립금</span></a></li><li class="  " data-title="stat_feedback" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/feedback" ><span class="title title_controls" >컨텐츠 반응</span></a></li><li class="  " data-title="stat_additional_service" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/additional_service" ><span class="title title_controls" >부가 서비스</span></a></li></ul></li><li class="" data-title="payment" ><a href="https://qjfhdnaos51106.imweb.me/admin/payment" ><div class="gui-icon" ><i class="db-rocket" ></i></div><span class="title title_controls" >결제·앱스토어</span></a></li><li class="active gui-folder" data-title="config" ><a href="https://qjfhdnaos51106.imweb.me/admin/config" class="sidebar-nav-menu active" onclick="return false;" ><div class="gui-icon" ><i class="db-settings" ></i></div><span class="title title_controls" >환경설정</span></a><ul ><li class="  " data-title="config_default" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/default" ><span class="title title_controls" >일반</span></a></li><li class="  " data-title="config_localize" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/localize" ><span class="title title_controls" >언어·지역·통화</span></a></li><li class="  " data-title="config_pg" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/pg" ><span class="title title_controls" >전자결제(PG)</span></a></li><li class="  " data-title="config_domain" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/domain" ><span class="title title_controls" >도메인</span></a></li><li class="  " data-title="config_ssl" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/ssl" ><span class="title title_controls" >SSL(보안서버)</span></a></li><li class="  " data-title="config_security" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/security" ><span class="title title_controls" >보안·개인정보 보호</span></a></li><li class="  " data-title="config_membership" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/membership" ><span class="title title_controls" >회원가입·그룹·등급</span></a></li><li class="  " data-title="config_seo" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/seo" ><span class="title title_controls" >SEO(검색엔진최적화)</span></a></li><li class="  " data-title="config_etc" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/etc" ><span class="title title_controls" >약관</span></a></li><li class="active expanded" data-title="config_popup" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/popup" class=" active" ><span class="title title_controls" >팝업·배너</span></a></li><li class="  " data-title="config_adult" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/adult" ><span class="title title_controls" >본인·성인인증</span></a></li><li class="  " data-title="config_oauth" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/oauth" ><span class="title title_controls" >소셜 로그인·지도·공유</span></a></li><li class="  " data-title="config_chat" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/chat" ><span class="title title_controls" >상담 채널 연동</span></a></li><li class="  " data-title="config_api_v2" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/rest_v2" ><span class="title title_controls" >외부 서비스 연동 (API)</span></a></li></ul></li><li class="spacer" ></li><li class="top-menu" ><div ><span >리소스</span></div></li><li class="" data-title="support" ><a class="external-url" href="https://imweb.me/customer" target="_blank" ><div class="gui-icon" ><i class="db-comments" ></i></div><span class="title title_controls" >고객지원</span></a></li><li class="gui-folder" data-title="campus" ><a class="external-url" href="https://qjfhdnaos51106.imweb.me/admin/config/popup/edu" onclick="return false;" ><div class="gui-icon" ><i class="db-graduation-cap" ></i></div><span class="title title_controls" >아임웹 교육</span></a><ul ><li class="  " data-title="campus_edu" ><a class="external-url" href="https://imweb.me/edu" target="_blank" ><span class="title title_controls" >교육 일정·신청</span></a></li><li class="  " data-title="campus_video" ><a class="external-url" href="https://imweb.me/video_lecture" target="_blank" ><span class="title title_controls" >동영상 강의</span></a></li></ul></li><li class="gui-folder" data-title="expert" ><a href="https://qjfhdnaos51106.imweb.me/admin/expert" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-telescope" ></i></div><span class="title title_controls" >전문가 찾기</span><span class="badge_new" >New</span></a><ul ><li class="  " data-title="find_expert_main" ><a class="external-url" href="https://imweb.me/expert" target="_blank" ><span class="title title_controls" >전문가 찾기</span></a></li><li class="  " data-title="find_expert" ><a href="https://qjfhdnaos51106.imweb.me/admin/expert/find_expert" ><span class="title title_controls" >전문가 웹사이트 관리</span></a></li></ul></li></ul>	</div></div><div class="nano-pane" ><div class="nano-slider" style="height: 837px; top: 0px; display: block; adminPop-modal"></div></div></div>
+</div>
+<div class="fold_area animate" >
+    <div class="table-cell vertical-middle" >
+        <a href="https://qjfhdnaos51106.imweb.me/admin/" class="logo_icon_menu" >
+            <img src="./adminPop-modal_files/imweb_new_bi.svg" >        </a>
+    </div>
+    <a class="_tooltip_btn side_bar_btn" href="javascript:void(0)" role="button" id="toggle_button" >
+		<span class="fold_button left" data-original-title="사이드바 접기" data-toggle="tooltip" data-placement="right" data-trigger="hover" data-template="&lt;div class=&#39;tooltip custom-tooltip&#39;&gt;&lt;div class=&#39;tooltip-inner&#39;&gt;&lt;/div&gt;&lt;/div&gt;" >
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" >
+                <path d="M12 11.3334L8.66667 8.00002L12 4.66669M7.33333 11.3334L4 8.00002L7.33333 4.66669" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" ></path>
+            </svg>
+		</span>
+        <span class="fold_button right" data-original-title="사이드바 펼치기" data-toggle="tooltip" data-placement="right" data-trigger="hover" data-template="&lt;div class=&#39;tooltip custom-tooltip&#39;&gt;&lt;div class=&#39;tooltip-inner&#39;&gt;&lt;/div&gt;&lt;/div&gt;" >
+	        <div class="default" >
+		        			        <img src="./adminPop-modal_files/grim-logo-imweb-symbol.svg" alt="사이드바 펼치기" >
+		        	        </div>
+	        <div class="hover" >
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" >
+	                <path d="M4 11.3334L7.33333 8.00002L4 4.66669M8.66667 11.3334L12 8.00002L8.66667 4.66669" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" ></path>
+	            </svg>
+	        </div>
+		</span>
+    </a>
+</div>
+<div class="_notify-modal-provider" ></div>
+<style >
+	.custom-tooltip.in {
+		opacity: 1;
+	}
+	.custom-tooltip.right {
+		margin-left: 4px;
+		padding: 0;
+	}
+	.custom-tooltip .tooltip-inner {
+		padding: 6px 8px;
+		border-radius: 8px;
+		background-color: #15181E;
+		color: #FFFFFF;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 16px;
+		box-shadow: 0 14px 32px 0 rgba(75, 81, 91, 0.12),
+			0 10px 14px 0 rgba(75, 81, 91, 0.06),
+			0 0 0 1px rgba(75, 81, 91, 0.03),
+			0 0 1px 0 rgba(75, 81, 91, 0.20);
+	}
+</style>
+<script >
+  (function(){
+    let body = document.body;
+    let btn = document.querySelector('#toggle_button');
+    let sidebar_mini_class = 'sidebar-mini';
+    let user_sm_status = getCookie('sm_status');
+    let window_width = window.innerWidth;
+    setPrimarySideMenu();
+
+    btn.addEventListener('click', handleToggleButton);
+    btn.addEventListener('touch', handleToggleButton);
+
+    //만약 사용자가 버튼을 누르지 않았을때만 이 이벤트 리스너를 사용할것임.
+      window.onresize = () => {
+        window_width = window.innerWidth;
+        if(user_sm_status !== 'h'&& user_sm_status !== 's') {
+          resizeWindow(window_width)
+        }
+      }
+
+    function handleToggleButton(){
+      if (user_sm_status == 'h') {
+        setSideMenu('show');
+      } else {
+        setSideMenu('hide');
+      }
+    }
+
+    function resizeWindow(window_width){
+      if (window_width > 1280 || window_width < 991) {
+        body.classList.remove(sidebar_mini_class);
+      }
+      //992~1279 일때
+     else {
+        body.classList.add(sidebar_mini_class)
+      }
+    }
+
+    function setPrimarySideMenu() {
+      if( window_width > 1280 && user_sm_status !== 'h'|| window_width < 991 ) {
+        body.classList.remove(sidebar_mini_class);
+      }
+      //992~1279 일때
+      else if( window_width <=1280 && window_width >= 991) {
+          if(user_sm_status == 's') body.classList.remove(sidebar_mini_class);
+          else body.classList.add(sidebar_mini_class)
+      }
+      else{
+        body.classList.add(sidebar_mini_class)
+      }
+    }
+
+    function setSideMenu(show){
+      if(show == "show") {
+        setCookie('sm_status', 's',1);
+        body.classList.remove(sidebar_mini_class);
+        user_sm_status = 's'
+      }
+      else{
+        setCookie('sm_status','h',1);
+        body.classList.add(sidebar_mini_class);
+        user_sm_status = 'h';
+		// 사이드바 접기 버튼을 누른 순간에 바로 접힐 수 있도록 10ms동안 임시 클래스 추가로 hover 이벤트를 방지
+        let fold_area = document.querySelector('#menubar ~ .fold_area');
+		fold_area.classList.add('disable-hover');
+		setTimeout(() => {fold_area.classList.remove('disable-hover')}, 10);
+      }
+    }
+
+	$('._lang_button').off('click').on('click', function(){
+		let that = this;
+		if($.cocoaStickerModal.isOpen()){
+			$.cocoaStickerModal.close();
+		}
+		$.cocoaStickerModal.open({
+			target: that,
+			id: 'langListModal',
+			html: $('#langListOrigin').html(),
+			width: '152px',
+			bottom: 23,
+			left: 21
+		});
+	});
+
+	  		  const $notificationButton = $('._gnb_notification_button');
+
+		  const interval = getNotifyBadgeInterval($notificationButton);
+		  const notifyHandler = getNotifyHandler();
+
+		  notifyHandler.setInterval(interval);
+
+		  interval.force();
+		  interval.start();
+
+		  $notificationButton.on('click', function() {
+			  notifyHandler.toggleModal(interval);
+		  });
+	    })();
+
+</script>
+<style >
+
+	#analytics-tooltip button {
+		 padding: 4px 12px;
+		 line-height: 24px;
+		 font-size: 14px;
+		 border-radius: 6px;
+		 transition: 0.1s ease-out;
+	}
+
+	.tooltip-close-button {
+		 color: #717680;
+		 background-color: transparent;
+	}
+
+	.tooltip-close-button:hover {
+		 background-color: #f8f9fb;
+	}
+
+	.tooltip-close-button:active {
+		background-color: #e2e5e9;
+	}
+
+	.tooltip-go-button {
+		 color: #FFFFFF;
+		 background-color: #1A6DFF;
+	}
+
+	.tooltip-go-button:hover {
+		 background-color: #70a2FF;
+	}
+
+	.tooltip-go-button:active {
+		background-color: #99bdFF;
+	}
+</style>
+<script >
+	window.addEventListener('load', () => {
+		var svShowAnalyticsTooltip = 'Y';
+
+		if (svShowAnalyticsTooltip === 'Y') {
+			var isClosed = false;
+
+			var isAppending = false;
+		
+			function isSnbFolded() {
+				return document.body.classList.contains('sidebar-mini');
+			}
+
+			function isMobile() {
+				return window.innerWidth < 993;
+			}
+
+			function isTooltipExist() {
+				return document.querySelector('#analytics-tooltip') !== null;
+			}
+
+			function isStatMenuFolded() {
+				return $('li[data-title="stat"] > ul').css('display') === 'none';
+			}
+
+			function analyticsFocus() {
+				if (
+					isClosed ||
+					isSnbFolded() ||
+					isMobile() ||
+					isTooltipExist() ||
+					isStatMenuFolded() ||
+					isAppending
+				) {
+					return;
+				}
+
+				scrollToMenuLi()
+			}
+
+			function scrollToMenuLi () {
+				var menuLi = document.querySelector('li[data-title="stat_additional_service"]');
+
+				var menuLiTop = menuLi.getBoundingClientRect().top;
+				var toScroll = Math.max(0, menuLiTop - window.innerHeight) + 28 + 144;
+
+				document.querySelector('.nano-content').scrollTo({ top : toScroll, behavior: 'smooth' })
+
+				appendTooltip()
+				appendPulse()
+			}
+
+			function appendTooltip() {
+				isAppending = true;
+				setTimeout(() => {
+					var menuLi = document.querySelector('li[data-title="stat_additional_service"]');
+					var menuLiTop = menuLi.getBoundingClientRect().top + 14;
+
+					var focusElement = document.createElement('div');
+
+					focusElement.id = 'analytics-tooltip'
+
+					focusElement.style.position = 'fixed';
+					focusElement.style.left = '224px'
+					focusElement.style.top = menuLiTop + 'px';
+					focusElement.style.transform = 'translate(12px, -50%)';
+					focusElement.style.padding = '16px';
+					focusElement.style.borderRadius = '12px';
+					focusElement.style.backgroundColor = '#15181E';
+					focusElement.style.width = "240px";
+
+					var topText = document.createElement('p');
+
+					topText.style.color = '#FFFFFF';
+					topText.style.fontSize = '16px';
+					topText.style.fontWeight = '700';
+					topText.style.lineHeight = '24px';
+					topText.style.marginBottom = '12px';
+					topText.textContent = '부가 서비스 메뉴가 합쳐졌어요';
+
+					focusElement.appendChild(topText);
+
+					var middleText = document.createElement('p');
+
+					middleText.style.color = '#FFFFFF';
+					middleText.style.fontSize = '14px';
+					middleText.style.lineHeight = '20px';
+					middleText.style.marginBottom = '24px';
+					middleText.innerHTML = '더 다양한 데이터 분석 인사이트를 <br/>만나보세요'
+
+					focusElement.appendChild(middleText);
+
+					var bottomButtonArea = document.createElement('div');
+
+					bottomButtonArea.style.display = 'flex';
+					bottomButtonArea.style.justifyContent = 'flex-end';
+					bottomButtonArea.style.gap = '6px';
+
+					var closeButton = document.createElement('button');
+					closeButton.classList.add('tooltip-close-button');
+					closeButton.textContent = '닫기';
+					closeButton.id = 'analytics-tooltip-close';
+					bottomButtonArea.appendChild(closeButton);
+
+					var goButton = document.createElement('button');
+					goButton.id = 'analytics-tooltip-go';
+					goButton.classList.add('tooltip-go-button');
+					goButton.textContent = '이동';
+					bottomButtonArea.appendChild(goButton);
+
+					focusElement.appendChild(bottomButtonArea);
+
+					var arrowSvg = `<svg style="position: absolute;left: -6px;top: 50%;transform: translateY(-50%);" width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M0.707107 6.70711C0.316582 6.31658 0.316582 5.68342 0.707106 5.29289L6 -2.62268e-07L6 12L0.707107 6.70711Z" fill="#15181E"/>
+									</svg>`
+
+					focusElement.innerHTML += arrowSvg;
+
+					document.body.appendChild(focusElement);
+
+					document.querySelector('#analytics-tooltip-close').addEventListener('click', () => closeAnalyticsTooltip(() => {
+						isClosed = true;
+						remove();
+					}));
+					document.querySelector('#analytics-tooltip-go').addEventListener('click', () => closeAnalyticsTooltip(() => {
+						location.href = '/admin/stat/additional_service';
+					}));
+
+					isAppending = false;
+				}, 500);
+			}
+
+			function closeAnalyticsTooltip(callback) {
+				$.ajax({
+					url: '/admin/ajax/menu/close_analytics_tooltip.cm',
+					type: 'POST',
+					complete: callback
+				})
+			}
+
+			function appendPulse() {
+				var menuLi = document.querySelector('li[data-title="stat_additional_service"]');
+
+				var image = document.createElement('img');
+
+				image.id = 'analytics-pulse';
+
+				image.src = '/admin/img/menu_pulse.gif';
+
+				image.style.position = 'absolute';
+				image.style.left = '52px';
+				image.style.top = '50%';
+				image.style.transform = 'translateY(-50%)';
+				image.style.width = '56px';
+				image.style.height = '56px';
+				image.style.pointerEvents = 'none';
+
+				menuLi.appendChild(image);
+				
+			}
+
+			function remove() {
+				document.querySelector('#analytics-tooltip')?.remove();
+				document.querySelector('#analytics-pulse')?.remove();
+			}
+
+			window.addEventListener('resize', () => {
+				if (window.innerWidth < 993) remove()
+				else {
+					analyticsFocus();
+				}
+			})
+
+			document.querySelector('#toggle_button').addEventListener('click', () => {
+				if (isSnbFolded()) remove()
+				else {
+					analyticsFocus();
+				}
+			})
+
+			$('.gui-folder').click(() => {
+				if (isTooltipExist()) remove()
+				else {
+					setTimeout(() => {
+						analyticsFocus();
+					}, 500);
+				}
+			})
+
+			document.querySelector('.nano-content').addEventListener('scroll', () => {
+				var tooltip = document.querySelector('#analytics-tooltip')
+
+				if (tooltip !== null) {
+					var top = document.querySelector('li[data-title="stat_additional_service"]').getBoundingClientRect().top
+
+					if (top === 0) {
+						remove()
+						return
+					}
+
+					tooltip.style.top = top + 14 + 'px';
+				}
+			})
+
+			analyticsFocus();
+		}
+	})
+
+  
+	
+</script></div> <!-- END BASE -->
+
+
+
+<script >
+</script><div class="modal" id="cocoaModal" role="dialog" >
+	<div class="modal-dialog" >
+		<div class="modal-content" ></div>
+	</div>
+</div>
+
+<div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001; adminPop-modal">
+	<div class="modal-dialog" >
+		<div class="modal-content" ></div>
+	</div>
+</div>
+
+<iframe name="hidden_frame" id="hidden_frame" style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px; adminPop-modal" src="./adminPop-modal_files/saved_resource.html"></iframe>
+
+
+
+<script >
+	</script>
+
+<script type="text/javascript" >
+    mixpanel.init('a4939111ea54962dbf95fe89a992eab3', {debug: false});
+    mixpanel.identify('M2022120722883bb351d7e');
+       MIXPANEL.init();
+</script>
+
+<div id="device-breakpoints" ><div class="device-xs visible-xs" data-breakpoint="xs" ></div><div class="device-sm visible-sm" data-breakpoint="sm" ></div><div class="device-md visible-md" data-breakpoint="md" ></div><div class="device-lg visible-lg" data-breakpoint="lg" ></div></div><div class="doz-colorpicker" id="26463nx66S" style="display: none; position: absolute; adminPop-modal"><div class="_picker_wrap colorpicker-element" ><div class="colorpicker dropdown-menu colorpicker-inline colorpicker-visible colorpicker-horizontal colorpicker-with-alpha colorpicker-right colorpicker-no-arrow" ><div class="colorpicker-saturation" ><i ><b ></b></i></div><div class="color-wrap" ><div class="colorpicker-color" ><div ></div></div></div><div class="hue-alpha-wrap" ><div class="colorpicker-hue" ><i ></i></div><div class="colorpicker-alpha" ><i ></i></div></div><div class="colorpicker-selectors" ></div></div><div class="input" ><input type="text" class="dz-form-control" ></div></div></div><div class="doz-colorpicker" id="0Lup114mEK" style="display: none; position: absolute; adminPop-modal"><div class="_picker_wrap colorpicker-element" ><div class="colorpicker dropdown-menu colorpicker-inline colorpicker-visible colorpicker-horizontal colorpicker-with-alpha colorpicker-right colorpicker-no-arrow" ><div class="colorpicker-saturation" ><i ><b ></b></i></div><div class="color-wrap" ><div class="colorpicker-color" ><div ></div></div></div><div class="hue-alpha-wrap" ><div class="colorpicker-hue" ><i ></i></div><div class="colorpicker-alpha" ><i ></i></div></div><div class="colorpicker-selectors" ></div></div><div class="input" ><input type="text" class="dz-form-control" ></div></div></div></body></html>

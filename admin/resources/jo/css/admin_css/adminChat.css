@@ -1,0 +1,102 @@
+/* admin */
+.adminChat {
+    max-width: 1920px;
+    min-width: 600px;
+    height: 100vh;
+}
+
+/* base */
+.adminChat .base {
+    width: 100%;
+    min-height: 100%;
+}
+
+/* 헤더 */
+.adminChat .base .headerbar {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #e5e7eb;
+}
+
+.adminChat .base .leftbar {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex: 1;
+    width: 0;
+}
+
+.adminChat .base .leftbar>div {
+    flex: 1;
+    width: 0;
+    display: flex;
+}
+
+.adminChat .leftbar .menutoggle {
+    border: 1px solid black;
+    display: flex;
+    width: 26px;
+    height: 26px;
+    margin-left: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.adminChat .leftbar .sitename {
+    margin-left: 10px;
+    color: #15181E;
+    font-size: 18px;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.headerbar-right>.header-nav>li {
+    margin-left: 8px;
+}
+
+@media (max-width: 992px) {
+
+    /*header-nav의 자식요소*/
+    .headerbar-right>.headernav:last-child {
+        margin-right: 15px;
+    }
+}
+
+.header-nav>li:first-child {
+    margin-left: 4px;
+}
+
+.header-nav>li>a {
+    position: relative;
+    display: block;
+}
+
+.adminChat .rightbar .clay-button {
+    margin-right: 15px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #15181E;
+    font-size: 14px;
+    line-height: 24px;
+    white-space: nowrap;
+}
+
+.clay-button:hover {
+    background-color: #24282f;
+    color: #fff;
+}
+
+.clay-button:active {
+    background-color: #4b515b;
+}
+
+.clay-button:focus {
+    border: none;
+    color: #fff;
+}

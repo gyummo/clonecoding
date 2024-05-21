@@ -1,0 +1,161 @@
+.nudge_point_modal_back {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.15);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nudge_point_modal_container {
+    width: 540px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0px 25px 80px 0px #4B515B33, 0px 0px 1px 0px #4B515B33;
+    overflow: hidden;
+}
+
+.nudge_point_modal_image_area {
+    width: 100%;
+    height: 255px;
+    position: relative;
+    overflow: hidden;
+}
+
+.nudge_point_modal_image_area > img.image {
+    width: 510px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nudge_point_modal_image_area > img.mo_image {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    width: 330px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nudge_point_modal_image_area > img.background {
+    width: 100%;
+}
+
+.nudge_point_modal_middle {
+    margin: 24px 0;
+    display: flex;
+    padding: 0 24px;
+    gap: 24px;
+}
+
+.nudge_point_modal_middle_title {
+    font-size: 20px;
+    line-height: 28px;
+    color: #15181E;
+    font-weight: 700;
+    min-width: 180px;
+}
+
+.nudge_point_modal_middle_description {
+    font-size: 14px;
+    line-height: 20px;
+    color: #717680;
+    font-weight: 400;
+}
+
+.nudge_point_modal_bottom {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 24px 16px;
+    gap: 8px;
+}
+
+.nudge_point_modal_bottom button {
+    padding: 8px 12px;
+    line-height: 24px;
+    font-size: 14px;
+    border-radius: 8px;
+    transition: 0.1s ease-out;
+}
+
+.nudge_point_modal_bottom button:nth-child(1) {
+    background-color: #fff;
+    color: #4b515b;
+    outline: 1px solid #dbdee3;
+}
+
+.nudge_point_modal_bottom button:nth-child(1):hover {
+    background-color: #F8F9FB;
+}
+
+.nudge_point_modal_bottom button:nth-child(1):active {
+   background-color: #E2E5E9;
+}
+
+.nudge_point_modal_bottom button:nth-child(2) {
+    color: #FFFFFF;
+    background-color: #15181E;
+}
+
+.nudge_point_modal_bottom button:nth-child(2):hover {
+    background-color: #24282f;
+}
+
+.nudge_point_modal_bottom button:nth-child(2):active {
+   background-color: #4b515b;
+}
+
+@media (max-width: 640px) {
+    .nudge_point_modal_back {
+        align-items: flex-end;
+        padding: 12px;
+    }
+
+    .nudge_point_modal_container {
+        width: 100%;
+        max-width: 406px;
+    }
+
+    .nudge_point_modal_middle {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nudge_point_modal_middle_title {
+        font-size: 24px;
+        line-height: 32px;
+        text-align: center;
+        max-width: unset;
+    }
+
+    .nudge_point_modal_middle_description {
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+    }
+
+    .nudge_point_modal_bottom {
+        flex-direction: column-reverse;
+    }
+
+    .nudge_point_modal_bottom button {
+        padding: 12px 16px;
+        font-size: 16px;
+    }
+
+    .nudge_point_modal_image_area > img.background {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .nudge_point_modal_image_area > img.image {
+        display: none;
+    }
+
+    .nudge_point_modal_image_area > img.mo_image {
+        display: block;
+    }
+}
