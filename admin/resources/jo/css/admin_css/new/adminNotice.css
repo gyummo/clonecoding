@@ -1,0 +1,183 @@
+/*----------------------*/
+@media (max-width: 768px) {
+    .li_table>ul.content>li.check {
+        left: 8px;
+    }
+
+    .li_table>ul.content>li.lang_icon {
+        position: absolute;
+        left: 40px;
+        top: 12px;
+    }
+
+    .li_table>ul.content>li.title,
+    .li_table>ul.content>li.author,
+    .li_table>ul.content>li.date {
+        padding-left: 78px;
+    }
+
+    .li_table>ul.content>li.date {
+        clear: both;
+    }
+
+    .li_table>ul.content.gallery>li.title {
+        padding: 28px 0 4px 48px;
+    }
+
+    .li_table>ul.content.gallery>li.based {
+        padding-left: 48px;
+    }
+
+    .li_table>ul.content.gallery>li.date {
+        clear: unset;
+        padding-left: 8px;
+    }
+}
+
+/*----------------------*/
+
+/*----------------------*/
+@keyframes spin {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.spinner-box {
+    height: 1040px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.three-quarter-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid lightslategray;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin .5s linear 0s infinite;
+}
+
+.search-box {
+    margin-bottom: 1px;
+    border-radius: 2px 2px 0 0;
+}
+
+/* mobile 관련 style 시작 */
+#mobile-select-box {
+    overflow-y: scroll;
+    width: 250px;
+    max-height: 326px;
+}
+
+.cont-select {
+    position: relative;
+    width: 100%;
+}
+
+.btn-select {
+    width: 100%;
+    font-size: 12px;
+    line-height: 14px;
+    background-color: #fff;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.mobile-card-container {
+    display: flex;
+    justify-content: end;
+}
+
+.mobile-card {
+    width: 250px;
+    max-height: 326px;
+    position: absolute;
+    z-index: 1000;
+    display: none;
+}
+
+.active .badge-empty {
+    background: #fc5f64;
+}
+
+.on {
+    display: block;
+}
+
+/* mobile 관련 style 끝 */
+/*----------------------*/
+
+/*----------------------*/
+.custom-tooltip.in {
+    opacity: 1;
+}
+
+.custom-tooltip.right {
+    margin-left: 4px;
+    padding: 0;
+}
+
+.custom-tooltip .tooltip-inner {
+    padding: 6px 8px;
+    border-radius: 8px;
+    background-color: #15181E;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    box-shadow: 0 14px 32px 0 rgba(75, 81, 91, 0.12),
+        0 10px 14px 0 rgba(75, 81, 91, 0.06),
+        0 0 0 1px rgba(75, 81, 91, 0.03),
+        0 0 1px 0 rgba(75, 81, 91, 0.20);
+}
+
+/*----------------------*/
+
+/*----------------------*/
+
+#analytics-tooltip button {
+    padding: 4px 12px;
+    line-height: 24px;
+    font-size: 14px;
+    border-radius: 6px;
+    transition: 0.1s ease-out;
+}
+
+.tooltip-close-button {
+    color: #717680;
+    background-color: transparent;
+}
+
+.tooltip-close-button:hover {
+    background-color: #f8f9fb;
+}
+
+.tooltip-close-button:active {
+    background-color: #e2e5e9;
+}
+
+.tooltip-go-button {
+    color: #FFFFFF;
+    background-color: #1A6DFF;
+}
+
+.tooltip-go-button:hover {
+    background-color: #70a2FF;
+}
+
+.tooltip-go-button:active {
+    background-color: #99bdFF;
+}
+
+/*----------------------*/

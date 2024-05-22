@@ -1,0 +1,180 @@
+/*----------------------*/
+#fileupload_profile_img {
+	position: relative;
+	width: 72px;
+	height: 72px;
+	margin: 0 auto;
+}
+
+#fileupload_profile_img {
+	width: 72px;
+	height: 72px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.profile-info .form .form-group.custom-label>label {
+	position: static;
+	word-wrap: break-word;
+}
+
+/* 활동 정보 아이콘 */
+.active-info-icons {
+	overflow: hidden;
+}
+
+.active-info-icons img,
+.active-info-icons i {
+	float: right;
+	margin-top: 12px;
+	margin-right: 20px;
+	width: 25px;
+	height: 25px;
+}
+
+.active-info-icons [class*=" zmdi-"],
+[class^=zmdi-] {
+	font-size: 2em;
+}
+
+/*----------------------*/
+
+/*----------------------*/
+.custom-tooltip.in {
+	opacity: 1;
+}
+
+.custom-tooltip.right {
+	margin-left: 4px;
+	padding: 0;
+}
+
+.custom-tooltip .tooltip-inner {
+	padding: 6px 8px;
+	border-radius: 8px;
+	background-color: #15181E;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 16px;
+	box-shadow: 0 14px 32px 0 rgba(75, 81, 91, 0.12),
+		0 10px 14px 0 rgba(75, 81, 91, 0.06),
+		0 0 0 1px rgba(75, 81, 91, 0.03),
+		0 0 1px 0 rgba(75, 81, 91, 0.20);
+}
+
+/*----------------------*/
+
+/*----------------------*/
+
+#analytics-tooltip button {
+	padding: 4px 12px;
+	line-height: 24px;
+	font-size: 14px;
+	border-radius: 6px;
+	transition: 0.1s ease-out;
+}
+
+.tooltip-close-button {
+	color: #717680;
+	background-color: transparent;
+}
+
+.tooltip-close-button:hover {
+	background-color: #f8f9fb;
+}
+
+.tooltip-close-button:active {
+	background-color: #e2e5e9;
+}
+
+.tooltip-go-button {
+	color: #FFFFFF;
+	background-color: #1A6DFF;
+}
+
+.tooltip-go-button:hover {
+	background-color: #70a2FF;
+}
+
+.tooltip-go-button:active {
+	background-color: #99bdFF;
+}
+
+/*----------------------*/
+
+/*----------------------*/
+.dropdown-menu-wrapper {
+	position: absolute;
+	right: -6.5px;
+	bottom: 4px;
+}
+
+.dropdown-menu-wrapper .icon-btn {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #DBDEE3;
+	border-radius: 100%;
+	padding: 6px;
+	background-color: #FFFFFF;
+	color: #717680;
+}
+
+.dropdown-menu-wrapper .icon-btn:hover {
+	background-color: #F8F9FB;
+}
+
+.dropdown-menu-wrapper .icon-btn:active {
+	background-color: #E2E5E9;
+}
+
+.dropdown-menu-wrapper .dropdown-menu-list {
+	position: absolute;
+	padding: 4px;
+	margin: 4px 0 0;
+	list-style: none;
+	white-space: nowrap;
+	border-radius: 8px;
+	background-color: #FFFFFF;
+	box-shadow: 0 14px 32px 0 rgba(75, 81, 91, 0.12),
+		0 10px 14px 0 rgba(75, 81, 91, 0.06),
+		0 0 0 1px rgba(75, 81, 91, 0.03),
+		0 0 1px 0 rgba(75, 81, 91, 0.20);
+	z-index: 1;
+}
+
+.dropdown-menu-wrapper .dropdown-menu-item {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 8px;
+	min-width: 132px;
+	border-radius: 6px;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 24px;
+	color: #15181E;
+	user-select: none;
+	cursor: pointer;
+}
+
+.dropdown-menu-wrapper .dropdown-menu-item i {
+	flex-shrink: 0;
+	font-size: 16px;
+}
+
+.dropdown-menu-wrapper .dropdown-menu-item:not(.dropdown-menu-item--disabled):hover {
+	background-color: #F8F9FB;
+}
+
+.dropdown-menu-wrapper .dropdown-menu-item--emphasis {
+	color: #DD3344;
+}
+
+.dropdown-menu-wrapper .dropdown-menu-item--disabled {
+	color: #BCC0C6;
+	cursor: not-allowed;
+}
+
+/*----------------------*/

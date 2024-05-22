@@ -1,0 +1,344 @@
+<script id="templateProdFilterLI" type="application/templte">
+				<li class="dropdown-item" data-code="{prod_code}">
+					<div class="checkbox checkbox-styled dropdown-handle">
+						<label>
+							<input type="checkbox" data-name="{prod_name}" value="{prod_code}" onchange="ANALYTICS_MANAGE.checkedFilterProd('{prod_code}', '{prod_name}', this.checked);" {checked}>
+							<span class="check-item">{prod_name}</span>
+						</label>
+					</div>
+				</li>
+			</script>
+					<script id="templateProdFilterLI_LIMIT" type="application/templte">
+				<li class="dropdown-item text-center">···</li>
+			</script>
+					<script id="templateProdFilterSelectedLI" type="application/templte">
+				<li class="selected-item dropdown-item search-choice" data-code="{prod_code}" data-name="{prod_name}">
+					<input type="hidden" name="filter_prod_code[]" value="{prod_code}">
+					{prod_name}
+					<a class="_btn_remove_prod_code search-choice-close" data-code="{prod_code}" class="_btn_remove_prod_code"></a>
+				</li>
+			</script>
+					<script id="templateProdCategoryFilterLI" type="application/templte">
+				<li class="_prod_category_selected_item selected-item dropdown-item search-choice" data-code="{category_code}" data-name="{category_name}">
+					{category_name}
+					<a class="_btn_remove_category_code search-choice-close" data-code="{category_code}"></a>
+				</li>
+			</script>
+
+
+
+		<script>
+			$(window).on("keyup", function (e) {
+				if ($.cocoaDialog.isOpen()) {
+					$.cocoaDialog.modalControl(e);
+				}
+				return false;
+			});</script>
+            
+            <script>
+			(function () {
+				let body = document.body;
+				let btn = document.querySelector('#toggle_button');
+				let sidebar_mini_class = 'sidebar-mini';
+				let user_sm_status = getCookie('sm_status');
+				let window_width = window.innerWidth;
+				setPrimarySideMenu();
+
+				btn.addEventListener('click', handleToggleButton);
+				btn.addEventListener('touch', handleToggleButton);
+
+				//만약 사용자가 버튼을 누르지 않았을때만 이 이벤트 리스너를 사용할것임.
+				window.onresize = () => {
+					window_width = window.innerWidth;
+					if (user_sm_status !== 'h' && user_sm_status !== 's') {
+						resizeWindow(window_width)
+					}
+				}
+
+				function handleToggleButton() {
+					if (user_sm_status == 'h') {
+						setSideMenu('show');
+					} else {
+						setSideMenu('hide');
+					}
+				}
+
+				function resizeWindow(window_width) {
+					if (window_width> 1280 || window_width < 991) {
+						body.classList.remove(sidebar_mini_class);
+					}
+					//992~1279 일때
+					else {
+						body.classList.add(sidebar_mini_class)
+					}
+				}
+
+				function setPrimarySideMenu() {
+					if (window_width> 1280 && user_sm_status !== 'h' || window_width < 991) {
+						body.classList.remove(sidebar_mini_class);
+					}
+					//992~1279 일때
+					else if (window_width <= 1280 && window_width>= 991) {
+						if (user_sm_status == 's') body.classList.remove(sidebar_mini_class);
+						else body.classList.add(sidebar_mini_class)
+					}
+					else {
+						body.classList.add(sidebar_mini_class)
+					}
+				}
+
+				function setSideMenu(show) {
+					if (show == "show") {
+						setCookie('sm_status', 's', 1);
+						body.classList.remove(sidebar_mini_class);
+						user_sm_status = 's'
+					}
+					else {
+						setCookie('sm_status', 'h', 1);
+						body.classList.add(sidebar_mini_class);
+						user_sm_status = 'h';
+						// 사이드바 접기 버튼을 누른 순간에 바로 접힐 수 있도록 10ms동안 임시 클래스 추가로 hover 이벤트를 방지
+						let fold_area = document.querySelector('#menubar ~ .fold_area');
+						fold_area.classList.add('disable-hover');
+						setTimeout(() => { fold_area.classList.remove('disable-hover') }, 10);
+					}
+				}
+
+				$('._lang_button').off('click').on('click', function () {
+					let that = this;
+					if ($.cocoaStickerModal.isOpen()) {
+						$.cocoaStickerModal.close();
+					}
+					$.cocoaStickerModal.open({
+						target: that,
+						id: 'langListModal',
+						html: $('#langListOrigin').html(),
+						width: '152px',
+						bottom: 23,
+						left: 21
+					});
+				});
+
+				const $notificationButton = $('._gnb_notification_button');
+
+				const interval = getNotifyBadgeInterval($notificationButton);
+				const notifyHandler = getNotifyHandler();
+
+				notifyHandler.setInterval(interval);
+
+				interval.force();
+				interval.start();
+
+				$notificationButton.on('click', function () {
+					notifyHandler.toggleModal(interval);
+				});
+			})();
+
+		</script> 
+        <script>
+			window.addEventListener('load', () => {
+				var svShowAnalyticsTooltip = 'Y';
+
+				if (svShowAnalyticsTooltip === 'Y') {
+					var isClosed = false;
+
+					var isAppending = false;
+
+					function isSnbFolded() {
+						return document.body.classList.contains('sidebar-mini');
+					}
+
+					function isMobile() {
+						return window.innerWidth < 993;
+					}
+
+					function isTooltipExist() {
+						return document.querySelector('#analytics-tooltip') !== null;
+					}
+
+					function isStatMenuFolded() {
+						return $('li[data-title="stat"]> ul').css('display') === 'none';
+					}
+
+					function analyticsFocus() {
+						if (
+							isClosed ||
+							isSnbFolded() ||
+							isMobile() ||
+							isTooltipExist() ||
+							isStatMenuFolded() ||
+							isAppending
+						) {
+							return;
+						}
+
+						scrollToMenuLi()
+					}
+
+					function scrollToMenuLi() {
+						var menuLi = document.querySelector('li[data-title="stat_additional_service"]');
+
+						var menuLiTop = menuLi.getBoundingClientRect().top;
+						var toScroll = Math.max(0, menuLiTop - window.innerHeight) + 28 + 144;
+
+						document.querySelector('.nano-content').scrollTo({ top: toScroll, behavior: 'smooth' })
+
+						appendTooltip()
+						appendPulse()
+					}
+
+					function appendTooltip() {
+						isAppending = true;
+						setTimeout(() => {
+							var menuLi = document.querySelector('li[data-title="stat_additional_service"]');
+							var menuLiTop = menuLi.getBoundingClientRect().top + 14;
+
+							var focusElement = document.createElement('div');
+
+							focusElement.id = 'analytics-tooltip'
+
+							focusElement.style.position = 'fixed';
+							focusElement.style.left = '224px'
+							focusElement.style.top = menuLiTop + 'px';
+							focusElement.style.transform = 'translate(12px, -50%)';
+							focusElement.style.padding = '16px';
+							focusElement.style.borderRadius = '12px';
+							focusElement.style.backgroundColor = '#15181E';
+							focusElement.style.width = "240px";
+
+							var topText = document.createElement('p');
+
+							topText.style.color = '#FFFFFF';
+							topText.style.fontSize = '16px';
+							topText.style.fontWeight = '700';
+							topText.style.lineHeight = '24px';
+							topText.style.marginBottom = '12px';
+							topText.textContent = '부가 서비스 메뉴가 합쳐졌어요';
+
+							focusElement.appendChild(topText);
+
+							var middleText = document.createElement('p');
+
+							middleText.style.color = '#FFFFFF';
+							middleText.style.fontSize = '14px';
+							middleText.style.lineHeight = '20px';
+							middleText.style.marginBottom = '24px';
+							middleText.innerHTML = '더 다양한 데이터 분석 인사이트를 <br/>만나보세요'
+
+							focusElement.appendChild(middleText);
+
+							var bottomButtonArea = document.createElement('div');
+
+							bottomButtonArea.style.display = 'flex';
+							bottomButtonArea.style.justifyContent = 'flex-end';
+							bottomButtonArea.style.gap = '6px';
+
+							var closeButton = document.createElement('button');
+							closeButton.classList.add('tooltip-close-button');
+							closeButton.textContent = '닫기';
+							closeButton.id = 'analytics-tooltip-close';
+							bottomButtonArea.appendChild(closeButton);
+
+							var goButton = document.createElement('button');
+							goButton.id = 'analytics-tooltip-go';
+							goButton.classList.add('tooltip-go-button');
+							goButton.textContent = '이동';
+							bottomButtonArea.appendChild(goButton);
+
+							focusElement.appendChild(bottomButtonArea);
+
+							var arrowimg = `<img style="position: absolute;left: -6px;top: 50%;transform: translateY(-50%);" width="6" height="12" viewBox="0 0 6 12" fill="none" src="_blank">
+									</img>`
+
+							focusElement.innerHTML += arrowimg;
+
+							document.body.appendChild(focusElement);
+
+							document.querySelector('#analytics-tooltip-close').addEventListener('click', () => closeAnalyticsTooltip(() => {
+								isClosed = true;
+								remove();
+							}));
+							document.querySelector('#analytics-tooltip-go').addEventListener('click', () => closeAnalyticsTooltip(() => {
+								location.href = '/admin/stat/additional_service';
+							}));
+
+							isAppending = false;
+						}, 500);
+					}
+
+					function closeAnalyticsTooltip(callback) {
+						$.ajax({
+							url: '/admin/ajax/menu/close_analytics_tooltip.cm',
+							type: 'POST',
+							complete: callback
+						})
+					}
+
+					function appendPulse() {
+						var menuLi = document.querySelector('li[data-title="stat_additional_service"]');
+
+						var image = document.createElement('img');
+
+						image.id = 'analytics-pulse';
+
+						image.src = '/admin/img/menu_pulse.gif';
+
+						image.style.position = 'absolute';
+						image.style.left = '52px';
+						image.style.top = '50%';
+						image.style.transform = 'translateY(-50%)';
+						image.style.width = '56px';
+						image.style.height = '56px';
+						image.style.pointerEvents = 'none';
+
+						menuLi.appendChild(image);
+
+					}
+
+					function remove() {
+						document.querySelector('#analytics-tooltip')?.remove();
+						document.querySelector('#analytics-pulse')?.remove();
+					}
+
+					window.addEventListener('resize', () => {
+						if (window.innerWidth < 993) remove()
+						else {
+							analyticsFocus();
+						}
+					})
+
+					document.querySelector('#toggle_button').addEventListener('click', () => {
+						if (isSnbFolded()) remove()
+						else {
+							analyticsFocus();
+						}
+					})
+
+					$('.gui-folder').click(() => {
+						if (isTooltipExist()) remove()
+						else {
+							setTimeout(() => {
+								analyticsFocus();
+							}, 500);
+						}
+					})
+
+					document.querySelector('.nano-content').addEventListener('scroll', () => {
+						var tooltip = document.querySelector('#analytics-tooltip')
+
+						if (tooltip !== null) {
+							var top = document.querySelector('li[data-title="stat_additional_service"]').getBoundingClientRect().top
+
+							if (top === 0) {
+								remove()
+								return
+							}
+
+							tooltip.style.top = top + 14 + 'px';
+						}
+					})
+
+					analyticsFocus();
+				}
+			})
+		</script>  
