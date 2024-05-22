@@ -1,588 +1,153 @@
 <!DOCTYPE html>
-<html lang="ko" >
+<html lang="ko">
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" type="text/css" href="./adminPop_files/bootstrap.css" >
-	<link rel="stylesheet" type="text/css" href="./adminPop_files/dashboard.css" >
-	<link rel="stylesheet" type="text/css" href="./adminPop_files/tailwind.css" >
-	<link rel="stylesheet" type="text/css" href="./adminPop_files/admin.css" >
+	<link rel="stylesheet" type="text/css" href="./adminPop_files/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./adminPop_files/dashboard.css">
+	<link rel="stylesheet" type="text/css" href="./adminPop_files/tailwind.css">
+	<link rel="stylesheet" type="text/css" href="./adminPop_files/admin.css">
 </head>
 
 
-<body class="menubar-hoverable header-fixed menubar-pin sidebar-mini" style="adminPop">
-    <input type="hidden" id="USE_OMS" value="on" style="adminPop">
-                <!-- BEGIN BASE-->
-    <div id="dashboard_loader" class="se-pre-con" style="display: none; adminPop">
-        <div class="page-loader-spinner" style="adminPop">
-            <div class="double-bounce1" style="adminPop"></div>
-            <div class="double-bounce2" style="adminPop"></div>
-        </div>
-        <div class="progress" style="adminPop">
-            <div class="progress-bar" role="progressbar" style="width: 70%; adminPop">
-                <label style="adminPop">70%</label>
-            </div>
-        </div>
-    </div>
-    <div id="base" style="adminPop">
-            
-    <script style="adminPop">
-        document.addEventListener('DOMContentLoaded', function() {
-            const alertBox = document.querySelector('#alertBox');
-            const contentArea = document.querySelector('#content');
-            alertBox?.classList.remove('alert__wrap-fixed');
-            alertBox?.classList.add('alert__wrap');
-            if ( contentArea && alertBox ) contentArea.prepend(alertBox);
-        });
-    </script>        <!-- END OFFCANVAS LEFT --><script type="text/javascript" style="adminPop">
-	$(function(){
-		SADMIN_MENU_ALERT.openAlert();
-	});
-</script>
-<header class="top_header" id="header" style="adminPop">
-	<div class="headerbar" style="adminPop">
-		<div class="headerbar-left" style="adminPop">
-			<ul class="header-nav header-nav-options" style="adminPop">
-				<li class="hidden-lg hidden-md" style="adminPop">
-					<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);" style="adminPop">
-                        <img src="./adminPop_files/icon-bo-menu-01.svg" style="adminPop">
-					</a>
-				</li>
-				<li class="header-nav-brand" style="adminPop">
-					<div class="brand-holder" style="adminPop">
-						<span class="location_text" style="adminPop">
-							<a href="https://qjfhdnaos51106.imweb.me/admin/config/popup" style="adminPop">adminPop·배너</a>						</span>
-					</div>
-				</li>
-			</ul>
+<body class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
+	<input type="hidden" id="USE_OMS" value="on">
+	<!-- BEGIN BASE-->
+	<div id="dashboard_loader" class="se-pre-con" style="display: none;">
+		<div class="page-loader-spinner">
+			<div class="double-bounce1"></div>
+			<div class="double-bounce2"></div>
 		</div>
-
-		<div class="headerbar-right" style="adminPop">
-			<ul class="header-nav header-nav-options _option_list" style="adminPop">
-				<li style="adminPop">
-					<a class="btn btn-default-bright hidden-xs" href="https://qjfhdnaos51106.imweb.me/" target="_blank" style="adminPop">사이트 확인하기</a>
-					<a class="btn btn-bright hidden-sm hidden-md hidden-lg" style="padding: 4px 6px; adminPop" href="https://qjfhdnaos51106.imweb.me/" target="_blank"><i class="btl bt-external-link vertical-middle" style="adminPop"></i></a>
-				</li>
-				<li style="adminPop">
-											<a class="btn btn-primary hidden-xs" onclick="location.href=&#39;/admin/config/popup/?mode=add&#39;" style="adminPop">adminPop 추가</a>
-										<a class="btn btn-bright hidden-sm hidden-md hidden-lg" style="padding: 4px 6px; adminPop" onclick="location.href=&#39;/admin/config/popup/?mode=add&#39;"><i class="btl bt-plus vertical-middle" style="adminPop"></i></a>
-				</li>
-			</ul><!--end .header-nav-options -->
-		</div><!--끝 #header-navbar-collapse -->
-
-		<!--끝 #header-navbar-collapse -->
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" style="width: 70%;">
+				<label>70%</label>
+			</div>
+		</div>
 	</div>
-</header>
-<!-- BEGIN CONTENT-->
-<div id="content" style="adminPop"><div id="alertBox" class="alert__wrap" style="adminPop">    </div>
-	<section style="adminPop">
-		<div class="section-body" style="adminPop">
-							<div class="row" id="popup_list" style="adminPop">
-											<div class="ma-item col-md-3 col-sm-6 col-xs-12" style="adminPop">
-							<div class="card" style="adminPop">
-								<div class="card-head" style="adminPop">
-									<header style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/config/popup?idx=227166&amp;mode=add" style="adminPop"> 바보</a>
-																					<span class="badge style-gray" style="adminPop">중지</span>
-																			</header>
-									<div class="tools" style="adminPop">
-										<div class="btn-group" style="adminPop">
-											<div class="btn-group" style="adminPop">
-																								<a href="https://qjfhdnaos51106.imweb.me/admin/config/popup#" class="btn btn-icon-toggle dropdown-toggle" data-toggle="dropdown" style="adminPop"><i class="zmdi zmdi-more" style="adminPop"></i></a>
-												<ul class="dropdown-menu animation-dock pull-right menu-card-styling" role="menu" style="text-align: left; adminPop">
-													<li style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/config/popup?idx=227166&amp;mode=add" style="adminPop">수정</a></li>
-													<li class="divider" style="adminPop"></li>
-													<li style="adminPop"><a href="javascript:;" onclick="CONFIG_POPUP.deletePopup(&#39;227166&#39;)" style="adminPop">삭제</a></li>
+	<div id="base">
+
+		<header class="top_header" id="header">
+			<div class="headerbar">
+				<div class="headerbar-left">
+					<ul class="header-nav header-nav-options">
+						<li class="hidden-lg hidden-md">
+							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar"
+								href="javascript:void(0);">
+								<img src="./adminPop_files/icon-bo-menu-01.svg">
+							</a>
+						</li>
+						<li class="header-nav-brand">
+							<div class="brand-holder">
+								<span class="location_text">
+									<a href="https://qjfhdnaos51106.imweb.me/admin/config/popup"
+										>adminPop·배너</a> </span>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="headerbar-right">
+					<ul class="header-nav header-nav-options _option_list">
+						<li>
+							<a class="btn btn-default-bright hidden-xs" href="https://qjfhdnaos51106.imweb.me/"
+								target="_blank">사이트 확인하기</a>
+							<a class="btn btn-bright hidden-sm hidden-md hidden-lg" style="padding: 4px 6px;"
+								href="https://qjfhdnaos51106.imweb.me/" target="_blank"><i
+									class="btl bt-external-link vertical-middle"></i></a>
+						</li>
+						<li>
+							<a class="btn btn-primary hidden-xs"
+								onclick="location.href=&#39;/admin/config/popup/?mode=add&#39;"
+								>adminPop 추가</a>
+							<a class="btn btn-bright hidden-sm hidden-md hidden-lg" style="padding: 4px 6px;"
+								onclick="location.href=&#39;/admin/config/popup/?mode=add&#39;"><i
+									class="btl bt-plus vertical-middle"></i></a>
+						</li>
+					</ul><!--end .header-nav-options -->
+				</div><!--끝 #header-navbar-collapse -->
+
+				<!--끝 #header-navbar-collapse -->
+			</div>
+		</header>
+		<!-- BEGIN CONTENT-->
+		<div id="content">
+			<div id="alertBox" class="alert__wrap"> </div>
+			<section>
+				<div class="section-body">
+					<div class="row" id="popup_list">
+						<div class="ma-item col-md-3 col-sm-6 col-xs-12">
+							<div class="card">
+								<div class="card-head">
+									<header><a
+											href="https://qjfhdnaos51106.imweb.me/admin/config/popup?idx=227166&amp;mode=add"
+											> 바보</a>
+										<span class="badge style-gray">중지</span>
+									</header>
+									<div class="tools">
+										<div class="btn-group">
+											<div class="btn-group">
+												<a href="https://qjfhdnaos51106.imweb.me/admin/config/popup#"
+													class="btn btn-icon-toggle dropdown-toggle" data-toggle="dropdown"
+													><i class="zmdi zmdi-more"></i></a>
+												<ul class="dropdown-menu animation-dock pull-right menu-card-styling"
+													role="menu" style="text-align: left;">
+													<li><a
+															href="https://qjfhdnaos51106.imweb.me/admin/config/popup?idx=227166&amp;mode=add"
+															>수정</a></li>
+													<li class="divider"></li>
+													<li><a href="javascript:;"
+															onclick="CONFIG_POPUP.deletePopup(&#39;227166&#39;)"
+															>삭제</a></li>
 												</ul>
-																							</div>
+											</div>
 										</div>
 									</div>
 								</div>
-																	<a href="https://qjfhdnaos51106.imweb.me/admin/config/popup?idx=227166&amp;mode=add" style="adminPop">										<img class="" src="./adminPop_files/15eb43b772070.jpg" style="width: 100%; adminPop"></a>
-																									<div class="card-body" style="adminPop">
-									<p style="adminPop">
-										기간: 2024-05-21 19:22 ~ 2024-05-21 19:22									</p>
-									<p style="adminPop">
-										위치: 											홈 화면																			</p>
-									<p style="adminPop">
+								<a href="https://qjfhdnaos51106.imweb.me/admin/config/popup?idx=227166&amp;mode=add"
+									> <img class="" src="./adminPop_files/15eb43b772070.jpg"
+										style="width: 100%;"></a>
+								<div class="card-body">
+									<p>
+										기간: 2024-05-21 19:22 ~ 2024-05-21 19:22 </p>
+									<p>
+										위치: 홈 화면 </p>
+									<p>
 										대상:
-										<i class="btl bt-desktop" style="adminPop"></i> 									</p>
+										<i class="btl bt-desktop"></i>
+									</p>
 								</div>
 							</div>
 						</div>
-									</div>
 					</div>
-	</section><!--섹션 끝 -->
-</div>
-<script style="adminPop">	
-			$(window).on("keyup", function(e){
-				if ( $.cocoaDialog.isOpen() ) {
-					$.cocoaDialog.modalControl(e);
-				}
-				return false;
-			});</script>
-<!-- BEGIN MENUBAR-->
-<button type="button" class="hidden-lg hidden-md toggle-btn" data-dismiss="menubar" style="adminPop">
-	<span class="sr-only" style="adminPop">Toggle navigation</span>
-    <img src="./adminPop_files/icon-bo-close.svg" style="adminPop">
-</button>
-
-<div id="menubar" class="animate" style="adminPop">
-	<div class="nano has-scrollbar" style="height: 865px; adminPop"><div class="nano-content" tabindex="0" style="right: -17px; adminPop"><div class="menubar-scroll-panel" style="padding-bottom: 1px; adminPop">
-		<div class="region-wrap full-width" style="adminPop">
-			<a href="javascript:" class="holder global_icon_menu dropdown-toggle" data-toggle="dropdown" aria-expanded="true" style="adminPop">
-				<div class="icon-wrap" style="adminPop">
-					<img src="./adminPop_files/flag_kr_circle.png" class="region-icon" style="adminPop">
 				</div>
-				<div class="brand-holder" style="adminPop">
-					<span class="title_controls" style="adminPop">왓이님의 웹사이트</span>
-					<span class="icon" style="adminPop">
-						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" style="adminPop">
-                            <path d="M6 12L10 8.00003L6 4.00003" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="adminPop"></path>
-						</svg>
-					</span>
-				</div>
-			</a>
-			<ul class="dropdown-menu dropdown-menu-new global_setting animation-dock menu-card-styling" style="adminPop">					<li class="holder " style="adminPop">
-						<a href="https://qjfhdnaos51106.imweb.me/admin/config/popup" style="adminPop">
-							<div class="tabled" style="adminPop">
-								<div class="table-cell vertical-middle width-1" style="adminPop">
-									<img width="30" height="30" src="./adminPop_files/flag_kr_circle.png" style="adminPop">
-								</div>
-								<div class="table-cell vertical-middle domain" style="line-height: 1.3; adminPop">
-									<div class="inline-blocked" style="adminPop">
-										<span class="domain_name" style="adminPop">왓이님의 웹사이트</span>
-									</div>
-									<span data-original-title="일반 방문자의 접속이 제한됩니다. 글로벌 버전으로 업그레이드 해주세요" data-toggle="tooltip" class="badge" data-placement="top" style="margin-left: 5px; vertical-align: top; adminPop">미결제</span>
-																			<div class="text-gray-bright text-12" style="adminPop">qjfhdnaos51106.imweb.me</div>
-																	</div>
-							</div>
-						</a>
-						<div class="tools" style="adminPop">
-													</div>
-					</li>
-					<li class="add-unit" style="adminPop"><a href="javascript:;" onclick="SITE_MANAGE.openAddUnit(&#39;S20240516cc656761618e8&#39;)" class="text-secondary addunit" style="display: flex; adminPop"><svg style="margin-right: 8px; adminPop" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M7.99992 3.3335V12.6668M3.33325 8.00016H12.6666" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="adminPop"></path></svg> 새 언어 사이트 추가</a></li></ul>		</div>
-		<ul id="main-menu" class="gui-controls" style="adminPop"><li data-prevent-menu-click="true" style="adminPop"><a href="javascript:;" class="_gnb_notification_button gnb_notification_button" style="adminPop"><div class="gui-icon" style="adminPop"><i class="db-bell" style="adminPop"></i></div><span class="title title_controls" style="adminPop">알림</span><span class="_badge badge_icon badge_count">1</span></a></li><li class="" data-title="design_mode" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/design" style="adminPop"><div class="gui-icon" style="adminPop"><i class="db-wand" style="adminPop"></i></div><span class="title title_controls" style="adminPop">디자인 모드</span></a></li><li class="" data-title="preview" style="adminPop"><a class="external-url" href="https://qjfhdnaos51106.imweb.me/" target="_blank" style="adminPop"><div class="gui-icon" style="adminPop"><i class="db-preview" style="adminPop"></i></div><span class="title title_controls" style="adminPop">사이트 바로가기</span></a></li><li class="spacer" style="adminPop"></li><li class="top-menu" style="adminPop"><div style="adminPop"><span style="adminPop">사이트 관리</span><a href="javascript:;" class="shop-extend" onclick="DASHBOARD.openSiteManagementDialog(this);" data-original-title="쇼핑·예약 기능설정" data-toggle="tooltip" data-placement="right" data-trigger="hover" data-template="&lt;div class=&quot;tooltip custom-tooltip&quot;&gt;&lt;div class=&quot;tooltip-inner&quot;&gt;&lt;/div&gt;&lt;/div&gt;" style="adminPop"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" style="adminPop"><path d="M7.99998 8.6665C8.36817 8.6665 8.66665 8.36803 8.66665 7.99984C8.66665 7.63165 8.36817 7.33317 7.99998 7.33317C7.63179 7.33317 7.33331 7.63165 7.33331 7.99984C7.33331 8.36803 7.63179 8.6665 7.99998 8.6665Z" fill="#4B515B" style="adminPop"></path><path d="M7.99998 3.99984C8.36817 3.99984 8.66665 3.70136 8.66665 3.33317C8.66665 2.96498 8.36817 2.6665 7.99998 2.6665C7.63179 2.6665 7.33331 2.96498 7.33331 3.33317C7.33331 3.70136 7.63179 3.99984 7.99998 3.99984Z" fill="#4B515B" style="adminPop"></path><path d="M7.99998 13.3332C8.36817 13.3332 8.66665 13.0347 8.66665 12.6665C8.66665 12.2983 8.36817 11.9998 7.99998 11.9998C7.63179 11.9998 7.33331 12.2983 7.33331 12.6665C7.33331 13.0347 7.63179 13.3332 7.99998 13.3332Z" fill="#4B515B" style="adminPop"></path><path d="M7.99998 8.6665C8.36817 8.6665 8.66665 8.36803 8.66665 7.99984C8.66665 7.63165 8.36817 7.33317 7.99998 7.33317C7.63179 7.33317 7.33331 7.63165 7.33331 7.99984C7.33331 8.36803 7.63179 8.6665 7.99998 8.6665Z" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="adminPop"></path><path d="M7.99998 3.99984C8.36817 3.99984 8.66665 3.70136 8.66665 3.33317C8.66665 2.96498 8.36817 2.6665 7.99998 2.6665C7.63179 2.6665 7.33331 2.96498 7.33331 3.33317C7.33331 3.70136 7.63179 3.99984 7.99998 3.99984Z" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="adminPop"></path><path d="M7.99998 13.3332C8.36817 13.3332 8.66665 13.0347 8.66665 12.6665C8.66665 12.2983 8.36817 11.9998 7.99998 11.9998C7.63179 11.9998 7.33331 12.2983 7.33331 12.6665C7.33331 13.0347 7.63179 13.3332 7.99998 13.3332Z" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="adminPop"></path></svg></a></div></li><li class="" data-title="dashboard" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin//" style="adminPop"><div class="gui-icon" style="adminPop"><i class="db-dashboard" style="adminPop"></i></div><span class="title title_controls" style="adminPop">대시보드</span></a></li><li class="gui-folder" data-title="member" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/member" class="sidebar-nav-menu" onclick="return false;" style="adminPop"><div class="gui-icon" style="adminPop"><i class="db-user" style="adminPop"></i></div><span class="title title_controls" style="adminPop">사용자 관리</span></a><ul style="adminPop"><li class="  " data-title="member_list" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/member/list" style="adminPop"><span class="title title_controls" style="adminPop">사용자 목록</span></a></li><li class="  " data-title="member_msg" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/member/send" style="adminPop"><span class="title title_controls" style="adminPop">메시지 보내기</span></a></li><li class="  " data-title="member_permission" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/member/permission" style="adminPop"><span class="title title_controls" style="adminPop">운영진</span></a></li><li class="  " data-title="member_mail" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/member/mail" style="adminPop"><span class="title title_controls" style="adminPop">자동 메일</span></a></li><li class="  " data-title="member_talk" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/member/kakao_friend" style="adminPop"><span class="title title_controls" style="adminPop">친구톡 보내기</span></a></li><li class="  " data-title="member_sms" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/member/sms" style="adminPop"><span class="title title_controls" style="adminPop">SMS·알림톡</span></a></li></ul></li><li class="" data-title="crm_campaigns" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/crm_campaigns" style="adminPop"><div class="gui-icon" style="adminPop"><i class="db-crm-campaigns" style="adminPop"></i></div><span class="title title_controls" style="adminPop">CRM 캠페인 자동화</span><span class="badge_new" style="adminPop">New</span></a></li><li class="" data-title="crm" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/crm_marketing" style="adminPop"><div class="gui-icon" style="adminPop"><i class="db-crm" style="adminPop"></i></div><span class="title title_controls" style="adminPop">고객 행동 관리</span></a></li><li class="gui-folder" data-title="shopping" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/shopping" class="sidebar-nav-menu" onclick="return false;" style="adminPop"><div class="gui-icon" style="adminPop"><i class="db-shopping-bag" style="adminPop"></i></div><span class="title title_controls" style="adminPop">쇼핑</span></a><ul style="adminPop"><li class="  " data-title="shopping_product" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/product" style="adminPop"><span class="title title_controls" style="adminPop">상품</span></a></li><li class="  " data-title="shopping_interlocking" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/interlocking" style="adminPop"><span class="title title_controls" style="adminPop">연동 상품</span><span class="badge_beta" style="adminPop">Beta</span></a></li><li class="  " data-title="shopping_order_v1" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/order-v1" style="adminPop"><span class="title title_controls" style="adminPop">주문관리 v2</span><span class="badge_new" style="adminPop">New</span></a></li><li class="  " data-title="shopping_regularly" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/regularly" style="adminPop"><span class="title title_controls" style="adminPop">정기구독</span></a></li><li class="  " data-title="shopping_gift" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/gift" style="adminPop"><span class="title title_controls" style="adminPop">선물하기</span><span class="badge_new" style="adminPop">New</span></a></li><li class="  " data-title="shopping_review" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/review" style="adminPop"><span class="title title_controls" style="adminPop">구매평</span></a></li><li class="  " data-title="shopping_answers" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/answers" style="adminPop"><span class="title title_controls" style="adminPop">문의</span></a></li><li class="  " data-title="member_mileage" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/mileage" style="adminPop"><span class="title title_controls" style="adminPop">적립금</span></a></li><li class="  " data-title="shopping_coupon" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/coupon" style="adminPop"><span class="title title_controls" style="adminPop">쿠폰</span></a></li><li class="  " data-title="shopping_shipping" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/shipping" style="adminPop"><span class="title title_controls" style="adminPop">배송설정</span></a></li><li class="  " data-title="shopping_config" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/config" style="adminPop"><span class="title title_controls" style="adminPop">환경설정</span></a></li></ul></li><li class="gui-folder animated animated-hidden" data-title="booking" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/booking" class="sidebar-nav-menu" onclick="return false;" style="adminPop"><div class="gui-icon" style="adminPop"><i class="db-calendar" style="adminPop"></i></div><span class="title title_controls" style="adminPop">예약</span></a><ul style="adminPop"><li class="  " data-title="booking_product" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/booking/product" style="adminPop"><span class="title title_controls" style="adminPop">객실·사이트</span></a></li><li class="  " data-title="booking_order_cal" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/booking/order_cal" style="adminPop"><span class="title title_controls" style="adminPop">예약 현황</span></a></li><li class="  " data-title="booking_order" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/booking/order" style="adminPop"><span class="title title_controls" style="adminPop">예약 신청</span></a></li><li class="  " data-title="booking_review" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/booking/review" style="adminPop"><span class="title title_controls" style="adminPop">후기</span></a></li><li class="  " data-title="booking_answers" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/booking/answers" style="adminPop"><span class="title title_controls" style="adminPop">문의</span></a></li><li class="  " data-title="booking_option" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/booking/option" style="adminPop"><span class="title title_controls" style="adminPop">옵션설정</span></a></li><li class="  " data-title="booking_season" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/booking/season" style="adminPop"><span class="title title_controls" style="adminPop">성수기·휴일</span></a></li><li class="  " data-title="booking_config" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/booking/config" style="adminPop"><span class="title title_controls" style="adminPop">환경설정</span></a></li></ul></li><li class="gui-folder" data-title="contents" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/contents" class="sidebar-nav-menu" onclick="return false;" style="adminPop"><div class="gui-icon" style="adminPop"><i class="db-pencil" style="adminPop"></i></div><span class="title title_controls" style="adminPop">컨텐츠 관리</span><span class="badge_icon" style="adminPop">1</span></a><ul style="adminPop"><li class="  " data-title="contents_post" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/contents/post" style="adminPop"><span class="title title_controls" style="adminPop">게시물</span><span class="badge_icon" style="adminPop">1</span></a></li><li class="  " data-title="contents_comment" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/contents/comment" style="adminPop"><span class="title title_controls" style="adminPop">댓글</span></a></li><li class="  " data-title="contents_form" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/contents/form" style="adminPop"><span class="title title_controls" style="adminPop">입력폼</span></a></li><li class="  " data-title="contents_map" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/contents/map" style="adminPop"><span class="title title_controls" style="adminPop">지도</span></a></li><li class="  " data-title="contents_calendar" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/contents/calendar" style="adminPop"><span class="title title_controls" style="adminPop">일정</span></a></li><li class="  " data-title="contents_gallery" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/contents/gallery" style="adminPop"><span class="title title_controls" style="adminPop">갤러리</span></a></li><li class="  " data-title="contents_report" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/contents/report" style="adminPop"><span class="title title_controls" style="adminPop">신고·차단</span></a></li></ul></li><li class="gui-folder" data-title="marketing" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/marketing" class="sidebar-nav-menu" onclick="return false;" style="adminPop"><div class="gui-icon" style="adminPop"><i class="db-megaphone" style="adminPop"></i></div><span class="title title_controls" style="adminPop">광고 캠페인 관리</span></a><ul style="adminPop"><li class="  " data-title="marketing_home" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/marketing/marketing-home" style="adminPop"><span class="title title_controls" style="adminPop">홈</span></a></li><li class="  " data-title="marketing_dashboard" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/marketing/dashboard" style="adminPop"><span class="title title_controls" style="adminPop">대시보드</span></a></li><li class="  " data-title="marketing_campaign" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/marketing/campaign" style="adminPop"><span class="title title_controls" style="adminPop">캠페인</span></a></li><li class="  " data-title="marketing_credit" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/marketing/credit" style="adminPop"><span class="title title_controls" style="adminPop">크레딧 관리</span></a></li><li class="  " data-title="marketing_dataconnect" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/marketing/data-connect" style="adminPop"><span class="title title_controls" style="adminPop">데이터 연결</span></a></li></ul></li><li class="gui-folder" data-title="app" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/app" class="sidebar-nav-menu" onclick="return false;" style="adminPop"><div class="gui-icon" style="adminPop"><i class="db-mobile" style="adminPop"></i></div><span class="title title_controls" style="adminPop">모바일 앱</span></a><ul style="adminPop"><li class="  " data-title="app_android" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/app/android" style="adminPop"><span class="title title_controls" style="adminPop">Android 앱</span></a></li><li class="  " data-title="app_ios" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/app/ios" style="adminPop"><span class="title title_controls" style="adminPop">iOS 앱</span></a></li></ul></li><li class="gui-folder" data-title="stat" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/stat" class="sidebar-nav-menu" onclick="return false;" style="adminPop"><div class="gui-icon" style="adminPop"><i class="db-status-up" style="adminPop"></i></div><span class="title title_controls" style="adminPop">통계</span></a><ul style="adminPop"><li class="  " data-title="stat_summary" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/stat/summary" style="adminPop"><span class="title title_controls" style="adminPop">홈</span></a></li><li class="  " data-title="stat_shopping" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/stat/shopping" style="adminPop"><span class="title title_controls" style="adminPop">매출</span><span class="badge_beta" style="adminPop">Beta</span></a></li><li class="  " data-title="stat_analytics" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/stat/analytics" style="adminPop"><span class="title title_controls" style="adminPop">기간별 분석</span></a></li><li class="  " data-title="stat_site" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/stat/site" style="adminPop"><span class="title title_controls" style="adminPop">유입 사이트</span></a></li><li class="  " data-title="stat_keyword" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/stat/keyword" style="adminPop"><span class="title title_controls" style="adminPop">유입 검색어</span></a></li><li class="  " data-title="stat_visitor" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/stat/visitor" style="adminPop"><span class="title title_controls" style="adminPop">방문자</span></a></li><li class="  " data-title="stat_page" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/stat/page" style="adminPop"><span class="title title_controls" style="adminPop">많이 방문한 페이지</span></a></li><li class="  " data-title="stat_traffic" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/stat/traffic" style="adminPop"><span class="title title_controls" style="adminPop">트래픽</span></a></li><li class="  " data-title="admin_stat_mileage" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/stat/mileage" style="adminPop"><span class="title title_controls" style="adminPop">적립금</span></a></li><li class="  " data-title="stat_feedback" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/stat/feedback" style="adminPop"><span class="title title_controls" style="adminPop">컨텐츠 반응</span></a></li><li class="  " data-title="stat_additional_service" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/stat/additional_service" style="adminPop"><span class="title title_controls" style="adminPop">부가 서비스</span></a></li></ul></li><li class="" data-title="payment" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/payment" style="adminPop"><div class="gui-icon" style="adminPop"><i class="db-rocket" style="adminPop"></i></div><span class="title title_controls" style="adminPop">결제·앱스토어</span></a></li><li class="active gui-folder" data-title="config" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/config" class="sidebar-nav-menu active" onclick="return false;" style="adminPop"><div class="gui-icon" style="adminPop"><i class="db-settings" style="adminPop"></i></div><span class="title title_controls" style="adminPop">환경설정</span></a><ul style="adminPop"><li class="  " data-title="config_default" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/config/default" style="adminPop"><span class="title title_controls" style="adminPop">일반</span></a></li><li class="  " data-title="config_localize" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/config/localize" style="adminPop"><span class="title title_controls" style="adminPop">언어·지역·통화</span></a></li><li class="  " data-title="config_pg" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/config/pg" style="adminPop"><span class="title title_controls" style="adminPop">전자결제(PG)</span></a></li><li class="  " data-title="config_domain" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/config/domain" style="adminPop"><span class="title title_controls" style="adminPop">도메인</span></a></li><li class="  " data-title="config_ssl" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/config/ssl" style="adminPop"><span class="title title_controls" style="adminPop">SSL(보안서버)</span></a></li><li class="  " data-title="config_security" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/config/security" style="adminPop"><span class="title title_controls" style="adminPop">보안·개인정보 보호</span></a></li><li class="  " data-title="config_membership" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/config/membership" style="adminPop"><span class="title title_controls" style="adminPop">회원가입·그룹·등급</span></a></li><li class="  " data-title="config_seo" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/config/seo" style="adminPop"><span class="title title_controls" style="adminPop">SEO(검색엔진최적화)</span></a></li><li class="  " data-title="config_etc" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/config/etc" style="adminPop"><span class="title title_controls" style="adminPop">약관</span></a></li><li class="active expanded" data-title="config_popup" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/config/popup" class=" active" style="adminPop"><span class="title title_controls" style="adminPop">adminPop·배너</span></a></li><li class="  " data-title="config_adult" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/config/adult" style="adminPop"><span class="title title_controls" style="adminPop">본인·성인인증</span></a></li><li class="  " data-title="config_oauth" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/config/oauth" style="adminPop"><span class="title title_controls" style="adminPop">소셜 로그인·지도·공유</span></a></li><li class="  " data-title="config_chat" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/config/chat" style="adminPop"><span class="title title_controls" style="adminPop">상담 채널 연동</span></a></li><li class="  " data-title="config_api_v2" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/config/rest_v2" style="adminPop"><span class="title title_controls" style="adminPop">외부 서비스 연동 (API)</span></a></li></ul></li><li class="spacer" style="adminPop"></li><li class="top-menu" style="adminPop"><div style="adminPop"><span style="adminPop">리소스</span></div></li><li class="" data-title="support" style="adminPop"><a class="external-url" href="https://imweb.me/customer" target="_blank" style="adminPop"><div class="gui-icon" style="adminPop"><i class="db-comments" style="adminPop"></i></div><span class="title title_controls" style="adminPop">고객지원</span></a></li><li class="gui-folder" data-title="campus" style="adminPop"><a class="external-url" href="https://qjfhdnaos51106.imweb.me/admin/config/edu" onclick="return false;" style="adminPop"><div class="gui-icon" style="adminPop"><i class="db-graduation-cap" style="adminPop"></i></div><span class="title title_controls" style="adminPop">아임웹 교육</span></a><ul style="adminPop"><li class="  " data-title="campus_edu" style="adminPop"><a class="external-url" href="https://imweb.me/edu" target="_blank" style="adminPop"><span class="title title_controls" style="adminPop">교육 일정·신청</span></a></li><li class="  " data-title="campus_video" style="adminPop"><a class="external-url" href="https://imweb.me/video_lecture" target="_blank" style="adminPop"><span class="title title_controls" style="adminPop">동영상 강의</span></a></li></ul></li><li class="gui-folder" data-title="expert" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/expert" class="sidebar-nav-menu" onclick="return false;" style="adminPop"><div class="gui-icon" style="adminPop"><i class="db-telescope" style="adminPop"></i></div><span class="title title_controls" style="adminPop">전문가 찾기</span><span class="badge_new" style="adminPop">New</span></a><ul style="adminPop"><li class="  " data-title="find_expert_main" style="adminPop"><a class="external-url" href="https://imweb.me/expert" target="_blank" style="adminPop"><span class="title title_controls" style="adminPop">전문가 찾기</span></a></li><li class="  " data-title="find_expert" style="adminPop"><a href="https://qjfhdnaos51106.imweb.me/admin/expert/find_expert" style="adminPop"><span class="title title_controls" style="adminPop">전문가 웹사이트 관리</span></a></li></ul></li></ul>	</div></div><div class="nano-pane" style="adminPop"><div class="nano-slider" style="height: 837px; top: 0px; display: block; adminPop"></div></div></div>
-</div>
-<div class="fold_area animate" style="adminPop">
-    <div class="table-cell vertical-middle" style="adminPop">
-        <a href="https://qjfhdnaos51106.imweb.me/admin/" class="logo_icon_menu" style="adminPop">
-            <img src="./adminPop_files/imweb_new_bi.svg" style="adminPop">        </a>
-    </div>
-    <a class="_tooltip_btn side_bar_btn" href="javascript:void(0)" role="button" id="toggle_button" style="adminPop">
-		<span class="fold_button left" data-original-title="사이드바 접기" data-toggle="tooltip" data-placement="right" data-trigger="hover" data-template="&lt;div class=&#39;tooltip custom-tooltip&#39;&gt;&lt;div class=&#39;tooltip-inner&#39;&gt;&lt;/div&gt;&lt;/div&gt;" style="adminPop">
-			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" style="adminPop">
-                <path d="M12 11.3334L8.66667 8.00002L12 4.66669M7.33333 11.3334L4 8.00002L7.33333 4.66669" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="adminPop"></path>
-            </svg>
-		</span>
-        <span class="fold_button right" data-original-title="사이드바 펼치기" data-toggle="tooltip" data-placement="right" data-trigger="hover" data-template="&lt;div class=&#39;tooltip custom-tooltip&#39;&gt;&lt;div class=&#39;tooltip-inner&#39;&gt;&lt;/div&gt;&lt;/div&gt;" style="adminPop">
-	        <div class="default" style="adminPop">
-		        			        <img src="./adminPop_files/grim-logo-imweb-symbol.svg" alt="사이드바 펼치기" style="adminPop">
-		        	        </div>
-	        <div class="hover" style="adminPop">
-				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" style="adminPop">
-	                <path d="M4 11.3334L7.33333 8.00002L4 4.66669M8.66667 11.3334L12 8.00002L8.66667 4.66669" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="adminPop"></path>
-	            </svg>
-	        </div>
-		</span>
-    </a>
-</div>
-<div class="_notify-modal-provider" style="adminPop"></div>
-<style style="adminPop">
-	.custom-tooltip.in {
-		opacity: 1;
-	}
-	.custom-tooltip.right {
-		margin-left: 4px;
-		padding: 0;
-	}
-	.custom-tooltip .tooltip-inner {
-		padding: 6px 8px;
-		border-radius: 8px;
-		background-color: #15181E;
-		color: #FFFFFF;
-		font-size: 12px;
-		font-weight: 400;
-		line-height: 16px;
-		box-shadow: 0 14px 32px 0 rgba(75, 81, 91, 0.12),
-			0 10px 14px 0 rgba(75, 81, 91, 0.06),
-			0 0 0 1px rgba(75, 81, 91, 0.03),
-			0 0 1px 0 rgba(75, 81, 91, 0.20);
-	}
-</style>
-<script style="adminPop">
-  (function(){
-    let body = document.body;
-    let btn = document.querySelector('#toggle_button');
-    let sidebar_mini_class = 'sidebar-mini';
-    let user_sm_status = getCookie('sm_status');
-    let window_width = window.innerWidth;
-    setPrimarySideMenu();
-
-    btn.addEventListener('click', handleToggleButton);
-    btn.addEventListener('touch', handleToggleButton);
-
-    //만약 사용자가 버튼을 누르지 않았을때만 이 이벤트 리스너를 사용할것임.
-      window.onresize = () => {
-        window_width = window.innerWidth;
-        if(user_sm_status !== 'h'&& user_sm_status !== 's') {
-          resizeWindow(window_width)
-        }
-      }
-
-    function handleToggleButton(){
-      if (user_sm_status == 'h') {
-        setSideMenu('show');
-      } else {
-        setSideMenu('hide');
-      }
-    }
-
-    function resizeWindow(window_width){
-      if (window_width > 1280 || window_width < 991) {
-        body.classList.remove(sidebar_mini_class);
-      }
-      //992~1279 일때
-     else {
-        body.classList.add(sidebar_mini_class)
-      }
-    }
-
-    function setPrimarySideMenu() {
-      if( window_width > 1280 && user_sm_status !== 'h'|| window_width < 991 ) {
-        body.classList.remove(sidebar_mini_class);
-      }
-      //992~1279 일때
-      else if( window_width <=1280 && window_width >= 991) {
-          if(user_sm_status == 's') body.classList.remove(sidebar_mini_class);
-          else body.classList.add(sidebar_mini_class)
-      }
-      else{
-        body.classList.add(sidebar_mini_class)
-      }
-    }
-
-    function setSideMenu(show){
-      if(show == "show") {
-        setCookie('sm_status', 's',1);
-        body.classList.remove(sidebar_mini_class);
-        user_sm_status = 's'
-      }
-      else{
-        setCookie('sm_status','h',1);
-        body.classList.add(sidebar_mini_class);
-        user_sm_status = 'h';
-		// 사이드바 접기 버튼을 누른 순간에 바로 접힐 수 있도록 10ms동안 임시 클래스 추가로 hover 이벤트를 방지
-        let fold_area = document.querySelector('#menubar ~ .fold_area');
-		fold_area.classList.add('disable-hover');
-		setTimeout(() => {fold_area.classList.remove('disable-hover')}, 10);
-      }
-    }
-
-	$('._lang_button').off('click').on('click', function(){
-		let that = this;
-		if($.cocoaStickerModal.isOpen()){
-			$.cocoaStickerModal.close();
-		}
-		$.cocoaStickerModal.open({
-			target: that,
-			id: 'langListModal',
-			html: $('#langListOrigin').html(),
-			width: '152px',
-			bottom: 23,
-			left: 21
-		});
-	});
-
-	  		  const $notificationButton = $('._gnb_notification_button');
-
-		  const interval = getNotifyBadgeInterval($notificationButton);
-		  const notifyHandler = getNotifyHandler();
-
-		  notifyHandler.setInterval(interval);
-
-		  interval.force();
-		  interval.start();
-
-		  $notificationButton.on('click', function() {
-			  notifyHandler.toggleModal(interval);
-		  });
-	    })();
-
-</script>
-<style style="adminPop">
-
-	#analytics-tooltip button {
-		 padding: 4px 12px;
-		 line-height: 24px;
-		 font-size: 14px;
-		 border-radius: 6px;
-		 transition: 0.1s ease-out;
-	}
-
-	.tooltip-close-button {
-		 color: #717680;
-		 background-color: transparent;
-	}
-
-	.tooltip-close-button:hover {
-		 background-color: #f8f9fb;
-	}
-
-	.tooltip-close-button:active {
-		background-color: #e2e5e9;
-	}
-
-	.tooltip-go-button {
-		 color: #FFFFFF;
-		 background-color: #1A6DFF;
-	}
-
-	.tooltip-go-button:hover {
-		 background-color: #70a2FF;
-	}
-
-	.tooltip-go-button:active {
-		background-color: #99bdFF;
-	}
-</style>
-<script style="adminPop">
-	window.addEventListener('load', () => {
-		var svShowAnalyticsTooltip = 'Y';
-
-		if (svShowAnalyticsTooltip === 'Y') {
-			var isClosed = false;
-
-			var isAppending = false;
-		
-			function isSnbFolded() {
-				return document.body.classList.contains('sidebar-mini');
-			}
-
-			function isMobile() {
-				return window.innerWidth < 993;
-			}
-
-			function isTooltipExist() {
-				return document.querySelector('#analytics-tooltip') !== null;
-			}
-
-			function isStatMenuFolded() {
-				return $('li[data-title="stat"] > ul').css('display') === 'none';
-			}
-
-			function analyticsFocus() {
-				if (
-					isClosed ||
-					isSnbFolded() ||
-					isMobile() ||
-					isTooltipExist() ||
-					isStatMenuFolded() ||
-					isAppending
-				) {
-					return;
-				}
-
-				scrollToMenuLi()
-			}
-
-			function scrollToMenuLi () {
-				var menuLi = document.querySelector('li[data-title="stat_additional_service"]');
-
-				var menuLiTop = menuLi.getBoundingClientRect().top;
-				var toScroll = Math.max(0, menuLiTop - window.innerHeight) + 28 + 144;
-
-				document.querySelector('.nano-content').scrollTo({ top : toScroll, behavior: 'smooth' })
-
-				appendTooltip()
-				appendPulse()
-			}
-
-			function appendTooltip() {
-				isAppending = true;
-				setTimeout(() => {
-					var menuLi = document.querySelector('li[data-title="stat_additional_service"]');
-					var menuLiTop = menuLi.getBoundingClientRect().top + 14;
-
-					var focusElement = document.createElement('div');
-
-					focusElement.id = 'analytics-tooltip'
-
-					focusElement.style.position = 'fixed';
-					focusElement.style.left = '224px'
-					focusElement.style.top = menuLiTop + 'px';
-					focusElement.style.transform = 'translate(12px, -50%)';
-					focusElement.style.padding = '16px';
-					focusElement.style.borderRadius = '12px';
-					focusElement.style.backgroundColor = '#15181E';
-					focusElement.style.width = "240px";
-
-					var topText = document.createElement('p');
-
-					topText.style.color = '#FFFFFF';
-					topText.style.fontSize = '16px';
-					topText.style.fontWeight = '700';
-					topText.style.lineHeight = '24px';
-					topText.style.marginBottom = '12px';
-					topText.textContent = '부가 서비스 메뉴가 합쳐졌어요';
-
-					focusElement.appendChild(topText);
-
-					var middleText = document.createElement('p');
-
-					middleText.style.color = '#FFFFFF';
-					middleText.style.fontSize = '14px';
-					middleText.style.lineHeight = '20px';
-					middleText.style.marginBottom = '24px';
-					middleText.innerHTML = '더 다양한 데이터 분석 인사이트를 <br/>만나보세요'
-
-					focusElement.appendChild(middleText);
-
-					var bottomButtonArea = document.createElement('div');
-
-					bottomButtonArea.style.display = 'flex';
-					bottomButtonArea.style.justifyContent = 'flex-end';
-					bottomButtonArea.style.gap = '6px';
-
-					var closeButton = document.createElement('button');
-					closeButton.classList.add('tooltip-close-button');
-					closeButton.textContent = '닫기';
-					closeButton.id = 'analytics-tooltip-close';
-					bottomButtonArea.appendChild(closeButton);
-
-					var goButton = document.createElement('button');
-					goButton.id = 'analytics-tooltip-go';
-					goButton.classList.add('tooltip-go-button');
-					goButton.textContent = '이동';
-					bottomButtonArea.appendChild(goButton);
-
-					focusElement.appendChild(bottomButtonArea);
-
-					var arrowSvg = `<svg style="position: absolute;left: -6px;top: 50%;transform: translateY(-50%);" width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M0.707107 6.70711C0.316582 6.31658 0.316582 5.68342 0.707106 5.29289L6 -2.62268e-07L6 12L0.707107 6.70711Z" fill="#15181E"/>
-									</svg>`
-
-					focusElement.innerHTML += arrowSvg;
-
-					document.body.appendChild(focusElement);
-
-					document.querySelector('#analytics-tooltip-close').addEventListener('click', () => closeAnalyticsTooltip(() => {
-						isClosed = true;
-						remove();
-					}));
-					document.querySelector('#analytics-tooltip-go').addEventListener('click', () => closeAnalyticsTooltip(() => {
-						location.href = '/admin/stat/additional_service';
-					}));
-
-					isAppending = false;
-				}, 500);
-			}
-
-			function closeAnalyticsTooltip(callback) {
-				$.ajax({
-					url: '/admin/ajax/menu/close_analytics_tooltip.cm',
-					type: 'POST',
-					complete: callback
-				})
-			}
-
-			function appendPulse() {
-				var menuLi = document.querySelector('li[data-title="stat_additional_service"]');
-
-				var image = document.createElement('img');
-
-				image.id = 'analytics-pulse';
-
-				image.src = '/admin/img/menu_pulse.gif';
-
-				image.style.position = 'absolute';
-				image.style.left = '52px';
-				image.style.top = '50%';
-				image.style.transform = 'translateY(-50%)';
-				image.style.width = '56px';
-				image.style.height = '56px';
-				image.style.pointerEvents = 'none';
-
-				menuLi.appendChild(image);
-				
-			}
-
-			function remove() {
-				document.querySelector('#analytics-tooltip')?.remove();
-				document.querySelector('#analytics-pulse')?.remove();
-			}
-
-			window.addEventListener('resize', () => {
-				if (window.innerWidth < 993) remove()
-				else {
-					analyticsFocus();
-				}
-			})
-
-			document.querySelector('#toggle_button').addEventListener('click', () => {
-				if (isSnbFolded()) remove()
-				else {
-					analyticsFocus();
-				}
-			})
-
-			$('.gui-folder').click(() => {
-				if (isTooltipExist()) remove()
-				else {
-					setTimeout(() => {
-						analyticsFocus();
-					}, 500);
-				}
-			})
-
-			document.querySelector('.nano-content').addEventListener('scroll', () => {
-				var tooltip = document.querySelector('#analytics-tooltip')
-
-				if (tooltip !== null) {
-					var top = document.querySelector('li[data-title="stat_additional_service"]').getBoundingClientRect().top
-
-					if (top === 0) {
-						remove()
-						return
-					}
-
-					tooltip.style.top = top + 14 + 'px';
-				}
-			})
-
-			analyticsFocus();
-		}
-	})
-
-  
-	
-</script></div> <!-- END BASE -->
-
-
-
-<script style="adminPop">
-</script><div class="modal" id="cocoaModal" role="dialog" style="adminPop">
-	<div class="modal-dialog" style="adminPop">
-		<div class="modal-content" style="adminPop"></div>
+			</section><!--섹션 끝 -->
+		</div>
+
+		<!-- END BASE -->
+
+	<div class="modal" id="cocoaModal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content"></div>
+		</div>
 	</div>
-</div>
 
-<div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001; adminPop">
-	<div class="modal-dialog" style="adminPop">
-		<div class="modal-content" style="adminPop"></div>
+	<div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
+		<div class="modal-dialog">
+			<div class="modal-content"></div>
+		</div>
 	</div>
-</div>
 
-<iframe name="hidden_frame" id="hidden_frame" style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px; adminPop" src="./adminPop_files/saved_resource.html"></iframe>
+	<iframe name="hidden_frame" id="hidden_frame"
+		style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;"
+		src="./adminPop_files/saved_resource.html"></iframe>
 
 
+	<div id="device-breakpoints">
+		<div class="device-xs visible-xs" data-breakpoint="xs"></div>
+		<div class="device-sm visible-sm" data-breakpoint="sm"></div>
+		<div class="device-md visible-md" data-breakpoint="md"></div>
+		<div class="device-lg visible-lg" data-breakpoint="lg"></div>
+	</div>
+</body>
 
-<script style="adminPop">
-	</script>
-
-<script type="text/javascript" style="adminPop">
-    mixpanel.init('a4939111ea54962dbf95fe89a992eab3', {debug: false});
-    mixpanel.identify('M2022120722883bb351d7e');
-       MIXPANEL.init();
-</script>
-
-<div id="device-breakpoints" style="adminPop"><div class="device-xs visible-xs" data-breakpoint="xs" style="adminPop"></div><div class="device-sm visible-sm" data-breakpoint="sm" style="adminPop"></div><div class="device-md visible-md" data-breakpoint="md" style="adminPop"></div><div class="device-lg visible-lg" data-breakpoint="lg" style="adminPop"></div></div></body></html>
+</html>

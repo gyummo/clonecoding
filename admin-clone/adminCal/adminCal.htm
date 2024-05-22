@@ -7,33 +7,6 @@
 	<link rel="stylesheet" type="text/css" href="./adminCal_files/dashboard.css">
 	<link rel="stylesheet" type="text/css" href="./adminCal_files/tailwind.css">
 	<link rel="stylesheet" type="text/css" href="./adminCal_files/admin.css">
-	<!-- <link rel="stylesheet" type="text/css" href="./adminCal_files/jquery-ui.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/bootstrap-datepicker.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/style.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/style(1).css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/slick.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/trackpad-scroll-emulator.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/froala_style.min.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/custom-theme-v3.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/colorpicker.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/codemirror.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/bootstrap-spinner.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/chosen.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/fullcalendar.min.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/morris.core.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/lightgallery.min.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/im_component.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/toastr.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/alarm_menu.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/vanilla-calendar.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/vanilla-calendar.light.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/bootstrap-theme-dashboard.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/dashboard.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/select2.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/accordion.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/regularly.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/tailwind.css">
-	<link rel="stylesheet" type="text/css" href="./adminCal_files/swiper.min.css"> -->
 </head>
 
 
@@ -52,175 +25,13 @@
 		</div>
 	</div>
 	<div id="base">
-
-		<script>
-			/* alert */
-			document.addEventListener('DOMContentLoaded', function () {
-				const alertBox = document.querySelector('#alertBox');
-				const contentArea = document.querySelector('#content');
-				alertBox?.classList.remove('alert__wrap-fixed');
-				alertBox?.classList.add('alert__wrap');
-				if (contentArea && alertBox) contentArea.prepend(alertBox);
-			});
-		</script> <!-- END OFFCANVAS LEFT -->
-		<script type="text/javascript">
-			$(function () {
-				SADMIN_MENU_ALERT.openAlert();
-			});
-		</script>
-		<style>
-			._sort_header a {
-				position: relative;
-
-			}
-
-			._sort_header a::after {
-				font-family: 'Material-Design-Iconic-Font';
-				line-height: 15px;
-				position: absolute;
-				top: 0;
-				display: inline-block;
-				color: #555;
-				font-size: 23px;
-				font-weight: normal;
-				margin-left: 5px;
-			}
-
-			._sort_header[data-sort='asc'] a:hover::after,
-			._sort_header._current[data-sort='desc'] a::after {
-				content: "\f2f2";
-				transform: rotate(180deg);
-			}
-
-			._sort_header[data-sort='desc'] a:hover::after,
-			._sort_header._current[data-sort='asc'] a::after {
-				content: "\f2f2";
-				transform: rotate(0deg);
-			}
-
-			._sort_header._current[data-sort='desc'] a:hover::after {
-				transform: rotate(0deg);
-			}
-
-			._sort_header._current[data-sort='asc'] a:hover::after {
-				transform: rotate(180deg);
-			}
-
-			#dateRangeRangeWrap {
-				position: absolute;
-				right: 14px;
-				top: calc(50% - 14px);
-			}
-
-			@media (min-width: 769px) {
-				.custom-width-5 {
-					width: 200px;
-				}
-
-				.custom-width-11 {
-					width: 440px;
-				}
-			}
-
-			.form-control .chosen-single {
-				border-bottom: 0;
-			}
-
-			.form-control .chosen-single>div {
-				display: none;
-			}
-
-			#filterWrap,
-			#filterApplyListWrap {
-				display: inline-block;
-				vertical-align: middle;
-				float: left;
-			}
-
-			#filterApplyListWrap {
-				width: calc(100% - 95px);
-				padding-left: 24px;
-				margin-top: 5px;
-			}
-
-			#filterApplyList {
-				list-style: none;
-				padding-left: 0;
-				word-break: break-all;
-			}
-
-			#filterApplyList .filter-apply-item {
-				cursor: pointer;
-				background: #E2E1DF;
-				border-radius: 8px;
-				padding: 0 25px 0 10px;
-				position: relative;
-
-				float: left;
-				display: inline-block;
-				font-weight: 500;
-				position: relative;
-				margin-bottom: 2px;
-				margin-right: 4px;
-			}
-
-			#filterApplyList .filter-apply-item>span {
-				line-height: 24px;
-			}
-
-			#filterApplyList .filter-apply-item ._btn_remove_filter {
-				font-size: 10px;
-				position: absolute;
-				right: 8px;
-				top: calc(50% - 6px);
-				z-index: 110;
-			}
-
-			.prod-form-group .chosen-single {
-				display: none;
-			}
-
-			#prodFilterList {
-				max-height: 200px;
-				overflow-y: auto;
-			}
-
-			#prodFilterList .dropdown-item {
-				padding: 2px 0;
-			}
-
-			#prodFilterList .dropdown-item:hover {
-				background-color: #00b8ff;
-			}
-
-			#prodFilterList .dropdown-item .dropdown-handle {
-				padding-left: 12px;
-			}
-
-			#prodFilterList .dropdown-item .dropdown-handle:hover {
-				background-color: #00b8ff;
-			}
-
-			#prodFilterSelectedList {
-				border-bottom: 0;
-				width: 100%;
-			}
-
-			@media (max-width: 768px) {
-				#dateRangeRangeWrap {
-					position: relative;
-					right: auto;
-				}
-
-			}
-		</style>
-
 		<header class="top_header">
 			<div class="headerbar">
 				<div class="headerbar-left">
 					<ul class="header-nav header-nav-options">
 						<li class="hidden-lg hidden-md">
-							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar"
+								href="javascript:void(0);">
 								<img src="_blank">
 							</a>
 						</li>
@@ -248,35 +59,29 @@
 									<!-- background: url('../img/ico_menu-down.png') no-repeat center right; background-size: 24px 24px; -->
 									<div class="card-body">
 										<input type="hidden" name="target" value="day">
-										<a href="javascript:;" style="display: block;"
-											data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											<span>일별 통계</span> 
+										<a href="javascript:;" style="display: block;" data-toggle="dropdown"
+											aria-haspopup="true" aria-expanded="false">
+											<span>일별 통계</span>
 											<span class="caret"></span>
 										</a>
 										<ul class="dropdown-menu search-type" style="margin-top: 2px;">
 											<li>
-												<a href="_blank"
-													onclick="ADMIN.showLoader(); return true;">일별 통계</a>
+												<a href="_blank" onclick="ADMIN.showLoader(); return true;">일별 통계</a>
 											</li>
 											<li>
-												<a href="_blank"
-													onclick="ADMIN.showLoader(); return true;">주별 통계</a>
+												<a href="_blank" onclick="ADMIN.showLoader(); return true;">주별 통계</a>
 											</li>
 											<li>
-												<a href="_blank"
-													onclick="ADMIN.showLoader(); return true;">월별 통계</a>
+												<a href="_blank" onclick="ADMIN.showLoader(); return true;">월별 통계</a>
 											</li>
 											<li>
-												<a href="_blank"
-													onclick="ADMIN.showLoader(); return true;">시간별 통계</a>
+												<a href="_blank" onclick="ADMIN.showLoader(); return true;">시간별 통계</a>
 											</li>
 											<li>
-												<a href="_blank"
-													onclick="ADMIN.showLoader(); return true;">제품별 통계</a>
+												<a href="_blank" onclick="ADMIN.showLoader(); return true;">제품별 통계</a>
 											</li>
 											<li>
-												<a href="_blank"
-													onclick="ADMIN.showLoader(); return true;">카테고리별 통계</a>
+												<a href="_blank" onclick="ADMIN.showLoader(); return true;">카테고리별 통계</a>
 											</li>
 										</ul>
 									</div>
@@ -289,30 +94,35 @@
 											value="custom">
 										<a href="javascript:;" id="selectDateRangeType" data-toggle="dropdown"
 											aria-haspopup="true" aria-expanded="false">
-											<span class="_date_range_type_name">사용자 정의</span> 
+											<span class="_date_range_type_name">사용자 정의</span>
 											<span class="caret"></span>
 										</a>
 										<ul aria-labelledby="selectDateRangeType" class="dropdown-menu"
 											style="margin-top: 2px;">
 											<li>
 												<a href="javascript:;"
-													onclick="ANALYTICS_MANAGE.changeDateRangeType(&#39;custom&#39;, &#39;사용자 정의&#39;)">사용자 정의</a>
+													onclick="ANALYTICS_MANAGE.changeDateRangeType(&#39;custom&#39;, &#39;사용자 정의&#39;)">사용자
+													정의</a>
 											</li>
 											<li>
 												<a href="javascript:;"
-													onclick="ANALYTICS_MANAGE.changeDateRangeType(&#39;week&#39;, &#39;최근 1주일&#39;)">최근 1주일</a>
+													onclick="ANALYTICS_MANAGE.changeDateRangeType(&#39;week&#39;, &#39;최근 1주일&#39;)">최근
+													1주일</a>
 											</li>
 											<li>
 												<a href="javascript:;"
-													onclick="ANALYTICS_MANAGE.changeDateRangeType(&#39;month1&#39;, &#39;최근 1개월&#39;)">최근 1개월</a>
+													onclick="ANALYTICS_MANAGE.changeDateRangeType(&#39;month1&#39;, &#39;최근 1개월&#39;)">최근
+													1개월</a>
 											</li>
 											<li>
 												<a href="javascript:;"
-													onclick="ANALYTICS_MANAGE.changeDateRangeType(&#39;month6&#39;, &#39;최근 6개월&#39;)">최근 6개월</a>
+													onclick="ANALYTICS_MANAGE.changeDateRangeType(&#39;month6&#39;, &#39;최근 6개월&#39;)">최근
+													6개월</a>
 											</li>
 											<li>
 												<a href="javascript:;"
-													onclick="ANALYTICS_MANAGE.changeDateRangeType(&#39;year&#39;, &#39;최근 1년&#39;)">최근 1년</a>
+													onclick="ANALYTICS_MANAGE.changeDateRangeType(&#39;year&#39;, &#39;최근 1년&#39;)">최근
+													1년</a>
 											</li>
 											<li>
 												<a href="javascript:;"
@@ -357,12 +167,12 @@
 												<span><i class="fa fa-filter"></i> 필터</span>
 											</a>
 											<div id="filterTypeWrap" data-toggle="dropdown" class="dropdown-menu">
-												<div class="col-sm-12 width-10" style="padding-top: 15px; padding-bottom: 15px;">
+												<div class="col-sm-12 width-10"
+													style="padding-top: 15px; padding-bottom: 15px;">
 													<div class="form-group ">
 														<label class="control-label">결제수단</label>
 														<select name="filter_pay_type[]" data-placeholder="결제수단"
-															multiple="" class="select-chosen"
-															style="display: none;">
+															multiple="" class="select-chosen" style="display: none;">
 															<!-- 음.. 해당 사이트에서.. 주문이 이루어진.. 결제수단만 노출..  -->
 															<option value="cash">무통장입금</option>
 														</select>
@@ -370,10 +180,8 @@
 															style="width: 100%;">
 															<ul class="chosen-choices">
 																<li class="search-field">
-																	<input
-																		type="text" value="결제수단" class="default"
-																		autocomplete="off"
-																		style="width: 77px;">
+																	<input type="text" value="결제수단" class="default"
+																		autocomplete="off" style="width: 77px;">
 																</li>
 															</ul>
 															<div class="chosen-drop">
@@ -388,19 +196,20 @@
 																<label>
 																	<input type="radio" name="filter_order_channel"
 																		checked="" value="all">
-																	<span
-																		>전체</span>
+																	<span>전체</span>
 																</label>
 															</span>
 															<span class="radio radio-styled radio-inline">
 																<label>
-																	<input type="radio" name="filter_order_channel" value="pc">
+																	<input type="radio" name="filter_order_channel"
+																		value="pc">
 																	<span>PC</span>
 																</label>
 															</span>
 															<span class="radio radio-styled radio-inline">
 																<label>
-																	<input type="radio" name="filter_order_channel" value="mobile">
+																	<input type="radio" name="filter_order_channel"
+																		value="mobile">
 																	<span>모바일</span>
 																</label>
 															</span>
@@ -415,7 +224,8 @@
 														<button type="reset"
 															onclick="ANALYTICS_MANAGE.toggleFilterWrap(false);"
 															class="btn btn-default-bright">취소</button>
-														<button type="submit" class="btn btn-primary btn-submit">적용</button>
+														<button type="submit"
+															class="btn btn-primary btn-submit">적용</button>
 													</div>
 												</div>
 											</div>
@@ -432,33 +242,51 @@
 												<!-- 날짜별 -->
 												<thead>
 													<tr>
-														<th class="_sort_header width-4 _current opacity-50" data-sort="asc">
+														<th class="_sort_header width-4 _current opacity-50"
+															data-sort="asc">
 															<a href="javascript: void(0);"
-																onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;date&#39;, &#39;asc&#39;);">날짜</a></th>
-														<th class="_sort_header text-right  opacity-50" data-sort="desc">
+																onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;date&#39;, &#39;asc&#39;);">날짜</a>
+														</th>
+														<th class="_sort_header text-right  opacity-50"
+															data-sort="desc">
 															<a href="javascript: void(0);"
-																onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;order_count&#39;, &#39;desc&#39;);">구매건수</a></th>
-														<th class="_sort_header text-right  opacity-50" data-sort="desc">
+																onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;order_count&#39;, &#39;desc&#39;);">구매건수</a>
+														</th>
+														<th class="_sort_header text-right  opacity-50"
+															data-sort="desc">
 															<a href="javascript: void(0);"
-																onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;item_count&#39;, &#39;desc&#39;);">구매개수</a></th>
-														<th class="_sort_header text-right  opacity-50" data-sort="desc">
+																onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;item_count&#39;, &#39;desc&#39;);">구매개수</a>
+														</th>
+														<th class="_sort_header text-right  opacity-50"
+															data-sort="desc">
 															<a href="javascript: void(0);"
-																onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;order_price&#39;, &#39;desc&#39;);">구매금액</a></th>
-														<th class="_sort_header text-right  opacity-50" data-sort="desc">
+																onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;order_price&#39;, &#39;desc&#39;);">구매금액</a>
+														</th>
+														<th class="_sort_header text-right  opacity-50"
+															data-sort="desc">
 															<a href="javascript: void(0);"
-																onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;sale_price&#39;, &#39;desc&#39;);">할인금액</a></th>
-														<th class="_sort_header text-right  opacity-50" data-sort="desc">
+																onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;sale_price&#39;, &#39;desc&#39;);">할인금액</a>
+														</th>
+														<th class="_sort_header text-right  opacity-50"
+															data-sort="desc">
 															<a href="javascript: void(0);"
-																onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;deliv_price&#39;, &#39;desc&#39;);">배송금액</a></th>
-														<th class="_sort_header text-right  opacity-50" data-sort="desc">
+																onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;deliv_price&#39;, &#39;desc&#39;);">배송금액</a>
+														</th>
+														<th class="_sort_header text-right  opacity-50"
+															data-sort="desc">
 															<a href="javascript: void(0);"
-																onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;order_refund_price&#39;, &#39;desc&#39;);">취소/환불</a></th>
-														<th class="_sort_header text-right  opacity-50" data-sort="desc">
+																onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;order_refund_price&#39;, &#39;desc&#39;);">취소/환불</a>
+														</th>
+														<th class="_sort_header text-right  opacity-50"
+															data-sort="desc">
 															<a href="javascript: void(0);"
-																onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;total_price1&#39;, &#39;desc&#39;);">순adminCal</a></th>
-														<th class="_sort_header text-right  opacity-50" data-sort="desc">
+																onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;total_price1&#39;, &#39;desc&#39;);">순금액</a>
+														</th>
+														<th class="_sort_header text-right  opacity-50"
+															data-sort="desc">
 															<a href="javascript: void(0);"
-																onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;total_price2&#39;, &#39;desc&#39;);">adminCal합계</a></th>
+																onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;total_price2&#39;, &#39;desc&#39;);">합계</a>
+														</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -500,11 +328,9 @@
 						</div>
 					</form>
 
-					<form id="analyticsExcelForm"
-						action="_blank" method="post"
+					<form id="analyticsExcelForm" action="_blank" method="post"
 						onsubmit="ADMIN.showLoader(); return true;">
-						<input type="hidden" name="d1"
-							value="TzoyNToiU0hPUF9TVEFUU19WMl9GSUxURVJfREFUQSI6MTU6e3M6NjoidGFyZ2V0IjtzOjM6ImRheSI7czoxNToiZGF0ZV9yYW5n
+						<input type="hidden" name="d1" value="TzoyNToiU0hPUF9TVEFUU19WMl9GSUxURVJfREFUQSI6MTU6e3M6NjoidGFyZ2V0IjtzOjM6ImRheSI7czoxNToiZGF0ZV9yYW5n
 							ZV90eXBlIjtzOjY6ImN1c3RvbSI7czoxMDoic3RhcnRfZGF0ZSI7czoxMDoiMjAyNC0wNS0xNiI7czo4OiJlbmRfZGF0ZSI7czoxMDoiMjAyNC0wNS0yMSI7cz
 							oxNjoiZmlsdGVyX3NpdGVfY29kZSI7czoyMjoiUzIwMjQwNTE2Y2M2NTY3NjE2MThlOCI7czoxNjoiZmlsdGVyX3VuaXRfY29kZSI7czoyMjoidTIwMjQwNTE2NjY0NTU
 							4MjE1YWY2MSI7czoxNToiZmlsdGVyX2N1cnJlbmN5IjtzOjM6IktSVyI7czoxNToiZmlsdGVyX3BheV90eXBlIjthOjA6e31zOjIwOiJmaWx0ZXJfb3JkZXJfY2hhbm5lbC
@@ -516,494 +342,6 @@
 			</section>
 		</div>
 
-		<script id="templateProdFilterLI" type="application/templte">
-				<li class="dropdown-item" data-code="{prod_code}">
-					<div class="checkbox checkbox-styled dropdown-handle">
-						<label>
-							<input type="checkbox" data-name="{prod_name}" value="{prod_code}" onchange="ANALYTICS_MANAGE.checkedFilterProd('{prod_code}', '{prod_name}', this.checked);" {checked}>
-							<span class="check-item">{prod_name}</span>
-						</label>
-					</div>
-				</li>
-			</script>
-					<script id="templateProdFilterLI_LIMIT" type="application/templte">
-				<li class="dropdown-item text-center">···</li>
-			</script>
-					<script id="templateProdFilterSelectedLI" type="application/templte">
-				<li class="selected-item dropdown-item search-choice" data-code="{prod_code}" data-name="{prod_name}">
-					<input type="hidden" name="filter_prod_code[]" value="{prod_code}">
-					{prod_name}
-					<a class="_btn_remove_prod_code search-choice-close" data-code="{prod_code}" class="_btn_remove_prod_code"></a>
-				</li>
-			</script>
-					<script id="templateProdCategoryFilterLI" type="application/templte">
-				<li class="_prod_category_selected_item selected-item dropdown-item search-choice" data-code="{category_code}" data-name="{category_name}">
-					{category_name}
-					<a class="_btn_remove_category_code search-choice-close" data-code="{category_code}"></a>
-				</li>
-			</script>
-
-		<script>
-			var ANALYTICS_MANAGE = {
-				CONFIG: {
-					CONST: {
-						TEMPLATE: {
-							ProdFilterLI: 'templateProdFilterLI',
-							ProdFilterLI_LIMIT: 'templateProdFilterLI_LIMIT',
-							ProdFilterLI_SELECTED: 'templateProdFilterSelectedLI',
-							CategoryFilterLI: 'templateProdCategoryFilterLI',
-						}
-					},
-					DOM: {
-						analyticsForm: null,
-						analyticsExcelForm: null,
-						statsTableWrap: null,
-						statsRangeType: null,
-						dateRangeRangeWrap: null,
-						startTime: null,
-						endTime: null,
-						dateRangeTypeWrap: null,
-						filterWrap: null,
-						filterTypeWrap: null,
-						inputProdCategory: null,
-						inputProdFilter: null,
-						prodCategoryList: null,
-						prodFilterList: null,
-						prodFilterSelectedList: null,
-						selectDateRangeType: null,
-						inputDateRangeType: null,
-						filterApplyList: null,
-						inputOrderBy: null,
-						inputSort: null,
-						selectFilterProdWrap: null,
-						tmpProdFilterInput: null,
-						tmpProdFilterFragment: null,
-					},
-					TEMPLATE: {},
-					FILTER_SEARCH_TIMER_HANDLE: 0,
-					OPTION: {
-						is_prod_limit: false,
-					},
-				},
-				init: function (option) {
-					this.CONFIG.OPTION = $.extend({}, this.CONFIG.OPTION, option);
-
-					// dom 세팅
-					this.CONFIG.DOM.analyticsForm = $('#analyticsForm');
-					this.CONFIG.DOM.statsTableWrap = this.CONFIG.DOM.analyticsForm.find('#statsTableWrap');
-					this.CONFIG.DOM.statsRangeType = this.CONFIG.DOM.analyticsForm.find('#statsRangeType');
-					this.CONFIG.DOM.dateRangeTypeWrap = this.CONFIG.DOM.analyticsForm.find('#dateRangeTypeWrap');
-					this.CONFIG.DOM.dateRangeRangeWrap = this.CONFIG.DOM.analyticsForm.find('#dateRangeRangeWrap');
-					this.CONFIG.DOM.filterWrap = this.CONFIG.DOM.analyticsForm.find('#filterWrap');
-					this.CONFIG.DOM.filterTypeWrap = this.CONFIG.DOM.analyticsForm.find('#filterTypeWrap');
-					this.CONFIG.DOM.inputProdCategory = this.CONFIG.DOM.analyticsForm.find('#inputProdCategory');
-					this.CONFIG.DOM.inputProdFilter = this.CONFIG.DOM.analyticsForm.find('#inputProdFilter');
-					this.CONFIG.DOM.prodCategoryList = this.CONFIG.DOM.analyticsForm.find('#prodCategoryList');
-					this.CONFIG.DOM.prodFilterList = this.CONFIG.DOM.analyticsForm.find('#prodFilterList');
-					this.CONFIG.DOM.prodFilterSelectedList = this.CONFIG.DOM.analyticsForm.find('#prodFilterSelectedList');
-					this.CONFIG.DOM.selectDateRangeType = this.CONFIG.DOM.analyticsForm.find('#selectDateRangeType');
-					this.CONFIG.DOM.inputDateRangeType = this.CONFIG.DOM.analyticsForm.find('#inputDateRangeType');
-					this.CONFIG.DOM.filterApplyList = this.CONFIG.DOM.analyticsForm.find('#filterApplyList');
-					this.CONFIG.DOM.inputOrderBy = this.CONFIG.DOM.analyticsForm.find('#inputOrderBy');
-					this.CONFIG.DOM.inputSort = this.CONFIG.DOM.analyticsForm.find('#inputSort');
-					this.CONFIG.DOM.selectFilterProdWrap = this.CONFIG.DOM.analyticsForm.find('#selectFilterProdWrap');
-					this.CONFIG.DOM.analyticsExcelForm = $('#analyticsExcelForm');
-
-					this.CONFIG.DOM.filterTypeWrap.off('click').on('click', function (e) {
-						ANALYTICS_MANAGE.toggleProdCategoryWrap(false);
-						ANALYTICS_MANAGE.toggleProdFilterWrap(false);
-						e.stopPropagation();
-					});
-					this.CONFIG.DOM.inputProdCategory.off('focus').on('focus', function (e) {
-						e.stopPropagation();
-						ANALYTICS_MANAGE.toggleProdCategoryWrap(true);
-						return false;
-					});
-					this.CONFIG.DOM.prodCategoryList.off('click').on('click', function (e) { e.stopPropagation(); });
-					this.CONFIG.DOM.inputProdCategory.off('click').on('click', function (e) { e.stopPropagation(); });
-					this.CONFIG.DOM.inputProdFilter.off('focus').on('focus', function (e) {
-						e.stopPropagation();
-						ANALYTICS_MANAGE.toggleProdFilterWrap(true);
-						return false;
-					});
-					this.CONFIG.DOM.prodFilterList.off('click').on('click', function (e) { e.stopPropagation(); });
-					this.CONFIG.DOM.inputProdFilter.off('click').on('click', function (e) { e.stopPropagation(); });
-					this.CONFIG.DOM.inputProdFilter.off('keyup').on('keyup', function (e) {
-						ANALYTICS_MANAGE.searchFilterProdData(this.value);
-					});
-
-					// 필터 팝업이 닫힐때...
-					this.CONFIG.DOM.filterWrap.on('hidden.bs.dropdown', function (e) {
-						ANALYTICS_MANAGE.toggleProdCategoryWrap(false);
-					});
-
-					// 상품 코드 필터 제거
-					this.CONFIG.DOM.prodFilterSelectedList.off('click', '._btn_remove_prod_code').on('click', '._btn_remove_prod_code', function (e) {
-						var $_that = $(this);
-						var prod_code = $_that.data('code');
-
-						ANALYTICS_MANAGE.CONFIG.DOM.prodFilterSelectedList.find('[data-code="' + prod_code + '"]').remove();
-						ANALYTICS_MANAGE.CONFIG.DOM.prodFilterList.find('[data-code="' + prod_code + '"]').find('input[value="' + prod_code + '"]').prop('checked', false);
-					});
-
-					// 필터 삭제 기능
-					this.CONFIG.DOM.filterApplyList.off('click', '._btn_remove_filter').on('click', '._btn_remove_filter', function (e) {
-						var $_that = $(this);
-						var filter_type = $_that.data('filtertype');
-						var filter_value = $_that.data('value');
-
-						switch (filter_type) {
-							case 'filter_pay_type':
-								var $_pay_type = ANALYTICS_MANAGE.CONFIG.DOM.filterTypeWrap.find('select[name="filter_pay_type[]"]');
-								var $_pay_type_opt = $_pay_type.find('option[value="' + filter_value + '"]');
-								$_pay_type_opt.prop('selected', false);
-								$_pay_type_opt.removeAttr('selected');
-								break;
-							case 'filter_prod_code':
-								if (ANALYTICS_MANAGE.CONFIG.OPTION.is_prod_limit) {
-									ANALYTICS_MANAGE.CONFIG.DOM.prodFilterSelectedList.find('[data-code="' + filter_value + '"]').remove();
-								} else {
-									var $_filter_prod_code = ANALYTICS_MANAGE.CONFIG.DOM.filterTypeWrap.find('select[name="filter_prod_code"]');
-									var $_filter_prod_code_opt = $_filter_prod_code.find('option[value="' + filter_value + '"]');
-									$_filter_prod_code_opt.prop('selected', false);
-									$_filter_prod_code_opt.removeAttr('selected');
-									$_filter_prod_code.val('');
-								}
-								break;
-							case 'filter_order_channel':
-								var $_order_channels = ANALYTICS_MANAGE.CONFIG.DOM.filterTypeWrap.find('input[name="filter_order_channel"]');
-								$_order_channels.prop('checked', false);
-								$_order_channels.removeAttr('checked');
-								break;
-							case 'filter_orderer_id':
-								var $_filter_orderer_id = ANALYTICS_MANAGE.CONFIG.DOM.filterTypeWrap.find('input[name="filter_orderer_id"]');
-								$_filter_orderer_id.removeAttr('value');
-								$_filter_orderer_id.val('');
-								break;
-							case 'filter_prod_category':
-								var $_filter_prod_category = ANALYTICS_MANAGE.CONFIG.DOM.filterTypeWrap.find('input[name="filter_prod_category[]"][value="' + filter_value + '"]');
-								$_filter_prod_category.prop('checked', false);
-								break;
-						}
-
-						ANALYTICS_MANAGE.CONFIG.DOM.analyticsForm.submit();
-					});
-
-					// 날짜 관련
-					(function () {
-						// 날짜 세팅
-						// var $btn_ranges = this.CONFIG.DOM.analyticsForm.find('._btn_range');
-						ANALYTICS_MANAGE.CONFIG.DOM.startTime = ANALYTICS_MANAGE.CONFIG.DOM.analyticsForm.find('._start_date');
-						ANALYTICS_MANAGE.CONFIG.DOM.endTime = ANALYTICS_MANAGE.CONFIG.DOM.analyticsForm.find('._end_date');
-
-						var callbackChangeDate = function (e) {
-							// 만약 종료날이 시작일보다 이전일 경우 시작일로 세팅.
-							var start_date = ANALYTICS_MANAGE.CONFIG.DOM.startTime.val();
-							var end_date = ANALYTICS_MANAGE.CONFIG.DOM.endTime.val();
-
-							if (start_date.length && end_date.length) {
-								var start_moment = moment(start_date);
-								var end_moment = moment(end_date);
-
-								if (end_moment.unix() < start_moment.unix()) {
-									ANALYTICS_MANAGE.CONFIG.DOM.endTime.data('DateTimePicker').date(start_moment);
-								}
-							}
-
-							ANALYTICS_MANAGE.CONFIG.DOM.analyticsForm.submit();
-						};
-
-						ANALYTICS_MANAGE.setDatePicker(ANALYTICS_MANAGE.CONFIG.DOM.startTime, {}, callbackChangeDate);
-						ANALYTICS_MANAGE.setDatePicker(ANALYTICS_MANAGE.CONFIG.DOM.endTime, {}, callbackChangeDate);
-						// 검색어 세팅 등
-					})();
-
-					// chosen 적용
-					this.CONFIG.DOM.analyticsForm.find('.select-chosen').chosen({ width: "100%", max_shown_results: 10 }).change(function (e) { });
-					$("#test").chosen({ width: "100%", disable_search: true }).change(function (e) { });
-
-					// 일별통계 팝업 toggle 처리
-					this.CONFIG.DOM.dateRangeTypeWrap.off('click').on('click', function () { });
-
-					// 상품 카테고리 필터 관련
-					ANALYTICS_MANAGE.CONFIG.DOM.prodCategoryList.find("input[type='checkbox']").on('change', function () { ANALYTICS_MANAGE.refreshProdCategoryInputBoxValue(); });
-					ANALYTICS_MANAGE.refreshProdCategoryInputBoxValue();
-
-					// 카테고리 코드 필터 제거
-					ANALYTICS_MANAGE.CONFIG.DOM.prodFilterSelectedList.off('click', '._btn_remove_category_code').on('click', '._btn_remove_category_code', function (e) {
-						var $_that = $(this);
-						var _code = $_that.data('code');
-
-						ANALYTICS_MANAGE.CONFIG.DOM.prodFilterSelectedList.find('._prod_category_selected_item[data-code="' + _code + '"]').remove();
-						ANALYTICS_MANAGE.CONFIG.DOM.prodCategoryList.find('input[name="filter_prod_category[]"][data-code="' + _code + '"]').prop('checked', false);
-
-						e.stopPropagation();
-						return false;
-					});
-				},
-				loadTemplate: function (code, data) {
-					if (ANALYTICS_MANAGE.CONFIG.TEMPLATE[code] == void 0) { ANALYTICS_MANAGE.CONFIG.TEMPLATE[code] = $("#" + code).html(); }
-					var template = ANALYTICS_MANAGE.CONFIG.TEMPLATE[code];
-
-					if (data != void 0) {
-						Object.keys(data).forEach(function (k) {
-							template = template.replace(new RegExp("\\{" + k + "\\}", "g"), data[k]);
-						});
-					}
-
-					return template;
-				},
-				searchFilterProdData: function (search) {
-					clearTimeout(ANALYTICS_MANAGE.CONFIG.FILTER_SEARCH_TIMER_HANDLE);
-					ANALYTICS_MANAGE.CONFIG.FILTER_SEARCH_TIMER_HANDLE = setTimeout(function () {
-						if (!ANALYTICS_MANAGE.CONFIG.DOM.tmpProdFilterInput) {
-							ANALYTICS_MANAGE.CONFIG.DOM.tmpProdFilterInput = document.createElement('input');
-							ANALYTICS_MANAGE.CONFIG.DOM.tmpProdFilterInput.type = 'text';
-						}
-						ANALYTICS_MANAGE.CONFIG.DOM.tmpProdFilterInput.value = search.trim();
-
-						// 상품 관련 검색
-						var total_opt_list = [];
-						var i = 0;
-						if (ANALYTICS_MANAGE.CONFIG.DOM.tmpProdFilterInput.value) {
-							var opt_list = $(filter_prod_fragment).find('option').filter(function (i) {
-								return (this.text.indexOf(ANALYTICS_MANAGE.CONFIG.DOM.tmpProdFilterInput.value) != -1);
-							});
-
-							if (opt_list.length) {
-								for (i = 0; i < opt_list.length; i++) {
-									total_opt_list.push(opt_list[i]);
-								}
-							}
-
-							// 예약 관련 검색
-							var booking_opt_list = $(filter_booking_fragment).find('option').filter(function (i) {
-								return (this.text.indexOf(ANALYTICS_MANAGE.CONFIG.DOM.tmpProdFilterInput.value) != -1);
-							});
-
-							if (booking_opt_list.length) {
-								for (i = 0; i < booking_opt_list.length; i++) {
-									total_opt_list.push(booking_opt_list[i]);
-								}
-							}
-						}
-
-
-						// 처리 결과
-						var _new_fragment = document.createDocumentFragment();
-
-						if (total_opt_list.length) {
-							var filter_limit = parseInt('100');
-							var is_limit_over = (total_opt_list.length> filter_limit);
-							var for_limit = (is_limit_over ? filter_limit : total_opt_list.length);
-
-							for (var i = 0; i < for_limit; i++) {
-								var prod_code = total_opt_list[i].value;
-								var prod_name = total_opt_list[i].text;
-
-								var _checked = "";
-								if (ANALYTICS_MANAGE.CONFIG.DOM.prodFilterSelectedList.find('.selected-item[data-code="' + prod_code + '"]').length) {
-									_checked = " checked='checked' ";
-								}
-
-								var _li = $(ANALYTICS_MANAGE.loadTemplate(ANALYTICS_MANAGE.CONFIG.CONST.TEMPLATE.ProdFilterLI, { prod_code: prod_code, prod_name: prod_name, checked: _checked }))[0];
-								_new_fragment.append(_li);
-							}
-
-							if (is_limit_over) {
-								var _li = $(ANALYTICS_MANAGE.loadTemplate(ANALYTICS_MANAGE.CONFIG.CONST.TEMPLATE.ProdFilterLI_LIMIT, { prod_code: prod_code, prod_name: prod_name }))[0];
-								_new_fragment.append(_li);
-							}
-						}
-
-						ANALYTICS_MANAGE.CONFIG.DOM.prodFilterList.html(_new_fragment);
-					}, 200);
-				},
-				checkedFilterProd: function (code, name, is_checked) {
-					if (is_checked) {
-						if (!ANALYTICS_MANAGE.CONFIG.DOM.prodFilterSelectedList.find('.selected-item[data-code="' + code + '"]').length) {
-							var _li = $(ANALYTICS_MANAGE.loadTemplate(ANALYTICS_MANAGE.CONFIG.CONST.TEMPLATE.ProdFilterLI_SELECTED, { prod_code: code, prod_name: name }))[0];
-							ANALYTICS_MANAGE.CONFIG.DOM.prodFilterSelectedList.append($(_li)[0]);
-						}
-					} else {
-						ANALYTICS_MANAGE.CONFIG.DOM.prodFilterSelectedList.find('.selected-item[data-code="' + code + '"]').remove();
-					}
-				},
-				setDatePicker: function (obj, options, callback) {
-					var date_option = $.extend({}, {
-						dayViewHeaderFormat: 'YYYY MMMM',
-						minDate: '2024-05-16',
-						maxDate: moment().format('YYYY-MM-DD'),
-						locale: getMomentLangCode(ADMIN_LANG_CODE),
-						icons: {
-							time: 'zmdi zmdi-time',
-							date: 'zmdi zmdi-calendar',
-							up: 'zmdi zmdi-chevron-up',
-							down: 'zmdi zmdi-chevron-down',
-							previous: 'zmdi zmdi-chevron-left',
-							next: 'zmdi zmdi-chevron-right',
-							today: 'glyphicon glyphicon-screenshot',
-							clear: 'glyphicon glyphicon-trash'
-						},
-						format: 'YYYY-MM-DD',
-					}, options);
-
-					// 2019-01-01 00:00:00 형식으로 넣지 않으면 시분초 단위 오차로 인해 날짜가 변경되지 않아도
-					// dp.change 콜백이 실행됨...
-					var d = new Date(obj.val() + ' 00:00:00');
-					obj.datetimepicker(date_option);
-					obj.data('DateTimePicker').date(d);
-
-					if (typeof callback == "function") {
-						obj.on('dp.change', callback);
-					}
-				},
-				toggleDateRangeTypeWrap: function (bool) {
-					if (bool === true || bool === false) {
-						this.CONFIG.DOM.dateRangeTypeWrap.toggle(bool);
-					} else {
-						this.CONFIG.DOM.dateRangeTypeWrap.toggle();
-					}
-				},
-				toggleFilterWrap: function (bool) {
-					if (!(bool === true || bool === false)) {
-						bool = this.CONFIG.DOM.filterWrap.hasClass('open')
-					}
-
-					if (bool) {
-						this.CONFIG.DOM.filterTypeWrap.dropdown();
-					} else {
-						this.CONFIG.DOM.filterWrap.trigger('click');
-					}
-				},
-				toggleProdCategoryWrap: function (bool) {
-					if (bool === true || bool === false) {
-						this.CONFIG.DOM.prodCategoryList.toggle(bool);
-					} else {
-						this.CONFIG.DOM.prodCategoryList.toggle();
-					}
-				},
-				toggleProdFilterWrap: function (bool) {
-					if (bool === true || bool === false) {
-						this.CONFIG.DOM.prodFilterList.toggle(bool);
-					} else {
-						this.CONFIG.DOM.prodFilterList.toggle();
-					}
-				},
-				refreshProdCategoryInputBoxValue: function () {
-					var checked_item = ANALYTICS_MANAGE.CONFIG.DOM.prodCategoryList.find("input[type=checkbox]:checked");
-
-					var _fragment = document.createDocumentFragment();
-					if (checked_item.length) {
-
-						for (var i = 0; i < checked_item.length; i++) {
-							var category_name = checked_item.eq(i).data('name');
-							var category_code = checked_item.eq(i).data('code');
-							_fragment.append($(ANALYTICS_MANAGE.loadTemplate('templateProdCategoryFilterLI', {
-								category_name: category_name,
-								category_code: category_code,
-							}))[0]);
-						}
-
-						ANALYTICS_MANAGE.CONFIG.DOM.prodFilterSelectedList.find('._prod_category_selected_item').remove();
-						ANALYTICS_MANAGE.CONFIG.DOM.prodFilterSelectedList.find('._input').prepend(_fragment);
-					} else {
-
-					}
-
-					ANALYTICS_MANAGE.CONFIG.DOM.inputProdCategory.val(category_name);
-				},
-				changeDateRangeType: function (type, type_name) {
-					var $_date_range_type_name = this.CONFIG.DOM.selectDateRangeType.find('._date_range_type_name');
-					var $_date_range_inputs = this.CONFIG.DOM.analyticsForm.find('._date_range_input');
-
-					$_date_range_type_name.text(type_name);
-					this.CONFIG.DOM.inputDateRangeType.val(type);
-
-					if (type == 'custom') {
-						$_date_range_inputs.removeAttr('disabled');
-						this.CONFIG.DOM.dateRangeRangeWrap.show();
-					} else {
-						$_date_range_inputs.attr('disabled', 'disabled');
-						this.CONFIG.DOM.dateRangeRangeWrap.hide();
-						this.CONFIG.DOM.analyticsForm.submit();
-					}
-				},
-				changeOrderBy: function (order_by, sort) {
-					var data = this.CONFIG.DOM.analyticsExcelForm.serializeArray();
-					data.push({ 'name': 'order_by', 'value': order_by });
-					data.push({ 'name': 'sort', 'value': sort });
-
-					ADMIN.showLoader();
-					$.ajax({
-						type: 'POST',
-						data: data,
-						url: ('/admin/stat/shopping/v2_sort.cm'),
-						dataType: 'html',
-						async: false,
-						cache: false,
-						success: function (res) {
-							ANALYTICS_MANAGE.CONFIG.DOM.statsTableWrap.html(res);
-							ADMIN.hideLoader();
-						}
-					});
-				},
-				changePage: function (that) {
-					page = parseInt($(that).text());
-					var data = this.CONFIG.DOM.analyticsExcelForm.serializeArray();
-					data.push({ 'name': 'page', 'value': page });
-
-					ADMIN.showLoader();
-					$.ajax({
-						type: 'POST',
-						data: data,
-						url: ('/admin/stat/shopping/v2_prod_paging.cm'),
-						dataType: 'html',
-						async: false,
-						cache: false,
-						success: function (res) {
-							ANALYTICS_MANAGE.CONFIG.DOM.statsTableWrap.html(res);
-							ADMIN.hideLoader();
-						}
-					});
-				},
-				excelDownload: function () {
-					this.CONFIG.DOM.analyticsExcelForm.submit();
-					ADMIN.hideLoader();
-				}
-			};
-
-			$(function () {
-				ANALYTICS_MANAGE.init({
-					is_prod_limit: false,
-				});
-			});
-		</script>
-
-		<link rel="stylesheet" type="text/css" href="./adminCal_files/nudge_point_modal.css">
-		<script src="./adminCal_files/nudge_point_modal.js.다운로드"></script>
-		<script>
-			var nudge_point_modal = new NudgePointModal({
-				image: "/admin/img/nudge_point_laplace_image_v3.png",
-				moImage: "/admin/img/nudge_point_laplace_image_mo_v3.png",
-				background: "/admin/img/nudge_point_laplace_bg.png",
-				title: "adminCal 상승을 부르는<br/>데이터를 확인해보세요",
-				description: "상품, 옵션, 기초 상품 단위까지 자동으로 분석해주는<br/>통합 데이터 분석 솔루션을 만나보세요",
-				url: "/admin/stat/additional_service",
-				key: "shopping"
-			});
-
-			nudge_point_modal.open()
-		</script>
-
-
-		<script>
-			$(window).on("keyup", function (e) {
-				if ($.cocoaDialog.isOpen()) {
-					$.cocoaDialog.modalControl(e);
-				}
-				return false;
-			});</script>
 		<!-- BEGIN MENUBAR-->
 		<button type="button" class="hidden-lg hidden-md toggle-btn" data-dismiss="menubar">
 			<span class="sr-only">Toggle navigation</span>
@@ -1011,373 +349,8 @@
 		</button>
 
 		<div class="_notify-modal-provider"></div>
-		<style>
-			.custom-tooltip.in {
-				opacity: 1;
-			}
 
-			.custom-tooltip.right {
-				margin-left: 4px;
-				padding: 0;
-			}
-
-			.custom-tooltip .tooltip-inner {
-				padding: 6px 8px;
-				border-radius: 8px;
-				background-color: #15181E;
-				color: #FFFFFF;
-				font-size: 12px;
-				font-weight: 400;
-				line-height: 16px;
-				box-shadow: 0 14px 32px 0 rgba(75, 81, 91, 0.12),
-					0 10px 14px 0 rgba(75, 81, 91, 0.06),
-					0 0 0 1px rgba(75, 81, 91, 0.03),
-					0 0 1px 0 rgba(75, 81, 91, 0.20);
-			}
-		</style>
-		<script>
-			(function () {
-				let body = document.body;
-				let btn = document.querySelector('#toggle_button');
-				let sidebar_mini_class = 'sidebar-mini';
-				let user_sm_status = getCookie('sm_status');
-				let window_width = window.innerWidth;
-				setPrimarySideMenu();
-
-				btn.addEventListener('click', handleToggleButton);
-				btn.addEventListener('touch', handleToggleButton);
-
-				//만약 사용자가 버튼을 누르지 않았을때만 이 이벤트 리스너를 사용할것임.
-				window.onresize = () => {
-					window_width = window.innerWidth;
-					if (user_sm_status !== 'h' && user_sm_status !== 's') {
-						resizeWindow(window_width)
-					}
-				}
-
-				function handleToggleButton() {
-					if (user_sm_status == 'h') {
-						setSideMenu('show');
-					} else {
-						setSideMenu('hide');
-					}
-				}
-
-				function resizeWindow(window_width) {
-					if (window_width> 1280 || window_width < 991) {
-						body.classList.remove(sidebar_mini_class);
-					}
-					//992~1279 일때
-					else {
-						body.classList.add(sidebar_mini_class)
-					}
-				}
-
-				function setPrimarySideMenu() {
-					if (window_width> 1280 && user_sm_status !== 'h' || window_width < 991) {
-						body.classList.remove(sidebar_mini_class);
-					}
-					//992~1279 일때
-					else if (window_width <= 1280 && window_width>= 991) {
-						if (user_sm_status == 's') body.classList.remove(sidebar_mini_class);
-						else body.classList.add(sidebar_mini_class)
-					}
-					else {
-						body.classList.add(sidebar_mini_class)
-					}
-				}
-
-				function setSideMenu(show) {
-					if (show == "show") {
-						setCookie('sm_status', 's', 1);
-						body.classList.remove(sidebar_mini_class);
-						user_sm_status = 's'
-					}
-					else {
-						setCookie('sm_status', 'h', 1);
-						body.classList.add(sidebar_mini_class);
-						user_sm_status = 'h';
-						// 사이드바 접기 버튼을 누른 순간에 바로 접힐 수 있도록 10ms동안 임시 클래스 추가로 hover 이벤트를 방지
-						let fold_area = document.querySelector('#menubar ~ .fold_area');
-						fold_area.classList.add('disable-hover');
-						setTimeout(() => { fold_area.classList.remove('disable-hover') }, 10);
-					}
-				}
-
-				$('._lang_button').off('click').on('click', function () {
-					let that = this;
-					if ($.cocoaStickerModal.isOpen()) {
-						$.cocoaStickerModal.close();
-					}
-					$.cocoaStickerModal.open({
-						target: that,
-						id: 'langListModal',
-						html: $('#langListOrigin').html(),
-						width: '152px',
-						bottom: 23,
-						left: 21
-					});
-				});
-
-				const $notificationButton = $('._gnb_notification_button');
-
-				const interval = getNotifyBadgeInterval($notificationButton);
-				const notifyHandler = getNotifyHandler();
-
-				notifyHandler.setInterval(interval);
-
-				interval.force();
-				interval.start();
-
-				$notificationButton.on('click', function () {
-					notifyHandler.toggleModal(interval);
-				});
-			})();
-
-		</script>
-		<style>
-			#analytics-tooltip button {
-				padding: 4px 12px;
-				line-height: 24px;
-				font-size: 14px;
-				border-radius: 6px;
-				transition: 0.1s ease-out;
-			}
-
-			.tooltip-close-button {
-				color: #717680;
-				background-color: transparent;
-			}
-
-			.tooltip-close-button:hover {
-				background-color: #f8f9fb;
-			}
-
-			.tooltip-close-button:active {
-				background-color: #e2e5e9;
-			}
-
-			.tooltip-go-button {
-				color: #FFFFFF;
-				background-color: #1A6DFF;
-			}
-
-			.tooltip-go-button:hover {
-				background-color: #70a2FF;
-			}
-
-			.tooltip-go-button:active {
-				background-color: #99bdFF;
-			}
-		</style>
-		<script>
-			window.addEventListener('load', () => {
-				var svShowAnalyticsTooltip = 'Y';
-
-				if (svShowAnalyticsTooltip === 'Y') {
-					var isClosed = false;
-
-					var isAppending = false;
-
-					function isSnbFolded() {
-						return document.body.classList.contains('sidebar-mini');
-					}
-
-					function isMobile() {
-						return window.innerWidth < 993;
-					}
-
-					function isTooltipExist() {
-						return document.querySelector('#analytics-tooltip') !== null;
-					}
-
-					function isStatMenuFolded() {
-						return $('li[data-title="stat"]> ul').css('display') === 'none';
-					}
-
-					function analyticsFocus() {
-						if (
-							isClosed ||
-							isSnbFolded() ||
-							isMobile() ||
-							isTooltipExist() ||
-							isStatMenuFolded() ||
-							isAppending
-						) {
-							return;
-						}
-
-						scrollToMenuLi()
-					}
-
-					function scrollToMenuLi() {
-						var menuLi = document.querySelector('li[data-title="stat_additional_service"]');
-
-						var menuLiTop = menuLi.getBoundingClientRect().top;
-						var toScroll = Math.max(0, menuLiTop - window.innerHeight) + 28 + 144;
-
-						document.querySelector('.nano-content').scrollTo({ top: toScroll, behavior: 'smooth' })
-
-						appendTooltip()
-						appendPulse()
-					}
-
-					function appendTooltip() {
-						isAppending = true;
-						setTimeout(() => {
-							var menuLi = document.querySelector('li[data-title="stat_additional_service"]');
-							var menuLiTop = menuLi.getBoundingClientRect().top + 14;
-
-							var focusElement = document.createElement('div');
-
-							focusElement.id = 'analytics-tooltip'
-
-							focusElement.style.position = 'fixed';
-							focusElement.style.left = '224px'
-							focusElement.style.top = menuLiTop + 'px';
-							focusElement.style.transform = 'translate(12px, -50%)';
-							focusElement.style.padding = '16px';
-							focusElement.style.borderRadius = '12px';
-							focusElement.style.backgroundColor = '#15181E';
-							focusElement.style.width = "240px";
-
-							var topText = document.createElement('p');
-
-							topText.style.color = '#FFFFFF';
-							topText.style.fontSize = '16px';
-							topText.style.fontWeight = '700';
-							topText.style.lineHeight = '24px';
-							topText.style.marginBottom = '12px';
-							topText.textContent = '부가 서비스 메뉴가 합쳐졌어요';
-
-							focusElement.appendChild(topText);
-
-							var middleText = document.createElement('p');
-
-							middleText.style.color = '#FFFFFF';
-							middleText.style.fontSize = '14px';
-							middleText.style.lineHeight = '20px';
-							middleText.style.marginBottom = '24px';
-							middleText.innerHTML = '더 다양한 데이터 분석 인사이트를 <br/>만나보세요'
-
-							focusElement.appendChild(middleText);
-
-							var bottomButtonArea = document.createElement('div');
-
-							bottomButtonArea.style.display = 'flex';
-							bottomButtonArea.style.justifyContent = 'flex-end';
-							bottomButtonArea.style.gap = '6px';
-
-							var closeButton = document.createElement('button');
-							closeButton.classList.add('tooltip-close-button');
-							closeButton.textContent = '닫기';
-							closeButton.id = 'analytics-tooltip-close';
-							bottomButtonArea.appendChild(closeButton);
-
-							var goButton = document.createElement('button');
-							goButton.id = 'analytics-tooltip-go';
-							goButton.classList.add('tooltip-go-button');
-							goButton.textContent = '이동';
-							bottomButtonArea.appendChild(goButton);
-
-							focusElement.appendChild(bottomButtonArea);
-
-							var arrowimg = `<img style="position: absolute;left: -6px;top: 50%;transform: translateY(-50%);" width="6" height="12" viewBox="0 0 6 12" fill="none" src="_blank">
-									</img>`
-
-							focusElement.innerHTML += arrowimg;
-
-							document.body.appendChild(focusElement);
-
-							document.querySelector('#analytics-tooltip-close').addEventListener('click', () => closeAnalyticsTooltip(() => {
-								isClosed = true;
-								remove();
-							}));
-							document.querySelector('#analytics-tooltip-go').addEventListener('click', () => closeAnalyticsTooltip(() => {
-								location.href = '/admin/stat/additional_service';
-							}));
-
-							isAppending = false;
-						}, 500);
-					}
-
-					function closeAnalyticsTooltip(callback) {
-						$.ajax({
-							url: '/admin/ajax/menu/close_analytics_tooltip.cm',
-							type: 'POST',
-							complete: callback
-						})
-					}
-
-					function appendPulse() {
-						var menuLi = document.querySelector('li[data-title="stat_additional_service"]');
-
-						var image = document.createElement('img');
-
-						image.id = 'analytics-pulse';
-
-						image.src = '/admin/img/menu_pulse.gif';
-
-						image.style.position = 'absolute';
-						image.style.left = '52px';
-						image.style.top = '50%';
-						image.style.transform = 'translateY(-50%)';
-						image.style.width = '56px';
-						image.style.height = '56px';
-						image.style.pointerEvents = 'none';
-
-						menuLi.appendChild(image);
-
-					}
-
-					function remove() {
-						document.querySelector('#analytics-tooltip')?.remove();
-						document.querySelector('#analytics-pulse')?.remove();
-					}
-
-					window.addEventListener('resize', () => {
-						if (window.innerWidth < 993) remove()
-						else {
-							analyticsFocus();
-						}
-					})
-
-					document.querySelector('#toggle_button').addEventListener('click', () => {
-						if (isSnbFolded()) remove()
-						else {
-							analyticsFocus();
-						}
-					})
-
-					$('.gui-folder').click(() => {
-						if (isTooltipExist()) remove()
-						else {
-							setTimeout(() => {
-								analyticsFocus();
-							}, 500);
-						}
-					})
-
-					document.querySelector('.nano-content').addEventListener('scroll', () => {
-						var tooltip = document.querySelector('#analytics-tooltip')
-
-						if (tooltip !== null) {
-							var top = document.querySelector('li[data-title="stat_additional_service"]').getBoundingClientRect().top
-
-							if (top === 0) {
-								remove()
-								return
-							}
-
-							tooltip.style.top = top + 14 + 'px';
-						}
-					})
-
-					analyticsFocus();
-				}
-			})
-		</script>
-	</div> 
+	</div>
 </body>
 
 </html>

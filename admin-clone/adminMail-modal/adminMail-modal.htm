@@ -1,595 +1,353 @@
 <!DOCTYPE html>
-<html lang="ko" >
+<html lang="ko">
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" type="text/css" href="./adminMail-modal_files/bootstrap.css" >
-	<link rel="stylesheet" type="text/css" href="./adminMail-modal_files/dashboard.css" >
-	<link rel="stylesheet" type="text/css" href="./adminMail-modal_files/tailwind.css" >
-	<link rel="stylesheet" type="text/css" href="./adminMail-modal_files/admin.css" >
+	<link rel="stylesheet" type="text/css" href="./adminMail-modal_files/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./adminMail-modal_files/dashboard.css">
+	<link rel="stylesheet" type="text/css" href="./adminMail-modal_files/tailwind.css">
+	<link rel="stylesheet" type="text/css" href="./adminMail-modal_files/admin.css">
 </head>
 
 
-<body class="menubar-hoverable header-fixed menubar-pin sidebar-mini" >
-    <input type="hidden" id="USE_OMS" value="on" >
-                <!-- BEGIN BASE-->
-    <div id="dashboard_loader" class="se-pre-con" style="display: none; adminMail-modal">
-        <div class="page-loader-spinner" >
-            <div class="double-bounce1" ></div>
-            <div class="double-bounce2" ></div>
-        </div>
-        <div class="progress" >
-            <div class="progress-bar" role="progressbar" style="width: 70%; adminMail-modal">
-                <label >70%</label>
-            </div>
-        </div>
-    </div>
-    <div id="base" >
-            
-    <script >
-        document.addEventListener('DOMContentLoaded', function() {
-            const alertBox = document.querySelector('#alertBox');
-            const contentArea = document.querySelector('#content');
-            alertBox?.classList.remove('alert__wrap-fixed');
-            alertBox?.classList.add('alert__wrap');
-            if ( contentArea && alertBox ) contentArea.prepend(alertBox);
-        });
-    </script>        <!-- END OFFCANVAS LEFT --><script type="text/javascript" >
-	$(function(){
-		SADMIN_MENU_ALERT.openAlert();
-	});
-</script><header class="top_header" id="header" >
-	<div class="headerbar" >
-		<div class="headerbar-left" >
-			<ul class="header-nav header-nav-options" >
-				<li class="hidden-lg hidden-md" >
-					<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);" >
-                        <img src="./adminMail-modal_files/icon-bo-menu-01.svg" >
-					</a>
-				</li>
-				<li class="header-nav-brand" >
-					<div class="brand-holder" >
-						<span class="location_text" >
-							<a href="https://qjfhdnaos51106.imweb.me/admin/member/mail" >자동 메일</a>						</span>
-					</div>
-				</li>
-			</ul>
+<body class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
+	<input type="hidden" id="USE_OMS" value="on">
+	<!-- BEGIN BASE-->
+	<div id="dashboard_loader" class="se-pre-con" style="display: none;">
+		<div class="page-loader-spinner">
+			<div class="double-bounce1"></div>
+			<div class="double-bounce2"></div>
 		</div>
-		<div class="headerbar-right" >
-			<ul class="header-nav header-nav-options _option_list" >
-			</ul><!--end .header-nav-options -->
-		</div><!--끝 #header-navbar-collapse -->
-		<!--끝 #header-navbar-collapse -->
-	</div>
-</header>
-<div id="content" ><div id="alertBox" class="alert__wrap" >    </div>
-	<section >
-		<div class="section-body" >
-			<div class="container text-center gmail_confirm_page" >
-				<h3 >Gmail 보안 연결</h3>
-				<p class="margin-top-12 text-gray sm-margin-bottom text-14" >구글 계정 연결이 끝나셨나요?<br >아래 확인 버튼을 눌러 메일 발송 설정에서 연결된 계정을 확인해주세요.</p>
-				<a href="https://qjfhdnaos51106.imweb.me/admin/member/mail" class="btn btn-primary md-margin-bottom" >메일 발송 설정 확인</a>
-								<p class="text-gray-bright text-13" >연결창이 실행되지 않았나요? <a href="javascript:;" class="text-primary" onclick="AUTO_MAIL_SETTING.openGoogleOauth(&#39;505298121730-2j5hfh5j7ttr1eeghk6e6gb325c3bj46.apps.googleusercontent.com&#39;, &#39;https://imweb.me/gmail_oauth&#39;)" >Gmail 연결</a>을 다시 시도해주세요.</p>
-                <p ><a class="text-primary" href="javascript:" onclick="AUTO_MAIL_SETTING.openSmtpHelpForm()" >설정방법 알아보기</a></p>
+		<div class="progress">
+			<div class="progress-bar" role="progressbar" style="width: 70%;">
+				<label>70%</label>
 			</div>
 		</div>
-	</section>
-</div>
-
-<script >
-    $(function(){
-        AUTO_MAIL_SETTING.openSmtpHelpForm();
-    })
-</script>
-
-<script >	
-			$(window).on("keyup", function(e){
-				if ( $.cocoaDialog.isOpen() ) {
-					$.cocoaDialog.modalControl(e);
-				}
-				return false;
-			});</script>
-<!-- BEGIN MENUBAR-->
-<button type="button" class="hidden-lg hidden-md toggle-btn" data-dismiss="menubar" >
-	<span class="sr-only" >Toggle navigation</span>
-    <img src="./adminMail-modal_files/icon-bo-close.svg" >
-</button>
-
-<div id="menubar" class="animate" >
-	<div class="nano has-scrollbar" style="height: 865px; adminMail-modal"><div class="nano-content" tabindex="0" style="right: -17px; adminMail-modal"><div class="menubar-scroll-panel" style="padding-bottom: 1px; adminMail-modal">
-		<div class="region-wrap full-width" >
-			<a href="javascript:" class="holder global_icon_menu dropdown-toggle" data-toggle="dropdown" aria-expanded="true" >
-				<div class="icon-wrap" >
-					<img src="./adminMail-modal_files/flag_kr_circle.png" class="region-icon" >
-				</div>
-				<div class="brand-holder" >
-					<span class="title_controls" >왓이님의 웹사이트</span>
-					<span class="icon" >
-						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" >
-                            <path d="M6 12L10 8.00003L6 4.00003" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" ></path>
-						</svg>
-					</span>
-				</div>
-			</a>
-			<ul class="dropdown-menu dropdown-menu-new global_setting animation-dock menu-card-styling" >					<li class="holder " >
-						<a href="https://qjfhdnaos51106.imweb.me/admin/member/mail?mode=gmail_oauth" >
-							<div class="tabled" >
-								<div class="table-cell vertical-middle width-1" >
-									<img width="30" height="30" src="./adminMail-modal_files/flag_kr_circle.png" >
-								</div>
-								<div class="table-cell vertical-middle domain" style="line-height: 1.3; adminMail-modal">
-									<div class="inline-blocked" >
-										<span class="domain_name" >왓이님의 웹사이트</span>
-									</div>
-									<span data-original-title="일반 방문자의 접속이 제한됩니다. 글로벌 버전으로 업그레이드 해주세요" data-toggle="tooltip" class="badge" data-placement="top" style="margin-left: 5px; vertical-align: top; adminMail-modal">미결제</span>
-																			<div class="text-gray-bright text-12" >qjfhdnaos51106.imweb.me</div>
-																	</div>
+	</div>
+	<div id="base">
+		<header class="top_header" id="header">
+			<div class="headerbar">
+				<div class="headerbar-left">
+					<ul class="header-nav header-nav-options">
+						<li class="hidden-lg hidden-md">
+							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar"
+								href="javascript:void(0);">
+								<img src="./adminMail-modal_files/icon-bo-menu-01.svg">
+							</a>
+						</li>
+						<li class="header-nav-brand">
+							<div class="brand-holder">
+								<span class="location_text">
+									<a href="https://qjfhdnaos51106.imweb.me/admin/member/mail">자동 메일</a> </span>
 							</div>
-						</a>
-						<div class="tools" >
-													</div>
-					</li>
-					<li class="add-unit" ><a href="javascript:;" onclick="SITE_MANAGE.openAddUnit(&#39;S20240516cc656761618e8&#39;)" class="text-secondary addunit" style="display: flex; adminMail-modal"><svg style="margin-right: 8px; adminMail-modal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M7.99992 3.3335V12.6668M3.33325 8.00016H12.6666" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" ></path></svg> 새 언어 사이트 추가</a></li></ul>		</div>
-		<ul id="main-menu" class="gui-controls" ><li data-prevent-menu-click="true" ><a href="javascript:;" class="_gnb_notification_button gnb_notification_button" ><div class="gui-icon" ><i class="db-bell" ></i></div><span class="title title_controls" >알림</span><span class="_badge badge_new" >New</span></a></li><li class="" data-title="design_mode" ><a href="https://qjfhdnaos51106.imweb.me/admin/design" ><div class="gui-icon" ><i class="db-wand" ></i></div><span class="title title_controls" >디자인 모드</span></a></li><li class="" data-title="preview" ><a class="external-url" href="https://qjfhdnaos51106.imweb.me/" target="_blank" ><div class="gui-icon" ><i class="db-preview" ></i></div><span class="title title_controls" >사이트 바로가기</span></a></li><li class="spacer" ></li><li class="top-menu" ><div ><span >사이트 관리</span><a href="javascript:;" class="shop-extend" onclick="DASHBOARD.openSiteManagementDialog(this);" data-original-title="쇼핑·예약 기능설정" data-toggle="tooltip" data-placement="right" data-trigger="hover" data-template="&lt;div class=&quot;tooltip custom-tooltip&quot;&gt;&lt;div class=&quot;tooltip-inner&quot;&gt;&lt;/div&gt;&lt;/div&gt;" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" ><path d="M7.99998 8.6665C8.36817 8.6665 8.66665 8.36803 8.66665 7.99984C8.66665 7.63165 8.36817 7.33317 7.99998 7.33317C7.63179 7.33317 7.33331 7.63165 7.33331 7.99984C7.33331 8.36803 7.63179 8.6665 7.99998 8.6665Z" fill="#4B515B" ></path><path d="M7.99998 3.99984C8.36817 3.99984 8.66665 3.70136 8.66665 3.33317C8.66665 2.96498 8.36817 2.6665 7.99998 2.6665C7.63179 2.6665 7.33331 2.96498 7.33331 3.33317C7.33331 3.70136 7.63179 3.99984 7.99998 3.99984Z" fill="#4B515B" ></path><path d="M7.99998 13.3332C8.36817 13.3332 8.66665 13.0347 8.66665 12.6665C8.66665 12.2983 8.36817 11.9998 7.99998 11.9998C7.63179 11.9998 7.33331 12.2983 7.33331 12.6665C7.33331 13.0347 7.63179 13.3332 7.99998 13.3332Z" fill="#4B515B" ></path><path d="M7.99998 8.6665C8.36817 8.6665 8.66665 8.36803 8.66665 7.99984C8.66665 7.63165 8.36817 7.33317 7.99998 7.33317C7.63179 7.33317 7.33331 7.63165 7.33331 7.99984C7.33331 8.36803 7.63179 8.6665 7.99998 8.6665Z" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" ></path><path d="M7.99998 3.99984C8.36817 3.99984 8.66665 3.70136 8.66665 3.33317C8.66665 2.96498 8.36817 2.6665 7.99998 2.6665C7.63179 2.6665 7.33331 2.96498 7.33331 3.33317C7.33331 3.70136 7.63179 3.99984 7.99998 3.99984Z" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" ></path><path d="M7.99998 13.3332C8.36817 13.3332 8.66665 13.0347 8.66665 12.6665C8.66665 12.2983 8.36817 11.9998 7.99998 11.9998C7.63179 11.9998 7.33331 12.2983 7.33331 12.6665C7.33331 13.0347 7.63179 13.3332 7.99998 13.3332Z" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" ></path></svg></a></div></li><li class="" data-title="dashboard" ><a href="https://qjfhdnaos51106.imweb.me/admin//" ><div class="gui-icon" ><i class="db-dashboard" ></i></div><span class="title title_controls" >대시보드</span></a></li><li class="active gui-folder" data-title="member" ><a href="https://qjfhdnaos51106.imweb.me/admin/member" class="sidebar-nav-menu active" onclick="return false;" ><div class="gui-icon" ><i class="db-user" ></i></div><span class="title title_controls" >사용자 관리</span></a><ul ><li class="  " data-title="member_list" ><a href="https://qjfhdnaos51106.imweb.me/admin/member/list" ><span class="title title_controls" >사용자 목록</span></a></li><li class="  " data-title="member_msg" ><a href="https://qjfhdnaos51106.imweb.me/admin/member/send" ><span class="title title_controls" >메시지 보내기</span></a></li><li class="  " data-title="member_permission" ><a href="https://qjfhdnaos51106.imweb.me/admin/member/permission" ><span class="title title_controls" >운영진</span></a></li><li class="active expanded" data-title="member_mail" ><a href="https://qjfhdnaos51106.imweb.me/admin/member/mail" class=" active" ><span class="title title_controls" >자동 메일</span></a></li><li class="  " data-title="member_talk" ><a href="https://qjfhdnaos51106.imweb.me/admin/member/kakao_friend" ><span class="title title_controls" >친구톡 보내기</span></a></li><li class="  " data-title="member_sms" ><a href="https://qjfhdnaos51106.imweb.me/admin/member/sms" ><span class="title title_controls" >SMS·알림톡</span></a></li></ul></li><li class="" data-title="crm_campaigns" ><a href="https://qjfhdnaos51106.imweb.me/admin/crm_campaigns" ><div class="gui-icon" ><i class="db-crm-campaigns" ></i></div><span class="title title_controls" >CRM 캠페인 자동화</span><span class="badge_new" >New</span></a></li><li class="" data-title="crm" ><a href="https://qjfhdnaos51106.imweb.me/admin/crm_marketing" ><div class="gui-icon" ><i class="db-crm" ></i></div><span class="title title_controls" >고객 행동 관리</span></a></li><li class="gui-folder" data-title="shopping" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-shopping-bag" ></i></div><span class="title title_controls" >쇼핑</span></a><ul ><li class="  " data-title="shopping_product" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/product" ><span class="title title_controls" >상품</span></a></li><li class="  " data-title="shopping_interlocking" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/interlocking" ><span class="title title_controls" >연동 상품</span><span class="badge_beta" >Beta</span></a></li><li class="  " data-title="shopping_order_v1" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/order-v1" ><span class="title title_controls" >주문관리 v2</span><span class="badge_new" >New</span></a></li><li class="  " data-title="shopping_regularly" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/regularly" ><span class="title title_controls" >정기구독</span></a></li><li class="  " data-title="shopping_gift" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/gift" ><span class="title title_controls" >선물하기</span><span class="badge_new" >New</span></a></li><li class="  " data-title="shopping_review" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/review" ><span class="title title_controls" >구매평</span></a></li><li class="  " data-title="shopping_answers" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/answers" ><span class="title title_controls" >문의</span></a></li><li class="  " data-title="member_mileage" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/mileage" ><span class="title title_controls" >적립금</span></a></li><li class="  " data-title="shopping_coupon" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/coupon" ><span class="title title_controls" >쿠폰</span></a></li><li class="  " data-title="shopping_shipping" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/shipping" ><span class="title title_controls" >배송설정</span></a></li><li class="  " data-title="shopping_config" ><a href="https://qjfhdnaos51106.imweb.me/admin/shopping/config" ><span class="title title_controls" >환경설정</span></a></li></ul></li><li class="gui-folder animated animated-hidden" data-title="booking" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-calendar" ></i></div><span class="title title_controls" >예약</span></a><ul ><li class="  " data-title="booking_product" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/product" ><span class="title title_controls" >객실·사이트</span></a></li><li class="  " data-title="booking_order_cal" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/order_cal" ><span class="title title_controls" >예약 현황</span></a></li><li class="  " data-title="booking_order" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/order" ><span class="title title_controls" >예약 신청</span></a></li><li class="  " data-title="booking_review" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/review" ><span class="title title_controls" >후기</span></a></li><li class="  " data-title="booking_answers" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/answers" ><span class="title title_controls" >문의</span></a></li><li class="  " data-title="booking_option" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/option" ><span class="title title_controls" >옵션설정</span></a></li><li class="  " data-title="booking_season" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/season" ><span class="title title_controls" >성수기·휴일</span></a></li><li class="  " data-title="booking_config" ><a href="https://qjfhdnaos51106.imweb.me/admin/booking/config" ><span class="title title_controls" >환경설정</span></a></li></ul></li><li class="gui-folder" data-title="contents" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-pencil" ></i></div><span class="title title_controls" >컨텐츠 관리</span></a><ul ><li class="  " data-title="contents_post" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents/post" ><span class="title title_controls" >게시물</span></a></li><li class="  " data-title="contents_comment" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents/comment" ><span class="title title_controls" >댓글</span></a></li><li class="  " data-title="contents_form" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents/form" ><span class="title title_controls" >입력폼</span></a></li><li class="  " data-title="contents_map" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents/map" ><span class="title title_controls" >지도</span></a></li><li class="  " data-title="contents_calendar" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents/calendar" ><span class="title title_controls" >일정</span></a></li><li class="  " data-title="contents_gallery" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents/gallery" ><span class="title title_controls" >갤러리</span></a></li><li class="  " data-title="contents_report" ><a href="https://qjfhdnaos51106.imweb.me/admin/contents/report" ><span class="title title_controls" >신고·차단</span></a></li></ul></li><li class="gui-folder" data-title="marketing" ><a href="https://qjfhdnaos51106.imweb.me/admin/marketing" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-megaphone" ></i></div><span class="title title_controls" >광고 캠페인 관리</span></a><ul ><li class="  " data-title="marketing_home" ><a href="https://qjfhdnaos51106.imweb.me/admin/marketing/marketing-home" ><span class="title title_controls" >홈</span></a></li><li class="  " data-title="marketing_dashboard" ><a href="https://qjfhdnaos51106.imweb.me/admin/marketing/dashboard" ><span class="title title_controls" >대시보드</span></a></li><li class="  " data-title="marketing_campaign" ><a href="https://qjfhdnaos51106.imweb.me/admin/marketing/campaign" ><span class="title title_controls" >캠페인</span></a></li><li class="  " data-title="marketing_credit" ><a href="https://qjfhdnaos51106.imweb.me/admin/marketing/credit" ><span class="title title_controls" >크레딧 관리</span></a></li><li class="  " data-title="marketing_dataconnect" ><a href="https://qjfhdnaos51106.imweb.me/admin/marketing/data-connect" ><span class="title title_controls" >데이터 연결</span></a></li></ul></li><li class="gui-folder" data-title="app" ><a href="https://qjfhdnaos51106.imweb.me/admin/app" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-mobile" ></i></div><span class="title title_controls" >모바일 앱</span></a><ul ><li class="  " data-title="app_android" ><a href="https://qjfhdnaos51106.imweb.me/admin/app/android" ><span class="title title_controls" >Android 앱</span></a></li><li class="  " data-title="app_ios" ><a href="https://qjfhdnaos51106.imweb.me/admin/app/ios" ><span class="title title_controls" >iOS 앱</span></a></li></ul></li><li class="gui-folder" data-title="stat" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-status-up" ></i></div><span class="title title_controls" >통계</span></a><ul ><li class="  " data-title="stat_summary" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/summary" ><span class="title title_controls" >홈</span></a></li><li class="  " data-title="stat_shopping" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/shopping" ><span class="title title_controls" >매출</span><span class="badge_beta" >Beta</span></a></li><li class="  " data-title="stat_analytics" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/analytics" ><span class="title title_controls" >기간별 분석</span></a></li><li class="  " data-title="stat_site" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/site" ><span class="title title_controls" >유입 사이트</span></a></li><li class="  " data-title="stat_keyword" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/keyword" ><span class="title title_controls" >유입 검색어</span></a></li><li class="  " data-title="stat_visitor" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/visitor" ><span class="title title_controls" >방문자</span></a></li><li class="  " data-title="stat_page" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/page" ><span class="title title_controls" >많이 방문한 페이지</span></a></li><li class="  " data-title="stat_traffic" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/traffic" ><span class="title title_controls" >트래픽</span></a></li><li class="  " data-title="admin_stat_mileage" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/mileage" ><span class="title title_controls" >적립금</span></a></li><li class="  " data-title="stat_feedback" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/feedback" ><span class="title title_controls" >컨텐츠 반응</span></a></li><li class="  " data-title="stat_additional_service" ><a href="https://qjfhdnaos51106.imweb.me/admin/stat/additional_service" ><span class="title title_controls" >부가 서비스</span></a></li></ul></li><li class="" data-title="payment" ><a href="https://qjfhdnaos51106.imweb.me/admin/payment" ><div class="gui-icon" ><i class="db-rocket" ></i></div><span class="title title_controls" >결제·앱스토어</span></a></li><li class="gui-folder" data-title="config" ><a href="https://qjfhdnaos51106.imweb.me/admin/config" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-settings" ></i></div><span class="title title_controls" >환경설정</span></a><ul ><li class="  " data-title="config_default" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/default" ><span class="title title_controls" >일반</span></a></li><li class="  " data-title="config_localize" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/localize" ><span class="title title_controls" >언어·지역·통화</span></a></li><li class="  " data-title="config_pg" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/pg" ><span class="title title_controls" >전자결제(PG)</span></a></li><li class="  " data-title="config_domain" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/domain" ><span class="title title_controls" >도메인</span></a></li><li class="  " data-title="config_ssl" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/ssl" ><span class="title title_controls" >SSL(보안서버)</span></a></li><li class="  " data-title="config_security" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/security" ><span class="title title_controls" >보안·개인정보 보호</span></a></li><li class="  " data-title="config_membership" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/membership" ><span class="title title_controls" >회원가입·그룹·등급</span></a></li><li class="  " data-title="config_seo" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/seo" ><span class="title title_controls" >SEO(검색엔진최적화)</span></a></li><li class="  " data-title="config_etc" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/etc" ><span class="title title_controls" >약관</span></a></li><li class="  " data-title="config_popup" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/popup" ><span class="title title_controls" >팝업·배너</span></a></li><li class="  " data-title="config_adult" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/adult" ><span class="title title_controls" >본인·성인인증</span></a></li><li class="  " data-title="config_oauth" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/oauth" ><span class="title title_controls" >소셜 로그인·지도·공유</span></a></li><li class="  " data-title="config_chat" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/chat" ><span class="title title_controls" >상담 채널 연동</span></a></li><li class="  " data-title="config_api_v2" ><a href="https://qjfhdnaos51106.imweb.me/admin/config/rest_v2" ><span class="title title_controls" >외부 서비스 연동 (API)</span></a></li></ul></li><li class="spacer" ></li><li class="top-menu" ><div ><span >리소스</span></div></li><li class="" data-title="support" ><a class="external-url" href="https://imweb.me/customer" target="_blank" ><div class="gui-icon" ><i class="db-comments" ></i></div><span class="title title_controls" >고객지원</span></a></li><li class="gui-folder" data-title="campus" ><a class="external-url" href="https://qjfhdnaos51106.imweb.me/admin/member/edu" onclick="return false;" ><div class="gui-icon" ><i class="db-graduation-cap" ></i></div><span class="title title_controls" >아임웹 교육</span></a><ul ><li class="  " data-title="campus_edu" ><a class="external-url" href="https://imweb.me/edu" target="_blank" ><span class="title title_controls" >교육 일정·신청</span></a></li><li class="  " data-title="campus_video" ><a class="external-url" href="https://imweb.me/video_lecture" target="_blank" ><span class="title title_controls" >동영상 강의</span></a></li></ul></li><li class="gui-folder" data-title="expert" ><a href="https://qjfhdnaos51106.imweb.me/admin/expert" class="sidebar-nav-menu" onclick="return false;" ><div class="gui-icon" ><i class="db-telescope" ></i></div><span class="title title_controls" >전문가 찾기</span><span class="badge_new" >New</span></a><ul ><li class="  " data-title="find_expert_main" ><a class="external-url" href="https://imweb.me/expert" target="_blank" ><span class="title title_controls" >전문가 찾기</span></a></li><li class="  " data-title="find_expert" ><a href="https://qjfhdnaos51106.imweb.me/admin/expert/find_expert" ><span class="title title_controls" >전문가 웹사이트 관리</span></a></li></ul></li></ul>	</div></div><div class="nano-pane" ><div class="nano-slider" style="height: 837px; top: 0px; display: block; adminMail-modal"></div></div></div>
-</div>
-<div class="fold_area animate" >
-    <div class="table-cell vertical-middle" >
-        <a href="https://qjfhdnaos51106.imweb.me/admin/" class="logo_icon_menu" >
-            <img src="./adminMail-modal_files/imweb_new_bi.svg" >        </a>
-    </div>
-    <a class="_tooltip_btn side_bar_btn" href="javascript:void(0)" role="button" id="toggle_button" >
-		<span class="fold_button left" data-original-title="사이드바 접기" data-toggle="tooltip" data-placement="right" data-trigger="hover" data-template="&lt;div class=&#39;tooltip custom-tooltip&#39;&gt;&lt;div class=&#39;tooltip-inner&#39;&gt;&lt;/div&gt;&lt;/div&gt;" >
-			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" >
-                <path d="M12 11.3334L8.66667 8.00002L12 4.66669M7.33333 11.3334L4 8.00002L7.33333 4.66669" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" ></path>
-            </svg>
-		</span>
-        <span class="fold_button right" data-original-title="사이드바 펼치기" data-toggle="tooltip" data-placement="right" data-trigger="hover" data-template="&lt;div class=&#39;tooltip custom-tooltip&#39;&gt;&lt;div class=&#39;tooltip-inner&#39;&gt;&lt;/div&gt;&lt;/div&gt;" >
-	        <div class="default" >
-		        			        <img src="./adminMail-modal_files/grim-logo-imweb-symbol.svg" alt="사이드바 펼치기" >
-		        	        </div>
-	        <div class="hover" >
-				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" >
-	                <path d="M4 11.3334L7.33333 8.00002L4 4.66669M8.66667 11.3334L12 8.00002L8.66667 4.66669" stroke="#717680" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" ></path>
-	            </svg>
-	        </div>
-		</span>
-    </a>
-</div>
-<div class="_notify-modal-provider" ></div>
-<style >
-	.custom-tooltip.in {
-		opacity: 1;
-	}
-	.custom-tooltip.right {
-		margin-left: 4px;
-		padding: 0;
-	}
-	.custom-tooltip .tooltip-inner {
-		padding: 6px 8px;
-		border-radius: 8px;
-		background-color: #15181E;
-		color: #FFFFFF;
-		font-size: 12px;
-		font-weight: 400;
-		line-height: 16px;
-		box-shadow: 0 14px 32px 0 rgba(75, 81, 91, 0.12),
-			0 10px 14px 0 rgba(75, 81, 91, 0.06),
-			0 0 0 1px rgba(75, 81, 91, 0.03),
-			0 0 1px 0 rgba(75, 81, 91, 0.20);
-	}
-</style>
-<script >
-  (function(){
-    let body = document.body;
-    let btn = document.querySelector('#toggle_button');
-    let sidebar_mini_class = 'sidebar-mini';
-    let user_sm_status = getCookie('sm_status');
-    let window_width = window.innerWidth;
-    setPrimarySideMenu();
-
-    btn.addEventListener('click', handleToggleButton);
-    btn.addEventListener('touch', handleToggleButton);
-
-    //만약 사용자가 버튼을 누르지 않았을때만 이 이벤트 리스너를 사용할것임.
-      window.onresize = () => {
-        window_width = window.innerWidth;
-        if(user_sm_status !== 'h'&& user_sm_status !== 's') {
-          resizeWindow(window_width)
-        }
-      }
-
-    function handleToggleButton(){
-      if (user_sm_status == 'h') {
-        setSideMenu('show');
-      } else {
-        setSideMenu('hide');
-      }
-    }
-
-    function resizeWindow(window_width){
-      if (window_width > 1280 || window_width < 991) {
-        body.classList.remove(sidebar_mini_class);
-      }
-      //992~1279 일때
-     else {
-        body.classList.add(sidebar_mini_class)
-      }
-    }
-
-    function setPrimarySideMenu() {
-      if( window_width > 1280 && user_sm_status !== 'h'|| window_width < 991 ) {
-        body.classList.remove(sidebar_mini_class);
-      }
-      //992~1279 일때
-      else if( window_width <=1280 && window_width >= 991) {
-          if(user_sm_status == 's') body.classList.remove(sidebar_mini_class);
-          else body.classList.add(sidebar_mini_class)
-      }
-      else{
-        body.classList.add(sidebar_mini_class)
-      }
-    }
-
-    function setSideMenu(show){
-      if(show == "show") {
-        setCookie('sm_status', 's',1);
-        body.classList.remove(sidebar_mini_class);
-        user_sm_status = 's'
-      }
-      else{
-        setCookie('sm_status','h',1);
-        body.classList.add(sidebar_mini_class);
-        user_sm_status = 'h';
-		// 사이드바 접기 버튼을 누른 순간에 바로 접힐 수 있도록 10ms동안 임시 클래스 추가로 hover 이벤트를 방지
-        let fold_area = document.querySelector('#menubar ~ .fold_area');
-		fold_area.classList.add('disable-hover');
-		setTimeout(() => {fold_area.classList.remove('disable-hover')}, 10);
-      }
-    }
-
-	$('._lang_button').off('click').on('click', function(){
-		let that = this;
-		if($.cocoaStickerModal.isOpen()){
-			$.cocoaStickerModal.close();
-		}
-		$.cocoaStickerModal.open({
-			target: that,
-			id: 'langListModal',
-			html: $('#langListOrigin').html(),
-			width: '152px',
-			bottom: 23,
-			left: 21
-		});
-	});
-
-	  		  const $notificationButton = $('._gnb_notification_button');
-
-		  const interval = getNotifyBadgeInterval($notificationButton);
-		  const notifyHandler = getNotifyHandler();
-
-		  notifyHandler.setInterval(interval);
-
-		  interval.force();
-		  interval.start();
-
-		  $notificationButton.on('click', function() {
-			  notifyHandler.toggleModal(interval);
-		  });
-	    })();
-
-</script>
-<style >
-
-	#analytics-tooltip button {
-		 padding: 4px 12px;
-		 line-height: 24px;
-		 font-size: 14px;
-		 border-radius: 6px;
-		 transition: 0.1s ease-out;
-	}
-
-	.tooltip-close-button {
-		 color: #717680;
-		 background-color: transparent;
-	}
-
-	.tooltip-close-button:hover {
-		 background-color: #f8f9fb;
-	}
-
-	.tooltip-close-button:active {
-		background-color: #e2e5e9;
-	}
-
-	.tooltip-go-button {
-		 color: #FFFFFF;
-		 background-color: #1A6DFF;
-	}
-
-	.tooltip-go-button:hover {
-		 background-color: #70a2FF;
-	}
-
-	.tooltip-go-button:active {
-		background-color: #99bdFF;
-	}
-</style>
-<script >
-	window.addEventListener('load', () => {
-		var svShowAnalyticsTooltip = 'Y';
-
-		if (svShowAnalyticsTooltip === 'Y') {
-			var isClosed = false;
-
-			var isAppending = false;
-		
-			function isSnbFolded() {
-				return document.body.classList.contains('sidebar-mini');
-			}
-
-			function isMobile() {
-				return window.innerWidth < 993;
-			}
-
-			function isTooltipExist() {
-				return document.querySelector('#analytics-tooltip') !== null;
-			}
-
-			function isStatMenuFolded() {
-				return $('li[data-title="stat"] > ul').css('display') === 'none';
-			}
-
-			function analyticsFocus() {
-				if (
-					isClosed ||
-					isSnbFolded() ||
-					isMobile() ||
-					isTooltipExist() ||
-					isStatMenuFolded() ||
-					isAppending
-				) {
-					return;
-				}
-
-				scrollToMenuLi()
-			}
-
-			function scrollToMenuLi () {
-				var menuLi = document.querySelector('li[data-title="stat_additional_service"]');
-
-				var menuLiTop = menuLi.getBoundingClientRect().top;
-				var toScroll = Math.max(0, menuLiTop - window.innerHeight) + 28 + 144;
-
-				document.querySelector('.nano-content').scrollTo({ top : toScroll, behavior: 'smooth' })
-
-				appendTooltip()
-				appendPulse()
-			}
-
-			function appendTooltip() {
-				isAppending = true;
-				setTimeout(() => {
-					var menuLi = document.querySelector('li[data-title="stat_additional_service"]');
-					var menuLiTop = menuLi.getBoundingClientRect().top + 14;
-
-					var focusElement = document.createElement('div');
-
-					focusElement.id = 'analytics-tooltip'
-
-					focusElement.style.position = 'fixed';
-					focusElement.style.left = '224px'
-					focusElement.style.top = menuLiTop + 'px';
-					focusElement.style.transform = 'translate(12px, -50%)';
-					focusElement.style.padding = '16px';
-					focusElement.style.borderRadius = '12px';
-					focusElement.style.backgroundColor = '#15181E';
-					focusElement.style.width = "240px";
-
-					var topText = document.createElement('p');
-
-					topText.style.color = '#FFFFFF';
-					topText.style.fontSize = '16px';
-					topText.style.fontWeight = '700';
-					topText.style.lineHeight = '24px';
-					topText.style.marginBottom = '12px';
-					topText.textContent = '부가 서비스 메뉴가 합쳐졌어요';
-
-					focusElement.appendChild(topText);
-
-					var middleText = document.createElement('p');
-
-					middleText.style.color = '#FFFFFF';
-					middleText.style.fontSize = '14px';
-					middleText.style.lineHeight = '20px';
-					middleText.style.marginBottom = '24px';
-					middleText.innerHTML = '더 다양한 데이터 분석 인사이트를 <br/>만나보세요'
-
-					focusElement.appendChild(middleText);
-
-					var bottomButtonArea = document.createElement('div');
-
-					bottomButtonArea.style.display = 'flex';
-					bottomButtonArea.style.justifyContent = 'flex-end';
-					bottomButtonArea.style.gap = '6px';
-
-					var closeButton = document.createElement('button');
-					closeButton.classList.add('tooltip-close-button');
-					closeButton.textContent = '닫기';
-					closeButton.id = 'analytics-tooltip-close';
-					bottomButtonArea.appendChild(closeButton);
-
-					var goButton = document.createElement('button');
-					goButton.id = 'analytics-tooltip-go';
-					goButton.classList.add('tooltip-go-button');
-					goButton.textContent = '이동';
-					bottomButtonArea.appendChild(goButton);
-
-					focusElement.appendChild(bottomButtonArea);
-
-					var arrowSvg = `<svg style="position: absolute;left: -6px;top: 50%;transform: translateY(-50%);" width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M0.707107 6.70711C0.316582 6.31658 0.316582 5.68342 0.707106 5.29289L6 -2.62268e-07L6 12L0.707107 6.70711Z" fill="#15181E"/>
-									</svg>`
-
-					focusElement.innerHTML += arrowSvg;
-
-					document.body.appendChild(focusElement);
-
-					document.querySelector('#analytics-tooltip-close').addEventListener('click', () => closeAnalyticsTooltip(() => {
-						isClosed = true;
-						remove();
-					}));
-					document.querySelector('#analytics-tooltip-go').addEventListener('click', () => closeAnalyticsTooltip(() => {
-						location.href = '/admin/stat/additional_service';
-					}));
-
-					isAppending = false;
-				}, 500);
-			}
-
-			function closeAnalyticsTooltip(callback) {
-				$.ajax({
-					url: '/admin/ajax/menu/close_analytics_tooltip.cm',
-					type: 'POST',
-					complete: callback
-				})
-			}
-
-			function appendPulse() {
-				var menuLi = document.querySelector('li[data-title="stat_additional_service"]');
-
-				var image = document.createElement('img');
-
-				image.id = 'analytics-pulse';
-
-				image.src = '/admin/img/menu_pulse.gif';
-
-				image.style.position = 'absolute';
-				image.style.left = '52px';
-				image.style.top = '50%';
-				image.style.transform = 'translateY(-50%)';
-				image.style.width = '56px';
-				image.style.height = '56px';
-				image.style.pointerEvents = 'none';
-
-				menuLi.appendChild(image);
-				
-			}
-
-			function remove() {
-				document.querySelector('#analytics-tooltip')?.remove();
-				document.querySelector('#analytics-pulse')?.remove();
-			}
-
-			window.addEventListener('resize', () => {
-				if (window.innerWidth < 993) remove()
-				else {
-					analyticsFocus();
-				}
-			})
-
-			document.querySelector('#toggle_button').addEventListener('click', () => {
-				if (isSnbFolded()) remove()
-				else {
-					analyticsFocus();
-				}
-			})
-
-			$('.gui-folder').click(() => {
-				if (isTooltipExist()) remove()
-				else {
-					setTimeout(() => {
-						analyticsFocus();
-					}, 500);
-				}
-			})
-
-			document.querySelector('.nano-content').addEventListener('scroll', () => {
-				var tooltip = document.querySelector('#analytics-tooltip')
-
-				if (tooltip !== null) {
-					var top = document.querySelector('li[data-title="stat_additional_service"]').getBoundingClientRect().top
-
-					if (top === 0) {
-						remove()
-						return
-					}
-
-					tooltip.style.top = top + 14 + 'px';
-				}
-			})
-
-			analyticsFocus();
-		}
-	})
-
-  
-	
-</script></div> <!-- END BASE -->
-
-
-
-<script >
-</script><div id="cocoaModal" role="dialog" class="modalmodal_admin" data-backdrop="true" data-keyboard="true" style="display: none; adminMail-modal">
-	<div class="modal-dialog ui-draggable" >
-		<div class="modal-content" ><div class="modal-header" >     <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-original-title="" title="" ><i class="btm bt-times" ></i></button>     <h3 class="modal-title" >메일 설정 안내</h3> </div> <div class="modal-body" > 	<p >내 사이트에서 신규가입, 주문 등의 상황에서 자동으로 메일을 보내게 될 때 사이트의 소유자 이메일 주소로 발송하게 됩니다.</p> 	<p >하지만 <span class="text-danger" >보내는 메일 서버(내 사이트)</span> 와 <span class="text-danger" >보내는 메일 주소의 도메인이 다를 경우, 스팸으로 분류되는 현상</span>이 있습니다. 예를 들어, abc@naver.com 이라는 메일 주소로 발송하게 될 때, naver.com 에서 보내는 메일이 아니기 때문에 스팸으로 분류될 가능성이 있습니다.</p> 	<p style="margin-bottom: 20px; adminMail-modal">이렇게 스팸으로 분류되는 현상을 최소화하기 위해서는 아래와 같이 메일 서비스별로 설정이 필요합니다.</p> 	<div > 		<ul class="nav nav-tabs" role="tablist" > 			<li role="presentation" class="active" ><a href="https://qjfhdnaos51106.imweb.me/admin/member/mail?mode=gmail_oauth#gmail_help" aria-controls="home" role="tab" data-toggle="tab" >Gmail </a></li> 			<li role="presentation" ><a href="https://qjfhdnaos51106.imweb.me/admin/member/mail?mode=gmail_oauth#naver_help" aria-controls="profile" role="tab" data-toggle="tab" >네이버</a></li> 			<li role="presentation" ><a href="https://qjfhdnaos51106.imweb.me/admin/member/mail?mode=gmail_oauth#daum_help" aria-controls="messages" role="tab" data-toggle="tab" >다음</a></li> 			<li role="presentation" ><a href="https://qjfhdnaos51106.imweb.me/admin/member/mail?mode=gmail_oauth#nate_help" aria-controls="settings" role="tab" data-toggle="tab" >네이트</a></li> 		</ul> 		<div class="tab-content" style="padding-top: 22px; adminMail-modal"> 			<div role="tabpanel" class="tab-pane active" id="gmail_help" >             	<ol class="description-list" >             		<li >내 사이트의 <strong >[사용자 관리 &gt; 메일 발송 설정]</strong> 에서 <strong >서비스 제공업체</strong>를 <strong >Gmail</strong> 로 선택합니다.</li>             		<li ><p ><strong >Google 연결</strong> 버튼을 클릭합니다.</p><p ><img src="./adminMail-modal_files/7f2696928f514.png" class="img-responsive shadow" ></p></li>             		<li >Google 계정 연결 창이 나오면 연결할 Google 계정을 선택합니다.</li>             		<li ><p ><strong >'나를 대신하여 이메일 전송'</strong> 권한을 선택 허용하고, <strong >계속</strong> 버튼을 클릭합니다.</p><p ><img src="./adminMail-modal_files/6574d6ab43c4b.png" class="img-responsive shadow" ></p></li>             		<li ><p >이 도움말을 닫고, <strong >메일 발송 설정 확인</strong> 버튼을 클릭해 메뉴로 돌아갑니다. (어떤 이유로 Google 계정에 대한 액세스 요청 창이 실행되지 않거나 정상적으로 모든 과정을 완료하지 않았다면 위 2번 과정부터 다시 시도해 주세요.)</p><p ><img src="./adminMail-modal_files/2efd080efdf97.png" class="img-responsive shadow" ></p></li>             		<li >메일 발송 설정에서 메일이 잘 연결되었는지 확인합니다.</li>             	</ol>             	<p ><span class="text-info" >전송한도</span>: 1회당 최대 100명, 하루 최대 500개</p>             	<hr >             	<h4 ><strong class="text-danger" >인증메일이 오지 않거나 SMTP 연결 실패시 조치방법</strong></h4>             	<p >인증메일이 오지 않거나 SMTP 연결 실패 시 아래의 방법을 사용해 조치해 보시길 바랍니다.</p>             	<ol class="description-list" >                     <li >Gmail에 접속 후, 로그인 시도 차단 메일을 확인 후 <strong >내 활동 확인</strong> 버튼을 클릭합니다.</li>                     <li >메일이 오지 않은 경우 Google 계정 설정의 <a href="https://myaccount.google.com/notifications" target="_blank" class="text-primary" >최근 보안 관련 활동</a>에 접속합니다.</li>                     <li ><strong >중요 보안 경고</strong> 창이 나오면 최근에 <strong >Google 계정 로그인이 차단된 적이 있나요?</strong> 에서 <strong >예</strong> 를 클릭합니다.</li>                     <li ><strong >메일 발송 설정</strong> 에서 메일 인증을 재시도를 실행합니다.</li>                 </ol>             </div> 			<div role="tabpanel" class="tab-pane" id="naver_help" >                 <h4 ><strong >1단계: 네이버 메일 설정</strong></h4>                 <ol class="description-list" style="margin-bottom: 24px; adminMail-modal">                 	<li ><a href="https://mail.naver.com/" class="text-primary" target="_blank" >네이버 메일</a>에 접속합니다. (PC 브라우저에서 접속해 주세요.)</li>                 	<li >왼쪽 메뉴 열에서 하단에 위치한 <strong >환경설정</strong> 을 클릭합니다.</li>                 	<li >상단 메뉴에서 <strong >POP3/IMAP 설정</strong> 을 클릭합니다.</li>                 	<li ><strong >POP3/SMTP 사용</strong> 에서 <strong >사용함</strong> 을 선택합니다.</li>                 	<li ><strong >저장</strong> 버튼을 클릭해 적용합니다.</li>             	</ol>                 <h4 ><strong >2단계: 메일 발송 설정</strong></h4>                 <ol class="description-list" style="margin-bottom: 24px; adminMail-modal">                 	<li >이 도움말을 닫고, <strong >서비스 제공업체</strong> 를 <strong >네이버</strong> 로 선택합니다.</li>                 	<li ><p >아래의 항목들을 설정합니다.</p>                 		<ul >             	    		<li >발신자 메일주소: 네이버 메일 주소 입력 (예: myid@naver.com)</li>             	    		<li >로그인 ID: 네이버 ID 입력 (이메일 형식이 아닌 네이버 ID 입력, <span class="text-danger" >myid</span>@naver.com)</li>             	    		<li >패스워드: 네이버 비밀번호 입력 (2단계 인증 서비스 이용 시 아래의 별첨 도움말을 참고해 외부 애플리케이션 비밀번호 생성 후 입력)</li>             	    		<li >인증메일 주소: 수신 가능한 메일 주소 입력 (발신자 메일 주소와 같아도 무방)</li>                 		</ul>                 	</li>                 	<li ><strong >인증메일 보내기</strong> 버튼을 클릭합니다.</li>                 	<li ><strong >인증메일 주소</strong>로 발송된 <strong >인증메일</strong>을 열고, <strong >인증번호</strong>를 확인합니다.</li>                 	<li ><strong >인증번호</strong> 입력 후, <strong >인증 하기</strong> 버튼을 클릭합니다.</li>                 	<li >인증이 완료되면 오른쪽 상단에 위치한 <strong >저장</strong> 버튼을 클릭해 메일 설정을 완료합니다.</li>                 	<li >이제 입력하신 발신자 메일 주소로 자동 메일이 발송됩니다.</li>                 </ol>                 <p ><span class="text-info" >전송한도</span>: 시간당 최대 30회, 1회당 최대 100명</p>                 <hr >                 <h4 >별첨: 네이버 외부 애플리케이션 비밀번호 생성방법</h4>                 <ol class="description-list" style="margin-bottom: 24px; adminMail-modal">                 	<li ><a href="https://nid.naver.com/user2/help/myInfo.nhn?m=viewSecurity&amp;lang=ko_KR" class="text-primary" target="_blank" >네이버 ID</a>에 접속합니다. *네이버 로그인 필수</li>                 	<li ><strong >기본보안설정</strong> 항목에서 <strong >2단계 인증</strong> 메뉴에 위치한 <strong >관리</strong> 버튼을 클릭합니다.</li>                 	<li ><strong >비밀번호</strong>를 입력하고, <strong >확인</strong> 버튼을 클릭합니다.</li>                 	<li ><p >아래의 순서에 따라 새 애플리케이션 비밀번호를 생성합니다.</p>                 		<ol >                 			<li ><strong >종류선택</strong>: <strong >직접 입력</strong> 을 선택하고, 애플리케이션 이름을 입력합니다. (예: 아임웹 자동메일발송)</li>                 			<li ><strong >비밀번호 생성</strong>: <strong >생성하기</strong> 버튼을 클릭합니다.</li>                 			<li ><strong >비밀번호 확인</strong>: 비밀번호가 생성되면 마우스로 드래그하여 복사합니다.</li>                 		</ol>                 	</li>                     <li >이제 복사한 외부 애플리케이션 비밀번호를 아임웹에서 네이버 ID 비밀번호로 활용해 보세요.<br ><span class="text-info" >참고</span>: 외부 애플리케이션 비밀번호를 잊어버린 경우, 다시 열어 확인할 수 없으며 새롭게 생성해야 합니다.</li>                 </ol>             </div>             <div role="tabpanel" class="tab-pane" id="daum_help" >                 <h4 ><strong >1단계: 다음 메일 설정</strong></h4>                 <ol class="description-list" style="margin-bottom: 24px; adminMail-modal">                     <li ><a href="http://mail.daum.net/" class="text-primary" target="_blank" >다음 메일</a>에 접속합니다. (PC 브라우저에서 접속해 주세요.)</li>                     <li >왼쪽 메뉴 열에서 하단에 위치한 <strong >환경설정</strong> 을 클릭합니다.</li>                     <li >상단 메뉴에서 <strong >IMAP/POP3</strong> 를 클릭합니다.</li>                     <li ><strong >IMAP / SMTP 사용</strong> 에서 <strong >사용함</strong> 을 선택합니다.</li>                     <li ><strong >저장</strong>을 클릭해 적용합니다.</li>                 </ol>                 <h4 ><strong >2단계: 메일 발송 설정</strong></h4>                 <ol class="description-list" style="margin-bottom: 24px; adminMail-modal">                     <li >이 도움말을 닫고, <strong >서비스 제공업체</strong> 를 <strong >다음</strong> 으로 선택합니다.</li>                     <li ><p >아래의 항목들을 설정합니다.</p>                     	<ul >                     		<li >발신자 메일주소: 다음 메일 주소 입력 (예: myid@daum.net, myid@hanmail.net)</li>                     		<li >로그인 ID: 다음 ID 입력 (이메일 형식이 아닌 다음 ID 입력, <span class="text-danger" >myid</span>@daum.net)</li>                     		<li >패스워드: 다음 ID 비밀번호 입력 (2단계 인증 서비스 이용 시 아래의 별첨 도움말을 참고해, 앱 비밀번호 생성 후 입력)</li>                     		<li >인증메일 주소: 수신 가능한 메일 주소 입력 (발신자 메일 주소와 같아도 무방)</li>                     	</ul>                     </li>                             <li ><strong >인증메일 보내기</strong> 버튼을 클릭합니다.</li>                     <li ><strong >인증메일 주소</strong>로 발송된 <strong >인증메일</strong>을 열고, <strong >인증번호</strong>를 확인합니다.</li>                     <li ><strong >인증번호</strong> 입력 후, <strong >인증 하기</strong> 버튼을 클릭합니다.</li>                     <li >인증이 완료되면 오른쪽 상단에 위치한 <strong >저장</strong> 버튼을 클릭해 메일 설정을 완료합니다.</li>                     <li >이제 입력하신 발신자 메일 주소로 자동 메일이 발송됩니다.</li>                 </ol>                 <p ><span class="text-info" >전송한도</span>: 하루 최대 1만개, 1회당 최대 150개</p>                 <hr >                 <h4 >별첨: 다음 앱 비밀번호 생성방법</h4>                 <ol class="description-list" style="margin-bottom: 24px; adminMail-modal">                 	<li ><a href="https://accounts.kakao.com/weblogin/account/security" class="text-primary" target="_blank" >카카오 계정 보안</a>에 접속합니다. *카카오 로그인 필수</li>                 	<li ><strong >정보 보호</strong> 항목에서 <strong >2단계 인증</strong> 을 클릭합니다.</li>                 	<li ><strong >비밀번호</strong>를 입력하고, <strong >확인</strong> 버튼을 클릭합니다.</li>                 	<li ><strong >앱 비밀번호</strong> 오른쪽 끝에 위치한 <strong >화살표</strong> 아이콘을 클릭합니다.</li>                 	<li ><strong >앱 비밀번호 이름</strong>(예: 아임웹 자동메일발송)를 입력하고, <strong >생성</strong> 버튼을 클릭합니다.</li>                 	<li >앱 비밀번호 생성 확인 창이 나오면 <strong >확인</strong> 버튼을 클릭합니다.</li>                 	<li ><strong >복사하기</strong> 버튼를 클릭하면 앱 비밀번호가 복사됩니다.</li>                 	<li >이제 복사한 앱 비밀번호를 아임웹에서 다음(Daum) ID 비밀번호로 활용해 보세요.<br ><span class="text-info" >참고</span>: 앱 비밀번호를 잊어버린 경우, 다시 열어 확인할 수 없으며 새롭게 생성해야 합니다.</li>                 </ol>             </div> 			<div role="tabpanel" class="tab-pane" id="nate_help" > 				<h4 ><strong >1단계: 네이트 메일 설정</strong></h4> 				<ol class="description-list" style="margin-bottom: 24px; adminMail-modal"> 					<li ><a href="http://mail.nate.com/" target="_blank" class="text-primary" >네이트 메일</a>에 접속합니다. (PC 브라우저에서 접속해 주세요.)</li> 					<li >왼쪽 최하단의 <strong >환경설정</strong> 을 클릭합니다.</li> 					<li >모바일 관리의 <strong >POP3</strong> 로 이동합니다.</li> 					<li ><strong >POP3 사용여부</strong> 에서 <strong >POP3 사용</strong> 을 선택합니다.</li> 					<li ><strong >저장</strong> 을 클릭합니다.</li> 				</ol> 				<h4 ><strong >2단계: 메일 발송 설정</strong></h4> 				<ol class="description-list" style="margin-bottom: 24px; adminMail-modal"> 					<li >이 도움말을 닫고, <strong >서비스 제공업체</strong> 를 <strong >네이트</strong> 로 선택합니다.</li> 					<li ><p >아래의 항목들을 설정합니다.</p> 					    <ul > 					        <li >발신자 메일주소: 네이트 메일 주소 입력 (예: myid@nate.com)</li> 					        <li >로그인 ID: 네이트 ID 입력 (이메일 형식이 아닌 네이트 ID 입력, <span class="text-danger" >myid</span>@nate.com)</li> 					        <li >패스워드: 네이트 ID 비밀번호 입력</li> 					        <li >인증메일 주소: 수신 가능한 메일 주소 입력 (발신자 메일 주소와 같아도 무방)</li>                         </ul>                     </li> 					<li ><strong >인증메일 보내기</strong> 버튼을 클릭합니다.</li>                     <li ><strong >인증메일 주소</strong>로 발송된 <strong >인증메일</strong>을 열고, <strong >인증번호</strong>를 확인합니다.</li>                     <li ><strong >인증번호</strong> 입력 후, <strong >인증 하기</strong> 버튼을 클릭합니다.</li>                     <li >인증이 완료되면 오른쪽 상단에 위치한 <strong >저장</strong> 버튼을 클릭해 메일 설정을 완료합니다.</li>                     <li >이제 입력하신 발신자 메일 주소로 자동 메일이 발송됩니다.</li> 				</ol> 				<p ><span class="text-info" >전송한도</span>: 네이트 정책에 따라 비공개</p> 			</div> 		</div> 	</div> </div> <div class="modal-footer" > 	<button type="button" class="btn btn-default btn-flat" data-dismiss="modal" data-original-title="" title="" >닫기</button> </div></div>
+						</li>
+					</ul>
+				</div>
+				<div class="headerbar-right">
+					<ul class="header-nav header-nav-options _option_list">
+					</ul><!--end .header-nav-options -->
+				</div><!--끝 #header-navbar-collapse -->
+				<!--끝 #header-navbar-collapse -->
+			</div>
+		</header>
+		<div id="content">
+			<div id="alertBox" class="alert__wrap"> </div>
+			<section>
+				<div class="section-body">
+					<div class="container text-center gmail_confirm_page">
+						<h3>Gmail 보안 연결</h3>
+						<p class="margin-top-12 text-gray sm-margin-bottom text-14">구글 계정 연결이 끝나셨나요?<br>아래 확인 버튼을 눌러 메일
+							발송 설정에서 연결된 계정을 확인해주세요.</p>
+						<a href="https://qjfhdnaos51106.imweb.me/admin/member/mail"
+							class="btn btn-primary md-margin-bottom">메일 발송 설정 확인</a>
+						<p class="text-gray-bright text-13">연결창이 실행되지 않았나요? <a href="javascript:;" class="text-primary"
+								onclick="AUTO_MAIL_SETTING.openGoogleOauth(&#39;505298121730-2j5hfh5j7ttr1eeghk6e6gb325c3bj46.apps.googleusercontent.com&#39;, &#39;https://imweb.me/gmail_oauth&#39;)">Gmail
+								연결</a>을 다시 시도해주세요.</p>
+						<p><a class="text-primary" href="javascript:"
+								onclick="AUTO_MAIL_SETTING.openSmtpHelpForm()">설정방법 알아보기</a></p>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		 <!-- END BASE -->
+
+	<div id="cocoaModal" role="dialog" class="modalmodal_admin" data-backdrop="true" data-keyboard="true"
+		style="display: none;">
+		<div class="modal-dialog ui-draggable">
+			<div class="modal-content">
+				<div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+						data-original-title="" title=""><i class="btm bt-times"></i></button>
+					<h3 class="modal-title">메일 설정 안내</h3>
+				</div>
+				<div class="modal-body">
+					<p>내 사이트에서 신규가입, 주문 등의 상황에서 자동으로 메일을 보내게 될 때 사이트의 소유자 이메일 주소로 발송하게 됩니다.</p>
+					<p>하지만 <span class="text-danger">보내는 메일 서버(내 사이트)</span> 와 <span class="text-danger">보내는 메일 주소의 도메인이
+							다를 경우, 스팸으로 분류되는 현상</span>이 있습니다. 예를 들어, abc@naver.com 이라는 메일 주소로 발송하게 될 때, naver.com 에서 보내는
+						메일이 아니기 때문에 스팸으로 분류될 가능성이 있습니다.</p>
+					<p style="margin-bottom: 20px;">이렇게 스팸으로 분류되는 현상을 최소화하기 위해서는 아래와 같이 메일 서비스별로 설정이
+						필요합니다.</p>
+					<div>
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active"><a
+									href="https://qjfhdnaos51106.imweb.me/admin/member/mail?mode=gmail_oauth#gmail_help"
+									aria-controls="home" role="tab" data-toggle="tab">Gmail </a></li>
+							<li role="presentation"><a
+									href="https://qjfhdnaos51106.imweb.me/admin/member/mail?mode=gmail_oauth#naver_help"
+									aria-controls="profile" role="tab" data-toggle="tab">네이버</a></li>
+							<li role="presentation"><a
+									href="https://qjfhdnaos51106.imweb.me/admin/member/mail?mode=gmail_oauth#daum_help"
+									aria-controls="messages" role="tab" data-toggle="tab">다음</a></li>
+							<li role="presentation"><a
+									href="https://qjfhdnaos51106.imweb.me/admin/member/mail?mode=gmail_oauth#nate_help"
+									aria-controls="settings" role="tab" data-toggle="tab">네이트</a></li>
+						</ul>
+						<div class="tab-content" style="padding-top: 22px;">
+							<div role="tabpanel" class="tab-pane active" id="gmail_help">
+								<ol class="description-list">
+									<li>내 사이트의 <strong>[사용자 관리 &gt; 메일 발송 설정]</strong> 에서 <strong>서비스 제공업체</strong>를
+										<strong>Gmail</strong> 로 선택합니다.
+									</li>
+									<li>
+										<p><strong>Google 연결</strong> 버튼을 클릭합니다.</p>
+										<p><img src="./adminMail-modal_files/7f2696928f514.png"
+												class="img-responsive shadow"></p>
+									</li>
+									<li>Google 계정 연결 창이 나오면 연결할 Google 계정을 선택합니다.</li>
+									<li>
+										<p><strong>'나를 대신하여 이메일 전송'</strong> 권한을 선택 허용하고, <strong>계속</strong> 버튼을 클릭합니다.
+										</p>
+										<p><img src="./adminMail-modal_files/6574d6ab43c4b.png"
+												class="img-responsive shadow"></p>
+									</li>
+									<li>
+										<p>이 도움말을 닫고, <strong>메일 발송 설정 확인</strong> 버튼을 클릭해 메뉴로 돌아갑니다. (어떤 이유로 Google 계정에
+											대한 액세스 요청 창이 실행되지 않거나 정상적으로 모든 과정을 완료하지 않았다면 위 2번 과정부터 다시 시도해 주세요.)</p>
+										<p><img src="./adminMail-modal_files/2efd080efdf97.png"
+												class="img-responsive shadow"></p>
+									</li>
+									<li>메일 발송 설정에서 메일이 잘 연결되었는지 확인합니다.</li>
+								</ol>
+								<p><span class="text-info">전송한도</span>: 1회당 최대 100명, 하루 최대 500개</p>
+								<hr>
+								<h4><strong class="text-danger">인증메일이 오지 않거나 SMTP 연결 실패시 조치방법</strong></h4>
+								<p>인증메일이 오지 않거나 SMTP 연결 실패 시 아래의 방법을 사용해 조치해 보시길 바랍니다.</p>
+								<ol class="description-list">
+									<li>Gmail에 접속 후, 로그인 시도 차단 메일을 확인 후 <strong>내 활동 확인</strong> 버튼을 클릭합니다.</li>
+									<li>메일이 오지 않은 경우 Google 계정 설정의 <a href="https://myaccount.google.com/notifications"
+											target="_blank" class="text-primary">최근 보안 관련 활동</a>에 접속합니다.</li>
+									<li><strong>중요 보안 경고</strong> 창이 나오면 최근에 <strong>Google 계정 로그인이 차단된 적이 있나요?</strong>
+										에서 <strong>예</strong> 를 클릭합니다.</li>
+									<li><strong>메일 발송 설정</strong> 에서 메일 인증을 재시도를 실행합니다.</li>
+								</ol>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="naver_help">
+								<h4><strong>1단계: 네이버 메일 설정</strong></h4>
+								<ol class="description-list" style="margin-bottom: 24px;">
+									<li><a href="https://mail.naver.com/" class="text-primary" target="_blank">네이버
+											메일</a>에 접속합니다. (PC 브라우저에서 접속해 주세요.)</li>
+									<li>왼쪽 메뉴 열에서 하단에 위치한 <strong>환경설정</strong> 을 클릭합니다.</li>
+									<li>상단 메뉴에서 <strong>POP3/IMAP 설정</strong> 을 클릭합니다.</li>
+									<li><strong>POP3/SMTP 사용</strong> 에서 <strong>사용함</strong> 을 선택합니다.</li>
+									<li><strong>저장</strong> 버튼을 클릭해 적용합니다.</li>
+								</ol>
+								<h4><strong>2단계: 메일 발송 설정</strong></h4>
+								<ol class="description-list" style="margin-bottom: 24px;">
+									<li>이 도움말을 닫고, <strong>서비스 제공업체</strong> 를 <strong>네이버</strong> 로 선택합니다.</li>
+									<li>
+										<p>아래의 항목들을 설정합니다.</p>
+										<ul>
+											<li>발신자 메일주소: 네이버 메일 주소 입력 (예: myid@naver.com)</li>
+											<li>로그인 ID: 네이버 ID 입력 (이메일 형식이 아닌 네이버 ID 입력, <span
+													class="text-danger">myid</span>@naver.com)</li>
+											<li>패스워드: 네이버 비밀번호 입력 (2단계 인증 서비스 이용 시 아래의 별첨 도움말을 참고해 외부 애플리케이션 비밀번호 생성 후
+												입력)</li>
+											<li>인증메일 주소: 수신 가능한 메일 주소 입력 (발신자 메일 주소와 같아도 무방)</li>
+										</ul>
+									</li>
+									<li><strong>인증메일 보내기</strong> 버튼을 클릭합니다.</li>
+									<li><strong>인증메일 주소</strong>로 발송된 <strong>인증메일</strong>을 열고, <strong>인증번호</strong>를
+										확인합니다.</li>
+									<li><strong>인증번호</strong> 입력 후, <strong>인증 하기</strong> 버튼을 클릭합니다.</li>
+									<li>인증이 완료되면 오른쪽 상단에 위치한 <strong>저장</strong> 버튼을 클릭해 메일 설정을 완료합니다.</li>
+									<li>이제 입력하신 발신자 메일 주소로 자동 메일이 발송됩니다.</li>
+								</ol>
+								<p><span class="text-info">전송한도</span>: 시간당 최대 30회, 1회당 최대 100명</p>
+								<hr>
+								<h4>별첨: 네이버 외부 애플리케이션 비밀번호 생성방법</h4>
+								<ol class="description-list" style="margin-bottom: 24px;">
+									<li><a href="https://nid.naver.com/user2/help/myInfo.nhn?m=viewSecurity&amp;lang=ko_KR"
+											class="text-primary" target="_blank">네이버 ID</a>에 접속합니다. *네이버 로그인 필수</li>
+									<li><strong>기본보안설정</strong> 항목에서 <strong>2단계 인증</strong> 메뉴에 위치한 <strong>관리</strong>
+										버튼을 클릭합니다.</li>
+									<li><strong>비밀번호</strong>를 입력하고, <strong>확인</strong> 버튼을 클릭합니다.</li>
+									<li>
+										<p>아래의 순서에 따라 새 애플리케이션 비밀번호를 생성합니다.</p>
+										<ol>
+											<li><strong>종류선택</strong>: <strong>직접 입력</strong> 을 선택하고, 애플리케이션 이름을 입력합니다.
+												(예: 아임웹 자동메일발송)</li>
+											<li><strong>비밀번호 생성</strong>: <strong>생성하기</strong> 버튼을 클릭합니다.</li>
+											<li><strong>비밀번호 확인</strong>: 비밀번호가 생성되면 마우스로 드래그하여 복사합니다.</li>
+										</ol>
+									</li>
+									<li>이제 복사한 외부 애플리케이션 비밀번호를 아임웹에서 네이버 ID 비밀번호로 활용해 보세요.<br><span
+											class="text-info">참고</span>: 외부 애플리케이션 비밀번호를 잊어버린 경우, 다시 열어 확인할 수 없으며 새롭게
+										생성해야 합니다.</li>
+								</ol>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="daum_help">
+								<h4><strong>1단계: 다음 메일 설정</strong></h4>
+								<ol class="description-list" style="margin-bottom: 24px;">
+									<li><a href="http://mail.daum.net/" class="text-primary" target="_blank">다음 메일</a>에
+										접속합니다. (PC 브라우저에서 접속해 주세요.)</li>
+									<li>왼쪽 메뉴 열에서 하단에 위치한 <strong>환경설정</strong> 을 클릭합니다.</li>
+									<li>상단 메뉴에서 <strong>IMAP/POP3</strong> 를 클릭합니다.</li>
+									<li><strong>IMAP / SMTP 사용</strong> 에서 <strong>사용함</strong> 을 선택합니다.</li>
+									<li><strong>저장</strong>을 클릭해 적용합니다.</li>
+								</ol>
+								<h4><strong>2단계: 메일 발송 설정</strong></h4>
+								<ol class="description-list" style="margin-bottom: 24px;">
+									<li>이 도움말을 닫고, <strong>서비스 제공업체</strong> 를 <strong>다음</strong> 으로 선택합니다.</li>
+									<li>
+										<p>아래의 항목들을 설정합니다.</p>
+										<ul>
+											<li>발신자 메일주소: 다음 메일 주소 입력 (예: myid@daum.net, myid@hanmail.net)</li>
+											<li>로그인 ID: 다음 ID 입력 (이메일 형식이 아닌 다음 ID 입력, <span
+													class="text-danger">myid</span>@daum.net)</li>
+											<li>패스워드: 다음 ID 비밀번호 입력 (2단계 인증 서비스 이용 시 아래의 별첨 도움말을 참고해, 앱 비밀번호 생성 후 입력)
+											</li>
+											<li>인증메일 주소: 수신 가능한 메일 주소 입력 (발신자 메일 주소와 같아도 무방)</li>
+										</ul>
+									</li>
+									<li><strong>인증메일 보내기</strong> 버튼을 클릭합니다.</li>
+									<li><strong>인증메일 주소</strong>로 발송된 <strong>인증메일</strong>을 열고, <strong>인증번호</strong>를
+										확인합니다.</li>
+									<li><strong>인증번호</strong> 입력 후, <strong>인증 하기</strong> 버튼을 클릭합니다.</li>
+									<li>인증이 완료되면 오른쪽 상단에 위치한 <strong>저장</strong> 버튼을 클릭해 메일 설정을 완료합니다.</li>
+									<li>이제 입력하신 발신자 메일 주소로 자동 메일이 발송됩니다.</li>
+								</ol>
+								<p><span class="text-info">전송한도</span>: 하루 최대 1만개, 1회당 최대 150개</p>
+								<hr>
+								<h4>별첨: 다음 앱 비밀번호 생성방법</h4>
+								<ol class="description-list" style="margin-bottom: 24px;">
+									<li><a href="https://accounts.kakao.com/weblogin/account/security"
+											class="text-primary" target="_blank">카카오 계정 보안</a>에 접속합니다. *카카오 로그인 필수</li>
+									<li><strong>정보 보호</strong> 항목에서 <strong>2단계 인증</strong> 을 클릭합니다.</li>
+									<li><strong>비밀번호</strong>를 입력하고, <strong>확인</strong> 버튼을 클릭합니다.</li>
+									<li><strong>앱 비밀번호</strong> 오른쪽 끝에 위치한 <strong>화살표</strong> 아이콘을 클릭합니다.</li>
+									<li><strong>앱 비밀번호 이름</strong>(예: 아임웹 자동메일발송)를 입력하고, <strong>생성</strong> 버튼을 클릭합니다.
+									</li>
+									<li>앱 비밀번호 생성 확인 창이 나오면 <strong>확인</strong> 버튼을 클릭합니다.</li>
+									<li><strong>복사하기</strong> 버튼를 클릭하면 앱 비밀번호가 복사됩니다.</li>
+									<li>이제 복사한 앱 비밀번호를 아임웹에서 다음(Daum) ID 비밀번호로 활용해 보세요.<br><span
+											class="text-info">참고</span>: 앱 비밀번호를 잊어버린 경우, 다시 열어 확인할 수 없으며 새롭게 생성해야 합니다.
+									</li>
+								</ol>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="nate_help">
+								<h4><strong>1단계: 네이트 메일 설정</strong></h4>
+								<ol class="description-list" style="margin-bottom: 24px;">
+									<li><a href="http://mail.nate.com/" target="_blank" class="text-primary">네이트 메일</a>에
+										접속합니다. (PC 브라우저에서 접속해 주세요.)</li>
+									<li>왼쪽 최하단의 <strong>환경설정</strong> 을 클릭합니다.</li>
+									<li>모바일 관리의 <strong>POP3</strong> 로 이동합니다.</li>
+									<li><strong>POP3 사용여부</strong> 에서 <strong>POP3 사용</strong> 을 선택합니다.</li>
+									<li><strong>저장</strong> 을 클릭합니다.</li>
+								</ol>
+								<h4><strong>2단계: 메일 발송 설정</strong></h4>
+								<ol class="description-list" style="margin-bottom: 24px;">
+									<li>이 도움말을 닫고, <strong>서비스 제공업체</strong> 를 <strong>네이트</strong> 로 선택합니다.</li>
+									<li>
+										<p>아래의 항목들을 설정합니다.</p>
+										<ul>
+											<li>발신자 메일주소: 네이트 메일 주소 입력 (예: myid@nate.com)</li>
+											<li>로그인 ID: 네이트 ID 입력 (이메일 형식이 아닌 네이트 ID 입력, <span
+													class="text-danger">myid</span>@nate.com)</li>
+											<li>패스워드: 네이트 ID 비밀번호 입력</li>
+											<li>인증메일 주소: 수신 가능한 메일 주소 입력 (발신자 메일 주소와 같아도 무방)</li>
+										</ul>
+									</li>
+									<li><strong>인증메일 보내기</strong> 버튼을 클릭합니다.</li>
+									<li><strong>인증메일 주소</strong>로 발송된 <strong>인증메일</strong>을 열고, <strong>인증번호</strong>를
+										확인합니다.</li>
+									<li><strong>인증번호</strong> 입력 후, <strong>인증 하기</strong> 버튼을 클릭합니다.</li>
+									<li>인증이 완료되면 오른쪽 상단에 위치한 <strong>저장</strong> 버튼을 클릭해 메일 설정을 완료합니다.</li>
+									<li>이제 입력하신 발신자 메일 주소로 자동 메일이 발송됩니다.</li>
+								</ol>
+								<p><span class="text-info">전송한도</span>: 네이트 정책에 따라 비공개</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer"> <button type="button" class="btn btn-default btn-flat" data-dismiss="modal"
+						data-original-title="" title="">닫기</button> </div>
+			</div>
+		</div>
 	</div>
-</div>
 
-<div class="modalsubmodal" role="dialog" id="cocoaSubModal" style="z-index: 17001; adminMail-modal">
-	<div class="modal-dialog" >
-		<div class="modal-content" ></div>
+	<div class="modalsubmodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
+		<div class="modal-dialog">
+			<div class="modal-content"></div>
+		</div>
 	</div>
-</div>
 
-<iframe name="hidden_frame" id="hidden_frame" style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px; adminMail-modal" src="./adminMail-modal_files/saved_resource.html"></iframe>
-
-<!-- Channel Script -->
-<script type="text/javascript" >
-window.channelPluginSettings = {"pluginKey":"6a8aaaf7-8e2f-400b-9946-491b9354592f","language":"ko","zIndex":1000,"memberId":"M2022120722883bb351d7e","profile":{"name":"\uc653\uc774","mobileNumber":"34234","email":"qjfhdnaos@gmail.com","joinTime":"2022-12-07 17:37:39","avatarUrl":"https:\/\/cdn.imweb.me\/thumbnail\/20221207\/b4b43fafd99e7.png","memberType":"Free","educationApplication":"N","visitsCount":8,"usingConsulting":"","siteVersion":"Free","isSiteExpired":"N","makeDate_dcv1":"2022-12-07 17:42:44","makeDate":"2024-05-16 09:49:33","expireDate":null,"latestPaidPlanTransitionTime":null,"expireDate_dcv1":null,"highestRevenueSiteLastMonth":0,"siteMemberCount_dcv1":1,"siteMemberCount":1,"mainDomain":"qjfhdnaos51106.imweb.me","imwebDomain":"qjfhdnaos51106.imweb.me","useSSL":"","usingTrace":"N","pgName":"\ubbf8\uac00\uc785","usingNpay":false,"npayVersion":2,"totalSalePrice":0,"lastMonthSalePrice":0}};
-(function() {
-	var w = window;
-	if (w.ChannelIO) {
-		return (window.console.error || window.console.log || function(){})('ChannelIO script included twice.');
-	}
-	var d = window.document;
-	var ch = function() {
-		ch.c(arguments);
-	};
-	ch.q = [];
-	ch.c = function(args) {
-		ch.q.push(args);
-	};
-	w.ChannelIO = ch;
-	function l() {
-		if (w.ChannelIOInitialized) {
-			return;
-		}
-		w.ChannelIOInitialized = true;
-		var s = document.createElement('script');
-		s.style.zIndex = 1100; 
-		s.type = 'text/javascript';
-		s.defer = true;
-		s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
-		s.charset = 'UTF-8';
-		var x = document.getElementsByTagName('script')[0];
-		x.parentNode.insertBefore(s, x);
-	}
-	if (document.readyState === 'complete') {
-		l(); 
-	} else {
-	window.addEventListener('load', l, false);
-	}
-})();
-</script>
+	<iframe name="hidden_frame" id="hidden_frame"
+		style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;"
+		src="./adminMail-modal_files/saved_resource.html"></iframe>
 
 
-<script >
-	</script>
+	<div id="device-breakpoints">
+		<div class="device-xs visible-xs" data-breakpoint="xs"></div>
+		<div class="device-sm visible-sm" data-breakpoint="sm"></div>
+		<div class="device-md visible-md" data-breakpoint="md"></div>
+		<div class="device-lg visible-lg" data-breakpoint="lg"></div>
+	</div>
+	<div id="ch-plugin" class="notranslate" style="z-index: 1000;">
+		<div id="ch-plugin-entry">
+			<div style="display: block;"><template shadowrootmode="open">
+					<div id="ch-shadow-root-wrapper">
+						<style data-styled="active" data-styled-version="5.3.9"></style>
+						<div data-ch-testid="launcher"
+							class="Launcherstyled__LauncherButtonWrapper-ch-front__sc-1kx6op4-0 chEByq"><button
+								type="button">
+								<div class="ChatButtonContainer__Container-ch-front__sc-qgvnh9-0 cgHhTF"><span
+										class="a11y-hidden">imweb 상담 버튼</span>
+									<div class="SenderButtonView__Wrapper-ch-front__sc-1aik3pi-0 eFJnEc">
+										<div src="https://cdn.imweb.me/thumbnail/20221207/b4b43fafd99e7.png"
+											class="SenderButtonView__SenderAvatarBg-ch-front__sc-1aik3pi-1 mVAFX"></div>
+									</div>
+									<div data-testid="img-custom-btn"
+										class="ImageCustomButtonView__Wrapper-ch-front__sc-1s91m5o-0 jVTAai">
+										<div src="https://cf.channel.io/thumb/200x200/pub-file/8472/661780218b04bc1c5d3c/facebook_pc-profile-1"
+											class="ImageCustomButtonView__CustomImageBg-ch-front__sc-1s91m5o-1 dRQruU">
+										</div>
+									</div>
+									<div class="IconButtonView__Background-ch-front__sc-vtu014-0 inQZZV"><svg width="36"
+											height="36" color="#ffffff">
+											<use href="#channel-filled"></use>
+										</svg></div>
+									<div class="MinimizeButtonView__Wrapper-ch-front__sc-1idijj-0 giSWOn"><svg
+											xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"
+											viewBox="0 0 24 24" foundation="[object Object]"
+											class="Iconstyled__Icon-sc-1iqwu2g-0 pJGcx" data-testid="bezier-react-icon"
+											color="txt-black-darker" margintop="0" marginright="0" marginbottom="0"
+											marginleft="0" aria-hidden="true">
 
-<script type="text/javascript" >
-    mixpanel.init('a4939111ea54962dbf95fe89a992eab3', {debug: false});
-    mixpanel.identify('M2022120722883bb351d7e');
-       MIXPANEL.init();
-</script>
+										</svg></div>
+									<div role="status" aria-label=", there are unread messages"
+										class="Badge__BaseUnreadBadge-ch-front__sc-1k3c5b2-2 fOtwdy Badge__PcUnreadBadge-ch-front__sc-1k3c5b2-3 jrJXOx">
+									</div>
+								</div>
+							</button></div>
+					</div>
+				</template></div>
+		</div>
+		<div id="ch-plugin-script" style="display:none;" class="ch-messenger-hidden"> <iframe
+				id="ch-plugin-script-iframe" title="Channel chat"
+				style="position:relative!important;height:100%!important;width:100%!important;border:none!important;"
+				src="./adminMail-modal_files/saved_resource(1).html"></iframe> </div>
+		<style data-styled="active" data-styled-version="5.3.9"></style>
+	</div>
+</body>
 
-<div id="device-breakpoints" ><div class="device-xs visible-xs" data-breakpoint="xs" ></div><div class="device-sm visible-sm" data-breakpoint="sm" ></div><div class="device-md visible-md" data-breakpoint="md" ></div><div class="device-lg visible-lg" data-breakpoint="lg" ></div></div><div id="ch-plugin" class="notranslate" style="z-index: 1000 !important;">      <div id="ch-plugin-entry"><div style="display: block !important;"><template shadowrootmode="open"><div id="ch-shadow-root-wrapper"><style data-styled="active" data-styled-version="5.3.9"></style><div data-ch-testid="launcher" class="Launcherstyled__LauncherButtonWrapper-ch-front__sc-1kx6op4-0 chEByq"><button type="button"><div class="ChatButtonContainer__Container-ch-front__sc-qgvnh9-0 cgHhTF"><span class="a11y-hidden">imweb 상담 버튼</span><div class="SenderButtonView__Wrapper-ch-front__sc-1aik3pi-0 eFJnEc"><div src="https://cdn.imweb.me/thumbnail/20221207/b4b43fafd99e7.png" class="SenderButtonView__SenderAvatarBg-ch-front__sc-1aik3pi-1 mVAFX"></div></div><div data-testid="img-custom-btn" class="ImageCustomButtonView__Wrapper-ch-front__sc-1s91m5o-0 jVTAai"><div src="https://cf.channel.io/thumb/200x200/pub-file/8472/661780218b04bc1c5d3c/facebook_pc-profile-1" class="ImageCustomButtonView__CustomImageBg-ch-front__sc-1s91m5o-1 dRQruU"></div></div><div class="IconButtonView__Background-ch-front__sc-vtu014-0 inQZZV"><svg width="36" height="36" color="#ffffff"><use href="#channel-filled"></use></svg></div><div class="MinimizeButtonView__Wrapper-ch-front__sc-1idijj-0 giSWOn"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24" foundation="[object Object]" class="Iconstyled__Icon-sc-1iqwu2g-0 pJGcx" data-testid="bezier-react-icon" color="txt-black-darker" margintop="0" marginright="0" marginbottom="0" marginleft="0" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M16.95 8.464a1 1 0 1 0-1.414-1.414L12 10.586 8.465 7.051A1 1 0 0 0 7.05 8.464L10.586 12 7.05 15.535a1 1 0 1 0 1.414 1.414L12 13.414l3.536 3.536a1 1 0 0 0 1.414-1.415L13.414 12z" clip-rule="evenodd"></path></svg></div><div role="status" aria-label=", there are unread messages" class="Badge__BaseUnreadBadge-ch-front__sc-1k3c5b2-2 fOtwdy Badge__PcUnreadBadge-ch-front__sc-1k3c5b2-3 jrJXOx"></div></div></button></div></div></template></div></div>      <div id="ch-plugin-script" style="display:none;" class="ch-messenger-hidden">        <iframe id="ch-plugin-script-iframe" title="Channel chat" style="position:relative!important;height:100%!important;width:100%!important;border:none!important;" src="./adminMail-modal_files/saved_resource(1).html"></iframe>      </div>    <style data-styled="active" data-styled-version="5.3.9"></style></div></body></html>
+</html>
