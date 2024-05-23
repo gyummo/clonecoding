@@ -76,14 +76,15 @@
 						<li class="hidden-md hidden-lg hidden-sm">
 							<button class="btn btn-flat" aria-expanded="false" aria-haspopup="true"
 								data-toggle="dropdown" type="button" id="dLabel" style="padding: 4px 8px;">
-								<i class="icon icon-options"></i>
+								<i></i>
 							</button>
 							<ul aria-labelledby="dLabel" role="menu" class="dropdown-menu animation-dock">
 								<li>
 									<a href="_blank">상품
 										추가</a>
 								</li>
-								<li><a href="javascript:;"
+								<li>
+									<a href="javascript:;"
 										onclick="alert(&#39;상품 일괄 추가 기능은 Pro, Global 버전에서만 사용 가능합니다.&#39;)">상품 일괄 추가</a>
 								</li>
 							</ul>
@@ -107,8 +108,7 @@
 											data-base_url="/admin/shopping/product/?q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D">
 											<a href="javascript:;" class="text-primary"
 												onclick="SHOP_PROD_MANAGE.openCategoryManage(&#39;prod_list&#39;)">카테고리
-												관리 <i class="icon-settings"
-													style="font-size: 15px; vertical-align: middle; margin-left: 4px; position: relative; top: -1px;"></i></a>
+												관리 <i style="font-size: 15px; vertical-align: middle; margin-left: 4px; position: relative; top: -1px;"></i></a>
 										</li>
 									</ul>
 
@@ -161,8 +161,9 @@
 										<li class="no-hover " id="new_group_btn"
 											data-base_url="/admin/shopping/product/?q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D">
 											<a href="javascript:;" class="text-primary"
-												onclick="SHOP_PROD_LIST.openShowcaseForm()">기획전 추가 <i class="icon-plus"
-													style="font-size: 15px; vertical-align: middle; margin-left: 4px; position: relative; top: -1px;"></i></a>
+												onclick="SHOP_PROD_LIST.openShowcaseForm()">기획전 추가 
+												<i class="icon-plus" style="font-size: 15px; vertical-align: middle; margin-left: 4px; position: relative; top: -1px;"></i>
+											</a>
 										</li>
 									</ul>
 									<ul class="nav nav-pills nav-stacked nav-sm" id="showcase_list"></ul>
@@ -178,30 +179,42 @@
 											style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 264px;">
 											<div class="owl-item active" style="width: auto; margin-right: 0px;">
 												<ul class="owl-nav-tabs">
-													<li class="active _all"><a href="javascript:;"
+													<li class="active _all">
+														<a href="javascript:;"
 															onclick="location.href=&#39;/admin/shopping/product/?status=all&amp;q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&#39;">전체
-															<span class="_count text-primary">4</span></a></li>
+															<span class="_count text-primary">4</span>
+														</a>
+													</li>
 												</ul>
 											</div>
 											<div class="owl-item active" style="width: auto; margin-right: 0px;">
 												<ul class="owl-nav-tabs">
-													<li class=" _sale"><a href="javascript:;"
+													<li class=" _sale">
+														<a href="javascript:;"
 															onclick="location.href=&#39;/admin/shopping/product/?status=sale&amp;q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&#39;">판매중
-															<span class="_count text-primary">4</span></a></li>
+															<span class="_count text-primary">4</span>
+														</a>
+													</li>
 												</ul>
 											</div>
 											<div class="owl-item active" style="width: auto; margin-right: 0px;">
 												<ul class="owl-nav-tabs">
-													<li class=" _soldout"><a href="javascript:;"
+													<li class=" _soldout">
+														<a href="javascript:;"
 															onclick="location.href=&#39;/admin/shopping/product/?status=soldout&amp;q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&#39;">품절
-															<span class="_count text-primary">0</span></a></li>
+															<span class="_count text-primary">0</span>
+														</a>
+													</li>
 												</ul>
 											</div>
 											<div class="owl-item active" style="width: auto; margin-right: 0px;">
 												<ul class="owl-nav-tabs">
-													<li class=" _nosale"><a href="javascript:;"
+													<li class=" _nosale">
+														<a href="javascript:;"
 															onclick="location.href=&#39;/admin/shopping/product/?status=nosale&amp;q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&#39;">숨김
-															<span class="_count text-primary">0</span></a></li>
+															<span class="_count text-primary">0</span>
+														</a>
+														</li>
 												</ul>
 											</div>
 										</div>
@@ -219,8 +232,9 @@
 										</div>
 									</div>
 								</li>
-								<li
-									class="hidden-xs hidden-sm after:tw-content-[&#39;&#39;] after:tw-inline-block after:tw-absolute after:tw-w-[8px] after:tw-h-[5px] after:tw-right-0 after:tw-top-[50%] after:tw-translate-y-[-12px] after:tw-bg-[url(&#39;../images/admin/shopping/dropdown_arrow.png&#39;)] after:tw-bg-no-repeat after:tw-bg-contain">
+								<li class="hidden-xs hidden-sm after:tw-content-[&#39;&#39;] after:tw-inline-block after:tw-absolute after:tw-w-[8px] 
+								after:tw-h-[5px] after:tw-right-0 after:tw-top-[50%] after:tw-translate-y-[-12px] after:tw-bg-[url(&#39;../images/admin/shopping/dropdown_arrow.png&#39;)] 
+								after:tw-bg-no-repeat after:tw-bg-contain">
 									<select
 										class="tw-relative tw-bg-transparent tw-appearance-none tw-pr-[13px] tw-text-right"
 										onchange="location.href=&#39;./?q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&amp;pagesize=&#39; + $(this).val()+&#39;&#39;">
@@ -247,12 +261,19 @@
 																	<span id="search_keyword_type_text">기본</span>
 																</a>
 																<ul class="dropdown-menu" style="top: 36px">
-																	<li><a href="javascript:;"
-																			onclick="$(&#39;#search_keyword_type&#39;).val(&#39;&#39;);$(&#39;#search_keyword_type_text&#39;).text($(this).text());$(&#39;#keyword_search_input&#39;).attr(&#39;placeholder&#39;,&#39;상품명, 상품 재고번호, 자체상품코드 검색&#39;);">기본</a>
+																	<li>
+																		<a href="javascript:;"
+																			onclick="$(&#39;#search_keyword_type&#39;).val(&#39;&#39;);
+																			$(&#39;#search_keyword_type_text&#39;).text($(this).text());
+																			$(&#39;#keyword_search_input&#39;).attr(&#39;placeholder&#39;,&#39;상품명, 상품 재고번호, 자체상품코드 검색&#39;);">기본</a>
 																	</li>
-																	<li><a href="javascript:;"
-																			onclick="$(&#39;#search_keyword_type&#39;).val(&#39;use_option_sku&#39;);$(&#39;#search_keyword_type_text&#39;).text($(this).text());$(&#39;#keyword_search_input&#39;).attr(&#39;placeholder&#39;,&#39;옵션 재고번호 검색&#39;);">옵션
-																			재고번호</a></li>
+																	<li>
+																		<a href="javascript:;"
+																			onclick="$(&#39;#search_keyword_type&#39;).val(&#39;use_option_sku&#39;);
+																			$(&#39;#search_keyword_type_text&#39;).text($(this).text());
+																			$(&#39;#keyword_search_input&#39;).attr(&#39;placeholder&#39;,&#39;옵션 재고번호 검색&#39;);">옵션
+																			재고번호</a>
+																		</li>
 																</ul>
 																<input type="hidden" name="search_keyword_type"
 																	class="_search_keyword_type" value=""
@@ -286,7 +307,7 @@
 												class="btn btn-default-bright dropdown-toggle btn-card-height full-width"
 												data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
 												data-mixpanel="click_bo_shopping_item_export">
-												<i class="btl bt-download"></i> 내보내기 </button>
+												<i></i> 내보내기 </button>
 										</div>
 									</div>
 								</div>
@@ -304,11 +325,15 @@
 											<div class="text-center text-gray force-padding">
 												<button type="button"
 													class="btn ink-reaction btn-lg btn-primary margin-bottom-xl"
-													onclick="window.location.href=&#39;/admin/shopping/product/?q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&amp;mode=add&#39;">상품추가</button>
+													onclick="window.location.href=&#39;/admin/shopping/product/?q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&amp;mode=add&#39;">
+													상품추가
+												</button>
 
-												<p><a href="javascript:;" class="text-primary"
+												<p>
+													<a href="javascript:;" class="text-primary"
 														onclick="alert(&#39;상품 일괄 추가 기능은 Pro, Global 버전에서만 사용 가능합니다.&#39;)">대량
-														상품 등록</a></p>
+														상품 등록</a>
+													</p>
 											</div>
 										</div>
 									</div>
@@ -323,7 +348,7 @@
 										</div>
 										<div class="card-body">
 											<div class="text-center">
-												<img src="./adminChallenge_files/imweb-category.gif"
+												<img src="_blank"
 													style="max-width: 100%;" />
 											</div>
 										</div>
@@ -381,7 +406,8 @@
 														<th>
 														</th>
 														<th colspan="12" style="padding: 0px;">
-															<!--												<a class="btn btn-default-bright" id="prod-replication" href="javascript:;" style="margin-right: 10px" onclick="SHOP_PROD_LIST.copyProdMulti()">--><!--</a>-->
+															<!--<a class="btn btn-default-bright" id="prod-replication" href="javascript:;" 
+																style="margin-right: 10px" onclick="SHOP_PROD_LIST.copyProdMulti()">-->
 															<button class="btn btn-default-bright" id="prod-replication"
 																href="javascript:;" style="margin-right: 10px;"
 																onclick="SHOP_PROD_LIST.copyProdMulti()">복제</button>
@@ -393,8 +419,8 @@
 																<button class="btn btn-default-bright"
 																	id="prod-status-change" data-toggle="dropdown"
 																	aria-haspopup="true" aria-expanded="false"
-																	style="margin-right: -1px;">상태 변경 <span
-																		class="caret"></span>
+																	style="margin-right: -1px;">상태 변경 
+																	<span class="caret"></span>
 																</button>
 																<ul class="dropdown-menu"
 																	aria-labelledby="btnGroupVerticalDrop1">
@@ -442,18 +468,14 @@
 														</th>
 													</tr>
 													<tr id="prod_page_all_selected" style="display: none;">
-														<!--                                        <tr id="prod_page_all_selected">-->
 														<th colspan="12"
 															style="padding: 0px; background-color: rgb(250, 250, 250); height: 50px; text-align: center;">
 															<div id="prod_page_selected">
 																<a class="" href="javascript:;">
 																	<span id="changeable_prod_selected_message"></span>
-																	<!--                                                        이 페이지에 있는 상품 <span id="prod_page_selected_count" class="text-bold"></span>개가 모두 선택되었습니다.-->
+                                                
 																	<span id="changeable_prod_all_selected"
 																		class="text-primary">
-																		<!--                                                            <span onclick="SHOP_PROD_LIST.prodAllSelect(true);">-->
-																		<!--                                                                <span id="prod_page_status"></span> 상품 <span id="prod_page_total_count" class="text-bold"></span>개 모두 선택-->
-																		<!--                                                            </span>-->
 																	</span>
 																	<span id="exist_regularly_product">
 
@@ -464,7 +486,6 @@
 													</tr>
 												</thead>
 												<tbody id="prod_list_body" class="_prod_list_body ui-sortable">
-													<!--<tr class='content on">-->
 													<tr class="content _prodListItem"
 														id="prod_list_s20240516ae197a3da7242"
 														data-code="s20240516ae197a3da7242">
@@ -475,29 +496,27 @@
 																	<input type="checkbox"
 																		value="s20240516ae197a3da7242"
 																		class="_prodListCheck" onclick="SHOP_PROD_LIST.listSetSelect(&#39;s20240516ae197a3da7242&#39;,function(codes){
-								SHOP_PROD_LIST.checkProd(codes);
-								})"><span></span>
+																		SHOP_PROD_LIST.checkProd(codes);
+																		})"><span></span>
 																</label>
 															</div>
 														</td>
 														<td class="no text-12">4</td>
 														<td class="image">
-															<a
-																href="_blank">
-																<img src="./adminChallenge_files/658b972939603.png"
-																	width="49" height="49" class="item-thumb" /></a>
+															<a href="_blank">
+																<img src="_blank" width="49" height="49" class="item-thumb" />
+																</a>
 														</td>
 														<td class="title">
 															<div>
 
 																<div class="item-tit inline-blocked">
-																	<a
-																		href="_blank">Wise
+																	<a href="_blank">Wise
 																		Pixie</a>
-																	<a href="https://qjfhdnaos51106.imweb.me/shop_view/?idx=4"
-																		target="_blank"
+																	<a href="_blank"
 																		class="im-icon im-ico-new-tab vertical-middle tab-icon"
-																		style="margin-left: 4px;"></a>
+																		style="margin-left: 4px;">
+																	</a>
 
 																</div>
 
@@ -522,8 +541,9 @@
 																	<div class="footer">
 																		<li class="divider"></li>
 																		<li><a href="javascript:;"
-																				onclick="SHOP_PROD_LIST.openShowcaseForm()">새
-																				기획전</a></li>
+																				onclick="SHOP_PROD_LIST.openShowcaseForm()">
+																				새 기획전</a>
+																		</li>
 																	</div>
 																</ul>
 															</div>
@@ -547,8 +567,7 @@
 																</li>
 															</ul>
 														</td>
-														<td class="text-12" style="padding-left: 20px">
-															- </td>
+														<td class="text-12" style="padding-left: 20px"> - </td>
 														<td class="r_date text-12">2024-04-01</td>
 														<td class="e_date text-12">2024-04-02</td>
 														<td class="more">
@@ -561,21 +580,23 @@
 																	class="dropdown-menu animation-dock right">
 																	<li>
 																		<a href="javascript:;"
-																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;top&#39;,&#39;s20240516ae197a3da7242&#39;, &#39;&#39;);">맨
-																			위로</a>
+																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;top&#39;,&#39;s20240516ae197a3da7242&#39;, &#39;&#39;);">
+																			맨 위로</a>
 																	</li>
 																	<li>
 																		<a href="javascript:;"
-																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;pre&#39;,&#39;s20240516ae197a3da7242&#39;, &#39;&#39;);">위로</a>
+																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;pre&#39;,&#39;s20240516ae197a3da7242&#39;, &#39;&#39;);">
+																		위로</a>
 																	</li>
 																	<li>
 																		<a href="javascript:;"
-																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;next&#39;,&#39;s20240516ae197a3da7242&#39;, &#39;&#39;);">아래로</a>
-																	</li>
-																	<li>
-																		<a href="javascript:;"
-																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;bottom&#39;,&#39;s20240516ae197a3da7242&#39;, &#39;&#39;);">맨
+																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;next&#39;,&#39;s20240516ae197a3da7242&#39;, &#39;&#39;);">
 																			아래로</a>
+																	</li>
+																	<li>
+																		<a href="javascript:;"
+																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;bottom&#39;,&#39;s20240516ae197a3da7242&#39;, &#39;&#39;);">
+																			맨 아래로</a>
 																	</li>
 																</ul>
 															</div>
@@ -592,29 +613,26 @@
 																	<input type="checkbox"
 																		value="s20240516499115c1a7064"
 																		class="_prodListCheck" onclick="SHOP_PROD_LIST.listSetSelect(&#39;s20240516499115c1a7064&#39;,function(codes){
-								SHOP_PROD_LIST.checkProd(codes);
-								})"><span></span>
+																		SHOP_PROD_LIST.checkProd(codes);
+																		})"><span></span>
 																</label>
 															</div>
 														</td>
 														<td class="no text-12">3</td>
 														<td class="image">
-															<a
-																href="_blank"><img
-																	src="./adminChallenge_files/89756d13c4f49.png"
-																	width="49" height="49" class="item-thumb" /></a>
+															<a href="_blank">
+																<img src="_blank" width="49" height="49" class="item-thumb" />
+															</a>
 														</td>
 														<td class="title">
 															<div>
 
 																<div class="item-tit inline-blocked">
-																	<a
-																		href="_blank">Swell
-																		Cantor</a>
+																	<a href="_blank">Swell Cantor </a>
 																	<a href="_blank"
-																		target="_blank"
 																		class="im-icon im-ico-new-tab vertical-middle tab-icon"
-																		style="margin-left: 4px;"></a>
+																		style="margin-left: 4px;">
+																	</a>
 
 																</div>
 
@@ -638,9 +656,10 @@
 																	</div>
 																	<div class="footer">
 																		<li class="divider"></li>
-																		<li><a href="javascript:;"
-																				onclick="SHOP_PROD_LIST.openShowcaseForm()">새
-																				기획전</a></li>
+																		<li>
+																			<a href="javascript:;"
+																				onclick="SHOP_PROD_LIST.openShowcaseForm()">새 기획전</a>
+																		</li>
 																	</div>
 																</ul>
 															</div>
@@ -650,16 +669,16 @@
 																<span>판매중</span>
 															</a>
 															<ul class="dropdown-menu" style="top: 50px;">
-																<li id="mixpanel_bo_shopping_item_list_status_sale"><a
-																		href="javascript:;"
+																<li id="mixpanel_bo_shopping_item_list_status_sale">
+																	<a href="javascript:;"
 																		onclick="SHOP_PROD_LIST.updateStatus(&#39;s20240516499115c1a7064&#39;, &#39;sale&#39;)">판매중</a>
 																</li>
 																<li id="mixpanel_bo_shopping_item_list_status_soldout">
 																	<a href="javascript:;"
 																		onclick="SHOP_PROD_LIST.updateStatus(&#39;s20240516499115c1a7064&#39;, &#39;soldout&#39;)">품절</a>
 																</li>
-																<li id="mixpanel_bo_shopping_item_list_status_nosale"><a
-																		href="javascript:;"
+																<li id="mixpanel_bo_shopping_item_list_status_nosale">
+																	<a href="javascript:;"
 																		onclick="SHOP_PROD_LIST.updateStatus(&#39;s20240516499115c1a7064&#39;, &#39;nosale&#39;)">숨김</a>
 																</li>
 															</ul>
@@ -672,27 +691,29 @@
 															<div class="dropdown">
 																<button class="btn btn-flat" aria-expanded="true"
 																	data-toggle="dropdown" type="button" id="dLabel">
-																	<i class="zmdi zmdi-more"></i>
+																	<i></i>
 																</button>
 																<ul aria-labelledby="dLabel" role="menu"
 																	class="dropdown-menu animation-dock right">
 																	<li>
 																		<a href="javascript:;"
-																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;top&#39;,&#39;s20240516499115c1a7064&#39;, &#39;&#39;);">맨
+																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;top&#39;,&#39;s20240516499115c1a7064&#39;, &#39;&#39;);">
+																			맨 위로</a>
+																	</li>
+																	<li>
+																		<a href="javascript:;"
+																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;pre&#39;,&#39;s20240516499115c1a7064&#39;, &#39;&#39;);">
 																			위로</a>
 																	</li>
 																	<li>
 																		<a href="javascript:;"
-																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;pre&#39;,&#39;s20240516499115c1a7064&#39;, &#39;&#39;);">위로</a>
-																	</li>
-																	<li>
-																		<a href="javascript:;"
-																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;next&#39;,&#39;s20240516499115c1a7064&#39;, &#39;&#39;);">아래로</a>
-																	</li>
-																	<li>
-																		<a href="javascript:;"
-																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;bottom&#39;,&#39;s20240516499115c1a7064&#39;, &#39;&#39;);">맨
+																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;next&#39;,&#39;s20240516499115c1a7064&#39;, &#39;&#39;);">
 																			아래로</a>
+																	</li>
+																	<li>
+																		<a href="javascript:;"
+																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;bottom&#39;,&#39;s20240516499115c1a7064&#39;, &#39;&#39;);">
+																			맨 아래로</a>
 																	</li>
 																</ul>
 															</div>
@@ -709,8 +730,8 @@
 																	<input type="checkbox"
 																		value="s202405169fa45a3e9e184"
 																		class="_prodListCheck" onclick="SHOP_PROD_LIST.listSetSelect(&#39;s202405169fa45a3e9e184&#39;,function(codes){
-								SHOP_PROD_LIST.checkProd(codes);
-								})"><span></span>
+																		SHOP_PROD_LIST.checkProd(codes);
+																		})"><span></span>
 																</label>
 															</div>
 														</td>
@@ -718,18 +739,15 @@
 														<td class="image">
 															<a
 																href="_blank"><img
-																	src="./adminChallenge_files/06dac8214357f.png"
+																	src="_blank"
 																	width="49" height="49" class="item-thumb" /></a>
 														</td>
 														<td class="title">
 															<div>
 
 																<div class="item-tit inline-blocked">
-																	<a
-																		href="_blank">Wise
-																		Swell</a>
+																	<a href="_blank">Wise Swell</a>
 																	<a href="_blank"
-																		target="_blank"
 																		class="im-icon im-ico-new-tab vertical-middle tab-icon"
 																		style="margin-left: 4px;"></a>
 
@@ -767,29 +785,27 @@
 																<span>판매중</span>
 															</a>
 															<ul class="dropdown-menu" style="top: 50px;">
-																<li id="mixpanel_bo_shopping_item_list_status_sale"><a
-																		href="javascript:;"
+																<li id="mixpanel_bo_shopping_item_list_status_sale">
+																	<a href="javascript:;"
 																		onclick="SHOP_PROD_LIST.updateStatus(&#39;s202405169fa45a3e9e184&#39;, &#39;sale&#39;)">판매중</a>
 																</li>
 																<li id="mixpanel_bo_shopping_item_list_status_soldout">
 																	<a href="javascript:;"
 																		onclick="SHOP_PROD_LIST.updateStatus(&#39;s202405169fa45a3e9e184&#39;, &#39;soldout&#39;)">품절</a>
 																</li>
-																<li id="mixpanel_bo_shopping_item_list_status_nosale"><a
-																		href="javascript:;"
+																<li id="mixpanel_bo_shopping_item_list_status_nosale">
+																	<a href="javascript:;"
 																		onclick="SHOP_PROD_LIST.updateStatus(&#39;s202405169fa45a3e9e184&#39;, &#39;nosale&#39;)">숨김</a>
 																</li>
 															</ul>
 														</td>
-														<td class="text-12" style="padding-left: 20px">
-															- </td>
+														<td class="text-12" style="padding-left: 20px"> - </td>
 														<td class="r_date text-12">2024-04-01</td>
 														<td class="e_date text-12">2024-04-02</td>
 														<td class="more">
 															<div class="dropdown">
 																<button class="btn btn-flat" aria-expanded="true"
 																	data-toggle="dropdown" type="button" id="dLabel">
-																	<i class="zmdi zmdi-more"></i>
 																</button>
 																<ul aria-labelledby="dLabel" role="menu"
 																	class="dropdown-menu animation-dock right">
@@ -826,8 +842,8 @@
 																	<input type="checkbox"
 																		value="s20240516baee51a6519ef"
 																		class="_prodListCheck" onclick="SHOP_PROD_LIST.listSetSelect(&#39;s20240516baee51a6519ef&#39;,function(codes){
-								SHOP_PROD_LIST.checkProd(codes);
-								})"><span></span>
+																		SHOP_PROD_LIST.checkProd(codes);
+																		})"><span></span>
 																</label>
 															</div>
 														</td>
@@ -835,18 +851,15 @@
 														<td class="image">
 															<a
 																href="_blank"><img
-																	src="./adminChallenge_files/afdf0eb46694c.png"
+																	src="_blank"
 																	width="49" height="49" class="item-thumb" /></a>
 														</td>
 														<td class="title">
 															<div>
 
 																<div class="item-tit inline-blocked">
-																	<a
-																		href="_blank">Wise
-																		Phirels</a>
+																	<a href="_blank">Wise Phirels</a>
 																	<a href="_blank"
-																		target="_blank"
 																		class="im-icon im-ico-new-tab vertical-middle tab-icon"
 																		style="margin-left: 4px;"></a>
 
@@ -856,7 +869,8 @@
 															</div>
 														</td>
 														<td class="pay text-right">
-															349,000원<br> </td>
+															349,000원<br> 
+														</td>
 														<td class="group">Wise Phirels</td>
 														<td class="showcase">
 															<div class="dropdown">
@@ -873,8 +887,8 @@
 																	<div class="footer">
 																		<li class="divider"></li>
 																		<li><a href="javascript:;"
-																				onclick="SHOP_PROD_LIST.openShowcaseForm()">새
-																				기획전</a></li>
+																				onclick="SHOP_PROD_LIST.openShowcaseForm()">
+																				새 기획전</a></li>
 																	</div>
 																</ul>
 															</div>
@@ -884,36 +898,35 @@
 																<span>판매중</span>
 															</a>
 															<ul class="dropdown-menu" style="top: 50px;">
-																<li id="mixpanel_bo_shopping_item_list_status_sale"><a
-																		href="javascript:;"
+																<li id="mixpanel_bo_shopping_item_list_status_sale">
+																	<a href="javascript:;"
 																		onclick="SHOP_PROD_LIST.updateStatus(&#39;s20240516baee51a6519ef&#39;, &#39;sale&#39;)">판매중</a>
 																</li>
 																<li id="mixpanel_bo_shopping_item_list_status_soldout">
 																	<a href="javascript:;"
 																		onclick="SHOP_PROD_LIST.updateStatus(&#39;s20240516baee51a6519ef&#39;, &#39;soldout&#39;)">품절</a>
 																</li>
-																<li id="mixpanel_bo_shopping_item_list_status_nosale"><a
-																		href="javascript:;"
+																<li id="mixpanel_bo_shopping_item_list_status_nosale">
+																	<a href="javascript:;"
 																		onclick="SHOP_PROD_LIST.updateStatus(&#39;s20240516baee51a6519ef&#39;, &#39;nosale&#39;)">숨김</a>
 																</li>
 															</ul>
 														</td>
-														<td class="text-12" style="padding-left: 20px">
-															- </td>
+														<td class="text-12" style="padding-left: 20px"> - </td>
 														<td class="r_date text-12">2024-04-01</td>
 														<td class="e_date text-12">2024-04-02</td>
 														<td class="more">
 															<div class="dropdown">
 																<button class="btn btn-flat" aria-expanded="true"
 																	data-toggle="dropdown" type="button" id="dLabel">
-																	<i class="zmdi zmdi-more"></i>
+																	<i></i>
 																</button>
 																<ul aria-labelledby="dLabel" role="menu"
 																	class="dropdown-menu animation-dock right">
 																	<li>
 																		<a href="javascript:;"
-																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;top&#39;,&#39;s20240516baee51a6519ef&#39;, &#39;&#39;);">맨
-																			위로</a>
+																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;top&#39;,&#39;s20240516baee51a6519ef&#39;, &#39;&#39;);">
+																			맨 위로</a>
 																	</li>
 																	<li>
 																		<a href="javascript:;"
@@ -996,7 +1009,8 @@
 
 	<iframe name="hidden_frame" id="hidden_frame"
 		style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;"
-		src="./adminChallenge_files/saved_resource.html"></iframe>
+		src="_blank">
+	</iframe>
 
 	<div id="device-breakpoints">
 		<div class="device-xs visible-xs" data-breakpoint="xs"></div>
