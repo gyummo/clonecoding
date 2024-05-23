@@ -10,68 +10,9 @@
 	<link rel="stylesheet" type="text/css" href="./adminSocialing_files/admin.css">
 </head>
 
-<body class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
-	<input type="hidden" id="USE_OMS" value="on">
-	<!-- BEGIN BASE-->
-	<div id="dashboard_loader" class="se-pre-con" style="display: none;">
-		<div class="page-loader-spinner">
-			<div class="double-bounce1"></div>
-			<div class="double-bounce2"></div>
-		</div>
-		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 70%;">
-				<label>70%</label>
-			</div>
-		</div>
-	</div>
-	<div id="base">
-		<header class="top_header" id="header">
-			<div class="headerbar">
-				<div class="headerbar-left">
-					<ul class="header-nav header-nav-options">
-						<li class="hidden-lg hidden-md">
-							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar"
-								href="javascript:void(0);">
-								<img src="./adminSocialing_files/icon-bo-menu-01.svg">
-							</a>
-						</li>
-						<li class="header-nav-brand">
-							<div class="brand-holder">
-								<span class="location_text">
-									<a href="https://qjfhdnaos51106.imweb.me/admin/shopping/product">상품</a> </span>
-							</div>
-						</li>
-					</ul>
-				</div>
+<body>
+	<div class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
 
-				<div class="headerbar-right">
-					<ul class="header-nav header-nav-options _option_list">
-						<li class="hidden-xs"><a class="btn btn-default-bright" href="javascript:;"
-								onclick="alert(&#39;상품 일괄 추가 기능은 Pro, Global 버전에서만 사용 가능합니다.&#39;)">상품 일괄 추가</a></li>
-
-						<li class="hidden-xs"><a class="btn btn-primary"
-								href="https://qjfhdnaos51106.imweb.me/admin/shopping/product/?q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&amp;mode=add">상품
-								추가</a></li>
-						<li class="hidden-md hidden-lg hidden-sm">
-							<button class="btn btn-flat" aria-expanded="false" aria-haspopup="true"
-								data-toggle="dropdown" type="button" id="dLabel"
-								style="padding: 4px 8px;">
-								<i class="icon icon-options"></i>
-							</button>
-							<ul aria-labelledby="dLabel" role="menu" class="dropdown-menu animation-dock">
-								<li><a
-										href="https://qjfhdnaos51106.imweb.me/admin/shopping/product/?q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&amp;mode=add">상품
-										추가</a></li>
-								<li><a href="javascript:;"
-										onclick="alert(&#39;상품 일괄 추가 기능은 Pro, Global 버전에서만 사용 가능합니다.&#39;)">상품 일괄 추가</a>
-								</li>
-							</ul>
-						</li>
-					</ul><!--end .header-nav-options -->
-				</div><!--끝 #header-navbar-collapse -->
-				<!--끝 #header-navbar-collapse -->
-			</div>
-		</header>
 		<!-- BEGIN CONTENT-->
 		<div id="content">
 			<div id="alertBox" class="alert__wrap"> </div>
@@ -82,12 +23,13 @@
 							<div class="card">
 								<div class="card-body no-padding">
 									<ul class="nav nav-pills nav-stacked">
-										<li class="no-hover" id="new_group_btn"
-											data-base_url="/admin/shopping/product/?q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D">
+										<li class="no-hover" id="new_group_btn">
 											<a href="javascript:;" class="text-primary"
-												onclick="SHOP_PROD_MANAGE.openCategoryManage(&#39;prod_list&#39;)">카테고리
-												관리 <i class="icon-settings"
-													style="font-size: 15px; vertical-align: middle; margin-left: 4px; position: relative; top: -1px;"></i></a>
+												onclick="SHOP_PROD_MANAGE.openCategoryManage(&#39;prod_list&#39;)">
+												카테고리 관리
+												<i class="icon-settings"
+													style="font-size: 15px; vertical-align: middle; margin-left: 4px; position: relative; top: -1px;"></i>
+											</a>
 										</li>
 									</ul>
 
@@ -99,7 +41,6 @@
 										<div id="prod_category_list" class="prod_category_list">
 											<div class="holder">
 												<div class="dropdown-handle dd-handle _menu_item"
-													data-code="s20240401bd31433ff9bdf"
 													id="prod_list_category_s20240401bd31433ff9bdf"
 													onclick="SHOP_PROD_LIST.startCategorySearch(&#39;s20240401bd31433ff9bdf&#39;)">
 													<span class="_name">Wise Swell</span>
@@ -107,7 +48,6 @@
 											</div>
 											<div class="holder">
 												<div class="dropdown-handle dd-handle _menu_item"
-													data-code="s20240401723e96dccd326"
 													id="prod_list_category_s20240401723e96dccd326"
 													onclick="SHOP_PROD_LIST.startCategorySearch(&#39;s20240401723e96dccd326&#39;)">
 													<span class="_name">Wise Cantor</span>
@@ -115,7 +55,6 @@
 											</div>
 											<div class="holder">
 												<div class="dropdown-handle dd-handle _menu_item"
-													data-code="s20240401ae119f81cc87a"
 													id="prod_list_category_s20240401ae119f81cc87a"
 													onclick="SHOP_PROD_LIST.startCategorySearch(&#39;s20240401ae119f81cc87a&#39;)">
 													<span class="_name">Wise Phirels</span>
@@ -123,7 +62,6 @@
 											</div>
 											<div class="holder">
 												<div class="dropdown-handle dd-handle _menu_item"
-													data-code="s202404017c0c84752e9c2"
 													id="prod_list_category_s202404017c0c84752e9c2"
 													onclick="SHOP_PROD_LIST.startCategorySearch(&#39;s202404017c0c84752e9c2&#39;)">
 													<span class="_name">Wise Pixie</span>
@@ -137,11 +75,12 @@
 							<div class="card">
 								<div class="card-body no-padding">
 									<ul class="nav nav-pills nav-stacked">
-										<li class="no-hover " id="new_group_btn"
-											data-base_url="/admin/shopping/product/?q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D">
+										<li class="no-hover " id="new_group_btn">
 											<a href="javascript:;" class="text-primary"
-												onclick="SHOP_PROD_LIST.openShowcaseForm()">기획전 추가 <i class="icon-plus"
-													style="font-size: 15px; vertical-align: middle; margin-left: 4px; position: relative; top: -1px;"></i></a>
+												onclick="SHOP_PROD_LIST.openShowcaseForm()">기획전 추가
+												<i class="icon-plus"
+													style="font-size: 15px; vertical-align: middle; margin-left: 4px; position: relative; top: -1px;"></i>
+											</a>
 										</li>
 									</ul>
 									<ul class="nav nav-pills nav-stacked nav-sm" id="showcase_list"></ul>
@@ -155,45 +94,55 @@
 									<div class="owl-stage-outer">
 										<div class="owl-stage"
 											style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 264px;">
-											<div class="owl-item active"
-												style="width: auto; margin-right: 0px;">
+											<div class="owl-item active" style="width: auto; margin-right: 0px;">
 												<ul class="owl-nav-tabs">
-													<li class="active _all"><a href="javascript:;"
+													<li class="active _all">
+														<a href="javascript:;"
 															onclick="location.href=&#39;/admin/shopping/product/?status=all&amp;q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&#39;">전체
-															<span class="_count text-primary">4</span></a></li>
+															<span class="_count text-primary">4</span>
+														</a>
+													</li>
 												</ul>
 											</div>
-											<div class="owl-item active"
-												style="width: auto; margin-right: 0px;">
+											<div class="owl-item active" style="width: auto; margin-right: 0px;">
 												<ul class="owl-nav-tabs">
-													<li class=" _sale"><a href="javascript:;"
+													<li class=" _sale">
+														<a href="javascript:;"
 															onclick="location.href=&#39;/admin/shopping/product/?status=sale&amp;q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&#39;">판매중
-															<span class="_count text-primary">4</span></a></li>
+															<span class="_count text-primary">4</span>
+														</a>
+													</li>
 												</ul>
 											</div>
-											<div class="owl-item active"
-												style="width: auto; margin-right: 0px;">
+											<div class="owl-item active" style="width: auto; margin-right: 0px;">
 												<ul class="owl-nav-tabs">
-													<li class=" _soldout"><a href="javascript:;"
+													<li class=" _soldout">
+														<a href="javascript:;"
 															onclick="location.href=&#39;/admin/shopping/product/?status=soldout&amp;q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&#39;">품절
-															<span class="_count text-primary">0</span></a></li>
+															<span class="_count text-primary">0</span>
+														</a>
+													</li>
 												</ul>
 											</div>
-											<div class="owl-item active"
-												style="width: auto; margin-right: 0px;">
+											<div class="owl-item active" style="width: auto; margin-right: 0px;">
 												<ul class="owl-nav-tabs">
-													<li class=" _nosale"><a href="javascript:;"
+													<li class=" _nosale">
+														<a href="javascript:;"
 															onclick="location.href=&#39;/admin/shopping/product/?status=nosale&amp;q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&#39;">숨김
-															<span class="_count text-primary">0</span></a></li>
+															<span class="_count text-primary">0</span>
+														</a>
+													</li>
 												</ul>
 											</div>
 										</div>
 									</div>
+
 									<div class="owl-controls">
 										<div class="owl-nav">
 											<div class="owl-prev" style="display: none;">prev</div>
 											<div class="owl-next" style="display: none;">next</div>
 										</div>
+
 										<div class="owl-dots">
 											<div class="owl-dot active"><span></span></div>
 											<div class="owl-dot"><span></span></div>
@@ -202,8 +151,11 @@
 										</div>
 									</div>
 								</li>
+
 								<li
-									class="hidden-xs hidden-sm after:tw-content-[&#39;&#39;] after:tw-inline-block after:tw-absolute after:tw-w-[8px] after:tw-h-[5px] after:tw-right-0 after:tw-top-[50%] after:tw-translate-y-[-12px] after:tw-bg-[url(&#39;../images/admin/shopping/dropdown_arrow.png&#39;)] after:tw-bg-no-repeat after:tw-bg-contain">
+									class="hidden-xs hidden-sm after:tw-content-[&#39;&#39;] after:tw-inline-block after:tw-absolute after:tw-w-[8px] 
+								after:tw-h-[5px] after:tw-right-0 after:tw-top-[50%] after:tw-translate-y-[-12px] 
+								after:tw-bg-[url(&#39;../images/admin/shopping/dropdown_arrow.png&#39;)] after:tw-bg-no-repeat after:tw-bg-contain">
 									<select
 										class="tw-relative tw-bg-transparent tw-appearance-none tw-pr-[13px] tw-text-right"
 										onchange="location.href=&#39;./?q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&amp;pagesize=&#39; + $(this).val()+&#39;&#39;">
@@ -214,6 +166,7 @@
 									</select>
 								</li>
 							</ul>
+
 							<div class="row">
 								<div class="col-md-12">
 									<div class="clearfix search_form">
@@ -223,33 +176,34 @@
 													onsubmit="return false;">
 													<div class="twitter_wrap" style="margin-left: 0px;">
 														<span class="twitter-typeahead"
-															style="position: relative; align-items: center; display: flex !important;">
+															style="position: relative; align-items: center; display: flex;">
 															<div class="on-click">
-																<a data-toggle="dropdown"
+																<a
 																	style="margin-right: -1px; width: 120px; padding-left: 24px; line-height: 1;">
 																	<span id="search_keyword_type_text">기본</span>
 																</a>
-																<ul class="dropdown-menu"
-																	style="top: 36px;">
-																	<li><a href="javascript:;"
+																<ul class="dropdown-menu" style="top: 36px;">
+																	<li>
+																		<a href="javascript:;"
 																			onclick="$(&#39;#search_keyword_type&#39;).val(&#39;&#39;);$(&#39;#search_keyword_type_text&#39;).text($(this).text());$(&#39;#keyword_search_input&#39;).attr(&#39;placeholder&#39;,&#39;상품명, 상품 재고번호, 자체상품코드 검색&#39;);">기본</a>
 																	</li>
-																	<li><a href="javascript:;"
+																	<li>
+																		<a href="javascript:;"
 																			onclick="$(&#39;#search_keyword_type&#39;).val(&#39;use_option_sku&#39;);$(&#39;#search_keyword_type_text&#39;).text($(this).text());$(&#39;#keyword_search_input&#39;).attr(&#39;placeholder&#39;,&#39;옵션 재고번호 검색&#39;);">옵션
-																			재고번호</a></li>
+																			재고번호</a>
+																	</li>
 																</ul>
 																<input type="hidden" name="search_keyword_type"
 																	class="_search_keyword_type" value=""
 																	id="search_keyword_type">
 															</div>
+
 															<input type="text" id="keyword_search_input"
 																class="_keyword_search form-control typeahead tt-input"
-																placeholder="상품명, 상품 재고번호, 자체상품코드 검색" autocomplete="off"
-																spellcheck="false" dir="auto"
+																placeholder="상품명, 상품 재고번호, 자체상품코드 검색"
 																style="position: relative; vertical-align: top; border: none; background-color: transparent; padding-left: 24px;"
 																onkeydown="if (event.keyCode==13) SHOP_PROD_LIST.startKeywordSearch()"
 																value="">
-
 														</span>
 													</div>
 
@@ -264,68 +218,76 @@
 												</form>
 											</div>
 										</div>
+
 										<div class="card form_right" role="group">
 											<button type="button"
 												onclick="SHOP_PROD_MANAGE.openModalProdExcelDownload(&#39;&#39;)"
-												class="btn btn-default-bright dropdown-toggle btn-card-height full-width"
-												data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-												data-mixpanel="click_bo_shopping_item_export">
-												<i class="btl bt-download"></i> 내보내기 </button>
+												class="btn btn-default-bright dropdown-toggle btn-card-height full-width">
+												<i class="btl bt-download"></i> 내보내기
+											</button>
 										</div>
 									</div>
 								</div>
+
 								<div class="col-md-12" style="z-index: 2;">
-									<div class="card style-transparent card-top no-tab"
-										style="display: none;" id="prod_list_no_prod">
+									<div class="card style-transparent card-top no-tab" style="display: none;"
+										id="prod_list_no_prod">
 										<div class="card-head">
 											<header class="style-price-header force-padding">
 												<h2>판매 시작을 위해 상품을 추가해 주세요</h2>
 												<div class="sub-title text-gray-bright text-center"
-													style="font-size: 18px;">의류, 전자제품, 식품 등 무엇이든 판매할 수
-													있습니다.</div>
+													style="font-size: 18px;">
+													의류, 전자제품, 식품 등 무엇이든 판매할 수 있습니다.
+												</div>
 											</header>
 										</div>
+
 										<div class="card-body no-padding-y">
 											<div class="text-center text-gray force-padding">
 												<button type="button"
 													class="btn ink-reaction btn-lg btn-primary margin-bottom-xl"
-													onclick="window.location.href=&#39;/admin/shopping/product/?q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&amp;mode=add&#39;">상품추가</button>
+													onclick="window.location.href=&#39;/admin/shopping/product/?q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&amp;mode=add&#39;">
+													상품추가</button>
 
-												<p><a href="javascript:;" class="text-primary"
-														onclick="alert(&#39;상품 일괄 추가 기능은 Pro, Global 버전에서만 사용 가능합니다.&#39;)">대량
-														상품 등록</a></p>
+												<p>
+													<a href="javascript:;" class="text-primary"
+														onclick="alert(&#39;상품 일괄 추가 기능은 Pro, Global 버전에서만 사용 가능합니다.&#39;)">
+														대량 상품 등록</a>
+												</p>
 											</div>
 										</div>
 									</div>
-									<div class="card style-transparent card-top no-tab"
-										style="display: none;" id="showcase_list_no_prod">
+
+									<div class="card style-transparent card-top no-tab" style="display: none;"
+										id="showcase_list_no_prod">
 										<div class="card-head">
 											<header class="style-price-header force-padding">
 												<h2>이 기획전에 포함된 상품이 없습니다.</h2>
 												<div class="sub-title text-gray-bright text-center"
-													style="font-size: 18px;">카테고리에서 기획전에 추가할 상품을 추가할 수
-													있습니다.</div>
+													style="font-size: 18px;">
+													카테고리에서 기획전에 추가할 상품을 추가할 수 있습니다.
+												</div>
 											</header>
 										</div>
 										<div class="card-body">
 											<div class="text-center">
-												<img src="./adminSocialing_files/imweb-category.gif"
-													style="max-width: 100%;">
+												<img src="_blank" style="max-width: 100%;">
 											</div>
 										</div>
 									</div>
-									<div class="card style-transparent card-top no-tab"
-										style="display: none;" id="prod_list_no_search">
+
+									<div class="card style-transparent card-top no-tab" style="display: none;"
+										id="prod_list_no_search">
 										<div class="card-head">
 											<header class="style-price-header force-padding">
 												<h2>검색된 상품이 없습니다</h2>
 											</header>
 										</div>
 									</div>
+
 									<div class="card">
 										<div class="table-responsive shop-table check" id="prod_list">
 											<table class="table no-margin">
-
 												<thead class="subject _prodListHeaderDeselected"
 													style="display: table-header-group;"
 													id="prod_list_header_deselected">
@@ -353,85 +315,96 @@
 													</tr>
 												</thead>
 												<thead class="select-thead _prodListHeaderSelected"
-													style="display: none;"
-													id="prod_list_header_selected">
+													style="display: none;" id="prod_list_header_selected">
 													<tr>
 														<th>
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input type="checkbox" value=""
 																		class="_prodListAllCheck"
-																		onclick="SHOP_PROD_LIST.listSetAllSelect($(this).prop(&#39;checked&#39;))"><span></span>
+																		onclick="SHOP_PROD_LIST.listSetAllSelect($(this).prop(&#39;checked&#39;))">
+																	<span></span>
 																</label>
 															</div>
 														</th>
+
 														<th>
 														</th>
+
 														<th colspan="12" style="padding: 0px;">
-															<!--												<a class="btn btn-default-bright" id="prod-replication" href="javascript:;" style="margin-right: 10px" onclick="SHOP_PROD_LIST.copyProdMulti()">--><!--</a>-->
 															<button class="btn btn-default-bright" id="prod-replication"
-																href="javascript:;"
-																style="margin-right: 10px;"
+																href="javascript:;" style="margin-right: 10px;"
 																onclick="SHOP_PROD_LIST.copyProdMulti()">복제</button>
 															<button class="btn btn-default-bright" id="prod-delete"
-																href="javascript:;"
-																style="margin-right: 10px;"
+																href="javascript:;" style="margin-right: 10px;"
 																onclick="SHOP_PROD_LIST.deleteProdMulti()">삭제</button>
 															<div class="btn-group" role="group"
 																style="margin-right: 10px;">
 																<button class="btn btn-default-bright"
-																	id="prod-status-change" data-toggle="dropdown"
-																	aria-haspopup="true" aria-expanded="false"
+																	id="prod-status-change"
 																	style="margin-right: -1px;">상태 변경
 																	<span class="caret"></span>
 																</button>
-																<ul class="dropdown-menu"
-																	aria-labelledby="btnGroupVerticalDrop1">
-																	<li><a href="javascript:;"
+
+																<ul class="dropdown-menu">
+																	<li>
+																		<a href="javascript:;"
 																			onclick="SHOP_PROD_LIST.updateStatusMulti(&#39;sale&#39;)">판매중</a>
 																	</li>
-																	<li><a href="javascript:;"
+																	<li>
+																		<a href="javascript:;"
 																			onclick="SHOP_PROD_LIST.updateStatusMulti(&#39;soldout&#39;)">품절</a>
 																	</li>
-																	<li><a href="javascript:;"
+																	<li>
+																		<a href="javascript:;"
 																			onclick="SHOP_PROD_LIST.updateStatusMulti(&#39;nosale&#39;)">숨김</a>
 																	</li>
 																</ul>
+
 																<a class="btn btn-default-bright" href="javascript:;"
-																	onclick="SHOP_PROD_LIST.openProdListModifyManage(&#39;category&#39;)">카테고리
-																	변경</a>
+																	onclick="SHOP_PROD_LIST.openProdListModifyManage(&#39;category&#39;)">
+																	카테고리 변경
+																</a>
 																<a class="btn btn-default-bright" href="javascript:;"
-																	onclick="SHOP_PROD_LIST.openProdListModifyManage(&#39;showcase&#39;)">기획전
-																	변경</a>
+																	onclick="SHOP_PROD_LIST.openProdListModifyManage(&#39;showcase&#39;)">
+																	기획전 변경
+																</a>
 																<a class="btn btn-default-bright" href="javascript:;"
-																	onclick="SHOP_PROD_LIST.openModifyProdPriceMulti();">판매가
-																	변경</a>
+																	onclick="SHOP_PROD_LIST.openModifyProdPriceMulti();">
+																	판매가 변경
+																</a>
 																<a class="btn btn-default-bright" href="javascript:;"
-																	onclick="SHOP_PROD_LIST.openModifyDiscount();">할인
-																	설정</a>
+																	onclick="SHOP_PROD_LIST.openModifyDiscount();">
+																	할인 설정
+																</a>
 																<button class="btn btn-default-bright"
 																	id="prod-pre-sale" href="javascript:;"
-																	onclick="SHOP_PROD_LIST.openModifyPreSale();">판매기간
-																	변경</button>
+																	onclick="SHOP_PROD_LIST.openModifyPreSale();">
+																	판매기간 변경
+																</button>
 																<button class="btn btn-default-bright"
 																	id="prod-pre-sale" href="javascript:;"
-																	onclick="SHOP_PROD_LIST.openModifySku();">재고
-																	변경</button>
+																	onclick="SHOP_PROD_LIST.openModifySku();">
+																	재고 변경
+																</button>
 																<a class="btn btn-default-bright" href="javascript:;"
-																	onclick="SHOP_PROD_LIST.openIconManageMulti()">뱃지
-																	변경</a>
+																	onclick="SHOP_PROD_LIST.openIconManageMulti()">
+																	뱃지 변경
+																</a>
 																<a class="btn btn-default-bright" href="javascript:;"
-																	onclick="SHOP_PROD_LIST.openProdDetailMulti(&#39;header&#39;)">상품
-																	상세 공통 변경</a>
+																	onclick="SHOP_PROD_LIST.openProdDetailMulti(&#39;header&#39;)">
+																	상품 상세 공통 변경
+																</a>
 																<a class="btn btn-default-bright" href="javascript:;"
-																	onclick="SHOP_PROD_LIST.openModifyDisplay()">외부 노출
-																	변경</a>
+																	onclick="SHOP_PROD_LIST.openModifyDisplay()">
+																	외부 노출 변경
+																</a>
 
 															</div>
 														</th>
 													</tr>
-													<tr id="prod_page_all_selected"
-														style="display: none;">
+
+													<tr id="prod_page_all_selected" style="display: none;">
 														<!--                                        <tr id="prod_page_all_selected">-->
 														<th colspan="12"
 															style="padding: 0px; background-color: rgb(250, 250, 250); height: 50px; text-align: center;">
@@ -456,8 +429,7 @@
 												<tbody id="prod_list_body" class="_prod_list_body ui-sortable">
 													<!--<tr class='content on">-->
 													<tr class="content _prodListItem"
-														id="prod_list_s20240516ae197a3da7242"
-														data-code="s20240516ae197a3da7242">
+														id="prod_list_s20240516ae197a3da7242">
 														<td class="check">
 															<div class="drag _showcase_handle ui-sortable-handle"></div>
 															<div class="checkbox checkbox-styled no-margin">
@@ -465,66 +437,61 @@
 																	<input type="checkbox"
 																		value="s20240516ae197a3da7242"
 																		class="_prodListCheck" onclick="SHOP_PROD_LIST.listSetSelect(&#39;s20240516ae197a3da7242&#39;,function(codes){
-								SHOP_PROD_LIST.checkProd(codes);
-								})"><span></span>
+																	SHOP_PROD_LIST.checkProd(codes);})">
+																	<span></span>
 																</label>
 															</div>
 														</td>
 														<td class="no text-12">4</td>
 														<td class="image">
-															<a
-																href="https://qjfhdnaos51106.imweb.me/admin/shopping/product/?q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&amp;mode=add&amp;idx=4"><img
-																	src="./adminSocialing_files/658b972939603.png"
-																	width="49" height="49" class="item-thumb"></a>
+															<a href="_blank">
+																<img src="_blank" width="49" height="49"
+																	class="item-thumb">
+															</a>
 														</td>
 														<td class="title">
 															<div>
-
 																<div class="item-tit inline-blocked">
-																	<a
-																		href="https://qjfhdnaos51106.imweb.me/admin/shopping/product/?q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&amp;mode=add&amp;idx=4">Wise
-																		Pixie</a>
-																	<a href="https://qjfhdnaos51106.imweb.me/shop_view/?idx=4"
-																		target="_blank"
+																	<a href="_blank">
+																		Wise Pixie</a>
+																	<a href="_blank"
 																		class="im-icon im-ico-new-tab vertical-middle tab-icon"
 																		style="margin-left: 4px;"></a>
-
 																</div>
-
 																<span class="btn-sm text-gray-bright"></span>
 															</div>
 														</td>
-														<td class="pay text-right">
-															259,000원<br> </td>
+
+														<td class="pay text-right">259,000원<br> </td>
 														<td class="group">Wise Pixie</td>
 														<td class="showcase">
 															<div class="dropdown">
-																<button id="dLabel" type="button" data-toggle="dropdown"
-																	aria-haspopup="true" aria-expanded="false"
+																<button id="dLabel" type="button"
 																	class="btn btn-flat no-padding _drop_showcase_btn_s20240516ae197a3da7242">-</button>
 																<ul class="dropdown-menu animation-dock check"
-																	role="menu" aria-labelledby="dLabel">
-																	<div class="select_group _drop_showcase_list _drop_showcase_list_s20240516ae197a3da7242"
-																		data-showcase=""
-																		data-prod="s20240516ae197a3da7242"
-																		data-noshowcase="Y">
+																	role="menu">
+																	<div
+																		class="select_group _drop_showcase_list _drop_showcase_list_s20240516ae197a3da7242">
 																	</div>
 																	<div class="footer">
 																		<li class="divider"></li>
-																		<li><a href="javascript:;"
-																				onclick="SHOP_PROD_LIST.openShowcaseForm()">새
-																				기획전</a></li>
+																		<li>
+																			<a href="javascript:;"
+																				onclick="SHOP_PROD_LIST.openShowcaseForm()">
+																				새 기획전</a>
+																		</li>
 																	</div>
 																</ul>
 															</div>
 														</td>
+
 														<td class="state on-click">
-															<a data-toggle="dropdown" style="margin-right: -1px;">
+															<a style="margin-right: -1px;">
 																<span>판매중</span>
 															</a>
 															<ul class="dropdown-menu" style="top: 50px;">
-																<li id="mixpanel_bo_shopping_item_list_status_sale"><a
-																		href="javascript:;"
+																<li id="mixpanel_bo_shopping_item_list_status_sale">
+																	<a href="javascript:;"
 																		onclick="SHOP_PROD_LIST.updateStatus(&#39;s20240516ae197a3da7242&#39;, &#39;sale&#39;)">판매중</a>
 																</li>
 																<li id="mixpanel_bo_shopping_item_list_status_soldout">
@@ -537,35 +504,35 @@
 																</li>
 															</ul>
 														</td>
-														<td class="text-12" style="padding-left: 20px">
-															- </td>
+														<td class="text-12" style="padding-left: 20px"> - </td>
 														<td class="r_date text-12">2024-04-01</td>
 														<td class="e_date text-12">2024-04-02</td>
 														<td class="more">
 															<div class="dropdown">
-																<button class="btn btn-flat" aria-expanded="true"
-																	data-toggle="dropdown" type="button" id="dLabel">
+																<button class="btn btn-flat" type="button" id="dLabel">
 																	<i class="zmdi zmdi-more"></i>
 																</button>
 																<ul aria-labelledby="dLabel" role="menu"
 																	class="dropdown-menu animation-dock right">
 																	<li>
 																		<a href="javascript:;"
-																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;top&#39;,&#39;s20240516ae197a3da7242&#39;, &#39;&#39;);">맨
+																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;top&#39;,&#39;s20240516ae197a3da7242&#39;, &#39;&#39;);">
+																			맨 위로</a>
+																	</li>
+																	<li>
+																		<a href="javascript:;"
+																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;pre&#39;,&#39;s20240516ae197a3da7242&#39;, &#39;&#39;);">
 																			위로</a>
 																	</li>
 																	<li>
 																		<a href="javascript:;"
-																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;pre&#39;,&#39;s20240516ae197a3da7242&#39;, &#39;&#39;);">위로</a>
-																	</li>
-																	<li>
-																		<a href="javascript:;"
-																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;next&#39;,&#39;s20240516ae197a3da7242&#39;, &#39;&#39;);">아래로</a>
-																	</li>
-																	<li>
-																		<a href="javascript:;"
-																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;bottom&#39;,&#39;s20240516ae197a3da7242&#39;, &#39;&#39;);">맨
+																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;next&#39;,&#39;s20240516ae197a3da7242&#39;, &#39;&#39;);">
 																			아래로</a>
+																	</li>
+																	<li>
+																		<a href="javascript:;"
+																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;bottom&#39;,&#39;s20240516ae197a3da7242&#39;, &#39;&#39;);">
+																			맨 아래로</a>
 																	</li>
 																</ul>
 															</div>
@@ -573,8 +540,7 @@
 													</tr>
 													<!--<tr class='content on">-->
 													<tr class="content _prodListItem"
-														id="prod_list_s20240516499115c1a7064"
-														data-code="s20240516499115c1a7064">
+														id="prod_list_s20240516499115c1a7064">
 														<td class="check">
 															<div class="drag _showcase_handle ui-sortable-handle"></div>
 															<div class="checkbox checkbox-styled no-margin">
@@ -582,55 +548,50 @@
 																	<input type="checkbox"
 																		value="s20240516499115c1a7064"
 																		class="_prodListCheck" onclick="SHOP_PROD_LIST.listSetSelect(&#39;s20240516499115c1a7064&#39;,function(codes){
-								SHOP_PROD_LIST.checkProd(codes);
-								})"><span></span>
+																	SHOP_PROD_LIST.checkProd(codes);})">
+																	<span></span>
 																</label>
 															</div>
 														</td>
+
 														<td class="no text-12">3</td>
+
 														<td class="image">
-															<a
-																href="https://qjfhdnaos51106.imweb.me/admin/shopping/product/?q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&amp;mode=add&amp;idx=3"><img
-																	src="./adminSocialing_files/89756d13c4f49.png"
-																	width="49" height="49" class="item-thumb"></a>
+															<a href="_blank"><img src="_blank" width="49" height="49"
+																	class="item-thumb"></a>
 														</td>
+
 														<td class="title">
 															<div>
-
 																<div class="item-tit inline-blocked">
-																	<a
-																		href="https://qjfhdnaos51106.imweb.me/admin/shopping/product/?q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&amp;mode=add&amp;idx=3">Swell
-																		Cantor</a>
-																	<a href="https://qjfhdnaos51106.imweb.me/shop_view/?idx=3"
-																		target="_blank"
+																	<a href="_blank">Swell Cantor</a>
+																	<a href="_blank"
 																		class="im-icon im-ico-new-tab vertical-middle tab-icon"
 																		style="margin-left: 4px;"></a>
-
 																</div>
-
 																<span class="btn-sm text-gray-bright">컬러 2종</span>
 															</div>
 														</td>
-														<td class="pay text-right">
-															329,000원<br> </td>
+
+														<td class="pay text-right">329,000원<br> </td>
 														<td class="group">Wise Cantor</td>
 														<td class="showcase">
 															<div class="dropdown">
-																<button id="dLabel" type="button" data-toggle="dropdown"
-																	aria-haspopup="true" aria-expanded="false"
+																<button id="dLabel" type="button"
 																	class="btn btn-flat no-padding _drop_showcase_btn_s20240516499115c1a7064">-</button>
 																<ul class="dropdown-menu animation-dock check"
-																	role="menu" aria-labelledby="dLabel">
-																	<div class="select_group _drop_showcase_list _drop_showcase_list_s20240516499115c1a7064"
-																		data-showcase=""
-																		data-prod="s20240516499115c1a7064"
-																		data-noshowcase="Y">
+																	role="menu">
+																	<div
+																		class="select_group _drop_showcase_list _drop_showcase_list_s20240516499115c1a7064">
 																	</div>
 																	<div class="footer">
 																		<li class="divider"></li>
-																		<li><a href="javascript:;"
-																				onclick="SHOP_PROD_LIST.openShowcaseForm()">새
-																				기획전</a></li>
+																		<li>
+																			<a href="javascript:;"
+																				onclick="SHOP_PROD_LIST.openShowcaseForm()">
+																				새 기획전
+																			</a>
+																		</li>
 																	</div>
 																</ul>
 															</div>
@@ -640,36 +601,34 @@
 																<span>판매중</span>
 															</a>
 															<ul class="dropdown-menu" style="top: 50px;">
-																<li id="mixpanel_bo_shopping_item_list_status_sale"><a
-																		href="javascript:;"
+																<li id="mixpanel_bo_shopping_item_list_status_sale">
+																	<a href="javascript:;"
 																		onclick="SHOP_PROD_LIST.updateStatus(&#39;s20240516499115c1a7064&#39;, &#39;sale&#39;)">판매중</a>
 																</li>
 																<li id="mixpanel_bo_shopping_item_list_status_soldout">
 																	<a href="javascript:;"
 																		onclick="SHOP_PROD_LIST.updateStatus(&#39;s20240516499115c1a7064&#39;, &#39;soldout&#39;)">품절</a>
 																</li>
-																<li id="mixpanel_bo_shopping_item_list_status_nosale"><a
-																		href="javascript:;"
+																<li id="mixpanel_bo_shopping_item_list_status_nosale">
+																	<a href="javascript:;"
 																		onclick="SHOP_PROD_LIST.updateStatus(&#39;s20240516499115c1a7064&#39;, &#39;nosale&#39;)">숨김</a>
 																</li>
 															</ul>
 														</td>
-														<td class="text-12" style="padding-left: 20px">
-															- </td>
+														<td class="text-12" style="padding-left: 20px"> - </td>
 														<td class="r_date text-12">2024-04-01</td>
 														<td class="e_date text-12">2024-04-03</td>
 														<td class="more">
 															<div class="dropdown">
-																<button class="btn btn-flat" aria-expanded="true"
-																	data-toggle="dropdown" type="button" id="dLabel">
+																<button class="btn btn-flat" type="button" id="dLabel">
 																	<i class="zmdi zmdi-more"></i>
 																</button>
-																<ul aria-labelledby="dLabel" role="menu"
+																<ul role="menu"
 																	class="dropdown-menu animation-dock right">
 																	<li>
 																		<a href="javascript:;"
-																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;top&#39;,&#39;s20240516499115c1a7064&#39;, &#39;&#39;);">맨
-																			위로</a>
+																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;top&#39;,&#39;s20240516499115c1a7064&#39;, &#39;&#39;);">
+																			맨 위로</a>
 																	</li>
 																	<li>
 																		<a href="javascript:;"
@@ -681,8 +640,8 @@
 																	</li>
 																	<li>
 																		<a href="javascript:;"
-																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;bottom&#39;,&#39;s20240516499115c1a7064&#39;, &#39;&#39;);">맨
-																			아래로</a>
+																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;bottom&#39;,&#39;s20240516499115c1a7064&#39;, &#39;&#39;);">
+																			맨 아래로</a>
 																	</li>
 																</ul>
 															</div>
@@ -690,8 +649,7 @@
 													</tr>
 													<!--<tr class='content on">-->
 													<tr class="content _prodListItem"
-														id="prod_list_s202405169fa45a3e9e184"
-														data-code="s202405169fa45a3e9e184">
+														id="prod_list_s202405169fa45a3e9e184">
 														<td class="check">
 															<div class="drag _showcase_handle ui-sortable-handle"></div>
 															<div class="checkbox checkbox-styled no-margin">
@@ -699,55 +657,53 @@
 																	<input type="checkbox"
 																		value="s202405169fa45a3e9e184"
 																		class="_prodListCheck" onclick="SHOP_PROD_LIST.listSetSelect(&#39;s202405169fa45a3e9e184&#39;,function(codes){
-								SHOP_PROD_LIST.checkProd(codes);
-								})"><span></span>
+																	SHOP_PROD_LIST.checkProd(codes);})">
+																	<span></span>
 																</label>
 															</div>
 														</td>
+
 														<td class="no text-12">2</td>
+
 														<td class="image">
-															<a
-																href="https://qjfhdnaos51106.imweb.me/admin/shopping/product/?q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&amp;mode=add&amp;idx=2"><img
-																	src="./adminSocialing_files/06dac8214357f.png"
-																	width="49" height="49" class="item-thumb"></a>
+															<a href="_blank">
+																<img src="_blank" width="49" height="49"
+																	class="item-thumb">
+															</a>
 														</td>
+
 														<td class="title">
 															<div>
-
 																<div class="item-tit inline-blocked">
-																	<a
-																		href="https://qjfhdnaos51106.imweb.me/admin/shopping/product/?q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&amp;mode=add&amp;idx=2">Wise
-																		Swell</a>
-																	<a href="https://qjfhdnaos51106.imweb.me/shop_view/?idx=2"
-																		target="_blank"
+																	<a href="_blank">
+																		Wise Swell</a>
+																	<a href="_blank"
 																		class="im-icon im-ico-new-tab vertical-middle tab-icon"
-																		style="margin-left: 4px;"></a>
-
+																		style="margin-left: 4px;">
+																	</a>
 																</div>
-
 																<span class="btn-sm text-gray-bright"></span>
 															</div>
 														</td>
-														<td class="pay text-right">
-															269,000원<br> </td>
+
+														<td class="pay text-right"> 269,000원<br> </td>
 														<td class="group">Wise Swell</td>
 														<td class="showcase">
 															<div class="dropdown">
-																<button id="dLabel" type="button" data-toggle="dropdown"
-																	aria-haspopup="true" aria-expanded="false"
+																<button id="dLabel" type="button"
 																	class="btn btn-flat no-padding _drop_showcase_btn_s202405169fa45a3e9e184">-</button>
 																<ul class="dropdown-menu animation-dock check"
-																	role="menu" aria-labelledby="dLabel">
-																	<div class="select_group _drop_showcase_list _drop_showcase_list_s202405169fa45a3e9e184"
-																		data-showcase=""
-																		data-prod="s202405169fa45a3e9e184"
-																		data-noshowcase="Y">
+																	role="menu">
+																	<div
+																		class="select_group _drop_showcase_list _drop_showcase_list_s202405169fa45a3e9e184">
 																	</div>
 																	<div class="footer">
 																		<li class="divider"></li>
-																		<li><a href="javascript:;"
-																				onclick="SHOP_PROD_LIST.openShowcaseForm()">새
-																				기획전</a></li>
+																		<li>
+																			<a href="javascript:;"
+																				onclick="SHOP_PROD_LIST.openShowcaseForm()">
+																				새 기획전</a>
+																		</li>
 																	</div>
 																</ul>
 															</div>
@@ -777,16 +733,15 @@
 														<td class="e_date text-12">2024-04-02</td>
 														<td class="more">
 															<div class="dropdown">
-																<button class="btn btn-flat" aria-expanded="true"
-																	data-toggle="dropdown" type="button" id="dLabel">
+																<button class="btn btn-flat" type="button" id="dLabel">
 																	<i class="zmdi zmdi-more"></i>
 																</button>
-																<ul aria-labelledby="dLabel" role="menu"
+																<ul role="menu"
 																	class="dropdown-menu animation-dock right">
 																	<li>
 																		<a href="javascript:;"
-																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;top&#39;,&#39;s202405169fa45a3e9e184&#39;, &#39;&#39;);">맨
-																			위로</a>
+																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;top&#39;,&#39;s202405169fa45a3e9e184&#39;, &#39;&#39;);">
+																			맨 위로</a>
 																	</li>
 																	<li>
 																		<a href="javascript:;"
@@ -798,8 +753,8 @@
 																	</li>
 																	<li>
 																		<a href="javascript:;"
-																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;bottom&#39;,&#39;s202405169fa45a3e9e184&#39;, &#39;&#39;);">맨
-																			아래로</a>
+																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;bottom&#39;,&#39;s202405169fa45a3e9e184&#39;, &#39;&#39;);">
+																			맨 아래로</a>
 																	</li>
 																</ul>
 															</div>
@@ -807,8 +762,7 @@
 													</tr>
 													<!--<tr class='content on">-->
 													<tr class="content _prodListItem"
-														id="prod_list_s20240516baee51a6519ef"
-														data-code="s20240516baee51a6519ef">
+														id="prod_list_s20240516baee51a6519ef">
 														<td class="check">
 															<div class="drag _showcase_handle ui-sortable-handle"></div>
 															<div class="checkbox checkbox-styled no-margin">
@@ -816,94 +770,87 @@
 																	<input type="checkbox"
 																		value="s20240516baee51a6519ef"
 																		class="_prodListCheck" onclick="SHOP_PROD_LIST.listSetSelect(&#39;s20240516baee51a6519ef&#39;,function(codes){
-								SHOP_PROD_LIST.checkProd(codes);
-								})"><span></span>
+																	SHOP_PROD_LIST.checkProd(codes);})">
+																	<span></span>
 																</label>
 															</div>
 														</td>
+
 														<td class="no text-12">1</td>
 														<td class="image">
-															<a
-																href="https://qjfhdnaos51106.imweb.me/admin/shopping/product/?q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&amp;mode=add&amp;idx=1"><img
-																	src="./adminSocialing_files/afdf0eb46694c.png"
-																	width="49" height="49" class="item-thumb"></a>
+															<a href="_blank">
+																<img src="_blank" width="49" height="49"
+																	class="item-thumb">
+															</a>
 														</td>
+
 														<td class="title">
 															<div>
-
 																<div class="item-tit inline-blocked">
-																	<a
-																		href="https://qjfhdnaos51106.imweb.me/admin/shopping/product/?q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&amp;mode=add&amp;idx=1">Wise
-																		Phirels</a>
-																	<a href="https://qjfhdnaos51106.imweb.me/shop_view/?idx=1"
-																		target="_blank"
+																	<a href="_blank">Wise Phirels</a>
+																	<a href="_blank"
 																		class="im-icon im-ico-new-tab vertical-middle tab-icon"
 																		style="margin-left: 4px;"></a>
-
 																</div>
-
 																<span class="btn-sm text-gray-bright"></span>
 															</div>
 														</td>
-														<td class="pay text-right">
-															349,000원<br> </td>
+														<td class="pay text-right">349,000원<br></td>
 														<td class="group">Wise Phirels</td>
 														<td class="showcase">
 															<div class="dropdown">
-																<button id="dLabel" type="button" data-toggle="dropdown"
-																	aria-haspopup="true" aria-expanded="false"
+																<button id="dLabel" type="button"
 																	class="btn btn-flat no-padding _drop_showcase_btn_s20240516baee51a6519ef">-</button>
 																<ul class="dropdown-menu animation-dock check"
-																	role="menu" aria-labelledby="dLabel">
-																	<div class="select_group _drop_showcase_list _drop_showcase_list_s20240516baee51a6519ef"
-																		data-showcase=""
-																		data-prod="s20240516baee51a6519ef"
-																		data-noshowcase="Y">
+																	role="menu">
+																	<div
+																		class="select_group _drop_showcase_list _drop_showcase_list_s20240516baee51a6519ef">
 																	</div>
 																	<div class="footer">
 																		<li class="divider"></li>
-																		<li><a href="javascript:;"
+																		<li>
+																			<a href="javascript:;"
 																				onclick="SHOP_PROD_LIST.openShowcaseForm()">새
-																				기획전</a></li>
+																				기획전</a>
+																		</li>
 																	</div>
 																</ul>
 															</div>
 														</td>
 														<td class="state on-click">
-															<a data-toggle="dropdown" style="margin-right: -1px;">
+															<a style="margin-right: -1px;">
 																<span>판매중</span>
 															</a>
 															<ul class="dropdown-menu" style="top: 50px;">
-																<li id="mixpanel_bo_shopping_item_list_status_sale"><a
-																		href="javascript:;"
+																<li id="mixpanel_bo_shopping_item_list_status_sale">
+																	<a href="javascript:;"
 																		onclick="SHOP_PROD_LIST.updateStatus(&#39;s20240516baee51a6519ef&#39;, &#39;sale&#39;)">판매중</a>
 																</li>
 																<li id="mixpanel_bo_shopping_item_list_status_soldout">
 																	<a href="javascript:;"
 																		onclick="SHOP_PROD_LIST.updateStatus(&#39;s20240516baee51a6519ef&#39;, &#39;soldout&#39;)">품절</a>
 																</li>
-																<li id="mixpanel_bo_shopping_item_list_status_nosale"><a
-																		href="javascript:;"
+																<li id="mixpanel_bo_shopping_item_list_status_nosale">
+																	<a href="javascript:;"
 																		onclick="SHOP_PROD_LIST.updateStatus(&#39;s20240516baee51a6519ef&#39;, &#39;nosale&#39;)">숨김</a>
 																</li>
 															</ul>
 														</td>
-														<td class="text-12" style="padding-left: 20px">
-															- </td>
+
+														<td class="text-12" style="padding-left: 20px"> - </td>
 														<td class="r_date text-12">2024-04-01</td>
 														<td class="e_date text-12">2024-04-02</td>
 														<td class="more">
 															<div class="dropdown">
-																<button class="btn btn-flat" aria-expanded="true"
-																	data-toggle="dropdown" type="button" id="dLabel">
+																<button class="btn btn-flat" type="button" id="dLabel">
 																	<i class="zmdi zmdi-more"></i>
 																</button>
-																<ul aria-labelledby="dLabel" role="menu"
+																<ul role="menu"
 																	class="dropdown-menu animation-dock right">
 																	<li>
 																		<a href="javascript:;"
-																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;top&#39;,&#39;s20240516baee51a6519ef&#39;, &#39;&#39;);">맨
-																			위로</a>
+																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;top&#39;,&#39;s20240516baee51a6519ef&#39;, &#39;&#39;);">
+																			맨 위로</a>
 																	</li>
 																	<li>
 																		<a href="javascript:;"
@@ -915,8 +862,8 @@
 																	</li>
 																	<li>
 																		<a href="javascript:;"
-																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;bottom&#39;,&#39;s20240516baee51a6519ef&#39;, &#39;&#39;);">맨
-																			아래로</a>
+																			onclick="SHOP_PROD_LIST.changeProdOrder(&#39;bottom&#39;,&#39;s20240516baee51a6519ef&#39;, &#39;&#39;);">
+																			맨 아래로</a>
 																	</li>
 																</ul>
 															</div>
@@ -927,6 +874,7 @@
 										</div>
 									</div>
 								</div>
+
 								<div class="col-md-12">
 									<nav class="text-center order_paging" id="prod_list_paging"></nav>
 								</div>
@@ -937,31 +885,32 @@
 			</section><!--섹션 끝 -->
 		</div><!--end #content-->
 		<!-- END CONTENT -->
-<!-- END BASE -->
+		<!-- END BASE -->
 
-	<div class="modal" id="cocoaModal" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content"></div>
+		<div class="modal" id="cocoaModal" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content"></div>
+			</div>
+		</div>
+
+		<div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
+			<div class="modal-dialog">
+				<div class="modal-content"></div>
+			</div>
+		</div>
+
+		<iframe name="hidden_frame" id="hidden_frame"
+			style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;" src="_blank"></iframe>
+
+
+		<div id="device-breakpoints">
+			<div class="device-xs visible-xs" data-breakpoint="xs"></div>
+			<div class="device-sm visible-sm" data-breakpoint="sm"></div>
+			<div class="device-md visible-md" data-breakpoint="md"></div>
+			<div class="device-lg visible-lg" data-breakpoint="lg"></div>
 		</div>
 	</div>
 
-	<div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
-		<div class="modal-dialog">
-			<div class="modal-content"></div>
-		</div>
-	</div>
-
-	<iframe name="hidden_frame" id="hidden_frame"
-		style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;"
-		src="./adminSocialing_files/saved_resource.html"></iframe>
-
-
-	<div id="device-breakpoints">
-		<div class="device-xs visible-xs" data-breakpoint="xs"></div>
-		<div class="device-sm visible-sm" data-breakpoint="sm"></div>
-		<div class="device-md visible-md" data-breakpoint="md"></div>
-		<div class="device-lg visible-lg" data-breakpoint="lg"></div>
-	</div>
-</body>
+	<body>
 
 </html>

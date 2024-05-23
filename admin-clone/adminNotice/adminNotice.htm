@@ -11,135 +11,15 @@
 </head>
 
 
-<body class="menubar-hoverable header-fixed menubar-pin sidebar-mini menubar-visible">
-	<input type="hidden" id="USE_OMS" value="on">
-	<!-- BEGIN BASE-->
-	<div id="dashboard_loader" class="se-pre-con" style="display: none;">
-		<div class="page-loader-spinner">
-			<div class="double-bounce1"></div>
-			<div class="double-bounce2"></div>
-		</div>
-		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 70%;">
-				<label>70%</label>
-			</div>
-		</div>
-	</div>
-	<div id="base">
-		<header class="top_header" id="default_header">
-			<div class="headerbar">
-				<div class="headerbar-left">
-					<ul class="header-nav header-nav-options">
-						<li class="hidden-lg hidden-md">
-							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar"
-								href="javascript:void(0);">
-								<img src="./adminNotice_files/icon-bo-menu-01.svg">
-							</a>
-						</li>
-						<li class="header-nav-brand">
-							<div class="brand-holder">
-								<span class="location_text">
-									<a href="https://qjfhdnaos51106.imweb.me/admin/contents/calendar">일정</a> </span>
-							</div>
-						</li>
-					</ul>
-				</div>
+<body>
+	<div class="menubar-hoverable header-fixed menubar-pin sidebar-mini menubar-visible">
 
-
-			</div>
-		</header>
-		<header class="top_header control-fixed" id="select_header" style="display: none; z-index: 1000;">
-			<div class="headerbar">
-				<div class="headerbar-left">
-					<ul class="header-nav">
-						<li class="header-nav-brand">
-							<div class="brand-holder ">
-								<a class="btn btn-flat btn-default-white no-padding-x margin-right-xl"
-									href="javascript:;" onclick="TABLE_LIST.cancelCheckItem()"><i
-										class="btm bt-arrow-left"></i></a>
-							</div>
-							<div class="brand-holder">
-								<div class="dropdown pull-left">
-									<button class="btn btn-flat btn-default-white no-padding-x margin-right-xl text-lg"
-										aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button"
-										id="dLabel">
-										<span id="select_cnt"></span>개 선택됨 <i class="zmdi zmdi-caret-down"></i>
-									</button>
-									<ul aria-labelledby="dLabel" role="menu" class="dropdown-menu animation-dock">
-										<li>
-											<a href="javascript:;" onclick="TABLE_LIST.allCheckItem()">모두 선택</a>
-										</li>
-										<li>
-											<a href="javascript:;" onclick="TABLE_LIST.cancelCheckItem()">선택 안함</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="headerbar-right">
-					<ul class="header-nav header-nav-options">
-						<li>
-							<div class="btn-group">
-								<a class="btn btn-default-bright" href="javascript:;"
-									onclick="TABLE_LIST.checkAction(function(codes){adminContents.openMovePostForm(codes,&#39;calendar&#39;, &#39;&#39;);})"><span
-										class="hidden-xs">게시물</span> 이동</a>
-							</div>
-						</li>
-						<li>
-							<div class="btn-group">
-								<a class="btn btn-default-bright" href="javascript:;"
-									onclick="TABLE_LIST.checkActionWithBoardCode(function(codes, bcodes){adminContents.openDeletePostForm(codes,&#39;calendar&#39;, bcodes);})"><span
-										class="hidden-xs">게시물</span> 삭제</a>
-							</div>
-						</li>
-						<li>
-							<div class="admin_contents_header_action dropdown">
-								<button class="btn btn-flat" aria-expanded="false" aria-haspopup="true"
-									data-toggle="dropdown" type="button" id="dLabel">
-									<i class="zmdi zmdi-more" style="color: rgb(255, 255, 255);"></i>
-								</button>
-								<ul aria-labelledby="dLabel" role="menu" class="dropdown-menu animation-dock">
-									<li>
-										<a href="javascript:;"
-											onclick="TABLE_LIST.checkAction(function(codes){adminContents.hidePost(codes, &#39;calendar&#39;, &#39;Y&#39;);})">숨기기</a>
-									</li>
-									<li>
-										<a href="javascript:;"
-											onclick="TABLE_LIST.checkAction(function(codes){adminContents.hidePost(codes, &#39;calendar&#39;, &#39;N&#39;);})">복원</a>
-									</li>
-									<li>
-										<a href="javascript:;"
-											onclick="TABLE_LIST.checkAction(function(codes){adminContents.openEditWriterPostForm(codes, &#39;calendar&#39;);})">작성자
-											수정</a>
-									</li>
-									<li>
-										<a href="javascript:;"
-											onclick="TABLE_LIST.checkAction(function(codes){adminContents.openEditWriteTimePostForm(codes, &#39;calendar&#39;);})">작성시각
-											수정</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</header>
 		<!-- BEGIN CONTENT-->
 		<div id="content">
 			<div id="alertBox" class="alert__wrap"> </div>
 			<section>
-
-
-
-
-
-
 				<div class="section-body">
 					<div class="tab-pane" id="daily">
-
-
 						<div class="row">
 							<div class="col-md-3 hidden-xs hidden-sm">
 								<!-- PC 검색 시작 -->
@@ -151,9 +31,8 @@
 													<i class="zmdi zmdi-search"></i>
 												</label>
 												<div id="prefetch">
-													<input type="text" placeholder="일정 양식명 검색" autocomplete="off"
-														id="postSearch" name="board_keyword"
-														class="form-control typeahead" value="">
+													<input type="text" placeholder="일정 양식명 검색" id="postSearch"
+														name="board_keyword" class="form-control typeahead" value="">
 												</div>
 											</div>
 										</form>
@@ -168,8 +47,9 @@
 										</div>
 										<ul class="nav nav-pills nav-stacked sortable_list _sortable_list ui-sortable">
 											<li class="active">
-												<a href="https://qjfhdnaos51106.imweb.me/admin/contents/calendar">
-													전체 게시물 <small id="total_list_comment_count"
+												<a href="_blank">
+													전체 게시물
+													<small id="total_list_comment_count"
 														class="margin-left-lg text-bold opacity-75">0</small>
 												</a>
 											</li>
@@ -188,9 +68,8 @@
 													<i class="zmdi zmdi-search"></i>
 												</label>
 												<div id="prefetch">
-													<input type="text" placeholder="일정 양식명 검색" autocomplete="off"
-														id="postSearch" name="board_keyword" value=""
-														class="form-control typeahead">
+													<input type="text" placeholder="일정 양식명 검색" id="postSearch"
+														name="board_keyword" value="" class="form-control typeahead">
 												</div>
 											</div>
 										</form>
@@ -204,14 +83,15 @@
 										</div>
 									</div>
 								</div>
+
 								<div class="mobile-card-container">
 									<div class="card mobile-card">
 										<ul id="mobile-select-box"
 											class="nav nav-pills nav-stacked sortable_list list-member">
 											<li class="active">
-												<a
-													href="https://qjfhdnaos51106.imweb.me/admin/contents/calendar/?q=YToxOntzOjk6ImlkeF9vcmRlciI7czo0OiJkZXNjIjt9&amp;board_code=&amp;page_load=on">
-													전체 게시물 <small id="total_list_comment_count"
+												<a href="_blank">
+													전체 게시물
+													<small id="total_list_comment_count"
 														class="margin-left-lg text-bold opacity-75">0</small>
 												</a>
 											</li>
@@ -243,8 +123,8 @@
 									<div class="col-md-12">
 										<div class="card">
 											<div class="card-head">
-												<header class="small">게시물 <span id="comment_count"
-														class="text-primary">0</span>
+												<header class="small">게시물
+													<span id="comment_count" class="text-primary">0</span>
 												</header>
 											</div>
 											<div class="card-body no-padding">
@@ -254,7 +134,8 @@
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input type="checkbox" value="" class="_all_check"
-																		onclick="TABLE_LIST.allCheckToggle()"><span></span>
+																		onclick="TABLE_LIST.allCheckToggle()">
+																	<span></span>
 																</label>
 															</div>
 														</li>
@@ -287,7 +168,7 @@
 			</section>
 		</div><!--end #content-->
 		<!-- END CONTENT -->
-	
+
 	</div> <!-- END BASE -->
 
 	<div class="modal" id="cocoaModal" role="dialog">
@@ -303,8 +184,7 @@
 	</div>
 
 	<iframe name="hidden_frame" id="hidden_frame"
-		style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;"
-		src="./adminNotice_files/saved_resource.html"></iframe>
+		style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;" src="_blank"></iframe>
 
 	<div id="device-breakpoints">
 		<div class="device-xs visible-xs" data-breakpoint="xs"></div>
@@ -312,6 +192,8 @@
 		<div class="device-md visible-md" data-breakpoint="md"></div>
 		<div class="device-lg visible-lg" data-breakpoint="lg"></div>
 	</div>
-</body>
+	</div>
+
+	<body>
 
 </html>

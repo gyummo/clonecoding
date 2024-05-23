@@ -9,42 +9,9 @@
 	<link rel="stylesheet" type="text/css" href="./adminSearch_files/admin.css">
 </head>
 
-<body class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
-	<input type="hidden" id="USE_OMS" value="on">
-	<!-- BEGIN BASE-->
-	<div id="dashboard_loader" class="se-pre-con" style="display: none;">
-		<div class="page-loader-spinner">
-			<div class="double-bounce1"></div>
-			<div class="double-bounce2"></div>
-		</div>
-		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 70%;">
-				<label>70%</label>
-			</div>
-		</div>
-	</div>
-	<div id="base">
+<body>
+	<div class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
 
-		<header class="top_header">
-			<div class="headerbar">
-				<div class="headerbar-left">
-					<ul class="header-nav header-nav-options">
-						<li class="hidden-lg hidden-md">
-							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar"
-								href="javascript:void(0);">
-								<img src="./adminSearch_files/icon-bo-menu-01.svg">
-							</a>
-						</li>
-						<li class="header-nav-brand">
-							<div class="brand-holder">
-								<span class="location_text">
-									<a href="https://qjfhdnaos51106.imweb.me/admin/stat/keyword">adminSearch</a> </span>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</header>
 		<div id="content">
 			<div id="alertBox" class="alert__wrap"> </div>
 			<section class="section-max-width">
@@ -57,7 +24,8 @@
 									<div class="row">
 										<div class="col-sm-12">
 											<div class="alert alert-info">
-												어떤 검색엔진에서 어떤 키워드로 내 사이트에 방문했는지 표시합니다. </div>
+												어떤 검색엔진에서 어떤 키워드로 내 사이트에 방문했는지 표시합니다.
+											</div>
 										</div>
 									</div>
 									<div class="row">
@@ -107,31 +75,32 @@
 			</section>
 		</div><!--섹션 끝 -->
 
-<!-- END BASE -->
+		<!-- END BASE -->
 
-	<div class="modal" id="cocoaModal" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content"></div>
+		<div class="modal" id="cocoaModal" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content"></div>
+			</div>
+		</div>
+
+		<div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
+			<div class="modal-dialog">
+				<div class="modal-content"></div>
+			</div>
+		</div>
+
+		<iframe name="hidden_frame" id="hidden_frame"
+			style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;" src="_blank"></iframe>
+
+
+		<div id="device-breakpoints">
+			<div class="device-xs visible-xs" data-breakpoint="xs"></div>
+			<div class="device-sm visible-sm" data-breakpoint="sm"></div>
+			<div class="device-md visible-md" data-breakpoint="md"></div>
+			<div class="device-lg visible-lg" data-breakpoint="lg"></div>
 		</div>
 	</div>
 
-	<div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
-		<div class="modal-dialog">
-			<div class="modal-content"></div>
-		</div>
-	</div>
-
-	<iframe name="hidden_frame" id="hidden_frame"
-		style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;"
-		src="./adminSearch_files/saved_resource.html"></iframe>
-
-
-	<div id="device-breakpoints">
-		<div class="device-xs visible-xs" data-breakpoint="xs"></div>
-		<div class="device-sm visible-sm" data-breakpoint="sm"></div>
-		<div class="device-md visible-md" data-breakpoint="md"></div>
-		<div class="device-lg visible-lg" data-breakpoint="lg"></div>
-	</div>
-</body>
+	<body>
 
 </html>

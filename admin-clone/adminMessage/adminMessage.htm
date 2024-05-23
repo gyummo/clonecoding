@@ -10,49 +10,9 @@
 </head>
 
 
-<body class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
-	<input type="hidden" id="USE_OMS" value="on">
-	<!-- BEGIN BASE-->
-	<div id="dashboard_loader" class="se-pre-con" style="display: none;">
-		<div class="page-loader-spinner">
-			<div class="double-bounce1"></div>
-			<div class="double-bounce2"></div>
-		</div>
-		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 70%;">
-				<label>70%</label>
-			</div>
-		</div>
-	</div>
-	<div id="base">
-		<header class="top_header">
-			<div class="headerbar">
-				<div class="headerbar-left">
-					<ul class="header-nav header-nav-options">
-						<li class="hidden-lg hidden-md">
-							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar"
-								href="javascript:void(0);">
-								<img src="./adminMessage_files/icon-bo-menu-01.svg">
-							</a>
-						</li>
-						<li class="header-nav-brand">
-							<div class="brand-holder">
-								<span class="location_text">
-									<a href="https://qjfhdnaos51106.imweb.me/admin/member/send">adminMessage</a> </span>
-							</div>
-						</li>
-					</ul>
-				</div>
+<body>
+	<div class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
 
-				<div class="headerbar-right">
-					<ul class="header-nav header-nav-options">
-						<li>
-						</li>
-					</ul><!--end .header-nav-options -->
-				</div><!--끝 #header-navbar-collapse -->
-				<!--끝 #header-navbar-collapse -->
-			</div>
-		</header>
 		<div id="content">
 			<div id="alertBox" class="alert__wrap"> </div>
 			<section>
@@ -69,7 +29,8 @@
 													href="https://qjfhdnaos51106.imweb.me/admin/member/send/?mode=alarm">알림</a>
 											</li>
 											<!-- <li ><a href="javascript:;" onclick="$.cocoaDialog.open({type:'alert',terms:''},function(){});">E-Mail</a></li>-->
-											<li><a
+											<li>
+												<a
 													href="https://qjfhdnaos51106.imweb.me/admin/member/send/?mode=sms">SMS</a>
 											</li>
 											<!--보류
@@ -78,26 +39,27 @@
 									-->
 										</ul>
 									</div>
+
 									<div class="card-head">
-										<header>알림 보내기 <a href="javascript:" class="text-gray" role="button"
-												data-toggle="popover" data-trigger="focus" tabindex="0"
-												data-placement="top" title=""
-												data-content="알림으로 회원들에게 중요한 소식을 무료로 전달할 수 있습니다. App에서는 실시간으로 알림을 확인할 수 있으며, 비회원도 알림 수신이 가능합니다."
-												data-original-title="알림 보내기"><i class="btm bt-question-circle"
-													style="font-size: 14px; vertical-align: middle;"></i></a>
+										<header>알림 보내기
+											<a href="javascript:" class="text-gray" role="button">
+												<i class="btm bt-question-circle"
+													style="font-size: 14px; vertical-align: middle;"></i>
+											</a>
 										</header>
 									</div>
+
 									<div class="card-body">
-										<form role="form" class="form-horizontal form-validate" novalidate="novalidate">
+										<form role="form" class="form-horizontal form-validate">
 											<input type="hidden" id="alarm_token"
 												value="Zb4Ke+hn1DAFB6+w5pOiK5Hn8DkG/JMr00K3BlnirD5T/3THKrbTdVp+SHcSyVSSqBYWnpRGeccgc3iVGQzwtNoDzBDX4zfdw/myhiao+QMEuBH3ODgw8Z0WD/l2S8sg">
 											<input type="hidden" id="alarm_token_key" value="6788">
 											<div class="form-group">
 												<div class="col-sm-10">
 													<div class="alarm-menu on-click width-5">
-														<a class="form-control" data-toggle="dropdown"
-															aria-expanded=""><span id="alarm_group_list_selected">선택하지
-																않음</span></a>
+														<a class="form-control">
+															<span id="alarm_group_list_selected">선택하지 않음</span>
+														</a>
 														<div class="form-control-line"></div>
 														<div class="dropdown-menu" onclick="event.cancelBubble=true"
 															style="width: 260px;">
@@ -128,6 +90,7 @@
 																		</div>
 																	</div>
 																</li>
+
 																<li class="divider"></li>
 																<li>
 																	<div class="check">
@@ -177,20 +140,19 @@
 														</div>
 													</div>
 
-													<span class="help-block">개별 회원에게 보내고 싶으시면 <a
-															href="https://qjfhdnaos51106.imweb.me/admin/member/list"
-															class="text-primary">사용자 목록</a>에서 사용자를 선택하여 발송하세요.<br>iOS 또는
-														안드로이드 사용자에게 알림(푸시)은 100% 도달을 보장하지 않습니다. <a href="javascript:;"
-															class="text-primary" data-toggle="modal"
-															data-target="#noPush-help">자세히 알아보기</a><br>휴면 사용자는 별도 보관처리되어
-														알림이 전송되지 않습니다.</span>
+													<span class="help-block">개별 회원에게 보내고 싶으시면
+														<a href="_blank" class="text-primary">사용자 목록</a>에서 사용자를 선택하여
+														발송하세요.<br>
+														iOS 또는 안드로이드 사용자에게 알림(푸시)은 100% 도달을 보장하지 않습니다.
+														<a href="javascript:;" class="text-primary">자세히 알아보기</a>
+														<br>휴면 사용자는 별도 보관처리되어 알림이 전송되지 않습니다.
+													</span>
 												</div>
 											</div>
 											<div class="form-group">
 												<div class="col-sm-10">
-													<input type="text" required="" name="alarm_subject"
-														id="alarm_subject" class="form-control" aria-required="true"
-														placeholder="제목">
+													<input type="text" name="alarm_subject" id="alarm_subject"
+														class="form-control" placeholder="제목">
 													<div class="form-control-line"></div>
 												</div>
 											</div>
@@ -198,8 +160,9 @@
 												<div class="col-sm-12">
 													<textarea rows="3" required="" name="alarm_content"
 														id="alarm_content" class="form-control" maxlength="925"
-														placeholder="내용" aria-required="true" data-autosize-on="true"
-														style="overflow: hidden; overflow-wrap: break-word; resize: horizontal; height: 96px;"></textarea>
+														placeholder="내용"
+														style="overflow: hidden; overflow-wrap: break-word; resize: horizontal; height: 96px;">
+												</textarea>
 													<div class="form-control-line"></div>
 													<p class="help-block chars" id="chars_app_title">0/2500</p>
 												</div>
@@ -220,16 +183,15 @@
 																style="display: none;">
 																<img id="alarm_img">
 																<a href="javascript:" class="close"
-																	onclick="remove_alarm_img()"><i
-																		class="zmdi zmdi-close"></i></a>
+																	onclick="remove_alarm_img()">
+																	<i class="zmdi zmdi-close"></i></a>
 															</div>
 														</div>
 													</div>
 													<div class="btn btn-file ink-reaction btn-raised btn-default-bright margin-bottom-lg btn-sm"
-														id="fileupload_img"
-														accept="image/jpeg, image/jpg, image/png, image/gif, image/svg+xml">
-														이미지 첨부<input type="file" name="files[]"
-															style="width: 100%;">
+														id="fileupload_img">
+														이미지 첨부
+														<input type="file" name="files[]" style="width: 100%;">
 													</div>
 													<span class="help-block">권장 해상도 : 720 x 320</span>
 												</div>
@@ -246,8 +208,7 @@
 														</div>
 														<div style="position: relative;">
 															<input type="text" class="form-control" id="datetimepicker"
-																placeholder="보낼 날짜와 시간을 입력해주세요" name="booking_time"
-																disabled="">
+																placeholder="보낼 날짜와 시간을 입력해주세요" name="booking_time">
 															<div class="form-control-line"></div>
 															<div class="form-control-line"></div>
 														</div>
@@ -257,39 +218,52 @@
 
 										</form>
 									</div>
+
 									<div class="card-actionbar">
 										<div class="card-actionbar-row">
 											<a class="btn btn-raised btn-primary ink-reaction" id="sendsms"
 												onclick="send_alarm()">보내기</a>
 										</div>
 									</div>
+
 								</div>
 							</div><!--end.col-->
 						</div><!--end.row-->
-						<div class="modal fade" id="noPush-help" tabindex="-1" role="dialog"
-							aria-labelledby="noPush-helpLabel">
+
+						<div class="modal fade" id="noPush-help" role="dialog">
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
+
 									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><i
-												class="btl bt-times"></i></button>
-										<h3 class="modal-title" id="myModalLabel">스마트폰에 알림(푸시)이 수신되지 않는 이유</h3>
+										<button type="button" class="close">
+											<i class="btl bt-times"></i>
+										</button>
+										<h3 class="modal-title" id="myModalLabel">
+											스마트폰에 알림(푸시)이 수신되지 않는 이유
+										</h3>
 									</div>
+
 									<div class="modal-body">
 										<p>다음과 같은 상황에서 푸시(알림)이 기기로 전송되지 않을 수 있습니다.</p>
+
 										<h4><strong>기기 공통</strong></h4>
+
 										<ul class="description-list">
 											<li>앱 설치 후 한 번도 실행하지 않거나 로그인 하지 않은 경우</li>
 											<li>비행기 모드 등으로 인해 백그라운드 데이터 및 동기화가 활성화되지 않은 경우</li>
 											<li>Google 또는 Apple 푸시 서버에 문제가 발생한 경우</li>
 										</ul>
+
 										<hr>
+
 										<h4><strong>안드로이드 기기</strong></h4>
+
 										<ul class="description-list">
 											<li>Google Play Services가 설치되지 않은 기기(중국에서 판매된 기기 또는 에뮬레이터 등)</li>
 											<li>Google 계정에 로그인이 되지 않은 경우</li>
 											<li>오래 사용하지 않다가 다시 사용한 경우(Google 계정 재로그인 필요)</li>
 											<li>Google 계정 정보 변경 등으로 인해 캐시 데이터에 문제가 발생한 경우 기기에서 아래 단계를 수행하세요.
+
 												<ol class="description-list" style="margin-top: 5px;">
 													<li>설정 &gt; 애플리케이션 관리로 진입</li>
 													<li>구글 플레이 서비스(Google Play Service) 와 구글 서비스 프레임워크(Google Service
@@ -300,26 +274,31 @@
 												</ol>
 											</li>
 										</ul>
+
 										<hr>
+
 										<h4><strong>iOS 기기</strong></h4>
+
 										<ul class="description-list">
 											<li>반복적으로 비슷한 내용을 여러차례 보내 Apple 스팸필터링이 적용된 경우</li>
 										</ul>
 									</div>
+
 									<div class="modal-footer">
-										<button type="button" class="btn btn-default btn-flat"
-											data-dismiss="modal">닫기</button>
+										<button type="button" class="btn btn-default btn-flat">닫기</button>
 									</div>
 								</div>
 							</div>
 						</div>
+
 						<!-- end.빈상태-->
 						<div class="row">
 							<div class="col-md-6">
 								<div class="card style-default">
 									<div class="card-body large-padding">
-										<div class="text-center text-xxxxl text-gray-bright"><i
-												class="zmdi zmdi-comment-alert"></i></div>
+										<div class="text-center text-xxxxl text-gray-bright">
+											<i class="zmdi zmdi-comment-alert"></i>
+										</div>
 										<p class="text-center text-gray-light">최근 30일간 발송된 알림이 없습니다.</p>
 									</div>
 								</div>
@@ -328,8 +307,9 @@
 							<div class="col-md-6">
 								<div class="card style-default">
 									<div class="card-body large-padding">
-										<div class="text-center text-xxxxl text-gray-bright"><i
-												class="zmdi zmdi-comment-alert"></i></div>
+										<div class="text-center text-xxxxl text-gray-bright">
+											<i class="zmdi zmdi-comment-alert"></i>
+										</div>
 										<p class="text-center text-gray-light">예약된 알림이 없습니다.</p>
 									</div>
 								</div>
@@ -356,8 +336,7 @@
 	</div>
 
 	<iframe name="hidden_frame" id="hidden_frame"
-		style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;"
-		src="./adminMessage_files/saved_resource.html"></iframe>
+		style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;" src="_blank"></iframe>
 
 
 
@@ -367,6 +346,8 @@
 		<div class="device-md visible-md" data-breakpoint="md"></div>
 		<div class="device-lg visible-lg" data-breakpoint="lg"></div>
 	</div>
-</body>
+	</div>
+
+	<body>
 
 </html>

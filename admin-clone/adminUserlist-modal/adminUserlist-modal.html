@@ -9,68 +9,30 @@
 	<link rel="stylesheet" type="text/css" href="./adminUserlist-modal_files/admin.css">
 </head>
 
-<body class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
-	<input type="hidden" id="USE_OMS" value="on">
-	<!-- BEGIN BASE-->
-	<div id="dashboard_loader" class="se-pre-con" style="display: none;">
-		<div class="page-loader-spinner">
-			<div class="double-bounce1"></div>
-			<div class="double-bounce2"></div>
-		</div>
-		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 70%;">
-				<label>70%</label>
-			</div>
-		</div>
-	</div>
-	<div id="base">
+<body>
+	<div class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
 
-		<header class="top_header" id="header">
-			<div class="headerbar">
-				<div class="headerbar-left">
-					<ul class="header-nav header-nav-options">
-						<li class="hidden-lg hidden-md">
-							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar"
-								href="javascript:void(0);">
-								<img src="adminUserlist-modal_files/icon-bo-menu-01.svg">
-							</a>
-						</li>
-						<li class="header-nav-brand">
-							<div class="brand-holder">
-								<span class="location_text">
-									<span>편집 및 추가</span> </span>
-							</div>
-						</li>
-					</ul>
-				</div>
-
-				<div class="headerbar-right">
-					<ul class="header-nav header-nav-options _option_list">
-						<li><a class="btn btn-default-bright" href="javascript:;">취소</a></li>
-						<li><a class="btn btn-primary disabled">추가</a></li>
-					</ul><!--end .header-nav-options -->
-				</div><!--끝 #header-navbar-collapse -->
-				<!--끝 #header-navbar-collapse -->
-			</div>
-		</header>
 		<!-- BEGIN CONTENT-->
 		<div id="content">
-			<div id="alertBox" class="alert__wrap"> </div>
+			<div id="alertBox" class="alert__wrap"></div>
 			<section>
 				<div class="card style-transparent card-top no-tab"
 					style="z-index: auto; position: relative; top: 0px;">
 					<div class="card-head">
 						<header>
-							<a href="https://qjfhdnaos51106.imweb.me/admin/member/list/?q=YToxOntzOjEwOiJqb2luX29yZGVyIjtzOjQ6ImRlc2MiO30%3D&amp;mode=add#"
-								onclick="window.location = &#39;/admin/member/list/?mc=&amp;member_group=nogroup&#39;;"><i
-									class="zmdi zmdi-arrow-back"></i>리스트로 돌아가기</a>
+							<a href="_blank"
+								onclick="window.location = &#39;/admin/member/list/?mc=&amp;member_group=nogroup&#39;;">
+								<i class="zmdi zmdi-arrow-back"></i>
+								리스트로 돌아가기
+							</a>
 						</header>
+
 						<div class="tools">
 							<div class="“btn-group”">
 								<div class="btn-group">
-									<a href="https://qjfhdnaos51106.imweb.me/admin/member/list/?q=YToxOntzOjEwOiJqb2luX29yZGVyIjtzOjQ6ImRlc2MiO30%3D&amp;mode=add#"
-										class="btn btn-icon-toggle dropdown-toggle" data-toggle="dropdown"><i
-											class="zmdi zmdi-more"></i></a>
+									<a href="_blank" class="btn btn-icon-toggle dropdown-toggle">
+										<i class="zmdi zmdi-more"></i>
+									</a>
 									<ul class="dropdown-menu animation-dock right check menu-card-styling" role="menu"
 										style="text-align: left;">
 										<li>
@@ -96,26 +58,27 @@
 									<div class="card-head">
 										<header>회원 정보</header>
 									</div>
+
 									<div class="card-body border-top">
 										<div class="profile-image text-center margin-bottom-xxl">
-											<div id="fileupload_profile_img"
-												accept="image/jpeg, image/jpg, image/png, image/gif, image/svg+xml">
-												<img src="adminUserlist-modal_files/default_profile.png"
-													id="profile_img" width="72" height="72" class="img-circle">
+											<div id="fileupload_profile_img">
+												<img src="_blank" id="profile_img" width="72" height="72"
+													class="img-circle">
 												<div class="_dropdown-menu dropdown-menu-wrapper">
 													<button type="button" class="_btn-dropdown-menu icon-btn">
 														<i class="im-icon im-ico-camera-01 tw-text-[16px]"></i>
 													</button>
+
 													<ul class="_dropdown-menu-list dropdown-menu-list"
 														style="display: none;">
 														<li class="_dropdown-item-edit dropdown-menu-item">
 															<i class="im-icon im-ico-edit-02"></i>
 															<span>수정</span>
-															<input type="file" name="files[]"
-																style="display: none;">
+															<input type="file" name="files[]" style="display: none;">
 														</li>
-														<li class="_dropdown-item-remove dropdown-menu-item dropdown-menu-item--disabled"
-															data-member_code="">
+
+														<li
+															class="_dropdown-item-remove dropdown-menu-item dropdown-menu-item--disabled">
 															<i class="im-icon im-ico-trash-03"></i>
 															<span>삭제</span>
 														</li>
@@ -129,8 +92,7 @@
 
 										<div class="profile-info">
 											<form id="dof" method="post" class="form-horizontal form-validate"
-												role="form" target="hidden_frame" enctype="multipart/form-data"
-												autocomplete="off" novalidate="novalidate">
+												role="form">
 												<input type="hidden" name="idx" value="">
 												<input type="hidden" name="code" value="">
 												<input type="hidden" name="join_type_code"
@@ -145,8 +107,7 @@
 													<div class="col-md-9">
 														<select name="join_type_select" class="form-control"
 															onchange="MEMBER_MANAGE.changeJoinTypeForm()">
-															<option value="t20240516f1e9ac15d8d58" selected="">일반회원
-															</option>
+															<option value="t20240516f1e9ac15d8d58">일반회원</option>
 														</select>
 														<div class="form-control-line"></div>
 													</div>
@@ -154,70 +115,62 @@
 
 
 												<div class="form-group">
-													<label class="col-sm-3 control-label text-right" for="member_item_">
-														계정 <span class="text-danger">(필수)</span>
+													<label class="col-sm-3 control-label text-right">
+														계정
+														<span class="text-danger">(필수)</span>
 													</label>
-													<div class="col-md-9">
-														<input type="text" required="required" name="uid"
-															id="member_item_" class="form-control" value="" data-nick=""
-															aria-required="true">
-														<div class="form-control-line"></div>
 
+													<div class="col-md-9">
+														<input type="text" name="uid" id="member_item_"
+															class="form-control" value="">
+														<div class="form-control-line"></div>
 													</div>
 												</div>
 
 												<div class="form-group" id="password_wrap">
-													<label class="col-sm-3 control-label text-right">비밀번호 <span
-															class="text-danger">(필수)</span>
-
+													<label class="col-sm-3 control-label text-right">비밀번호
+														<span class="text-danger">(필수)</span>
 													</label>
 													<div class="col-md-9">
-														<input type="password" autocomplete="off" name="passwd"
-															id="user_password" class="form-control" placeholder="비밀번호">
+														<input type="password" name="passwd" id="user_password"
+															class="form-control" placeholder="비밀번호">
 														<div class="form-control-line"></div>
-
 													</div>
 												</div>
+
 												<div class="_type_form_wrap">
 													<div class="form-group">
-														<label class="col-sm-3 control-label text-right"
-															for="user_name">
-															이름 <span class="text-danger">(필수)</span>
+														<label class="col-sm-3 control-label text-right">
+															이름
+															<span class="text-danger">(필수)</span>
 														</label>
+
 														<div class="col-md-9">
-															<input type="text" autocomplete="off" required=""
-																name="name" id="user_name" class="form-control"
-																value="">
+															<input type="text" name="name" id="user_name"
+																class="form-control" value="">
 														</div>
 													</div>
 
-
-
-
-
 													<div class="form-group">
-														<label class="col-sm-3 control-label text-right"
-															for="user_contact_name">
+														<label class="col-sm-3 control-label text-right">
 															소셜 로그인 </label>
 														<div class="col-md-9 tw-pt-[5px]">
-															연결된 소셜 로그인이 없습니다. </div>
+															연결된 소셜 로그인이 없습니다.
+														</div>
 													</div>
 												</div>
-
-
 											</form>
 										</div>
 									</div><!--end.card-body-->
 								</div><!--end.card-->
-								<form id="member_agree_wrap" class="form-validate" novalidate="novalidate">
+
+								<form id="member_agree_wrap" class="form-validate">
 									<div class="card">
 										<div class="card-head" style="padding-top: 5px;">
 											<header>동의 정보</header>
 										</div>
 										<div class="card-body border-top">
 											<div class="row">
-
-
 												<div class="form-group custom-label floating-label">
 													<label class="col-sm-3 control-label text-right">만 14세 이상</label>
 													<div class="col-md-9">
@@ -237,130 +190,134 @@
 									</div>
 								</form>
 							</div><!--end.col-->
-
 						</div><!--end.row-->
 					</div><!--end.tab-pane-->
 				</div> <!--end.section-body.tab-content-->
-				<div><a class="btn btn-primary disabled">추가</a></div>
+				<div>
+					<a class="btn btn-primary disabled">추가</a>
+				</div>
 			</section><!--섹션 끝 -->
 
 			<!-- 사용자 삭제 모달 시작 -->
-			<div class="modal fade" id="remove_member" tabindex="-1" role="dialog" aria-labelledby="formModalLabel"
-				aria-hidden="true">
+			<div class="modal fade" id="remove_member" role="dialog">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><i
-									class="btm bt-times"></i></button>
+							<button type="button" class="close">
+								<i class="btm bt-times"></i>
+							</button>
 							<h3 class="modal-title" id="formModalLabel">사용자 삭제</h3>
 						</div>
 						<div class="modal-body">
 							%1명의 사용자를 삭제하시겠습니까? 삭제된 사용자는 복원할 수 없습니다. </div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-primary btn-flat" data-dismiss="modal">취소</button>
+							<button type="button" class="btn btn-primary btn-flat">취소</button>
 							<button type="button" class="btn btn-primary btn-flat">삭제</button>
 						</div>
-
 					</div><!-- /.modal-content -->
 				</div><!-- /.modal-dialog -->
 			</div><!-- /.modal -->
 			<!-- 모달 끝 -->
 			<!-- 사용자 차단 모달 시작 -->
-			<div class="modal fade" id="add_ban" tabindex="-1" role="dialog" aria-labelledby="formModalLabel"
-				aria-hidden="true">
+
+			<div class="modal fade" id="add_ban" role="dialog">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><i
-									class="btm bt-times"></i></button>
+							<button type="button" class="close">
+								<i class="btm bt-times"></i>
+							</button>
 							<h3 class="modal-title" id="formModalLabel">사용자 차단</h3>
 						</div>
+
 						<div class="modal-body">
 							해당 사용자의 마지막 로그인 IP를 기준으로 차단합니다. 차단 관리에서 확인 및 변경이 가능합니다.
 						</div>
+
 						<div class="modal-footer">
 							<button type="button" class="btn btn-primary btn-flat" data-dismiss="modal">취소</button>
 							<button type="button" class="btn btn-primary btn-flat">차단</button>
 						</div>
-
 					</div><!-- /.modal-content -->
 				</div><!-- /.modal-dialog -->
 			</div><!-- /.modal -->
 			<!-- 모달 끝 -->
+
 		</div><!--end #content-->
 		<!-- END CONTENT -->
 
-<!-- END BASE -->
+		<!-- END BASE -->
 
-	<div class="modal" id="cocoaModal" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content"></div>
+		<div class="modal" id="cocoaModal" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content"></div>
+			</div>
 		</div>
-	</div>
 
-	<div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
-		<div class="modal-dialog">
-			<div class="modal-content"></div>
+		<div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
+			<div class="modal-dialog">
+				<div class="modal-content"></div>
+			</div>
 		</div>
-	</div>
 
-	<iframe name="hidden_frame" id="hidden_frame"
-		style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;"
-		src="adminUserlist-modal_files/saved_resource.html"></iframe>
+		<iframe name="hidden_frame" id="hidden_frame"
+			style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;" src="_blank"></iframe>
 
 
-	<div id="device-breakpoints">
-		<div class="device-xs visible-xs" data-breakpoint="xs"></div>
-		<div class="device-sm visible-sm" data-breakpoint="sm"></div>
-		<div class="device-md visible-md" data-breakpoint="md"></div>
-		<div class="device-lg visible-lg" data-breakpoint="lg"></div>
-	</div>
-	<div id="ch-plugin" class="notranslate" style="z-index: 1000 ;">
-		<div id="ch-plugin-entry">
-			<div style="display: block ;"><template shadowrootmode="open">
-					<div id="ch-shadow-root-wrapper">
-						<style data-styled="active" data-styled-version="5.3.9"></style>
-						<div data-ch-testid="launcher"
-							class="Launcherstyled__LauncherButtonWrapper-ch-front__sc-1kx6op4-0 chEByq"><button
-								type="button">
-								<div class="ChatButtonContainer__Container-ch-front__sc-qgvnh9-0 cgHhTF"><span
-										class="a11y-hidden">imweb 상담 버튼</span>
-									<div class="SenderButtonView__Wrapper-ch-front__sc-1aik3pi-0 eFJnEc">
-										<div src="https://cdn.imweb.me/thumbnail/20221207/b4b43fafd99e7.png"
-											class="SenderButtonView__SenderAvatarBg-ch-front__sc-1aik3pi-1 mVAFX"></div>
-									</div>
-									<div data-testid="img-custom-btn"
-										class="ImageCustomButtonView__Wrapper-ch-front__sc-1s91m5o-0 jVTAai">
-										<div src="https://cf.channel.io/thumb/200x200/pub-file/8472/661780218b04bc1c5d3c/facebook_pc-profile-1"
-											class="ImageCustomButtonView__CustomImageBg-ch-front__sc-1s91m5o-1 dRQruU">
+		<div id="device-breakpoints">
+			<div class="device-xs visible-xs" data-breakpoint="xs"></div>
+			<div class="device-sm visible-sm" data-breakpoint="sm"></div>
+			<div class="device-md visible-md" data-breakpoint="md"></div>
+			<div class="device-lg visible-lg" data-breakpoint="lg"></div>
+		</div>
+
+		<div id="ch-plugin" class="notranslate" style="z-index: 1000 ;">
+			<div id="ch-plugin-entry">
+				<div style="display: block ;">
+					<template shadowrootmode="open">
+						<div id="ch-shadow-root-wrapper">
+							<div data-ch-testid="launcher"
+								class="Launcherstyled__LauncherButtonWrapper-ch-front__sc-1kx6op4-0 chEByq">
+								<button type="button">
+									<div class="ChatButtonContainer__Container-ch-front__sc-qgvnh9-0 cgHhTF">
+										<span class="a11y-hidden">imweb 상담 버튼</span>
+										<div class="SenderButtonView__Wrapper-ch-front__sc-1aik3pi-0 eFJnEc">
+											<div src="_blank"
+												class="SenderButtonView__SenderAvatarBg-ch-front__sc-1aik3pi-1 mVAFX">
+											</div>
 										</div>
-									</div>
-									<div class="IconButtonView__Background-ch-front__sc-vtu014-0 inQZZV"><svg width="36"
-											height="36" color="#ffffff">
+										<div class="ImageCustomButtonView__Wrapper-ch-front__sc-1s91m5o-0 jVTAai">
+											<div src="_blank"
+												class="ImageCustomButtonView__CustomImageBg-ch-front__sc-1s91m5o-1 dRQruU">
+											</div>
+										</div>
+										<div class="IconButtonView__Background-ch-front__sc-vtu014-0 inQZZV">
+											<img src="_blank" width="36" height="36" color="#ffffff" />
 											<use href="#channel-filled"></use>
-										</svg></div>
-									<div class="MinimizeButtonView__Wrapper-ch-front__sc-1idijj-0 giSWOn"><svg
-											xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none"
-											viewBox="0 0 24 24" foundation="[object Object]"
-											class="Iconstyled__Icon-sc-1iqwu2g-0 pJGcx" data-testid="bezier-react-icon"
-											color="txt-black-darker" margintop="0" marginright="0" marginbottom="0"
-											marginleft="0" aria-hidden="true">
+											<div class="MinimizeButtonView__Wrapper-ch-front__sc-1idijj-0 giSWOn">
+												<img src="_blank" width="36" height="36"
+													class="Iconstyled__Icon-sc-1iqwu2g-0 pJGcx" color="txt-black-darker"
+													margintop="0" marginright="0" marginbottom="0" marginleft="0" />
+											</div>
+											<div role="status"
+												class="Badge__BaseUnreadBadge-ch-front__sc-1k3c5b2-2 fOtwdy Badge__PcUnreadBadge-ch-front__sc-1k3c5b2-3 jrJXOx">
+											</div>
+										</div>
+								</button>
+							</div>
+						</div>
+					</template>
+				</div>
+			</div>
 
-										</svg></div>
-									<div role="status" aria-label=", there are unread messages"
-										class="Badge__BaseUnreadBadge-ch-front__sc-1k3c5b2-2 fOtwdy Badge__PcUnreadBadge-ch-front__sc-1k3c5b2-3 jrJXOx">
-									</div>
-								</div>
-							</button></div>
-					</div>
-				</template></div>
+			<div id="ch-plugin-script" style="display:none;" class="ch-messenger-hidden">
+				<iframe id="ch-plugin-script-iframe" style="position:relative;height:100%;width:100%;border:none;"
+					src="_blank"></iframe>
+			</div>
+			<style data-styled="active" data-styled-version="5.3.9"></style>
 		</div>
-		<div id="ch-plugin-script" style="display:none;" class="ch-messenger-hidden"> <iframe
-				id="ch-plugin-script-iframe" title="Channel chat"
-				style="position:relative;height:100%;width:100%;border:none;"
-				src="adminUserlist-modal_files/saved_resource(1).html"></iframe> </div>
-		<style data-styled="active" data-styled-version="5.3.9"></style>
 	</div>
-</body>
+
+	<body>
 
 </html>

@@ -10,42 +10,9 @@
 	<link rel="stylesheet" type="text/css" href="./adminSite_files/admin.css">
 </head>
 
-<body class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
-	<input type="hidden" id="USE_OMS" value="on">
-	<!-- BEGIN BASE-->
-	<div id="dashboard_loader" class="se-pre-con" style="display: none;">
-		<div class="page-loader-spinner">
-			<div class="double-bounce1"></div>
-			<div class="double-bounce2"></div>
-		</div>
-		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 70%;">
-				<label>70%</label>
-			</div>
-		</div>
-	</div>
-	<div id="base">
+<body>
+	<div class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
 
-		<header class="top_header">
-			<div class="headerbar">
-				<div class="headerbar-left">
-					<ul class="header-nav header-nav-options">
-						<li class="hidden-lg hidden-md">
-							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar"
-								href="javascript:void(0);">
-								<img src="./adminSite_files/icon-bo-menu-01.svg">
-							</a>
-						</li>
-						<li class="header-nav-brand">
-							<div class="brand-holder">
-								<span class="location_text">
-									<a href="https://qjfhdnaos51106.imweb.me/admin/stat/site">adminSite</a> </span>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</header>
 		<!-- BEGIN CONTENT-->
 		<div id="content">
 			<div id="alertBox" class="alert__wrap"> </div>
@@ -73,22 +40,23 @@
 							<div class="card">
 								<div class="card-head">
 									<header>
-										유입 도메인 <a href="javascript:;" class="text-gray-light html-popover" role="button"
-											data-toggle="popover" data-trigger="focus" tabindex="0"
-											data-placement="right" title=""
-											data-content="어떤 도메인으로부터 내 사이트에 방문했는지 표시합니다. 2차 도메인은 서로 다른 도메인으로 분류됩니다.(예: blog.naver.com 과 cafe.naver.com 은 서로 다른 도메인입니다."
-											data-original-title="유입 도메인"><i class="btm bt-question-circle"
-												style="font-size: 14px; vertical-align: inherit;"></i></a>
+										유입 도메인
+										<a href="javascript:;" class="text-gray-light html-popover" role="button">
+											<i class="btm bt-question-circle"
+												style="font-size: 14px; vertical-align: inherit;"></i>
+										</a>
 									</header>
-									<a href="https://qjfhdnaos51106.imweb.me/admin/ajax/shop/download_excel_site_ref.cm?type=date&amp;start=2024-05-21&amp;end=2024-05-21&amp;list_type=list&amp;by_date=Y&amp;1716286682"
-										style="position: absolute; right: 100px;" class="btn-download-daily">
+									<a href="_blank" style="position: absolute; right: 100px;"
+										class="btn-download-daily">
 										<i class="simple icon-cloud-download text-16"></i>
-										내보내기(일자별) </a>
-									<a href="https://qjfhdnaos51106.imweb.me/admin/ajax/shop/download_excel_site_ref.cm?type=date&amp;start=2024-05-21&amp;end=2024-05-21&amp;list_type=list&amp;by_date=N&amp;1716286682"
-										style="position: absolute; right: 24px;" class="btn-download">
+										내보내기(일자별)
+									</a>
+									<a href="_blank" style="position: absolute; right: 24px;" class="btn-download">
 										<i class="simple icon-cloud-download text-16"></i>
-										내보내기 </a>
+										내보내기
+									</a>
 								</div>
+
 								<div class="card-body no-padding">
 									<div class="table-responsive">
 										<table class="table no-margin table-hover">
@@ -106,8 +74,9 @@
 											</thead>
 											<tbody id="site_stat_list">
 												<tr>
-													<td class="url"><a href="http://qjfhdnaos51106.imweb.me/"
-															target="_blank">직접방문(qjfhdnaos51106.imweb.me)</a></td>
+													<td class="url">
+														<a href="_blank">직접방문(qjfhdnaos51106.imweb.me)</a>
+													</td>
 													<td class="text-right text-gray-light">3</td>
 												</tr>
 											</tbody>
@@ -116,26 +85,27 @@
 								</div>
 							</div>
 						</div><!--end.col-mid-4 -->
+
 						<div class="col-md-8">
 							<div class="card">
 								<div class="card-head">
-									<header>유입 URL <a href="javascript:;" class="text-gray-light html-popover"
-											role="button" data-toggle="popover" data-trigger="focus" tabindex="0"
-											data-placement="right" title=""
-											data-content="어떤 URL에서 내 사이트에 방문했는지 표시합니다. Google 검색결과에서 들어오는 것은 유입 URL이 집계되지 않습니다.(유입 URL 추적을 못하도록 Referer를 제거 후 전송하기 떄문입니다.)"
-											data-original-title="유입 URL"><i class="btm bt-question-circle"
-												style="font-size: 14px; vertical-align: inherit;"></i></a>
+									<header>유입 URL
+										<a href="javascript:;" class="text-gray-light html-popover" role="button">
+											<i class="btm bt-question-circle"
+												style="font-size: 14px; vertical-align: inherit;"></i>
+										</a>
 									</header>
-									<a href="https://qjfhdnaos51106.imweb.me/admin/ajax/shop/download_excel_site_ref.cm?type=date&amp;start=2024-05-21&amp;end=2024-05-21&amp;list_type=url_list&amp;by_date=Y&amp;1716286682"
-										style="position: absolute; right: 100px;"
+									<a href="_blank" style="position: absolute; right: 100px;"
 										class="btn-url-download-daily">
 										<i class="simple icon-cloud-download text-16"></i>
-										내보내기(일자별) </a>
-									<a href="https://qjfhdnaos51106.imweb.me/admin/ajax/shop/download_excel_site_ref.cm?type=date&amp;start=2024-05-21&amp;end=2024-05-21&amp;list_type=url_list&amp;by_date=N&amp;1716286682"
-										style="position: absolute; right: 24px;" class="btn-url-download">
+										내보내기(일자별)
+									</a>
+									<a href="_blank" style="position: absolute; right: 24px;" class="btn-url-download">
 										<i class="simple icon-cloud-download text-16"></i>
-										내보내기 </a>
+										내보내기
+									</a>
 								</div>
+
 								<div class="card-body no-padding">
 									<div class="table-responsive">
 										<table class="table no-margin table-hover table-fixed">
@@ -149,11 +119,11 @@
 													<th class="text-right">클릭수</th>
 												</tr>
 											</thead>
-											<tbody id="site_stat_url_list">
-											</tbody>
+											<tbody id="site_stat_url_list"></tbody>
 										</table>
 									</div>
 								</div>
+
 							</div>
 						</div>
 					</div>
@@ -163,29 +133,30 @@
 
 		<!-- END BASE -->
 
-	<div class="modal" id="cocoaModal" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content"></div>
+		<div class="modal" id="cocoaModal" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content"></div>
+			</div>
+		</div>
+
+		<div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
+			<div class="modal-dialog">
+				<div class="modal-content"></div>
+			</div>
+		</div>
+
+		<iframe name="hidden_frame" id="hidden_frame"
+			style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;" src="_blank"></iframe>
+
+
+		<div id="device-breakpoints">
+			<div class="device-xs visible-xs" data-breakpoint="xs"></div>
+			<div class="device-sm visible-sm" data-breakpoint="sm"></div>
+			<div class="device-md visible-md" data-breakpoint="md"></div>
+			<div class="device-lg visible-lg" data-breakpoint="lg"></div>
 		</div>
 	</div>
 
-	<div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
-		<div class="modal-dialog">
-			<div class="modal-content"></div>
-		</div>
-	</div>
-
-	<iframe name="hidden_frame" id="hidden_frame"
-		style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;"
-		src="./adminSite_files/saved_resource.html"></iframe>
-
-
-	<div id="device-breakpoints">
-		<div class="device-xs visible-xs" data-breakpoint="xs"></div>
-		<div class="device-sm visible-sm" data-breakpoint="sm"></div>
-		<div class="device-md visible-md" data-breakpoint="md"></div>
-		<div class="device-lg visible-lg" data-breakpoint="lg"></div>
-	</div>
-</body>
+	<body>
 
 </html>

@@ -10,67 +10,9 @@
 	<link rel="stylesheet" type="text/css" href="./adminVisitor_files/admin.css">
 </head>
 
-<body class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
-	<input type="hidden" id="USE_OMS" value="on">
-	<!-- BEGIN BASE-->
-	<div id="dashboard_loader" class="se-pre-con" style="display: none;">
-		<div class="page-loader-spinner">
-			<div class="double-bounce1"></div>
-			<div class="double-bounce2"></div>
-		</div>
-		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 70%;">
-				<label>70%</label>
-			</div>
-		</div>
-	</div>
-	<div id="base">
+<body>
+	<div class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
 
-		<div class="value"></div>
-		<div class="value"></div>
-		<div class="value"></div>
-		<div class="value"></div>
-		<div class="value"></div>
-		<div class="value"></div>
-		<div class="value"></div>
-		<div class="value"></div>
-		<div class="value"></div>
-		<div class="value"></div>
-		<div class="value"></div>
-		<div class="value"></div>
-		<div class="value"></div>
-		<div class="value"></div>
-		<div class="value"></div>
-		<div class="value"></div>
-		<div class="value"></div>
-		<div class="value"></div>
-		<div class="value"></div>
-		<div class="value"></div>
-		<div class="value"></div>
-		<div class="value"></div>
-		<div class="value"></div>
-		<div class="value"></div><!-- STATS VERSION 3 -->
-		<header class="top_header">
-			<div class="headerbar">
-				<div class="headerbar-left">
-					<ul class="header-nav header-nav-options">
-						<li class="hidden-lg hidden-md">
-							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar"
-								href="javascript:void(0);">
-								<img src="./adminVisitor_files/icon-bo-menu-01.svg">
-							</a>
-						</li>
-						<li class="header-nav-brand">
-							<div class="brand-holder">
-								<span class="location_text">
-									<a href="https://qjfhdnaos51106.imweb.me/admin/stat/visitor">adminVisitor</a>
-								</span>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</header>
 		<div id="content">
 			<div id="alertBox" class="alert__wrap"> </div>
 			<section class="section-max-width">
@@ -89,15 +31,15 @@
 													<option value="page">페이지뷰</option>
 												</select>
 												<a href="javascript:;" class="text-gray-light html-popover"
-													role="button" data-toggle="popover" data-placement="right" title=""
-													data-content="&lt;strong&gt;adminVisitor&lt;/strong&gt;: 내 사이트에 방문한 기기 또는 브라우저의 수입니다. 같은 기기에서 여러번 방문해도 하루 한 번만 카운트 됩니다.&lt;br/&gt;&lt;strong&gt;페이지뷰&lt;/strong&gt;: 기기, 브라우저 종류에 상관 없이 페이지가 호출된 수입니다. 같은 페이지를 재방문 또는 새로고침하여도 카운트가 됩니다."
-													data-original-title="adminVisitor/페이지뷰란?"><i
-														class="btm bt-question-circle"></i></a>
+													role="button">
+													<i class="btm bt-question-circle"></i>
+												</a>
 											</div>
 										</div>
 									</div>
 									<header><span class="text-lg">월간 및 연간</span></header>
 								</div>
+
 								<div class="card-body no-padding">
 									<div class="table-responsive">
 										<table class="table no-margin table-hover table-data">
@@ -122,6 +64,7 @@
 													<th>평균</th>
 												</tr>
 											</thead>
+
 											<tbody id="year_month_content">
 												<tr>
 													<th>2024</th>
@@ -280,8 +223,7 @@
 		</div>
 
 		<iframe name="hidden_frame" id="hidden_frame"
-			style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;"
-			src="./adminVisitor_files/saved_resource.html"></iframe>
+			style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;" src="_blank"></iframe>
 
 
 		<div id="device-breakpoints">
@@ -290,6 +232,8 @@
 			<div class="device-md visible-md" data-breakpoint="md"></div>
 			<div class="device-lg visible-lg" data-breakpoint="lg"></div>
 		</div>
-</body>
+	</div>
+
+	<body>
 
 </html>

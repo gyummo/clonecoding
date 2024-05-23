@@ -10,65 +10,9 @@
 </head>
 
 
-<body class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
-	<input type="hidden" id="USE_OMS" value="on">
-	<!-- BEGIN BASE-->
-	<div id="dashboard_loader" class="se-pre-con" style="display: none;">
-		<div class="page-loader-spinner">
-			<div class="double-bounce1"></div>
-			<div class="double-bounce2"></div>
-		</div>
-		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 70%;">
-				<label>70%</label>
-			</div>
-		</div>
-	</div>
-	<div id="base">
+<body>
+	<div class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
 
-		<header class="top_header" id="header">
-			<div class="headerbar">
-				<div class="headerbar-left">
-					<ul class="header-nav header-nav-options">
-						<li class="hidden-lg hidden-md">
-							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar"
-								href="javascript:void(0);">
-								<img src="./adminPop_files/icon-bo-menu-01.svg">
-							</a>
-						</li>
-						<li class="header-nav-brand">
-							<div class="brand-holder">
-								<span class="location_text">
-									<a href="https://qjfhdnaos51106.imweb.me/admin/config/popup"
-										>adminPop·배너</a> </span>
-							</div>
-						</li>
-					</ul>
-				</div>
-
-				<div class="headerbar-right">
-					<ul class="header-nav header-nav-options _option_list">
-						<li>
-							<a class="btn btn-default-bright hidden-xs" href="https://qjfhdnaos51106.imweb.me/"
-								target="_blank">사이트 확인하기</a>
-							<a class="btn btn-bright hidden-sm hidden-md hidden-lg" style="padding: 4px 6px;"
-								href="https://qjfhdnaos51106.imweb.me/" target="_blank"><i
-									class="btl bt-external-link vertical-middle"></i></a>
-						</li>
-						<li>
-							<a class="btn btn-primary hidden-xs"
-								onclick="location.href=&#39;/admin/config/popup/?mode=add&#39;"
-								>adminPop 추가</a>
-							<a class="btn btn-bright hidden-sm hidden-md hidden-lg" style="padding: 4px 6px;"
-								onclick="location.href=&#39;/admin/config/popup/?mode=add&#39;"><i
-									class="btl bt-plus vertical-middle"></i></a>
-						</li>
-					</ul><!--end .header-nav-options -->
-				</div><!--끝 #header-navbar-collapse -->
-
-				<!--끝 #header-navbar-collapse -->
-			</div>
-		</header>
 		<!-- BEGIN CONTENT-->
 		<div id="content">
 			<div id="alertBox" class="alert__wrap"> </div>
@@ -78,42 +22,33 @@
 						<div class="ma-item col-md-3 col-sm-6 col-xs-12">
 							<div class="card">
 								<div class="card-head">
-									<header><a
-											href="https://qjfhdnaos51106.imweb.me/admin/config/popup?idx=227166&amp;mode=add"
-											> 바보</a>
+									<header><a href="_blank">바보</a>
 										<span class="badge style-gray">중지</span>
 									</header>
 									<div class="tools">
 										<div class="btn-group">
 											<div class="btn-group">
-												<a href="https://qjfhdnaos51106.imweb.me/admin/config/popup#"
-													class="btn btn-icon-toggle dropdown-toggle" data-toggle="dropdown"
-													><i class="zmdi zmdi-more"></i></a>
+												<a href="_blank" class="btn btn-icon-toggle dropdown-toggle">
+													<i class="zmdi zmdi-more"></i>
+												</a>
 												<ul class="dropdown-menu animation-dock pull-right menu-card-styling"
 													role="menu" style="text-align: left;">
-													<li><a
-															href="https://qjfhdnaos51106.imweb.me/admin/config/popup?idx=227166&amp;mode=add"
-															>수정</a></li>
+													<li><a href="_blank">수정</a></li>
 													<li class="divider"></li>
 													<li><a href="javascript:;"
-															onclick="CONFIG_POPUP.deletePopup(&#39;227166&#39;)"
-															>삭제</a></li>
+															onclick="CONFIG_POPUP.deletePopup(&#39;227166&#39;)">삭제</a>
+													</li>
 												</ul>
 											</div>
 										</div>
 									</div>
 								</div>
-								<a href="https://qjfhdnaos51106.imweb.me/admin/config/popup?idx=227166&amp;mode=add"
-									> <img class="" src="./adminPop_files/15eb43b772070.jpg"
-										style="width: 100%;"></a>
+								<a href="_blank">
+									<img src="_blank" style="width: 100%;"></a>
 								<div class="card-body">
-									<p>
-										기간: 2024-05-21 19:22 ~ 2024-05-21 19:22 </p>
-									<p>
-										위치: 홈 화면 </p>
-									<p>
-										대상:
-										<i class="btl bt-desktop"></i>
+									<p> 기간: 2024-05-21 19:22 ~ 2024-05-21 19:22 </p>
+									<p> 위치: 홈 화면 </p>
+									<p> 대상: <i class="btl bt-desktop"></i>
 									</p>
 								</div>
 							</div>
@@ -125,29 +60,30 @@
 
 		<!-- END BASE -->
 
-	<div class="modal" id="cocoaModal" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content"></div>
+		<div class="modal" id="cocoaModal" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content"></div>
+			</div>
+		</div>
+
+		<div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
+			<div class="modal-dialog">
+				<div class="modal-content"></div>
+			</div>
+		</div>
+
+		<iframe name="hidden_frame" id="hidden_frame"
+			style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;" src="_blank"></iframe>
+
+
+		<div id="device-breakpoints">
+			<div class="device-xs visible-xs" data-breakpoint="xs"></div>
+			<div class="device-sm visible-sm" data-breakpoint="sm"></div>
+			<div class="device-md visible-md" data-breakpoint="md"></div>
+			<div class="device-lg visible-lg" data-breakpoint="lg"></div>
 		</div>
 	</div>
 
-	<div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
-		<div class="modal-dialog">
-			<div class="modal-content"></div>
-		</div>
-	</div>
-
-	<iframe name="hidden_frame" id="hidden_frame"
-		style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;"
-		src="./adminPop_files/saved_resource.html"></iframe>
-
-
-	<div id="device-breakpoints">
-		<div class="device-xs visible-xs" data-breakpoint="xs"></div>
-		<div class="device-sm visible-sm" data-breakpoint="sm"></div>
-		<div class="device-md visible-md" data-breakpoint="md"></div>
-		<div class="device-lg visible-lg" data-breakpoint="lg"></div>
-	</div>
-</body>
+	<body>
 
 </html>

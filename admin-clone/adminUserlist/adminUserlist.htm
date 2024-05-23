@@ -9,184 +9,9 @@
     <link rel="stylesheet" type="text/css" href="./adminUserlist_files/admin.css">
 </head>
 
-<body class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
-    <input type="hidden" id="USE_OMS" value="on">
-    <!-- BEGIN BASE-->
-    <div id="dashboard_loader" class="se-pre-con" style="display: none;">
-        <div class="page-loader-spinner">
-            <div class="double-bounce1"></div>
-            <div class="double-bounce2"></div>
-        </div>
-        <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 70%;">
-                <label>70%</label>
-            </div>
-        </div>
-    </div>
-    <div id="base">
+<body>
+    <div class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
 
-
-        <header class="top_header" id="default_header">
-            <div class="headerbar">
-                <div class="headerbar-left">
-                    <ul class="header-nav header-nav-options">
-                        <li class="hidden-lg hidden-md">
-                            <a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar"
-                                href="javascript:void(0);">
-                                <img src="./adminUserlist_files/icon-bo-menu-01.svg">
-                            </a>
-                        </li>
-                        <li class="header-nav-brand">
-                            <div class="brand-holder">
-                                <span class="location_text">
-                                    <a href="https://qjfhdnaos51106.imweb.me/admin/member/list">adminUserlist</a>
-                                </span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="headerbar-right">
-                    <ul class="header-nav header-nav-options">
-                        <li class="hidden-md hidden-lg hidden-sm">
-                            <button class="btn btn-flat" aria-expanded="false" aria-haspopup="true"
-                                data-toggle="dropdown" type="button" id="dLabel"
-                                style="padding: 4px 8px;">
-                                <i class="icon icon-options"></i>
-                            </button>
-                            <ul aria-labelledby="dLabel" role="menu" class="dropdown-menu animation-dock">
-                                <li>
-                                    <a href="javascript:;"
-                                        onclick="location.href=&#39;/admin/member/list/?q=YToxOntzOjEwOiJqb2luX29yZGVyIjtzOjQ6ImRlc2MiO30%3D&amp;mode=add&#39;">사용자
-                                        추가</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;" onclick="MEMBER_EXCEL.showMultiMemberAdd()">대량 사용자 추가</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:;" onclick="MEMBER_EXCEL.showBulkGroupAdd(_member_group)">사용자 그룹
-                                        일괄 등록</a>
-                                </li>
-
-                                <li>
-                                    <a href="javascript:;"
-                                        onclick="MEMBER_EXCEL.openModalMemberExcelDownload(_member_group)">내보내기</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="hidden-xs _bulk_group_setting bulk_group_setting"
-                            style="display: none;">
-                            <a class="btn btn-default-bright" href="javascript:;"
-                                onclick="MEMBER_EXCEL.showBulkGroupAdd(_member_group)">사용자 그룹 일괄 등록</a>
-                        </li>
-                        <li class="hidden-xs">
-                            <a class="btn btn-default-bright" href="javascript:;"
-                                onclick="MEMBER_EXCEL.showMultiMemberAdd()">대량 사용자 추가</a>
-                        </li>
-                        <li class="hidden-xs">
-                            <a class="btn btn-primary"
-                                onclick="location.href=&#39;/admin/member/list/?q=YToxOntzOjEwOiJqb2luX29yZGVyIjtzOjQ6ImRlc2MiO30%3D&amp;mode=add&#39;">사용자
-                                추가</a>
-                        </li>
-                    </ul><!--end .header-nav-options -->
-                </div><!--끝 #header-navbar-collapse -->
-                <!--끝 #header-navbar-collapse -->
-            </div>
-        </header>
-        <header class="top_header control-fixed" id="select_header" style="display: none;">
-            <div class="headerbar">
-                <div class="headerbar-left">
-                    <ul class="header-nav">
-                        <li class="header-nav-brand">
-                            <div class="brand-holder ">
-                                <a class="btn btn-flat btn-default-white no-padding-x margin-right-xl"
-                                    href="javascript:;"
-                                    onclick="TABLE_LIST.cancelCheckItem(function(idxs){MEMBER_GROUP.checkMember(idxs);})"><i
-                                        class="btm bt-arrow-left"></i></a>
-                            </div>
-                            <div class="brand-holder">
-                                <div class="dropdown">
-                                    <button class="btn btn-flat btn-default-white no-padding-x margin-right-xl text-lg"
-                                        aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button"
-                                        id="dLabel">
-                                        <span id="select_cnt"></span>명 선택됨 <i class="zmdi zmdi-caret-down"></i>
-                                    </button>
-                                    <ul aria-labelledby="dLabel" role="menu" class="dropdown-menu animation-dock">
-                                        <li>
-                                            <a href="javascript:;"
-                                                onclick="TABLE_LIST.allCheckItem(function(idxs){MEMBER_GROUP.checkMember(idxs);})">모두
-                                                선택</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:;"
-                                                onclick="TABLE_LIST.cancelCheckItem(function(idxs){MEMBER_GROUP.checkMember(idxs);})">선택
-                                                안함</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="headerbar-right">
-                    <ul class="header-nav header-nav-options">
-                        <li>
-                            <div class="btn-group">
-                                <div class="btn-group">
-                                    <a data-toggle="dropdown" class="btn btn-default-bright">그룹<span
-                                            class="hidden-xs">지정</span> <i class="zmdi zmdi-caret-down"></i></a>
-                                    <ul aria-labelledby="dLabel" role="menu" class="dropdown-menu animation-dock check">
-                                        <div class="select_group _check_drop_group_list"></div>
-                                        <div class="footer">
-                                            <li class="divider"></li>
-                                            <li><a href="javascript:;" onclick="MEMBER_GROUP.openGroupForm()">새 그룹</a>
-                                            </li>
-                                        </div>
-                                    </ul>
-                                </div>
-
-
-                                <a class="btn btn-default-bright"
-                                    onclick="TABLE_LIST.checkAction(function(codes){adminMember.openUpdateMemberConfirm(codes,&#39;list&#39;);})">
-                                    <span class="hidden-xs">가입</span> 승인 </a>
-                                <!--<a class="btn btn-default-bright"">적립금 관리</a>-->
-                                <div class="btn-group">
-                                    <a data-toggle="dropdown" class="btn btn-default-bright">메시지 <i
-                                            class="zmdi zmdi-caret-down"></i></a>
-                                    <ul aria-labelledby="dLabel" role="menu" class="dropdown-menu animation-dock check">
-                                        <!--								<li><a data-target="#send_mail" data-toggle="modal" href="#">이메일</a></li>-->
-                                        <li>
-                                            <a href="https://qjfhdnaos51106.imweb.me/admin/member/list#"
-                                                onclick="TABLE_LIST.checkAction(function(codes){adminMember.openMemberSmsForm(codes);})">SMS</a>
-                                        </li>
-                                        <li>
-                                            <a href="https://qjfhdnaos51106.imweb.me/admin/member/list#"
-                                                onclick="TABLE_LIST.checkAction(function(codes){adminMember.openMemberPushForm(codes);})">알림</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="btn-group">
-                                    <a data-toggle="dropdown" class="btn btn-default-bright border-radius-right">기타 <i
-                                            class="zmdi zmdi-caret-down"></i></a>
-                                    <ul aria-labelledby="dLabel" role="menu" class="dropdown-menu animation-dock check">
-                                        <li>
-                                            <a href="https://qjfhdnaos51106.imweb.me/admin/member/list#"
-                                                onclick="TABLE_LIST.checkAction(function(codes){adminMember.openManageMemberPoint(codes);})">적립금
-                                                지급/차감</a>
-                                        </li>
-                                        <li>
-                                            <a href="https://qjfhdnaos51106.imweb.me/admin/member/list#"
-                                                onclick="TABLE_LIST.checkActionWithIsDeleteAuthLog(function(data){adminMember.openDeleteMember(data);})">사용자
-                                                삭제</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </header>
         <!-- BEGIN CONTENT-->
         <div id="content">
             <div id="alertBox" class="alert__wrap"> </div>
@@ -202,38 +27,36 @@
                                         <ul class="nav nav-pills nav-stacked" id="group_list">
                                             <li class="active" id="group_item_total"
                                                 style="border-bottom: 1px solid rgb(229, 229, 229);">
-                                                <a href="https://qjfhdnaos51106.imweb.me/admin/member/list#"
+                                                <a href="_blank"
                                                     onclick="MEMBER_DATA.changeUrl(null, null, &#39;/admin/member/list/?&#39;, &#39;group&#39;, null, &#39;1&#39;)">
-                                                    전체 사용자 <small class="margin-left-lg text-bold opacity-75"
+                                                    전체 사용자
+                                                    <small class="margin-left-lg text-bold opacity-75"
                                                         id="total-left-member-count">1</small>
                                                 </a>
                                             </li>
 
                                             <li id="group_item_nogroup" class="">
-                                                <a href="https://qjfhdnaos51106.imweb.me/admin/member/list#"
+                                                <a href="_blank"
                                                     onclick="MEMBER_DATA.changeUrl(null, null, &#39;/admin/member/list/?member_group=nogroup&#39;, &#39;group&#39;, &#39;nogroup&#39;, &#39;1&#39;)"
-                                                    class="">
-                                                    그룹 없음 <small
-                                                        class="margin-left-lg text-bold opacity-75 _no_group_cnt"
+                                                    class=""> 그룹 없음
+                                                    <small class="margin-left-lg text-bold opacity-75 _no_group_cnt"
                                                         id="total-no-group-count">1</small>
                                                 </a>
                                             </li>
                                         </ul>
 
                                         <ul class="nav nav-pills nav-stacked">
-                                            <li class="no-hover" id="new_group_btn"
-                                                data-base_url="/admin/member/list/?q=YToxOntzOjEwOiJqb2luX29yZGVyIjtzOjQ6ImRlc2MiO30%3D">
+                                            <li class="no-hover" id="new_group_btn">
                                                 <a href="javascript:;" class="text-primary"
                                                     onclick="MEMBER_GROUP.openGroupForm()">새 그룹 만들기</a>
                                             </li>
                                         </ul>
                                     </div><!--end.card-body-->
                                 </div><!--end.card-->
-                                <p class="text-gray text-12">회원가입과 관련된 설정은 <a
-                                        href="https://qjfhdnaos51106.imweb.me/admin/config/membership"
-                                        class="text-primary">가입 및 그룹설정</a> 및 <a
-                                        href="https://qjfhdnaos51106.imweb.me/admin/config/oauth"
-                                        class="text-primary">소셜 로그인 설정</a>을 참고하세요.</p>
+                                <p class="text-gray text-12">회원가입과 관련된 설정은
+                                    <a href="_blank" class="text-primary">가입 및 그룹설정</a> 및
+                                    <a href="_blank" class="text-primary">소셜 로그인 설정</a>을 참고하세요.
+                                </p>
                             </div><!--end.col-->
 
                             <div class="col-md-9 col-xl-10">
@@ -241,7 +64,7 @@
                                     <div class="col-md-10">
                                         <div class="card">
                                             <div class="card-body no-padding">
-                                                <!--                                        <form role="search" class="user-search" id="userSearch">-->
+                                                <!--<form role="search" class="user-search" id="userSearch">-->
                                                 <div class="user-search" id="userSearch">
                                                     <div class="form-group">
 
@@ -252,17 +75,24 @@
                                                         <div id="prefetch">
                                                             <span class="twitter-typeahead"
                                                                 style="position: relative; display: inline-block;">
+
                                                                 <input type="hidden" name="q"
                                                                     value="YToxOntzOjEwOiJqb2luX29yZGVyIjtzOjQ6ImRlc2MiO30="
                                                                     class="form-control typeahead">
+
                                                                 <input type="text"
                                                                     class="form-control typeahead tt-input"
                                                                     id="keyword_search1" name="keyword" placeholder="검색"
-                                                                    autocomplete="off" spellcheck="false" dir="auto"
                                                                     style="position: relative; vertical-align: top; background-color: transparent;"
                                                                     value="">
-                                                                <pre aria-hidden="true"
-                                                                    style="position: absolute; visibility: hidden; white-space: pre; font-family: &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: optimizelegibility; text-transform: none;">														</pre>
+
+                                                                <pre
+                                                                    style="position: absolute; visibility: hidden; white-space: pre; 
+                                                                font-family: &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; 
+                                                                font-style: normal; font-variant: normal; font-weight: 400; 
+                                                                word-spacing: 0px; letter-spacing: 0px; 
+                                                                text-indent: 0px; text-rendering: optimizelegibility; text-transform: none;">														</pre>
+
                                                                 <div class="tt-menu"
                                                                     style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;">
                                                                     <div class="tt-dataset tt-dataset-users"></div>
@@ -275,6 +105,7 @@
                                             </div>
                                         </div><!--end.card-->
                                     </div><!--end.col-->
+
                                     <div class="col-md-2 hidden-xs">
                                         <div class="card">
                                             <div class="excel-down">
@@ -309,19 +140,18 @@
                                                             <div class="checkbox checkbox-styled no-margin">
                                                                 <label>
                                                                     <input type="checkbox" value="" class="_all_check"
-                                                                        onclick="TABLE_LIST.allCheckToggle(function(idxs){MEMBER_GROUP.checkMember(idxs);})"><span></span>
+                                                                        onclick="TABLE_LIST.allCheckToggle(function(idxs){MEMBER_GROUP.checkMember(idxs);})">
+                                                                    <span></span>
                                                                 </label>
                                                             </div>
                                                         </li>
-                                                        <li class="nick"><a
-                                                                href="https://qjfhdnaos51106.imweb.me/admin/member/list#">닉네임</a>
+                                                        <li class="nick"><a href="_blank">닉네임</a>
                                                         </li>
                                                         <li class="account">계정</li>
                                                         <li class="account">회원 유형</li>
                                                         <li class="group">그룹</li>
                                                         <li class="date_join">
-                                                            <a
-                                                                href="https://qjfhdnaos51106.imweb.me/admin/member/list/?q=YToxOntzOjEwOiJqb2luX29yZGVyIjtzOjQ6ImRlc2MiO30%3D&amp;join_order=asc">가입일
+                                                            <a href="_blank">가입일
                                                                 <i class="md md-expand-less"></i>
                                                                 <!--역순일 때 <i class="md md-expand-less"></i> -->
                                                             </a>
@@ -335,40 +165,48 @@
                                                         <li class="action"></li>
                                                     </ul>
 
-                                                    <ul class="content _tbody" id="member_item_m2024051656220aef480fa"
-                                                        data-nick="관리자" data-app="">
+                                                    <ul class="content _tbody" id="member_item_m2024051656220aef480fa">
                                                         <li class="check">
                                                             <div class="checkbox checkbox-styled no-margin">
-                                                                <label><input type="checkbox"
+                                                                <label>
+                                                                    <input type="checkbox"
                                                                         value="m2024051656220aef480fa"
-                                                                        data-idx="39549572"
-                                                                        data-code="m2024051656220aef480fa"
-                                                                        onclick="TABLE_LIST.checkItem(function(idxs){MEMBER_GROUP.checkMember(idxs);});"><span></span></label>
+                                                                        onclick="TABLE_LIST.checkItem(function(idxs){MEMBER_GROUP.checkMember(idxs);});">
+                                                                    <span></span>
+                                                                </label>
                                                             </div>
                                                         </li>
-                                                        <li class="nick"><a
-                                                                href="https://qjfhdnaos51106.imweb.me/admin/member/list/?q=YToxOntzOjEwOiJqb2luX29yZGVyIjtzOjQ6ImRlc2MiO30%3D&amp;mode=add&amp;idx=39549572"
-                                                                onclick="">관리자<span class="badge">소유자</span></a></li>
-                                                        <li class="account"><a
-                                                                href="https://qjfhdnaos51106.imweb.me/admin/member/list/?q=YToxOntzOjEwOiJqb2luX29yZGVyIjtzOjQ6ImRlc2MiO30%3D&amp;mode=add&amp;idx=39549572"
-                                                                onclick="">qjfhdnaos@gmail.com</a></li>
+
+                                                        <li class="nick">
+                                                            <a href="_blank" onclick="">관리자
+                                                                <span class="badge">소유자</span>
+                                                            </a>
+                                                        </li>
+
+                                                        <li class="account">
+                                                            <a href="_blank" onclick="">qjfhdnaos@gmail.com</a>
+                                                        </li>
+
                                                         <li class="account">일반회원</li>
+
                                                         <li class="group">
-                                                            <div class="dropdown"><button id="dLabel" type="button"
+                                                            <div class="dropdown">
+                                                                <button id="dLabel" type="button"
                                                                     onclick="MEMBER_GROUP.setGroupCheck(39549572)"
-                                                                    data-toggle="dropdown" aria-haspopup="true"
-                                                                    aria-expanded="false"
                                                                     class="btn-flat no-padding _drop_group_btn_39549572">그룹없음</button>
+
                                                                 <ul class="dropdown-menu animation-dock check"
-                                                                    role="menu" aria-labelledby="dLabel">
-                                                                    <div class="select_group _drop_group_list _drop_group_list_39549572"
-                                                                        data-member="39549572" data-groups=""
-                                                                        data-subscribe_groups="" data-nogroup="Y"></div>
+                                                                    role="menu">
+
+                                                                    <div
+                                                                        class="select_group _drop_group_list _drop_group_list_39549572">
+                                                                    </div>
                                                                     <div class="footer">
                                                                         <li class="divider"></li>
-                                                                        <li><a href="javascript:;"
-                                                                                onclick="MEMBER_GROUP.openGroupForm()">새
-                                                                                그룹</a></li>
+                                                                        <li>
+                                                                            <a href="javascript:;"
+                                                                                onclick="MEMBER_GROUP.openGroupForm()">새그룹</a>
+                                                                        </li>
                                                                     </div>
                                                                 </ul>
                                                             </div>
@@ -377,36 +215,47 @@
                                                         <li class="date_mileage text-right"></li>
                                                         <li class="count_post hidden-xs hidden-sm">1/ 0/ 0/ 0</li>
                                                         <li class="purchase text-right hidden-xs hidden-sm"></li>
-                                                        <li class="memo"><a href="javascript:;"
+                                                        <li class="memo">
+                                                            <a href="javascript:;"
                                                                 onclick="adminMember.openAdminMemoForm(&#39;m2024051656220aef480fa&#39;)"
-                                                                class="btn btn-flat text-gray-bright"><i
-                                                                    class="icon-note"></i></a></li>
+                                                                class="btn btn-flat text-gray-bright">
+                                                                <i class="icon-note"></i>
+                                                            </a>
+                                                        </li>
+
                                                         <li class="app_android hidden-xs hidden-sm"></li>
                                                         <li class="app_ios hidden-xs hidden-sm"></li>
                                                         <li class="action">
-                                                            <div class="dropdown"><button id="dLabel" type="button"
-                                                                    data-toggle="dropdown" aria-haspopup="true"
-                                                                    aria-expanded="false" class="btn btn-flat"><i
-                                                                        class="zmdi zmdi-more"></i></button>
+                                                            <div class="dropdown">
+                                                                <button id="dLabel" type="button" class="btn btn-flat">
+                                                                    <i class="zmdi zmdi-more"></i>
+                                                                </button>
+
                                                                 <ul class="dropdown-menu animation-dock right"
-                                                                    role="menu" aria-labelledby="dLabel">
-                                                                    <li><a href="javascript:;"
+                                                                    role="menu">
+                                                                    <li>
+                                                                        <a href="javascript:;"
                                                                             onclick="adminMember.openDeleteMember(&quot;[{\&quot;member_code\&quot;:\&quot;m2024051656220aef480fa\&quot;,\&quot;delete_old_auth_log\&quot;:false}]&quot;)">삭제</a>
                                                                     </li>
-                                                                    <li><a href="javascript:;"
+                                                                    <li>
+                                                                        <a href="javascript:;"
                                                                             onclick="adminMember.openMemberPushForm([&#39;m2024051656220aef480fa&#39;]);">알림</a>
                                                                     </li>
-                                                                    <li><a href="javascript:;"
+                                                                    <li>
+                                                                        <a href="javascript:;"
                                                                             onclick="adminMember.openMemberSmsForm([&#39;m2024051656220aef480fa&#39;]);">SMS</a>
                                                                     </li>
-                                                                    <li><a href="javascript:;"
+                                                                    <li>
+                                                                        <a href="javascript:;"
                                                                             onclick="adminMember.openManageMemberPoint(&#39;m2024051656220aef480fa&#39;);">적립금
-                                                                            지급/차감</a></li>
+                                                                            지급/차감</a>
+                                                                    </li>
                                                                 </ul>
                                                             </div>
                                                         </li>
                                                     </ul>
                                                 </div><!--end.li_table-->
+
                                                 <nav class="text-center" id="paginate"></nav>
                                             </div><!--end.card-body-->
                                         </div><!--end.card-->
@@ -421,31 +270,32 @@
         </div><!--end #content-->
         <!-- END CONTENT -->
 
-       <!-- END BASE -->
+        <!-- END BASE -->
 
 
-            <div class="modal" id="cocoaModal" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content"></div>
-                </div>
+        <div class="modal" id="cocoaModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content"></div>
             </div>
+        </div>
 
-            <div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
-                <div class="modal-dialog">
-                    <div class="modal-content"></div>
-                </div>
+        <div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
+            <div class="modal-dialog">
+                <div class="modal-content"></div>
             </div>
+        </div>
 
-            <iframe name="hidden_frame" id="hidden_frame"
-                style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;"
-                src="./adminUserlist_files/saved_resource.html"></iframe>
+        <iframe name="hidden_frame" id="hidden_frame"
+            style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;" src="_blank"></iframe>
 
-            <div id="device-breakpoints">
-                <div class="device-xs visible-xs" data-breakpoint="xs"></div>
-                <div class="device-sm visible-sm" data-breakpoint="sm"></div>
-                <div class="device-md visible-md" data-breakpoint="md"></div>
-                <div class="device-lg visible-lg" data-breakpoint="lg"></div>
-            </div>
-</body>
+        <div id="device-breakpoints">
+            <div class="device-xs visible-xs" data-breakpoint="xs"></div>
+            <div class="device-sm visible-sm" data-breakpoint="sm"></div>
+            <div class="device-md visible-md" data-breakpoint="md"></div>
+            <div class="device-lg visible-lg" data-breakpoint="lg"></div>
+        </div>
+    </div>
+
+    <body>
 
 </html>

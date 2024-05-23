@@ -11,87 +11,9 @@
 </head>
 
 
-<body class="menubar-hoverable header-fixed menubar-pin sidebar-mini menubar-visible">
-	<input type="hidden" id="USE_OMS" value="on">
-	<!-- BEGIN BASE-->
-	<div id="dashboard_loader" class="se-pre-con" style="display: none;">
-		<div class="page-loader-spinner">
-			<div class="double-bounce1"></div>
-			<div class="double-bounce2"></div>
-		</div>
-		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 70%;">
-				<label>70%</label>
-			</div>
-		</div>
-	</div>
-	<div id="base">
+<body>
+	<div class="menubar-hoverable header-fixed menubar-pin sidebar-mini menubar-visible">
 
-		<header class="top_header" id="default_header">
-			<div class="headerbar">
-				<div class="headerbar-left">
-					<ul class="header-nav header-nav-options">
-						<li class="hidden-lg hidden-md">
-							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar"
-								href="javascript:void(0);">
-								<img src="./adminChat_files/icon-bo-menu-01.svg">
-							</a>
-						</li>
-						<li class="header-nav-brand">
-							<div class="brand-holder">
-								<span class="location_text">
-									<a href="https://qjfhdnaos51106.imweb.me/admin/contents/comment">댓글</a> </span>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</header>
-		<header class="top_header control-fixed" id="select_header" style="display: none;">
-			<div class="headerbar">
-				<div class="headerbar-left">
-					<ul class="header-nav">
-						<li class="header-nav-brand">
-							<div class="brand-holder ">
-								<a class="btn btn-flat btn-default-white no-padding-x margin-right-xl"
-									href="javascript:;" onclick="adminContents.cancelChkCommentItem()"><i
-										class="btm bt-arrow-left"></i></a>
-							</div>
-							<div class="brand-holder">
-								<div class="dropdown">
-									<button class="btn btn-flat btn-default-white no-padding-x margin-right-xl text-lg"
-										aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button"
-										id="dLabel">
-										<span id="select_cnt">2</span>개 선택됨 <i class="zmdi zmdi-caret-down"></i>
-									</button>
-									<ul class="dropdown-menu animation-dock" role="menu" aria-labelledby="dLabel">
-										<li>
-											<a href="javascript:;" onclick="adminContents.allChkCommentItem()">모두 선택</a>
-										</li>
-										<li>
-											<a href="javascript:;" onclick="adminContents.cancelChkCommentItem()">선택
-												안함</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="headerbar-right">
-					<ul class="header-nav header-nav-options">
-						<li>
-							<a class="btn btn-default-bright" href="javascript:;"
-								onclick="adminContents.openDeleteCommentForm()"><span class="hidden-xs">댓글</span> 삭제</a>
-						</li>
-						<li>
-							<a class="btn btn-default-bright" href="javascript:;"
-								onclick="adminContents.openUpdateWtimeForm()">작성시각 수정</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</header>
 		<div id="content">
 			<div id="alertBox" class="alert__wrap"> </div>
 			<section class="section-max-width">
@@ -106,10 +28,10 @@
 												<label for="postSearch" class="icon_set left _ico_search">
 													<i class="zmdi zmdi-search"></i>
 												</label>
-												<label class="icon_set gray right _ico_close"
-													style="display: none;">
-													<a href="javascript:;" onclick="ADMIN_SEARCH.reset()"><i
-															class="zmdi zmdi-close"></i></a>
+												<label class="icon_set gray right _ico_close" style="display: none;">
+													<a href="javascript:;" onclick="ADMIN_SEARCH.reset()">
+														<i class="zmdi zmdi-close"></i>
+													</a>
 												</label>
 												<div>
 													<input type="text" placeholder="작성자, 내용 검색" value="" name="keyword"
@@ -121,24 +43,27 @@
 								</div><!--end.card-->
 							</div><!--end.col-->
 						</div><!--end.row-->
+
 						<div class="row">
 							<div class="col-md-12">
 								<div class="card">
 									<div class="card-head">
-										<header class="small">전체 댓글 <span id="comment_count"
-												class="text-primary">0</span></header>
+										<header class="small">전체 댓글
+											<span id="comment_count" class="text-primary">0</span>
+										</header>
 										<div class="tools">
-											<div id="btn_S20240516cc656761618e8"
-												style="display: inline-block;">
-												<span class="_excel_down_creat"
-													style="display: inline-block;"><a
-														href="javascript:void(0);"
+											<div id="btn_S20240516cc656761618e8" style="display: inline-block;">
+												<span class="_excel_down_creat" style="display: inline-block;">
+													<a href="javascript:void(0);"
 														class="btn btn-default-bright btn-sm-padding"
-														onclick="adminContents.openModalBoardExcelDownload(&#39;&#39;, &#39;comment&#39;)"><i
-															class="btl bt-download"></i> 내보내기</a></span>
-												<span class="_excel_loading" style="display: none;"><a
-														href="javascript:void(0)   ;"
-														class="btn btn-default-bright btn-sm">다운로드 중...</a></span>
+														onclick="adminContents.openModalBoardExcelDownload(&#39;&#39;, &#39;comment&#39;)">
+														<i></i> 내보내기
+													</a>
+												</span>
+												<span class="_excel_loading" style="display: none;">
+													<a href="javascript:void(0);"
+														class="btn btn-default-bright btn-sm">다운로드 중...</a>
+												</span>
 												<span class="_excel_download" style="display: none;">
 													<a href="javascript:void(0);"
 														class="btn btn-default-bright btn-sm-padding"></a>
@@ -146,49 +71,45 @@
 											</div>
 										</div>
 									</div>
+
 									<div class="card-body no-padding">
-										<ul class="list-comments check" id="comment_manage_list">
-										</ul>
-										<nav class="text-center">
-										</nav>
-
-
+										<ul class="list-comments check" id="comment_manage_list"></ul>
+										<nav class="text-center"></nav>
 									</div><!--end.card-body-->
 								</div><!--end.card-->
 							</div><!--end.col-->
 						</div>
-
 					</div><!--end.row-->
 				</div><!--end.tab-pane-->
 			</section>
 		</div> <!--end.section-body.tab-content-->
 
-		 <!-- END BASE -->
+		<!-- END BASE -->
+		<div class="modal" id="cocoaModal" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content"></div>
+			</div>
+		</div>
 
-	<div class="modal" id="cocoaModal" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content"></div>
+		<div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
+			<div class="modal-dialog">
+				<div class="modal-content"></div>
+			</div>
+		</div>
+
+		<iframe name="hidden_frame" id="hidden_frame"
+			style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;" src="_blank"></iframe>
+
+
+
+		<div id="device-breakpoints">
+			<div class="device-xs visible-xs" data-breakpoint="xs"></div>
+			<div class="device-sm visible-sm" data-breakpoint="sm"></div>
+			<div class="device-md visible-md" data-breakpoint="md"></div>
+			<div class="device-lg visible-lg" data-breakpoint="lg"></div>
 		</div>
 	</div>
 
-	<div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
-		<div class="modal-dialog">
-			<div class="modal-content"></div>
-		</div>
-	</div>
-
-	<iframe name="hidden_frame" id="hidden_frame"
-		style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;"
-		src="./adminChat_files/saved_resource.html"></iframe>
-
-
-
-	<div id="device-breakpoints">
-		<div class="device-xs visible-xs" data-breakpoint="xs"></div>
-		<div class="device-sm visible-sm" data-breakpoint="sm"></div>
-		<div class="device-md visible-md" data-breakpoint="md"></div>
-		<div class="device-lg visible-lg" data-breakpoint="lg"></div>
-	</div>
-</body>
+	<body>
 
 </html>

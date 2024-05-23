@@ -10,57 +10,22 @@
 </head>
 
 
-<body class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
-	<input type="hidden" id="USE_OMS" value="on">
-	<!-- BEGIN BASE-->
-	<div id="dashboard_loader" class="se-pre-con" style="display: none;">
-		<div class="page-loader-spinner">
-			<div class="double-bounce1"></div>
-			<div class="double-bounce2"></div>
-		</div>
-		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 70%;">
-				<label>70%</label>
-			</div>
-		</div>
-	</div>
-	<div id="base">
-		<header class="top_header">
-			<div class="headerbar">
-				<div class="headerbar-left">
-					<ul class="header-nav header-nav-options">
-						<li class="hidden-lg hidden-md">
-							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar"
-								href="javascript:void(0);">
-								<img src="_blank">
-							</a>
-						</li>
-						<li class="header-nav-brand">
-							<div class="brand-holder">
-								<span class="location_text">
-									<a href="_blank">매출</a> </span>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</header>
-
+<body>
+	<div class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
 		<div id="content">
 			<div id="alertBox" class="alert__wrap"></div>
 			<section>
 				<div class="section-body">
 					<form id="analyticsForm" onsubmit="ADMIN.showLoader(); return true;">
-						<input type="hidden" id="inputOrderBy" name="orderby" value="">
-						<input type="hidden" id="inputSort" name="sort" value="">
+						<input type="hidden" id="inputOrderBy" name="orderby">
+						<input type="hidden" id="inputSort" name="sort">
 						<div class="row">
 							<div class="col-xs-12 custom-width-5">
 								<div class="card card-sm-padding">
 									<!-- background: url('../img/ico_menu-down.png') no-repeat center right; background-size: 24px 24px; -->
 									<div class="card-body">
 										<input type="hidden" name="target" value="day">
-										<a href="javascript:;" style="display: block;" data-toggle="dropdown"
-											aria-haspopup="true" aria-expanded="false">
+										<a href="javascript:;" style="display: block;">
 											<span>일별 통계</span>
 											<span class="caret"></span>
 										</a>
@@ -92,8 +57,7 @@
 									<div class="card-body">
 										<input type="hidden" id="inputDateRangeType" name="date_range_type"
 											value="custom">
-										<a href="javascript:;" id="selectDateRangeType" data-toggle="dropdown"
-											aria-haspopup="true" aria-expanded="false">
+										<a href="javascript:;" id="selectDateRangeType">
 											<span class="_date_range_type_name">사용자 정의</span>
 											<span class="caret"></span>
 										</a>
@@ -162,18 +126,19 @@
 									<!-- 필터 관련 -->
 									<div class="card-body">
 										<div id="filterWrap" style="position: relative;" class="">
-											<a href="javascript:;" data-toggle="dropdown" aria-haspopup="true"
-												aria-expanded="false" class="btn btn-default-bright">
-												<span><i></i> 필터</span>
+											<a href="javascript:;" class="btn btn-default-bright">
+												<span>
+													<i></i>
+													필터
+												</span>
 											</a>
-											<div id="filterTypeWrap" data-toggle="dropdown" class="dropdown-menu">
+											<div id="filterTypeWrap" class="dropdown-menu">
 												<div class="col-sm-12 width-10"
 													style="padding-top: 15px; padding-bottom: 15px;">
 													<div class="form-group ">
 														<label class="control-label">결제수단</label>
 														<select name="filter_pay_type[]" data-placeholder="결제수단"
-															multiple="" class="select-chosen" style="display: none;">
-															<!-- 음.. 해당 사이트에서.. 주문이 이루어진.. 결제수단만 노출..  -->
+															class="select-chosen" style="display: none;">
 															<option value="cash">무통장입금</option>
 														</select>
 														<div class="chosen-container chosen-container-multi"
@@ -181,7 +146,7 @@
 															<ul class="chosen-choices">
 																<li class="search-field">
 																	<input type="text" value="결제수단" class="default"
-																		autocomplete="off" style="width: 77px;">
+																		style="width: 77px;">
 																</li>
 															</ul>
 															<div class="chosen-drop">
@@ -195,7 +160,7 @@
 															<span class="radio radio-styled radio-inline">
 																<label>
 																	<input type="radio" name="filter_order_channel"
-																		checked="" value="all">
+																		value="all">
 																	<span>전체</span>
 																</label>
 															</span>
@@ -330,12 +295,7 @@
 
 					<form id="analyticsExcelForm" action="_blank" method="post"
 						onsubmit="ADMIN.showLoader(); return true;">
-						<input type="hidden" name="d1" value="TzoyNToiU0hPUF9TVEFUU19WMl9GSUxURVJfREFUQSI6MTU6e3M6NjoidGFyZ2V0IjtzOjM6ImRheSI7czoxNToiZGF0ZV9yYW5n
-							ZV90eXBlIjtzOjY6ImN1c3RvbSI7czoxMDoic3RhcnRfZGF0ZSI7czoxMDoiMjAyNC0wNS0xNiI7czo4OiJlbmRfZGF0ZSI7czoxMDoiMjAyNC0wNS0yMSI7cz
-							oxNjoiZmlsdGVyX3NpdGVfY29kZSI7czoyMjoiUzIwMjQwNTE2Y2M2NTY3NjE2MThlOCI7czoxNjoiZmlsdGVyX3VuaXRfY29kZSI7czoyMjoidTIwMjQwNTE2NjY0NTU
-							4MjE1YWY2MSI7czoxNToiZmlsdGVyX2N1cnJlbmN5IjtzOjM6IktSVyI7czoxNToiZmlsdGVyX3BheV90eXBlIjthOjA6e31zOjIwOiJmaWx0ZXJfb3JkZXJfY2hhbm5lbC
-							I7czozOiJhbGwiO3M6MjE6ImZpbHRlcl9vcmRlcl9hcHBfdHlwZSI7TjtzOjIwOiJmaWx0ZXJfcHJvZF9jYXRlZ29yeSI7TjtzOjE2OiJmaWx0ZXJfcHJvZF9jb2RlIjtOO3M6
-							MTc6ImZpbHRlcl9vcmRlcmVyX2lkIjtOO3M6ODoib3JkZXJfYnkiO3M6MDoiIjtzOjEzOiJvcmRlcl9ieV9zb3J0IjtzOjM6ImFzYyI7fQ==">
+						<input type="hidden" name="d1" value="">
 						<input type="hidden" name="d2" value="YTowOnt9">
 					</form>
 				</div>
@@ -343,7 +303,7 @@
 		</div>
 
 		<!-- BEGIN MENUBAR-->
-		<button type="button" class="hidden-lg hidden-md toggle-btn" data-dismiss="menubar">
+		<button type="button" class="hidden-lg hidden-md toggle-btn">
 			<span class="sr-only">Toggle navigation</span>
 			<img src="_blank">
 		</button>
@@ -351,6 +311,8 @@
 		<div class="_notify-modal-provider"></div>
 
 	</div>
-</body>
+	</div>
+
+	<body>
 
 </html>

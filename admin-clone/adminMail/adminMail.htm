@@ -11,72 +11,35 @@
 </head>
 
 
-<body class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
-	<input type="hidden" id="USE_OMS" value="on">
-	<!-- BEGIN BASE-->
-	<div id="dashboard_loader" class="se-pre-con" style="display: none;">
-		<div class="page-loader-spinner">
-			<div class="double-bounce1"></div>
-			<div class="double-bounce2"></div>
-		</div>
-		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 70%;">
-				<label>70%</label>
-			</div>
-		</div>
-	</div>
-	<div id="base">
+<body>
+	<div class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
 
-		<header class="top_header" id="header">
-			<div class="headerbar">
-				<div class="headerbar-left">
-					<ul class="header-nav header-nav-options">
-						<li class="hidden-lg hidden-md">
-							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar"
-								href="javascript:void(0);">
-								<img src="./adminMail_files/icon-bo-menu-01.svg">
-							</a>
-						</li>
-						<li class="header-nav-brand">
-							<div class="brand-holder">
-								<span class="location_text">
-									<a href="https://qjfhdnaos51106.imweb.me/admin/member/mail">자동 메일</a> </span>
-							</div>
-						</li>
-					</ul>
-				</div>
-
-				<div class="headerbar-right">
-					<ul class="header-nav header-nav-options _option_list">
-						<li><a class="btn btn-primary disabled">저장</a></li>
-					</ul><!--end .header-nav-options -->
-				</div><!--끝 #header-navbar-collapse -->
-				<!--끝 #header-navbar-collapse -->
-			</div>
-		</header>
 		<div id="content">
 			<div id="alertBox" class="alert__wrap"> </div>
 			<section class="section-max-width">
 				<div class="section-body">
-					<form id="mail_setting_form" method="post" class="mail_setting_form"
-						action="https://qjfhdnaos51106.imweb.me/admin/member/mail" target="hidden_frame">
+					<form id="mail_setting_form" method="post" class="mail_setting_form" action="_blank">
 						<div class="row">
 							<div class="col-md-5">
 								<h3 class="no-margin-top">메일 발송 설정 (SMTP)</h3>
-								<p class="text-gray">발송되는 메일의 주소 및 발송 서비스 업체 등을 지정합니다.<br>발송 메일이 스팸함으로 가지 않기 위해서는 올바른 발송
-									주소와 서비스 업체를 선택해야 합니다.</p>
+								<p class="text-gray">
+									발송되는 메일의 주소 및 발송 서비스 업체 등을 지정합니다.<br>
+									발송 메일이 스팸함으로 가지 않기 위해서는 올바른 발송
+									주소와 서비스 업체를 선택해야 합니다.
+								</p>
+
 								<p>
 									<a class="text-primary" href="javascript:"
 										onclick="AUTO_MAIL_SETTING.openSmtpHelpForm()">설정방법 알아보기</a>
 									<span class="text-gray-light">/</span>
-									<a class="text-primary" href="javascript:" role="button" data-toggle="modal"
-										data-target="#helpmail">메일 수신이 안되나요?</a>
+									<a class="text-primary" href="javascript:" role="button" data-toggle="modal">
+										메일 수신이 안되나요?</a>
 								</p>
+
 							</div>
 							<div class="col-md-7">
 								<div class="card">
 									<div class="card-body form-horizontal">
-
 										<div class="form-group">
 											<label class="col-sm-3  text-left control-label">서비스 제공업체</label>
 											<div class="col-sm-9">
@@ -91,34 +54,29 @@
 												</select>
 												<div class="form-control-line"></div>
 												<div class="chosen-container chosen-container-single chosen-container-single-nosearch"
-													style="width: 240px;" title=""
-													id="smtp_type_select_chosen"><a class="chosen-single"
-														tabindex="-1"><span>Gmail</span>
+													style="width: 240px;" id="smtp_type_select_chosen">
+													<a class="chosen-single">
+														<span>Gmail</span>
 														<div><b></b></div>
 													</a>
 													<div class="chosen-drop">
-														<div class="chosen-search"><input type="text" autocomplete="off"
-																readonly=""></div>
+														<div class="chosen-search"><input type="text"></div>
 														<ul class="chosen-results">
-															<li class="active-result result-selected"
-																data-option-array-index="0" style="">사용안함(설정안함)</li>
-															<li class="active-result result-selected"
-																data-option-array-index="1" style="">Gmail</li>
-															<li class="active-result" data-option-array-index="2"
-																style="">네이버</li>
-															<li class="active-result" data-option-array-index="3"
-																style="">다음</li>
-															<li class="active-result" data-option-array-index="4"
-																style="">네이트</li>
-															<li class="active-result" data-option-array-index="5"
-																style="">사용자 지정 SMTP 서버</li>
+															<li class="active-result result-selected">사용안함(설정안함)</li>
+															<li class="active-result result-selected">Gmail</li>
+															<li class="active-result">네이버</li>
+															<li class="active-result">다음</li>
+															<li class="active-result">네이트</li>
+															<li class="active-result">사용자 지정 SMTP 서버</li>
 														</ul>
 													</div>
 												</div>
+
 												<!--기본(설정안함) 선택시에만 노출-->
 												<div class="_default_help" style="adminMail display: none;">
 													<span class="help-block">
-														메일 발송이 가능하게 하려면 서비스 제공업체를 선택해 주시기 바랍니다. </span>
+														메일 발송이 가능하게 하려면 서비스 제공업체를 선택해 주시기 바랍니다.
+													</span>
 												</div>
 												<!-- // 기본(설정안함) 선택시에만 노출-->
 											</div>
@@ -138,8 +96,7 @@
 													<div class="radio radio-styled radio-inline margin-left-xxxl">
 														<label>
 															<input type="radio" name="smtp_data[gmail_oauth_auth]"
-																id="lowSecurity" class="_gmail_type" value="N"
-																disabled="disabled">
+																id="lowSecurity" class="_gmail_type" value="N">
 															<span>보안 수준이 낮은 앱 연결</span>
 														</label>
 													</div>
@@ -147,16 +104,13 @@
 											</div>
 										</div>
 
-										<div class="external_smtp_wrap _external_smtp_wrap "
-											style="display: none;">
+										<div class="external_smtp_wrap _external_smtp_wrap " style="display: none;">
 											<div class="form-group">
-												<label class="col-sm-3 control-label">발신자 메일주소 <a tabindex="-1"
-														href="javascript:" class="text-gray" role="button"
-														data-toggle="popover" data-trigger="focus" data-placement="top"
-														title=""
-														data-content="보내는 사람의 메일 주소를 입력합니다. 네이버를 선택하셨다면 @naver.com 형식을 입력하셔야 합니다."
-														data-original-title="발신자 메일주소"><i
-															class="btm bt-question-circle"></i></a></label>
+												<label class="col-sm-3 control-label">발신자 메일주소
+													<a href="javascript:" class="text-gray" role="button">
+														<i class="btm bt-question-circle"></i>
+													</a>
+												</label>
 												<div class="col-sm-9">
 													<input class="form-control width-6" type="text"
 														name="smtp_data[sender_mail]" value=""
@@ -165,13 +119,11 @@
 												</div>
 											</div>
 											<div class="form-group">
-												<label class="col-sm-3 control-label">로그인 ID <a tabindex="-1"
-														href="javascript:" class="text-gray" role="button"
-														data-toggle="popover" data-trigger="focus" data-placement="top"
-														title=""
-														data-content="선택한 서비스의 로그인 계정을 입력합니다. 예를들어 네이버를 선택했으면 네이버의 ID를 입력합니다. Gmail의 경우 이메일 형식으로 된 ID를 입력하셔야 합니다."
-														data-original-title="사용자 계정"><i
-															class="btm bt-question-circle"></i></a></label>
+												<label class="col-sm-3 control-label">로그인 ID
+													<a href="javascript:" class="text-gray" role="button">
+														<i class="btm bt-question-circle"></i>
+													</a>
+												</label>
 												<div class="col-sm-9">
 													<input class="form-control width-6" type="text"
 														name="smtp_data[user_id]" value=""
@@ -179,6 +131,7 @@
 													<div class="form-control-line"></div>
 												</div>
 											</div>
+
 											<div class="form-group">
 												<label class="col-sm-3 control-label">패스워드</label>
 												<div class="col-sm-9">
@@ -278,8 +231,8 @@
 												<label class="col-sm-3 control-label"></label>
 												<div class="col-sm-9">
 													<input class="form-control width-3" type="text" id="auth_code"
-														name="auth_code" value=""
-														style="display: inline-block;" placeholder="인증번호 입력">
+														name="auth_code" value="" style="display: inline-block;"
+														placeholder="인증번호 입력">
 													<div class="form-control-line"></div>
 													<a href="javascript:" class="btn btn-default-bright btn-xs"
 														id="auth_mail_send_btn"
@@ -324,9 +277,10 @@
 											<div class="form-group gmail_oauth_wrap _gmail_oauth_btn">
 												<div class=" col-sm-9 col-sm-offset-3">
 													<a href="javascript:" class="btn btn_google"
-														onclick="AUTO_MAIL_SETTING.openGoogleOauth(&#39;505298121730-2j5hfh5j7ttr1eeghk6e6gb325c3bj46.apps.googleusercontent.com&#39;, &#39;https://imweb.me/gmail_oauth&#39;)"><span
-															class="btn_google_logo"></span><span
-															class="btn_google_txt">Google 연결</span></a>
+														onclick="AUTO_MAIL_SETTING.openGoogleOauth(&#39;505298121730-2j5hfh5j7ttr1eeghk6e6gb325c3bj46.apps.googleusercontent.com&#39;, &#39;https://imweb.me/gmail_oauth&#39;)">
+														<span class="btn_google_logo"></span>
+														<span class="btn_google_txt">Google 연결</span>
+													</a>
 												</div>
 											</div>
 
@@ -340,11 +294,14 @@
 													<label class="col-sm-3 control-label"></label>
 													<div class="col-sm-9">
 														<p class="text-12 text-gray">
-															<span class="text-danger">주의:</span> 서비스 제공업체에서 제공하는 전송한도를
+															<span class="text-danger">주의:</span>
+															서비스 제공업체에서 제공하는 전송한도를
 															초과하거나 접속정보 변경으로 인해 메일 발송에 실패 할 수 있습니다.
 														</p>
-														<p class="text-12 text-gray sm-margin-bottom">Gmail 전송한도: 1회당 최대
-															100명, 하루 최대 500개</p>
+														<p class="text-12 text-gray sm-margin-bottom">
+															Gmail 전송한도: 1회당 최대
+															100명, 하루 최대 500개
+														</p>
 														<a href="javascript:" class="btn btn-primary"
 															onclick="AUTO_MAIL_SETTING.revokeGmailOauth()">연결 해제</a>
 													</div>
@@ -359,8 +316,10 @@
 														<span> 연동 실패</span>
 													</p>
 													<p class="text-12 text-gray">
-														<span class="text-danger">구글 계정과의 연결이 끊어져 서비스 연동이 해제되었습니다. 설정방법을
-															재확인하여 재연동해주시기 바랍니다.</span>
+														<span class="text-danger">
+															구글 계정과의 연결이 끊어져 서비스 연동이 해제되었습니다. 설정방법을
+															재확인하여 재연동해주시기 바랍니다.
+														</span>
 													</p>
 												</div>
 											</div>
@@ -384,8 +343,7 @@
 									</div>
 									<div class="card-body no-padding">
 										<div class="table-responsive" style="overflow: visible;">
-											<table class="table no-margin no-last-border"
-												style="table-layout: fixed;">
+											<table class="table no-margin no-last-border" style="table-layout: fixed;">
 												<colgroup>
 													<col>
 													<col width="70">
@@ -410,7 +368,8 @@
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="join_complete_user" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
@@ -418,29 +377,30 @@
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="join_complete_admin" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
+
 														<td class="group on-click" id="group_join_complete">
 															<select multiple="" name="join_complete_groups"
-																data-placeholder="그룹 선택" id="join_complete_groups"
-																style="display: none;">
+																id="join_complete_groups" style="display: none;">
 															</select>
 															<div class="chosen-container chosen-container-multi"
-																style="width: 100%;" title=""
-																id="join_complete_groups_chosen">
+																style="width: 100%;" id="join_complete_groups_chosen">
 																<ul class="chosen-choices">
-																	<li class="search-field"><input type="text"
-																			value="그룹 선택" class="default"
-																			autocomplete="off"
-																			style="width: 82px;"></li>
+																	<li class="search-field">
+																		<input type="text" value="그룹 선택" class="default"
+																			style="width: 82px;">
+																	</li>
 																</ul>
 																<div class="chosen-drop">
 																	<ul class="chosen-results"></ul>
 																</div>
 															</div>
 														</td>
+
 														<td class="text-right">
 															<button type="button"
 																class="_btn_mail_preview tw-text-[14px]"
@@ -451,16 +411,19 @@
 															</button>
 														</td>
 													</tr>
-													<tr class="">
+
+													<tr>
 														<td style="white-space: normal;">가입승인</td>
 														<td class="text-center">
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="join_confirm_user" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
+
 														<td class="text-center">
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
@@ -469,66 +432,17 @@
 																</label>
 															</div>
 														</td>
+
 														<td class="group on-click" id="group_join_confirm">
 															<select multiple="" name="join_confirm_groups"
-																data-placeholder="그룹 선택" id="join_confirm_groups"
-																style="display: none;">
+																id="join_confirm_groups" style="display: none;">
 															</select>
 															<div class="chosen-container chosen-container-multi"
-																style="width: 100%;" title=""
-																id="join_confirm_groups_chosen">
+																style="width: 100%;" id="join_confirm_groups_chosen">
 																<ul class="chosen-choices">
-																	<li class="search-field"><input type="text"
-																			value="그룹 선택" class="default"
-																			autocomplete="off"
-																			style="width: 82px;"></li>
-																</ul>
-																<div class="chosen-drop">
-																	<ul class="chosen-results"></ul>
-																</div>
-															</div>
-														</td>
-														<td class="text-right">
-															<button type="button"
-																class="_btn_mail_preview tw-text-[14px]"
-																style="background-color: transparent;"
-																data-type="join_confirm" data-type-text="가입승인"
-																data-configurable-type-text="회원">
-																<i class="im-ico-search"></i>
-															</button>
-														</td>
-													</tr>
-													<tr class="">
-														<td style="white-space: normal;">회원탈퇴</td>
-														<td class="text-center">
-															<div class="checkbox checkbox-styled no-margin">
-																<label>
-																	<input name="leave_site_user" value="ok"
-																		type="checkbox" checked=""><span></span>
-																</label>
-															</div>
-														</td>
-														<td class="text-center">
-															<div class="checkbox checkbox-styled no-margin">
-																<label>
-																	<input name="leave_site_admin" value="ok"
-																		type="checkbox" disabled=""><span></span>
-																</label>
-															</div>
-														</td>
-														<td class="group on-click" id="group_leave_site">
-															<select multiple="" name="leave_site_groups"
-																data-placeholder="그룹 선택" id="leave_site_groups"
-																disabled="" style="display: none;">
-															</select>
-															<div class="chosen-container chosen-container-multi chosen-disabled"
-																style="width: 100%;" title=""
-																id="leave_site_groups_chosen">
-																<ul class="chosen-choices">
-																	<li class="search-field"><input type="text"
-																			value="그룹 선택" class="default"
-																			autocomplete="off"
-																			style="width: 82px;" disabled="">
+																	<li class="search-field">
+																		<input type="text" value="그룹 선택" class="default"
+																			style="width: 82px;">
 																	</li>
 																</ul>
 																<div class="chosen-drop">
@@ -539,9 +453,52 @@
 														<td class="text-right">
 															<button type="button"
 																class="_btn_mail_preview tw-text-[14px]"
-																style="background-color: transparent;"
-																data-type="leave_site" data-type-text="회원탈퇴"
-																data-configurable-type-text="회원">
+																style="background-color: transparent;">
+																<i class="im-ico-search"></i>
+															</button>
+														</td>
+													</tr>
+													<tr>
+														<td style="white-space: normal;">회원탈퇴</td>
+														<td class="text-center">
+															<div class="checkbox checkbox-styled no-margin">
+																<label>
+																	<input name="leave_site_user" value="ok"
+																		type="checkbox" checked="">
+																	<span></span>
+																</label>
+															</div>
+														</td>
+														<td class="text-center">
+															<div class="checkbox checkbox-styled no-margin">
+																<label>
+																	<input name="leave_site_admin" value="ok"
+																		type="checkbox">
+																	<span></span>
+																</label>
+															</div>
+														</td>
+
+														<td class="group on-click" id="group_leave_site">
+															<select name="leave_site_groups" id="leave_site_groups"
+																style="display: none;"></select>
+															<div class="chosen-container chosen-container-multi chosen-disabled"
+																style="width: 100%;" id="leave_site_groups_chosen">
+																<ul class="chosen-choices">
+																	<li class="search-field">
+																		<input type="text" value="그룹 선택" class="default"
+																			style="width: 82px;">
+																	</li>
+																</ul>
+																<div class="chosen-drop">
+																	<ul class="chosen-results"></ul>
+																</div>
+															</div>
+														</td>
+														<td class="text-right">
+															<button type="button"
+																class="_btn_mail_preview tw-text-[14px]"
+																style="background-color: transparent;">
 																<i class="im-ico-search"></i>
 															</button>
 														</td>
@@ -551,14 +508,16 @@
 										</div>
 									</div>
 								</div>
+
 								<div class="card">
+
 									<div class="card-head">
 										<header>주문</header>
 									</div>
+
 									<div class="card-body no-padding">
 										<div class="table-responsive" style="overflow: visible;">
-											<table class="table no-margin no-last-border"
-												style="table-layout: fixed;">
+											<table class="table no-margin no-last-border" style="table-layout: fixed;">
 												<colgroup>
 													<col>
 													<col width="70">
@@ -583,7 +542,8 @@
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="payment_request_user" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
@@ -591,23 +551,22 @@
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="payment_request_admin" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
 														<td class="group on-click" id="group_payment_request">
 															<select multiple="" name="payment_request_groups"
-																data-placeholder="그룹 선택" id="payment_request_groups"
-																style="display: none;">
+																id="payment_request_groups" style="display: none;">
 															</select>
 															<div class="chosen-container chosen-container-multi"
-																style="width: 100%;" title=""
-																id="payment_request_groups_chosen">
+																style="width: 100%;" id="payment_request_groups_chosen">
 																<ul class="chosen-choices">
-																	<li class="search-field"><input type="text"
-																			value="그룹 선택" class="default"
-																			autocomplete="off"
-																			style="width: 82px;"></li>
+																	<li class="search-field">
+																		<input type="text" value="그룹 선택" class="default"
+																			style="width: 82px;">
+																	</li>
 																</ul>
 																<div class="chosen-drop">
 																	<ul class="chosen-results"></ul>
@@ -617,20 +576,19 @@
 														<td class="text-right">
 															<button type="button"
 																class="_btn_mail_preview tw-text-[14px]"
-																style="background-color: transparent;"
-																data-type="payment_request" data-type-text="입금 요청"
-																data-configurable-type-text="주문">
+																style="background-color: transparent;">
 																<i class="im-ico-search"></i>
 															</button>
 														</td>
 													</tr>
-													<tr class="">
+													<tr>
 														<td style="white-space: normal;">결제 완료 안내</td>
 														<td class="text-center">
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="new_order_user" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
@@ -638,93 +596,94 @@
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="new_order_admin" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
 														<td class="group on-click" id="group_new_order">
-															<select multiple="" name="new_order_groups"
-																data-placeholder="그룹 선택" id="new_order_groups"
-																style="display: none;">
-															</select>
+															<select name="new_order_groups" id="new_order_groups"
+																style="display: none;"></select>
 															<div class="chosen-container chosen-container-multi"
-																style="width: 100%;" title=""
-																id="new_order_groups_chosen">
+																style="width: 100%;" id="new_order_groups_chosen">
 																<ul class="chosen-choices">
-																	<li class="search-field"><input type="text"
-																			value="그룹 선택" class="default"
-																			autocomplete="off"
-																			style="width: 82px;"></li>
+																	<li class="search-field">
+																		<input type="text" value="그룹 선택" class="default"
+																			style="width: 82px;">
+																	</li>
 																</ul>
 																<div class="chosen-drop">
 																	<ul class="chosen-results"></ul>
 																</div>
 															</div>
 														</td>
+
 														<td class="text-right">
 															<button type="button"
 																class="_btn_mail_preview tw-text-[14px]"
-																style="background-color: transparent;"
-																data-type="new_order" data-type-text="결제 완료 안내"
-																data-configurable-type-text="주문">
+																style="background-color: transparent;">
 																<i class="im-ico-search"></i>
 															</button>
 														</td>
 													</tr>
-													<tr class="">
+
+													<tr>
 														<td style="white-space: normal;">배송준비</td>
 														<td class="text-center">
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="shipping_standby_user" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
+
 														<td class="text-center">
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="shipping_standby_admin" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
 														<td class="group on-click" id="group_shipping_standby">
-															<select multiple="" name="shipping_standby_groups"
-																data-placeholder="그룹 선택" id="shipping_standby_groups"
-																style="display: none;">
-															</select>
+															<select name="shipping_standby_groups"
+																id="shipping_standby_groups"
+																style="display: none;"></select>
 															<div class="chosen-container chosen-container-multi"
-																style="width: 100%;" title=""
+																style="width: 100%;"
 																id="shipping_standby_groups_chosen">
 																<ul class="chosen-choices">
-																	<li class="search-field"><input type="text"
-																			value="그룹 선택" class="default"
-																			autocomplete="off"
-																			style="width: 82px;"></li>
+																	<li class="search-field">
+																		<input type="text" value="그룹 선택" class="default"
+																			style="width: 82px;">
+																	</li>
 																</ul>
 																<div class="chosen-drop">
 																	<ul class="chosen-results"></ul>
 																</div>
 															</div>
 														</td>
+
 														<td class="text-right">
 															<button type="button"
 																class="_btn_mail_preview tw-text-[14px]"
-																style="background-color: transparent;"
-																data-type="shipping_standby" data-type-text="배송준비"
-																data-configurable-type-text="주문">
+																style="background-color: transparent;">
 																<i class="im-ico-search"></i>
 															</button>
 														</td>
 													</tr>
-													<tr class="">
+
+													<tr>
 														<td style="white-space: normal;">발송 안내</td>
 														<td class="text-center">
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="shipping_start_user" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
@@ -732,23 +691,22 @@
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="shipping_start_admin" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
 														<td class="group on-click" id="group_shipping_start">
-															<select multiple="" name="shipping_start_groups"
-																data-placeholder="그룹 선택" id="shipping_start_groups"
-																style="display: none;">
-															</select>
+															<select name="shipping_start_groups"
+																id="shipping_start_groups"
+																style="display: none;"></select>
 															<div class="chosen-container chosen-container-multi"
-																style="width: 100%;" title=""
-																id="shipping_start_groups_chosen">
+																style="width: 100%;" id="shipping_start_groups_chosen">
 																<ul class="chosen-choices">
-																	<li class="search-field"><input type="text"
-																			value="그룹 선택" class="default"
-																			autocomplete="off"
-																			style="width: 82px;"></li>
+																	<li class="search-field">
+																		<input type="text" value="그룹 선택" class="default"
+																			style="width: 82px;">
+																	</li>
 																</ul>
 																<div class="chosen-drop">
 																	<ul class="chosen-results"></ul>
@@ -758,20 +716,20 @@
 														<td class="text-right">
 															<button type="button"
 																class="_btn_mail_preview tw-text-[14px]"
-																style="background-color: transparent;"
-																data-type="shipping_start" data-type-text="발송 안내"
-																data-configurable-type-text="주문">
+																style="background-color: transparent;">
 																<i class="im-ico-search"></i>
 															</button>
 														</td>
 													</tr>
-													<tr class="">
+
+													<tr>
 														<td style="white-space: normal;">취소요청 접수</td>
 														<td class="text-center">
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="order_cancel_request_user" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
@@ -779,48 +737,48 @@
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="order_cancel_request_admin" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
 														<td class="group on-click" id="group_order_cancel_request">
-															<select multiple="" name="order_cancel_request_groups"
+															<select name="order_cancel_request_groups"
 																data-placeholder="그룹 선택"
-																id="order_cancel_request_groups"
-																style="display: none;">
+																id="order_cancel_request_groups" style="display: none;">
 															</select>
 															<div class="chosen-container chosen-container-multi"
-																style="width: 100%;" title=""
+																style="width: 100%;"
 																id="order_cancel_request_groups_chosen">
 																<ul class="chosen-choices">
-																	<li class="search-field"><input type="text"
-																			value="그룹 선택" class="default"
-																			autocomplete="off"
-																			style="width: 82px;"></li>
+																	<li class="search-field">
+																		<input type="text" value="그룹 선택" class="default"
+																			style="width: 82px;">
+																	</li>
 																</ul>
 																<div class="chosen-drop">
 																	<ul class="chosen-results"></ul>
 																</div>
 															</div>
 														</td>
+
 														<td class="text-right">
 															<button type="button"
 																class="_btn_mail_preview tw-text-[14px]"
-																style="background-color: transparent;"
-																data-type="order_cancel_request"
-																data-type-text="취소요청 접수"
-																data-configurable-type-text="주문">
+																style="background-color: transparent;">
 																<i class="im-ico-search"></i>
 															</button>
 														</td>
 													</tr>
-													<tr class="">
+
+													<tr>
 														<td style="white-space: normal;">취소완료</td>
 														<td class="text-center">
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="order_cancel_user" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
@@ -828,46 +786,46 @@
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="order_cancel_admin" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
 														<td class="group on-click" id="group_order_cancel">
-															<select multiple="" name="order_cancel_groups"
-																data-placeholder="그룹 선택" id="order_cancel_groups"
-																style="display: none;">
+															<select name="order_cancel_groups" data-placeholder="그룹 선택"
+																id="order_cancel_groups" style="display: none;">
 															</select>
 															<div class="chosen-container chosen-container-multi"
-																style="width: 100%;" title=""
-																id="order_cancel_groups_chosen">
+																style="width: 100%;" id="order_cancel_groups_chosen">
 																<ul class="chosen-choices">
-																	<li class="search-field"><input type="text"
-																			value="그룹 선택" class="default"
-																			autocomplete="off"
-																			style="width: 82px;"></li>
+																	<li class="search-field">
+																		<input type="text" value="그룹 선택" class="default"
+																			style="width: 82px;">
+																	</li>
 																</ul>
 																<div class="chosen-drop">
 																	<ul class="chosen-results"></ul>
 																</div>
 															</div>
 														</td>
+
 														<td class="text-right">
 															<button type="button"
 																class="_btn_mail_preview tw-text-[14px]"
-																style="background-color: transparent;"
-																data-type="order_cancel" data-type-text="취소완료"
-																data-configurable-type-text="주문">
+																style="background-color: transparent;">
 																<i class="im-ico-search"></i>
 															</button>
 														</td>
 													</tr>
-													<tr class="">
+
+													<tr>
 														<td style="white-space: normal;">자동 취소 안내</td>
 														<td class="text-center">
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="order_auto_cancel_user" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
@@ -875,23 +833,23 @@
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="order_auto_cancel_admin" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
 														<td class="group on-click" id="group_order_auto_cancel">
-															<select multiple="" name="order_auto_cancel_groups"
-																data-placeholder="그룹 선택" id="order_auto_cancel_groups"
-																style="display: none;">
-															</select>
+															<select name="order_auto_cancel_groups"
+																id="order_auto_cancel_groups"
+																style="display: none;"></select>
 															<div class="chosen-container chosen-container-multi"
-																style="width: 100%;" title=""
+																style="width: 100%;"
 																id="order_auto_cancel_groups_chosen">
 																<ul class="chosen-choices">
-																	<li class="search-field"><input type="text"
-																			value="그룹 선택" class="default"
-																			autocomplete="off"
-																			style="width: 82px;"></li>
+																	<li class="search-field">
+																		<input type="text" value="그룹 선택" class="default"
+																			style="width: 82px;">
+																	</li>
 																</ul>
 																<div class="chosen-drop">
 																	<ul class="chosen-results"></ul>
@@ -901,9 +859,7 @@
 														<td class="text-right">
 															<button type="button"
 																class="_btn_mail_preview tw-text-[14px]"
-																style="background-color: transparent;"
-																data-type="order_auto_cancel" data-type-text="자동 취소 안내"
-																data-configurable-type-text="주문">
+																style="background-color: transparent;">
 																<i class="im-ico-search"></i>
 															</button>
 														</td>
@@ -913,14 +869,14 @@
 										</div>
 									</div>
 								</div>
+
 								<div class="card">
 									<div class="card-head">
 										<header>예약</header>
 									</div>
 									<div class="card-body no-padding">
 										<div class="table-responsive" style="overflow: visible;">
-											<table class="table no-margin no-last-border"
-												style="table-layout: fixed;">
+											<table class="table no-margin no-last-border" style="table-layout: fixed;">
 												<colgroup>
 													<col>
 													<col width="70">
@@ -939,14 +895,14 @@
 													</tr>
 												</thead>
 												<tbody>
-													<tr class="">
+													<tr>
 														<td style="white-space: normal;">입금 요청</td>
 														<td class="text-center">
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="booking_payment_request_user"
-																		value="ok" type="checkbox"
-																		checked=""><span></span>
+																		value="ok" type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
@@ -954,48 +910,48 @@
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="booking_payment_request_admin"
-																		value="ok" type="checkbox"
-																		checked=""><span></span>
+																		value="ok" type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
 														<td class="group on-click" id="group_booking_payment_request">
-															<select multiple="" name="booking_payment_request_groups"
-																data-placeholder="그룹 선택"
+															<select name="booking_payment_request_groups"
 																id="booking_payment_request_groups"
 																style="display: none;">
 															</select>
 															<div class="chosen-container chosen-container-multi"
-																style="width: 100%;" title=""
+																style="width: 100%;"
 																id="booking_payment_request_groups_chosen">
 																<ul class="chosen-choices">
-																	<li class="search-field"><input type="text"
-																			value="그룹 선택" class="default"
-																			autocomplete="off"
-																			style="width: 82px;"></li>
+																	<li class="search-field">
+																		<input type="text" value="그룹 선택" class="default"
+																			style="width: 82px;">
+																	</li>
 																</ul>
 																<div class="chosen-drop">
 																	<ul class="chosen-results"></ul>
 																</div>
 															</div>
 														</td>
+
 														<td class="text-right">
 															<button type="button"
 																class="_btn_mail_preview tw-text-[14px]"
-																style="background-color: transparent;"
-																data-type="booking_payment_request"
-																data-type-text="입금 요청" data-configurable-type-text="예약">
+																style="background-color: transparent;">
 																<i class="im-ico-search"></i>
 															</button>
 														</td>
 													</tr>
-													<tr class="">
+
+													<tr>
 														<td style="white-space: normal;">결제 완료 안내</td>
 														<td class="text-center">
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="new_booking_user" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
@@ -1003,23 +959,22 @@
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="new_booking_admin" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
 														<td class="group on-click" id="group_new_booking">
-															<select multiple="" name="new_booking_groups"
-																data-placeholder="그룹 선택" id="new_booking_groups"
+															<select name="new_booking_groups" id="new_booking_groups"
 																style="display: none;">
 															</select>
 															<div class="chosen-container chosen-container-multi"
-																style="width: 100%;" title=""
-																id="new_booking_groups_chosen">
+																style="width: 100%;" id="new_booking_groups_chosen">
 																<ul class="chosen-choices">
-																	<li class="search-field"><input type="text"
-																			value="그룹 선택" class="default"
-																			autocomplete="off"
-																			style="width: 82px;"></li>
+																	<li class="search-field">
+																		<input type="text" value="그룹 선택" class="default"
+																			style="width: 82px;">
+																	</li>
 																</ul>
 																<div class="chosen-drop">
 																	<ul class="chosen-results"></ul>
@@ -1029,20 +984,20 @@
 														<td class="text-right">
 															<button type="button"
 																class="_btn_mail_preview tw-text-[14px]"
-																style="background-color: transparent;"
-																data-type="new_booking" data-type-text="결제 완료 안내"
-																data-configurable-type-text="예약">
+																style="background-color: transparent;">
 																<i class="im-ico-search"></i>
 															</button>
 														</td>
 													</tr>
-													<tr class="">
+
+													<tr>
 														<td style="white-space: normal;">취소요청 접수</td>
 														<td class="text-center">
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="booking_cancel_request_user" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
@@ -1050,25 +1005,23 @@
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="booking_cancel_request_admin"
-																		value="ok" type="checkbox"
-																		checked=""><span></span>
+																		value="ok" type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
 														<td class="group on-click" id="group_booking_cancel_request">
-															<select multiple="" name="booking_cancel_request_groups"
-																data-placeholder="그룹 선택"
+															<select name="booking_cancel_request_groups"
 																id="booking_cancel_request_groups"
-																style="display: none;">
-															</select>
+																style="display: none;"> </select>
 															<div class="chosen-container chosen-container-multi"
-																style="width: 100%;" title=""
+																style="width: 100%;"
 																id="booking_cancel_request_groups_chosen">
 																<ul class="chosen-choices">
-																	<li class="search-field"><input type="text"
-																			value="그룹 선택" class="default"
-																			autocomplete="off"
-																			style="width: 82px;"></li>
+																	<li class="search-field">
+																		<input type="text" value="그룹 선택" class="default"
+																			style="width: 82px;">
+																	</li>
 																</ul>
 																<div class="chosen-drop">
 																	<ul class="chosen-results"></ul>
@@ -1078,21 +1031,19 @@
 														<td class="text-right">
 															<button type="button"
 																class="_btn_mail_preview tw-text-[14px]"
-																style="background-color: transparent;"
-																data-type="booking_cancel_request"
-																data-type-text="취소요청 접수"
-																data-configurable-type-text="예약">
+																style="background-color: transparent;">
 																<i class="im-ico-search"></i>
 															</button>
 														</td>
 													</tr>
-													<tr class="">
+													<tr>
 														<td style="white-space: normal;">취소완료</td>
 														<td class="text-center">
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="booking_cancel_user" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
@@ -1100,23 +1051,22 @@
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="booking_cancel_admin" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
 														<td class="group on-click" id="group_booking_cancel">
-															<select multiple="" name="booking_cancel_groups"
-																data-placeholder="그룹 선택" id="booking_cancel_groups"
-																style="display: none;">
-															</select>
+															<select name="booking_cancel_groups"
+																id="booking_cancel_groups"
+																style="display: none;"></select>
 															<div class="chosen-container chosen-container-multi"
-																style="width: 100%;" title=""
-																id="booking_cancel_groups_chosen">
+																style="width: 100%;" id="booking_cancel_groups_chosen">
 																<ul class="chosen-choices">
-																	<li class="search-field"><input type="text"
-																			value="그룹 선택" class="default"
-																			autocomplete="off"
-																			style="width: 82px;"></li>
+																	<li class="search-field">
+																		<input type="text" value="그룹 선택" class="default"
+																			style="width: 82px;">
+																	</li>
 																</ul>
 																<div class="chosen-drop">
 																	<ul class="chosen-results"></ul>
@@ -1126,20 +1076,20 @@
 														<td class="text-right">
 															<button type="button"
 																class="_btn_mail_preview tw-text-[14px]"
-																style="background-color: transparent;"
-																data-type="booking_cancel" data-type-text="취소완료"
-																data-configurable-type-text="예약">
+																style="background-color: transparent;">
 																<i class="im-ico-search"></i>
 															</button>
 														</td>
 													</tr>
-													<tr class="">
+
+													<tr>
 														<td style="white-space: normal;">자동 취소 안내</td>
 														<td class="text-center">
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="booking_auto_cancel_user" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
@@ -1147,36 +1097,34 @@
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="booking_auto_cancel_admin" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
 														<td class="group on-click" id="group_booking_auto_cancel">
-															<select multiple="" name="booking_auto_cancel_groups"
+															<select name="booking_auto_cancel_groups"
 																data-placeholder="그룹 선택" id="booking_auto_cancel_groups"
-																style="display: none;">
-															</select>
+																style="display: none;"></select>
 															<div class="chosen-container chosen-container-multi"
-																style="width: 100%;" title=""
+																style="width: 100%;"
 																id="booking_auto_cancel_groups_chosen">
 																<ul class="chosen-choices">
-																	<li class="search-field"><input type="text"
-																			value="그룹 선택" class="default"
-																			autocomplete="off"
-																			style="width: 82px;"></li>
+																	<li class="search-field">
+																		<input type="text" value="그룹 선택" class="default"
+																			style="width: 82px;">
+																	</li>
 																</ul>
 																<div class="chosen-drop">
 																	<ul class="chosen-results"></ul>
 																</div>
 															</div>
 														</td>
+
 														<td class="text-right">
 															<button type="button"
 																class="_btn_mail_preview tw-text-[14px]"
-																style="background-color: transparent;"
-																data-type="booking_auto_cancel"
-																data-type-text="자동 취소 안내"
-																data-configurable-type-text="예약">
+																style="background-color: transparent;">
 																<i class="im-ico-search"></i>
 															</button>
 														</td>
@@ -1186,14 +1134,14 @@
 										</div>
 									</div>
 								</div>
+
 								<div class="card">
 									<div class="card-head">
 										<header>상품</header>
 									</div>
 									<div class="card-body no-padding">
 										<div class="table-responsive" style="overflow: visible;">
-											<table class="table no-margin no-last-border"
-												style="table-layout: fixed;">
+											<table class="table no-margin no-last-border" style="table-layout: fixed;">
 												<colgroup>
 													<col>
 													<col width="70">
@@ -1212,13 +1160,14 @@
 													</tr>
 												</thead>
 												<tbody>
-													<tr class="">
+													<tr>
 														<td style="white-space: normal;">상품 문의</td>
 														<td class="text-center">
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="prod_qa_q_user" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
@@ -1226,23 +1175,21 @@
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="prod_qa_q_admin" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
 														<td class="group on-click" id="group_prod_qa_q">
-															<select multiple="" name="prod_qa_q_groups"
-																data-placeholder="그룹 선택" id="prod_qa_q_groups"
-																style="display: none;">
-															</select>
+															<select name="prod_qa_q_groups" data-placeholder="그룹 선택"
+																id="prod_qa_q_groups" style="display: none;"></select>
 															<div class="chosen-container chosen-container-multi"
-																style="width: 100%;" title=""
-																id="prod_qa_q_groups_chosen">
+																style="width: 100%;" id="prod_qa_q_groups_chosen">
 																<ul class="chosen-choices">
-																	<li class="search-field"><input type="text"
-																			value="그룹 선택" class="default"
-																			autocomplete="off"
-																			style="width: 82px;"></li>
+																	<li class="search-field">
+																		<input type="text" value="그룹 선택" class="default"
+																			style="width: 82px;">
+																	</li>
 																</ul>
 																<div class="chosen-drop">
 																	<ul class="chosen-results"></ul>
@@ -1252,20 +1199,19 @@
 														<td class="text-right">
 															<button type="button"
 																class="_btn_mail_preview tw-text-[14px]"
-																style="background-color: transparent;"
-																data-type="prod_qa_q" data-type-text="상품 문의"
-																data-configurable-type-text="상품">
+																style="background-color: transparent;">
 																<i class="im-ico-search"></i>
 															</button>
 														</td>
 													</tr>
-													<tr class="">
+													<tr>
 														<td style="white-space: normal;">상품 답변</td>
 														<td class="text-center">
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="prod_qa_a_user" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
@@ -1273,23 +1219,21 @@
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="prod_qa_a_admin" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
 														<td class="group on-click" id="group_prod_qa_a">
-															<select multiple="" name="prod_qa_a_groups"
-																data-placeholder="그룹 선택" id="prod_qa_a_groups"
-																style="display: none;">
-															</select>
+															<select name="prod_qa_a_groups" id="prod_qa_a_groups"
+																style="display: none;"></select>
 															<div class="chosen-container chosen-container-multi"
-																style="width: 100%;" title=""
-																id="prod_qa_a_groups_chosen">
+																style="width: 100%;" id="prod_qa_a_groups_chosen">
 																<ul class="chosen-choices">
-																	<li class="search-field"><input type="text"
-																			value="그룹 선택" class="default"
-																			autocomplete="off"
-																			style="width: 82px;"></li>
+																	<li class="search-field">
+																		<input type="text" value="그룹 선택" class="default"
+																			style="width: 82px;">
+																	</li>
 																</ul>
 																<div class="chosen-drop">
 																	<ul class="chosen-results"></ul>
@@ -1299,20 +1243,19 @@
 														<td class="text-right">
 															<button type="button"
 																class="_btn_mail_preview tw-text-[14px]"
-																style="background-color: transparent;"
-																data-type="prod_qa_a" data-type-text="상품 답변"
-																data-configurable-type-text="상품">
+																style="background-color: transparent;">
 																<i class="im-ico-search"></i>
 															</button>
 														</td>
 													</tr>
-													<tr class="">
+													<tr>
 														<td style="white-space: normal;">후기작성</td>
 														<td class="text-center">
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="prod_review_user" value="ok"
-																		type="checkbox" disabled=""><span></span>
+																		type="checkbox">
+																	<span></span>
 																</label>
 															</div>
 														</td>
@@ -1320,23 +1263,21 @@
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="prod_review_admin" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
 														<td class="group on-click" id="group_prod_review">
-															<select multiple="" name="prod_review_groups"
-																data-placeholder="그룹 선택" id="prod_review_groups"
-																style="display: none;">
-															</select>
+															<select name="prod_review_groups" id="prod_review_groups"
+																style="display: none;"></select>
 															<div class="chosen-container chosen-container-multi"
-																style="width: 100%;" title=""
-																id="prod_review_groups_chosen">
+																style="width: 100%;" id="prod_review_groups_chosen">
 																<ul class="chosen-choices">
-																	<li class="search-field"><input type="text"
-																			value="그룹 선택" class="default"
-																			autocomplete="off"
-																			style="width: 82px;"></li>
+																	<li class="search-field">
+																		<input type="text" value="그룹 선택" class="default"
+																			style="width: 82px;">
+																	</li>
 																</ul>
 																<div class="chosen-drop">
 																	<ul class="chosen-results"></ul>
@@ -1346,9 +1287,7 @@
 														<td class="text-right">
 															<button type="button"
 																class="_btn_mail_preview tw-text-[14px]"
-																style="background-color: transparent;"
-																data-type="prod_review" data-type-text="후기작성"
-																data-configurable-type-text="상품">
+																style="background-color: transparent;">
 																<i class="im-ico-search"></i>
 															</button>
 														</td>
@@ -1358,6 +1297,7 @@
 										</div>
 									</div>
 								</div>
+
 								<div class="card">
 									<div class="card-head">
 										<header>게시물</header>
@@ -1365,16 +1305,16 @@
 											value="false">
 										<div style="position: absolute; right: 20px;">
 											<a href="javascript:"
-												onclick="AUTO_MAIL_SETTING.openDetailSet(&#39;post&#39;)">고급설정 <i
-													class="fa fa-sort-up" style="vertical-align: -14%;"></i>
+												onclick="AUTO_MAIL_SETTING.openDetailSet(&#39;post&#39;)">고급설정
+												<i class="fa fa-sort-up" style="vertical-align: -14%;"></i>
 												<i class="fa fa-sort-down"
-													style="vertical-align: 14%; display: none;"></i></a>
+													style="vertical-align: 14%; display: none;"></i>
+											</a>
 										</div>
 									</div>
 									<div class="card-body no-padding">
 										<div class="table-responsive" style="overflow: visible;">
-											<table class="table no-margin no-last-border"
-												style="table-layout: fixed;">
+											<table class="table no-margin no-last-border" style="table-layout: fixed;">
 												<colgroup>
 													<col>
 													<col width="70">
@@ -1393,13 +1333,14 @@
 													</tr>
 												</thead>
 												<tbody>
-													<tr class="">
+													<tr>
 														<td style="white-space: normal;">전체 신규 게시물</td>
 														<td class="text-center">
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="post_new_article_user" value="ok"
-																		type="checkbox" disabled=""><span></span>
+																		type="checkbox">
+																	<span></span>
 																</label>
 															</div>
 														</td>
@@ -1407,23 +1348,23 @@
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="post_new_article_admin" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
 														<td class="group on-click" id="group_post_new_article">
-															<select multiple="" name="post_new_article_groups"
-																data-placeholder="그룹 선택" id="post_new_article_groups"
-																style="display: none;">
-															</select>
+															<select name="post_new_article_groups"
+																id="post_new_article_groups"
+																style="display: none;"></select>
 															<div class="chosen-container chosen-container-multi"
-																style="width: 100%;" title=""
+																style="width: 100%;"
 																id="post_new_article_groups_chosen">
 																<ul class="chosen-choices">
-																	<li class="search-field"><input type="text"
-																			value="그룹 선택" class="default"
-																			autocomplete="off"
-																			style="width: 82px;"></li>
+																	<li class="search-field">
+																		<input type="text" value="그룹 선택" class="default"
+																			style="width: 82px;">
+																	</li>
 																</ul>
 																<div class="chosen-drop">
 																	<ul class="chosen-results"></ul>
@@ -1433,20 +1374,20 @@
 														<td class="text-right">
 															<button type="button"
 																class="_btn_mail_preview tw-text-[14px]"
-																style="background-color: transparent;"
-																data-type="post_new_article" data-type-text="전체 신규 게시물"
-																data-configurable-type-text="게시물">
+																style="background-color: transparent;">
 																<i class="im-ico-search"></i>
 															</button>
 														</td>
 													</tr>
-													<tr class="">
+
+													<tr>
 														<td style="white-space: normal;">전체 신규 댓글</td>
 														<td class="text-center">
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="post_new_comment_user" value="ok"
-																		type="checkbox" disabled=""><span></span>
+																		type="checkbox">
+																	<span></span>
 																</label>
 															</div>
 														</td>
@@ -1454,43 +1395,44 @@
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="post_new_comment_admin" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
 														<td class="group on-click" id="group_post_new_comment">
-															<select multiple="" name="post_new_comment_groups"
+															<select name="post_new_comment_groups"
 																data-placeholder="그룹 선택" id="post_new_comment_groups"
 																style="display: none;">
 															</select>
 															<div class="chosen-container chosen-container-multi"
-																style="width: 100%;" title=""
+																style="width: 100%;"
 																id="post_new_comment_groups_chosen">
 																<ul class="chosen-choices">
-																	<li class="search-field"><input type="text"
-																			value="그룹 선택" class="default"
-																			autocomplete="off"
-																			style="width: 82px;"></li>
+																	<li class="search-field">
+																		<input type="text" value="그룹 선택" class="default"
+																			style="width: 82px;">
+																	</li>
 																</ul>
 																<div class="chosen-drop">
 																	<ul class="chosen-results"></ul>
 																</div>
 															</div>
 														</td>
+
 														<td class="text-right">
 															<button type="button"
 																class="_btn_mail_preview tw-text-[14px]"
-																style="background-color: transparent;"
-																data-type="post_new_comment" data-type-text="전체 신규 댓글"
-																data-configurable-type-text="게시물">
+																style="background-color: transparent;">
 																<i class="im-ico-search"></i>
 															</button>
 														</td>
 													</tr>
 												</tbody>
 											</table>
+
 											<table class="table no-margin no-last-border table-sm-padding">
-												<tbody id="post_detail_set" class="">
+												<tbody id="post_detail_set">
 													<tr>
 														<td>
 															<table style="width: 100%" class="table-mail">
@@ -1501,20 +1443,16 @@
 																	<col width="">
 																</colgroup>
 																<tbody>
-
-
-
 																	<tr>
 																		<td class="text-12 td-flag">
-																			<img class="flag"
-																				src="./adminMail_files/flag_kr_circle.png">
+																			<img class="flag" src="_blank">
 																			아티클보드 새 글
 																		</td>
 																		<td style="padding:0 8px;">
 																			<div
 																				class="checkbox checkbox-styled no-margin">
 																				<label>
-																					<input type="checkbox" disabled="">
+																					<input type="checkbox">
 																					<span></span>
 																				</label>
 																			</div>
@@ -1532,19 +1470,18 @@
 																			</div>
 																		</td>
 																		<td class="group on-click">
-																			<select multiple=""
+																			<select
 																				name="post_new_detail[b2024051627b50eaa64a9a][post_new_article][groups][]"
-																				data-placeholder="그룹 선택"
 																				style="display: none;">
 																			</select>
 																			<div class="chosen-container chosen-container-multi"
-																				style="width: 100%;" title="">
+																				style="width: 100%;">
 																				<ul class="chosen-choices">
-																					<li class="search-field"><input
-																							type="text" value="그룹 선택"
+																					<li class="search-field">
+																						<input type="text" value="그룹 선택"
 																							class="default"
-																							autocomplete="off"
-																							style="width: 82px;"></li>
+																							style="width: 82px;">
+																					</li>
 																				</ul>
 																				<div class="chosen-drop">
 																					<ul class="chosen-results"></ul>
@@ -1553,20 +1490,16 @@
 																		</td>
 																	</tr>
 
-
-
-
 																	<tr>
 																		<td class="text-12 td-flag">
-																			<img class="flag"
-																				src="./adminMail_files/flag_kr_circle.png">
+																			<img class="flag" src="_blank">
 																			아티클보드 새 댓글
 																		</td>
 																		<td style="padding:0 8px;">
 																			<div
 																				class="checkbox checkbox-styled no-margin">
 																				<label>
-																					<input type="checkbox" disabled="">
+																					<input type="checkbox">
 																					<span></span>
 																				</label>
 																			</div>
@@ -1584,19 +1517,18 @@
 																			</div>
 																		</td>
 																		<td class="group on-click">
-																			<select multiple=""
+																			<select
 																				name="post_new_detail[b2024051627b50eaa64a9a][post_new_comment][groups][]"
-																				data-placeholder="그룹 선택"
 																				style="display: none;">
 																			</select>
 																			<div class="chosen-container chosen-container-multi"
-																				style="width: 100%;" title="">
+																				style="width: 100%;">
 																				<ul class="chosen-choices">
-																					<li class="search-field"><input
-																							type="text" value="그룹 선택"
+																					<li class="search-field">
+																						<input type="text" value="그룹 선택"
 																							class="default"
-																							autocomplete="off"
-																							style="width: 82px;"></li>
+																							style="width: 82px;">
+																					</li>
 																				</ul>
 																				<div class="chosen-drop">
 																					<ul class="chosen-results"></ul>
@@ -1604,15 +1536,10 @@
 																			</div>
 																		</td>
 																	</tr>
-
-
 																</tbody>
 															</table>
-
 														</td>
 													</tr>
-
-
 
 													<tr>
 														<td>
@@ -1624,20 +1551,16 @@
 																	<col width="">
 																</colgroup>
 																<tbody>
-
-
-
 																	<tr>
 																		<td class="text-12 td-flag">
-																			<img class="flag"
-																				src="./adminMail_files/flag_kr_circle.png">
+																			<img class="flag" src="_blank">
 																			자주 묻는 질문 새 글
 																		</td>
 																		<td style="padding:0 8px;">
 																			<div
 																				class="checkbox checkbox-styled no-margin">
 																				<label>
-																					<input type="checkbox" disabled="">
+																					<input type="checkbox">
 																					<span></span>
 																				</label>
 																			</div>
@@ -1655,19 +1578,19 @@
 																			</div>
 																		</td>
 																		<td class="group on-click">
-																			<select multiple=""
+																			<select
 																				name="post_new_detail[b202405169c294be1ca714][post_new_article][groups][]"
 																				data-placeholder="그룹 선택"
 																				style="display: none;">
 																			</select>
 																			<div class="chosen-container chosen-container-multi"
-																				style="width: 100%;" title="">
+																				style="width: 100%;">
 																				<ul class="chosen-choices">
-																					<li class="search-field"><input
-																							type="text" value="그룹 선택"
+																					<li class="search-field">
+																						<input type="text" value="그룹 선택"
 																							class="default"
-																							autocomplete="off"
-																							style="width: 82px;"></li>
+																							style="width: 82px;">
+																					</li>
 																				</ul>
 																				<div class="chosen-drop">
 																					<ul class="chosen-results"></ul>
@@ -1676,20 +1599,16 @@
 																		</td>
 																	</tr>
 
-
-
-
 																	<tr>
 																		<td class="text-12 td-flag">
-																			<img class="flag"
-																				src="./adminMail_files/flag_kr_circle.png">
+																			<img class="flag" src="_blank">
 																			자주 묻는 질문 새 댓글
 																		</td>
 																		<td style="padding:0 8px;">
 																			<div
 																				class="checkbox checkbox-styled no-margin">
 																				<label>
-																					<input type="checkbox" disabled="">
+																					<input type="checkbox">
 																					<span></span>
 																				</label>
 																			</div>
@@ -1707,19 +1626,18 @@
 																			</div>
 																		</td>
 																		<td class="group on-click">
-																			<select multiple=""
+																			<select
 																				name="post_new_detail[b202405169c294be1ca714][post_new_comment][groups][]"
-																				data-placeholder="그룹 선택"
 																				style="display: none;">
 																			</select>
 																			<div class="chosen-container chosen-container-multi"
-																				style="width: 100%;" title="">
+																				style="width: 100%;">
 																				<ul class="chosen-choices">
-																					<li class="search-field"><input
-																							type="text" value="그룹 선택"
+																					<li class="search-field">
+																						<input type="text" value="그룹 선택"
 																							class="default"
-																							autocomplete="off"
-																							style="width: 82px;"></li>
+																							style="width: 82px;">
+																					</li>
 																				</ul>
 																				<div class="chosen-drop">
 																					<ul class="chosen-results"></ul>
@@ -1727,20 +1645,16 @@
 																			</div>
 																		</td>
 																	</tr>
-
-
 																</tbody>
 															</table>
-
 														</td>
 													</tr>
-
-
 												</tbody>
 											</table>
 										</div>
 									</div>
 								</div>
+
 								<div class="card">
 									<div class="card-head">
 										<header>입력폼</header>
@@ -1748,16 +1662,16 @@
 											value="false">
 										<div style="position: absolute; right: 20px;">
 											<a href="javascript:"
-												onclick="AUTO_MAIL_SETTING.openDetailSet(&#39;form&#39;)">고급설정 <i
-													class="fa fa-sort-up" style="vertical-align: -14%;"></i>
+												onclick="AUTO_MAIL_SETTING.openDetailSet(&#39;form&#39;)">고급설정
+												<i class="fa fa-sort-up" style="vertical-align: -14%;"></i>
 												<i class="fa fa-sort-down"
-													style="vertical-align: 14%; display: none;"></i></a>
+													style="vertical-align: 14%; display: none;"></i>
+											</a>
 										</div>
 									</div>
 									<div class="card-body no-padding">
 										<div class="table-responsive" style="overflow: visible;">
-											<table class="table no-margin no-last-border"
-												style="table-layout: fixed;">
+											<table class="table no-margin no-last-border" style="table-layout: fixed;">
 												<colgroup>
 													<col>
 													<col width="70">
@@ -1776,13 +1690,14 @@
 													</tr>
 												</thead>
 												<tbody>
-													<tr class="">
+													<tr>
 														<td style="white-space: normal;">전체 신규접수</td>
 														<td class="text-center">
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="form_new_reception_user" value="ok"
-																		type="checkbox" disabled=""><span></span>
+																		type="checkbox" disabled="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
@@ -1790,35 +1705,34 @@
 															<div class="checkbox checkbox-styled no-margin">
 																<label>
 																	<input name="form_new_reception_admin" value="ok"
-																		type="checkbox" checked=""><span></span>
+																		type="checkbox" checked="">
+																	<span></span>
 																</label>
 															</div>
 														</td>
 														<td class="group on-click" id="group_form_new_reception">
-															<select multiple="" name="form_new_reception_groups"
-																data-placeholder="그룹 선택" id="form_new_reception_groups"
-																style="display: none;">
+															<select name="form_new_reception_groups"
+																id="form_new_reception_groups" style="display: none;">
 															</select>
 															<div class="chosen-container chosen-container-multi"
-																style="width: 100%;" title=""
+																style="width: 100%;"
 																id="form_new_reception_groups_chosen">
 																<ul class="chosen-choices">
-																	<li class="search-field"><input type="text"
-																			value="그룹 선택" class="default"
-																			autocomplete="off"
-																			style="width: 82px;"></li>
+																	<li class="search-field">
+																		<input type="text" value="그룹 선택" class="default"
+																			style="width: 82px;">
+																	</li>
 																</ul>
 																<div class="chosen-drop">
 																	<ul class="chosen-results"></ul>
 																</div>
 															</div>
 														</td>
+
 														<td class="text-right">
 															<button type="button"
 																class="_btn_mail_preview tw-text-[14px]"
-																style="background-color: transparent;"
-																data-type="form_new_reception" data-type-text="전체 신규접수"
-																data-configurable-type-text="입력폼">
+																style="background-color: transparent;">
 																<i class="im-ico-search"></i>
 															</button>
 														</td>
@@ -1826,7 +1740,7 @@
 												</tbody>
 											</table>
 											<table class="table no-margin no-last-border table-sm-padding">
-												<tbody id="form_detail_set" class="">
+												<tbody id="form_detail_set">
 													<tr>
 														<td>
 															<table style="width: 100%" class="table-mail">
@@ -1837,20 +1751,16 @@
 																	<col width="">
 																</colgroup>
 																<tbody>
-
-
-
 																	<tr>
 																		<td class="text-12 td-flag">
-																			<img class="flag"
-																				src="./adminMail_files/flag_kr_circle.png">
+																			<img class="flag" src="_blank">
 																			A/S 신청서
 																		</td>
 																		<td style="padding:0 8px;">
 																			<div
 																				class="checkbox checkbox-styled no-margin">
 																				<label>
-																					<input type="checkbox" disabled="">
+																					<input type="checkbox">
 																					<span></span>
 																				</label>
 																			</div>
@@ -1868,19 +1778,19 @@
 																			</div>
 																		</td>
 																		<td class="group on-click">
-																			<select multiple=""
+																			<select
 																				name="form_new_detail[b20240516102806ab30705][form_new_reception][groups][]"
 																				data-placeholder="그룹 선택"
 																				style="display: none;">
 																			</select>
 																			<div class="chosen-container chosen-container-multi"
-																				style="width: 100%;" title="">
+																				style="width: 100%;">
 																				<ul class="chosen-choices">
-																					<li class="search-field"><input
-																							type="text" value="그룹 선택"
+																					<li class="search-field">
+																						<input type="text" value="그룹 선택"
 																							class="default"
-																							autocomplete="off"
-																							style="width: 82px;"></li>
+																							style="width: 82px;">
+																					</li>
 																				</ul>
 																				<div class="chosen-drop">
 																					<ul class="chosen-results"></ul>
@@ -1888,15 +1798,10 @@
 																			</div>
 																		</td>
 																	</tr>
-
-
 																</tbody>
 															</table>
-
 														</td>
 													</tr>
-
-
 
 													<tr>
 														<td>
@@ -1909,12 +1814,9 @@
 																</colgroup>
 																<tbody>
 
-
-
 																	<tr>
 																		<td class="text-12 td-flag">
-																			<img class="flag"
-																				src="./adminMail_files/flag_kr_circle.png">
+																			<img class="flag" src="_blank">
 																			보장 상태 확인
 																		</td>
 																		<td style="padding:0 8px;">
@@ -1938,20 +1840,20 @@
 																				</label>
 																			</div>
 																		</td>
+
 																		<td class="group on-click">
-																			<select multiple=""
+																			<select
 																				name="form_new_detail[b2024051680a6f5e85fbe7][form_new_reception][groups][]"
-																				data-placeholder="그룹 선택"
 																				style="display: none;">
 																			</select>
 																			<div class="chosen-container chosen-container-multi"
-																				style="width: 100%;" title="">
+																				style="width: 100%;">
 																				<ul class="chosen-choices">
-																					<li class="search-field"><input
-																							type="text" value="그룹 선택"
+																					<li class="search-field">
+																						<input type="text" value="그룹 선택"
 																							class="default"
-																							autocomplete="off"
-																							style="width: 82px;"></li>
+																							style="width: 82px;">
+																					</li>
 																				</ul>
 																				<div class="chosen-drop">
 																					<ul class="chosen-results"></ul>
@@ -1959,15 +1861,10 @@
 																			</div>
 																		</td>
 																	</tr>
-
-
 																</tbody>
 															</table>
-
 														</td>
 													</tr>
-
-
 												</tbody>
 											</table>
 										</div>
@@ -1977,72 +1874,91 @@
 						</div><!--end.row-->
 					</form>
 				</div><!--섹션 끝 -->
-				<div><a class="btn btn-primary disabled">저장</a></div>
+
+				<div>
+					<a class="btn btn-primary disabled">저장</a>
+				</div>
 			</section>
-		</div><!--end #content-->
+		</div>
+
 		<!-- END CONTENT -->
-		<div class="modal fade" id="helpmail" tabindex="-1" role="dialog" aria-labelledby="helpmail">
+		<div class="modal fade" id="helpmail" role="dialog">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><i
-								class="btl bt-times"></i></button>
+						<button type="button" class="close">
+							<i class="btl bt-times"></i>
+						</button>
 						<h3 class="modal-title" id="myModalLabel">메일 수신 도움말</h3>
 					</div>
+
 					<div class="modal-body">
 						<p>메일을 정상적으로 수신할 수 없는 경우 다음 사항을 점검해 보시기 바랍니다.</p>
 						<ul class="description-list">
-							<li>서비스 제공업체가 <strong>기본(설정안함)</strong>으로 설정된 경우. <a class="text-primary" target="_blank"
-									href="https://imweb.me/faq?mode=view&amp;category=30&amp;category2=44&amp;idx=29724">해결방법
-									알아보기</a></li>
-							<li>서비스 제공업체를 설정했으나 발신자 메일 주소가 해당 서비스와 <strong>전혀 다른 도메인</strong>인 경우(예: 네이버로 설정했는데 발신메일 주소는
-								@daum.net 으로 지정) 올바른 발신 메일 주소로 수정하여 다시 메일 인증 절차를 수행하세요.</li>
-							<li>서비스 제공업체 설정 및 인증메일까지 거쳤으나 이후 <strong>해당 계정의 비밀번호를 변경</strong>하는 등 접속정보에 변경이 생긴 경우 변경된
-								정보로 수정하여 다시 메일 인증 절차를 수행하세요.</li>
-							<li>설정한 메일 서비스 제공업체에서 <strong>발송 가능한 한도에 도달</strong>한 경우 한도 제한이 풀릴 때 까지 기다리세요.</li>
+							<li>
+								서비스 제공업체가 <strong>기본(설정안함)</strong>으로 설정된 경우.
+								<a class="text-primary" href="_blank">해결방법 알아보기</a>
+							</li>
+							<li>
+								서비스 제공업체를 설정했으나 발신자 메일 주소가 해당 서비스와 <strong>전혀 다른 도메인</strong>
+								인 경우(예: 네이버로 설정했는데 발신메일 주소는 @daum.net 으로 지정) 올바른 발신 메일 주소로 수정하여 다시 메일 인증 절차를 수행하세요.
+							</li>
+							<li>
+								서비스 제공업체 설정 및 인증메일까지 거쳤으나 이후 <strong>해당 계정의 비밀번호를 변경</strong>하는 등 접속정보에 변경이 생긴 경우 변경된
+								정보로 수정하여 다시 메일 인증 절차를 수행하세요.
+							</li>
+							<li>
+								설정한 메일 서비스 제공업체에서 <strong>발송 가능한 한도에 도달</strong>한 경우 한도 제한이 풀릴 때 까지 기다리세요.
+							</li>
 							<li>
 								<p>내 도메인에 TXT레코드가 올바르게 설정되지 않은 경우</p>
 								<ul>
-									<li>개인 도메인으로 발신 이메일 주소를 사용하는 경우만 해당됩니다.(예: 내 사이트 도메인이 abc.com 이고 발신 메일 주소도
-										my@abc.com 인 경우)</li>
-									<li>내 도메인 이름으로 메일을 발송한 경우 SPF레코드가 포함된 TXT레코드를 네임서버 설정에서 추가해야 합니다. (SPF 레코드는 다음
-										스마트워크, 라인웍스, 하이웍스 등 메일 서비스 업체에 따라 다르며 해당 업체에 문의하시기 바랍니다.)</li>
+									<li>
+										개인 도메인으로 발신 이메일 주소를 사용하는 경우만 해당됩니다.(예: 내 사이트 도메인이 abc.com 이고 발신 메일 주소도
+										my@abc.com 인 경우)
+									</li>
+									<li>
+										내 도메인 이름으로 메일을 발송한 경우 SPF레코드가 포함된 TXT레코드를 네임서버 설정에서 추가해야 합니다. (SPF 레코드는 다음
+										스마트워크, 라인웍스, 하이웍스 등 메일 서비스 업체에 따라 다르며 해당 업체에 문의하시기 바랍니다.)
+									</li>
 								</ul>
 							</li>
 						</ul>
 					</div>
+
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
 					</div>
+
 				</div>
 			</div>
 		</div>
 
 		<!-- END BASE -->
+		<div class="modal" id="cocoaModal" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content"></div>
+			</div>
+		</div>
 
-	<div class="modal" id="cocoaModal" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content"></div>
+		<div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
+			<div class="modal-dialog">
+				<div class="modal-content"></div>
+			</div>
+		</div>
+
+		<iframe name="hidden_frame" id="hidden_frame"
+			style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;" src="_blank"></iframe>
+
+
+		<div id="device-breakpoints">
+			<div class="device-xs visible-xs" data-breakpoint="xs"></div>
+			<div class="device-sm visible-sm" data-breakpoint="sm"></div>
+			<div class="device-md visible-md" data-breakpoint="md"></div>
+			<div class="device-lg visible-lg" data-breakpoint="lg"></div>
 		</div>
 	</div>
 
-	<div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
-		<div class="modal-dialog">
-			<div class="modal-content"></div>
-		</div>
-	</div>
-
-	<iframe name="hidden_frame" id="hidden_frame"
-		style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;"
-		src="./adminMail_files/saved_resource.html"></iframe>
-
-
-	<div id="device-breakpoints">
-		<div class="device-xs visible-xs" data-breakpoint="xs"></div>
-		<div class="device-sm visible-sm" data-breakpoint="sm"></div>
-		<div class="device-md visible-md" data-breakpoint="md"></div>
-		<div class="device-lg visible-lg" data-breakpoint="lg"></div>
-	</div>
-</body>
+	<body>
 
 </html>

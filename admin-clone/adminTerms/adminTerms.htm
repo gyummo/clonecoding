@@ -9,118 +9,9 @@
   <link rel="stylesheet" type="text/css" href="./adminTerms_files/admin.css">
 </head>
 
-<body class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
-  <input type="hidden" id="USE_OMS" value="on">
-  <!-- BEGIN BASE-->
-  <div id="dashboard_loader" class="se-pre-con" style="display: none;">
-    <div class="page-loader-spinner">
-      <div class="double-bounce1"></div>
-      <div class="double-bounce2"></div>
-    </div>
-    <div class="progress">
-      <div class="progress-bar" role="progressbar" style="width: 70%;">
-        <label>70%</label>
-      </div>
-    </div>
-  </div>
-  <div id="base">
+<body>
+  <div class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
 
-
-    <header class="top_header" id="header">
-      <div class="headerbar">
-        <div class="headerbar-left">
-          <ul class="header-nav header-nav-options">
-            <li class="hidden-lg hidden-md">
-              <a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
-                <img src="./adminTerms_files/icon-bo-menu-01.svg">
-              </a>
-            </li>
-            <li class="header-nav-brand">
-              <div class="brand-holder">
-                <span class="location_text">
-                  <a href="https://qjfhdnaos51106.imweb.me/admin/shopping/answers">adminTerms</a> </span>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <div class="headerbar-right">
-          <div class="header-nav header-text hidden-sm hidden-xs">
-          </div><!--end .header-nav-options -->
-        </div>
-        <!--끝 #header-navbar-collapse -->
-      </div>
-    </header>
-    <header class="top_header control-fixed" id="select_header" style="display: none;">
-      <div class="headerbar">
-        <div class="headerbar-left">
-          <ul class="header-nav">
-            <li class="header-nav-brand">
-              <div class="brand-holder ">
-                <a class="btn btn-flat btn-default-white no-padding-x margin-right-xl" href="javascript:;"
-                  onclick="CONTENTS_LIST.cancelCheckItem()"><i class="btm bt-arrow-left"></i></a>
-              </div>
-              <div class="brand-holder">
-                <div class="dropdown pull-left">
-                  <button class="btn btn-flat btn-default-white no-padding-x margin-right-xl text-lg"
-                    aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" id="dLabel">
-                    <span id="select_cnt"></span>개 선택됨 <i class="zmdi zmdi-caret-down"></i>
-                  </button>
-                  <ul aria-labelledby="dLabel" role="menu" class="dropdown-menu animation-dock">
-                    <li>
-                      <a href="javascript:;" onclick="CONTENTS_LIST.cancelCheckItem()">선택 안함</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="headerbar-right">
-          <ul class="header-nav header-nav-options">
-            <li>
-              <div class="btn-group">
-                <a class="btn btn-default-bright" href="javascript:;"
-                  onclick="CONTENTS_LIST.checkActionWithReviewCode(function(codes){SHOP_ANSWERS_MANAGE.openDeleteAnswersForm(codes,&#39;N&#39;);})"><span
-                    class="hidden-xs">adminTerms</span> 삭제</a>
-              </div>
-              <div class="btn-group">
-                <a data-toggle="dropdown" class="btn btn-default-bright border-radius-right">adminTerms 상태변경 <i
-                    class="zmdi zmdi-caret-down"></i></a>
-                <ul aria-labelledby="dLabel" role="menu" class="dropdown-menu animation-dock check">
-                  <li>
-                    <a href="https://qjfhdnaos51106.imweb.me/admin/shopping/answers#"
-                      onclick="CONTENTS_LIST.checkActionWithReviewCode(function(codes){SHOP_ANSWERS_MANAGE.updateQnaStatusForm(&#39;complete&#39;,codes);})">답변완료
-                      처리</a>
-                  </li>
-                  <li>
-                    <a href="https://qjfhdnaos51106.imweb.me/admin/shopping/answers#"
-                      onclick="CONTENTS_LIST.checkActionWithReviewCode(function(codes){SHOP_ANSWERS_MANAGE.updateQnaStatusForm(&#39;wait&#39;,codes);})">답변대기
-                      처리</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="btn-group">
-                <a data-toggle="dropdown" class="btn btn-default-bright border-radius-right">비밀adminTerms 설정/해제 <i
-                    class="zmdi zmdi-caret-down"></i></a>
-                <ul aria-labelledby="dLabel" role="menu" class="dropdown-menu animation-dock check">
-                  <li>
-                    <a href="https://qjfhdnaos51106.imweb.me/admin/shopping/answers#"
-                      onclick="CONTENTS_LIST.checkActionWithReviewCode(function(codes){SHOP_ANSWERS_MANAGE.updateQnaSecretForm(&#39;Y&#39;,codes);})">비밀adminTerms
-                      설정</a>
-                  </li>
-                  <li>
-                    <a href="https://qjfhdnaos51106.imweb.me/admin/shopping/answers#"
-                      onclick="CONTENTS_LIST.checkActionWithReviewCode(function(codes){SHOP_ANSWERS_MANAGE.updateQnaSecretForm(&#39;N&#39;,codes);})">비밀adminTerms
-                      해제</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </header>
     <!-- BEGIN CONTENT-->
     <div id="content">
       <div id="alertBox" class="alert__wrap"> </div>
@@ -129,25 +20,26 @@
           <div class="row">
             <div class="col-md-12">
               <div class="holder prod-search-form">
+
                 <div class="dropdown card qna-filter" style="padding: 0px;">
-                  <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                    class="form-control qna-filter-btn" style="height: 48px;">
+                  <button type="button" class="form-control qna-filter-btn" style="height: 48px;">
                     <span style="padding-left: 20px;">필터</span>
                     <div class="caret"></div>
                   </button>
+
                   <ul class="dropdown-menu" role="menu">
-                    <form id="search_qna_form" method="post" tabindex="hidden_frame"
-                      action="https://qjfhdnaos51106.imweb.me/admin/shopping/qna/qna_search.cm">
+                    <form id="search_qna_form" method="post" action="_blank">
                       <li class="qna-list">
                         <div class="down-btn">
                           <select class="form-control" name="qna_status" id="qna_status"
-                            onclick="event.cancelBubble=true;" autocomplete="off">
+                            onclick="event.cancelBubble=true;">
                             <option value="">adminTerms 상태</option>
                             <option value="wait">답변 대기</option>
                             <option value="complete">답변 완료</option>
                           </select>
                         </div>
                       </li>
+
                       <li class="qna-list">
                         <div class="down-btn">
                           <select class="form-control" name="qna_type" id="qna_type" onclick="event.cancelBubble=true;"
@@ -159,64 +51,76 @@
                           </select>
                         </div>
                       </li>
+
                       <li class="qna-list">
                         <div class="down-btn">
                           <select class="form-control" name="qna_secret" id="qna_secret"
-                            onclick="event.cancelBubble=true;" autocomplete="off">
+                            onclick="event.cancelBubble=true;">
                             <option value="">비밀adminTerms 여부</option>
                             <option value="secret">비밀adminTerms</option>
                             <option value="no_secret">공개adminTerms</option>
                           </select>
                         </div>
                       </li>
+
                       <li class="qna-list">
                         <div class="down-btn">
                           <input type="text" class="form-control" name="start_time" id="start_time"
-                            placeholder="검색할 기간의 시작일" autocomplete="off" value="">
+                            placeholder="검색할 기간의 시작일" value="">
                         </div>
                       </li>
+
                       <li class="qna-list">
                         <div class="down-btn">
                           <input type="text" class="form-control" name="end_time" id="end_time"
-                            placeholder="검색할 기간의 종료일" autocomplete="off" value="">
+                            placeholder="검색할 기간의 종료일" value="">
                         </div>
                       </li>
+
                       <li class="qna-list">
                         <input type="text" name="qna_nick" id="qna_nick" class="form-control" placeholder="작성자명"
-                          autocomplete="off" value="">
+                          value="">
                       </li>
+
                       <li class="qna-list">
                         <input type="text" name="qna_prod_name" id="qna_prod_name" class="form-control"
-                          placeholder="상품명" autocomplete="off" value="">
+                          placeholder="상품명" value="">
                       </li>
+
                       <div class="height-1"></div>
+
                       <div style="text-align: right;">
                         <a href="javascript:;" class="btn-default"
                           onclick="SHOP_ANSWERS_MANAGE.qnaFilterReset(); return false;">초기화</a>
                         <a href="javascript:;" class="btn-primary"
                           onclick="SHOP_ANSWERS_MANAGE.qnaSearchByFilter(&#39;search&#39;); return false;">검색</a>
                       </div>
+
                     </form>
                   </ul>
                 </div>
+
                 <div class="card no-margin">
                   <div class="card-body no-padding">
                     <form role="search" class="user-search" onsubmit="return false;">
                       <div class="form-group">
                         <span class="twitter-typeahead" style="position: relative; display: inline-block;">
                           <input type="text" id="keyword" class="form-control typeahead tt-input"
-                            placeholder="adminTerms 제목, 내용 검색" autocomplete="off" spellcheck="false" dir="auto"
+                            placeholder="adminTerms 제목, 내용 검색"
                             onkeydown="if (event.keyCode==13) SHOP_ANSWERS_MANAGE.qnaSearchByFilter(&#39;search&#39;, &#39;&#39;, &#39;keyword_input&#39;);">
                         </span>
+
                         <label class="icon_set" style="right: 18px;"
                           onclick="SHOP_ANSWERS_MANAGE.qnaSearchByFilter(&#39;search&#39;, &#39;&#39;, &#39;keyword_input&#39;);">
                           <i class="btl bt-search "></i>
                         </label>
+
                       </div>
                     </form>
                   </div>
                 </div>
               </div>
+
               <div class="card-head prod-excel-form">
                 <header class="small">
                   <div class="checkbox-inline checkbox-styled">
@@ -226,8 +130,8 @@
                     </label>
                   </div>
                 </header>
-                <div class="excel-button">
 
+                <div class="excel-button">
                   <select name="pagesize" id="pagesize"
                     onchange="SHOP_ANSWERS_MANAGE.qnaSearchByFilter(&#39;search&#39;)" class="form-control text-13">
                     <option value="" selected="">5개씩 보기</option>
@@ -238,6 +142,7 @@
                   </select>
                 </div>
               </div>
+
               <div id="qna_list">
                 <div class="card-body no-padding _content_body">
                   <div class="text-center text-gray">
@@ -250,30 +155,31 @@
         </div>
       </section><!--섹션 끝 -->
     </div><!--end #content-->
-<!-- END BASE -->
+    <!-- END BASE -->
 
-  <div class="modal" id="cocoaModal" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content"></div>
+    <div class="modal" id="cocoaModal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content"></div>
+      </div>
+    </div>
+
+    <div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
+      <div class="modal-dialog">
+        <div class="modal-content"></div>
+      </div>
+    </div>
+
+    <iframe name="hidden_frame" id="hidden_frame"
+      style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;" src="_blank"></iframe>
+
+    <div id="device-breakpoints">
+      <div class="device-xs visible-xs" data-breakpoint="xs"></div>
+      <div class="device-sm visible-sm" data-breakpoint="sm"></div>
+      <div class="device-md visible-md" data-breakpoint="md"></div>
+      <div class="device-lg visible-lg" data-breakpoint="lg"></div>
     </div>
   </div>
 
-  <div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
-    <div class="modal-dialog">
-      <div class="modal-content"></div>
-    </div>
-  </div>
-
-  <iframe name="hidden_frame" id="hidden_frame"
-    style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;"
-    src="./adminTerms_files/saved_resource.html"></iframe>
-
-  <div id="device-breakpoints">
-    <div class="device-xs visible-xs" data-breakpoint="xs"></div>
-    <div class="device-sm visible-sm" data-breakpoint="sm"></div>
-    <div class="device-md visible-md" data-breakpoint="md"></div>
-    <div class="device-lg visible-lg" data-breakpoint="lg"></div>
-  </div>
-</body>
+  <body>
 
 </html>

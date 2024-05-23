@@ -10,49 +10,9 @@
 </head>
 
 
-<body class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
-	<input type="hidden" id="USE_OMS" value="on">
-	<!-- BEGIN BASE-->
-	<div id="dashboard_loader" class="se-pre-con" style="display: none;">
-		<div class="page-loader-spinner">
-			<div class="double-bounce1"></div>
-			<div class="double-bounce2"></div>
-		</div>
-		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 70%;">
-				<label>70%</label>
-			</div>
-		</div>
-	</div>
-	<div id="base">
-		<header class="top_header">
-			<div class="headerbar">
-				<div class="headerbar-left">
-					<ul class="header-nav header-nav-options">
-						<li class="hidden-lg hidden-md">
-							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar"
-								href="javascript:void(0);">
-								<img src="./adminRequest_files/icon-bo-menu-01.svg">
-							</a>
-						</li>
-						<li class="header-nav-brand">
-							<div class="brand-holder">
-								<span class="location_text">
-									<a href="https://qjfhdnaos51106.imweb.me/admin/shopping/mileage">적립금</a> </span>
-							</div>
-						</li>
-					</ul>
-				</div>
+<body>
+	<div class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
 
-				<div class="headerbar-right">
-					<ul class="header-nav header-nav-options">
-						<li>
-						</li>
-					</ul><!--end .header-nav-options -->
-				</div><!--끝 #header-navbar-collapse -->
-				<!--끝 #header-navbar-collapse -->
-			</div>
-		</header>
 		<!-- BEGIN CONTENT-->
 		<div id="content">
 			<div id="alertBox" class="alert__wrap"> </div>
@@ -65,8 +25,7 @@
 									<header>적립금 지급/차감</header>
 								</div>
 								<div class="card-body">
-									<form id="shop_member_point" class="form-horizontal form-validate" role="form"
-										novalidate="novalidate">
+									<form id="shop_member_point" class="form-horizontal form-validate" role="form">
 										<div class="form-group">
 											<label class="col-sm-2 control-label">조정 대상</label>
 											<div class="col-sm-8">
@@ -95,6 +54,7 @@
 												</div>
 											</div>
 										</div>
+
 										<div class="form-group">
 											<label class="col-sm-2 control-label">적립금액</label>
 											<div class="col-sm-8">
@@ -124,10 +84,12 @@
 														style="text-align: right; top: -10px;">
 													</div>
 												</div>
-												<p class="margin-top-xl no-margin-bottom text-gray-light">적립금의 명칭, 적립조건
-													등 세부사항은 <a
-														href="https://qjfhdnaos51106.imweb.me/admin/shopping/config"
-														class="text-primary">쇼핑 환경설정</a>에서 관리 가능합니다.</p>
+
+												<p class="margin-top-xl no-margin-bottom text-gray-light">
+													적립금의 명칭, 적립조건 등 세부사항은
+													<a href="_blank" class="text-primary">쇼핑 환경설정</a>
+													에서 관리 가능합니다.
+												</p>
 											</div>
 										</div>
 									</form>
@@ -135,6 +97,7 @@
 							</div>
 						</div>
 					</div>
+
 					<div class="row">
 						<div class="col-md-12">
 							<div class="card">
@@ -144,12 +107,13 @@
 											<span class="twitter-typeahead"
 												style="position: relative; display: inline-block;">
 												<input type="text" class="_search form-control typeahead tt-input"
-													placeholder="내용 검색" autocomplete="off" spellcheck="false" dir="auto"
+													placeholder="내용 검색"
 													style="position: relative; vertical-align: top; background-color: transparent; padding-left: 0px; border: none;"
 													onkeydown="if (event.keyCode==13) { SHOP_MEMBER_POINT.startSearch(); return false;}"
 													value="">
 											</span>
 										</div>
+
 										<div class="serach_wrap big_search">
 											<div class="dd-filter-serach">
 												<label class="icon_set">
@@ -158,18 +122,19 @@
 												</label>
 											</div>
 										</div>
-
 									</form>
 								</div>
 							</div>
+
 							<div class="card">
 								<div class="card-head">
 									<header>적립금 처리내역</header>
 									<div class="tools">
 										<a href="javascript:;" onclick="SHOP_MEMBER_POINT.openModalExcelDownload()"
-											class="btn btn-white btn-sm btn-sm-padding"><i
-												class="btl bt-download"></i><span
-												style="padding-left: 10px;">내보내기</span></a>
+											class="btn btn-white btn-sm btn-sm-padding">
+											<i class="btl bt-download"></i>
+											<span style="padding-left: 10px;">내보내기</span>
+										</a>
 									</div>
 								</div>
 								<div class="card-body no-padding">
@@ -210,31 +175,32 @@
 		</div><!--end #content-->
 		<!-- END CONTENT -->
 
- <!-- END BASE -->
+		<!-- END BASE -->
 
-	<div class="modal" id="cocoaModal" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content"></div>
+		<div class="modal" id="cocoaModal" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content"></div>
+			</div>
+		</div>
+
+		<div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
+			<div class="modal-dialog">
+				<div class="modal-content"></div>
+			</div>
+		</div>
+
+		<iframe name="hidden_frame" id="hidden_frame"
+			style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;" src="_blank"></iframe>
+
+
+		<div id="device-breakpoints">
+			<div class="device-xs visible-xs" data-breakpoint="xs"></div>
+			<div class="device-sm visible-sm" data-breakpoint="sm"></div>
+			<div class="device-md visible-md" data-breakpoint="md"></div>
+			<div class="device-lg visible-lg" data-breakpoint="lg"></div>
 		</div>
 	</div>
 
-	<div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
-		<div class="modal-dialog">
-			<div class="modal-content"></div>
-		</div>
-	</div>
-
-	<iframe name="hidden_frame" id="hidden_frame"
-		style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;"
-		src="./adminRequest_files/saved_resource.html"></iframe>
-
-
-	<div id="device-breakpoints">
-		<div class="device-xs visible-xs" data-breakpoint="xs"></div>
-		<div class="device-sm visible-sm" data-breakpoint="sm"></div>
-		<div class="device-md visible-md" data-breakpoint="md"></div>
-		<div class="device-lg visible-lg" data-breakpoint="lg"></div>
-	</div>
-</body>
+	<body>
 
 </html>

@@ -10,235 +10,204 @@
 </head>
 
 
-<body class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
-	<input type="hidden" id="USE_OMS" value="on">
-	<!-- BEGIN BASE-->
-	<div id="dashboard_loader" class="se-pre-con" style="display: none;">
-		<div class="page-loader-spinner">
-			<div class="double-bounce1"></div>
-			<div class="double-bounce2"></div>
-		</div>
-		<div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: 70%;">
-				<label>70%</label>
-			</div>
-		</div>
-	</div>
-	<div id="base">
+<body> 
+	<div class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
 
-		<header class="top_header">
-			<div class="headerbar">
-				<div class="headerbar-left">
-					<ul class="header-nav header-nav-options">
-						<li class="hidden-lg hidden-md">
-							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar"
-								href="javascript:void(0);">
-								<img src="./adminHome_files/icon-bo-menu-01.svg">
-							</a>
-						</li>
-						<li class="header-nav-brand">
-							<div class="brand-holder">
-								<span class="location_text">
-									<a href="https://qjfhdnaos51106.imweb.me/admin/stat/summary">adminHome</a> </span>
+	<div id="content">
+		<div id="alertBox" class="alert__wrap"> </div>
+		<section>
+			<div class="t">
+				<div class="tab-pane active" id="daily">
+					<div>
+						<div class="card">
+							<div class="card-head">
+								<header>방문자</header>
+								<a href="_blank">더보기</a>
 							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</header>
-		<div id="content">
-			<div id="alertBox" class="alert__wrap"> </div>
-			<section>
-				<div class="t">
-					<div class="tab-pane active" id="daily">
-						<div>
-							<div class="card">
-								<div class="card-head">
-									<header>방문자</header>
-									<a href="https://qjfhdnaos51106.imweb.me/admin/stat/visitor/">더보기</a>
-								</div>
-								<div class="card-body">
-									<div>
-										<div class="text-sm text-right">
-											<span style="margin-right: 15px;"><i
-													class="fa fa-circle text-primary-bright"></i> 페이지뷰</span>
-											<i class="fa fa-circle text-primary"></i> 방문자
-										</div>
-										<canvas id="chart1" style="width: 1101px; height: 250px;" width="1101"
-											height="250"></canvas>
+							<div class="card-body">
+								<div>
+									<div class="text-sm text-right">
+										<span style="margin-right: 15px;">
+											<i class="fa fa-circle text-primary-bright"></i> 페이지뷰</span>
+										<i class="fa fa-circle text-primary"></i> 방문자
 									</div>
-									<div id="chartjs-tooltip"></div>
-								</div><!--end.card-body-->
-							</div><!--end.card-->
-						</div><!--end.col-->
-						<div class="_row_">
-							<div class="_col_">
-								<div>
-									<div class="card">
-										<div class="card-head">
-											<header>기간별 분석</header>
-											<a href="https://qjfhdnaos51106.imweb.me/admin/stat/analytics/">더보기</a>
-										</div>
-										<div class="card-body">
-											<span class="text-gray-light">오늘</span>
-											<span class="pull-right text-sm">0명</span>
-											<div class="progress progress-hairline success">
-												<div class="progress-bar progress-bar-default-dark"
-													style="width: 0%;"></div>
+									<canvas id="chart1" style="width: 1101px; height: 250px;" width="1101"
+										height="250"></canvas>
+								</div>
+								<div id="chartjs-tooltip"></div>
+							</div><!--end.card-body-->
+						</div><!--end.card-->
+					</div><!--end.col-->
+					<div class="_row_">
+						<div class="_col_">
+							<div>
+								<div class="card">
+									<div class="card-head">
+										<header>기간별 분석</header>
+										<a href="_blank">더보기</a>
+									</div>
+									<div class="card-body">
+										<span class="text-gray-light">오늘</span>
+										<span class="pull-right text-sm">0명</span>
+										<div class="progress progress-hairline success">
+											<div class="progress-bar progress-bar-default-dark" style="width: 0%;">
 											</div>
-										</div><!--end.card-body-->
-									</div><!--end.card-->
-								</div><!--end.col-->
-								<div>
-									<div class="card">
-										<div class="card-head">
-											<header>유입 사이트</header>
-											<a href="https://qjfhdnaos51106.imweb.me/admin/stat/site/">더보기</a>
 										</div>
-										<div class="card-body no-padding">
-											<table class="table table-hover no-margin no-last-border">
-												<thead>
-													<tr>
-														<th class="opacity-50 text-12">도메인</th>
-														<th class="text-right opacity-50 text-12">클릭수</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td class="url"><a href="http://qjfhdnaos51106.imweb.me/"
-																target="_blank">qjfhdnaos51106.imweb.me</a></td>
-														<td class="text-right text-gray-light">3</td>
-													</tr>
-												</tbody>
-											</table>
-										</div><!--end.card-body-->
-									</div><!--end.card-->
-								</div><!--end.col-->
-								<div>
-									<div class="card">
-										<div class="card-head">
-											<header>유입 검색어</header>
-											<a href="https://qjfhdnaos51106.imweb.me/admin/stat/keyword/">더보기</a>
-										</div>
-										<div class="card-body no-padding">
-											<table class="table table-hover no-margin no-last-border">
-												<thead>
-													<tr>
-														<th class="opacity-50 text-12">검색어</th>
-														<th class="text-right opacity-50 text-12">클릭수</th>
-													</tr>
-												</thead>
-												<tbody>
-												</tbody>
-											</table>
-										</div><!--end.card-body-->
-									</div><!--end.card-->
-								</div><!--end.col-->
-							</div>
-							<div class="_col_">
-								<div>
-									<div class="card">
-										<div class="card-head">
-											<header>많이 방문한 페이지</header>
-											<a href="https://qjfhdnaos51106.imweb.me/admin/stat/page/">더보기</a>
-										</div>
-										<div class="card-body no-padding">
-											<table class="table table-hover no-margin no-last-border">
-												<thead>
-													<tr>
-														<th class="opacity-50 text-12">제목</th>
-														<th class="opacity-50 text-12">URL</th>
-														<th class="text-right opacity-50 text-12">조회</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Home</td>
-														<td>/home</td>
-														<td class="text-right text-gray-light">3</td>
-													</tr>
-													<tr>
-														<td>A/S&nbsp;신청</td>
-														<td>/asservice</td>
-														<td class="text-right text-gray-light">1</td>
-													</tr>
-													<tr>
-														<td>아티클보드</td>
-														<td>/articleboard</td>
-														<td class="text-right text-gray-light">1</td>
-													</tr>
-													<tr>
-														<td>Wise&nbsp;Phirels</td>
-														<td>/wisephirels</td>
-														<td class="text-right text-gray-light">1</td>
-													</tr>
-													<tr>
-														<td>로그인</td>
-														<td>/login</td>
-														<td class="text-right text-gray-light">1</td>
-													</tr>
-												</tbody>
-											</table>
-										</div><!--end.card-body-->
-									</div><!--end.card-->
-								</div><!--end.col-->
-								<div>
-									<div class="card">
-										<div class="card-head">
-											<header>트래픽</header>
-											<a href="https://qjfhdnaos51106.imweb.me/admin/stat/traffic/">더보기</a>
-										</div>
-										<div class="card-body">
+									</div><!--end.card-body-->
+								</div><!--end.card-->
+							</div><!--end.col-->
+							<div>
+								<div class="card">
+									<div class="card-head">
+										<header>유입 사이트</header>
+										<a href="_blank">더보기</a>
+									</div>
+									<div class="card-body no-padding">
+										<table class="table table-hover no-margin no-last-border">
+											<thead>
+												<tr>
+													<th class="opacity-50 text-12">도메인</th>
+													<th class="text-right opacity-50 text-12">클릭수</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="url">
+														<a href="_blank">qjfhdnaos51106.imweb.me</a>
+													</td>
+													<td class="text-right text-gray-light">3</td>
+												</tr>
+											</tbody>
+										</table>
+									</div><!--end.card-body-->
+								</div><!--end.card-->
+							</div><!--end.col-->
+							<div>
+								<div class="card">
+									<div class="card-head">
+										<header>유입 검색어</header>
+										<a href="_blank">더보기</a>
+									</div>
+									<div class="card-body no-padding">
+										<table class="table table-hover no-margin no-last-border">
+											<thead>
+												<tr>
+													<th class="opacity-50 text-12">검색어</th>
+													<th class="text-right opacity-50 text-12">클릭수</th>
+												</tr>
+											</thead>
+											<tbody>
+											</tbody>
+										</table>
+									</div><!--end.card-body-->
+								</div><!--end.card-->
+							</div><!--end.col-->
+						</div>
+						<div class="_col_">
+							<div>
+								<div class="card">
+									<div class="card-head">
+										<header>많이 방문한 페이지</header>
+										<a href="_blank">더보기</a>
+									</div>
+									<div class="card-body no-padding">
+										<table class="table table-hover no-margin no-last-border">
+											<thead>
+												<tr>
+													<th class="opacity-50 text-12">제목</th>
+													<th class="opacity-50 text-12">URL</th>
+													<th class="text-right opacity-50 text-12">조회</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Home</td>
+													<td>/home</td>
+													<td class="text-right text-gray-light">3</td>
+												</tr>
+												<tr>
+													<td>A/S&nbsp;신청</td>
+													<td>/asservice</td>
+													<td class="text-right text-gray-light">1</td>
+												</tr>
+												<tr>
+													<td>아티클보드</td>
+													<td>/articleboard</td>
+													<td class="text-right text-gray-light">1</td>
+												</tr>
+												<tr>
+													<td>Wise&nbsp;Phirels</td>
+													<td>/wisephirels</td>
+													<td class="text-right text-gray-light">1</td>
+												</tr>
+												<tr>
+													<td>로그인</td>
+													<td>/login</td>
+													<td class="text-right text-gray-light">1</td>
+												</tr>
+											</tbody>
+										</table>
+									</div><!--end.card-body-->
+								</div><!--end.card-->
+							</div><!--end.col-->
+							<div>
+								<div class="card">
+									<div class="card-head">
+										<header>트래픽</header>
+										<a href="_blank">더보기</a>
+									</div>
+									<div class="card-body">
 
-											<span class="text-gray-light">오늘</span><span
-												class="pull-right text-sm">46.36M(9.05%)</span>
-											<div class="progress progress-hairline success">
-												<div class="progress-bar progress-bar-default-dark"
-													style="width: 9%;"></div>
-											</div><span class="text-gray-light">2024-05-16</span><span
-												class="pull-right text-sm">22.42M(4.38%)</span>
-											<div class="progress progress-hairline success">
-												<div class="progress-bar progress-bar-default-dark"
-													style="width: 4%;"></div>
+										<span class="text-gray-light">오늘</span>
+										<span class="pull-right text-sm">46.36M(9.05%)</span>
+										<div class="progress progress-hairline success">
+											<div class="progress-bar progress-bar-default-dark" style="width: 9%;">
 											</div>
-										</div><!--end.card-body-->
-									</div><!--end.card-->
-								</div><!--end.col-->
-								<div>
-									<div class="card">
-										<div class="card-head">
-											<header>컨텐츠 반응</header>
-											<a href="https://qjfhdnaos51106.imweb.me/admin/stat/feedback/">더보기</a>
 										</div>
-										<div class="card-body no-padding-top">
-											<ul class="list list-feedback">
-												<li class="tile">
-													<div class="tile-content">
-														<div class="tile-icon">
-															<img alt="" src="./adminHome_files/default_profile.png">
-														</div>
-														<div class="tile-text">
-															<a
-																href="https://qjfhdnaos51106.imweb.me/admin/contents/post/?mode=view&amp;code=p20240521492f0349dfaec">테스트</a>
-															<div class="text-sm text-gray-bright"><a
-																	href="https://qjfhdnaos51106.imweb.me/admin/contents/post/?mode=view&amp;code=p20240521492f0349dfaec"><span
-																		class="margin-right-lg">자주 묻는 질문</span> <abbr
-																		title="15분전"
-																		class="livetimestamp">15분전</abbr></a></div>
+										<span class="text-gray-light">2024-05-16</span>
+										<span class="pull-right text-sm">22.42M(4.38%)</span>
+										<div class="progress progress-hairline success">
+											<div class="progress-bar progress-bar-default-dark" style="width: 4%;">
+											</div>
+										</div>
+									</div><!--end.card-body-->
+								</div><!--end.card-->
+							</div><!--end.col-->
 
+							<div>
+								<div class="card">
+									<div class="card-head">
+										<header>컨텐츠 반응</header>
+										<a href="_blank">더보기</a>
+									</div>
+									<div class="card-body no-padding-top">
+										<ul class="list list-feedback">
+											<li class="tile">
+												<div class="tile-content">
+													<div class="tile-icon">
+														<img src="_blank">
+													</div>
+													<div class="tile-text">
+														<a href="_blank">테스트</a>
+														<div class="text-sm text-gray-bright">
+															<a href="_blank">
+																<span class="margin-right-lg">자주 묻는 질문</span>
+																<abbr class="livetimestamp">15분전</abbr></a>
 														</div>
 													</div>
-												</li>
-											</ul>
-										</div>
+												</div>
+											</li>
+										</ul>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</section>
-		</div>
+			</div>
+		</section>
+	</div>
+
 	<!-- END BASE -->
 
 	<div class="modal" id="cocoaModal" role="dialog">
@@ -254,8 +223,7 @@
 	</div>
 
 	<iframe name="hidden_frame" id="hidden_frame"
-		style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;"
-		src="./adminHome_files/saved_resource.html"></iframe>
+		style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;" src="_blank"></iframe>
 
 	<div id="device-breakpoints">
 		<div class="device-xs visible-xs" data-breakpoint="xs"></div>
@@ -263,6 +231,8 @@
 		<div class="device-md visible-md" data-breakpoint="md"></div>
 		<div class="device-lg visible-lg" data-breakpoint="lg"></div>
 	</div>
-</body>
+	</div>
+</div>
+	<body> 
 
 </html>
