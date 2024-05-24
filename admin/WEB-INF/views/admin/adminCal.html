@@ -26,8 +26,8 @@
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
     <!-- -->
 
-    <link rel="stylesheet" href="../../../resources/jo/css/common_css/style.css">
-    <link rel="stylesheet" href="../../../resources/jo/css/admin_css/adminCal.css">
+    <link rel="stylesheet" href="../../../resources/jo/css/common_css/adminstyle.css">
+    <link rel="stylesheet" href="../../../resources/jo/css/admin_css/dashboard.css">
     <script src="../../../resources/jo/js/admin_js/adminCal.js"></script>
 
     <script src="../../../resources/jo/js/admin_js/new/adminCal.js"></script>
@@ -59,933 +59,286 @@
                 </div>
             </header>
 
-            <div class="menubar-hoverable header-fixed menubar-pin sidebar-mini">
-                <!-- BEGIN CONTENT-->
-                <div id="content">
-                    <div id="alertBox" class="alert__wrap"> </div>
-                    <section class="no-padding-bottom">
-                        <div class="section-body">
+            <div id="content">
+                <div id="alertBox" class="alert__wrap"></div>
+                <section>
+                    <div class="section-body">
+                        <form id="analyticsForm" onsubmit="ADMIN.showLoader(); return true;">
+                            <input type="hidden" id="inputOrderBy" name="orderby">
+                            <input type="hidden" id="inputSort" name="sort">
                             <div class="row">
-                                <div class="col-md-3 col-lg-2 col-xl-2 hidden-xs hidden-sm">
-                                    <div class="card">
-                                        <div class="card-body no-padding">
-                                            <ul class="nav nav-pills nav-stacked">
-                                                <li class="no-hover" id="new_group_btn">
-                                                    <a href="javascript:;" class="text-primary"
-                                                        onclick="SHOP_PROD_MANAGE.openCategoryManage(&#39;prod_list&#39;)">
-                                                        카테고리 관리
-                                                        <i
-                                                            style="font-size: 15px; vertical-align: middle; margin-left: 4px; position: relative; top: -1px;"></i>
-                                                    </a>
+                                <div class="col-xs-12">
+                                    <div class="card card-sm">
+                                        <!-- background: url('../img/ico_menu-down.png') no-repeat center right; background-size: 24px 24px; -->
+                                        <div class="card-body">
+                                            <input type="hidden" name="target" value="day">
+                                            <a href="javascript:;" style="display: block;">
+                                                <span>일별 통계</span>
+                                                <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu search-type">
+                                                <li>
+                                                    <a href="_blank" onclick="ADMIN.showLoader(); return true;">일별 통계</a>
+                                                </li>
+                                                <li>
+                                                    <a href="_blank" onclick="ADMIN.showLoader(); return true;">주별 통계</a>
+                                                </li>
+                                                <li>
+                                                    <a href="_blank" onclick="ADMIN.showLoader(); return true;">월별 통계</a>
+                                                </li>
+                                                <li>
+                                                    <a href="_blank" onclick="ADMIN.showLoader(); return true;">시간별 통계</a>
+                                                </li>
+                                                <li>
+                                                    <a href="_blank" onclick="ADMIN.showLoader(); return true;">제품별 통계</a>
+                                                </li>
+                                                <li>
+                                                    <a href="_blank" onclick="ADMIN.showLoader(); return true;">카테고리별 통계</a>
                                                 </li>
                                             </ul>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                            <div class="nav nav-pills nav-stacked nav-category">
-                                                <div id="prod_list_category_" class="dropdown-handle dd-handle  active">
+                                <div class="col-xs-12">
+                                    <div class="card card-sm">
+                                        <div class="card-body">
+                                            <input type="hidden" id="inputDateRangeType" name="date_range_type" value="custom">
+                                            <a href="javascript:;" id="selectDateRangeType">
+                                                <span class="date_range_name">사용자 정의</span>
+                                                <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu margin">
+                                                <li>
                                                     <a href="javascript:;"
-                                                        onclick="SHOP_PROD_LIST.startCategorySearch(&#39;&#39;)">전체
-                                                        카테고리</a>
-                                                </div>
-                                                <div id="prod_category_list" class="prod_category_list">
-                                                    <div class="holder">
-                                                        <div class="dropdown-handle dd-handle _menu_item"
-                                                            id="prod_list_category_s20240401bd31433ff9bdf"
-                                                            onclick="SHOP_PROD_LIST.startCategorySearch(&#39;s20240401bd31433ff9bdf&#39;)">
-                                                            <span class="_name">Wise Swell</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="holder">
-                                                        <div class="dropdown-handle dd-handle _menu_item"
-                                                            id="prod_list_category_s20240401723e96dccd326"
-                                                            onclick="SHOP_PROD_LIST.startCategorySearch(&#39;s20240401723e96dccd326&#39;)">
-                                                            <span class="_name">Wise Cantor</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="holder">
-                                                        <div class="dropdown-handle dd-handle _menu_item"
-                                                            id="prod_list_category_s20240401ae119f81cc87a"
-                                                            onclick="SHOP_PROD_LIST.startCategorySearch(&#39;s20240401ae119f81cc87a&#39;)">
-                                                            <span class="_name">Wise Phirels</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="holder">
-                                                        <div class="dropdown-handle dd-handle _menu_item"
-                                                            id="prod_list_category_s202404017c0c84752e9c2"
-                                                            onclick="SHOP_PROD_LIST.startCategorySearch(&#39;s202404017c0c84752e9c2&#39;)">
-                                                            <span class="_name">Wise Pixie</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!--end.card-body-->
-                                    </div><!--end.card-->
-
-                                    <div class="card">
-                                        <div class="card-body no-padding">
-                                            <ul class="nav nav-pills nav-stacked">
-                                                <li class="no-hover " id="new_group_btn">
-                                                    <a href="javascript:;" class="text-primary"
-                                                        onclick="SHOP_PROD_LIST.openShowcaseForm()">기획전 추가
-                                                        <i class="icon-plus"
-                                                            style="font-size: 15px; vertical-align: middle; margin-left: 4px; position: relative; top: -1px;"></i>
-                                                    </a>
+                                                        onclick="ANALYTICS_MANAGE.changeDateRangeType(&#39;custom&#39;, &#39;사용자 정의&#39;)">사용자
+                                                        정의</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;"
+                                                        onclick="ANALYTICS_MANAGE.changeDateRangeType(&#39;week&#39;, &#39;최근 1주일&#39;)">최근
+                                                        1주일</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;"
+                                                        onclick="ANALYTICS_MANAGE.changeDateRangeType(&#39;month1&#39;, &#39;최근 1개월&#39;)">최근
+                                                        1개월</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;"
+                                                        onclick="ANALYTICS_MANAGE.changeDateRangeType(&#39;month6&#39;, &#39;최근 6개월&#39;)">최근
+                                                        6개월</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;"
+                                                        onclick="ANALYTICS_MANAGE.changeDateRangeType(&#39;year&#39;, &#39;최근 1년&#39;)">최근
+                                                        1년</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;"
+                                                        onclick="ANALYTICS_MANAGE.changeDateRangeType(&#39;current_month&#39;, &#39;이번달&#39;)">이번달</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;"
+                                                        onclick="ANALYTICS_MANAGE.changeDateRangeType(&#39;prev_month&#39;, &#39;지난달&#39;)">지난달</a>
                                                 </li>
                                             </ul>
-                                            <ul class="nav nav-pills nav-stacked nav-sm" id="showcase_list"></ul>
-                                        </div><!--end.card-body-->
-                                    </div><!--end.card-->
-                                </div><!--end.col-->
 
-                                <div class="col-md-9 col-lg-10 col-xl-10">
-                                    <ul class="nav nav-tabs tw-flex nav nav-tabs tw-mb-[24px]" id="prod_status_tab">
-                                        <li class="owl_dashboard _owl_dashboard owl-carousel owl-theme owl-loaded">
-                                            <div class="owl-stage-outer">
-                                                <div class="owl-stage"
-                                                    style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 264px;">
-                                                    <div class="owl-item active"
-                                                        style="width: auto; margin-right: 0px;">
-                                                        <ul class="owl-nav-tabs">
-                                                            <li class="active _all">
-                                                                <a href="javascript:;"
-                                                                    onclick="location.href=&#39;/admin/shopping/product/?status=all&amp;q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&#39;">전체
-                                                                    <span class="_count text-primary">4</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="owl-item active"
-                                                        style="width: auto; margin-right: 0px;">
-                                                        <ul class="owl-nav-tabs">
-                                                            <li class=" _sale">
-                                                                <a href="javascript:;"
-                                                                    onclick="location.href=&#39;/admin/shopping/product/?status=sale&amp;q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&#39;">판매중
-                                                                    <span class="_count text-primary">4</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="owl-item active"
-                                                        style="width: auto; margin-right: 0px;">
-                                                        <ul class="owl-nav-tabs">
-                                                            <li class=" _soldout">
-                                                                <a href="javascript:;"
-                                                                    onclick="location.href=&#39;/admin/shopping/product/?status=soldout&amp;q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&#39;">품절
-                                                                    <span class="_count text-primary">0</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="owl-item active"
-                                                        style="width: auto; margin-right: 0px;">
-                                                        <ul class="owl-nav-tabs">
-                                                            <li class=" _nosale">
-                                                                <a href="javascript:;"
-                                                                    onclick="location.href=&#39;/admin/shopping/product/?status=nosale&amp;q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&#39;">숨김
-                                                                    <span class="_count text-primary">0</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
+                                            <div id="dateRangeRangeWrap">
+                                                <div class="form-control-datepicker">
+                                                    <input type="text" name="start_date" value="2024-05-16"
+                                                        placeholder="시작일" class="form-control">
+                                                    <i></i>
+                                                </div>
+
+                                                <span>~</span>
+
+                                                <div class="form-control-datepicker">
+                                                    <input type="text" name="end_date" value="2024-05-21" placeholder="종료일" class="form-control">
+                                                    <i></i>
                                                 </div>
                                             </div>
-                                            <div class="owl-controls">
-                                                <div class="owl-nav">
-                                                    <div class="owl-prev" style="display: none;">prev</div>
-                                                    <div class="owl-next" style="display: none;">next</div>
-                                                </div>
-                                                <div class="owl-dots">
-                                                    <div class="owl-dot active"><span></span></div>
-                                                    <div class="owl-dot"><span></span></div>
-                                                    <div class="owl-dot"><span></span></div>
-                                                    <div class="owl-dot"><span></span></div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="hidden-xs hidden-sm after:tw-content-[&#39;&#39;] after:tw-inline-block after:tw-absolute after:tw-w-[8px] 
-                                    after:tw-h-[5px] after:tw-right-0 after:tw-top-[50%] after:tw-translate-y-[-12px] after:tw-bg-[url(&#39;../images/admin/shopping/dropdown_arrow.png&#39;)] 
-                                    after:tw-bg-no-repeat after:tw-bg-contain">
-                                            <select
-                                                class="tw-relative tw-bg-transparent tw-appearance-none tw-pr-[13px] tw-text-right">
-                                                <option value="10">10개씩 보기</option>
-                                                <option value="20" selected="">20개씩 보기</option>
-                                                <option value="50">50개씩 보기</option>
-                                                <option value="100">100개씩 보기</option>
-                                            </select>
-                                        </li>
-                                    </ul>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="clearfix search_form">
-                                                <div class="card form_left">
-                                                    <div class="card-body no-padding">
-                                                        <form role="search" class="prod-search" id="prod_search_form">
-                                                            <div class="twitter_wrap" style="margin-left: 0px;">
-                                                                <span class="twitter-typeahead"
-                                                                    style="position: relative; align-items: center; display: flex">
-                                                                    <div class="on-click">
-                                                                        <a data-toggle="dropdown"
-                                                                            style="margin-right: -1px; width: 120px; padding-left: 24px; line-height: 1;">
-                                                                            <span
-                                                                                id="search_keyword_type_text">기본</span>
-                                                                        </a>
-                                                                        <ul class="dropdown-menu" style="top: 36px">
-                                                                            <li>
-                                                                                <a href="javascript:;"
-                                                                                    onclick="$(&#39;#search_keyword_type&#39;).val(&#39;&#39;);
-                                                                                $(&#39;#search_keyword_type_text&#39;).text($(this).text());
-                                                                                $(&#39;#keyword_search_input&#39;).attr(&#39;placeholder&#39;,&#39;상품명, 상품 재고번호, 자체상품코드 검색&#39;);">기본</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="javascript:;"
-                                                                                    onclick="$(&#39;#search_keyword_type&#39;).val(&#39;use_option_sku&#39;);
-                                                                                $(&#39;#search_keyword_type_text&#39;).text($(this).text());
-                                                                                $(&#39;#keyword_search_input&#39;).attr(&#39;placeholder&#39;,&#39;옵션 재고번호 검색&#39;);">옵션
-                                                                                    재고번호</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                        <input type="hidden" name="search_keyword_type"
-                                                                            class="_search_keyword_type" value=""
-                                                                            id="search_keyword_type">
-                                                                    </div>
-                                                                    <input type="text" id="keyword_search_input"
-                                                                        class="_keyword_search form-control typeahead tt-input"
-                                                                        placeholder="상품명, 상품 재고번호, 자체상품코드 검색"
-                                                                        style="position: relative; vertical-align: top; border: none; background-color: transparent; padding-left: 24px;"
-                                                                        onkeydown="if (event.keyCode==13) SHOP_PROD_LIST.startKeywordSearch()">
-
-                                                                </span>
-                                                            </div>
-
-                                                            <div class="serach_wrap big_search">
-                                                                <div class="dd-filter-serach">
-                                                                    <label class="icon_set">
-                                                                        <i class="btl bt-search"
-                                                                            onclick="SHOP_PROD_LIST.startKeywordSearch()"></i>
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                                <div class="card form_right" role="group">
-                                                    <button type="button"
-                                                        onclick="SHOP_PROD_MANAGE.openModalProdExcelDownload(&#39;&#39;)"
-                                                        class="btn btn-default-bright dropdown-toggle btn-card-height full-width">
-                                                        <i></i> 내보내기 </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12" style="z-index: 2;">
-                                            <div class="card style-transparent card-top no-tab" style="display: none;"
-                                                id="prod_list_no_prod">
-                                                <div class="card-head">
-                                                    <header class="style-price-header force-padding">
-                                                        <h2>판매 시작을 위해 상품을 추가해 주세요</h2>
-                                                        <div class="sub-title text-gray-bright text-center"
-                                                            style="font-size: 18px;">의류, 전자제품, 식품 등 무엇이든 판매할 수 있습니다.
-                                                        </div>
-                                                    </header>
-                                                </div>
-                                                <div class="card-body no-padding-y">
-                                                    <div class="text-center text-gray force-padding">
-                                                        <button type="button"
-                                                            class="btn ink-reaction btn-lg btn-primary margin-bottom-xl"
-                                                            onclick="window.location.href=&#39;/admin/shopping/product/?q=YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO30%3D&amp;mode=add&#39;">
-                                                            상품추가
-                                                        </button>
-
-                                                        <p>
-                                                            <a href="javascript:;" class="text-primary"
-                                                                onclick="alert(&#39;상품 일괄 추가 기능은 Pro, Global 버전에서만 사용 가능합니다.&#39;)">대량
-                                                                상품 등록</a>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card style-transparent card-top no-tab" style="display: none;"
-                                                id="showcase_list_no_prod">
-                                                <div class="card-head">
-                                                    <header class="style-price-header force-padding">
-                                                        <h2>이 기획전에 포함된 상품이 없습니다.</h2>
-                                                        <div class="sub-title text-gray-bright text-center"
-                                                            style="font-size: 18px;">카테고리에서 기획전에 추가할 상품을 추가할 수 있습니다.
-                                                        </div>
-                                                    </header>
-                                                </div>
-                                                <div class="card-body">
-                                                    <div class="text-center">
-                                                        <img src="_blank" style="max-width: 100%;" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card style-transparent card-top no-tab" style="display: none;"
-                                                id="prod_list_no_search">
-                                                <div class="card-head">
-                                                    <header class="style-price-header force-padding">
-                                                        <h2>검색된 상품이 없습니다</h2>
-                                                    </header>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="table-responsive shop-table check" id="prod_list">
-                                                    <table class="table no-margin">
-
-                                                        <thead class="subject _prodListHeaderDeselected"
-                                                            style="display: table-header-group;"
-                                                            id="prod_list_header_deselected">
-                                                            <tr>
-                                                                <th class="check">
-                                                                    <div class="checkbox checkbox-styled no-margin">
-                                                                        <label>
-                                                                            <input type="checkbox" value=""
-                                                                                class="_prodListAllCheck"
-                                                                                onclick="SHOP_PROD_LIST.listSetAllSelect($(this).prop(&#39;checked&#39;),function(codes){SHOP_PROD_LIST.checkProd(codes)})"><span></span>
-                                                                        </label>
-                                                                    </div>
-                                                                </th>
-                                                                <th class="no">No</th>
-                                                                <th class="title image">상품명</th>
-                                                                <th></th>
-                                                                <th class="pay text-right">판매가</th>
-                                                                <th class="group">카테고리</th>
-                                                                <th class="showcase">기획전</th>
-                                                                <th class="state">상태</th>
-                                                                <th class="stock">재고</th>
-                                                                <th class="r_date">등록일</th>
-                                                                <th class="e_date ">수정일</th>
-                                                                <th class="more"></th>
-                                                            </tr>
-                                                        </thead>
-                                                        <thead class="select-thead _prodListHeaderSelected"
-                                                            style="display: none;" id="prod_list_header_selected">
-                                                            <tr>
-                                                                <th>
-                                                                    <div class="checkbox checkbox-styled no-margin">
-                                                                        <label>
-                                                                            <input type="checkbox" value=""
-                                                                                class="_prodListAllCheck"
-                                                                                onclick="SHOP_PROD_LIST.listSetAllSelect($(this).prop(&#39;checked&#39;))"><span></span>
-                                                                        </label>
-                                                                    </div>
-                                                                </th>
-                                                                <th>
-                                                                </th>
-                                                                <th colspan="12" style="padding: 0px;">
-                                                                    <!--<a class="btn btn-default-bright" id="prod-replication" href="javascript:;" 
-                                                                    style="margin-right: 10px" onclick="SHOP_PROD_LIST.copyProdMulti()">-->
-                                                                    <button class="btn btn-default-bright"
-                                                                        id="prod-replication" href="javascript:;"
-                                                                        style="margin-right: 10px;"
-                                                                        onclick="SHOP_PROD_LIST.copyProdMulti()">복제</button>
-                                                                    <button class="btn btn-default-bright"
-                                                                        id="prod-delete" href="javascript:;"
-                                                                        style="margin-right: 10px;"
-                                                                        onclick="SHOP_PROD_LIST.deleteProdMulti()">삭제</button>
-                                                                    <div class="btn-group" role="group"
-                                                                        style="margin-right: 10px;">
-                                                                        <button class="btn btn-default-bright"
-                                                                            id="prod-status-change"
-                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                            aria-expanded="false"
-                                                                            style="margin-right: -1px;">상태 변경
-                                                                            <span class="caret"></span>
-                                                                        </button>
-                                                                        <ul class="dropdown-menu">
-                                                                            <li><a href="javascript:;"
-                                                                                    onclick="SHOP_PROD_LIST.updateStatusMulti(&#39;sale&#39;)">판매중</a>
-                                                                            </li>
-                                                                            <li><a href="javascript:;"
-                                                                                    onclick="SHOP_PROD_LIST.updateStatusMulti(&#39;soldout&#39;)">품절</a>
-                                                                            </li>
-                                                                            <li><a href="javascript:;"
-                                                                                    onclick="SHOP_PROD_LIST.updateStatusMulti(&#39;nosale&#39;)">숨김</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                        <a class="btn btn-default-bright"
-                                                                            href="javascript:;"
-                                                                            onclick="SHOP_PROD_LIST.openProdListModifyManage(&#39;category&#39;)">카테고리
-                                                                            변경</a>
-                                                                        <a class="btn btn-default-bright"
-                                                                            href="javascript:;"
-                                                                            onclick="SHOP_PROD_LIST.openProdListModifyManage(&#39;showcase&#39;)">기획전
-                                                                            변경</a>
-                                                                        <a class="btn btn-default-bright"
-                                                                            href="javascript:;"
-                                                                            onclick="SHOP_PROD_LIST.openModifyProdPriceMulti();">판매가
-                                                                            변경</a>
-                                                                        <a class="btn btn-default-bright"
-                                                                            href="javascript:;"
-                                                                            onclick="SHOP_PROD_LIST.openModifyDiscount();">할인
-                                                                            설정</a>
-                                                                        <button class="btn btn-default-bright"
-                                                                            id="prod-pre-sale" href="javascript:;"
-                                                                            onclick="SHOP_PROD_LIST.openModifyPreSale();">판매기간
-                                                                            변경</button>
-                                                                        <button class="btn btn-default-bright"
-                                                                            id="prod-pre-sale" href="javascript:;"
-                                                                            onclick="SHOP_PROD_LIST.openModifySku();">재고
-                                                                            변경</button>
-                                                                        <a class="btn btn-default-bright"
-                                                                            href="javascript:;"
-                                                                            onclick="SHOP_PROD_LIST.openIconManageMulti()">뱃지
-                                                                            변경</a>
-                                                                        <a class="btn btn-default-bright"
-                                                                            href="javascript:;"
-                                                                            onclick="SHOP_PROD_LIST.openProdDetailMulti(&#39;header&#39;)">상품
-                                                                            상세 공통 변경</a>
-                                                                        <a class="btn btn-default-bright"
-                                                                            href="javascript:;"
-                                                                            onclick="SHOP_PROD_LIST.openModifyDisplay()">외부
-                                                                            노출
-                                                                            변경</a>
-
-                                                                    </div>
-                                                                </th>
-                                                            </tr>
-                                                            <tr id="prod_page_all_selected" style="display: none;">
-                                                                <th colspan="12"
-                                                                    style="padding: 0px; background-color: rgb(250, 250, 250); height: 50px; text-align: center;">
-                                                                    <div id="prod_page_selected">
-                                                                        <a class="" href="javascript:;">
-                                                                            <span
-                                                                                id="changeable_prod_selected_message"></span>
-
-                                                                            <span id="changeable_prod_all_selected"
-                                                                                class="text-primary">
-                                                                            </span>
-                                                                            <span id="exist_regularly_product">
-
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
-                                                                </th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody id="prod_list_body" class="_prod_list_body ui-sortable">
-                                                            <tr class="content _prodListItem"
-                                                                id="prod_list_s20240516ae197a3da7242"
-                                                                data-code="s20240516ae197a3da7242">
-                                                                <td class="check">
-                                                                    <div
-                                                                        class="drag _showcase_handle ui-sortable-handle">
-                                                                    </div>
-                                                                    <div class="checkbox checkbox-styled no-margin">
-                                                                        <label>
-                                                                            <input type="checkbox"
-                                                                                value="s20240516ae197a3da7242"
-                                                                                class="_prodListCheck" onclick="SHOP_PROD_LIST.listSetSelect(&#39;s20240516ae197a3da7242&#39;,function(codes){
-                                                                            SHOP_PROD_LIST.checkProd(codes);
-                                                                            })"><span></span>
-                                                                        </label>
-                                                                    </div>
-                                                                </td>
-                                                                <td class="no text-12">4</td>
-                                                                <td class="image">
-                                                                    <a href="_blank">
-                                                                        <img src="_blank" width="49" height="49"
-                                                                            class="item-thumb" />
-                                                                    </a>
-                                                                </td>
-                                                                <td class="title">
-                                                                    <div>
-
-                                                                        <div class="item-tit inline-blocked">
-                                                                            <a href="_blank">Wise
-                                                                                Pixie</a>
-                                                                            <a href="_blank"
-                                                                                class="im-icon im-ico-new-tab vertical-middle tab-icon"
-                                                                                style="margin-left: 4px;">
-                                                                            </a>
-
-                                                                        </div>
-
-                                                                        <span class="btn-sm text-gray-bright"></span>
-                                                                    </div>
-                                                                </td>
-                                                                <td class="pay text-right">
-                                                                    259,000원<br> </td>
-                                                                <td class="group">Wise Pixie</td>
-                                                                <td class="showcase">
-                                                                    <div class="dropdown">
-                                                                        <button id="dLabel" type="button"
-                                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                                            aria-expanded="false"
-                                                                            class="btn btn-flat no-padding _drop_showcase_btn_s20240516ae197a3da7242">-</button>
-                                                                        <ul class="dropdown-menu animation-dock check"
-                                                                            role="menu" aria-labelledby="dLabel">
-                                                                            <div class="select_group _drop_showcase_list _drop_showcase_list_s20240516ae197a3da7242"
-                                                                                data-showcase=""
-                                                                                data-prod="s20240516ae197a3da7242"
-                                                                                data-noshowcase="Y">
-                                                                            </div>
-                                                                            <div class="footer">
-                                                                                <li class="divider"></li>
-                                                                                <li><a href="javascript:;"
-                                                                                        onclick="SHOP_PROD_LIST.openShowcaseForm()">
-                                                                                        새 기획전</a>
-                                                                                </li>
-                                                                            </div>
-                                                                        </ul>
-                                                                    </div>
-                                                                </td>
-                                                                <td class="state on-click">
-                                                                    <a data-toggle="dropdown"
-                                                                        style="margin-right: -1px;">
-                                                                        <span>판매중</span>
-                                                                    </a>
-                                                                    <ul class="dropdown-menu" style="top: 50px;">
-                                                                        <li
-                                                                            id="mixpanel_bo_shopping_item_list_status_sale">
-                                                                            <a href="javascript:;"
-                                                                                onclick="SHOP_PROD_LIST.updateStatus(&#39;s20240516ae197a3da7242&#39;, &#39;sale&#39;)">판매중</a>
-                                                                        </li>
-                                                                        <li
-                                                                            id="mixpanel_bo_shopping_item_list_status_soldout">
-                                                                            <a href="javascript:;"
-                                                                                onclick="SHOP_PROD_LIST.updateStatus(&#39;s20240516ae197a3da7242&#39;, &#39;soldout&#39;)">품절</a>
-                                                                        </li>
-                                                                        <li
-                                                                            id="mixpanel_bo_shopping_item_list_status_nosale">
-                                                                            <a href="javascript:;"
-                                                                                onclick="SHOP_PROD_LIST.updateStatus(&#39;s20240516ae197a3da7242&#39;, &#39;nosale&#39;)">숨김</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </td>
-                                                                <td class="text-12" style="padding-left: 20px"> - </td>
-                                                                <td class="r_date text-12">2024-04-01</td>
-                                                                <td class="e_date text-12">2024-04-02</td>
-                                                                <td class="more">
-                                                                    <div class="dropdown">
-                                                                        <button class="btn btn-flat"
-                                                                            aria-expanded="true" data-toggle="dropdown"
-                                                                            type="button" id="dLabel">
-                                                                            <i class="zmdi zmdi-more"></i>
-                                                                        </button>
-                                                                        <ul aria-labelledby="dLabel" role="menu"
-                                                                            class="dropdown-menu animation-dock right">
-                                                                            <li>
-                                                                                <a href="javascript:;"
-                                                                                    onclick="SHOP_PROD_LIST.changeProdOrder(&#39;top&#39;,&#39;s20240516ae197a3da7242&#39;, &#39;&#39;);">
-                                                                                    맨 위로</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="javascript:;"
-                                                                                    onclick="SHOP_PROD_LIST.changeProdOrder(&#39;pre&#39;,&#39;s20240516ae197a3da7242&#39;, &#39;&#39;);">
-                                                                                    위로</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="javascript:;"
-                                                                                    onclick="SHOP_PROD_LIST.changeProdOrder(&#39;next&#39;,&#39;s20240516ae197a3da7242&#39;, &#39;&#39;);">
-                                                                                    아래로</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="javascript:;"
-                                                                                    onclick="SHOP_PROD_LIST.changeProdOrder(&#39;bottom&#39;,&#39;s20240516ae197a3da7242&#39;, &#39;&#39;);">
-                                                                                    맨 아래로</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <!--<tr class='content on">-->
-                                                            <tr class="content _prodListItem"
-                                                                id="prod_list_s20240516499115c1a7064"
-                                                                data-code="s20240516499115c1a7064">
-                                                                <td class="check">
-                                                                    <div
-                                                                        class="drag _showcase_handle ui-sortable-handle">
-                                                                    </div>
-                                                                    <div class="checkbox checkbox-styled no-margin">
-                                                                        <label>
-                                                                            <input type="checkbox"
-                                                                                value="s20240516499115c1a7064"
-                                                                                class="_prodListCheck" onclick="SHOP_PROD_LIST.listSetSelect(&#39;s20240516499115c1a7064&#39;,function(codes){
-                                                                            SHOP_PROD_LIST.checkProd(codes);})">
-                                                                            <span></span>
-                                                                        </label>
-                                                                    </div>
-                                                                </td>
-                                                                <td class="no text-12">3</td>
-                                                                <td class="image">
-                                                                    <a href="_blank">
-                                                                        <img src="_blank" width="49" height="49"
-                                                                            class="item-thumb" />
-                                                                    </a>
-                                                                </td>
-                                                                <td class="title">
-                                                                    <div>
-
-                                                                        <div class="item-tit inline-blocked">
-                                                                            <a href="_blank">Swell Cantor </a>
-                                                                            <a href="_blank"
-                                                                                class="im-icon im-ico-new-tab vertical-middle tab-icon"
-                                                                                style="margin-left: 4px;">
-                                                                            </a>
-
-                                                                        </div>
-
-                                                                        <span class="btn-sm text-gray-bright">컬러
-                                                                            2종</span>
-                                                                    </div>
-                                                                </td>
-                                                                <td class="pay text-right">
-                                                                    329,000원<br> </td>
-                                                                <td class="group">Wise Cantor</td>
-                                                                <td class="showcase">
-                                                                    <div class="dropdown">
-                                                                        <button id="dLabel" type="button"
-                                                                            class="btn btn-flat no-padding _drop_showcase_btn_s20240516499115c1a7064">-</button>
-                                                                        <ul class="dropdown-menu animation-dock check"
-                                                                            role="menu" aria-labelledby="dLabel">
-                                                                            <div
-                                                                                class="select_group _drop_showcase_list _drop_showcase_list_s20240516499115c1a7064">
-                                                                            </div>
-                                                                            <div class="footer">
-                                                                                <li class="divider"></li>
-                                                                                <li>
-                                                                                    <a href="javascript:;"
-                                                                                        onclick="SHOP_PROD_LIST.openShowcaseForm()">새
-                                                                                        기획전</a>
-                                                                                </li>
-                                                                            </div>
-                                                                        </ul>
-                                                                    </div>
-                                                                </td>
-                                                                <td class="state on-click">
-                                                                    <a data-toggle="dropdown"
-                                                                        style="margin-right: -1px;">
-                                                                        <span>판매중</span>
-                                                                    </a>
-                                                                    <ul class="dropdown-menu" style="top: 50px;">
-                                                                        <li
-                                                                            id="mixpanel_bo_shopping_item_list_status_sale">
-                                                                            <a href="javascript:;"
-                                                                                onclick="SHOP_PROD_LIST.updateStatus(&#39;s20240516499115c1a7064&#39;, &#39;sale&#39;)">판매중</a>
-                                                                        </li>
-                                                                        <li
-                                                                            id="mixpanel_bo_shopping_item_list_status_soldout">
-                                                                            <a href="javascript:;"
-                                                                                onclick="SHOP_PROD_LIST.updateStatus(&#39;s20240516499115c1a7064&#39;, &#39;soldout&#39;)">품절</a>
-                                                                        </li>
-                                                                        <li
-                                                                            id="mixpanel_bo_shopping_item_list_status_nosale">
-                                                                            <a href="javascript:;"
-                                                                                onclick="SHOP_PROD_LIST.updateStatus(&#39;s20240516499115c1a7064&#39;, &#39;nosale&#39;)">숨김</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </td>
-                                                                <td class="text-12" style="padding-left: 20px">
-                                                                    - </td>
-                                                                <td class="r_date text-12">2024-04-01</td>
-                                                                <td class="e_date text-12">2024-04-03</td>
-                                                                <td class="more">
-                                                                    <div class="dropdown">
-                                                                        <button class="btn btn-flat"
-                                                                            aria-expanded="true" data-toggle="dropdown"
-                                                                            type="button" id="dLabel">
-                                                                            <i></i>
-                                                                        </button>
-                                                                        <ul aria-labelledby="dLabel" role="menu"
-                                                                            class="dropdown-menu animation-dock right">
-                                                                            <li>
-                                                                                <a href="javascript:;"
-                                                                                    onclick="SHOP_PROD_LIST.changeProdOrder(&#39;top&#39;,&#39;s20240516499115c1a7064&#39;, &#39;&#39;);">
-                                                                                    맨 위로</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="javascript:;"
-                                                                                    onclick="SHOP_PROD_LIST.changeProdOrder(&#39;pre&#39;,&#39;s20240516499115c1a7064&#39;, &#39;&#39;);">
-                                                                                    위로</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="javascript:;"
-                                                                                    onclick="SHOP_PROD_LIST.changeProdOrder(&#39;next&#39;,&#39;s20240516499115c1a7064&#39;, &#39;&#39;);">
-                                                                                    아래로</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="javascript:;"
-                                                                                    onclick="SHOP_PROD_LIST.changeProdOrder(&#39;bottom&#39;,&#39;s20240516499115c1a7064&#39;, &#39;&#39;);">
-                                                                                    맨 아래로</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <!--<tr class='content on">-->
-                                                            <tr class="content _prodListItem"
-                                                                id="prod_list_s202405169fa45a3e9e184"
-                                                                data-code="s202405169fa45a3e9e184">
-                                                                <td class="check">
-                                                                    <div
-                                                                        class="drag _showcase_handle ui-sortable-handle">
-                                                                    </div>
-                                                                    <div class="checkbox checkbox-styled no-margin">
-                                                                        <label>
-                                                                            <input type="checkbox"
-                                                                                value="s202405169fa45a3e9e184"
-                                                                                class="_prodListCheck" onclick="SHOP_PROD_LIST.listSetSelect(&#39;s202405169fa45a3e9e184&#39;,function(codes){
-                                                                            SHOP_PROD_LIST.checkProd(codes);
-                                                                            })"><span></span>
-                                                                        </label>
-                                                                    </div>
-                                                                </td>
-                                                                <td class="no text-12">2</td>
-                                                                <td class="image">
-                                                                    <a href="_blank"><img src="_blank" width="49"
-                                                                            height="49" class="item-thumb" /></a>
-                                                                </td>
-                                                                <td class="title">
-                                                                    <div>
-
-                                                                        <div class="item-tit inline-blocked">
-                                                                            <a href="_blank">Wise Swell</a>
-                                                                            <a href="_blank"
-                                                                                class="im-icon im-ico-new-tab vertical-middle tab-icon"
-                                                                                style="margin-left: 4px;"></a>
-
-                                                                        </div>
-
-                                                                        <span class="btn-sm text-gray-bright"></span>
-                                                                    </div>
-                                                                </td>
-                                                                <td class="pay text-right">
-                                                                    269,000원<br> </td>
-                                                                <td class="group">Wise Swell</td>
-                                                                <td class="showcase">
-                                                                    <div class="dropdown">
-                                                                        <button id="dLabel" type="button"
-                                                                            class="btn btn-flat no-padding _drop_showcase_btn_s202405169fa45a3e9e184">-</button>
-                                                                        <ul class="dropdown-menu animation-dock check"
-                                                                            role="menu">
-                                                                            <div
-                                                                                class="select_group _drop_showcase_list _drop_showcase_list_s202405169fa45a3e9e184">
-                                                                            </div>
-                                                                            <div class="footer">
-                                                                                <li class="divider"></li>
-                                                                                <li>
-                                                                                    <a href="javascript:;"
-                                                                                        onclick="SHOP_PROD_LIST.openShowcaseForm()">
-                                                                                        새 기획전</a>
-                                                                                </li>
-                                                                            </div>
-                                                                        </ul>
-                                                                    </div>
-                                                                </td>
-                                                                <td class="state on-click">
-                                                                    <a data-toggle="dropdown"
-                                                                        style="margin-right: -1px;">
-                                                                        <span>판매중</span>
-                                                                    </a>
-                                                                    <ul class="dropdown-menu" style="top: 50px;">
-                                                                        <li
-                                                                            id="mixpanel_bo_shopping_item_list_status_sale">
-                                                                            <a href="javascript:;"
-                                                                                onclick="SHOP_PROD_LIST.updateStatus(&#39;s202405169fa45a3e9e184&#39;, &#39;sale&#39;)">판매중</a>
-                                                                        </li>
-                                                                        <li
-                                                                            id="mixpanel_bo_shopping_item_list_status_soldout">
-                                                                            <a href="javascript:;"
-                                                                                onclick="SHOP_PROD_LIST.updateStatus(&#39;s202405169fa45a3e9e184&#39;, &#39;soldout&#39;)">품절</a>
-                                                                        </li>
-                                                                        <li
-                                                                            id="mixpanel_bo_shopping_item_list_status_nosale">
-                                                                            <a href="javascript:;"
-                                                                                onclick="SHOP_PROD_LIST.updateStatus(&#39;s202405169fa45a3e9e184&#39;, &#39;nosale&#39;)">숨김</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </td>
-                                                                <td class="text-12" style="padding-left: 20px"> - </td>
-                                                                <td class="r_date text-12">2024-04-01</td>
-                                                                <td class="e_date text-12">2024-04-02</td>
-                                                                <td class="more">
-                                                                    <div class="dropdown">
-                                                                        <button class="btn btn-flat" type="button"
-                                                                            id="dLabel">
-                                                                        </button>
-                                                                        <ul role="menu"
-                                                                            class="dropdown-menu animation-dock right">
-                                                                            <li>
-                                                                                <a href="javascript:;"
-                                                                                    onclick="SHOP_PROD_LIST.changeProdOrder(&#39;top&#39;,&#39;s202405169fa45a3e9e184&#39;, &#39;&#39;);">맨
-                                                                                    위로</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="javascript:;"
-                                                                                    onclick="SHOP_PROD_LIST.changeProdOrder(&#39;pre&#39;,&#39;s202405169fa45a3e9e184&#39;, &#39;&#39;);">위로</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="javascript:;"
-                                                                                    onclick="SHOP_PROD_LIST.changeProdOrder(&#39;next&#39;,&#39;s202405169fa45a3e9e184&#39;, &#39;&#39;);">아래로</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="javascript:;"
-                                                                                    onclick="SHOP_PROD_LIST.changeProdOrder(&#39;bottom&#39;,&#39;s202405169fa45a3e9e184&#39;, &#39;&#39;);">맨
-                                                                                    아래로</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <!--<tr class='content on">-->
-                                                            <tr class="content _prodListItem"
-                                                                id="prod_list_s20240516baee51a6519ef"
-                                                                data-code="s20240516baee51a6519ef">
-                                                                <td class="check">
-                                                                    <div
-                                                                        class="drag _showcase_handle ui-sortable-handle">
-                                                                    </div>
-                                                                    <div class="checkbox checkbox-styled no-margin">
-                                                                        <label>
-                                                                            <input type="checkbox"
-                                                                                value="s20240516baee51a6519ef"
-                                                                                class="_prodListCheck" onclick="SHOP_PROD_LIST.listSetSelect(&#39;s20240516baee51a6519ef&#39;,function(codes){
-                                                                            SHOP_PROD_LIST.checkProd(codes);
-                                                                            })">
-                                                                            <span></span>
-                                                                        </label>
-                                                                    </div>
-                                                                </td>
-                                                                <td class="no text-12">1</td>
-                                                                <td class="image">
-                                                                    <a href="_blank">
-                                                                        <img src="_blank" width="49" height="49"
-                                                                            class="item-thumb" />
-                                                                    </a>
-                                                                </td>
-                                                                <td class="title">
-                                                                    <div>
-                                                                        <div class="item-tit inline-blocked">
-                                                                            <a href="_blank">Wise Phirels</a>
-                                                                            <a href="_blank"
-                                                                                class="im-icon im-ico-new-tab vertical-middle tab-icon"
-                                                                                style="margin-left: 4px;"></a>
-                                                                        </div>
-                                                                        <span class="btn-sm text-gray-bright"></span>
-                                                                    </div>
-                                                                </td>
-                                                                <td class="pay text-right">
-                                                                    349,000원<br>
-                                                                </td>
-                                                                <td class="group">Wise Phirels</td>
-                                                                <td class="showcase">
-                                                                    <div class="dropdown">
-                                                                        <button id="dLabel"
-                                                                            class="btn btn-flat no-padding _drop_showcase_btn_s20240516baee51a6519ef">-</button>
-                                                                        <ul class="dropdown-menu animation-dock check"
-                                                                            role="menu" aria-labelledby="dLabel">
-                                                                            <div
-                                                                                class="select_group _drop_showcase_list _drop_showcase_list_s20240516baee51a6519ef">
-                                                                            </div>
-                                                                            <div class="footer">
-                                                                                <li class="divider"></li>
-                                                                                <li>
-                                                                                    <a href="javascript:;"
-                                                                                        onclick="SHOP_PROD_LIST.openShowcaseForm()">
-                                                                                        새 기획전
-                                                                                    </a>
-                                                                                </li>
-                                                                            </div>
-                                                                        </ul>
-                                                                    </div>
-                                                                </td>
-                                                                <td class="state on-click">
-                                                                    <a data-toggle="dropdown"
-                                                                        style="margin-right: -1px;">
-                                                                        <span>판매중</span>
-                                                                    </a>
-                                                                    <ul class="dropdown-menu" style="top: 50px;">
-                                                                        <li
-                                                                            id="mixpanel_bo_shopping_item_list_status_sale">
-                                                                            <a href="javascript:;"
-                                                                                onclick="SHOP_PROD_LIST.updateStatus(&#39;s20240516baee51a6519ef&#39;, &#39;sale&#39;)">판매중</a>
-                                                                        </li>
-                                                                        <li
-                                                                            id="mixpanel_bo_shopping_item_list_status_soldout">
-                                                                            <a href="javascript:;"
-                                                                                onclick="SHOP_PROD_LIST.updateStatus(&#39;s20240516baee51a6519ef&#39;, &#39;soldout&#39;)">품절</a>
-                                                                        </li>
-                                                                        <li
-                                                                            id="mixpanel_bo_shopping_item_list_status_nosale">
-                                                                            <a href="javascript:;"
-                                                                                onclick="SHOP_PROD_LIST.updateStatus(&#39;s20240516baee51a6519ef&#39;, &#39;nosale&#39;)">숨김</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </td>
-                                                                <td class="text-12" style="padding-left: 20px"> - </td>
-                                                                <td class="r_date text-12">2024-04-01</td>
-                                                                <td class="e_date text-12">2024-04-02</td>
-                                                                <td class="more">
-                                                                    <div class="dropdown">
-                                                                        <button class="btn btn-flat" type="button"
-                                                                            id="dLabel">
-                                                                            <i></i>
-                                                                        </button>
-                                                                        <ul aria-labelledby="dLabel" role="menu"
-                                                                            class="dropdown-menu animation-dock right">
-                                                                            <li>
-                                                                                <a href="javascript:;"
-                                                                                    onclick="SHOP_PROD_LIST.changeProdOrder(&#39;top&#39;,&#39;s20240516baee51a6519ef&#39;, &#39;&#39;);">
-                                                                                    맨 위로</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="javascript:;"
-                                                                                    onclick="SHOP_PROD_LIST.changeProdOrder(&#39;pre&#39;,&#39;s20240516baee51a6519ef&#39;, &#39;&#39;);">위로</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="javascript:;"
-                                                                                    onclick="SHOP_PROD_LIST.changeProdOrder(&#39;next&#39;,&#39;s20240516baee51a6519ef&#39;, &#39;&#39;);">아래로</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="javascript:;"
-                                                                                    onclick="SHOP_PROD_LIST.changeProdOrder(&#39;bottom&#39;,&#39;s20240516baee51a6519ef&#39;, &#39;&#39;);">맨
-                                                                                    아래로</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <nav class="text-center order_paging" id="prod_list_paging"></nav>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </section><!--섹션 끝 -->
-                </div><!--end #content-->
-                <!-- END CONTENT -->
-            </div> <!-- END BASE -->
+    
+    
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <!-- 필터 관련 -->
+                                        <div class="card-body">
+                                            <div id="filterWrap">
+                                                <a href="javascript:;" class="btn btn-default-bright">
+                                                    <span>
+                                                        <i></i>필터
+                                                    </span>
+                                                </a>
 
+                                                <div id="filterTypeWrap" class="dropdown-menu">
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group">
+                                                            <label class="control-label">결제수단</label>
+                                                            <select name="filter_pay_type[]" data-placeholder="결제수단" class="select-chosen">
+                                                                <option value="cash">무통장입금</option>
+                                                            </select>
 
-            <div class="modal" id="cocoaModal" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content"></div>
-                </div>
-            </div>
+                                                            <div class="chosen-container chosen-container-multi">
+                                                                <ul class="chosen-choices">
+                                                                    <li class="search-field">
+                                                                        <input type="text" value="결제수단" class="default">
+                                                                    </li>
+                                                                </ul>
 
-            <div class="modal submodal" role="dialog" id="cocoaSubModal" style="z-index: 17001;">
-                <div class="modal-dialog">
-                    <div class="modal-content"></div>
-                </div>
-            </div>
+                                                                <div class="chosen-drop">
+                                                                    <ul class="chosen-results"></ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
-            <iframe name="hidden_frame" id="hidden_frame"
-                style="position: absolute; left: -9999px; width: 1px; height: 1px; top: -9999px;" src="_blank">
-            </iframe>
+                                                        <div class="form-group">
+                                                            <label class="control-label">접속기기</label>
+                                                            <div>
+                                                                <span class="radio radio-styled radio-inline">
+                                                                    <label>
+                                                                        <input type="radio" name="filter_order_channel" value="all">
+                                                                        <span>전체</span>
+                                                                    </label>
+                                                                </span>
+                                                                <span class="radio radio-styled radio-inline">
+                                                                    <label>
+                                                                        <input type="radio" name="filter_order_channel"
+                                                                            value="pc">
+                                                                        <span>PC</span>
+                                                                    </label>
+                                                                </span>
+                                                                <span class="radio radio-styled radio-inline">
+                                                                    <label>
+                                                                        <input type="radio" name="filter_order_channel"
+                                                                            value="mobile">
+                                                                        <span>모바일</span>
+                                                                    </label>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label">구매자ID</label>
+                                                            <input type="text" name="filter_orderer_id" value="" class="form-control">
+                                                        </div>
+                                                        <div class="text-right">
+                                                            <button type="reset"
+                                                                onclick="ANALYTICS_MANAGE.toggleFilterWrap(false);"
+                                                                class="btn btn-default-bright">취소</button>
+                                                            <button type="submit" class="btn btn-primary btn-submit">적용</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-            <div id="device-breakpoints">
-                <div class="device-xs visible-xs" data-breakpoint="xs"></div>
-                <div class="device-sm visible-sm" data-breakpoint="sm"></div>
-                <div class="device-md visible-md" data-breakpoint="md"></div>
-                <div class="device-lg visible-lg" data-breakpoint="lg"></div>
+                                            <div id="filterApplyListWrap">
+                                                <ul id="filterApplyList">
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- 필터 관련 끝 -->
+
+                                        <div id="statsTableWrap" class="card-body">
+                                            <div class="table-responsive">
+                                                <table id="table" class="table summary-table">
+                                                    <!-- 날짜별 -->
+                                                    <!-- 여기 하는 중-->
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="_sort_header _current th-top01">
+                                                                <a href="javascript: void(0);"
+                                                                    onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;date&#39;, &#39;asc&#39;);">날짜</a>
+                                                            </th>
+                                                            <th class="_sort_header th-top02">
+                                                                <a href="javascript: void(0);"
+                                                                    onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;order_count&#39;, &#39;desc&#39;);">구매건수</a>
+                                                            </th>
+                                                            <th class="_sort_header th-top02">
+                                                                <a href="javascript: void(0);"
+                                                                    onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;item_count&#39;, &#39;desc&#39;);">구매개수</a>
+                                                            </th>
+                                                            <th class="_sort_header th-top02">
+                                                                <a href="javascript: void(0);"
+                                                                    onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;order_price&#39;, &#39;desc&#39;);">구매금액</a>
+                                                            </th>
+                                                            <th class="_sort_header th-top02">
+                                                                <a href="javascript: void(0);"
+                                                                    onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;sale_price&#39;, &#39;desc&#39;);">할인금액</a>
+                                                            </th>
+                                                            <th class="_sort_header th-top02">
+                                                                <a href="javascript: void(0);"
+                                                                    onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;deliv_price&#39;, &#39;desc&#39;);">배송금액</a>
+                                                            </th>
+                                                            <th class="_sort_header th-top02">
+                                                                <a href="javascript: void(0);"
+                                                                    onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;order_refund_price&#39;, &#39;desc&#39;);">취소/환불</a>
+                                                            </th>
+                                                            <th class="_sort_header th-top02">
+                                                                <a href="javascript: void(0);"
+                                                                    onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;total_price1&#39;, &#39;desc&#39;);">순금액</a>
+                                                            </th>
+                                                            <th class="_sort_header th-top02">
+                                                                <a href="javascript: void(0);"
+                                                                    onclick="ANALYTICS_MANAGE.changeOrderBy(&#39;total_price2&#39;, &#39;desc&#39;);">합계</a>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                        <tr>
+                                                            <td colspan="9" style="padding: 40px 0px 80px;">
+                                                                <div class="text-center">
+                                                                    <h4>
+                                                                        <strong>데이터가 존재하지 않습니다.</strong>
+                                                                    </h4>
+                                                                    <h5 class="text-gray-bright">다른 조건으로 검색해보세요.</h5>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-head">
+                                            <header>
+                                                <strong>참고사항</strong>
+                                            </header>
+                                        </div>
+                                        <div class="card-body" style="padding-top: 0px;">
+                                            <ul class="description-list" style="max-width: 720px;">
+                                                <li>상기 데이터는 전반적인 영업현황을 기술적으로 나타낸 참고용이며
+                                                    <span class="text-danger">
+                                                        세금신고 및 외부고시를 위한 자료로 활용하실 수 없습니다.
+                                                    </span>
+                                                </li>
+                                                <li>부가세 신고 자료는 가입하신 PG사(이니시스, 나이스페이,
+                                                    KCP, 네이버페이 등)에서 제공하는 자료와 국세청 홈텍스 현금영수증 및 전자세금계산서 발급내역을 확인해 주시기 바랍니다.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+    
+                        <form id="analyticsExcelForm" action="_blank" method="post" onsubmit="ADMIN.showLoader(); return true;">
+                            <input type="hidden" name="d1" value="">
+                            <input type="hidden" name="d2" value="YTowOnt9">
+                        </form>
+                    </div>
+                </section>
             </div>
         </div>
-
+        </div>
+    
         <body>
-
-</html>
+    
+    </html>
